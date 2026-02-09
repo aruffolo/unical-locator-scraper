@@ -25,3 +25,7 @@ htmlcov/
 .DS_Store
 .vscode/
 .idea/
+
+# Local agent instructions
+AGENTS.md
+ai-rules/
