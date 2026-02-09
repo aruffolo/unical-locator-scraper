@@ -20,6 +20,7 @@ from .transform.normalize import (
     normalize_teachers,
     write_json,
 )
+from .transform.linking import link_places_to_buildings
 from .utils.html_cache import HtmlCache
 from .utils.http import DEFAULT_USER_AGENT, HttpClient
 from .validate.integrity import check_integrity, issues_to_dicts
@@ -62,6 +63,11 @@ def cli() -> None:
 @cli.group()
 def crawl() -> None:
     """Extract data from UNICAL public sources."""
+
+
+@cli.group()
+def link() -> None:
+    """Link normalized datasets through deterministic references."""
 
 
 @crawl.command("teachers")
@@ -273,6 +279,32 @@ def crawl_buildings_command(
     click.echo(f"Crawled {len(raw_buildings)} buildings")
     click.echo(f"Wrote: {out_file}")
     click.echo(f"Wrote: {sources_file}")
+
+
+@link.command("places-buildings")
+@click.option(
+    "--places-file",
+    default=str(DEFAULT_DATA_DIR / "places.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--buildings-file",
+    default=str(DEFAULT_DATA_DIR / "buildings.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+def link_places_buildings_command(places_file: Path, buildings_file: Path) -> None:
+    """Link `places.json` entries to `building_id` where inferable."""
+    places = _load_json_array(places_file)
+    buildings = _load_json_array(buildings_file)
+
+    linked_places = link_places_to_buildings(places=places, buildings=buildings)
+    linked_count = sum(1 for place in linked_places if place.get("building_id"))
+
+    write_json(places_file, linked_places)
+    click.echo(f"Linked places with building_id: {linked_count}/{len(linked_places)}")
+    click.echo(f"Wrote: {places_file}")
 
 
 @cli.command("validate")

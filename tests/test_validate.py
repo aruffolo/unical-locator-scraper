@@ -39,9 +39,11 @@ def test_integrity_detects_missing_department_reference(tmp_path: Path) -> None:
             "department_id": "dimes",
         }
     ]
+    buildings = []
     departments = [{"department_id": "dic", "name": "Dipartimento di Chimica"}]
     places = []
 
+    (tmp_path / "buildings.json").write_text(json.dumps(buildings), encoding="utf-8")
     (tmp_path / "people.json").write_text(json.dumps(people), encoding="utf-8")
     (tmp_path / "departments.json").write_text(json.dumps(departments), encoding="utf-8")
     (tmp_path / "places.json").write_text(json.dumps(places), encoding="utf-8")
@@ -49,3 +51,48 @@ def test_integrity_detects_missing_department_reference(tmp_path: Path) -> None:
     issues = check_integrity(data_dir=tmp_path)
     assert len(issues) == 1
     assert "department_id 'dimes' does not exist" in issues[0].message
+
+
+def test_integrity_detects_invalid_place_building_reference(tmp_path: Path) -> None:
+    buildings = [{"building_id": "cubo-18b", "name": "Cubo 18B"}]
+    departments = []
+    people = []
+    places = [
+        {
+            "place_id": "service-centro-sanitario",
+            "type": "SERVICE",
+            "name": "Centro Sanitario",
+            "building_id": "cubo-34b",
+        }
+    ]
+
+    (tmp_path / "buildings.json").write_text(json.dumps(buildings), encoding="utf-8")
+    (tmp_path / "departments.json").write_text(json.dumps(departments), encoding="utf-8")
+    (tmp_path / "people.json").write_text(json.dumps(people), encoding="utf-8")
+    (tmp_path / "places.json").write_text(json.dumps(places), encoding="utf-8")
+
+    issues = check_integrity(data_dir=tmp_path)
+    assert len(issues) == 1
+    assert "building_id 'cubo-34b' does not exist" in issues[0].message
+
+
+def test_integrity_detects_invalid_department_primary_building_reference(tmp_path: Path) -> None:
+    buildings = [{"building_id": "cubo-18b", "name": "Cubo 18B"}]
+    departments = [
+        {
+            "department_id": "dimes",
+            "name": "DIMES",
+            "primary_building_id": "cubo-34b",
+        }
+    ]
+    people = []
+    places = []
+
+    (tmp_path / "buildings.json").write_text(json.dumps(buildings), encoding="utf-8")
+    (tmp_path / "departments.json").write_text(json.dumps(departments), encoding="utf-8")
+    (tmp_path / "people.json").write_text(json.dumps(people), encoding="utf-8")
+    (tmp_path / "places.json").write_text(json.dumps(places), encoding="utf-8")
+
+    issues = check_integrity(data_dir=tmp_path)
+    assert len(issues) == 1
+    assert "primary_building_id 'cubo-34b' does not exist" in issues[0].message

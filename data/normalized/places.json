@@ -1,6 +1,7 @@
 [
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Per facilitare l’interazione degli studenti con il Centro Residenziale è possibile accedere agli sportelli on-line.",
     "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
     "name": "Front office on-line",
@@ -22,6 +23,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "centro-sanitario",
     "description": "Il laboratorio del Centro Sanitario eroga un servizio di diagnostica nell’ambito delle seguenti determinazioni analitiche:",
     "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
     "name": "Centro Sanitario",
@@ -42,6 +44,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "centro-sanitario",
     "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
     "name": "Emergenze e assistenza sanitaria",
     "place_id": "service-emergenze-e-assistenza-sanitaria",
@@ -61,6 +64,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Il Centro Residenziale ha attivato degli indirizzi di posta elettronica ai quali gli studenti possono rivolgersi per presentare richieste o segnalare problemi inerenti: le borse di studio, i premi di laurea, i contributi per la mobilità internazionale, i servizi alloggi e mensa, il portale dei servizi online del Centro Residenziale, etc.",
     "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
     "name": "Helpdesk e contatti CR",
@@ -102,6 +106,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "I servizi erogati online dal Centro Residenziale consentono a studenti, docenti e personale tecnico-amministrativo di richiedere e gestire i benefici ed i servizi erogati nel campus (borse di studio, alloggi studenti, foresterie, servizio mensa, premi di laurea, contributi, ecc.).",
     "email": "servizi_informativi.cr@unical.it",
     "last_verified_at": "2026-02-09T11:56:17.699588+00:00",

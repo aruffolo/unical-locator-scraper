@@ -32,10 +32,12 @@ def _load_array(path: Path) -> list[dict[str, Any]]:
 
 def check_integrity(data_dir: Path) -> list[IntegrityIssue]:
     """Run MVP referential checks across people/departments/places."""
+    buildings = _load_array(data_dir / "buildings.json")
     departments = _load_array(data_dir / "departments.json")
     places = _load_array(data_dir / "places.json")
     people = _load_array(data_dir / "people.json")
 
+    building_ids = {item.get("building_id") for item in buildings if item.get("building_id")}
     department_ids = {item.get("department_id") for item in departments if item.get("department_id")}
     place_ids = {item.get("place_id") for item in places if item.get("place_id")}
     place_types = {
@@ -45,6 +47,32 @@ def check_integrity(data_dir: Path) -> list[IntegrityIssue]:
     }
 
     issues: list[IntegrityIssue] = []
+    for department in departments:
+        department_id = department.get("department_id")
+        primary_building_id = department.get("primary_building_id")
+        if primary_building_id and primary_building_id not in building_ids:
+            issues.append(
+                IntegrityIssue(
+                    level="error",
+                    file="departments.json",
+                    record_id=str(department_id) if department_id else None,
+                    message=f"primary_building_id '{primary_building_id}' does not exist in buildings.json",
+                )
+            )
+
+    for place in places:
+        place_id = place.get("place_id")
+        building_id = place.get("building_id")
+        if building_id and building_id not in building_ids:
+            issues.append(
+                IntegrityIssue(
+                    level="error",
+                    file="places.json",
+                    record_id=str(place_id) if place_id else None,
+                    message=f"building_id '{building_id}' does not exist in buildings.json",
+                )
+            )
+
     for person in people:
         person_id = person.get("person_id")
 
