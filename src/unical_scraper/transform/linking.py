@@ -7,6 +7,7 @@ from typing import Any
 
 
 _CUBO_RE = re.compile(r"\bcubo\s*([0-9]{1,2}[a-z]?)\b", re.IGNORECASE)
+_CUBI_RE = re.compile(r"\bcubo\s*([0-9]{1,2})\s*[/-]\s*([0-9]{1,2}[a-z]?)\b", re.IGNORECASE)
 
 
 def link_places_to_buildings(
@@ -54,6 +55,15 @@ def _infer_building_id(place: dict[str, Any], known_building_ids: set[str]) -> s
         if cubo_id in known_building_ids:
             return cubo_id
 
+    cubi_match = _CUBI_RE.search(lowered)
+    if cubi_match:
+        cubi_prefix = f"cubi-{cubi_match.group(1).lower()}-{cubi_match.group(2).lower()}"
+        matches = sorted(
+            building_id for building_id in known_building_ids if building_id.startswith(cubi_prefix)
+        )
+        if len(matches) == 1:
+            return matches[0]
+
     if any(token in lowered for token in ["centro-sanitario", "assistenza sanitaria"]):
         if "centro-sanitario" in known_building_ids:
             return "centro-sanitario"
@@ -62,6 +72,26 @@ def _infer_building_id(place: dict[str, Any], known_building_ids: set[str]) -> s
         token in lowered
         for token in ["front-office-on-line-cr", "serv-cr", "segnalazioni-e-richieste-cr", "centro residenziale"]
     ):
+        target = "uffici-centro-residenziale-e-area-didattica"
+        if target in known_building_ids:
+            return target
+
+    if any(token in lowered for token in ["centro-linguistico", "centro linguistico", " cla "]):
+        target = "cla-centro-linguistico-d-ateneo"
+        if target in known_building_ids:
+            return target
+
+    if any(token in lowered for token in ["centro-sportivo", "centro sportivo", "universitario sportivo", " cus "]):
+        target = "centro-universitario-sportivo"
+        if target in known_building_ids:
+            return target
+
+    if any(token in lowered for token in ["career-service", "cubo 7/11"]):
+        matches = sorted(building_id for building_id in known_building_ids if building_id.startswith("cubi-7-11"))
+        if len(matches) == 1:
+            return matches[0]
+
+    if any(token in lowered for token in ["borse-di-studio", "servizio-foresteria"]):
         target = "uffici-centro-residenziale-e-area-didattica"
         if target in known_building_ids:
             return target

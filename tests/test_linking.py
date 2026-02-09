@@ -46,3 +46,51 @@ def test_link_places_to_buildings_links_known_keyword_routes() -> None:
 
     assert linked[0]["building_id"] == "centro-sanitario"
     assert linked[1]["building_id"] == "uffici-centro-residenziale-e-area-didattica"
+
+
+def test_link_places_to_buildings_links_additional_service_routes() -> None:
+    places = [
+        {
+            "place_id": "service-cla",
+            "type": "SERVICE",
+            "name": "Centro Linguistico Di Ateneo",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-linguistico-di-ateneo/",
+        },
+        {
+            "place_id": "service-cus",
+            "type": "SERVICE",
+            "name": "Centro Sportivo",
+            "description": "Centro Universitario Sportivo",
+        },
+        {
+            "place_id": "service-career",
+            "type": "SERVICE",
+            "name": "Orientamento",
+            "source_url": "https://www.unical.it/didattica/orientamento/career-service/",
+        },
+        {
+            "place_id": "service-foresteria",
+            "type": "SERVICE",
+            "name": "Servizio Foresteria",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/",
+        },
+    ]
+    buildings = [
+        {
+            "building_id": "cla-centro-linguistico-d-ateneo",
+            "name": "CLA - Centro Linguistico d'Ateneo",
+        },
+        {"building_id": "centro-universitario-sportivo", "name": "Centro Universitario Sportivo"},
+        {"building_id": "cubi-7-11b", "name": "Cubi 7-11B"},
+        {
+            "building_id": "uffici-centro-residenziale-e-area-didattica",
+            "name": "Uffici Centro Residenziale e Area Didattica",
+        },
+    ]
+
+    linked = link_places_to_buildings(places=places, buildings=buildings)
+
+    assert linked[0]["building_id"] == "cla-centro-linguistico-d-ateneo"
+    assert linked[1]["building_id"] == "centro-universitario-sportivo"
+    assert linked[2]["building_id"] == "cubi-7-11b"
+    assert linked[3]["building_id"] == "uffici-centro-residenziale-e-area-didattica"

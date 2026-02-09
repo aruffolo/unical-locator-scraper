@@ -34,6 +34,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "cla-centro-linguistico-d-ateneo",
     "email": "maria.sasso@unical.it",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
     "name": "Centro Linguistico Di Ateneo",
@@ -56,6 +57,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "centro-universitario-sportivo",
     "description": "Lo sport è una componente essenziale nel Campus. Il Cus – Centro universitario sportivo d’ateneo – è una vera cittadella dello sport e del tempo libero, il motore di un’intensa attività che consente a studenti, docenti, personale tecnico-amministrativo e cittadini dell’area urbana di praticare numerose discipline, anche a livello agonistico con risultati significativi ottenuti in vari campionati universitari nazionali.",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
     "name": "Centro Sportivo",
@@ -66,6 +68,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Che cos'è la borsa di studio Lo scopo della borsa di studio è quello di consentire agli studenti capaci e meritevoli, anche se privi di mezzi economici, di raggiungere i gradi più alti degli studi ovvero quello di sostenere le spese di mantenimento dello studente presso la sede universitaria. La borsa di studio è composta da una quota in servizi (alloggio e mensa) e da una quota monetaria e dà inoltre diritto all’esenzione completa dalle tasse universitarie e ad altri interventi finalizzati ad agevolare il percorso didattico (mobilità internazionale, premio di laurea, fruizione a tariffe ridotte degli impianti sportivi del campus, ecc.).",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
     "name": "Diritto allo studio",
@@ -97,6 +100,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "cubi-7-11b",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
     "name": "Orientamento",
     "place_id": "service-orientamento",
@@ -150,6 +154,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Il servizio è rivolto al personale universitario (docente e tecnico-amministrativo) di ruolo; in caso di disponibilità, possono usufruirne anche tutti coloro i quali abbiano un rapporto di interesse con l’Università della Calabria.",
     "email": "direzione.cr@unical.it",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
