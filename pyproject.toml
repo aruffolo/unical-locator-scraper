@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unical-scraper"
+version = "0.1.0"
+description = "Deterministic data collection pipeline for the UNICAL Campus App"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "UNICAL Campus App Contributors" }]
+dependencies = [
+  "httpx>=0.27.0",
+  "beautifulsoup4>=4.12.0",
+  "jsonschema>=4.23.0",
+  "click>=8.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[project.scripts]
+unical_scraper = "unical_scraper.cli:cli"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

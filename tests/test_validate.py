@@ -1,0 +1,51 @@
+import json
+from pathlib import Path
+
+from unical_scraper.validate.integrity import check_integrity
+from unical_scraper.validate.jsonschema_validate import validate_json_file
+
+
+def test_validate_json_file_with_simple_schema(tmp_path: Path) -> None:
+    schema = {
+        "type": "array",
+        "items": {
+            "type": "object",
+            "required": ["person_id", "full_name", "role"],
+            "properties": {
+                "person_id": {"type": "string"},
+                "full_name": {"type": "string"},
+                "role": {"type": "string"},
+            },
+            "additionalProperties": False,
+        },
+    }
+    payload = [{"person_id": "rossi-mario", "full_name": "Mario Rossi", "role": "PROFESSOR"}]
+
+    schema_path = tmp_path / "people.schema.json"
+    data_path = tmp_path / "people.json"
+    schema_path.write_text(json.dumps(schema), encoding="utf-8")
+    data_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    errors = validate_json_file(data_path=data_path, schema_path=schema_path)
+    assert errors == []
+
+
+def test_integrity_detects_missing_department_reference(tmp_path: Path) -> None:
+    people = [
+        {
+            "person_id": "rossi-mario",
+            "full_name": "Mario Rossi",
+            "role": "PROFESSOR",
+            "department_id": "dimes",
+        }
+    ]
+    departments = [{"department_id": "dic", "name": "Dipartimento di Chimica"}]
+    places = []
+
+    (tmp_path / "people.json").write_text(json.dumps(people), encoding="utf-8")
+    (tmp_path / "departments.json").write_text(json.dumps(departments), encoding="utf-8")
+    (tmp_path / "places.json").write_text(json.dumps(places), encoding="utf-8")
+
+    issues = check_integrity(data_dir=tmp_path)
+    assert len(issues) == 1
+    assert "department_id 'dimes' does not exist" in issues[0].message
