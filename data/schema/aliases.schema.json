@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aliases.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["alias_id", "entity_type", "entity_id", "label"],
+    "properties": {
+      "alias_id": { "type": "string", "minLength": 1 },
+      "entity_type": { "type": "string", "enum": ["BUILDING", "PLACE", "PERSON", "DEPARTMENT"] },
+      "entity_id": { "type": "string", "minLength": 1 },
+      "label": { "type": "string", "minLength": 1 },
+      "normalized": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}
+

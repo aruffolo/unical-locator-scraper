@@ -85,8 +85,8 @@ Deliverables:
 ## Quality Gates per Logical Slice
 Run from `scraper/`:
 - `.venv/bin/pytest -q`
-- `.venv/bin/python -m unical_scraper validate --data-dir ../data/normalized --schemas-dir ../data/schema`
-- `.venv/bin/python -m unical_scraper report --data-dir ../data/normalized --schemas-dir ../data/schema --out ../data/normalized/report.json`
+- `.venv/bin/python -m unical_scraper validate --data-dir data/normalized --schemas-dir data/schema`
+- `.venv/bin/python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out data/normalized/report.json`
 
 ## Commit Strategy
 - One logical change per commit.

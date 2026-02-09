@@ -1,0 +1,176 @@
+[
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Per facilitare l’interazione degli studenti con il Centro Residenziale è possibile accedere agli sportelli on-line.",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Front office on-line",
+    "opening_hours": "Orari disponibili sulla pagina sorgente",
+    "place_id": "office-front-office-on-line",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/didattica/diritto-allo-studio/front-office-on-line-cr",
+    "type": "OFFICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Ogni anno, nel mese di luglio, viene pubblicato il Bando di concorso per l'assegnazione dei Benefici e dei Servizi del Diritto allo Studio.",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Borse di studio",
+    "place_id": "service-borse-di-studio",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/didattica/diritto-allo-studio/borse-di-studio/bandi-diritto-allo-studio/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Il laboratorio del Centro Sanitario eroga un servizio di diagnostica nell’ambito delle seguenti determinazioni analitiche:",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Centro Sanitario",
+    "place_id": "service-centro-sanitario",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-sanitario/laboratorio-di-chimica-clinica-e-tossicologia/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Che cos'è la borsa di studio Lo scopo della borsa di studio è quello di consentire agli studenti capaci e meritevoli, anche se privi di mezzi economici, di raggiungere i gradi più alti degli studi ovvero quello di sostenere le spese di mantenimento dello studente presso la sede universitaria. La borsa di studio è composta da una quota in servizi (alloggio e mensa) e da una quota monetaria e dà inoltre diritto all’esenzione completa dalle tasse universitarie e ad altri interventi finalizzati ad agevolare il percorso didattico (mobilità internazionale, premio di laurea, fruizione a tariffe ridotte degli impianti sportivi del campus, ecc.).",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Diritto allo studio",
+    "place_id": "service-diritto-allo-studio",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/didattica/diritto-allo-studio/borse-di-studio/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Emergenze e assistenza sanitaria",
+    "place_id": "service-emergenze-e-assistenza-sanitaria",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/didattica/diritto-allo-studio/emergenze-e-assistenza-sanitaria/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Le informazioni contenute in questa pagina non sostituiscono i contenuti del bando di concorso per l’assegnazione dei benefici e dei servizi del diritto allo studio a.a. 2025/2026.",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Guida per gli studenti neo immatricolati dell’Università della Calabria – A.A. 2025/2026",
+    "place_id": "service-guida-per-gli-studenti-neo-immatricolati-delluniversita-della-calabria-a-a-2025-2026",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/didattica/diritto-allo-studio/step",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Il Centro Residenziale ha attivato degli indirizzi di posta elettronica ai quali gli studenti possono rivolgersi per presentare richieste o segnalare problemi inerenti: le borse di studio, i premi di laurea, i contributi per la mobilità internazionale, i servizi alloggi e mensa, il portale dei servizi online del Centro Residenziale, etc.",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Helpdesk e contatti CR",
+    "place_id": "service-helpdesk-e-contatti-cr",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/didattica/diritto-allo-studio/segnalazioni-e-richieste-cr/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "La sezione di Mineralogia e Petrografia del MuSNOB al momento propone un percorso nel “Giardino geologico”, una parte open air della sezione mineralogica-petrografica, in cui sono esposti 16 grossi blocchi rocciosi, rappresentativi dei minerali e delle rocce più diffuse nell’appennino calabrese.",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "MuSNOB",
+    "place_id": "service-musnob",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/mineralogia-e-petrografia/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Via Pietro Bucci 87036 Rende CS Posta certificata C.F. 80003950781 / P.I. 00419160783",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Polo d'infanzia",
+    "place_id": "service-polo-d-infanzia",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/documentazione/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Con Unical Life gli studenti, i docenti ed il personale tecnico-amministrativo potranno richiedere e gestire i benefici ed i servizi erogati nel campus (borse di studio, alloggi studenti, foresterie, servizio mensa, premi di laurea, contributi, ecc.).",
+    "email": "servizi_informatici.cr@unical.it",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Servizi digitali per gli studenti",
+    "place_id": "service-servizi-digitali-per-gli-studenti",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/servizi-ict/servizi-digitali-studenti/unicalife/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "I servizi erogati online dal Centro Residenziale consentono a studenti, docenti e personale tecnico-amministrativo di richiedere e gestire i benefici ed i servizi erogati nel campus (borse di studio, alloggi studenti, foresterie, servizio mensa, premi di laurea, contributi, ecc.).",
+    "email": "servizi_informativi.cr@unical.it",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Servizi online Centro Residenziale",
+    "place_id": "service-servizi-online-centro-residenziale",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/didattica/diritto-allo-studio/serv-cr/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "ATTIVITÀ PER LE SCUOLE La scuola rappresenta l’utente privilegiato del SiMU. I Servizi educativi offerti spaziano dalla visita guidata ai laboratori scientifici e ludico-didattici fino alla costruzione di percorsi didattici più complessi, che possono anche accompagnare la classe durante l’intero anno scolastico. Le attività sono fatte in presenza negli spazi delle sezioni del SiMU, nel pieno rispetto delle norme vigenti, molte altre possono essere svolte in classe o da remoto e possono strutturarsi su uno o più incontri. Per le prenotazioni utilizzare il modulo di prenotazione presente nella scheda descrittiva di ogni attività.",
+    "email": "infomusei@unical.it",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Sistema Museale",
+    "place_id": "service-sistema-museale",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/accesso-ai-musei/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Gli studenti alloggiati nei quartieri residenziali hanno a disposizione i Centri Comuni tramite i quali vengono assicurati servizi per il tempo libero e la socialità.",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Socialità",
+    "place_id": "service-socialita",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/socialita/centri-comuni/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Il nostro Campus non è solo un luogo di studio, ma anche uno spazio dinamico dove costruire relazioni, condividere esperienze e partecipare alla vita comunitaria.",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Socialità nel Campus",
+    "place_id": "service-socialita-nel-campus",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/socialita/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "In questa sezione è possibile consultare l' archivio fotografico degli spettacoli e degli eventi organizzati dal Centro Arti, Musica e Spettacolo dell'Università della Calabria.",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Teatri e Cinema",
+    "place_id": "service-teatri-e-cinema",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/archivio-fotografico/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Il Campus dell’Università della Calabria si è animato con UNICALFESTA e UNICALGAMES 2025 , due grandi eventi che hanno trasformato il Campus in uno spazio di festa, energia e condivisione, unendo cultura, sport e creatività.",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "UNICALFESTA e UNICALGAMES 2025",
+    "place_id": "service-unicalfesta-e-unicalgames-2025",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/socialita/unicalfesta/",
+    "type": "SERVICE"
+  },
+  {
+    "access_notes": "Sito: https://my.unical.it/",
+    "description": "Vai a tutte le notizie",
+    "last_verified_at": "2026-02-09T11:56:17.699588+00:00",
+    "name": "Vivere il campus",
+    "opening_hours": "Orari disponibili sulla pagina sorgente",
+    "place_id": "service-vivere-il-campus",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/",
+    "type": "SERVICE"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "departments.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["department_id", "name"],
+    "properties": {
+      "department_id": { "type": "string", "minLength": 1 },
+      "name": { "type": "string", "minLength": 1 },
+      "description": { "type": "string" },
+      "email": { "type": "string" },
+      "phone": { "type": "string" },
+      "website_url": { "type": "string" },
+      "primary_building_id": { "type": "string" },
+      "source_id": { "type": "string" },
+      "source_url": { "type": "string" },
+      "last_verified_at": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}
+

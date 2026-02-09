@@ -25,7 +25,7 @@ from .validate.jsonschema_validate import validate_dataset_dir
 from .validate.report import build_coverage_report
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DATA_DIR = REPO_ROOT / "data" / "normalized"
 DEFAULT_SCHEMAS_DIR = REPO_ROOT / "data" / "schema"
 

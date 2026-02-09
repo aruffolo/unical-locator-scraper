@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "faqs.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["faq_id", "category", "question", "answer"],
+    "properties": {
+      "faq_id": { "type": "string" },
+      "category": { "type": "string" },
+      "question": { "type": "string" },
+      "answer": { "type": "string" },
+      "source_id": { "type": "string" },
+      "source_url": { "type": "string" },
+      "last_verified_at": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}
+

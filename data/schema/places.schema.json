@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "places.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["place_id", "type", "name"],
+    "properties": {
+      "place_id": { "type": "string", "minLength": 1 },
+      "type": {
+        "type": "string",
+        "enum": ["AULA", "OFFICE", "SECRETARY", "SERVICE", "LAB", "LIBRARY", "DEPARTMENT_OFFICE", "OTHER"]
+      },
+      "name": { "type": "string", "minLength": 1 },
+      "building_id": { "type": "string" },
+      "floor": { "type": "string" },
+      "room": { "type": "string" },
+      "description": { "type": "string" },
+      "email": { "type": "string" },
+      "phone": { "type": "string" },
+      "opening_hours": { "type": "string" },
+      "access_notes": { "type": "string" },
+      "lat": { "type": "number" },
+      "lng": { "type": "number" },
+      "department_id": { "type": "string" },
+      "source_id": { "type": "string" },
+      "source_url": { "type": "string" },
+      "last_verified_at": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}
+

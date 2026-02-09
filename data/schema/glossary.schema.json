@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "glossary.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["entry_id", "term", "definition"],
+    "properties": {
+      "entry_id": { "type": "string" },
+      "term": { "type": "string" },
+      "definition": { "type": "string" },
+      "source_id": { "type": "string" },
+      "source_url": { "type": "string" },
+      "last_verified_at": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}
+

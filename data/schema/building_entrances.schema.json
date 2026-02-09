@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "building_entrances.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["entrance_id", "building_id", "lat", "lng"],
+    "properties": {
+      "entrance_id": { "type": "string", "minLength": 1 },
+      "building_id": { "type": "string", "minLength": 1 },
+      "label": { "type": "string" },
+      "lat": { "type": "number" },
+      "lng": { "type": "number" }
+    },
+    "additionalProperties": false
+  }
+}
+
