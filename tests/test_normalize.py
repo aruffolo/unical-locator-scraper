@@ -1,7 +1,8 @@
 from datetime import datetime, timezone
 
+from unical_scraper.extract.departments import RawDepartment
 from unical_scraper.extract.teachers import RawTeacher
-from unical_scraper.transform.normalize import normalize_teachers
+from unical_scraper.transform.normalize import normalize_departments, normalize_teachers
 
 
 def test_normalize_teachers_produces_people_schema_shape() -> None:
@@ -29,3 +30,28 @@ def test_normalize_teachers_produces_people_schema_shape() -> None:
     assert person["department_id"] == "dimes"
     assert person["source_id"] == "unical-teachers"
     assert person["last_verified_at"] == "2026-02-09T00:00:00+00:00"
+
+
+def test_normalize_departments_produces_departments_schema_shape() -> None:
+    raw = [
+        RawDepartment(
+            name="Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica",
+            source_url="https://www.unical.it/ateneo/dipartimenti/dimes",
+            email="segreteria@dimes.unical.it",
+            phone="+39 0984 123456",
+            website_url="https://dimes.unical.it",
+        )
+    ]
+
+    departments = normalize_departments(
+        raw_departments=raw,
+        verified_at=datetime(2026, 2, 9, tzinfo=timezone.utc),
+    )
+
+    assert len(departments) == 1
+    department = departments[0]
+    assert department["department_id"] == "dipartimento-di-ingegneria-informatica-modellistica-elettronica-e-sistemistica"
+    assert department["name"] == raw[0].name
+    assert department["email"] == "segreteria@dimes.unical.it"
+    assert department["source_id"] == "unical-departments"
+    assert department["last_verified_at"] == "2026-02-09T00:00:00+00:00"

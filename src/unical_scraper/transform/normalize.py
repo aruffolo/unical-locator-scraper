@@ -6,6 +6,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from ..extract.departments import RawDepartment
 from ..extract.teachers import RawTeacher
 from ..utils.text import collapse_whitespace, none_if_empty
 from .dedupe import dedupe_people
@@ -58,6 +59,44 @@ def normalize_teachers(
 
     deduped = dedupe_people(normalized)
     return sorted(deduped, key=lambda person: person["person_id"])
+
+
+def normalize_departments(
+    raw_departments: list[RawDepartment],
+    source_id: str = "unical-departments",
+    verified_at: datetime | None = None,
+) -> list[dict[str, str]]:
+    """Convert raw departments to canonical `departments.json` records."""
+    if verified_at is None:
+        verified_at = datetime.now(timezone.utc)
+
+    verified_iso = verified_at.isoformat()
+    unique_by_id: dict[str, dict[str, str]] = {}
+
+    for raw in raw_departments:
+        name = none_if_empty(collapse_whitespace(raw.name))
+        if not name:
+            continue
+
+        department_id = make_department_id(name)
+        department: dict[str, str] = {
+            "department_id": department_id,
+            "name": name,
+            "source_id": source_id,
+            "source_url": raw.source_url,
+            "last_verified_at": verified_iso,
+        }
+
+        if raw.email:
+            department["email"] = raw.email.lower().strip()
+        if raw.phone:
+            department["phone"] = collapse_whitespace(raw.phone)
+        if raw.website_url:
+            department["website_url"] = raw.website_url.strip()
+
+        unique_by_id.setdefault(department_id, department)
+
+    return sorted(unique_by_id.values(), key=lambda department: department["department_id"])
 
 
 def write_json(path: Path, payload: object) -> None:
