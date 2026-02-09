@@ -6,6 +6,7 @@ Owner: Elrond89
 ## Objectives
 - Build deterministic, schema-valid UNICAL datasets from public sources.
 - Maximize coverage for departments, buildings (cubi and other campus buildings), places, and people.
+- Support aula discovery by heterogeneous labels (short code, alphanumeric room IDs, full names) with resolved building location and level when available.
 - Preserve provenance (`source_id`, `source_url`, timestamps) for each generated record.
 
 ## Scope and Constraints
@@ -59,7 +60,24 @@ Deliverables:
 - Working `crawl services` command
 - Populated `places.json`
 
-### 5. Coordinates Completion Pass
+### 5. Aule Pipeline and Searchability
+- Add a dedicated extraction path for aulas from official UNICAL sources.
+- Normalize aulas into `places.json` with:
+  - `type: "AULA"`
+  - `building_id` (required when inferable from source)
+  - optional `floor` and `room` fields
+  - provenance fields
+- Add deterministic alias/search normalization so heterogeneous queries (for example short code, room token, or full aula name) resolve to the correct aula record.
+- Add tests for:
+  - lookup normalization across naming variants (case, punctuation, prefixes like `Aula`, alphanumeric IDs)
+  - aula-to-building linking and floor/room extraction when present.
+
+Deliverables:
+- New aula extraction + normalization module/tests
+- Aula records queryable by short code
+- Building + floor context exposed for each matched aula when available
+
+### 6. Coordinates Completion Pass
 - Fill missing building coordinates with this policy:
   1) official UNICAL sources
   2) external geocoding fallback (e.g., Google Maps), explicitly flagged in provenance
@@ -69,9 +87,11 @@ Deliverables:
 - Improved coordinate coverage in `buildings.json`/`places.json`
 - Source traceability for each coordinate origin
 
-### 6. Quality and Gap Closure
+### 7. Quality and Gap Closure
 - Extend report metrics for non-people datasets:
   - buildings with coordinates
+  - aulas with `building_id`
+  - aulas with `floor`
   - places with `building_id`
   - departments with website/email
 - Add/extend integrity checks for:
