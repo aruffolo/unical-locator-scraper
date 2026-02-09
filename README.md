@@ -32,3 +32,8 @@ Run:
 This command updates both:
 - `data/normalized/aulas.json`
 - `data/normalized/places.json` (upserts `type: "AULA"` records)
+
+Current aula sources combined by the command:
+- UNICAL campus map (Google My Maps KML)
+- Department structure pages with aula tables
+- Public university planner API (`unical.prod.up.cineca.it`)

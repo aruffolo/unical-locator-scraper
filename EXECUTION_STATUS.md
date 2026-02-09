@@ -10,13 +10,13 @@ Owner: Elrond89
 - `blocked`: cannot proceed safely without input/dependency
 
 ## Current Baseline (2026-02-09)
-- Tests: `38 passed`
+- Tests: `39 passed`
 - Validation: all datasets schema-valid
 - Integrity: no issues
 - Dataset baseline:
   - `buildings.json`: 137 records
   - `places.json`: 31 records
-  - `aulas.json`: 4 records
+  - `aulas.json`: 90 records
   - `departments.json`: 14 records
   - `people.json`: 4140 records
 
@@ -28,12 +28,12 @@ Owner: Elrond89
 | Departments extraction | done | Elrond89 | Extracted and normalized |
 | Buildings extraction (cubi + others) | done | Elrond89 | Campus map extraction complete |
 | Services/places extraction | done | Elrond89 | Services + museum split implemented |
-| Aule extraction/search (variable naming use case) | done | Elrond89 | `crawl aulas` implemented; `aulas.json` + AULA entries in `places.json` |
+| Aule extraction/search (variable naming use case) | done | Elrond89 | Multi-source pass active (map KML + department tables + planner public API), `aulas.json` + AULA entries in `places.json` |
 | Coordinates completion | done | Elrond89 | Building coordinates currently complete |
 | Coverage/integrity expansion | done | Elrond89 | Report includes `buildings`/`places`/`aulas` metrics and integrity checks |
 
 ## Technical Debt / Issues
-- Aula coverage is still partial (currently map-driven; no timetable/department-specific room registries ingested yet).
+- Planner public endpoint currently exposes max 100 records per call; broader timetable coverage still needs additional calendar-link enumeration.
 - Some service entities remain intentionally non-linkable (`building_id = null`) because they are virtual or multi-site.
 - `search_tokens` for aulas are generated, but `aliases.json` is still empty and can be populated for stronger query recall.
 
@@ -43,6 +43,7 @@ Owner: Elrond89
 - 2026-02-09: Preserve deterministic IDs/order as non-negotiable release constraint.
 - 2026-02-09: Add explicit `AULA` workstream for variable-name lookup with building + level context.
 - 2026-02-09: Implemented `crawl aulas` from official UNICAL map KML + floor-level aula parsing from placemark descriptions.
+- 2026-02-09: Expanded `crawl aulas` to include department structure tables and planner public API enrichment.
 
 ## Blockers
 - No hard blockers at this checkpoint.

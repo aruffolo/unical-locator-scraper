@@ -1,8 +1,9 @@
-"""Aula extraction from official UNICAL campus map sources."""
+"""Aula extraction from official UNICAL sources."""
 
 from __future__ import annotations
 
 import html
+import json
 import re
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
@@ -31,6 +32,32 @@ FLOOR_PATTERN = re.compile(
     r"(" + "|".join(re.escape(label) for label in FLOOR_LABELS) + r")\s*(?:\([^)]*\))?\s*:\s*",
     flags=re.IGNORECASE,
 )
+FLOOR_WORD_TO_LABEL = {
+    "terra": "Piano Terra",
+    "primo": "Primo piano",
+    "secondo": "Secondo piano",
+    "terzo": "Terzo piano",
+    "quarto": "Quarto piano",
+    "quinto": "Quinto piano",
+    "sesto": "Sesto piano",
+    "settimo": "Settimo piano",
+}
+PLANNER_DEFAULT_BASE_URL = "https://unical.prod.up.cineca.it"
+DEFAULT_DEPARTMENT_AULA_URLS = (
+    "https://fisica.unical.it/dipartimento/organizzazione/strutture/",
+    "https://dfssn.unical.it/dipartimento/organizzazione/strutture/",
+    "https://dispes.unical.it/dipartimento/organizzazione/strutture/",
+    "https://disu.unical.it/dipartimento/organizzazione/strutture/",
+    "https://www2.dimes.unical.it/it/content/aule-dipartimento",
+)
+NOISE_AULA_TOKENS = (
+    "nessun",
+    "studio docente",
+    "sala riunioni",
+    "laboratorio",
+    "ufficio",
+    "help desk",
+)
 
 
 @dataclass(frozen=True)
@@ -51,21 +78,162 @@ def crawl_aulas(
     base_url: str,
     client: HttpClient,
     cache: HtmlCache | None = None,
+    department_urls: tuple[str, ...] | list[str] | None = None,
+    planner_base_url: str | None = PLANNER_DEFAULT_BASE_URL,
 ) -> list[RawAula]:
-    """Crawl aula markers and aula mentions from the official UNICAL map."""
-    map_html = _fetch_html(base_url, client, cache)
+    """Crawl aulas from map, department pages and planner public endpoints."""
+    aulas: list[RawAula] = []
+    aulas.extend(_crawl_map_aulas(base_url=base_url, client=client, cache=cache))
+
+    source_department_urls = tuple(department_urls or DEFAULT_DEPARTMENT_AULA_URLS)
+    aulas.extend(_crawl_department_aulas(urls=source_department_urls, client=client, cache=cache))
+
+    if planner_base_url:
+        aulas.extend(_crawl_planner_aulas(planner_base_url=planner_base_url, client=client, cache=cache))
+
+    return _dedupe_aulas(aulas)
+
+
+def _crawl_map_aulas(base_url: str, client: HttpClient, cache: HtmlCache | None) -> list[RawAula]:
+    try:
+        map_html = _fetch_html(base_url, client, cache)
+    except Exception:
+        return []
+
     kml_url = _extract_kml_url(map_html=map_html, base_url=base_url)
     if not kml_url:
         return []
 
-    kml_text = _fetch_html(kml_url, client, cache)
+    try:
+        kml_text = _fetch_html(kml_url, client, cache)
+    except Exception:
+        return []
     return _parse_aulas_kml(kml_text=kml_text, source_url=base_url)
+
+
+def _crawl_department_aulas(
+    urls: tuple[str, ...],
+    client: HttpClient,
+    cache: HtmlCache | None,
+) -> list[RawAula]:
+    aulas: list[RawAula] = []
+    for url in sorted(set(urls)):
+        html_text = _try_fetch_html(url=url, client=client, cache=cache)
+        if not html_text:
+            continue
+        aulas.extend(_parse_department_aulas_html(html_text=html_text, source_url=url))
+    return aulas
+
+
+def _crawl_planner_aulas(
+    planner_base_url: str,
+    client: HttpClient,
+    cache: HtmlCache | None,
+) -> list[RawAula]:
+    base = planner_base_url.rstrip("/")
+    source_url = f"{base}/calendar/activities/"
+
+    edifici_url = f"{base}/api/Edifici/getPerAutoCompletePublic?lookupFields=codice&limit=100"
+    aula_list_url = f"{base}/api/Aule/getPerAutoCompletePublic?lookupFields=codice&limit=100"
+
+    edifici_payload = _try_fetch_html(edifici_url, client=client, cache=cache)
+    aule_payload = _try_fetch_html(aula_list_url, client=client, cache=cache)
+    if not aule_payload:
+        return []
+
+    edifici_map: dict[str, str] = {}
+    for item in _load_json_array(edifici_payload):
+        item_id = item.get("id")
+        descrizione = _normalize_text(str(item.get("descrizione", "")))
+        if isinstance(item_id, str) and descrizione:
+            edifici_map[item_id] = descrizione
+
+    aulas: list[RawAula] = []
+    for summary in _load_json_array(aule_payload):
+        aula_id = summary.get("id")
+        if not isinstance(aula_id, str):
+            continue
+
+        detail_url = f"{base}/api/Aule/getByIdPublic?id={aula_id}"
+        detail_payload = _try_fetch_html(detail_url, client=client, cache=cache)
+        detail = _load_json_object(detail_payload)
+        if not detail:
+            continue
+
+        descrizione = _normalize_text(str(detail.get("descrizione") or summary.get("descrizione") or ""))
+        codice = _normalize_text(str(detail.get("codice") or summary.get("codice") or ""))
+        candidate_name = _canonical_external_aula_name(descrizione or codice)
+        if not candidate_name:
+            continue
+
+        edificio_id = detail.get("edificioId")
+        building_hint = edifici_map.get(edificio_id) if isinstance(edificio_id, str) else None
+        floor = _extract_floor_label(descrizione or "")
+
+        short_code = _extract_short_code(candidate_name)
+        room = _extract_room_label(candidate_name)
+        aulas.append(
+            RawAula(
+                name=candidate_name,
+                source_url=source_url,
+                floor=floor,
+                room=room,
+                short_code=short_code,
+                building_hint=building_hint,
+            )
+        )
+
+    return aulas
+
+
+def _dedupe_aulas(aulas: list[RawAula]) -> list[RawAula]:
+    unique_by_key: dict[tuple[str, str | None, str | None], RawAula] = {}
+    for aula in aulas:
+        key = (
+            collapse_whitespace(aula.name).casefold(),
+            aula.floor.casefold() if aula.floor else None,
+            aula.building_hint.casefold() if aula.building_hint else None,
+        )
+        existing = unique_by_key.get(key)
+        if existing is None or _aula_quality_score(aula) > _aula_quality_score(existing):
+            unique_by_key[key] = aula
+
+    return sorted(
+        unique_by_key.values(),
+        key=lambda item: (
+            item.name.casefold(),
+            item.floor.casefold() if item.floor else "",
+            item.building_hint.casefold() if item.building_hint else "",
+        ),
+    )
+
+
+def _aula_quality_score(aula: RawAula) -> int:
+    score = 0
+    if aula.lat is not None and aula.lng is not None:
+        score += 3
+    if aula.building_hint:
+        score += 2
+    if aula.floor:
+        score += 2
+    if aula.short_code:
+        score += 1
+    if aula.room:
+        score += 1
+    return score
 
 
 def _fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str:
     if cache is None:
         return client.get_text(url)
     return cache.get_or_fetch(url, client.get_text)
+
+
+def _try_fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str | None:
+    try:
+        return _fetch_html(url, client, cache)
+    except Exception:
+        return None
 
 
 def _extract_kml_url(map_html: str, base_url: str) -> str | None:
@@ -154,23 +322,99 @@ def _parse_aulas_kml(kml_text: str, source_url: str) -> list[RawAula]:
                     )
                 )
 
-    unique_by_key: dict[tuple[str, str | None, str | None], RawAula] = {}
-    for aula in aulas:
-        key = (
-            collapse_whitespace(aula.name).casefold(),
-            aula.floor.casefold() if aula.floor else None,
-            aula.building_hint.casefold() if aula.building_hint else None,
-        )
-        unique_by_key.setdefault(key, aula)
+    return aulas
 
-    return sorted(
-        unique_by_key.values(),
-        key=lambda item: (
-            item.name.casefold(),
-            item.floor.casefold() if item.floor else "",
-            item.building_hint.casefold() if item.building_hint else "",
-        ),
-    )
+
+def _parse_department_aulas_html(html_text: str, source_url: str) -> list[RawAula]:
+    soup = BeautifulSoup(html_text, "html.parser")
+    aulas: list[RawAula] = []
+
+    for row in soup.select("table tr"):
+        cells = [_normalize_text(cell.get_text(" ", strip=True)) for cell in row.select("th, td")]
+        cells = [cell for cell in cells if cell]
+        if not cells or _is_table_header_row(cells):
+            continue
+
+        name_cell = cells[0]
+        location_text = " ".join(cells[1:3]) if len(cells) > 1 else ""
+        location_text = collapse_whitespace(location_text)
+        row_text = collapse_whitespace(" ".join(cells))
+
+        for candidate in _extract_department_candidates(name_cell):
+            canonical_name = _canonical_external_aula_name(candidate)
+            if not canonical_name:
+                continue
+
+            hint_text = location_text or row_text
+            building_hint = _extract_building_hint(hint_text)
+            floor = _extract_floor_label(hint_text)
+
+            room = _extract_room_label(canonical_name)
+            short_code = _extract_short_code(canonical_name)
+            aulas.append(
+                RawAula(
+                    name=canonical_name,
+                    source_url=source_url,
+                    floor=floor,
+                    room=room,
+                    short_code=short_code,
+                    building_hint=building_hint,
+                )
+            )
+
+    return aulas
+
+
+def _is_table_header_row(cells: list[str]) -> bool:
+    if not cells:
+        return True
+    header_tokens = {"aula", "cubo", "ubicazione", "capienza", "dotazione", "posti", "attrezzature"}
+    lowered = [cell.casefold() for cell in cells]
+    return all(any(token in cell for token in header_tokens) for cell in lowered)
+
+
+def _extract_department_candidates(value: str) -> list[str]:
+    cleaned = collapse_whitespace(value)
+    if not cleaned:
+        return []
+
+    explicit_matches = [
+        collapse_whitespace(match.group(0))
+        for match in re.finditer(r"\bAula\s+[A-Za-z0-9][A-Za-z0-9'()\- ]{0,40}", cleaned, flags=re.IGNORECASE)
+    ]
+    if explicit_matches:
+        return explicit_matches
+
+    candidates: list[str] = []
+    for token in re.split(r"\s*[;,/|]\s*", cleaned):
+        token = collapse_whitespace(token)
+        if not token:
+            continue
+        if _looks_like_room_code(token):
+            candidates.append(token)
+    if candidates:
+        return candidates
+
+    if _looks_like_room_code(cleaned):
+        return [cleaned]
+
+    return []
+
+
+def _looks_like_room_code(value: str) -> bool:
+    compact = re.sub(r"\s+", "", value).upper()
+    if not compact:
+        return False
+    if len(compact) > 10:
+        return False
+
+    if re.fullmatch(r"[A-Z]{1,4}\d{1,4}[A-Z]?", compact):
+        return True
+    if re.fullmatch(r"\d{1,2}[A-Z]\d{0,2}", compact):
+        return True
+    if re.fullmatch(r"[A-Z]\d{1,3}", compact):
+        return True
+    return False
 
 
 def _extract_aulas_from_description(
@@ -227,11 +471,7 @@ def _extract_aula_names_from_text(text: str) -> list[str]:
 
 def _is_direct_aula_candidate(name: str) -> bool:
     lowered = name.casefold()
-    if "aula " not in lowered:
-        return False
-    if any(token in lowered for token in ["convegno societa", "convegno società"]):
-        return True
-    return True
+    return "aula " in lowered
 
 
 def _may_contain_aulas(raw_name: str, folder_name: str | None) -> bool:
@@ -257,6 +497,29 @@ def _canonical_aula_name(name: str) -> str | None:
         return None
 
     return cleaned
+
+
+def _canonical_external_aula_name(name: str | None) -> str | None:
+    cleaned = none_if_empty(collapse_whitespace((name or "").replace("\xa0", " ")))
+    if not cleaned:
+        return None
+
+    lowered = cleaned.casefold()
+    if any(token in lowered for token in NOISE_AULA_TOKENS):
+        return None
+
+    if lowered.startswith("aula "):
+        return _canonical_aula_name(cleaned)
+
+    if "aula " in lowered:
+        match = re.search(r"\bAula\s+[A-Za-z0-9][A-Za-z0-9'()\- ]{0,40}", cleaned, flags=re.IGNORECASE)
+        if match:
+            return _canonical_aula_name(match.group(0))
+
+    if _looks_like_room_code(cleaned):
+        return f"Aula {re.sub(r'\\s+', '', cleaned).upper()}"
+
+    return None
 
 
 def _extract_room_label(name: str) -> str | None:
@@ -296,7 +559,74 @@ def _extract_building_hint(text: str) -> str | None:
     if cubi_match:
         return f"Cubi {cubi_match.group(1).upper()}"
 
+    if re.search(r"\bPolifunzionale\s+(Ovest|Est)\b", text, flags=re.IGNORECASE):
+        match = re.search(r"\bPolifunzionale\s+(Ovest|Est)\b", text, flags=re.IGNORECASE)
+        if match:
+            return f"Polifunzionale {match.group(1).capitalize()}"
+
     return None
+
+
+def _extract_floor_label(text: str) -> str | None:
+    cleaned = collapse_whitespace(text)
+    if not cleaned:
+        return None
+
+    lowered = cleaned.casefold()
+    for label in FLOOR_LABELS:
+        if label.casefold() in lowered:
+            return label
+
+    word_match = re.search(
+        r"\b(terra|primo|secondo|terzo|quarto|quinto|sesto|settimo)\s+piano\b",
+        lowered,
+    )
+    if word_match:
+        label = FLOOR_WORD_TO_LABEL.get(word_match.group(1))
+        if label:
+            return label
+
+    numeric_match = re.search(r"\bpiano\s+([ivxlcdm]+|[0-9]+)\b", lowered)
+    if not numeric_match:
+        return None
+
+    value = numeric_match.group(1)
+    numeric_value: int | None = None
+    if value.isdigit():
+        numeric_value = int(value)
+    else:
+        numeric_value = _roman_to_int(value.upper())
+
+    if numeric_value is None:
+        return None
+    if numeric_value == 0:
+        return "Piano Terra"
+    by_index = {
+        1: "Primo piano",
+        2: "Secondo piano",
+        3: "Terzo piano",
+        4: "Quarto piano",
+        5: "Quinto piano",
+        6: "Sesto piano",
+        7: "Settimo piano",
+    }
+    return by_index.get(numeric_value)
+
+
+def _roman_to_int(value: str) -> int | None:
+    values = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+    total = 0
+    previous = 0
+    for char in reversed(value):
+        current = values.get(char)
+        if current is None:
+            return None
+        if current < previous:
+            total -= current
+        else:
+            total += current
+            previous = current
+    return total
 
 
 def _normalize_floor_label(value: str) -> str:
@@ -324,6 +654,34 @@ def _extract_first_coordinates(placemark: ET.Element) -> tuple[float, float] | N
     except ValueError:
         return None
     return lng, lat
+
+
+def _load_json_array(payload: str | None) -> list[dict[str, object]]:
+    if not payload:
+        return []
+
+    try:
+        parsed = json.loads(payload)
+    except json.JSONDecodeError:
+        return []
+
+    if not isinstance(parsed, list):
+        return []
+    return [item for item in parsed if isinstance(item, dict)]
+
+
+def _load_json_object(payload: str | None) -> dict[str, object] | None:
+    if not payload:
+        return None
+
+    try:
+        parsed = json.loads(payload)
+    except json.JSONDecodeError:
+        return None
+
+    if isinstance(parsed, dict):
+        return parsed
+    return None
 
 
 def _normalize_text(value: str | None) -> str | None:

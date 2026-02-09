@@ -1,15 +1,15 @@
 {
   "coverage": {
     "aulas": {
-      "total": 4,
-      "with_building_id": 4,
-      "with_building_id_ratio": 1.0,
-      "with_floor": 2,
-      "with_floor_ratio": 0.5,
-      "with_place_id": 4,
+      "total": 90,
+      "with_building_id": 62,
+      "with_building_id_ratio": 0.6889,
+      "with_floor": 20,
+      "with_floor_ratio": 0.2222,
+      "with_place_id": 90,
       "with_place_id_ratio": 1.0,
-      "with_short_code": 2,
-      "with_short_code_ratio": 0.5
+      "with_short_code": 46,
+      "with_short_code_ratio": 0.5111
     },
     "buildings": {
       "total": 137,
@@ -37,14 +37,14 @@
       "with_office_place_id_ratio": 0.0
     },
     "places": {
-      "total": 31,
-      "type_aula": 4,
-      "type_aula_ratio": 0.129,
-      "with_building_id": 26,
-      "with_building_id_ratio": 0.8387
+      "total": 117,
+      "type_aula": 90,
+      "type_aula_ratio": 0.7692,
+      "with_building_id": 84,
+      "with_building_id_ratio": 0.7179
     }
   },
-  "generated_at": "2026-02-09T16:00:16.165138+00:00",
+  "generated_at": "2026-02-09T16:23:28.860982+00:00",
   "integrity": {
     "issues": []
   },
