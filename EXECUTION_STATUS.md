@@ -15,8 +15,8 @@ Owner: Elrond89
 - Integrity: no issues
 - Dataset baseline:
   - `buildings.json`: 137 records
-  - `places.json`: 31 records
-  - `aulas.json`: 90 records
+  - `places.json`: 154 records of type `AULA` (plus services/offices)
+  - `aulas.json`: 154 records
   - `departments.json`: 14 records
   - `people.json`: 4140 records
 
@@ -28,12 +28,12 @@ Owner: Elrond89
 | Departments extraction | done | Elrond89 | Extracted and normalized |
 | Buildings extraction (cubi + others) | done | Elrond89 | Campus map extraction complete |
 | Services/places extraction | done | Elrond89 | Services + museum split implemented |
-| Aule extraction/search (variable naming use case) | done | Elrond89 | Multi-source pass active (map KML + department tables + planner public API), `aulas.json` + AULA entries in `places.json` |
+| Aule extraction/search (variable naming use case) | done | Elrond89 | Multi-source pass active (map KML + department tables + planner public API incl. `Impegni/getImpegniPublic`), `aulas.json` + AULA entries in `places.json` |
 | Coordinates completion | done | Elrond89 | Building coordinates currently complete |
 | Coverage/integrity expansion | done | Elrond89 | Report includes `buildings`/`places`/`aulas` metrics and integrity checks |
 
 ## Technical Debt / Issues
-- Planner public endpoint currently exposes max 100 records per call; broader timetable coverage still needs additional calendar-link enumeration.
+- `Aule/getPerAutoCompletePublic` remains capped at 100, but bypass implemented via `Impegni/getImpegniPublic` (date-window based), so coverage now depends on selected public time window.
 - Some service entities remain intentionally non-linkable (`building_id = null`) because they are virtual or multi-site.
 - `search_tokens` for aulas are generated, but `aliases.json` is still empty and can be populated for stronger query recall.
 
@@ -44,6 +44,7 @@ Owner: Elrond89
 - 2026-02-09: Add explicit `AULA` workstream for variable-name lookup with building + level context.
 - 2026-02-09: Implemented `crawl aulas` from official UNICAL map KML + floor-level aula parsing from placemark descriptions.
 - 2026-02-09: Expanded `crawl aulas` to include department structure tables and planner public API enrichment.
+- 2026-02-09: Added planner public impegni pass to bypass 100-result aula autocomplete cap.
 
 ## Blockers
 - No hard blockers at this checkpoint.

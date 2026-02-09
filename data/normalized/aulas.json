@@ -1,7 +1,7 @@
 [
   {
     "aula_id": "aula-1-seminari",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "AULA 1 - Seminari",
     "normalized_name": "aula 1 - seminari",
     "place_id": "aula-1-seminari",
@@ -17,7 +17,7 @@
   },
   {
     "aula_id": "aula-13",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 13",
     "normalized_name": "aula 13",
     "place_id": "aula-13",
@@ -32,7 +32,7 @@
   },
   {
     "aula_id": "aula-14",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 14",
     "normalized_name": "aula 14",
     "place_id": "aula-14",
@@ -47,7 +47,7 @@
   },
   {
     "aula_id": "aula-15",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 15",
     "normalized_name": "aula 15",
     "place_id": "aula-15",
@@ -62,7 +62,7 @@
   },
   {
     "aula_id": "aula-20",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 20",
     "normalized_name": "aula 20",
     "place_id": "aula-20",
@@ -77,7 +77,7 @@
   },
   {
     "aula_id": "aula-21",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 21",
     "normalized_name": "aula 21",
     "place_id": "aula-21",
@@ -92,7 +92,7 @@
   },
   {
     "aula_id": "aula-25",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 25",
     "normalized_name": "aula 25",
     "place_id": "aula-25",
@@ -108,7 +108,7 @@
   {
     "aula_id": "aula-32b1-cubo-32b",
     "building_id": "cubo-32b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 32B1",
     "normalized_name": "aula 32b1",
     "place_id": "aula-32b1-cubo-32b",
@@ -125,7 +125,7 @@
   {
     "aula_id": "aula-32b2-cubo-32b",
     "building_id": "cubo-32b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 32B2",
     "normalized_name": "aula 32b2",
     "place_id": "aula-32b2-cubo-32b",
@@ -142,7 +142,7 @@
   {
     "aula_id": "aula-32b3-cubo-32b",
     "building_id": "cubo-32b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 32B3",
     "normalized_name": "aula 32b3",
     "place_id": "aula-32b3-cubo-32b",
@@ -157,8 +157,127 @@
     "source_url": "https://www2.dimes.unical.it/it/content/aule-dipartimento"
   },
   {
+    "aula_id": "aula-32c2-cubo-32c",
+    "building_id": "cubo-32c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 32C2",
+    "normalized_name": "aula 32c2",
+    "place_id": "aula-32c2-cubo-32c",
+    "room": "32C2",
+    "search_tokens": [
+      "32c2",
+      "aula-32c2",
+      "aula32c2",
+      "cubo-32c"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-32c3-cubo-32c",
+    "building_id": "cubo-32c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 32C3",
+    "normalized_name": "aula 32c3",
+    "place_id": "aula-32c3-cubo-32c",
+    "room": "32C3",
+    "search_tokens": [
+      "32c3",
+      "aula-32c3",
+      "aula32c3",
+      "cubo-32c"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-40c2-cubo-40c",
+    "building_id": "cubo-40c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 40C2",
+    "normalized_name": "aula 40c2",
+    "place_id": "aula-40c2-cubo-40c",
+    "room": "40C2",
+    "search_tokens": [
+      "40c2",
+      "aula-40c2",
+      "aula40c2",
+      "cubo-40c"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-43b2-cubo-43b",
+    "building_id": "cubo-43b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 43B2",
+    "normalized_name": "aula 43b2",
+    "place_id": "aula-43b2-cubo-43b",
+    "room": "43B2",
+    "search_tokens": [
+      "43b2",
+      "aula-43b2",
+      "aula43b2",
+      "cubo-43b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-43b3-cubo-43b",
+    "building_id": "cubo-43b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 43B3",
+    "normalized_name": "aula 43b3",
+    "place_id": "aula-43b3-cubo-43b",
+    "room": "43B3",
+    "search_tokens": [
+      "43b3",
+      "aula-43b3",
+      "aula43b3",
+      "cubo-43b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-43c2-cubo-43c",
+    "building_id": "cubo-43c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 43C2",
+    "normalized_name": "aula 43c2",
+    "place_id": "aula-43c2-cubo-43c",
+    "room": "43C2",
+    "search_tokens": [
+      "43c2",
+      "aula-43c2",
+      "aula43c2",
+      "cubo-43c"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-43c3-cubo-43c",
+    "building_id": "cubo-43c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 43C3",
+    "normalized_name": "aula 43c3",
+    "place_id": "aula-43c3-cubo-43c",
+    "room": "43C3",
+    "search_tokens": [
+      "43c3",
+      "aula-43c3",
+      "aula43c3",
+      "cubo-43c"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-45",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 45",
     "normalized_name": "aula 45",
     "place_id": "aula-45",
@@ -172,8 +291,59 @@
     "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-45b01-cubo-45b",
+    "building_id": "cubo-45b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 45B01",
+    "normalized_name": "aula 45b01",
+    "place_id": "aula-45b01-cubo-45b",
+    "room": "45B01",
+    "search_tokens": [
+      "45b01",
+      "aula-45b01",
+      "aula45b01",
+      "cubo-45b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-45b02-cubo-45b",
+    "building_id": "cubo-45b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 45B02",
+    "normalized_name": "aula 45b02",
+    "place_id": "aula-45b02-cubo-45b",
+    "room": "45B02",
+    "search_tokens": [
+      "45b02",
+      "aula-45b02",
+      "aula45b02",
+      "cubo-45b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-45b03-cubo-45b",
+    "building_id": "cubo-45b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 45B03",
+    "normalized_name": "aula 45b03",
+    "place_id": "aula-45b03-cubo-45b",
+    "room": "45B03",
+    "search_tokens": [
+      "45b03",
+      "aula-45b03",
+      "aula45b03",
+      "cubo-45b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-46",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 46",
     "normalized_name": "aula 46",
     "place_id": "aula-46",
@@ -188,7 +358,7 @@
   },
   {
     "aula_id": "aula-52",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 52",
     "normalized_name": "aula 52",
     "place_id": "aula-52",
@@ -203,7 +373,7 @@
   },
   {
     "aula_id": "aula-53",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula 53",
     "normalized_name": "aula 53",
     "place_id": "aula-53",
@@ -217,10 +387,78 @@
     "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-5b2-cubo-5b",
+    "building_id": "cubo-5b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 5B2",
+    "normalized_name": "aula 5b2",
+    "place_id": "aula-5b2-cubo-5b",
+    "room": "5B2",
+    "search_tokens": [
+      "5b2",
+      "aula-5b2",
+      "aula5b2",
+      "cubo-5b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-5c2-cubo-5c",
+    "building_id": "cubo-5c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula 5C2",
+    "normalized_name": "aula 5c2",
+    "place_id": "aula-5c2-cubo-5c",
+    "room": "5C2",
+    "search_tokens": [
+      "5c2",
+      "aula-5c2",
+      "aula5c2",
+      "cubo-5c"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-a-cubo-15b",
+    "building_id": "cubo-15b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula A",
+    "normalized_name": "aula a",
+    "place_id": "aula-a-cubo-15b",
+    "room": "A",
+    "search_tokens": [
+      "a",
+      "aula-a",
+      "aulaa",
+      "cubo-15b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-a-cubo-20b",
+    "building_id": "cubo-20b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA A",
+    "normalized_name": "aula a",
+    "place_id": "aula-a-cubo-20b",
+    "room": "A",
+    "search_tokens": [
+      "a",
+      "aula-a",
+      "aulaa",
+      "cubo-20b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-a-cubo-31c",
     "building_id": "cubo-31c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula A",
     "normalized_name": "aula a",
     "place_id": "aula-a-cubo-31c",
@@ -238,7 +476,7 @@
     "aula_id": "aula-ag-cubo-40c",
     "building_id": "cubo-40c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula A G",
     "normalized_name": "aula a g",
     "place_id": "aula-ag-cubo-40c",
@@ -255,9 +493,77 @@
     "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
   },
   {
+    "aula_id": "aula-apollo-cubo-18b",
+    "building_id": "cubo-18b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA APOLLO",
+    "normalized_name": "aula apollo",
+    "place_id": "aula-apollo-cubo-18b",
+    "room": "APOLLO",
+    "search_tokens": [
+      "apollo",
+      "aula-apollo",
+      "aulaapollo",
+      "cubo-18b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-arancio-cubo-17a",
+    "building_id": "cubo-17a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Arancio",
+    "normalized_name": "aula arancio",
+    "place_id": "aula-arancio-cubo-17a",
+    "room": "Arancio",
+    "search_tokens": [
+      "arancio",
+      "aula-arancio",
+      "aulaarancio",
+      "cubo-17a"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-arrighi-cubo-0b",
+    "building_id": "cubo-0b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Arrighi",
+    "normalized_name": "aula arrighi",
+    "place_id": "aula-arrighi-cubo-0b",
+    "room": "Arrighi",
+    "search_tokens": [
+      "arrighi",
+      "aula-arrighi",
+      "aulaarrighi",
+      "cubo-0b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-athena-cubo-18b",
+    "building_id": "cubo-18b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA ATHENA",
+    "normalized_name": "aula athena",
+    "place_id": "aula-athena-cubo-18b",
+    "room": "ATHENA",
+    "search_tokens": [
+      "athena",
+      "aula-athena",
+      "aulaathena",
+      "cubo-18b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-automatica-cubo-42c",
     "building_id": "cubo-42c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Automatica",
     "normalized_name": "aula automatica",
     "place_id": "aula-automatica-cubo-42c",
@@ -272,9 +578,24 @@
     "source_url": "https://www2.dimes.unical.it/it/content/aule-dipartimento"
   },
   {
+    "aula_id": "aula-b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula B",
+    "normalized_name": "aula b",
+    "place_id": "aula-b",
+    "room": "B",
+    "search_tokens": [
+      "aula-b",
+      "aulab",
+      "b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-b-cubo-15b",
     "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula B",
     "normalized_name": "aula b",
     "place_id": "aula-b-cubo-15b",
@@ -289,10 +610,27 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-b-cubo-20b",
+    "building_id": "cubo-20b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA B",
+    "normalized_name": "aula b",
+    "place_id": "aula-b-cubo-20b",
+    "room": "B",
+    "search_tokens": [
+      "aula-b",
+      "aulab",
+      "b",
+      "cubo-20b"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-b-cubo-31c",
     "building_id": "cubo-31c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula B",
     "normalized_name": "aula b",
     "place_id": "aula-b-cubo-31c",
@@ -307,10 +645,61 @@
     "source_url": "https://fisica.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-b6-cubo-4d",
+    "building_id": "cubo-4d",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula B6",
+    "normalized_name": "aula b6",
+    "place_id": "aula-b6-cubo-4d",
+    "room": "B6",
+    "search_tokens": [
+      "aula-b6",
+      "aulab6",
+      "b6",
+      "cubo-4d"
+    ],
+    "short_code": "B6",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-bianca-cubo-17a",
+    "building_id": "cubo-17a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Bianca",
+    "normalized_name": "aula bianca",
+    "place_id": "aula-bianca-cubo-17a",
+    "room": "Bianca",
+    "search_tokens": [
+      "aula-bianca",
+      "aulabianca",
+      "bianca",
+      "cubo-17a"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-blu",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Blu",
+    "normalized_name": "aula blu",
+    "place_id": "aula-blu",
+    "room": "Blu",
+    "search_tokens": [
+      "aula-blu",
+      "aulablu",
+      "blu"
+    ],
+    "short_code": "BLU",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-bp-cubo-43c",
     "building_id": "cubo-43c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula B P",
     "normalized_name": "aula b p",
     "place_id": "aula-bp-cubo-43c",
@@ -330,7 +719,7 @@
     "aula_id": "aula-c1-cubo-32c",
     "building_id": "cubo-32c",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula C1",
     "normalized_name": "aula c1",
     "place_id": "aula-c1-cubo-32c",
@@ -349,7 +738,7 @@
     "aula_id": "aula-c2-cubo-32c",
     "building_id": "cubo-32c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula C2",
     "normalized_name": "aula c2",
     "place_id": "aula-c2-cubo-32c",
@@ -368,7 +757,7 @@
     "aula_id": "aula-c3-cubo-32c",
     "building_id": "cubo-32c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula C3",
     "normalized_name": "aula c3",
     "place_id": "aula-c3-cubo-32c",
@@ -386,7 +775,7 @@
   {
     "aula_id": "aula-caldora-centro-radiotelevisivo",
     "building_id": "centro-radiotelevisivo",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Caldora",
     "normalized_name": "aula caldora",
     "place_id": "aula-caldora-centro-radiotelevisivo",
@@ -401,8 +790,24 @@
     "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
   },
   {
+    "aula_id": "aula-centro-di-simulazione-med-td",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Centro di Simulazione ( MED-TD )",
+    "normalized_name": "aula centro di simulazione ( med-td )",
+    "place_id": "aula-centro-di-simulazione-med-td",
+    "room": "Centro di Simulazione ( MED-TD )",
+    "search_tokens": [
+      "aula-centro-di-simulazione-med-td",
+      "aulacentrodisimulazionemedtd",
+      "centro-di-simulazione-med-td",
+      "centrodisimulazionemedtd"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-circolare",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Circolare",
     "normalized_name": "aula circolare",
     "place_id": "aula-circolare",
@@ -417,7 +822,7 @@
   },
   {
     "aula_id": "aula-cla",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula CLA",
     "normalized_name": "aula cla",
     "place_id": "aula-cla",
@@ -432,10 +837,27 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-corallo-cubo-17a",
+    "building_id": "cubo-17a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Corallo",
+    "normalized_name": "aula corallo",
+    "place_id": "aula-corallo-cubo-17a",
+    "room": "Corallo",
+    "search_tokens": [
+      "aula-corallo",
+      "aulacorallo",
+      "corallo",
+      "cubo-17a"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-d-cubo-31c",
     "building_id": "cubo-31c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula D",
     "normalized_name": "aula d",
     "place_id": "aula-d-cubo-31c",
@@ -450,9 +872,27 @@
     "source_url": "https://fisica.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-di-automatica-cubo-42c",
+    "building_id": "cubo-42c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula di automatica",
+    "normalized_name": "aula di automatica",
+    "place_id": "aula-di-automatica-cubo-42c",
+    "room": "di automatica",
+    "search_tokens": [
+      "aula-di-automatica",
+      "auladiautomatica",
+      "cubo-42c",
+      "di-automatica",
+      "diautomatica"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-didattica-del-giudalab-cubo-42c-8-piano-cubo-42c",
     "building_id": "cubo-42c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Didattica del Giudalab cubo 42C- 8 PIANO",
     "normalized_name": "aula didattica del giudalab cubo 42c- 8 piano",
     "place_id": "aula-didattica-del-giudalab-cubo-42c-8-piano-cubo-42c",
@@ -468,9 +908,27 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-ds4-cubo-41b",
+    "building_id": "cubo-41b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula DS4",
+    "normalized_name": "aula ds4",
+    "place_id": "aula-ds4-cubo-41b",
+    "room": "DS4",
+    "search_tokens": [
+      "aula-ds4",
+      "aulads4",
+      "cubo-41b",
+      "ds4"
+    ],
+    "short_code": "DS4",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-ds5-cubo-41b",
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula DS5",
     "normalized_name": "aula ds5",
     "place_id": "aula-ds5-cubo-41b",
@@ -488,7 +946,7 @@
   {
     "aula_id": "aula-ds6-cubo-41b",
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula DS6",
     "normalized_name": "aula ds6",
     "place_id": "aula-ds6-cubo-41b",
@@ -506,7 +964,7 @@
   {
     "aula_id": "aula-ds7-cubo-41b",
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula DS7",
     "normalized_name": "aula ds7",
     "place_id": "aula-ds7-cubo-41b",
@@ -524,7 +982,7 @@
   {
     "aula_id": "aula-ds8-cubo-41b",
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula DS8",
     "normalized_name": "aula ds8",
     "place_id": "aula-ds8-cubo-41b",
@@ -540,10 +998,27 @@
     "source_url": "https://www2.dimes.unical.it/it/content/aule-dipartimento"
   },
   {
+    "aula_id": "aula-e-cubo-20b",
+    "building_id": "cubo-20b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA E",
+    "normalized_name": "aula e",
+    "place_id": "aula-e-cubo-20b",
+    "room": "E",
+    "search_tokens": [
+      "aula-e",
+      "aulae",
+      "cubo-20b",
+      "e"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-e-cubo-30c",
     "building_id": "cubo-30c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula E",
     "normalized_name": "aula e",
     "place_id": "aula-e-cubo-30c",
@@ -558,9 +1033,45 @@
     "source_url": "https://fisica.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-ep1-cubo-1d",
+    "building_id": "cubo-1d",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula EP1",
+    "normalized_name": "aula ep1",
+    "place_id": "aula-ep1-cubo-1d",
+    "room": "EP1",
+    "search_tokens": [
+      "aula-ep1",
+      "aulaep1",
+      "cubo-1d",
+      "ep1"
+    ],
+    "short_code": "EP1",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-ep6-cubo-1d",
+    "building_id": "cubo-1d",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula EP6",
+    "normalized_name": "aula ep6",
+    "place_id": "aula-ep6-cubo-1d",
+    "room": "EP6",
+    "search_tokens": [
+      "aula-ep6",
+      "aulaep6",
+      "cubo-1d",
+      "ep6"
+    ],
+    "short_code": "EP6",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-f-cubo-15b",
     "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula F",
     "normalized_name": "aula f",
     "place_id": "aula-f-cubo-15b",
@@ -575,18 +1086,34 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-f-cubo-20b",
+    "building_id": "cubo-20b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA F",
+    "normalized_name": "aula f",
+    "place_id": "aula-f-cubo-20b",
+    "room": "F",
+    "search_tokens": [
+      "aula-f",
+      "aulaf",
+      "cubo-20b",
+      "f"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-fis1-cubo-30c",
     "building_id": "cubo-30c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "Aula FIS 1",
-    "normalized_name": "aula fis 1",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula FIS1",
+    "normalized_name": "aula fis1",
     "place_id": "aula-fis1-cubo-30c",
-    "room": "FIS 1",
+    "room": "FIS1",
     "search_tokens": [
-      "aula-fis-1",
+      "aula-fis1",
       "aulafis1",
       "cubo-30c",
-      "fis-1",
       "fis1"
     ],
     "short_code": "FIS1",
@@ -596,16 +1123,15 @@
   {
     "aula_id": "aula-fis2-cubo-30c",
     "building_id": "cubo-30c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "Aula FIS 2",
-    "normalized_name": "aula fis 2",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula FIS2",
+    "normalized_name": "aula fis2",
     "place_id": "aula-fis2-cubo-30c",
-    "room": "FIS 2",
+    "room": "FIS2",
     "search_tokens": [
-      "aula-fis-2",
+      "aula-fis2",
       "aulafis2",
       "cubo-30c",
-      "fis-2",
       "fis2"
     ],
     "short_code": "FIS2",
@@ -615,8 +1141,7 @@
   {
     "aula_id": "aula-fis3-cubo-30c",
     "building_id": "cubo-30c",
-    "floor": "Secondo piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula FIS3",
     "normalized_name": "aula fis3",
     "place_id": "aula-fis3-cubo-30c",
@@ -629,13 +1154,12 @@
     ],
     "short_code": "FIS3",
     "source_id": "unical-aulas",
-    "source_url": "https://fisica.unical.it/dipartimento/organizzazione/strutture/"
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
     "aula_id": "aula-fis4-cubo-30c",
     "building_id": "cubo-30c",
-    "floor": "Secondo piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula FIS4",
     "normalized_name": "aula fis4",
     "place_id": "aula-fis4-cubo-30c",
@@ -648,13 +1172,13 @@
     ],
     "short_code": "FIS4",
     "source_id": "unical-aulas",
-    "source_url": "https://fisica.unical.it/dipartimento/organizzazione/strutture/"
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
     "aula_id": "aula-g-cubo-30c",
     "building_id": "cubo-30c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula G",
     "normalized_name": "aula g",
     "place_id": "aula-g-cubo-30c",
@@ -670,7 +1194,7 @@
   },
   {
     "aula_id": "aula-g1",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula G1",
     "normalized_name": "aula g1",
     "place_id": "aula-g1",
@@ -686,7 +1210,7 @@
   },
   {
     "aula_id": "aula-g2",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula G2",
     "normalized_name": "aula g2",
     "place_id": "aula-g2",
@@ -702,7 +1226,7 @@
   },
   {
     "aula_id": "aula-g3",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula G3",
     "normalized_name": "aula g3",
     "place_id": "aula-g3",
@@ -718,7 +1242,7 @@
   },
   {
     "aula_id": "aula-g4",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula G4",
     "normalized_name": "aula g4",
     "place_id": "aula-g4",
@@ -734,7 +1258,7 @@
   },
   {
     "aula_id": "aula-gialla",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Gialla",
     "normalized_name": "aula gialla",
     "place_id": "aula-gialla",
@@ -748,10 +1272,42 @@
     "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-gialla-a-superiore",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Gialla - A (superiore)",
+    "normalized_name": "aula gialla - a (superiore)",
+    "place_id": "aula-gialla-a-superiore",
+    "room": "Gialla - A (superiore)",
+    "search_tokens": [
+      "aula-gialla-a-superiore",
+      "aulagiallaasuperiore",
+      "gialla-a-superiore",
+      "giallaasuperiore"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-gialla-b-inferiore",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Gialla - B (inferiore)",
+    "normalized_name": "aula gialla - b (inferiore)",
+    "place_id": "aula-gialla-b-inferiore",
+    "room": "Gialla - B (inferiore)",
+    "search_tokens": [
+      "aula-gialla-b-inferiore",
+      "aulagiallabinferiore",
+      "gialla-b-inferiore",
+      "giallabinferiore"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-gialla-cubo-0b",
     "building_id": "cubo-0b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Gialla",
     "normalized_name": "aula gialla",
     "place_id": "aula-gialla-cubo-0b",
@@ -766,9 +1322,26 @@
     "source_url": "https://dispes.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-gialla-cubo-17a",
+    "building_id": "cubo-17a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Gialla",
+    "normalized_name": "aula gialla",
+    "place_id": "aula-gialla-cubo-17a",
+    "room": "Gialla",
+    "search_tokens": [
+      "aula-gialla",
+      "aulagialla",
+      "cubo-17a",
+      "gialla"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-giannattasio-cubo-46b",
     "building_id": "cubo-46b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Giannattasio",
     "normalized_name": "aula giannattasio",
     "place_id": "aula-giannattasio-cubo-46b",
@@ -784,7 +1357,7 @@
   },
   {
     "aula_id": "aula-h1",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula H1",
     "normalized_name": "aula h1",
     "place_id": "aula-h1",
@@ -800,7 +1373,7 @@
   },
   {
     "aula_id": "aula-h2",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula H2",
     "normalized_name": "aula h2",
     "place_id": "aula-h2",
@@ -816,7 +1389,7 @@
   },
   {
     "aula_id": "aula-h3",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula H3",
     "normalized_name": "aula h3",
     "place_id": "aula-h3",
@@ -832,7 +1405,7 @@
   },
   {
     "aula_id": "aula-h4",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula H4",
     "normalized_name": "aula h4",
     "place_id": "aula-h4",
@@ -847,9 +1420,27 @@
     "source_url": "https://dispes.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-hera-cubo-18b",
+    "building_id": "cubo-18b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA HERA",
+    "normalized_name": "aula hera",
+    "place_id": "aula-hera-cubo-18b",
+    "room": "HERA",
+    "search_tokens": [
+      "aula-hera",
+      "aulahera",
+      "cubo-18b",
+      "hera"
+    ],
+    "short_code": "HERA",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-i1-cubo-42d",
     "building_id": "cubo-42d",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula I1",
     "normalized_name": "aula i1",
     "place_id": "aula-i1-cubo-42d",
@@ -867,7 +1458,7 @@
   {
     "aula_id": "aula-i2-cubo-42d",
     "building_id": "cubo-42d",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula I2",
     "normalized_name": "aula i2",
     "place_id": "aula-i2-cubo-42d",
@@ -885,7 +1476,7 @@
   {
     "aula_id": "aula-i3-cubo-42d",
     "building_id": "cubo-42d",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula I3",
     "normalized_name": "aula i3",
     "place_id": "aula-i3-cubo-42d",
@@ -903,7 +1494,7 @@
   {
     "aula_id": "aula-informatica-1-cubo-20b",
     "building_id": "cubo-20b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Informatica 1",
     "normalized_name": "aula informatica 1",
     "place_id": "aula-informatica-1-cubo-20b",
@@ -922,7 +1513,7 @@
     "aula_id": "aula-informatica-1-cubo-31c",
     "building_id": "cubo-31c",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Informatica 1",
     "normalized_name": "aula informatica 1",
     "place_id": "aula-informatica-1-cubo-31c",
@@ -938,10 +1529,28 @@
     "source_url": "https://fisica.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-informatica-2-cubo-20b",
+    "building_id": "cubo-20b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Informatica 2",
+    "normalized_name": "aula informatica 2",
+    "place_id": "aula-informatica-2-cubo-20b",
+    "room": "Informatica 2",
+    "search_tokens": [
+      "aula-informatica-2",
+      "aulainformatica2",
+      "cubo-20b",
+      "informatica-2",
+      "informatica2"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-informatica-2-cubo-31c",
     "building_id": "cubo-31c",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Informatica 2",
     "normalized_name": "aula informatica 2",
     "place_id": "aula-informatica-2-cubo-31c",
@@ -960,7 +1569,7 @@
     "aula_id": "aula-informatica-3-cubo-31c",
     "building_id": "cubo-31c",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Informatica 3",
     "normalized_name": "aula informatica 3",
     "place_id": "aula-informatica-3-cubo-31c",
@@ -977,7 +1586,7 @@
   },
   {
     "aula_id": "aula-l1",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula L1",
     "normalized_name": "aula l1",
     "place_id": "aula-l1",
@@ -992,8 +1601,26 @@
     "source_url": "https://dispes.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-l1-cubo-4a",
+    "building_id": "cubo-4a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula L1",
+    "normalized_name": "aula l1",
+    "place_id": "aula-l1-cubo-4a",
+    "room": "L1",
+    "search_tokens": [
+      "aula-l1",
+      "aulal1",
+      "cubo-4a",
+      "l1"
+    ],
+    "short_code": "L1",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-l2",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula L2",
     "normalized_name": "aula l2",
     "place_id": "aula-l2",
@@ -1010,7 +1637,7 @@
   {
     "aula_id": "aula-l2-cubo-4a",
     "building_id": "cubo-4a",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula L2",
     "normalized_name": "aula l2",
     "place_id": "aula-l2-cubo-4a",
@@ -1026,9 +1653,27 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-l3-cubo-4a",
+    "building_id": "cubo-4a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula L3",
+    "normalized_name": "aula l3",
+    "place_id": "aula-l3-cubo-4a",
+    "room": "L3",
+    "search_tokens": [
+      "aula-l3",
+      "aulal3",
+      "cubo-4a",
+      "l3"
+    ],
+    "short_code": "L3",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-l4-cubo-4a",
     "building_id": "cubo-4a",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula L4",
     "normalized_name": "aula l4",
     "place_id": "aula-l4-cubo-4a",
@@ -1044,18 +1689,35 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-lab16c-cubo-16c",
+    "building_id": "cubo-16c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula LAB16C",
+    "normalized_name": "aula lab16c",
+    "place_id": "aula-lab16c-cubo-16c",
+    "room": "LAB16C",
+    "search_tokens": [
+      "aula-lab16c",
+      "aulalab16c",
+      "cubo-16c",
+      "lab16c"
+    ],
+    "short_code": "LAB16C",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-lab30a-cubo-30a",
     "building_id": "cubo-30a",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "Aula LAB 30A",
-    "normalized_name": "aula lab 30a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula LAB30A",
+    "normalized_name": "aula lab30a",
     "place_id": "aula-lab30a-cubo-30a",
-    "room": "LAB 30A",
+    "room": "LAB30A",
     "search_tokens": [
-      "aula-lab-30a",
+      "aula-lab30a",
       "aulalab30a",
       "cubo-30a",
-      "lab-30a",
       "lab30a"
     ],
     "short_code": "LAB30A",
@@ -1063,8 +1725,44 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-lab31a-cubo-31a",
+    "building_id": "cubo-31a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula LAB31A",
+    "normalized_name": "aula lab31a",
+    "place_id": "aula-lab31a-cubo-31a",
+    "room": "LAB31A",
+    "search_tokens": [
+      "aula-lab31a",
+      "aulalab31a",
+      "cubo-31a",
+      "lab31a"
+    ],
+    "short_code": "LAB31A",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-lab31b-cubo-31b",
+    "building_id": "cubo-31b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula LAB31B",
+    "normalized_name": "aula lab31b",
+    "place_id": "aula-lab31b-cubo-31b",
+    "room": "LAB31B",
+    "search_tokens": [
+      "aula-lab31b",
+      "aulalab31b",
+      "cubo-31b",
+      "lab31b"
+    ],
+    "short_code": "LAB31B",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-ls1",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula LS1",
     "normalized_name": "aula ls1",
     "place_id": "aula-ls1",
@@ -1080,7 +1778,7 @@
   },
   {
     "aula_id": "aula-ls3",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula LS3",
     "normalized_name": "aula ls3",
     "place_id": "aula-ls3",
@@ -1095,9 +1793,63 @@
     "source_url": "https://dispes.unical.it/dipartimento/organizzazione/strutture/"
   },
   {
+    "aula_id": "aula-m1-cubo-44c",
+    "building_id": "cubo-44c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula M1",
+    "normalized_name": "aula m1",
+    "place_id": "aula-m1-cubo-44c",
+    "room": "M1",
+    "search_tokens": [
+      "aula-m1",
+      "aulam1",
+      "cubo-44c",
+      "m1"
+    ],
+    "short_code": "M1",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-m2-cubo-44c",
+    "building_id": "cubo-44c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula M2",
+    "normalized_name": "aula m2",
+    "place_id": "aula-m2-cubo-44c",
+    "room": "M2",
+    "search_tokens": [
+      "aula-m2",
+      "aulam2",
+      "cubo-44c",
+      "m2"
+    ],
+    "short_code": "M2",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-m3-cubo-44c",
+    "building_id": "cubo-44c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula M3",
+    "normalized_name": "aula m3",
+    "place_id": "aula-m3-cubo-44c",
+    "room": "M3",
+    "search_tokens": [
+      "aula-m3",
+      "aulam3",
+      "cubo-44c",
+      "m3"
+    ],
+    "short_code": "M3",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-magna",
     "building_id": "aula-magna",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Magna",
     "normalized_name": "aula magna",
     "place_id": "aula-magna",
@@ -1111,9 +1863,42 @@
     "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
   },
   {
+    "aula_id": "aula-marrone-cubo-17a",
+    "building_id": "cubo-17a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA MARRONE",
+    "normalized_name": "aula marrone",
+    "place_id": "aula-marrone-cubo-17a",
+    "room": "MARRONE",
+    "search_tokens": [
+      "aula-marrone",
+      "aulamarrone",
+      "cubo-17a",
+      "marrone"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-medicina-traslazionale",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Medicina Traslazionale",
+    "normalized_name": "aula medicina traslazionale",
+    "place_id": "aula-medicina-traslazionale",
+    "room": "Medicina Traslazionale",
+    "search_tokens": [
+      "aula-medicina-traslazionale",
+      "aulamedicinatraslazionale",
+      "medicina-traslazionale",
+      "medicinatraslazionale"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-mod3-cubo-39c",
     "building_id": "cubo-39c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula MOD3",
     "normalized_name": "aula mod3",
     "place_id": "aula-mod3-cubo-39c",
@@ -1129,9 +1914,27 @@
     "source_url": "https://www2.dimes.unical.it/it/content/aule-dipartimento"
   },
   {
+    "aula_id": "aula-mod3a-cubo-39c",
+    "building_id": "cubo-39c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MOD3A",
+    "normalized_name": "aula mod3a",
+    "place_id": "aula-mod3a-cubo-39c",
+    "room": "MOD3A",
+    "search_tokens": [
+      "aula-mod3a",
+      "aulamod3a",
+      "cubo-39c",
+      "mod3a"
+    ],
+    "short_code": "MOD3A",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-mod4-cubo-39c",
     "building_id": "cubo-39c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula MOD4",
     "normalized_name": "aula mod4",
     "place_id": "aula-mod4-cubo-39c",
@@ -1147,18 +1950,107 @@
     "source_url": "https://www2.dimes.unical.it/it/content/aule-dipartimento"
   },
   {
+    "aula_id": "aula-mod5-cubo-39c",
+    "building_id": "cubo-39c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MOD5",
+    "normalized_name": "aula mod5",
+    "place_id": "aula-mod5-cubo-39c",
+    "room": "MOD5",
+    "search_tokens": [
+      "aula-mod5",
+      "aulamod5",
+      "cubo-39c",
+      "mod5"
+    ],
+    "short_code": "MOD5",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-mt1-cubo-31b",
+    "building_id": "cubo-31b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT1",
+    "normalized_name": "aula mt1",
+    "place_id": "aula-mt1-cubo-31b",
+    "room": "MT1",
+    "search_tokens": [
+      "aula-mt1",
+      "aulamt1",
+      "cubo-31b",
+      "mt1"
+    ],
+    "short_code": "MT1",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-mt10-cubo-30b",
+    "building_id": "cubo-30b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT10",
+    "normalized_name": "aula mt10",
+    "place_id": "aula-mt10-cubo-30b",
+    "room": "MT10",
+    "search_tokens": [
+      "aula-mt10",
+      "aulamt10",
+      "cubo-30b",
+      "mt10"
+    ],
+    "short_code": "MT10",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-mt11-cubo-30b",
+    "building_id": "cubo-30b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT11",
+    "normalized_name": "aula mt11",
+    "place_id": "aula-mt11-cubo-30b",
+    "room": "MT11",
+    "search_tokens": [
+      "aula-mt11",
+      "aulamt11",
+      "cubo-30b",
+      "mt11"
+    ],
+    "short_code": "MT11",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-mt12-cubo-30b",
+    "building_id": "cubo-30b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT12",
+    "normalized_name": "aula mt12",
+    "place_id": "aula-mt12-cubo-30b",
+    "room": "MT12",
+    "search_tokens": [
+      "aula-mt12",
+      "aulamt12",
+      "cubo-30b",
+      "mt12"
+    ],
+    "short_code": "MT12",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-mt13-cubo-31b",
     "building_id": "cubo-31b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "Aula MT 13",
-    "normalized_name": "aula mt 13",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT13",
+    "normalized_name": "aula mt13",
     "place_id": "aula-mt13-cubo-31b",
-    "room": "MT 13",
+    "room": "MT13",
     "search_tokens": [
-      "aula-mt-13",
+      "aula-mt13",
       "aulamt13",
       "cubo-31b",
-      "mt-13",
       "mt13"
     ],
     "short_code": "MT13",
@@ -1168,16 +2060,15 @@
   {
     "aula_id": "aula-mt14-cubo-31b",
     "building_id": "cubo-31b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "Aula MT 14",
-    "normalized_name": "aula mt 14",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT14",
+    "normalized_name": "aula mt14",
     "place_id": "aula-mt14-cubo-31b",
-    "room": "MT 14",
+    "room": "MT14",
     "search_tokens": [
-      "aula-mt-14",
+      "aula-mt14",
       "aulamt14",
       "cubo-31b",
-      "mt-14",
       "mt14"
     ],
     "short_code": "MT14",
@@ -1185,9 +2076,117 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-mt2-cubo-31b",
+    "building_id": "cubo-31b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT2",
+    "normalized_name": "aula mt2",
+    "place_id": "aula-mt2-cubo-31b",
+    "room": "MT2",
+    "search_tokens": [
+      "aula-mt2",
+      "aulamt2",
+      "cubo-31b",
+      "mt2"
+    ],
+    "short_code": "MT2",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-mt23-cubo-31b",
+    "building_id": "cubo-31b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT23",
+    "normalized_name": "aula mt23",
+    "place_id": "aula-mt23-cubo-31b",
+    "room": "MT23",
+    "search_tokens": [
+      "aula-mt23",
+      "aulamt23",
+      "cubo-31b",
+      "mt23"
+    ],
+    "short_code": "MT23",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-mt3-cubo-31b",
+    "building_id": "cubo-31b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT3",
+    "normalized_name": "aula mt3",
+    "place_id": "aula-mt3-cubo-31b",
+    "room": "MT3",
+    "search_tokens": [
+      "aula-mt3",
+      "aulamt3",
+      "cubo-31b",
+      "mt3"
+    ],
+    "short_code": "MT3",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-mt4-cubo-30b",
+    "building_id": "cubo-30b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT4",
+    "normalized_name": "aula mt4",
+    "place_id": "aula-mt4-cubo-30b",
+    "room": "MT4",
+    "search_tokens": [
+      "aula-mt4",
+      "aulamt4",
+      "cubo-30b",
+      "mt4"
+    ],
+    "short_code": "MT4",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-mt5-cubo-31a",
+    "building_id": "cubo-31a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT5",
+    "normalized_name": "aula mt5",
+    "place_id": "aula-mt5-cubo-31a",
+    "room": "MT5",
+    "search_tokens": [
+      "aula-mt5",
+      "aulamt5",
+      "cubo-31a",
+      "mt5"
+    ],
+    "short_code": "MT5",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-mt6-cubo-30b",
+    "building_id": "cubo-30b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula MT6",
+    "normalized_name": "aula mt6",
+    "place_id": "aula-mt6-cubo-30b",
+    "room": "MT6",
+    "search_tokens": [
+      "aula-mt6",
+      "aulamt6",
+      "cubo-30b",
+      "mt6"
+    ],
+    "short_code": "MT6",
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-mt8-cubo-30b",
     "building_id": "cubo-30b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula MT8",
     "normalized_name": "aula mt8",
     "place_id": "aula-mt8-cubo-30b",
@@ -1203,9 +2202,25 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-multimediale-25-c-self-study",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA MULTIMEDIALE 25 C SELF STUDY",
+    "normalized_name": "aula multimediale 25 c self study",
+    "place_id": "aula-multimediale-25-c-self-study",
+    "room": "MULTIMEDIALE 25 C SELF STUDY",
+    "search_tokens": [
+      "aula-multimediale-25-c-self-study",
+      "aulamultimediale25cselfstudy",
+      "multimediale-25-c-self-study",
+      "multimediale25cselfstudy"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-multimediale-piano-1cubo-25c",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Multimediale piano 1°cubo 25C",
     "normalized_name": "aula multimediale piano 1°cubo 25c",
     "place_id": "aula-multimediale-piano-1cubo-25c",
@@ -1221,7 +2236,7 @@
   },
   {
     "aula_id": "aula-orto-botanico",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Orto Botanico",
     "normalized_name": "aula orto botanico",
     "place_id": "aula-orto-botanico",
@@ -1238,7 +2253,7 @@
   {
     "aula_id": "aula-p5-cubo-43b",
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula P5",
     "normalized_name": "aula p5",
     "place_id": "aula-p5-cubo-43b",
@@ -1256,7 +2271,7 @@
   {
     "aula_id": "aula-p6-cubo-43b",
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula P6",
     "normalized_name": "aula p6",
     "place_id": "aula-p6-cubo-43b",
@@ -1274,7 +2289,7 @@
   {
     "aula_id": "aula-restauro-cubo-12b",
     "building_id": "cubo-12b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Restauro",
     "normalized_name": "aula restauro",
     "place_id": "aula-restauro-cubo-12b",
@@ -1289,14 +2304,30 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-seminari-cubo-0c",
+    "building_id": "cubo-0c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA SEMINARI",
+    "normalized_name": "aula seminari",
+    "place_id": "aula-seminari-cubo-0c",
+    "room": "SEMINARI",
+    "search_tokens": [
+      "aula-seminari",
+      "aulaseminari",
+      "cubo-0c",
+      "seminari"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-seminari-cubo-31c",
     "building_id": "cubo-31c",
-    "floor": "Quarto piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "Aula Seminari",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA SEMINARI",
     "normalized_name": "aula seminari",
     "place_id": "aula-seminari-cubo-31c",
-    "room": "Seminari",
+    "room": "SEMINARI",
     "search_tokens": [
       "aula-seminari",
       "aulaseminari",
@@ -1304,12 +2335,12 @@
       "seminari"
     ],
     "source_id": "unical-aulas",
-    "source_url": "https://fisica.unical.it/dipartimento/organizzazione/strutture/"
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
     "aula_id": "aula-seminari-cubo-42c",
     "building_id": "cubo-42c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula Seminari",
     "normalized_name": "aula seminari",
     "place_id": "aula-seminari-cubo-42c",
@@ -1326,7 +2357,7 @@
   {
     "aula_id": "aula-seminari-giannattasio-cubo-45b",
     "building_id": "cubo-45b",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "AULA SEMINARI \"GIANNATTASIO\"",
     "normalized_name": "aula seminari \"giannattasio\"",
     "place_id": "aula-seminari-giannattasio-cubo-45b",
@@ -1342,9 +2373,42 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
+    "aula_id": "aula-seminari-medicina",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Seminari Medicina",
+    "normalized_name": "aula seminari medicina",
+    "place_id": "aula-seminari-medicina",
+    "room": "Seminari Medicina",
+    "search_tokens": [
+      "aula-seminari-medicina",
+      "aulaseminarimedicina",
+      "seminari-medicina",
+      "seminarimedicina"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-senape-cubo-17a",
+    "building_id": "cubo-17a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Senape",
+    "normalized_name": "aula senape",
+    "place_id": "aula-senape-cubo-17a",
+    "room": "Senape",
+    "search_tokens": [
+      "aula-senape",
+      "aulasenape",
+      "cubo-17a",
+      "senape"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
     "aula_id": "aula-ssp1-cubo-1a",
     "building_id": "cubo-1a",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula SSP1",
     "normalized_name": "aula ssp1",
     "place_id": "aula-ssp1-cubo-1a",
@@ -1362,7 +2426,7 @@
   {
     "aula_id": "aula-ssp2-cubo-1a",
     "building_id": "cubo-1a",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula SSP2",
     "normalized_name": "aula ssp2",
     "place_id": "aula-ssp2-cubo-1a",
@@ -1380,7 +2444,7 @@
   {
     "aula_id": "aula-ssp3-cubo-1a",
     "building_id": "cubo-1a",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula SSP3",
     "normalized_name": "aula ssp3",
     "place_id": "aula-ssp3-cubo-1a",
@@ -1398,7 +2462,7 @@
   {
     "aula_id": "aula-ssp4-cubo-1a",
     "building_id": "cubo-1a",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula SSP4",
     "normalized_name": "aula ssp4",
     "place_id": "aula-ssp4-cubo-1a",
@@ -1416,7 +2480,7 @@
   {
     "aula_id": "aula-ssp5-cubo-1a",
     "building_id": "cubo-1a",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "Aula SSP5",
     "normalized_name": "aula ssp5",
     "place_id": "aula-ssp5-cubo-1a",
@@ -1434,16 +2498,15 @@
   {
     "aula_id": "aula-stor2b-cubo-28c",
     "building_id": "cubo-28c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "Aula STOR 2B",
-    "normalized_name": "aula stor 2b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula STOR2B",
+    "normalized_name": "aula stor2b",
     "place_id": "aula-stor2b-cubo-28c",
-    "room": "STOR 2B",
+    "room": "STOR2B",
     "search_tokens": [
-      "aula-stor-2b",
+      "aula-stor2b",
       "aulastor2b",
       "cubo-28c",
-      "stor-2b",
       "stor2b"
     ],
     "short_code": "STOR2B",
@@ -1453,16 +2516,15 @@
   {
     "aula_id": "aula-stor2c-cubo-28c",
     "building_id": "cubo-28c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "Aula STOR 2C",
-    "normalized_name": "aula stor 2c",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula STOR2C",
+    "normalized_name": "aula stor2c",
     "place_id": "aula-stor2c-cubo-28c",
-    "room": "STOR 2C",
+    "room": "STOR2C",
     "search_tokens": [
-      "aula-stor-2c",
+      "aula-stor2c",
       "aulastor2c",
       "cubo-28c",
-      "stor-2c",
       "stor2c"
     ],
     "short_code": "STOR2C",
@@ -1472,7 +2534,7 @@
   {
     "aula_id": "aula-studenti-1-cubo-30c",
     "building_id": "cubo-30c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "AULA STUDENTI 1",
     "normalized_name": "aula studenti 1",
     "place_id": "aula-studenti-1-cubo-30c",
@@ -1490,7 +2552,7 @@
   {
     "aula_id": "aula-studenti-2-cubo-30c",
     "building_id": "cubo-30c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
     "name": "AULA STUDENTI 2",
     "normalized_name": "aula studenti 2",
     "place_id": "aula-studenti-2-cubo-30c",
@@ -1506,57 +2568,87 @@
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
-    "aula_id": "aula-studio-1-cubo-30c",
-    "building_id": "cubo-30c",
-    "floor": "Secondo piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "Aula Studio 1",
-    "normalized_name": "aula studio 1",
-    "place_id": "aula-studio-1-cubo-30c",
-    "room": "Studio 1",
+    "aula_id": "aula-studenti-cubo-30b",
+    "building_id": "cubo-30b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA STUDENTI)",
+    "normalized_name": "aula studenti)",
+    "place_id": "aula-studenti-cubo-30b",
+    "room": "STUDENTI)",
     "search_tokens": [
-      "aula-studio-1",
-      "aulastudio1",
-      "cubo-30c",
-      "studio-1",
-      "studio1"
+      "aula-studenti",
+      "aulastudenti",
+      "cubo-30b",
+      "studenti"
     ],
     "source_id": "unical-aulas",
-    "source_url": "https://fisica.unical.it/dipartimento/organizzazione/strutture/"
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
-    "aula_id": "aula-studio-2-cubo-30c",
-    "building_id": "cubo-30c",
-    "floor": "Secondo piano",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "Aula Studio 2",
-    "normalized_name": "aula studio 2",
-    "place_id": "aula-studio-2-cubo-30c",
-    "room": "Studio 2",
+    "aula_id": "aula-ventura-cubo-18b",
+    "building_id": "cubo-18b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Ventura",
+    "normalized_name": "aula ventura",
+    "place_id": "aula-ventura-cubo-18b",
+    "room": "Ventura",
     "search_tokens": [
-      "aula-studio-2",
-      "aulastudio2",
-      "cubo-30c",
-      "studio-2",
-      "studio2"
+      "aula-ventura",
+      "aulaventura",
+      "cubo-18b",
+      "ventura"
     ],
     "source_id": "unical-aulas",
-    "source_url": "https://fisica.unical.it/dipartimento/organizzazione/strutture/"
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   },
   {
-    "aula_id": "aula-studio-cubo-15c",
-    "building_id": "cubo-15c",
-    "last_verified_at": "2026-02-09T16:22:25.022979+00:00",
-    "name": "AULA STUDIO",
-    "normalized_name": "aula studio",
-    "place_id": "aula-studio-cubo-15c",
-    "room": "STUDIO",
+    "aula_id": "aula-verde",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Verde",
+    "normalized_name": "aula verde",
+    "place_id": "aula-verde",
+    "room": "Verde",
     "search_tokens": [
-      "aula-studio",
-      "aulastudio",
-      "cubo-15c",
-      "studio"
+      "aula-verde",
+      "aulaverde",
+      "verde"
     ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-verde-muschio-cubo-17a",
+    "building_id": "cubo-17a",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "Aula Verde Muschio",
+    "normalized_name": "aula verde muschio",
+    "place_id": "aula-verde-muschio-cubo-17a",
+    "room": "Verde Muschio",
+    "search_tokens": [
+      "aula-verde-muschio",
+      "aulaverdemuschio",
+      "cubo-17a",
+      "verde-muschio",
+      "verdemuschio"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+  },
+  {
+    "aula_id": "aula-zeus-cubo-18b",
+    "building_id": "cubo-18b",
+    "last_verified_at": "2026-02-09T16:42:57.266369+00:00",
+    "name": "AULA ZEUS",
+    "normalized_name": "aula zeus",
+    "place_id": "aula-zeus-cubo-18b",
+    "room": "ZEUS",
+    "search_tokens": [
+      "aula-zeus",
+      "aulazeus",
+      "cubo-18b",
+      "zeus"
+    ],
+    "short_code": "ZEUS",
     "source_id": "unical-aulas",
     "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
   }

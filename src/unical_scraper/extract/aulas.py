@@ -43,6 +43,9 @@ FLOOR_WORD_TO_LABEL = {
     "settimo": "Settimo piano",
 }
 PLANNER_DEFAULT_BASE_URL = "https://unical.prod.up.cineca.it"
+PLANNER_IMPEGNI_START = "2024-01-01"
+PLANNER_IMPEGNI_END = "2027-12-31"
+PLANNER_IMPEGNI_LIMIT = 12000
 DEFAULT_DEPARTMENT_AULA_URLS = (
     "https://fisica.unical.it/dipartimento/organizzazione/strutture/",
     "https://dfssn.unical.it/dipartimento/organizzazione/strutture/",
@@ -53,6 +56,7 @@ DEFAULT_DEPARTMENT_AULA_URLS = (
 NOISE_AULA_TOKENS = (
     "nessun",
     "studio docente",
+    "aula studio",
     "sala riunioni",
     "laboratorio",
     "ufficio",
@@ -80,6 +84,9 @@ def crawl_aulas(
     cache: HtmlCache | None = None,
     department_urls: tuple[str, ...] | list[str] | None = None,
     planner_base_url: str | None = PLANNER_DEFAULT_BASE_URL,
+    planner_impegni_start: str | None = PLANNER_IMPEGNI_START,
+    planner_impegni_end: str | None = PLANNER_IMPEGNI_END,
+    planner_impegni_limit: int = PLANNER_IMPEGNI_LIMIT,
 ) -> list[RawAula]:
     """Crawl aulas from map, department pages and planner public endpoints."""
     aulas: list[RawAula] = []
@@ -89,7 +96,16 @@ def crawl_aulas(
     aulas.extend(_crawl_department_aulas(urls=source_department_urls, client=client, cache=cache))
 
     if planner_base_url:
-        aulas.extend(_crawl_planner_aulas(planner_base_url=planner_base_url, client=client, cache=cache))
+        aulas.extend(
+            _crawl_planner_aulas(
+                planner_base_url=planner_base_url,
+                client=client,
+                cache=cache,
+                impegni_start=planner_impegni_start,
+                impegni_end=planner_impegni_end,
+                impegni_limit=planner_impegni_limit,
+            )
+        )
 
     return _dedupe_aulas(aulas)
 
@@ -129,6 +145,9 @@ def _crawl_planner_aulas(
     planner_base_url: str,
     client: HttpClient,
     cache: HtmlCache | None,
+    impegni_start: str | None,
+    impegni_end: str | None,
+    impegni_limit: int,
 ) -> list[RawAula]:
     base = planner_base_url.rstrip("/")
     source_url = f"{base}/calendar/activities/"
@@ -182,6 +201,76 @@ def _crawl_planner_aulas(
                 building_hint=building_hint,
             )
         )
+
+    if impegni_start and impegni_end and impegni_limit > 0:
+        aulas.extend(
+            _crawl_planner_aulas_from_impegni(
+                planner_base_url=base,
+                impegni_start=impegni_start,
+                impegni_end=impegni_end,
+                impegni_limit=impegni_limit,
+                client=client,
+                cache=cache,
+                source_url=source_url,
+                building_map=edifici_map,
+            )
+        )
+
+    return aulas
+
+
+def _crawl_planner_aulas_from_impegni(
+    planner_base_url: str,
+    impegni_start: str,
+    impegni_end: str,
+    impegni_limit: int,
+    client: HttpClient,
+    cache: HtmlCache | None,
+    source_url: str,
+    building_map: dict[str, str],
+) -> list[RawAula]:
+    impegni_url = (
+        f"{planner_base_url}/api/Impegni/getImpegniPublic"
+        f"?dataInizio={impegni_start}&dataFine={impegni_end}&limit={impegni_limit}"
+    )
+    payload = _try_fetch_html(impegni_url, client=client, cache=cache)
+    if not payload:
+        return []
+
+    aulas: list[RawAula] = []
+    for impegno in _load_json_array(payload):
+        raw_aule = impegno.get("aule")
+        if not isinstance(raw_aule, list):
+            continue
+
+        for item in raw_aule:
+            if not isinstance(item, dict):
+                continue
+
+            descrizione = _normalize_text(str(item.get("descrizione") or ""))
+            codice = _normalize_text(str(item.get("codice") or ""))
+            candidate_name = _canonical_external_aula_name(descrizione or codice)
+            if not candidate_name:
+                continue
+
+            edificio = item.get("edificio")
+            building_hint = None
+            if isinstance(edificio, dict):
+                building_hint = _normalize_text(str(edificio.get("descrizione") or ""))
+            if not building_hint:
+                edificio_id = item.get("edificioId")
+                if isinstance(edificio_id, str):
+                    building_hint = building_map.get(edificio_id)
+
+            aulas.append(
+                RawAula(
+                    name=candidate_name,
+                    source_url=source_url,
+                    room=_extract_room_label(candidate_name),
+                    short_code=_extract_short_code(candidate_name),
+                    building_hint=building_hint,
+                )
+            )
 
     return aulas
 
@@ -517,7 +606,7 @@ def _canonical_external_aula_name(name: str | None) -> str | None:
             return _canonical_aula_name(match.group(0))
 
     if _looks_like_room_code(cleaned):
-        return f"Aula {re.sub(r'\\s+', '', cleaned).upper()}"
+        return f"Aula {re.sub(r'\s+', '', cleaned).upper()}"
 
     return None
 

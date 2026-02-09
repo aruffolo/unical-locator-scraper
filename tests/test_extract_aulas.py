@@ -135,6 +135,29 @@ def test_crawl_aulas_merges_department_and_planner_sources() -> None:
         f"{planner_base_url}/api/Aule/getByIdPublic?id=a3": """
             {"id": "a3", "codice": "AU_777", "descrizione": "P5", "edificioId": "ed2"}
         """,
+        f"{planner_base_url}/api/Impegni/getImpegniPublic?dataInizio=2024-01-01&dataFine=2027-12-31&limit=12000": """
+            [
+              {
+                "id": "imp-1",
+                "aule": [
+                  {
+                    "id": "room-imp",
+                    "codice": "AU_1234",
+                    "descrizione": "MT 10",
+                    "edificioId": "ed2",
+                    "edificio": {"id": "ed2", "descrizione": "Cubo 30C"}
+                  },
+                  {
+                    "id": "room-imp2",
+                    "codice": "AU_9999",
+                    "descrizione": "Sala Consiglio",
+                    "edificioId": "ed1",
+                    "edificio": {"id": "ed1", "descrizione": "Cubo 31B"}
+                  }
+                ]
+              }
+            ]
+        """,
     }
 
     aulas = crawl_aulas(
@@ -148,7 +171,9 @@ def test_crawl_aulas_merges_department_and_planner_sources() -> None:
     assert "Aula P2" in names
     assert "Aula CLA" in names
     assert "Aula P5" in names
+    assert "Aula MT10" in names
     assert "Studio Docente" not in names
+    assert "Aula Sala Consiglio" not in names
 
     aula_p2 = next(item for item in aulas if item.name == "Aula P2")
     assert aula_p2.floor == "Secondo piano"

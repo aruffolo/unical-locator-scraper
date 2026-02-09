@@ -37,3 +37,4 @@ Current aula sources combined by the command:
 - UNICAL campus map (Google My Maps KML)
 - Department structure pages with aula tables
 - Public university planner API (`unical.prod.up.cineca.it`)
+  - includes a public timetable pass via `Impegni/getImpegniPublic` to bypass the 100-item cap of `Aule/getPerAutoCompletePublic`
