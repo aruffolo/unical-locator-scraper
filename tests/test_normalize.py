@@ -1,9 +1,11 @@
 from datetime import datetime, timezone
 
+from unical_scraper.extract.buildings import RawBuilding
 from unical_scraper.extract.departments import RawDepartment
 from unical_scraper.extract.services import RawService
 from unical_scraper.extract.teachers import RawTeacher
 from unical_scraper.transform.normalize import (
+    normalize_buildings,
     normalize_departments,
     normalize_services,
     normalize_teachers,
@@ -89,3 +91,33 @@ def test_normalize_services_produces_places_schema_shape() -> None:
     assert place["email"] == "segreteria@unical.it"
     assert place["source_id"] == "unical-services"
     assert place["last_verified_at"] == "2026-02-09T00:00:00+00:00"
+
+
+def test_normalize_buildings_produces_buildings_schema_shape() -> None:
+    raw = [
+        RawBuilding(
+            name="Cubo 18B - DiCES",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.360596123,
+            lng=16.226684612,
+            description="Dipartimento di Culture, Educazione e Societa",
+        ),
+        RawBuilding(
+            name="Cubo 18B",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.360500000,
+            lng=16.226600000,
+        ),
+    ]
+
+    buildings = normalize_buildings(
+        raw_buildings=raw,
+        verified_at=datetime(2026, 2, 9, tzinfo=timezone.utc),
+    )
+
+    assert len(buildings) == 1
+    building = buildings[0]
+    assert building["building_id"] == "cubo-18b"
+    assert building["name"] == "Cubo 18B"
+    assert building["source_id"] == "unical-campus-map"
+    assert building["last_verified_at"] == "2026-02-09T00:00:00+00:00"

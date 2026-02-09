@@ -1,1 +1,1367 @@
-[]
+[
+  {
+    "building_id": "anfiteatro-polifunzionale",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3561975,
+    "lng": 16.231007,
+    "name": "Anfiteatro polifunzionale",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "auditorium-teatro-grande",
+    "description": "Descrizione: Link informativo: http://www.unical.it/portale/strutture/centri/cams/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Centro arti Musica e Spettacolo CAMS Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3676094,
+    "lng": 16.2254199,
+    "name": "Auditorium Teatro Grande",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "aula-magna",
+    "description": "Descrizione: Aula Magna Beniamino Andreatta Link informativo: http://www.unical.it/portale/campus/centrcongr/ Piano Terra: Aula Magna Primo piano: Sala Stampa Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3583149,
+    "lng": 16.2258276,
+    "name": "Aula Magna",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "aula-magna-convegno-societa-italiana-di-fisica",
+    "description": "Descrizione: Link informativo: Piano Terra: giorni 17-18 Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3581846,
+    "lng": 16.2256829,
+    "name": "Aula Magna - Convegno Società Italiana di Fisica",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cedam-centro-di-educazione-e-documentazione-ambientale",
+    "description": "Descrizione: Link informativo: http://www.unical.it/portale/strutture/centri/cedam/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3390698,
+    "lng": 16.2432043,
+    "name": "CEDAM - Centro di Educazione e Documentazione Ambientale",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "centro-didattico-multifunzionale-centro-materia",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3642552,
+    "lng": 16.2274477,
+    "name": "Centro didattico multifunzionale, Centro Materia",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "centro-editoriale-librario",
+    "description": "Descrizione: Link informativo: http://www.unical.it/portale/strutture/centri/editoriale/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3572126,
+    "lng": 16.2305108,
+    "name": "Centro Editoriale librario",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "centro-radiotelevisivo",
+    "description": "Descrizione: Link informativo: http://www.unical.it/portale/strutture/centri/radiotv/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3556385,
+    "lng": 16.2253797,
+    "name": "Centro Radiotelevisivo",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "centro-sanitario",
+    "description": "P11 - Parcheggio Unical aperto al pubblico",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3634953,
+    "lng": 16.2267932,
+    "name": "Centro Sanitario",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "centro-universitario-sportivo",
+    "description": "Descrizione: Link informativo: http://www.unical.it/portale/strutture/centri/cus/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3539493,
+    "lng": 16.223529,
+    "name": "Centro Universitario Sportivo",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cla-centro-linguistico-d-ateneo",
+    "description": "Descrizione: Link informativo: Piano Terra: CLA Primo piano: CLA Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3619711,
+    "lng": 16.225963,
+    "name": "CLA - Centro Linguistico d'Ateneo",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubi-7-11b",
+    "description": "Descrizione: Cubo 7-11B Uffici Link informativo: Piano Terra: Ufficio protocollo - Erasmus - Career services Primo piano: Secondo piano: URP - Ufficio Relazioni con il Pubblico Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3589972,
+    "lng": 16.2267543,
+    "name": "Cubi 7-11B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubi-8c-9c",
+    "description": "Descrizione: Istituto CNR - ICAR Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3586042,
+    "lng": 16.2262755,
+    "name": "Cubi 8C-9C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-0b",
+    "description": "Descrizione: Dipartimento di Scienze Politiche e Sociali - Department of Political and Social Science Link informativo: http://www.unical.it/portale/strutture/dipartimenti_240/dsps/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3564981,
+    "lng": 16.2270454,
+    "name": "Cubo 0B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-0c",
+    "description": "Descrizione: Dipartimento di Economia, Statistica e Finanza \"Giovanni Anania\" Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3564629,
+    "lng": 16.226584,
+    "name": "Cubo 0C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-11c",
+    "description": "Descrizione: Dipartimento di Scienze Politiche e Sociali - Department of Political and Social Science Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3589226,
+    "lng": 16.2262111,
+    "name": "Cubo 11C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-11d",
+    "description": "Descrizione: Dipartimento di Scienze Politiche e Sociali - Department of Political and Social Science Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3588976,
+    "lng": 16.2259188,
+    "name": "Cubo 11D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-12b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3592181,
+    "lng": 16.226576,
+    "name": "Cubo 12B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-12c",
+    "description": "Descrizione: Dipartimento di Chimica e Tecnologie Chimiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3591818,
+    "lng": 16.2261656,
+    "name": "Cubo 12C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-13c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3594244,
+    "lng": 16.2264123,
+    "name": "Cubo 13C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-14b",
+    "description": "Descrizione: Dipartimento di Biologia, Ecologia e Scienze della Terra Link informativo: http://museopaleo.unical.it/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Museo di Paleontologia Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3596951,
+    "lng": 16.2268187,
+    "name": "Cubo 14B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-14c",
+    "description": "Descrizione: Dipartimento di Chimica e Tecnologie Chimiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3596515,
+    "lng": 16.2263533,
+    "name": "Cubo 14C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-14d",
+    "description": "Descrizione: Dipartimento di Chimica e Tecnologie Chimiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.359607,
+    "lng": 16.2260569,
+    "name": "Cubo 14D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-15a",
+    "description": "Descrizione: Dipartimento di Biologia, Ecologia e Scienze della Terra Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3599263,
+    "lng": 16.2270669,
+    "name": "Cubo 15A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-15b",
+    "description": "Descrizione: Dipartimento di Biologia, Ecologia e Scienze della Terra Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3599273,
+    "lng": 16.2267798,
+    "name": "Cubo 15B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-15c",
+    "description": "Descrizione: Dipartimento di Chimica e Tecnologie Chimiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3598599,
+    "lng": 16.2260718,
+    "name": "Cubo 15C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-15d",
+    "description": "Descrizione: Dipartimento di Chimica e Tecnologie Chimiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3598081,
+    "lng": 16.2257794,
+    "name": "Cubo 15D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-16c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3600756,
+    "lng": 16.2260596,
+    "name": "Cubo 16C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-17a",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3603732,
+    "lng": 16.2269997,
+    "name": "Cubo 17A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-17b",
+    "description": "Descrizione: Dipartimento di Studi Umanistici Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Centro di Eccellenza in Economia e Gestione della Conoscenza Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3603473,
+    "lng": 16.226474,
+    "name": "Cubo 17B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-17c",
+    "description": "Descrizione: Dipartimento di Chimica e Tecnologie Chimiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3603099,
+    "lng": 16.2260127,
+    "name": "Cubo 17C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-17d",
+    "description": "Descrizione: Dipartimento di Chimica e Tecnologie Chimiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.360255,
+    "lng": 16.2257083,
+    "name": "Cubo 17D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-18b",
+    "description": "Descrizione: Dipartimento di Culture, Educazione e Società Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3605961,
+    "lng": 16.2266846,
+    "name": "Cubo 18B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-18c",
+    "description": "Descrizione: Dipartimento di Studi Umanistici Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3605287,
+    "lng": 16.2259751,
+    "name": "Cubo 18C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-18d",
+    "description": "Descrizione: Dipartimento di Chimica e Tecnologie Chimiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3604997,
+    "lng": 16.2259202,
+    "name": "Cubo 18D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-19b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3606075,
+    "lng": 16.226407,
+    "name": "Cubo 19B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-1a",
+    "description": "Descrizione: Dipartimento di Scienze Politiche e Sociali - Department of Political and Social Science Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3567709,
+    "lng": 16.2275376,
+    "name": "Cubo 1A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-1b",
+    "description": "Descrizione: Dipartimento di Scienze Politiche e Sociali - Department of Political and Social Science Link informativo: http://www.unical.it/portale/strutture/centri/womens/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Centro Interdipartimentale di Women's Studies \"Milly Villa\" Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3567481,
+    "lng": 16.2272532,
+    "name": "Cubo 1B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-1c",
+    "description": "Descrizione: Dipartimento di Economia, Statistica e Finanza \"Giovanni Anania\" Link informativo: http://www.unical.it/portale/strutture/dipartimenti_240/disesf/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3567004,
+    "lng": 16.2267892,
+    "name": "Cubo 1C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-1d",
+    "description": "Descrizione: Dipartimento di Economia, Statistica e Finanza \"Giovanni Anania\" Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3564867,
+    "lng": 16.2265237,
+    "name": "Cubo 1D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-20",
+    "description": "descrizione: Dipartimento di Lingue e Scienze dell'Educazione Link portale: http://www.unical.it/portale/strutture/dipartimenti_240/dlse/ Uffici Strutture presenti: altro:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3610209,
+    "lng": 16.2263592,
+    "name": "Cubo 20",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-20a",
+    "description": "Descrizione: Dipartimento di Culture, Educazione e Società Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3610544,
+    "lng": 16.2269018,
+    "name": "Cubo 20A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-20b",
+    "description": "Descrizione: Dipartimento di Culture, Educazione e Società - - DiCES Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3610209,
+    "lng": 16.2263592,
+    "name": "Cubo 20B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-21b",
+    "description": "Descrizione: Dipartimento di Studi Umanistici Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3612837,
+    "lng": 16.2263058,
+    "name": "Cubo 21B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-22b",
+    "description": "Descrizione: (Macro) Area Servizi Informatici e Tecnologici Link informativo: https://www.unical.it/portale/strutture/centri/centroict/serviziict/homeservizicentro/ Piano Terra: Primo piano: (ponte carrabile) HelpDESK, Mappuni, HackLAb Cosenza, Laborario Terzo Livello PON MaTeRiA Secondo piano: Uffici Terzo piano: - Quarto piano (ponte pedonale): - Quinto piano : - Sesto piano (ponte carrabile): - Settimo piano: - Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3614857,
+    "lng": 16.2262461,
+    "name": "Cubo 22B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-23b",
+    "description": "Descrizione: Link informativo: Piano Terra: Cappella Universitaria Primo piano: University Club Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3616289,
+    "lng": 16.2259644,
+    "name": "Cubo 23B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-24b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3618477,
+    "lng": 16.226301,
+    "name": "Cubo 24B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-25b",
+    "description": "Descrizione: Link informativo: Piano Terra: Centrale operativa di vigilanza Primo piano: Ragioneria Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Direzione Generale Quinto piano : Rettorato Sesto piano (ponte carrabile): Rettorato Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3620686,
+    "lng": 16.226458,
+    "name": "Cubo 25B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-27b",
+    "description": "Descrizione: Dipartimento di Studi Umanistici Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3626263,
+    "lng": 16.2263936,
+    "name": "Cubo 27B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-28a",
+    "description": "Descrizione: Dipartimento di Studi Umanistici Link informativo: http://www.csdim.unical.it/ Piano Terra: Primo piano: Centro Servizi Didattici, Informatici e Multimediali Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3628586,
+    "lng": 16.2266362,
+    "name": "Cubo 28A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-28b",
+    "description": "Descrizione: Dipartimento di Studi Umanistici Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3626543,
+    "lng": 16.2263708,
+    "name": "Cubo 28B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-28c",
+    "description": "Descrizione: Dipartimento di Studi Umanistici Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3628078,
+    "lng": 16.2258907,
+    "name": "Cubo 28C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-28d",
+    "description": "Descrizione: Dipartimento di Studi Umanistici Link informativo: http://www.unical.it/portale/strutture/centri/herakles/ Piano Terra: Centro HERAKLES per lo sviluppo del Turismo Culturale Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3627506,
+    "lng": 16.2253514,
+    "name": "Cubo 28D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-29b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3630431,
+    "lng": 16.2260609,
+    "name": "Cubo 29B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-29c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3630058,
+    "lng": 16.2256398,
+    "name": "Cubo 29C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-2b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3569731,
+    "lng": 16.2271957,
+    "name": "Cubo 2B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-2c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3569254,
+    "lng": 16.2267852,
+    "name": "Cubo 2C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-30a",
+    "description": "Descrizione: Dipartimento di Matematica e Informatica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3633118,
+    "lng": 16.2265706,
+    "name": "Cubo 30A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-30b",
+    "description": "Descrizione: Dipartimento di Matematica e Informatica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3632878,
+    "lng": 16.2260342,
+    "name": "Cubo 30B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-30c",
+    "description": "Descrizione: Dipartimento di Fisica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3632453,
+    "lng": 16.2255769,
+    "name": "Cubo 30C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-30d",
+    "description": "Descrizione: Dipartimento di Fisica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3631987,
+    "lng": 16.2252818,
+    "name": "Cubo 30D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-31a",
+    "description": "Descrizione: Dipartimento di Matematica e Informatica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3635409,
+    "lng": 16.2265344,
+    "name": "Cubo 31A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-31b",
+    "description": "Descrizione: Dipartimento di Matematica e Informatica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3635102,
+    "lng": 16.2259966,
+    "name": "Cubo 31B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-31c",
+    "description": "Descrizione: Dipartimento di Fisica - Istituto CNR NANOTEC Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3634621,
+    "lng": 16.2255433,
+    "name": "Cubo 31C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-31d",
+    "description": "Descrizione: Dipartimento di Fisica - Istituto CNR NANOTEC Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3634216,
+    "lng": 16.2252482,
+    "name": "Cubo 31D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-32b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3637493,
+    "lng": 16.2261918,
+    "name": "Cubo 32B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-32c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3635295,
+    "lng": 16.2258008,
+    "name": "Cubo 32C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-33b",
+    "description": "Descrizione: Dipartimento di Fisica - Istituto CNR NANOTEC Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3639566,
+    "lng": 16.2259377,
+    "name": "Cubo 33B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-33c",
+    "description": "Descrizione: Dipartimento di Fisica - Istituto CNR NANOTEC Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3639349,
+    "lng": 16.2257257,
+    "name": "Cubo 33C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-34b",
+    "description": "Descrizione: Centro Sanitario Link informativo: Piano Terra: 118 Primo piano: Guiardia medica Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3641795,
+    "lng": 16.2259008,
+    "name": "Cubo 34B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-37b",
+    "description": "Descrizione: Dipartimento Ingegneria Civile Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3647115,
+    "lng": 16.2260697,
+    "name": "Cubo 37B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-37c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3648266,
+    "lng": 16.2255943,
+    "name": "Cubo 37C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-37d",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.364755,
+    "lng": 16.2250726,
+    "name": "Cubo 37D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-37e",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3647022,
+    "lng": 16.2247708,
+    "name": "Cubo 37E",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-37f",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3647307,
+    "lng": 16.2244724,
+    "name": "Cubo 37F",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-38b",
+    "description": "Descrizione: Dipartimento Ingegneria Civile Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3650733,
+    "lng": 16.2258088,
+    "name": "Cubo 38B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-38cde",
+    "description": "Descrizione: Dipartimento Ingegneria Civile Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3650547,
+    "lng": 16.2255273,
+    "name": "Cubo 38CDE",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-39b",
+    "description": "Descrizione: Dipartimento Ingegneria Civile Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3653326,
+    "lng": 16.2259886,
+    "name": "Cubo 39B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-39c",
+    "description": "Descrizione: Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3652662,
+    "lng": 16.2252912,
+    "name": "Cubo 39C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-3a",
+    "description": "Descrizione: Dipartimento di Scienze Aziendali e Giuridiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3572241,
+    "lng": 16.2274691,
+    "name": "Cubo 3A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-3b",
+    "description": "Descrizione: Dipartimento di Scienze Aziendali e Giuridiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Tonino dodaro Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3571992,
+    "lng": 16.2271822,
+    "name": "Cubo 3B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-3c",
+    "description": "Descrizione: Dipartimento di Scienze Aziendali e Giuridiche Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3571556,
+    "lng": 16.2267343,
+    "name": "Cubo 3C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-3d",
+    "description": "Descrizione: Dipartimento di Economia, Statistica e Finanza \"Giovanni Anania\" Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3571172,
+    "lng": 16.2264258,
+    "name": "Cubo 3D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-40b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3655409,
+    "lng": 16.2259403,
+    "name": "Cubo 40B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-40c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Aula A G. Falcone Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.365487,
+    "lng": 16.2252684,
+    "name": "Cubo 40C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-41a",
+    "description": "Descrizione: Dipartimento di Ingegneria dell'Ambiente Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3658043,
+    "lng": 16.2262005,
+    "name": "Cubo 41A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-41b",
+    "description": "Descrizione: Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3657608,
+    "lng": 16.2256788,
+    "name": "Cubo 41B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-41c",
+    "description": "Descrizione: Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3657504,
+    "lng": 16.2254602,
+    "name": "Cubo 41C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-41d",
+    "description": "Descrizione: Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3656726,
+    "lng": 16.2249023,
+    "name": "Cubo 41D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-41z",
+    "description": "Descrizione: Dipartimento Ingegneria Civile Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3658075,
+    "lng": 16.2262648,
+    "name": "Cubo 41Z",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-42a",
+    "description": "Descrizione: Dipartimento di Ingegneria dell'Ambiente Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3660272,
+    "lng": 16.2261683,
+    "name": "Cubo 42A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-42b",
+    "description": "Descrizione: Dipartimento Ingegneria Civile Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3659816,
+    "lng": 16.2256479,
+    "name": "Cubo 42B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-42c",
+    "description": "Descrizione: Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica - DIMES Link informativo: http://www.unical.it/portale/strutture/dipartimenti_240/dimes/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3659536,
+    "lng": 16.2251758,
+    "name": "Cubo 42C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-42d",
+    "description": "Descrizione: Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3659194,
+    "lng": 16.2251168,
+    "name": "Cubo 42D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-43b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3661942,
+    "lng": 16.2255809,
+    "name": "Cubo 43B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-43c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Aula B P.Borsellino Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3661589,
+    "lng": 16.2251678,
+    "name": "Cubo 43C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-44a",
+    "description": "Descrizione: Dipartimento di Ingegneria dell’Ambiente Link informativo: Dipartimento di Ingegneria per l'Ambiente e il Territorio e Ingegneria Chimica - DIATIC Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3664762,
+    "lng": 16.2261026,
+    "name": "Cubo 44A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-44b",
+    "description": "Descrizione: Dipartimento Ingegneria Civile Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3664388,
+    "lng": 16.2255742,
+    "name": "Cubo 44B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-44c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3663943,
+    "lng": 16.2251088,
+    "name": "Cubo 44C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-44d",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3663527,
+    "lng": 16.2248178,
+    "name": "Cubo 44D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-44z",
+    "description": "Descrizione: Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.366472,
+    "lng": 16.2261535,
+    "name": "Cubo 44Z",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-45a",
+    "description": "Descrizione: Dipartimento di Ingegneria dell'Ambiente Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3667001,
+    "lng": 16.2260771,
+    "name": "Cubo 45A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-45b",
+    "description": "Descrizione: Dipartimento di Ingegneria Civile Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3666856,
+    "lng": 16.2257834,
+    "name": "Cubo 45B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-45c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.366444,
+    "lng": 16.2254159,
+    "name": "Cubo 45C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-45d",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3665777,
+    "lng": 16.224787,
+    "name": "Cubo 45D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-46b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3668981,
+    "lng": 16.2257592,
+    "name": "Cubo 46B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-46c",
+    "description": "Descrizione: Dipartimento di Ingegneria Meccanica, Energetica e Gestionale Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3668598,
+    "lng": 16.2252878,
+    "name": "Cubo 46C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-4a",
+    "description": "Descrizione: Dipartimento di Biologia, Ecologia e Scienze della Terra Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3574429,
+    "lng": 16.2274343,
+    "name": "Cubo 4A",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-4b",
+    "description": "Descrizione: Dipartimento di Biologia, Ecologia e Scienze della Terra Link informativo: http://www.unical.it/portale/strutture/dipartimenti_240/dibest/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3574097,
+    "lng": 16.2269153,
+    "name": "Cubo 4B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-4c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3573666,
+    "lng": 16.2264435,
+    "name": "Cubo 4C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-4d",
+    "description": "Descrizione: Dipartimento di Biologia, Ecologia e Scienze della Terra Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3573526,
+    "lng": 16.2263882,
+    "name": "Cubo 4D",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-5b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3576502,
+    "lng": 16.227099,
+    "name": "Cubo 5B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-5c",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3576067,
+    "lng": 16.2266846,
+    "name": "Cubo 5C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-6b",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3578701,
+    "lng": 16.2268361,
+    "name": "Cubo 6B",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-6c",
+    "description": "Descrizione: Dipartimento di Biologia, Ecologia e Scienze della Terra Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3578254,
+    "lng": 16.2263762,
+    "name": "Cubo 6C",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "cubo-libro",
+    "description": "link: descrizione:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3616973,
+    "lng": 16.2263104,
+    "name": "Cubo LIBRO",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "maisonnettes",
+    "description": "descrizione: Blocco x Piano Terra: link informativo: http://www.unical.it/portale/strutture/centri/residenziale/servizi/alloggi/residenze/maisonnettes/",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3560689,
+    "lng": 16.2239796,
+    "name": "Maisonnettes",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "mensa-maisonnettes",
+    "description": "Mensa Studenti",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3555628,
+    "lng": 16.2249774,
+    "name": "Mensa Maisonnettes",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "mensa-maisonnettes-senior",
+    "description": "Mensa Dipendenti edificio",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3553596,
+    "lng": 16.224677,
+    "name": "Mensa Maisonnettes Senior",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "mensa-martenson",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3621515,
+    "lng": 16.2239622,
+    "name": "Mensa Martenson",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "mensa-martenson-ingresso",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3621494,
+    "lng": 16.2241754,
+    "name": "Mensa Martenson ingresso",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "mensa-studenti-ingresso",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3556873,
+    "lng": 16.225487,
+    "name": "Mensa Studenti ingresso",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "museo-di-paleontologia",
+    "description": "P7 - Parcheggio Unical aperto al pubblico",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3597874,
+    "lng": 16.2277023,
+    "name": "Museo di Paleontologia",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "p11-centro-sanitario",
+    "description": "Area parcheggio",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.363321,
+    "lng": 16.2266457,
+    "name": "P11 Centro Sanitario",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "p4-maisonnettes",
+    "description": "Area parcheggio",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3570768,
+    "lng": 16.2232018,
+    "name": "P4 Maisonnettes",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "p7-museo-di-paleontologia",
+    "description": "Area parcheggio",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3601047,
+    "lng": 16.2267823,
+    "name": "P7 Museo di Paleontologia",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "p9-piazza-rettorato",
+    "description": "Parcheggio Unical aperto al pubblico",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3623443,
+    "lng": 16.2259993,
+    "name": "P9 Piazza Rettorato",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "palestra-1",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3544512,
+    "lng": 16.2248272,
+    "name": "Palestra 1",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "palestra-2",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3539493,
+    "lng": 16.223529,
+    "name": "Palestra 2",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "palestra-cus",
+    "description": "Aule/zone coperte da WiFi: Zona Copertura Outdoor: Punto-Punto",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.353869,
+    "lng": 16.223676,
+    "name": "Palestra CUS",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "piazza-rettorato",
+    "description": "P9 - Parcheggio Unical aperto al pubblico",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3622303,
+    "lng": 16.2257445,
+    "name": "Piazza Rettorato",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "quartiere-blocco-11-e-12",
+    "description": "descrizione: Blocco 11 Piano Terra: link informativo: http://www.unical.it/portale/strutture/centri/residenziale/servizi/alloggi/residenze/blocco11_12/",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3568238,
+    "lng": 16.2227619,
+    "name": "Quartiere Blocco 11 e 12",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "quartiere-monaci",
+    "description": "descrizione: Piano Terra: link informativo: http://www.unical.it/portale/strutture/centri/residenziale/servizi/alloggi/residenze/monaci/",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3616475,
+    "lng": 16.2278661,
+    "name": "Quartiere Monaci",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "quartiere-nervoso",
+    "description": "descrizione: Palazzo A Piano Terra: link informativo: http://www.unical.it/portale/strutture/centri/residenziale/servizi/alloggi/residenze/nervoso/",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3489041,
+    "lng": 16.2442973,
+    "name": "Quartiere Nervoso",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "teatro-all-aperto",
+    "description": "Aule/zone coperte da WiFi: Teatro all'aperto Zona Copertura Outdoor:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3565,
+    "lng": 16.230878,
+    "name": "Teatro all'aperto",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "teatro-piccolo",
+    "description": "Descrizione: Link informativo: Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3578711,
+    "lng": 16.2244919,
+    "name": "Teatro Piccolo",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "uffici-centro-residenziale-e-area-didattica",
+    "description": "Descrizione: Link informativo: http://www.unical.it/portale/strutture/centri/residenziale/ Piano Terra: Archivio Servizi Didatti e Centro Residenziale Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
+    "last_verified_at": "2026-02-09T12:15:34.212018+00:00",
+    "lat": 39.3571059,
+    "lng": 16.2254535,
+    "name": "Uffici Centro Residenziale e Area Didattica",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  }
+]

@@ -1,4 +1,5 @@
 from unical_scraper.transform.ids import (
+    make_building_id,
     make_department_id,
     make_person_id,
     make_place_id,
@@ -21,6 +22,10 @@ def test_make_person_id_falls_back_to_email() -> None:
 
 def test_make_department_id() -> None:
     assert make_department_id("DIMES") == "dimes"
+
+
+def test_make_building_id() -> None:
+    assert make_building_id("Cubo 18B") == "cubo-18b"
 
 
 def test_make_place_id() -> None:

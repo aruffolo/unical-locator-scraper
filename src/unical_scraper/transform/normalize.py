@@ -5,13 +5,15 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+import re
 
+from ..extract.buildings import RawBuilding
 from ..extract.departments import RawDepartment
 from ..extract.services import RawService
 from ..extract.teachers import RawTeacher
 from ..utils.text import collapse_whitespace, none_if_empty
 from .dedupe import dedupe_people
-from .ids import make_department_id, make_person_id, make_place_id
+from .ids import make_building_id, make_department_id, make_person_id, make_place_id
 
 
 def normalize_teachers(
@@ -141,6 +143,59 @@ def normalize_services(
         unique_by_id.setdefault(place["place_id"], place)
 
     return sorted(unique_by_id.values(), key=lambda place: place["place_id"])
+
+
+def normalize_buildings(
+    raw_buildings: list[RawBuilding],
+    source_id: str = "unical-campus-map",
+    verified_at: datetime | None = None,
+) -> list[dict[str, str | float]]:
+    """Convert raw buildings to canonical `buildings.json` records."""
+    if verified_at is None:
+        verified_at = datetime.now(timezone.utc)
+
+    verified_iso = verified_at.isoformat()
+    unique_by_id: dict[str, dict[str, str | float]] = {}
+
+    for raw in raw_buildings:
+        name = _canonical_building_name(raw.name)
+        if not name:
+            continue
+
+        building_id = make_building_id(name)
+        building: dict[str, str | float] = {
+            "building_id": building_id,
+            "name": name,
+            "lat": round(raw.lat, 7),
+            "lng": round(raw.lng, 7),
+            "source_id": source_id,
+            "source_url": raw.source_url,
+            "last_verified_at": verified_iso,
+        }
+        if raw.description:
+            building["description"] = collapse_whitespace(raw.description)
+
+        unique_by_id.setdefault(building_id, building)
+
+    return sorted(unique_by_id.values(), key=lambda item: str(item["building_id"]))
+
+
+def _canonical_building_name(name: str) -> str | None:
+    cleaned = none_if_empty(collapse_whitespace(name.replace("\xa0", " ")))
+    if not cleaned:
+        return None
+
+    match = re.match(r"^(Cubo\s+[0-9A-Z]+|Cubi\s+[0-9A-Z-]+[A-Z]?)(?:\s|-|$)", cleaned, flags=re.IGNORECASE)
+    if match:
+        canonical = collapse_whitespace(match.group(1))
+        if canonical.lower().startswith("cubo "):
+            suffix = canonical.split(" ", maxsplit=1)[1]
+            return f"Cubo {suffix.upper()}"
+        if canonical.lower().startswith("cubi "):
+            suffix = canonical.split(" ", maxsplit=1)[1]
+            return f"Cubi {suffix.upper()}"
+
+    return cleaned
 
 
 def write_json(path: Path, payload: object) -> None:
