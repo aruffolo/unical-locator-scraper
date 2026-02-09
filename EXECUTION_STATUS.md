@@ -15,8 +15,8 @@ Owner: Elrond89
 - Integrity: no issues
 - Dataset baseline:
   - `buildings.json`: 137 records
-  - `places.json`: 154 records of type `AULA` (plus services/offices)
-  - `aulas.json`: 154 records
+  - `places.json`: 335 records of type `AULA` (362 total places)
+  - `aulas.json`: 335 records
   - `departments.json`: 14 records
   - `people.json`: 4140 records
 
@@ -33,7 +33,8 @@ Owner: Elrond89
 | Coverage/integrity expansion | done | Elrond89 | Report includes `buildings`/`places`/`aulas` metrics and integrity checks |
 
 ## Technical Debt / Issues
-- `Aule/getPerAutoCompletePublic` remains capped at 100, but bypass implemented via `Impegni/getImpegniPublic` (date-window based), so coverage now depends on selected public time window.
+- `Aule/getPerAutoCompletePublic` remains capped at 100; extraction now combines wider `Impegni/getImpegniPublic` window and curated public `linkCalendarioId` seeds, but both are still indirectly bounded by planner public API behavior.
+- Curated planner `linkCalendarioId` list requires periodic refresh because departments can rotate links over time.
 - Some service entities remain intentionally non-linkable (`building_id = null`) because they are virtual or multi-site.
 - `search_tokens` for aulas are generated, but `aliases.json` is still empty and can be populated for stronger query recall.
 
@@ -45,6 +46,8 @@ Owner: Elrond89
 - 2026-02-09: Implemented `crawl aulas` from official UNICAL map KML + floor-level aula parsing from placemark descriptions.
 - 2026-02-09: Expanded `crawl aulas` to include department structure tables and planner public API enrichment.
 - 2026-02-09: Added planner public impegni pass to bypass 100-result aula autocomplete cap.
+- 2026-02-09: Expanded planner impegni window (`2020-2030`, limit `20000`) and seeded extraction with curated public `linkCalendarioId` set from department web pass.
+- 2026-02-09: Relaxed planner aula label acceptance (with explicit sports/noise filters) to keep non-standard but valid classroom labels.
 
 ## Blockers
 - No hard blockers at this checkpoint.

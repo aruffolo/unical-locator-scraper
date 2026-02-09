@@ -11,6 +11,7 @@ from urllib.parse import parse_qs, urljoin, urlparse
 
 from bs4 import BeautifulSoup
 
+from .planner_link_ids import CURATED_PUBLIC_LINK_CALENDAR_IDS
 from ..utils.html_cache import HtmlCache
 from ..utils.http import HttpClient
 from ..utils.text import collapse_whitespace, none_if_empty
@@ -43,9 +44,40 @@ FLOOR_WORD_TO_LABEL = {
     "settimo": "Settimo piano",
 }
 PLANNER_DEFAULT_BASE_URL = "https://unical.prod.up.cineca.it"
-PLANNER_IMPEGNI_START = "2024-01-01"
-PLANNER_IMPEGNI_END = "2027-12-31"
-PLANNER_IMPEGNI_LIMIT = 12000
+PLANNER_DEFAULT_CLIENT_ID = "5de6319d4414ab02f80b613a"
+PLANNER_IMPEGNI_START = "2020-01-01"
+PLANNER_IMPEGNI_END = "2030-12-31"
+PLANNER_IMPEGNI_LIMIT = 20000
+PLANNER_CALENDAR_DISCOVERY_SUBDOMAINS = (
+    "dibest",
+    "ctc",
+    "dices",
+    "desf",
+    "dfssn",
+    "fisica",
+    "dinci",
+    "diam",
+    "dimes",
+    "dimeg",
+    "demacs",
+    "discag",
+    "dispes",
+    "disu",
+)
+PLANNER_CALENDAR_DISCOVERY_PATHS = (
+    "/",
+    "/didattica/",
+    "/didattica/frequentare-i-corsi/",
+    "/didattica/iscriversi-studiare-laurearsi/frequentare-i-corsi/",
+    "/didattica/iscriversi-studiare-laurearsi/bacheca-corsi-di-studio/",
+    "/didattica/offerta-formativa/",
+)
+DEFAULT_CALENDAR_DISCOVERY_URLS = tuple(
+    f"https://{subdomain}.unical.it{path}"
+    for subdomain in PLANNER_CALENDAR_DISCOVERY_SUBDOMAINS
+    for path in PLANNER_CALENDAR_DISCOVERY_PATHS
+)
+LINK_CALENDAR_ID_PATTERN = re.compile(r"linkCalendarioId=([0-9a-f]{24})", flags=re.IGNORECASE)
 DEFAULT_DEPARTMENT_AULA_URLS = (
     "https://fisica.unical.it/dipartimento/organizzazione/strutture/",
     "https://dfssn.unical.it/dipartimento/organizzazione/strutture/",
@@ -56,11 +88,14 @@ DEFAULT_DEPARTMENT_AULA_URLS = (
 NOISE_AULA_TOKENS = (
     "nessun",
     "studio docente",
-    "aula studio",
-    "sala riunioni",
-    "laboratorio",
-    "ufficio",
     "help desk",
+    "sala consiglio",
+    "calcio",
+    "tennis",
+    "padel",
+    "palacus",
+    "vibora",
+    "chiodo",
 )
 
 
@@ -84,6 +119,8 @@ def crawl_aulas(
     cache: HtmlCache | None = None,
     department_urls: tuple[str, ...] | list[str] | None = None,
     planner_base_url: str | None = PLANNER_DEFAULT_BASE_URL,
+    planner_client_id: str | None = PLANNER_DEFAULT_CLIENT_ID,
+    planner_calendar_discovery_urls: tuple[str, ...] | list[str] | None = None,
     planner_impegni_start: str | None = PLANNER_IMPEGNI_START,
     planner_impegni_end: str | None = PLANNER_IMPEGNI_END,
     planner_impegni_limit: int = PLANNER_IMPEGNI_LIMIT,
@@ -101,6 +138,10 @@ def crawl_aulas(
                 planner_base_url=planner_base_url,
                 client=client,
                 cache=cache,
+                planner_client_id=planner_client_id,
+                calendar_discovery_urls=tuple(
+                    planner_calendar_discovery_urls or DEFAULT_CALENDAR_DISCOVERY_URLS
+                ),
                 impegni_start=planner_impegni_start,
                 impegni_end=planner_impegni_end,
                 impegni_limit=planner_impegni_limit,
@@ -145,6 +186,8 @@ def _crawl_planner_aulas(
     planner_base_url: str,
     client: HttpClient,
     cache: HtmlCache | None,
+    planner_client_id: str | None,
+    calendar_discovery_urls: tuple[str, ...],
     impegni_start: str | None,
     impegni_end: str | None,
     impegni_limit: int,
@@ -181,7 +224,7 @@ def _crawl_planner_aulas(
 
         descrizione = _normalize_text(str(detail.get("descrizione") or summary.get("descrizione") or ""))
         codice = _normalize_text(str(detail.get("codice") or summary.get("codice") or ""))
-        candidate_name = _canonical_external_aula_name(descrizione or codice)
+        candidate_name = _canonical_planner_aula_name(descrizione or codice)
         if not candidate_name:
             continue
 
@@ -202,6 +245,29 @@ def _crawl_planner_aulas(
             )
         )
 
+    if planner_client_id:
+        link_ids = set(CURATED_PUBLIC_LINK_CALENDAR_IDS)
+        if calendar_discovery_urls:
+            link_ids.update(
+                _discover_calendar_link_ids(
+                    urls=calendar_discovery_urls,
+                    client=client,
+                    cache=cache,
+                )
+            )
+        if link_ids:
+            aulas.extend(
+                _crawl_planner_aulas_from_public_links(
+                    planner_base_url=base,
+                    planner_client_id=planner_client_id,
+                    link_ids=link_ids,
+                    client=client,
+                    cache=cache,
+                    source_url=source_url,
+                    building_map=edifici_map,
+                )
+            )
+
     if impegni_start and impegni_end and impegni_limit > 0:
         aulas.extend(
             _crawl_planner_aulas_from_impegni(
@@ -213,6 +279,54 @@ def _crawl_planner_aulas(
                 cache=cache,
                 source_url=source_url,
                 building_map=edifici_map,
+            )
+        )
+
+    return aulas
+
+
+def _discover_calendar_link_ids(
+    urls: tuple[str, ...],
+    client: HttpClient,
+    cache: HtmlCache | None,
+) -> set[str]:
+    link_ids: set[str] = set()
+    for url in sorted(set(urls)):
+        html_text = _try_fetch_html(url=url, client=client, cache=cache)
+        if not html_text:
+            continue
+        decoded = html.unescape(html_text)
+        for match in LINK_CALENDAR_ID_PATTERN.finditer(decoded):
+            link_ids.add(match.group(1).lower())
+    return link_ids
+
+
+def _crawl_planner_aulas_from_public_links(
+    planner_base_url: str,
+    planner_client_id: str,
+    link_ids: set[str],
+    client: HttpClient,
+    cache: HtmlCache | None,
+    source_url: str,
+    building_map: dict[str, str],
+) -> list[RawAula]:
+    endpoint = f"{planner_base_url}/api/Aule/getAulePerCalendarioPubblico"
+    aulas: list[RawAula] = []
+
+    for link_id in sorted(link_ids):
+        payload = {
+            "linkCalendarioId": link_id,
+            "clienteId": planner_client_id,
+        }
+        response_text = _try_post_json(url=endpoint, payload=payload, client=client)
+        if not response_text:
+            continue
+
+        aulas.extend(
+            _parse_planner_aula_items(
+                payload=response_text,
+                source_url=source_url,
+                building_map=building_map,
             )
         )
 
@@ -249,7 +363,7 @@ def _crawl_planner_aulas_from_impegni(
 
             descrizione = _normalize_text(str(item.get("descrizione") or ""))
             codice = _normalize_text(str(item.get("codice") or ""))
-            candidate_name = _canonical_external_aula_name(descrizione or codice)
+            candidate_name = _canonical_planner_aula_name(descrizione or codice)
             if not candidate_name:
                 continue
 
@@ -272,6 +386,42 @@ def _crawl_planner_aulas_from_impegni(
                 )
             )
 
+    return aulas
+
+
+def _parse_planner_aula_items(
+    payload: str,
+    source_url: str,
+    building_map: dict[str, str],
+) -> list[RawAula]:
+    aulas: list[RawAula] = []
+    for item in _load_json_array(payload):
+        descrizione = _normalize_text(str(item.get("descrizione") or ""))
+        codice = _normalize_text(str(item.get("codice") or ""))
+        candidate_name = _canonical_planner_aula_name(descrizione or codice)
+        if not candidate_name:
+            continue
+
+        edificio = item.get("edificio")
+        building_hint = None
+        if isinstance(edificio, dict):
+            building_hint = _normalize_text(str(edificio.get("descrizione") or ""))
+        if not building_hint:
+            edificio_id = item.get("edificioId")
+            if isinstance(edificio_id, str):
+                building_hint = building_map.get(edificio_id)
+
+        floor = _extract_floor_label(descrizione or "")
+        aulas.append(
+            RawAula(
+                name=candidate_name,
+                source_url=source_url,
+                room=_extract_room_label(candidate_name),
+                short_code=_extract_short_code(candidate_name),
+                floor=floor,
+                building_hint=building_hint,
+            )
+        )
     return aulas
 
 
@@ -321,6 +471,13 @@ def _fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str:
 def _try_fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str | None:
     try:
         return _fetch_html(url, client, cache)
+    except Exception:
+        return None
+
+
+def _try_post_json(url: str, payload: dict[str, object], client: HttpClient) -> str | None:
+    try:
+        return client.post_json(url=url, payload=payload)
     except Exception:
         return None
 
@@ -609,6 +766,28 @@ def _canonical_external_aula_name(name: str | None) -> str | None:
         return f"Aula {re.sub(r'\s+', '', cleaned).upper()}"
 
     return None
+
+
+def _canonical_planner_aula_name(name: str | None) -> str | None:
+    cleaned = none_if_empty(collapse_whitespace((name or "").replace("\xa0", " ")))
+    if not cleaned:
+        return None
+
+    lowered = cleaned.casefold()
+    if any(token in lowered for token in NOISE_AULA_TOKENS):
+        return None
+
+    canonical_external = _canonical_external_aula_name(cleaned)
+    if canonical_external:
+        return canonical_external
+
+    if len(cleaned) > 100:
+        return None
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9 .,_'()/\-]*", cleaned):
+        return None
+
+    # Public planner endpoint already returns aula resources; keep labels as-is.
+    return cleaned
 
 
 def _extract_room_label(name: str) -> str | None:

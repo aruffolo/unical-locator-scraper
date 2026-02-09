@@ -1,14 +1,25 @@
 from __future__ import annotations
 
+import json
+
 from unical_scraper.extract.aulas import crawl_aulas
 
 
 class FakeHttpClient:
-    def __init__(self, pages: dict[str, str]) -> None:
+    def __init__(
+        self,
+        pages: dict[str, str],
+        post_pages: dict[tuple[str, str], str] | None = None,
+    ) -> None:
         self._pages = pages
+        self._post_pages = post_pages or {}
 
     def get_text(self, url: str) -> str:
         return self._pages[url]
+
+    def post_json(self, url: str, payload: dict[str, object]) -> str:
+        key = (url, json.dumps(payload, sort_keys=True))
+        return self._post_pages[key]
 
 
 def test_crawl_aulas_extracts_direct_markers_and_floor_mentions() -> None:
@@ -135,7 +146,7 @@ def test_crawl_aulas_merges_department_and_planner_sources() -> None:
         f"{planner_base_url}/api/Aule/getByIdPublic?id=a3": """
             {"id": "a3", "codice": "AU_777", "descrizione": "P5", "edificioId": "ed2"}
         """,
-        f"{planner_base_url}/api/Impegni/getImpegniPublic?dataInizio=2024-01-01&dataFine=2027-12-31&limit=12000": """
+        f"{planner_base_url}/api/Impegni/getImpegniPublic?dataInizio=2020-01-01&dataFine=2030-12-31&limit=20000": """
             [
               {
                 "id": "imp-1",
@@ -153,27 +164,73 @@ def test_crawl_aulas_merges_department_and_planner_sources() -> None:
                     "descrizione": "Sala Consiglio",
                     "edificioId": "ed1",
                     "edificio": {"id": "ed1", "descrizione": "Cubo 31B"}
+                  },
+                  {
+                    "id": "room-imp3",
+                    "codice": "AU_8888",
+                    "descrizione": "Laboratorio Informatica 1",
+                    "edificioId": "ed1",
+                    "edificio": {"id": "ed1", "descrizione": "Cubo 31B"}
+                  },
+                  {
+                    "id": "room-imp4",
+                    "codice": "AU_7777",
+                    "descrizione": "Vibora Padel Club",
+                    "edificioId": "ed1",
+                    "edificio": {"id": "ed1", "descrizione": "Cubo 31B"}
                   }
                 ]
               }
             ]
         """,
     }
+    post_pages = {
+        (
+            f"{planner_base_url}/api/Aule/getAulePerCalendarioPubblico",
+            json.dumps(
+                {
+                    "linkCalendarioId": "62306d204f9d7f00e457a21c",
+                    "clienteId": "5de6319d4414ab02f80b613a",
+                },
+                sort_keys=True,
+            ),
+        ): """
+            [
+              {
+                "id": "room-link",
+                "codice": "AU_5555",
+                "descrizione": "Aula T1",
+                "edificioId": "ed1"
+              }
+            ]
+        """,
+    }
+    pages["https://ctc.unical.it/didattica/iscriversi-studiare-laurearsi/frequentare-i-corsi/"] = """
+        <html><body>
+          <a href="https://unical.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=62306d204f9d7f00e457a21c">Orario</a>
+        </body></html>
+    """
 
     aulas = crawl_aulas(
         base_url=base_url,
-        client=FakeHttpClient(pages),
+        client=FakeHttpClient(pages, post_pages=post_pages),
         department_urls=(department_url,),
         planner_base_url=planner_base_url,
+        planner_calendar_discovery_urls=(
+            "https://ctc.unical.it/didattica/iscriversi-studiare-laurearsi/frequentare-i-corsi/",
+        ),
     )
 
     names = {item.name for item in aulas}
     assert "Aula P2" in names
     assert "Aula CLA" in names
     assert "Aula P5" in names
+    assert "Aula T1" in names
     assert "Aula MT10" in names
+    assert "Laboratorio Informatica 1" in names
     assert "Studio Docente" not in names
     assert "Aula Sala Consiglio" not in names
+    assert "Vibora Padel Club" not in names
 
     aula_p2 = next(item for item in aulas if item.name == "Aula P2")
     assert aula_p2.floor == "Secondo piano"
