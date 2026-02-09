@@ -91,8 +91,38 @@ def _infer_building_id(place: dict[str, Any], known_building_ids: set[str]) -> s
         if len(matches) == 1:
             return matches[0]
 
+    if "teatri-e-cinema" in lowered or "edificio tau" in lowered:
+        target = "auditorium-teatro-grande"
+        if target in known_building_ids:
+            return target
+
+    if "centro-congressi" in lowered or "aula magna" in lowered:
+        target = "aula-magna"
+        if target in known_building_ids:
+            return target
+
+    if "servizi-ict" in lowered:
+        target = "cubo-22b"
+        if target in known_building_ids:
+            return target
+
     if any(token in lowered for token in ["borse-di-studio", "servizio-foresteria"]):
         target = "uffici-centro-residenziale-e-area-didattica"
+        if target in known_building_ids:
+            return target
+
+    if "servizio-mensa" in lowered:
+        target = "uffici-centro-residenziale-e-area-didattica"
+        if target in known_building_ids:
+            return target
+
+    if "biblioteche" in lowered:
+        target = "cubo-libro"
+        if target in known_building_ids:
+            return target
+
+    if "polo-infanzia" in lowered or "polo d'infanzia" in lowered:
+        target = "auditorium-teatro-grande"
         if target in known_building_ids:
             return target
 

@@ -94,3 +94,63 @@ def test_link_places_to_buildings_links_additional_service_routes() -> None:
     assert linked[1]["building_id"] == "centro-universitario-sportivo"
     assert linked[2]["building_id"] == "cubi-7-11b"
     assert linked[3]["building_id"] == "uffici-centro-residenziale-e-area-didattica"
+
+
+def test_link_places_to_buildings_links_reviewed_web_and_field_routes() -> None:
+    places = [
+        {
+            "place_id": "service-biblioteche",
+            "type": "SERVICE",
+            "name": "Biblioteche",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/",
+        },
+        {
+            "place_id": "service-polo-infanzia",
+            "type": "SERVICE",
+            "name": "Polo Infanzia",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/",
+        },
+        {
+            "place_id": "service-teatri-e-cinema",
+            "type": "SERVICE",
+            "name": "Teatri E Cinema",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/",
+        },
+        {
+            "place_id": "service-centro-congressi",
+            "type": "SERVICE",
+            "name": "Centro Congressi",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/",
+        },
+        {
+            "place_id": "service-servizi-ict",
+            "type": "SERVICE",
+            "name": "Servizi ICT",
+            "source_url": "https://www.unical.it/servizi-ict/servizi-digitali-studenti/",
+        },
+        {
+            "place_id": "service-servizio-mensa",
+            "type": "SERVICE",
+            "name": "Servizio Mensa",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/",
+        },
+    ]
+    buildings = [
+        {"building_id": "cubo-libro", "name": "Cubo LIBRO"},
+        {"building_id": "auditorium-teatro-grande", "name": "Auditorium Teatro Grande"},
+        {"building_id": "aula-magna", "name": "Aula Magna"},
+        {"building_id": "cubo-22b", "name": "Cubo 22B"},
+        {
+            "building_id": "uffici-centro-residenziale-e-area-didattica",
+            "name": "Uffici Centro Residenziale e Area Didattica",
+        },
+    ]
+
+    linked = link_places_to_buildings(places=places, buildings=buildings)
+
+    assert linked[0]["building_id"] == "cubo-libro"
+    assert linked[1]["building_id"] == "auditorium-teatro-grande"
+    assert linked[2]["building_id"] == "auditorium-teatro-grande"
+    assert linked[3]["building_id"] == "aula-magna"
+    assert linked[4]["building_id"] == "cubo-22b"
+    assert linked[5]["building_id"] == "uffici-centro-residenziale-e-area-didattica"

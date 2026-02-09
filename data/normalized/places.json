@@ -13,6 +13,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "cubo-libro",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
     "name": "Biblioteche",
     "opening_hours": "Orari disponibili sulla pagina sorgente",
@@ -23,6 +24,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "aula-magna",
     "description": "L'Ateneo offre alla comunità universitaria e al territorio un sistema di sale convegni attrezzate per lo svolgimento di congressi, conferenze, simposi, mostre, seminari, presentazioni, lectio magistralis, corsi di aggiornamento, convention , career day e giornate di recruitment .",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
     "name": "Centro Congressi",
@@ -110,6 +112,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "auditorium-teatro-grande",
     "description": "Il “Polo d'Infanzia” è stato attivato nel 2012 per favorire la conciliazione dei tempi di vita privata e di lavoro per le famiglie della comunità accademica e, da questo punto di vista, rappresenta ancora oggi una realtà pressoché unica nel territorio.",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
     "name": "Polo Infanzia",
@@ -132,6 +135,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "cubo-22b",
     "description": "Via Pietro Bucci 87036 Rende CS Posta certificata C.F. 80003950781 / P.I. 00419160783",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
     "name": "Servizi ICT",
@@ -166,6 +170,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "La comunità accademica può usufruire del servizio di ristorazione che viene erogato attraverso le cinque mense presenti nel campus universitario, in gestione indiretta, a tariffe differenziate in base al reddito,",
     "email": "direzione.cr@unical.it",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
@@ -197,6 +202,7 @@
   },
   {
     "access_notes": "Sito: https://my.unical.it/",
+    "building_id": "auditorium-teatro-grande",
     "last_verified_at": "2026-02-09T13:50:13.204371+00:00",
     "name": "Teatri E Cinema",
     "place_id": "service-teatri-e-cinema",
