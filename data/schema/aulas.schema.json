@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aulas.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["aula_id", "place_id", "name"],
+    "properties": {
+      "aula_id": { "type": "string", "minLength": 1 },
+      "place_id": { "type": "string", "minLength": 1 },
+      "name": { "type": "string", "minLength": 1 },
+      "normalized_name": { "type": "string", "minLength": 1 },
+      "short_code": { "type": "string", "minLength": 1 },
+      "search_tokens": {
+        "type": "array",
+        "items": { "type": "string", "minLength": 1 }
+      },
+      "building_id": { "type": "string" },
+      "floor": { "type": "string" },
+      "room": { "type": "string" },
+      "department_id": { "type": "string" },
+      "source_id": { "type": "string" },
+      "source_url": { "type": "string" },
+      "last_verified_at": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}

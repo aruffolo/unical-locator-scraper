@@ -29,9 +29,31 @@ def build_coverage_report(
     schema_results: dict[str, list[str]],
     integrity_issues: list[dict[str, str]],
 ) -> dict[str, Any]:
-    """Build a compact report with validation status and people coverage."""
+    """Build a compact report with validation status and dataset coverage."""
+    buildings = _load_array(data_dir / "buildings.json")
+    departments = _load_array(data_dir / "departments.json")
+    places = _load_array(data_dir / "places.json")
+    aulas = _load_array(data_dir / "aulas.json")
     people = _load_array(data_dir / "people.json")
+
+    total_buildings = len(buildings)
+    total_departments = len(departments)
+    total_places = len(places)
+    total_aulas = len(aulas)
     total_people = len(people)
+
+    buildings_with_coordinates = sum(
+        1 for building in buildings if building.get("lat") is not None and building.get("lng") is not None
+    )
+    departments_with_email = sum(1 for department in departments if department.get("email"))
+    departments_with_website = sum(1 for department in departments if department.get("website_url"))
+    departments_with_primary_building = sum(1 for department in departments if department.get("primary_building_id"))
+    places_with_building = sum(1 for place in places if place.get("building_id"))
+    places_type_aula = sum(1 for place in places if place.get("type") == "AULA")
+    aulas_with_place = sum(1 for aula in aulas if aula.get("place_id"))
+    aulas_with_building = sum(1 for aula in aulas if aula.get("building_id"))
+    aulas_with_floor = sum(1 for aula in aulas if aula.get("floor"))
+    aulas_with_short_code = sum(1 for aula in aulas if aula.get("short_code"))
 
     with_email = sum(1 for person in people if person.get("email"))
     with_department = sum(1 for person in people if person.get("department_id"))
@@ -56,6 +78,38 @@ def build_coverage_report(
             "issues": integrity_issues,
         },
         "coverage": {
+            "buildings": {
+                "total": total_buildings,
+                "with_coordinates": buildings_with_coordinates,
+                "with_coordinates_ratio": _ratio(buildings_with_coordinates, total_buildings),
+            },
+            "departments": {
+                "total": total_departments,
+                "with_email": departments_with_email,
+                "with_email_ratio": _ratio(departments_with_email, total_departments),
+                "with_website_url": departments_with_website,
+                "with_website_url_ratio": _ratio(departments_with_website, total_departments),
+                "with_primary_building_id": departments_with_primary_building,
+                "with_primary_building_id_ratio": _ratio(departments_with_primary_building, total_departments),
+            },
+            "places": {
+                "total": total_places,
+                "with_building_id": places_with_building,
+                "with_building_id_ratio": _ratio(places_with_building, total_places),
+                "type_aula": places_type_aula,
+                "type_aula_ratio": _ratio(places_type_aula, total_places),
+            },
+            "aulas": {
+                "total": total_aulas,
+                "with_place_id": aulas_with_place,
+                "with_place_id_ratio": _ratio(aulas_with_place, total_aulas),
+                "with_building_id": aulas_with_building,
+                "with_building_id_ratio": _ratio(aulas_with_building, total_aulas),
+                "with_floor": aulas_with_floor,
+                "with_floor_ratio": _ratio(aulas_with_floor, total_aulas),
+                "with_short_code": aulas_with_short_code,
+                "with_short_code_ratio": _ratio(aulas_with_short_code, total_aulas),
+            },
             "people": {
                 "total": total_people,
                 "with_email": with_email,

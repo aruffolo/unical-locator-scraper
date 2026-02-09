@@ -6,6 +6,10 @@ Starter ETL package for collecting and validating public UNICAL dataset files.
 
 - Schemas: `data/schema/`
 - Normalized datasets: `data/normalized/`
+- Aula contract:
+  - `data/schema/aulas.schema.json`
+  - `data/normalized/aulas.json`
+  - linked by `place_id` to `places.json` entries of type `AULA`
 
 ## Quality Gates
 

@@ -1,5 +1,30 @@
 {
   "coverage": {
+    "aulas": {
+      "total": 0,
+      "with_building_id": 0,
+      "with_building_id_ratio": 0.0,
+      "with_floor": 0,
+      "with_floor_ratio": 0.0,
+      "with_place_id": 0,
+      "with_place_id_ratio": 0.0,
+      "with_short_code": 0,
+      "with_short_code_ratio": 0.0
+    },
+    "buildings": {
+      "total": 137,
+      "with_coordinates": 137,
+      "with_coordinates_ratio": 1.0
+    },
+    "departments": {
+      "total": 14,
+      "with_email": 0,
+      "with_email_ratio": 0.0,
+      "with_primary_building_id": 0,
+      "with_primary_building_id_ratio": 0.0,
+      "with_website_url": 14,
+      "with_website_url_ratio": 1.0
+    },
     "people": {
       "total": 4140,
       "with_department_id": 1332,
@@ -10,15 +35,23 @@
       "with_office_hours_ratio": 0.0,
       "with_office_place_id": 0,
       "with_office_place_id_ratio": 0.0
+    },
+    "places": {
+      "total": 27,
+      "type_aula": 0,
+      "type_aula_ratio": 0.0,
+      "with_building_id": 22,
+      "with_building_id_ratio": 0.8148
     }
   },
-  "generated_at": "2026-02-09T14:52:54.065242+00:00",
+  "generated_at": "2026-02-09T15:07:12.237773+00:00",
   "integrity": {
     "issues": []
   },
   "schema_validation": {
     "datasets": {
       "aliases.json": [],
+      "aulas.json": [],
       "building_entrances.json": [],
       "buildings.json": [],
       "departments.json": [],
@@ -32,6 +65,6 @@
   "summary": {
     "integrity_issues": 0,
     "invalid_datasets": 0,
-    "total_datasets": 9
+    "total_datasets": 10
   }
 }
