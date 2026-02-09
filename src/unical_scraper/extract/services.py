@@ -101,31 +101,10 @@ def _parse_service_links(index_html: str, base_url: str) -> set[str]:
         lower_url = absolute.lower()
         if "lang=" in lower_url or "javascript:" in lower_url:
             continue
-        if not any(
-            token in lower_url
-            for token in [
-                "/campus/servizi/",
-                "/didattica/diritto-allo-studio/",
-                "/servizi-ict",
-                "/campus/vivere-il-campus/",
-                "/servizi/",
-                "/service",
-                "/segreter",
-            ]
-        ):
+        canonical_url = _canonical_service_url(absolute)
+        if not canonical_url:
             continue
-        if any(
-            blocked in lower_url
-            for blocked in [
-                "/contents/news/",
-                "/contents/calendars/",
-                "category_name=",
-                "/feed-rss/",
-                "/web-radio/",
-                "/web-streaming/",
-            ]
-        ):
-            continue
+        lower_url = canonical_url.lower()
 
         lower_text = anchor.get_text(" ", strip=True).lower()
         if any(token in lower_text for token in ["home", "campus", "organizzazione"]):
@@ -149,7 +128,7 @@ def _parse_service_links(index_html: str, base_url: str) -> set[str]:
             ]
         ):
             continue
-        links.add(absolute)
+        links.add(canonical_url)
 
     links.discard(base_url)
     return links
@@ -208,6 +187,10 @@ def _parse_service_cards(index_html: str, source_url: str) -> list[RawService]:
 
 def _parse_service_detail(detail_html: str, source_url: str) -> RawService | None:
     """Parse one service detail page into a `RawService` record."""
+    canonical_source_url = _canonical_service_url(source_url)
+    if not canonical_source_url:
+        return None
+
     soup = BeautifulSoup(detail_html, "html.parser")
 
     name_candidate = None
@@ -258,7 +241,7 @@ def _parse_service_detail(detail_html: str, source_url: str) -> RawService | Non
 
     return RawService(
         name=name_candidate,
-        source_url=source_url,
+        source_url=canonical_source_url,
         service_type=_infer_service_type(name=name_candidate, context=description),
         description=description,
         email=email,
@@ -303,3 +286,69 @@ def _is_noise_name(name: str) -> bool:
             "click day",
         ]
     )
+
+
+def _is_canonical_service_url(url: str) -> bool:
+    return _canonical_service_url(url) is not None
+
+
+def _canonical_service_url(url: str) -> str | None:
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https"}:
+        return None
+
+    path_segments = [segment for segment in parsed.path.split("/") if segment]
+    if not path_segments:
+        return None
+
+    lowered_segments = [segment.casefold() for segment in path_segments]
+    lowered_path = "/".join(lowered_segments)
+
+    blocked_tokens = [
+        "contents",
+        "news",
+        "calendars",
+        "events",
+        "eventi",
+        "archivio",
+        "documentazione",
+        "unicalfesta",
+        "festival",
+        "seminari",
+        "modulistica",
+        "viewer",
+    ]
+    if any(token in lowered_path for token in blocked_tokens):
+        return None
+
+    if lowered_segments[:2] == ["campus", "vivere-il-campus"]:
+        if len(lowered_segments) < 3:
+            return None
+        return _join_path(parsed, lowered_segments[:3])
+    if lowered_segments[:2] == ["campus", "servizi"]:
+        if len(lowered_segments) < 3:
+            return None
+        return _join_path(parsed, lowered_segments[:3])
+    if lowered_segments[:2] == ["didattica", "diritto-allo-studio"]:
+        if len(lowered_segments) < 3:
+            return None
+        return _join_path(parsed, lowered_segments[:3])
+    if lowered_segments[0] == "servizi-ict":
+        if len(lowered_segments) == 1:
+            return _join_path(parsed, lowered_segments[:1])
+        return _join_path(parsed, lowered_segments[:2])
+    if lowered_segments[:2] == ["ateneo", "servizi"]:
+        if len(lowered_segments) < 3:
+            return None
+        return _join_path(parsed, lowered_segments[:3])
+
+    if any(token in lowered_path for token in ["segreter", "servizi", "service", "ufficio"]):
+        capped = lowered_segments[:3]
+        return _join_path(parsed, capped)
+
+    return None
+
+
+def _join_path(parsed_url, segments: list[str]) -> str:
+    canonical_path = "/" + "/".join(segments) + "/"
+    return f"{parsed_url.scheme}://{parsed_url.netloc}{canonical_path}"
