@@ -52,3 +52,17 @@ def make_building_id(name: str) -> str:
 def make_place_id(name: str, place_type: str) -> str:
     """Create stable place IDs from type + canonical name."""
     return stable_slug(f"{place_type.lower()}-{name}")
+
+
+def make_aula_id(name: str, building_id: str | None = None, short_code: str | None = None) -> str:
+    """Create stable aula IDs from best available deterministic tokens."""
+    primary = short_code if short_code else name
+    primary_slug = stable_slug(primary)
+    if primary_slug.startswith("aula-"):
+        primary_slug = primary_slug[len("aula-") :]
+
+    if building_id:
+        if primary_slug == building_id or building_id.endswith(f"-{primary_slug}"):
+            return stable_slug(f"aula-{primary_slug}")
+        return stable_slug(f"aula-{primary_slug}-{building_id}")
+    return stable_slug(f"aula-{primary_slug}")

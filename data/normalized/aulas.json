@@ -1,1 +1,75 @@
-[]
+[
+  {
+    "aula_id": "aula-ag-cubo-40c",
+    "building_id": "cubo-40c",
+    "floor": "Sesto piano",
+    "last_verified_at": "2026-02-09T16:00:11.276033+00:00",
+    "name": "Aula A G",
+    "normalized_name": "aula a g",
+    "place_id": "aula-ag-cubo-40c",
+    "room": "A G",
+    "search_tokens": [
+      "a-g",
+      "ag",
+      "aula-a-g",
+      "aulaag",
+      "cubo-40c"
+    ],
+    "short_code": "AG",
+    "source_id": "unical-aulas",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "aula_id": "aula-bp-cubo-43c",
+    "building_id": "cubo-43c",
+    "floor": "Sesto piano",
+    "last_verified_at": "2026-02-09T16:00:11.276033+00:00",
+    "name": "Aula B P",
+    "normalized_name": "aula b p",
+    "place_id": "aula-bp-cubo-43c",
+    "room": "B P",
+    "search_tokens": [
+      "aula-b-p",
+      "aulabp",
+      "b-p",
+      "bp",
+      "cubo-43c"
+    ],
+    "short_code": "BP",
+    "source_id": "unical-aulas",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "aula_id": "aula-caldora-centro-radiotelevisivo",
+    "building_id": "centro-radiotelevisivo",
+    "last_verified_at": "2026-02-09T16:00:11.276033+00:00",
+    "name": "Aula Caldora",
+    "normalized_name": "aula caldora",
+    "place_id": "aula-caldora-centro-radiotelevisivo",
+    "room": "Caldora",
+    "search_tokens": [
+      "aula-caldora",
+      "aulacaldora",
+      "caldora",
+      "centro-radiotelevisivo"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "aula_id": "aula-magna",
+    "building_id": "aula-magna",
+    "last_verified_at": "2026-02-09T16:00:11.276033+00:00",
+    "name": "Aula Magna",
+    "normalized_name": "aula magna",
+    "place_id": "aula-magna",
+    "room": "Magna",
+    "search_tokens": [
+      "aula-magna",
+      "aulamagna",
+      "magna"
+    ],
+    "source_id": "unical-aulas",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  }
+]

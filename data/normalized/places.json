@@ -1,5 +1,55 @@
 [
   {
+    "building_id": "cubo-40c",
+    "floor": "Sesto piano",
+    "last_verified_at": "2026-02-09T16:00:11.276033+00:00",
+    "lat": 39.365487,
+    "lng": 16.2252684,
+    "name": "Aula A G",
+    "place_id": "aula-ag-cubo-40c",
+    "room": "A G",
+    "source_id": "unical-aulas",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/",
+    "type": "AULA"
+  },
+  {
+    "building_id": "cubo-43c",
+    "floor": "Sesto piano",
+    "last_verified_at": "2026-02-09T16:00:11.276033+00:00",
+    "lat": 39.3661589,
+    "lng": 16.2251678,
+    "name": "Aula B P",
+    "place_id": "aula-bp-cubo-43c",
+    "room": "B P",
+    "source_id": "unical-aulas",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/",
+    "type": "AULA"
+  },
+  {
+    "building_id": "centro-radiotelevisivo",
+    "last_verified_at": "2026-02-09T16:00:11.276033+00:00",
+    "lat": 39.3561912,
+    "lng": 16.2250283,
+    "name": "Aula Caldora",
+    "place_id": "aula-caldora-centro-radiotelevisivo",
+    "room": "Caldora",
+    "source_id": "unical-aulas",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/",
+    "type": "AULA"
+  },
+  {
+    "building_id": "aula-magna",
+    "last_verified_at": "2026-02-09T16:00:11.276033+00:00",
+    "lat": 39.3583149,
+    "lng": 16.2258276,
+    "name": "Aula Magna",
+    "place_id": "aula-magna",
+    "room": "Magna",
+    "source_id": "unical-aulas",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/",
+    "type": "AULA"
+  },
+  {
     "access_notes": "Sito: https://my.unical.it/",
     "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Per facilitare l’interazione degli studenti con il Centro Residenziale è possibile accedere agli sportelli on-line.",

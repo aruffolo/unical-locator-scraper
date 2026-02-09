@@ -20,3 +20,15 @@ Run from `scraper/`:
 .venv/bin/python -m unical_scraper validate --data-dir data/normalized --schemas-dir data/schema
 .venv/bin/python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out data/normalized/report.json
 ```
+
+## Aula Extraction
+
+Run:
+
+```bash
+.venv/bin/python -m unical_scraper crawl aulas
+```
+
+This command updates both:
+- `data/normalized/aulas.json`
+- `data/normalized/places.json` (upserts `type: "AULA"` records)

@@ -1,10 +1,12 @@
 from datetime import datetime, timezone
 
+from unical_scraper.extract.aulas import RawAula
 from unical_scraper.extract.buildings import RawBuilding
 from unical_scraper.extract.departments import RawDepartment
 from unical_scraper.extract.services import RawService
 from unical_scraper.extract.teachers import RawTeacher
 from unical_scraper.transform.normalize import (
+    normalize_aulas,
     normalize_buildings,
     normalize_departments,
     normalize_services,
@@ -121,3 +123,51 @@ def test_normalize_buildings_produces_buildings_schema_shape() -> None:
     assert building["name"] == "Cubo 18B"
     assert building["source_id"] == "unical-campus-map"
     assert building["last_verified_at"] == "2026-02-09T00:00:00+00:00"
+
+
+def test_normalize_aulas_produces_aulas_and_aula_places() -> None:
+    raw = [
+        RawAula(
+            name="Aula A G",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.3605961,
+            lng=16.2266846,
+            floor="Piano Terra",
+            room="A G",
+            short_code="AG",
+            building_hint="Cubo 40C",
+        ),
+        RawAula(
+            name="Aula Magna",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.3583149,
+            lng=16.2258276,
+        ),
+    ]
+    buildings = [
+        {"building_id": "cubo-40c", "name": "Cubo 40C", "lat": 39.3605960, "lng": 16.2266845},
+        {"building_id": "aula-magna", "name": "Aula Magna", "lat": 39.3583150, "lng": 16.2258277},
+    ]
+
+    aulas, aula_places = normalize_aulas(
+        raw_aulas=raw,
+        buildings=buildings,
+        verified_at=datetime(2026, 2, 9, tzinfo=timezone.utc),
+    )
+
+    assert len(aulas) == 2
+    assert len(aula_places) == 2
+
+    aula_by_short = {aula.get("short_code"): aula for aula in aulas}
+    aula_ag = aula_by_short["AG"]
+    assert aula_ag["building_id"] == "cubo-40c"
+    assert aula_ag["place_id"] == aula_ag["aula_id"]
+    assert aula_ag["normalized_name"] == "aula a g"
+    assert "ag" in aula_ag["search_tokens"]
+
+    aula_magna = next(aula for aula in aulas if aula["name"] == "Aula Magna")
+    assert aula_magna["building_id"] == "aula-magna"
+
+    place_by_id = {place["place_id"]: place for place in aula_places}
+    assert place_by_id[aula_ag["aula_id"]]["type"] == "AULA"
+    assert place_by_id[aula_magna["aula_id"]]["building_id"] == "aula-magna"

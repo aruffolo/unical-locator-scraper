@@ -10,12 +10,13 @@ Owner: Elrond89
 - `blocked`: cannot proceed safely without input/dependency
 
 ## Current Baseline (2026-02-09)
-- Tests: `33 passed`
+- Tests: `38 passed`
 - Validation: all datasets schema-valid
 - Integrity: no issues
 - Dataset baseline:
   - `buildings.json`: 137 records
-  - `places.json`: 27 records
+  - `places.json`: 31 records
+  - `aulas.json`: 4 records
   - `departments.json`: 14 records
   - `people.json`: 4140 records
 
@@ -23,27 +24,28 @@ Owner: Elrond89
 
 | Workstream | Status | Owner | Notes |
 |---|---|---|---|
-| Source inventory (`sources.json`) | in_progress | Elrond89 | 4 official sources tracked; can expand with aula-specific sources |
+| Source inventory (`sources.json`) | in_progress | Elrond89 | 5 official sources tracked, including aula map extraction |
 | Departments extraction | done | Elrond89 | Extracted and normalized |
 | Buildings extraction (cubi + others) | done | Elrond89 | Campus map extraction complete |
 | Services/places extraction | done | Elrond89 | Services + museum split implemented |
-| Aule extraction/search (variable naming use case) | todo | Elrond89 | New explicit workstream to implement |
+| Aule extraction/search (variable naming use case) | done | Elrond89 | `crawl aulas` implemented; `aulas.json` + AULA entries in `places.json` |
 | Coordinates completion | done | Elrond89 | Building coordinates currently complete |
-| Coverage/integrity expansion | in_progress | Elrond89 | Report coverage still people-only |
+| Coverage/integrity expansion | done | Elrond89 | Report includes `buildings`/`places`/`aulas` metrics and integrity checks |
 
 ## Technical Debt / Issues
-- `src/unical_scraper/validate/report.py`: coverage still centered on `people`; needs `buildings`/`places`/`aule` metrics.
-- `AULA` extraction path is missing (required for heterogeneous aula-name search use case).
-- `places.json` intentionally keeps some multi-site/area services non-linkable (`building_id = null`).
+- Aula coverage is still partial (currently map-driven; no timetable/department-specific room registries ingested yet).
+- Some service entities remain intentionally non-linkable (`building_id = null`) because they are virtual or multi-site.
+- `search_tokens` for aulas are generated, but `aliases.json` is still empty and can be populated for stronger query recall.
 
 ## Adaptations / Decisions Log
 - 2026-02-09: Keep execution in phased slices (source inventory -> departments -> buildings -> places -> coordinates -> quality hardening).
 - 2026-02-09: Use official UNICAL sources first; external map sources only for unresolved coordinates, with explicit provenance.
 - 2026-02-09: Preserve deterministic IDs/order as non-negotiable release constraint.
 - 2026-02-09: Add explicit `AULA` workstream for variable-name lookup with building + level context.
+- 2026-02-09: Implemented `crawl aulas` from official UNICAL map KML + floor-level aula parsing from placemark descriptions.
 
 ## Blockers
-- Missing `ai-rules/rule-loading.md` and `ai-rules/project-structure.md` in current workspace; proceeding with `AGENTS.md` + parent project docs.
+- No hard blockers at this checkpoint.
 
 ## Next Checkpoint Template
 - Date:

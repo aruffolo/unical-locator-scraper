@@ -4,16 +4,24 @@ from __future__ import annotations
 
 import json
 from datetime import datetime, timezone
+import math
 from pathlib import Path
 import re
 
+from ..extract.aulas import RawAula
 from ..extract.buildings import RawBuilding
 from ..extract.departments import RawDepartment
 from ..extract.services import RawService
 from ..extract.teachers import RawTeacher
-from ..utils.text import collapse_whitespace, none_if_empty
+from ..utils.text import collapse_whitespace, none_if_empty, slugify
 from .dedupe import dedupe_people
-from .ids import make_building_id, make_department_id, make_person_id, make_place_id
+from .ids import (
+    make_aula_id,
+    make_building_id,
+    make_department_id,
+    make_person_id,
+    make_place_id,
+)
 
 
 def normalize_teachers(
@@ -180,6 +188,107 @@ def normalize_buildings(
     return sorted(unique_by_id.values(), key=lambda item: str(item["building_id"]))
 
 
+def normalize_aulas(
+    raw_aulas: list[RawAula],
+    buildings: list[dict[str, object]] | None = None,
+    source_id: str = "unical-aulas",
+    verified_at: datetime | None = None,
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    """Convert raw aulas into `aulas.json` and matching AULA `places.json` records."""
+    if verified_at is None:
+        verified_at = datetime.now(timezone.utc)
+
+    verified_iso = verified_at.isoformat()
+    buildings = buildings or []
+
+    building_ids = {
+        str(item.get("building_id")) for item in buildings if isinstance(item.get("building_id"), str)
+    }
+    buildings_with_coordinates: list[tuple[str, float, float]] = []
+    for item in buildings:
+        building_id = item.get("building_id")
+        lat = item.get("lat")
+        lng = item.get("lng")
+        if not isinstance(building_id, str):
+            continue
+        if isinstance(lat, (int, float)) and isinstance(lng, (int, float)):
+            buildings_with_coordinates.append((building_id, float(lat), float(lng)))
+
+    aulas_by_id: dict[str, dict[str, object]] = {}
+    places_by_id: dict[str, dict[str, object]] = {}
+
+    for raw in raw_aulas:
+        name = none_if_empty(collapse_whitespace(raw.name))
+        if not name:
+            continue
+
+        normalized_name = _normalize_aula_name(name)
+        short_code = _normalize_short_code(raw.short_code)
+        room = none_if_empty(collapse_whitespace(raw.room))
+        floor = none_if_empty(collapse_whitespace(raw.floor))
+        building_id = _resolve_aula_building_id(
+            building_hint=raw.building_hint,
+            lat=raw.lat,
+            lng=raw.lng,
+            known_building_ids=building_ids,
+            buildings_with_coordinates=buildings_with_coordinates,
+        )
+
+        aula_id = make_aula_id(name=normalized_name, building_id=building_id, short_code=short_code)
+        place_id = aula_id
+        search_tokens = _build_aula_search_tokens(
+            name=name,
+            normalized_name=normalized_name,
+            short_code=short_code,
+            room=room,
+            building_id=building_id,
+        )
+
+        aula: dict[str, object] = {
+            "aula_id": aula_id,
+            "place_id": place_id,
+            "name": name,
+            "normalized_name": normalized_name,
+            "search_tokens": search_tokens,
+            "source_id": source_id,
+            "source_url": raw.source_url,
+            "last_verified_at": verified_iso,
+        }
+        if short_code:
+            aula["short_code"] = short_code
+        if building_id:
+            aula["building_id"] = building_id
+        if floor:
+            aula["floor"] = floor
+        if room:
+            aula["room"] = room
+
+        place: dict[str, object] = {
+            "place_id": place_id,
+            "type": "AULA",
+            "name": name,
+            "source_id": source_id,
+            "source_url": raw.source_url,
+            "last_verified_at": verified_iso,
+        }
+        if building_id:
+            place["building_id"] = building_id
+        if floor:
+            place["floor"] = floor
+        if room:
+            place["room"] = room
+        if raw.lat is not None and raw.lng is not None:
+            place["lat"] = round(raw.lat, 7)
+            place["lng"] = round(raw.lng, 7)
+
+        aulas_by_id.setdefault(aula_id, aula)
+        places_by_id.setdefault(place_id, place)
+
+    aulas = sorted(aulas_by_id.values(), key=lambda item: str(item["aula_id"]))
+    aula_places = sorted(places_by_id.values(), key=lambda item: str(item["place_id"]))
+    return aulas, aula_places
+
+
 def _canonical_building_name(name: str) -> str | None:
     cleaned = none_if_empty(collapse_whitespace(name.replace("\xa0", " ")))
     if not cleaned:
@@ -196,6 +305,100 @@ def _canonical_building_name(name: str) -> str | None:
             return f"Cubi {suffix.upper()}"
 
     return cleaned
+
+
+def _normalize_aula_name(name: str) -> str:
+    normalized = collapse_whitespace(name.replace("\xa0", " "))
+    normalized = re.sub(r"\s+", " ", normalized)
+    return normalized.casefold()
+
+
+def _normalize_short_code(value: str | None) -> str | None:
+    if not value:
+        return None
+    compact = re.sub(r"\s+", "", value)
+    compact = compact.strip().upper()
+    if not compact:
+        return None
+    return compact
+
+
+def _build_aula_search_tokens(
+    name: str,
+    normalized_name: str,
+    short_code: str | None,
+    room: str | None,
+    building_id: str | None,
+) -> list[str]:
+    tokens: set[str] = set()
+
+    for value in [name, normalized_name]:
+        slug = slugify(value)
+        if slug:
+            tokens.add(slug)
+            tokens.add(slug.replace("-", ""))
+
+    if name.casefold().startswith("aula "):
+        without_prefix = name[5:]
+        slug = slugify(without_prefix)
+        if slug:
+            tokens.add(slug)
+            tokens.add(slug.replace("-", ""))
+
+    if short_code:
+        tokens.add(short_code.casefold())
+    if room:
+        slug = slugify(room)
+        if slug:
+            tokens.add(slug)
+            tokens.add(slug.replace("-", ""))
+    if building_id:
+        tokens.add(building_id.casefold())
+
+    return sorted(token for token in tokens if token)
+
+
+def _resolve_aula_building_id(
+    building_hint: str | None,
+    lat: float | None,
+    lng: float | None,
+    known_building_ids: set[str],
+    buildings_with_coordinates: list[tuple[str, float, float]],
+) -> str | None:
+    if building_hint:
+        candidate = make_building_id(building_hint)
+        if candidate in known_building_ids:
+            return candidate
+
+    if lat is None or lng is None or not buildings_with_coordinates:
+        return None
+
+    nearest: tuple[str, float] | None = None
+    for building_id, building_lat, building_lng in buildings_with_coordinates:
+        distance = _haversine_meters(lat, lng, building_lat, building_lng)
+        if nearest is None or distance < nearest[1]:
+            nearest = (building_id, distance)
+
+    if nearest is None:
+        return None
+    if nearest[1] > 250.0:
+        return None
+    return nearest[0]
+
+
+def _haversine_meters(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
+    radius = 6_371_000.0
+    phi1 = math.radians(lat1)
+    phi2 = math.radians(lat2)
+    delta_phi = math.radians(lat2 - lat1)
+    delta_lambda = math.radians(lng2 - lng1)
+
+    a = (
+        math.sin(delta_phi / 2.0) ** 2
+        + math.cos(phi1) * math.cos(phi2) * (math.sin(delta_lambda / 2.0) ** 2)
+    )
+    c = 2.0 * math.atan2(math.sqrt(a), math.sqrt(1.0 - a))
+    return radius * c
 
 
 def write_json(path: Path, payload: object) -> None:
