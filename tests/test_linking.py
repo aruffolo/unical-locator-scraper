@@ -200,3 +200,67 @@ def test_link_places_to_buildings_links_musnob_sections_to_cubo_14b() -> None:
     assert linked[0]["building_id"] == "cubo-14b"
     assert linked[1]["building_id"] == "cubo-14b"
     assert linked[2]["building_id"] == "cubo-14b"
+
+
+def test_link_places_to_buildings_applies_reviewed_non_linkable_policy() -> None:
+    places = [
+        {
+            "place_id": "service-diritto-allo-studio",
+            "type": "SERVICE",
+            "name": "Diritto allo studio",
+            "source_url": "https://www.unical.it/didattica/diritto-allo-studio/altri-benefici/",
+        },
+        {
+            "place_id": "service-info-isee",
+            "type": "SERVICE",
+            "name": "Info Isee",
+            "source_url": "https://www.unical.it/didattica/diritto-allo-studio/info-isee/",
+        },
+        {
+            "place_id": "service-miai",
+            "type": "SERVICE",
+            "name": "Miai",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/miai/",
+        },
+        {
+            "place_id": "service-musnob",
+            "type": "SERVICE",
+            "name": "Musnob",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/",
+        },
+        {
+            "place_id": "service-orto-botanico",
+            "type": "SERVICE",
+            "name": "Orto Botanico",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/orto-botanico/",
+        },
+        {
+            "place_id": "service-rimuseum",
+            "type": "SERVICE",
+            "name": "Rimuseum",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/rimuseum/",
+        },
+        {
+            "place_id": "service-socialita-nel-campus",
+            "type": "SERVICE",
+            "name": "Socialità nel Campus",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/socialita/",
+        },
+    ]
+    buildings = [
+        {
+            "building_id": "uffici-centro-residenziale-e-area-didattica",
+            "name": "Uffici Centro Residenziale e Area Didattica",
+        },
+        {"building_id": "cubo-14b", "name": "Cubo 14B"},
+    ]
+
+    linked = link_places_to_buildings(places=places, buildings=buildings)
+
+    assert linked[0]["building_id"] == "uffici-centro-residenziale-e-area-didattica"
+    assert linked[1]["building_id"] == "uffici-centro-residenziale-e-area-didattica"
+    assert "building_id" not in linked[2]
+    assert "building_id" not in linked[3]
+    assert "building_id" not in linked[4]
+    assert "building_id" not in linked[5]
+    assert "building_id" not in linked[6]

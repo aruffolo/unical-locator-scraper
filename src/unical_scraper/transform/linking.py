@@ -8,6 +8,13 @@ from typing import Any
 
 _CUBO_RE = re.compile(r"\bcubo\s*([0-9]{1,2})(?:\s*[/-]?\s*([a-z]))?\b", re.IGNORECASE)
 _CUBI_RE = re.compile(r"\bcubo\s*([0-9]{1,2})\s*[/-]\s*([0-9]{1,2}[a-z]?)\b", re.IGNORECASE)
+_NON_LINKABLE_PLACE_IDS = {
+    "service-miai",
+    "service-musnob",
+    "service-orto-botanico",
+    "service-rimuseum",
+    "service-socialita-nel-campus",
+}
 
 
 def link_places_to_buildings(
@@ -40,6 +47,12 @@ def link_places_to_buildings(
 
 
 def _infer_building_id(place: dict[str, Any], known_building_ids: set[str]) -> str | None:
+    place_id = str(place.get("place_id") or "").casefold()
+    source_url = str(place.get("source_url") or "").casefold()
+
+    if place_id in _NON_LINKABLE_PLACE_IDS:
+        return None
+
     parts = [
         str(place.get("name") or ""),
         str(place.get("description") or ""),
@@ -69,6 +82,13 @@ def _infer_building_id(place: dict[str, Any], known_building_ids: set[str]) -> s
     if any(token in lowered for token in ["centro-sanitario", "assistenza sanitaria"]):
         if "centro-sanitario" in known_building_ids:
             return "centro-sanitario"
+
+    if place_id in {"service-diritto-allo-studio", "service-info-isee"} or any(
+        token in source_url for token in ["/didattica/diritto-allo-studio/altri-benefici/", "/didattica/diritto-allo-studio/info-isee/"]
+    ):
+        target = "uffici-centro-residenziale-e-area-didattica"
+        if target in known_building_ids:
+            return target
 
     if any(
         token in lowered
