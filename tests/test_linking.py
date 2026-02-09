@@ -19,6 +19,22 @@ def test_link_places_to_buildings_links_cubo_from_text() -> None:
     assert linked[0]["building_id"] == "cubo-34b"
 
 
+def test_link_places_to_buildings_links_cubo_with_slash_suffix() -> None:
+    places = [
+        {
+            "place_id": "service-1",
+            "type": "SERVICE",
+            "name": "Paleontologia",
+            "description": "Via Pietro Bucci, cubo 14/b, 87036 Arcavacata di Rende (CS)",
+        }
+    ]
+    buildings = [{"building_id": "cubo-14b", "name": "Cubo 14B"}]
+
+    linked = link_places_to_buildings(places=places, buildings=buildings)
+
+    assert linked[0]["building_id"] == "cubo-14b"
+
+
 def test_link_places_to_buildings_links_known_keyword_routes() -> None:
     places = [
         {
@@ -154,3 +170,33 @@ def test_link_places_to_buildings_links_reviewed_web_and_field_routes() -> None:
     assert linked[3]["building_id"] == "aula-magna"
     assert linked[4]["building_id"] == "cubo-22b"
     assert linked[5]["building_id"] == "uffici-centro-residenziale-e-area-didattica"
+
+
+def test_link_places_to_buildings_links_musnob_sections_to_cubo_14b() -> None:
+    places = [
+        {
+            "place_id": "service-paleontologia",
+            "type": "SERVICE",
+            "name": "Paleontologia",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/paleontologia/",
+        },
+        {
+            "place_id": "service-zoologia",
+            "type": "SERVICE",
+            "name": "Zoologia",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/zoologia/",
+        },
+        {
+            "place_id": "service-mineralogia-e-petrografia",
+            "type": "SERVICE",
+            "name": "Mineralogia E Petrografia",
+            "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/mineralogia-e-petrografia/",
+        },
+    ]
+    buildings = [{"building_id": "cubo-14b", "name": "Cubo 14B"}]
+
+    linked = link_places_to_buildings(places=places, buildings=buildings)
+
+    assert linked[0]["building_id"] == "cubo-14b"
+    assert linked[1]["building_id"] == "cubo-14b"
+    assert linked[2]["building_id"] == "cubo-14b"

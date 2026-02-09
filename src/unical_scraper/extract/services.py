@@ -39,7 +39,14 @@ def crawl_services(
         if html is None:
             continue
         second_level_urls.update(_parse_service_links(html, url))
-    detail_urls = sorted(first_level_urls | second_level_urls)
+    third_level_urls: set[str] = set()
+    for url in sorted(second_level_urls):
+        html = _try_fetch_html(url, client, cache)
+        if html is None:
+            continue
+        third_level_urls.update(_parse_service_links(html, url))
+
+    detail_urls = sorted(first_level_urls | second_level_urls | third_level_urls)
 
     services: list[RawService] = []
     if not detail_urls:
@@ -217,6 +224,13 @@ def _parse_service_detail(detail_html: str, source_url: str) -> RawService | Non
 
     if not name_candidate:
         return None
+
+    canonical_segments = _path_segments(canonical_source_url)
+    if len(canonical_segments) > 4:
+        fallback_name = _service_name_from_url(canonical_source_url)
+        if fallback_name and fallback_name.casefold() != name_candidate.casefold():
+            name_candidate = fallback_name
+
     if _is_noise_name(name_candidate):
         fallback_name = _service_name_from_url(canonical_source_url)
         if not fallback_name or _is_noise_name(fallback_name):
@@ -286,6 +300,7 @@ def _is_noise_name(name: str) -> bool:
         "studenti iscritti",
         "laureati",
         "vivere il campus",
+        "sistema museale",
     }:
         return True
     return any(
@@ -336,10 +351,17 @@ def _canonical_service_url(url: str) -> str | None:
         "step",
         "modulistica",
         "viewer",
+        "accesso-ai-musei",
     ]
     if any(token in lowered_path for token in blocked_tokens):
         return None
 
+    if lowered_segments[:3] == ["campus", "vivere-il-campus", "sistema-museale"]:
+        if len(lowered_segments) == 3:
+            return _join_path(parsed, lowered_segments[:3])
+        if lowered_segments[3] == "musnob" and len(lowered_segments) >= 5:
+            return _join_path(parsed, lowered_segments[:5])
+        return _join_path(parsed, lowered_segments[:4])
     if lowered_segments[:2] == ["campus", "vivere-il-campus"]:
         if len(lowered_segments) < 3:
             return None
@@ -374,8 +396,7 @@ def _join_path(parsed_url, segments: list[str]) -> str:
 
 
 def _service_name_from_url(url: str) -> str | None:
-    parsed = urlparse(url)
-    segments = [segment for segment in parsed.path.split("/") if segment]
+    segments = _path_segments(url)
     if not segments:
         return None
 
@@ -383,6 +404,11 @@ def _service_name_from_url(url: str) -> str | None:
     if not leaf:
         return None
     return leaf.title()
+
+
+def _path_segments(url: str) -> list[str]:
+    parsed = urlparse(url)
+    return [segment for segment in parsed.path.split("/") if segment]
 
 
 def _is_noise_description(text: str) -> bool:

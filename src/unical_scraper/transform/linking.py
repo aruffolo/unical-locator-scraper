@@ -6,7 +6,7 @@ import re
 from typing import Any
 
 
-_CUBO_RE = re.compile(r"\bcubo\s*([0-9]{1,2}[a-z]?)\b", re.IGNORECASE)
+_CUBO_RE = re.compile(r"\bcubo\s*([0-9]{1,2})(?:\s*[/-]?\s*([a-z]))?\b", re.IGNORECASE)
 _CUBI_RE = re.compile(r"\bcubo\s*([0-9]{1,2})\s*[/-]\s*([0-9]{1,2}[a-z]?)\b", re.IGNORECASE)
 
 
@@ -51,7 +51,9 @@ def _infer_building_id(place: dict[str, Any], known_building_ids: set[str]) -> s
 
     cubo_match = _CUBO_RE.search(lowered)
     if cubo_match:
-        cubo_id = f"cubo-{cubo_match.group(1).lower()}"
+        number = cubo_match.group(1).lower()
+        suffix = (cubo_match.group(2) or "").lower()
+        cubo_id = f"cubo-{number}{suffix}"
         if cubo_id in known_building_ids:
             return cubo_id
 
@@ -78,6 +80,18 @@ def _infer_building_id(place: dict[str, Any], known_building_ids: set[str]) -> s
 
     if any(token in lowered for token in ["centro-linguistico", "centro linguistico", " cla "]):
         target = "cla-centro-linguistico-d-ateneo"
+        if target in known_building_ids:
+            return target
+
+    if any(
+        token in lowered
+        for token in [
+            "/sistema-museale/musnob/paleontologia/",
+            "/sistema-museale/musnob/zoologia/",
+            "/sistema-museale/musnob/mineralogia-e-petrografia/",
+        ]
+    ):
+        target = "cubo-14b"
         if target in known_building_ids:
             return target
 

@@ -155,6 +155,49 @@ def test_crawl_services_uses_slug_when_heading_is_generic() -> None:
     assert services[0].description is None
 
 
+def test_crawl_services_splits_sistema_museale_subpages() -> None:
+    base_url = "https://www.unical.it/campus/servizi/"
+    pages = {
+        base_url: """
+            <html><body><main>
+              <a href="/campus/vivere-il-campus/sistema-museale/">Sistema Museale</a>
+            </main></body></html>
+        """,
+        "https://www.unical.it/campus/vivere-il-campus/sistema-museale/": """
+            <html><body><main>
+              <a href="/campus/vivere-il-campus/sistema-museale/accesso-ai-musei/">Accesso ai musei</a>
+              <a href="/campus/vivere-il-campus/sistema-museale/musnob/">MuSNOB</a>
+              <a href="/campus/vivere-il-campus/sistema-museale/rimuseum/">RiMuseum</a>
+              <a href="/campus/vivere-il-campus/sistema-museale/miai/">MIAI</a>
+            </main><h1>Sistema Museale</h1></body></html>
+        """,
+        "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/": """
+            <html><body><main>
+              <a href="/campus/vivere-il-campus/sistema-museale/musnob/paleontologia/">Paleontologia</a>
+            </main><h1>MuSNOB</h1></body></html>
+        """,
+        "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/paleontologia/": """
+            <html><body><h1>MuSNOB</h1><p>Via Pietro Bucci, cubo 14/b.</p></body></html>
+        """,
+        "https://www.unical.it/campus/vivere-il-campus/sistema-museale/rimuseum/": """
+            <html><body><h1>Sistema Museale</h1><p>Via Cavour, 1 - Rende.</p></body></html>
+        """,
+        "https://www.unical.it/campus/vivere-il-campus/sistema-museale/miai/": """
+            <html><body><h1>Sistema Museale</h1><p>Museo interattivo.</p></body></html>
+        """,
+    }
+
+    services = crawl_services(base_url=base_url, client=FakeHttpClient(pages))
+    names = {service.name for service in services}
+
+    assert "Sistema Museale" not in names
+    assert "Accesso Ai Musei" not in names
+    assert "MuSNOB" in names
+    assert "Paleontologia" in names
+    assert "Rimuseum" in names
+    assert "Miai" in names
+
+
 def test_canonical_service_url_maps_nested_pages_to_parent_service_page() -> None:
     assert (
         _canonical_service_url(
@@ -176,5 +219,23 @@ def test_canonical_service_url_maps_nested_pages_to_parent_service_page() -> Non
     )
     assert (
         _canonical_service_url("https://www.unical.it/didattica/diritto-allo-studio/step/")
+        is None
+    )
+    assert (
+        _canonical_service_url(
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/paleontologia/"
+        )
+        == "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/paleontologia/"
+    )
+    assert (
+        _canonical_service_url(
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/rimuseum/"
+        )
+        == "https://www.unical.it/campus/vivere-il-campus/sistema-museale/rimuseum/"
+    )
+    assert (
+        _canonical_service_url(
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/accesso-ai-musei/"
+        )
         is None
     )
