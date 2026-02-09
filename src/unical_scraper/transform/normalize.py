@@ -7,10 +7,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from ..extract.departments import RawDepartment
+from ..extract.services import RawService
 from ..extract.teachers import RawTeacher
 from ..utils.text import collapse_whitespace, none_if_empty
 from .dedupe import dedupe_people
-from .ids import make_department_id, make_person_id
+from .ids import make_department_id, make_person_id, make_place_id
 
 
 def normalize_teachers(
@@ -97,6 +98,49 @@ def normalize_departments(
         unique_by_id.setdefault(department_id, department)
 
     return sorted(unique_by_id.values(), key=lambda department: department["department_id"])
+
+
+def normalize_services(
+    raw_services: list[RawService],
+    source_id: str = "unical-services",
+    verified_at: datetime | None = None,
+) -> list[dict[str, str]]:
+    """Convert raw services to canonical `places.json` records."""
+    if verified_at is None:
+        verified_at = datetime.now(timezone.utc)
+
+    verified_iso = verified_at.isoformat()
+    unique_by_id: dict[str, dict[str, str]] = {}
+
+    for raw in raw_services:
+        name = none_if_empty(collapse_whitespace(raw.name))
+        if not name:
+            continue
+
+        place_type = raw.service_type if raw.service_type else "SERVICE"
+        place = {
+            "place_id": make_place_id(name=name, place_type=place_type),
+            "type": place_type,
+            "name": name,
+            "source_id": source_id,
+            "source_url": raw.source_url,
+            "last_verified_at": verified_iso,
+        }
+
+        if raw.description:
+            place["description"] = collapse_whitespace(raw.description)
+        if raw.email:
+            place["email"] = raw.email.lower().strip()
+        if raw.phone:
+            place["phone"] = collapse_whitespace(raw.phone)
+        if raw.website_url:
+            place["access_notes"] = f"Sito: {raw.website_url.strip()}"
+        if raw.opening_hours:
+            place["opening_hours"] = collapse_whitespace(raw.opening_hours)
+
+        unique_by_id.setdefault(place["place_id"], place)
+
+    return sorted(unique_by_id.values(), key=lambda place: place["place_id"])
 
 
 def write_json(path: Path, payload: object) -> None:

@@ -42,3 +42,8 @@ def make_person_id(full_name: str, email: str | None = None) -> str:
 def make_department_id(name: str) -> str:
     """Create stable department IDs from canonical name."""
     return stable_slug(name)
+
+
+def make_place_id(name: str, place_type: str) -> str:
+    """Create stable place IDs from type + canonical name."""
+    return stable_slug(f"{place_type.lower()}-{name}")

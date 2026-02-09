@@ -1,4 +1,9 @@
-from unical_scraper.transform.ids import make_department_id, make_person_id, stable_slug
+from unical_scraper.transform.ids import (
+    make_department_id,
+    make_person_id,
+    make_place_id,
+    stable_slug,
+)
 
 
 def test_stable_slug_handles_accents_and_spaces() -> None:
@@ -16,3 +21,7 @@ def test_make_person_id_falls_back_to_email() -> None:
 
 def test_make_department_id() -> None:
     assert make_department_id("DIMES") == "dimes"
+
+
+def test_make_place_id() -> None:
+    assert make_place_id("Segreteria Studenti", "SECRETARY") == "secretary-segreteria-studenti"

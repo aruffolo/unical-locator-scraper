@@ -1,8 +1,13 @@
 from datetime import datetime, timezone
 
 from unical_scraper.extract.departments import RawDepartment
+from unical_scraper.extract.services import RawService
 from unical_scraper.extract.teachers import RawTeacher
-from unical_scraper.transform.normalize import normalize_departments, normalize_teachers
+from unical_scraper.transform.normalize import (
+    normalize_departments,
+    normalize_services,
+    normalize_teachers,
+)
 
 
 def test_normalize_teachers_produces_people_schema_shape() -> None:
@@ -55,3 +60,32 @@ def test_normalize_departments_produces_departments_schema_shape() -> None:
     assert department["email"] == "segreteria@dimes.unical.it"
     assert department["source_id"] == "unical-departments"
     assert department["last_verified_at"] == "2026-02-09T00:00:00+00:00"
+
+
+def test_normalize_services_produces_places_schema_shape() -> None:
+    raw = [
+        RawService(
+            name="Segreteria Studenti DIMES",
+            source_url="https://www.unical.it/servizi/segreteria-dimes",
+            service_type="SECRETARY",
+            description="Supporto iscrizioni e certificati.",
+            email="segreteria@unical.it",
+            phone="+39 0984 111111",
+            website_url="https://www.unical.it/servizi/segreteria-dimes",
+            opening_hours="Lun-Ven 09:00-12:00",
+        )
+    ]
+
+    places = normalize_services(
+        raw_services=raw,
+        verified_at=datetime(2026, 2, 9, tzinfo=timezone.utc),
+    )
+
+    assert len(places) == 1
+    place = places[0]
+    assert place["place_id"] == "secretary-segreteria-studenti-dimes"
+    assert place["type"] == "SECRETARY"
+    assert place["name"] == "Segreteria Studenti DIMES"
+    assert place["email"] == "segreteria@unical.it"
+    assert place["source_id"] == "unical-services"
+    assert place["last_verified_at"] == "2026-02-09T00:00:00+00:00"
