@@ -35,7 +35,9 @@ def crawl_services(
     first_level_urls = _parse_service_links(index_html, base_url)
     second_level_urls: set[str] = set()
     for url in sorted(first_level_urls):
-        html = _fetch_html(url, client, cache)
+        html = _try_fetch_html(url, client, cache)
+        if html is None:
+            continue
         second_level_urls.update(_parse_service_links(html, url))
     detail_urls = sorted(first_level_urls | second_level_urls)
 
@@ -54,7 +56,9 @@ def crawl_services(
         return services
 
     for url in detail_urls:
-        html = _fetch_html(url, client, cache)
+        html = _try_fetch_html(url, client, cache)
+        if html is None:
+            continue
         service = _parse_service_detail(html, url)
         if service:
             services.append(service)
@@ -77,6 +81,13 @@ def _fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str:
     if cache is None:
         return client.get_text(url)
     return cache.get_or_fetch(url, client.get_text)
+
+
+def _try_fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str | None:
+    try:
+        return _fetch_html(url, client, cache)
+    except Exception:
+        return None
 
 
 def _parse_service_links(index_html: str, base_url: str) -> set[str]:
@@ -207,12 +218,17 @@ def _parse_service_detail(detail_html: str, source_url: str) -> RawService | Non
     if not name_candidate:
         return None
     if _is_noise_name(name_candidate):
-        return None
+        fallback_name = _service_name_from_url(canonical_source_url)
+        if not fallback_name or _is_noise_name(fallback_name):
+            return None
+        name_candidate = fallback_name
 
     description = None
     paragraph = soup.select_one("main p, article p, p")
     if paragraph:
         description = none_if_empty(collapse_whitespace(paragraph.get_text(" ", strip=True)))
+        if description and _is_noise_description(description):
+            description = None
 
     email = None
     email_link = soup.select_one("a[href^='mailto:']")
@@ -269,6 +285,7 @@ def _is_noise_name(name: str) -> bool:
         "futuri studenti",
         "studenti iscritti",
         "laureati",
+        "vivere il campus",
     }:
         return True
     return any(
@@ -284,6 +301,7 @@ def _is_noise_name(name: str) -> bool:
             "seminario",
             "feed",
             "click day",
+            "guida per gli studenti",
         ]
     )
 
@@ -315,6 +333,7 @@ def _canonical_service_url(url: str) -> str | None:
         "unicalfesta",
         "festival",
         "seminari",
+        "step",
         "modulistica",
         "viewer",
     ]
@@ -352,3 +371,27 @@ def _canonical_service_url(url: str) -> str | None:
 def _join_path(parsed_url, segments: list[str]) -> str:
     canonical_path = "/" + "/".join(segments) + "/"
     return f"{parsed_url.scheme}://{parsed_url.netloc}{canonical_path}"
+
+
+def _service_name_from_url(url: str) -> str | None:
+    parsed = urlparse(url)
+    segments = [segment for segment in parsed.path.split("/") if segment]
+    if not segments:
+        return None
+
+    leaf = segments[-1].replace("-", " ").replace("_", " ").strip()
+    if not leaf:
+        return None
+    return leaf.title()
+
+
+def _is_noise_description(text: str) -> bool:
+    lowered = text.casefold()
+    return any(
+        token in lowered
+        for token in [
+            "vai a tutte le notizie",
+            "archivio notizie",
+            "leggi tutte le notizie",
+        ]
+    )

@@ -112,6 +112,49 @@ def test_crawl_services_excludes_nested_event_and_news_pages() -> None:
     assert "Centri comuni" not in names
 
 
+def test_crawl_services_skips_unfetchable_detail_pages() -> None:
+    base_url = "https://www.unical.it/campus/servizi/"
+    pages = {
+        base_url: """
+            <html><body><main>
+              <a href="/campus/vivere-il-campus/centro-sanitario/">Centro Sanitario</a>
+              <a href="/campus/vivere-il-campus/non-esiste/">Non Esiste</a>
+            </main></body></html>
+        """,
+        "https://www.unical.it/campus/vivere-il-campus/centro-sanitario/": """
+            <html><body><h1>Centro Sanitario</h1><p>Servizio sanitario del campus.</p></body></html>
+        """,
+    }
+
+    services = crawl_services(base_url=base_url, client=FakeHttpClient(pages))
+
+    assert len(services) == 1
+    assert services[0].name == "Centro Sanitario"
+
+
+def test_crawl_services_uses_slug_when_heading_is_generic() -> None:
+    base_url = "https://www.unical.it/campus/servizi/"
+    pages = {
+        base_url: """
+            <html><body><main>
+              <a href="/campus/vivere-il-campus/biblioteche/">Biblioteche</a>
+            </main></body></html>
+        """,
+        "https://www.unical.it/campus/vivere-il-campus/biblioteche/": """
+            <html><body>
+              <h1>Vivere il campus</h1>
+              <p>Vai a tutte le notizie</p>
+            </body></html>
+        """,
+    }
+
+    services = crawl_services(base_url=base_url, client=FakeHttpClient(pages))
+
+    assert len(services) == 1
+    assert services[0].name == "Biblioteche"
+    assert services[0].description is None
+
+
 def test_canonical_service_url_maps_nested_pages_to_parent_service_page() -> None:
     assert (
         _canonical_service_url(
@@ -129,5 +172,9 @@ def test_canonical_service_url_maps_nested_pages_to_parent_service_page() -> Non
         _canonical_service_url(
             "https://www.unical.it/campus/vivere-il-campus/socialita/unicalfesta/"
         )
+        is None
+    )
+    assert (
+        _canonical_service_url("https://www.unical.it/didattica/diritto-allo-studio/step/")
         is None
     )
