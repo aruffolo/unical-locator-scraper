@@ -32,7 +32,12 @@ def crawl_services(
 ) -> list[RawService]:
     """Crawl service and secretary pages from UNICAL public pages."""
     index_html = _fetch_html(base_url, client, cache)
-    detail_urls = sorted(_parse_service_links(index_html, base_url))
+    first_level_urls = _parse_service_links(index_html, base_url)
+    second_level_urls: set[str] = set()
+    for url in sorted(first_level_urls):
+        html = _fetch_html(url, client, cache)
+        second_level_urls.update(_parse_service_links(html, url))
+    detail_urls = sorted(first_level_urls | second_level_urls)
 
     services: list[RawService] = []
     if not detail_urls:
@@ -80,7 +85,8 @@ def _parse_service_links(index_html: str, base_url: str) -> set[str]:
     base_host = urlparse(base_url).netloc
 
     links: set[str] = set()
-    for anchor in soup.select("a[href]"):
+    root = soup.select_one("main") or soup.select_one(".main-body") or soup
+    for anchor in root.select("a[href]"):
         href = anchor.get("href", "")
         if href.startswith(("mailto:", "tel:")):
             continue
@@ -93,12 +99,57 @@ def _parse_service_links(index_html: str, base_url: str) -> set[str]:
             continue
 
         lower_url = absolute.lower()
-        lower_text = anchor.get_text(" ", strip=True).lower()
-        if any(token in lower_url for token in ["serviz", "segreter", "ufficio", "sportello"]):
-            links.add(absolute)
+        if "lang=" in lower_url or "javascript:" in lower_url:
             continue
-        if any(token in lower_text for token in ["servizio", "servizi", "segreteria", "ufficio", "sportello"]):
-            links.add(absolute)
+        if not any(
+            token in lower_url
+            for token in [
+                "/campus/servizi/",
+                "/didattica/diritto-allo-studio/",
+                "/servizi-ict",
+                "/campus/vivere-il-campus/",
+                "/servizi/",
+                "/service",
+                "/segreter",
+            ]
+        ):
+            continue
+        if any(
+            blocked in lower_url
+            for blocked in [
+                "/contents/news/",
+                "/contents/calendars/",
+                "category_name=",
+                "/feed-rss/",
+                "/web-radio/",
+                "/web-streaming/",
+            ]
+        ):
+            continue
+
+        lower_text = anchor.get_text(" ", strip=True).lower()
+        if any(token in lower_text for token in ["home", "campus", "organizzazione"]):
+            continue
+        if not lower_text:
+            continue
+        if len(lower_text.split()) > 8 or len(lower_text) > 80:
+            continue
+        if any(
+            token in lower_text
+            for token in [
+                "cookie",
+                "rss",
+                "faq",
+                "calendario",
+                "concerto",
+                "evento",
+                "avvisi",
+                "seminario",
+                "festival",
+            ]
+        ):
+            continue
+        links.add(absolute)
 
     links.discard(base_url)
     return links
@@ -172,6 +223,8 @@ def _parse_service_detail(detail_html: str, source_url: str) -> RawService | Non
 
     if not name_candidate:
         return None
+    if _is_noise_name(name_candidate):
+        return None
 
     description = None
     paragraph = soup.select_one("main p, article p, p")
@@ -222,3 +275,31 @@ def _infer_service_type(name: str, context: str | None = None) -> str:
     if any(token in text for token in ["ufficio", "office"]):
         return "OFFICE"
     return "SERVICE"
+
+
+def _is_noise_name(name: str) -> bool:
+    lowered = name.casefold()
+    if lowered in {
+        "home",
+        "campus",
+        "i servizi del campus",
+        "futuri studenti",
+        "studenti iscritti",
+        "laureati",
+    }:
+        return True
+    return any(
+        token in lowered
+        for token in [
+            "cookie",
+            "faq",
+            "calendario",
+            "concerto",
+            "evento",
+            "avviso",
+            "festival",
+            "seminario",
+            "feed",
+            "click day",
+        ]
+    )

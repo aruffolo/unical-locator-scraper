@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from urllib.parse import urljoin, urlparse
 
@@ -30,6 +31,18 @@ def crawl_departments(
 ) -> list[RawDepartment]:
     """Crawl department pages from a UNICAL public page."""
     index_html = _fetch_html(base_url, client, cache)
+
+    api_url = _extract_departments_api_url(index_html=index_html, base_url=base_url)
+    if api_url:
+        departments_from_api = _crawl_departments_from_api(
+            api_url=api_url,
+            base_url=base_url,
+            client=client,
+            cache=cache,
+        )
+        if departments_from_api:
+            return departments_from_api
+
     detail_urls = sorted(_parse_department_links(index_html, base_url))
 
     departments: list[RawDepartment] = []
@@ -136,3 +149,87 @@ def _parse_department_detail(detail_html: str, source_url: str) -> RawDepartment
         phone=phone,
         website_url=website_url,
     )
+
+
+def _extract_departments_api_url(index_html: str, base_url: str) -> str | None:
+    soup = BeautifulSoup(index_html, "html.parser")
+    for text_node in soup.find_all(string=True):
+        text = str(text_node)
+        marker = "/api/ricerca/structures/"
+        if marker not in text:
+            continue
+        start = text.find("http")
+        if start == -1:
+            start = text.find(marker)
+        if start == -1:
+            continue
+        end = text.find('"', start)
+        if end == -1:
+            end = len(text)
+        candidate = text[start:end].strip().strip("'")
+        if marker not in candidate:
+            continue
+        return _to_absolute_url(base_url=base_url, href=candidate)
+    return None
+
+
+def _to_absolute_url(base_url: str, href: str) -> str:
+    if href.startswith("//"):
+        scheme = urlparse(base_url).scheme or "https"
+        return f"{scheme}:{href}"
+    return urljoin(base_url, href)
+
+
+def _crawl_departments_from_api(
+    api_url: str,
+    base_url: str,
+    client: HttpClient,
+    cache: HtmlCache | None,
+) -> list[RawDepartment]:
+    departments: list[RawDepartment] = []
+    next_url: str | None = api_url
+    visited: set[str] = set()
+
+    while next_url and next_url not in visited:
+        visited.add(next_url)
+        payload = json.loads(_fetch_html(next_url, client, cache))
+        results = payload.get("results", []) if isinstance(payload, dict) else []
+        if not isinstance(results, list):
+            results = []
+
+        for item in results:
+            if not isinstance(item, dict):
+                continue
+
+            name = _extract_text(item.get("StructureName"))
+            if not name:
+                continue
+
+            website_url = _extract_text(item.get("StructureURL"))
+            source_url = website_url or base_url
+
+            departments.append(
+                RawDepartment(
+                    name=name,
+                    source_url=source_url,
+                    website_url=website_url,
+                )
+            )
+
+        raw_next = payload.get("next") if isinstance(payload, dict) else None
+        if isinstance(raw_next, str) and raw_next:
+            next_url = _to_absolute_url(base_url=api_url, href=raw_next)
+        else:
+            next_url = None
+
+    unique_by_key: dict[str, RawDepartment] = {}
+    for department in departments:
+        unique_by_key.setdefault(department.name.casefold(), department)
+
+    return sorted(unique_by_key.values(), key=lambda department: department.name.casefold())
+
+
+def _extract_text(value: object) -> str | None:
+    if not isinstance(value, str):
+        return None
+    return none_if_empty(collapse_whitespace(value))
