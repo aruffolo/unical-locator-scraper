@@ -486,6 +486,13 @@ def _aula_quality_score(aula: RawAula) -> int:
 def _merge_aula_records(existing: RawAula, candidate: RawAula) -> RawAula:
     primary = existing if _aula_quality_score(existing) >= _aula_quality_score(candidate) else candidate
     secondary = candidate if primary is existing else existing
+    if primary.capacity is None:
+        merged_capacity = secondary.capacity
+    elif secondary.capacity is None:
+        merged_capacity = primary.capacity
+    else:
+        merged_capacity = max(primary.capacity, secondary.capacity)
+
     return RawAula(
         name=primary.name,
         source_url=primary.source_url,
@@ -495,7 +502,7 @@ def _merge_aula_records(existing: RawAula, candidate: RawAula) -> RawAula:
         room=primary.room or secondary.room,
         short_code=primary.short_code or secondary.short_code,
         building_hint=primary.building_hint or secondary.building_hint,
-        capacity=primary.capacity if primary.capacity is not None else secondary.capacity,
+        capacity=merged_capacity,
     )
 
 

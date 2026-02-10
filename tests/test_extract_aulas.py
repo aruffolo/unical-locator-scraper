@@ -442,3 +442,39 @@ def test_crawl_aulas_parses_nested_department_accordion_entries() -> None:
     lab = next(item for item in aulas if item.name == "Laboratorio LAB-16C")
     assert lab.building_hint == "Cubo 16C"
     assert lab.capacity == 60
+
+
+def test_crawl_aulas_prefers_higher_capacity_on_duplicate_rows() -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    first_department_url = "https://a.example/strutture/"
+    second_department_url = "https://b.example/strutture/"
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        first_department_url: """
+            <html><body>
+              <table>
+                <tr><td><strong>DENOMINAZIONE AULA</strong></td><td><strong>N° POSTI</strong></td><td><strong>UBICAZIONE</strong></td></tr>
+                <tr><td>OA/SG4</td><td>75</td><td>Cubo 3/A</td></tr>
+              </table>
+            </body></html>
+        """,
+        second_department_url: """
+            <html><body>
+              <table>
+                <tr><td><strong>DENOMINAZIONE AULA</strong></td><td><strong>N° POSTI</strong></td><td><strong>UBICAZIONE</strong></td></tr>
+                <tr><td>OA/SG4</td><td>120</td><td>Cubo 3/A</td></tr>
+              </table>
+            </body></html>
+        """,
+    }
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages),
+        department_urls=(first_department_url, second_department_url),
+        planner_base_url=None,
+    )
+
+    target = next(item for item in aulas if item.name == "Aula OA/SG4")
+    assert target.capacity == 120
+    assert target.building_hint == "Cubo 3A"
