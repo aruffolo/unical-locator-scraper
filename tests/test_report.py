@@ -67,6 +67,9 @@ def test_build_coverage_report_includes_aulas_and_places_metrics(tmp_path: Path)
     assert report["coverage"]["places"]["type_aula"] == 1
     assert report["coverage"]["aulas"]["total"] == 2
     assert report["coverage"]["aulas"]["with_building_id"] == 1
+    assert report["coverage"]["aulas"]["missing_building_id"] == 1
     assert report["coverage"]["aulas"]["with_floor"] == 1
     assert report["coverage"]["aulas"]["with_short_code"] == 1
     assert report["coverage"]["aulas"]["with_capacity"] == 1
+    assert report["coverage"]["aulas"]["missing_building_by_source"][0]["count"] == 1
+    assert report["coverage"]["aulas"]["missing_building_examples"][0]["aula_id"] == "aula-p3"

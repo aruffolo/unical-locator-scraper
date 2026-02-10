@@ -289,6 +289,11 @@ def normalize_aulas(
 
     aulas = sorted(aulas_by_id.values(), key=lambda item: str(item["aula_id"]))
     aula_places = sorted(places_by_id.values(), key=lambda item: str(item["place_id"]))
+    _backfill_missing_aula_buildings(
+        aulas=aulas,
+        aula_places=aula_places,
+        known_building_ids=building_ids,
+    )
     return aulas, aula_places
 
 
@@ -387,6 +392,129 @@ def _resolve_aula_building_id(
     if nearest[1] > 250.0:
         return None
     return nearest[0]
+
+
+def _backfill_missing_aula_buildings(
+    aulas: list[dict[str, object]],
+    aula_places: list[dict[str, object]],
+    known_building_ids: set[str],
+) -> None:
+    name_to_buildings: dict[str, set[str]] = {}
+    room_to_buildings: dict[str, set[str]] = {}
+    short_to_buildings: dict[str, set[str]] = {}
+
+    for aula in aulas:
+        building_id = aula.get("building_id")
+        if not isinstance(building_id, str) or building_id not in known_building_ids:
+            continue
+
+        normalized_name = _normalize_lookup_value(aula.get("normalized_name") or aula.get("name"))
+        if normalized_name:
+            name_to_buildings.setdefault(normalized_name, set()).add(building_id)
+
+        normalized_room = _normalize_lookup_value(aula.get("room"))
+        if normalized_room:
+            room_to_buildings.setdefault(normalized_room, set()).add(building_id)
+
+        normalized_short = _normalize_lookup_value(aula.get("short_code"))
+        if normalized_short:
+            short_to_buildings.setdefault(normalized_short, set()).add(building_id)
+
+    place_by_id = {
+        str(place.get("place_id")): place
+        for place in aula_places
+        if isinstance(place.get("place_id"), str)
+    }
+
+    for aula in aulas:
+        if isinstance(aula.get("building_id"), str):
+            continue
+
+        candidates: set[str] = set()
+
+        normalized_name = _normalize_lookup_value(aula.get("normalized_name") or aula.get("name"))
+        if normalized_name:
+            candidates |= _single_candidate(name_to_buildings, normalized_name)
+
+        normalized_room = _normalize_lookup_value(aula.get("room"))
+        if normalized_room:
+            candidates |= _single_candidate(room_to_buildings, normalized_room)
+
+        normalized_short = _normalize_lookup_value(aula.get("short_code"))
+        if normalized_short:
+            candidates |= _single_candidate(short_to_buildings, normalized_short)
+
+        text = " ".join(
+            part
+            for part in (
+                str(aula.get("name") or ""),
+                str(aula.get("room") or ""),
+                str(aula.get("short_code") or ""),
+                str(aula.get("source_url") or ""),
+            )
+            if part
+        )
+        candidates |= _extract_building_ids_from_text(text=text, known_building_ids=known_building_ids)
+
+        chosen = next(iter(candidates)) if len(candidates) == 1 else None
+        if not chosen:
+            continue
+
+        aula["building_id"] = chosen
+        existing_tokens = [
+            token
+            for token in aula.get("search_tokens", [])
+            if isinstance(token, str) and token
+        ]
+        token_set = set(existing_tokens)
+        token_set.add(chosen.casefold())
+        aula["search_tokens"] = sorted(token_set)
+
+        place_id = aula.get("place_id")
+        if isinstance(place_id, str):
+            place = place_by_id.get(place_id)
+            if place is not None and not isinstance(place.get("building_id"), str):
+                place["building_id"] = chosen
+
+
+def _normalize_lookup_value(value: object) -> str | None:
+    if not isinstance(value, str):
+        return None
+    normalized = none_if_empty(collapse_whitespace(value).casefold())
+    return normalized
+
+
+def _single_candidate(mapping: dict[str, set[str]], key: str) -> set[str]:
+    candidates = mapping.get(key, set())
+    if len(candidates) == 1:
+        return set(candidates)
+    return set()
+
+
+def _extract_building_ids_from_text(text: str, known_building_ids: set[str]) -> set[str]:
+    candidates: set[str] = set()
+    lowered = collapse_whitespace(text).casefold()
+    if not lowered:
+        return candidates
+
+    for match in re.finditer(r"\bcubo\s*([0-9]{1,2})(?:\s*[/-]?\s*([a-z]))?\b", lowered):
+        number = match.group(1)
+        letter = match.group(2) or ""
+        building_id = f"cubo-{number}{letter}"
+        if building_id in known_building_ids:
+            candidates.add(building_id)
+
+    for match in re.finditer(r"\b([0-9]{1,2})\s*([a-z])\b", lowered):
+        building_id = f"cubo-{match.group(1)}{match.group(2)}"
+        if building_id in known_building_ids:
+            candidates.add(building_id)
+
+    if any(token in lowered for token in (" cla ", "centro linguistico", "centro-linguistico")):
+        cla_id = "cla-centro-linguistico-d-ateneo"
+        if cla_id in known_building_ids:
+            candidates.add(cla_id)
+
+    return candidates
 
 
 def _haversine_meters(lat1: float, lng1: float, lat2: float, lng2: float) -> float:

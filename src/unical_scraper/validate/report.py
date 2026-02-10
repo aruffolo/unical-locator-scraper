@@ -55,6 +55,22 @@ def build_coverage_report(
     aulas_with_floor = sum(1 for aula in aulas if aula.get("floor"))
     aulas_with_short_code = sum(1 for aula in aulas if aula.get("short_code"))
     aulas_with_capacity = sum(1 for aula in aulas if aula.get("capacity") is not None)
+    aulas_missing_building = sorted(
+        (aula for aula in aulas if not aula.get("building_id")),
+        key=lambda aula: str(aula.get("aula_id") or aula.get("name") or ""),
+    )
+    missing_building_by_source: dict[str, int] = {}
+    for aula in aulas_missing_building:
+        source_url = str(aula.get("source_url") or "unknown")
+        missing_building_by_source[source_url] = missing_building_by_source.get(source_url, 0) + 1
+    missing_building_examples = [
+        {
+            "aula_id": str(aula.get("aula_id") or ""),
+            "name": str(aula.get("name") or ""),
+            "source_url": str(aula.get("source_url") or ""),
+        }
+        for aula in aulas_missing_building[:20]
+    ]
 
     with_email = sum(1 for person in people if person.get("email"))
     with_department = sum(1 for person in people if person.get("department_id"))
@@ -106,12 +122,22 @@ def build_coverage_report(
                 "with_place_id_ratio": _ratio(aulas_with_place, total_aulas),
                 "with_building_id": aulas_with_building,
                 "with_building_id_ratio": _ratio(aulas_with_building, total_aulas),
+                "missing_building_id": len(aulas_missing_building),
+                "missing_building_id_ratio": _ratio(len(aulas_missing_building), total_aulas),
                 "with_floor": aulas_with_floor,
                 "with_floor_ratio": _ratio(aulas_with_floor, total_aulas),
                 "with_short_code": aulas_with_short_code,
                 "with_short_code_ratio": _ratio(aulas_with_short_code, total_aulas),
                 "with_capacity": aulas_with_capacity,
                 "with_capacity_ratio": _ratio(aulas_with_capacity, total_aulas),
+                "missing_building_by_source": [
+                    {"source_url": source_url, "count": count}
+                    for source_url, count in sorted(
+                        missing_building_by_source.items(),
+                        key=lambda item: (-item[1], item[0]),
+                    )
+                ],
+                "missing_building_examples": missing_building_examples,
             },
             "people": {
                 "total": total_people,

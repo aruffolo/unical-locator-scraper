@@ -173,3 +173,45 @@ def test_normalize_aulas_produces_aulas_and_aula_places() -> None:
     place_by_id = {place["place_id"]: place for place in aula_places}
     assert place_by_id[aula_ag["aula_id"]]["type"] == "AULA"
     assert place_by_id[aula_magna["aula_id"]]["building_id"] == "aula-magna"
+
+
+def test_normalize_aulas_backfills_building_id_from_existing_matches() -> None:
+    raw = [
+        RawAula(
+            name="AULA 2",
+            source_url="https://planner.example/activities/",
+            room="2",
+        ),
+        RawAula(
+            name="Aula 2",
+            source_url="https://department.example/strutture/",
+            room="2",
+            building_hint="Cubo 12B",
+        ),
+        RawAula(
+            name="Aula 39C",
+            source_url="https://department.example/strutture/",
+            room="39C",
+        ),
+    ]
+    buildings = [
+        {"building_id": "cubo-12b", "name": "Cubo 12B"},
+        {"building_id": "cubo-39c", "name": "Cubo 39C"},
+    ]
+
+    aulas, aula_places = normalize_aulas(
+        raw_aulas=raw,
+        buildings=buildings,
+        verified_at=datetime(2026, 2, 10, tzinfo=timezone.utc),
+    )
+
+    aula_upper = next(aula for aula in aulas if aula["name"] == "AULA 2")
+    assert aula_upper["building_id"] == "cubo-12b"
+    assert "cubo-12b" in aula_upper["search_tokens"]
+
+    aula_39c = next(aula for aula in aulas if aula["name"] == "Aula 39C")
+    assert aula_39c["building_id"] == "cubo-39c"
+
+    place_by_id = {place["place_id"]: place for place in aula_places}
+    assert place_by_id[aula_upper["place_id"]]["building_id"] == "cubo-12b"
+    assert place_by_id[aula_39c["place_id"]]["building_id"] == "cubo-39c"
