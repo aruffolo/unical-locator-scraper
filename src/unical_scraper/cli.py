@@ -29,6 +29,7 @@ from .utils.http import DEFAULT_USER_AGENT, HttpClient
 from .validate.integrity import check_integrity, issues_to_dicts
 from .validate.jsonschema_validate import validate_dataset_dir
 from .validate.report import build_coverage_report
+from .validate.contract import build_dataset_contract
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -521,3 +522,45 @@ def report_command(data_dir: Path, schemas_dir: Path, out: Path) -> None:
     )
     write_json(out, report_payload)
     click.echo(f"Wrote report: {out}")
+
+
+@cli.command("contract")
+@click.option(
+    "--data-dir",
+    default=str(DEFAULT_DATA_DIR),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--out",
+    default=str(DEFAULT_DATA_DIR / "dataset_contract.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--compatibility-version",
+    default=1,
+    show_default=True,
+    type=int,
+    help="Bump only on breaking data-contract changes expected by app clients.",
+)
+@click.option(
+    "--contract-version",
+    default="1.0.0",
+    show_default=True,
+    help="Semantic version of the contract manifest format.",
+)
+def contract_command(
+    data_dir: Path,
+    out: Path,
+    compatibility_version: int,
+    contract_version: str,
+) -> None:
+    """Build deterministic dataset contract/version manifest JSON."""
+    contract_payload = build_dataset_contract(
+        data_dir=data_dir,
+        compatibility_version=compatibility_version,
+        contract_version=contract_version,
+    )
+    write_json(out, contract_payload)
+    click.echo(f"Wrote contract: {out}")

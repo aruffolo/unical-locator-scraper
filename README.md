@@ -19,7 +19,12 @@ Run from `scraper/`:
 .venv/bin/pytest -q
 .venv/bin/python -m unical_scraper validate --data-dir data/normalized --schemas-dir data/schema
 .venv/bin/python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out data/normalized/report.json
+.venv/bin/python -m unical_scraper contract --data-dir data/normalized --out data/normalized/dataset_contract.json
 ```
+
+`dataset_contract.json` is the app-facing compatibility manifest:
+- `compatibility_version`: bump only for breaking data-contract changes
+- `revision`: deterministic hash of normalized datasets for change detection
 
 ## Aula Extraction
 

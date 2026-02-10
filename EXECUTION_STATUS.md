@@ -10,7 +10,7 @@ Owner: Elrond89
 - `blocked`: cannot proceed safely without input/dependency
 
 ## Current Baseline (2026-02-10)
-- Tests: `62 passed`
+- Tests: `67 passed`
 - Validation: all datasets schema-valid
 - Integrity: no issues
 - Dataset baseline:
@@ -74,6 +74,7 @@ Owner: Elrond89
 - 2026-02-10: Added QA hardening checks in `integrity.py` for conflicting room-floor assignments and suspicious near-duplicate aulas (token-set based), with regression tests.
 - 2026-02-10: Freeze gate checkpoint refreshed after floor + QA hardening (`pytest`, `validate`, `report`) with clean integrity.
 - 2026-02-10: Added CI coverage guardrails (baseline-vs-candidate report gate): `coverage.aulas.with_floor` must not decrease and `coverage.aulas.with_building_id == coverage.aulas.total`.
+- 2026-02-10: Added deterministic `dataset_contract.json` manifest + schema + CI sync check for client compatibility/versioning (`compatibility_version`, `revision`, per-dataset hashes/counts).
 
 ## Blockers
 - No hard blockers at this checkpoint.

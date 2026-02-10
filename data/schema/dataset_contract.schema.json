@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dataset_contract.schema.json",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "contract_version",
+    "compatibility_version",
+    "revision",
+    "datasets",
+    "coverage"
+  ],
+  "properties": {
+    "contract_id": { "type": "string", "minLength": 1 },
+    "contract_version": { "type": "string", "minLength": 1 },
+    "compatibility_version": { "type": "integer", "minimum": 1 },
+    "revision": { "type": "string", "minLength": 1 },
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "records", "sha256"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "records": { "type": "integer", "minimum": 0 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "required": ["aulas"],
+      "properties": {
+        "aulas": {
+          "type": "object",
+          "required": ["total", "with_building_id", "with_floor", "with_capacity"],
+          "properties": {
+            "total": { "type": "integer", "minimum": 0 },
+            "with_building_id": { "type": "integer", "minimum": 0 },
+            "with_floor": { "type": "integer", "minimum": 0 },
+            "with_capacity": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

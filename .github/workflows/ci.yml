@@ -51,3 +51,9 @@ jobs:
           python -m unical_scraper.validate.coverage_gate \
             --baseline /tmp/unical-report/baseline-report.json \
             --candidate /tmp/unical-report/report.json
+
+      - name: Verify Dataset Contract
+        run: |
+          mkdir -p /tmp/unical-report
+          python -m unical_scraper contract --data-dir data/normalized --out /tmp/unical-report/dataset_contract.generated.json
+          diff -u data/normalized/dataset_contract.json /tmp/unical-report/dataset_contract.generated.json

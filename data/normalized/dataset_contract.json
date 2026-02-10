@@ -1,0 +1,66 @@
+{
+  "compatibility_version": 1,
+  "contract_id": "unical-normalized-datasets",
+  "contract_version": "1.0.0",
+  "coverage": {
+    "aulas": {
+      "total": 517,
+      "with_building_id": 517,
+      "with_capacity": 280,
+      "with_floor": 329
+    }
+  },
+  "datasets": [
+    {
+      "name": "aliases.json",
+      "records": 1374,
+      "sha256": "eea2fef87e4809ab6e929ca84a4766ddbeb2d6d21ab639d2b45d8bbf348f7466"
+    },
+    {
+      "name": "aulas.json",
+      "records": 517,
+      "sha256": "cdb73ae9fba30aaf17e96abfd2cf2a55c15101a7ade80907eca0cc52116fdabd"
+    },
+    {
+      "name": "building_entrances.json",
+      "records": 0,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "name": "buildings.json",
+      "records": 151,
+      "sha256": "2e01f03184ba191936cc8b36b7406c3ecf66e8874fcc0d2419dc88c595d534ed"
+    },
+    {
+      "name": "departments.json",
+      "records": 14,
+      "sha256": "d8564414668fd8a267f82d44b75a865e397a41220b15727fe922c44ff06d324e"
+    },
+    {
+      "name": "faqs.json",
+      "records": 0,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "name": "glossary.json",
+      "records": 0,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "name": "people.json",
+      "records": 4140,
+      "sha256": "512bc9a923dbfda7675cb60dc343a18c0ba2f4bd9a5308c160a007f2491f537c"
+    },
+    {
+      "name": "places.json",
+      "records": 544,
+      "sha256": "98fb414cd5daa636f933dfa9cd8603717c493af72d93bbaedeb2040407f55944"
+    },
+    {
+      "name": "sources.json",
+      "records": 5,
+      "sha256": "bef00b2fc4717cb353419c2aa6a0667558366aa664404f3388144d61e702d44b"
+    }
+  ],
+  "revision": "d2a0edf1783d3a8a6b633dc0f6aa12c13bb76c0c22591d08034b41fb1d3f49e2"
+}
