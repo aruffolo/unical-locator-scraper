@@ -648,6 +648,9 @@ def _apply_source_specific_aula_enrichments_and_drops(
                 should_drop = True
             elif "multimediale" in lowered_name and "25" in lowered_name:
                 override_building_id = "cla-centro-linguistico-d-ateneo"
+        elif "cla.unical.it/servizi-linguistici/studio-in-autonomia/" in source_url:
+            if "multimediale cla" in lowered_name:
+                override_building_id = "cla-centro-linguistico-d-ateneo"
 
         if should_drop:
             place_id = aula.get("place_id")

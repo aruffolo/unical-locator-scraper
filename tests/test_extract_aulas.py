@@ -494,6 +494,36 @@ def test_crawl_aulas_parses_fisica_lab_headings_and_bench_capacity() -> None:
     assert mechanics.capacity == 16
 
 
+def test_crawl_aulas_parses_cla_multimedia_labs() -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    cla_url = "https://cla.unical.it/servizi-linguistici/studio-in-autonomia/"
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        cla_url: """
+            <html><body>
+              <p>I Laboratori Multimediali (Cubo 17A e Cubo 25C) forniscono un ambiente interattivo.</p>
+            </body></html>
+        """,
+    }
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages),
+        department_urls=(cla_url,),
+        planner_base_url=None,
+    )
+
+    names = {item.name for item in aulas}
+    assert "Aula Multimediale CLA 17A" in names
+    assert "Aula Multimediale CLA 25C" in names
+
+    aula_17a = next(item for item in aulas if item.name == "Aula Multimediale CLA 17A")
+    assert aula_17a.building_hint == "Cubo 17A"
+
+    aula_25c = next(item for item in aulas if item.name == "Aula Multimediale CLA 25C")
+    assert aula_25c.building_hint == "Cubo 25C"
+
+
 def test_crawl_aulas_prefers_higher_capacity_on_duplicate_rows() -> None:
     base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
     first_department_url = "https://a.example/strutture/"

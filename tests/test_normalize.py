@@ -247,6 +247,11 @@ def test_normalize_aulas_applies_manual_overrides_and_drops_known_false_positive
             floor="Primo piano",
         ),
         RawAula(
+            name="Aula Multimediale CLA 25C",
+            source_url="https://cla.unical.it/servizi-linguistici/studio-in-autonomia/",
+            building_hint="Cubo 25C",
+        ),
+        RawAula(
             name="aula e",
             source_url="https://dimes.unical.it/dipartimento/organizzazione/strutture/",
         ),
@@ -302,6 +307,9 @@ def test_normalize_aulas_applies_manual_overrides_and_drops_known_false_positive
     multimediale = aula_by_name["Aula Multimediale piano 1°cubo 25C"]
     assert multimediale["building_id"] == "cla-centro-linguistico-d-ateneo"
     assert multimediale["floor"] == "Primo piano"
+
+    cla_multimediale = aula_by_name["Aula Multimediale CLA 25C"]
+    assert cla_multimediale["building_id"] == "cla-centro-linguistico-d-ateneo"
 
     place_names = {str(place["name"]) for place in aula_places}
     assert "Aula Blu" not in place_names

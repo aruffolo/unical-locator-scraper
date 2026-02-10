@@ -99,6 +99,7 @@ DEFAULT_DEPARTMENT_AULA_URLS = tuple(
         {
             *(f"https://{subdomain}.unical.it/dipartimento/organizzazione/strutture/" for subdomain in DEPARTMENT_SITE_SUBDOMAINS),
             "https://www2.dimes.unical.it/it/content/aule-dipartimento",
+            "https://cla.unical.it/servizi-linguistici/studio-in-autonomia/",
         }
     )
 )
@@ -702,6 +703,7 @@ def _parse_department_aulas_html(html_text: str, source_url: str) -> list[RawAul
             )
 
     aulas.extend(_parse_department_aulas_accordions(soup=soup, source_url=source_url))
+    aulas.extend(_parse_cla_studio_autonomia_aulas(soup=soup, source_url=source_url))
     return aulas
 
 
@@ -751,6 +753,38 @@ def _contains_aula_signal(values: list[str]) -> bool:
     if _looks_like_room_code(merged):
         return True
     return bool(re.search(r"\b\d{1,2}[A-Za-z]\s*\d?[A-Za-z]?\b", merged))
+
+
+def _parse_cla_studio_autonomia_aulas(soup: BeautifulSoup, source_url: str) -> list[RawAula]:
+    if "cla.unical.it/servizi-linguistici/studio-in-autonomia/" not in source_url.casefold():
+        return []
+
+    text = collapse_whitespace(soup.get_text(" ", strip=True))
+    if not text:
+        return []
+
+    cubes: set[str] = set()
+    for group in re.findall(
+        r"Laboratori\s+Multimediali\s*\(([^)]*)\)",
+        text,
+        flags=re.IGNORECASE,
+    ):
+        for match in re.finditer(r"\bCubo\s*([0-9]{1,2}[A-Za-z])\b", group, flags=re.IGNORECASE):
+            cubes.add(match.group(1).upper())
+
+    aulas: list[RawAula] = []
+    for cube in sorted(cubes):
+        name = f"Aula Multimediale CLA {cube}"
+        aulas.append(
+            RawAula(
+                name=name,
+                source_url=source_url,
+                room=_extract_room_label(name),
+                short_code=_extract_short_code(name),
+                building_hint=f"Cubo {cube}",
+            )
+        )
+    return aulas
 
 
 def _parse_department_aulas_accordions(soup: BeautifulSoup, source_url: str) -> list[RawAula]:

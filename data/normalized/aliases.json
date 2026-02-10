@@ -7427,6 +7427,62 @@
     "normalized": "multimediale25cselfstudy"
   },
   {
+    "alias_id": "alias-place-aula-multimediale-cla-17a-cubo-17a-aula-multimediale-cla-17a",
+    "entity_id": "aula-multimediale-cla-17a-cubo-17a",
+    "entity_type": "PLACE",
+    "label": "Aula Multimediale CLA 17A",
+    "normalized": "aula-multimediale-cla-17a"
+  },
+  {
+    "alias_id": "alias-place-aula-multimediale-cla-17a-cubo-17a-multimediale-cla-17a",
+    "entity_id": "aula-multimediale-cla-17a-cubo-17a",
+    "entity_type": "PLACE",
+    "label": "Multimediale CLA 17A",
+    "normalized": "multimediale-cla-17a"
+  },
+  {
+    "alias_id": "alias-place-aula-multimediale-cla-17a-cubo-17a-multimedialecla-17-a",
+    "entity_id": "aula-multimediale-cla-17a-cubo-17a",
+    "entity_type": "PLACE",
+    "label": "MULTIMEDIALECLA 17 A",
+    "normalized": "multimedialecla-17-a"
+  },
+  {
+    "alias_id": "alias-place-aula-multimediale-cla-17a-cubo-17a-multimedialecla17a",
+    "entity_id": "aula-multimediale-cla-17a-cubo-17a",
+    "entity_type": "PLACE",
+    "label": "MULTIMEDIALECLA17A",
+    "normalized": "multimedialecla17a"
+  },
+  {
+    "alias_id": "alias-place-aula-multimediale-cla-25c-aula-multimediale-cla-25c",
+    "entity_id": "aula-multimediale-cla-25c",
+    "entity_type": "PLACE",
+    "label": "Aula Multimediale CLA 25C",
+    "normalized": "aula-multimediale-cla-25c"
+  },
+  {
+    "alias_id": "alias-place-aula-multimediale-cla-25c-multimediale-cla-25c",
+    "entity_id": "aula-multimediale-cla-25c",
+    "entity_type": "PLACE",
+    "label": "Multimediale CLA 25C",
+    "normalized": "multimediale-cla-25c"
+  },
+  {
+    "alias_id": "alias-place-aula-multimediale-cla-25c-multimedialecla-25-c",
+    "entity_id": "aula-multimediale-cla-25c",
+    "entity_type": "PLACE",
+    "label": "MULTIMEDIALECLA 25 C",
+    "normalized": "multimedialecla-25-c"
+  },
+  {
+    "alias_id": "alias-place-aula-multimediale-cla-25c-multimedialecla25c",
+    "entity_id": "aula-multimediale-cla-25c",
+    "entity_type": "PLACE",
+    "label": "MULTIMEDIALECLA25C",
+    "normalized": "multimedialecla25c"
+  },
+  {
     "alias_id": "alias-place-aula-multimediale-cubo-20b-aula-multimediale",
     "entity_id": "aula-multimediale-cubo-20b",
     "entity_type": "PLACE",
