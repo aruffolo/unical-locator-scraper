@@ -1,5 +1,131 @@
 [
   {
+    "alias_id": "alias-building-auditorium-teatro-grande-cinema-campus",
+    "entity_id": "auditorium-teatro-grande",
+    "entity_type": "BUILDING",
+    "label": "Cinema Campus",
+    "normalized": "cinema-campus"
+  },
+  {
+    "alias_id": "alias-building-auditorium-teatro-grande-tau",
+    "entity_id": "auditorium-teatro-grande",
+    "entity_type": "BUILDING",
+    "label": "TAU",
+    "normalized": "tau"
+  },
+  {
+    "alias_id": "alias-building-auditorium-teatro-grande-tau-teatro-auditorium-unical-cinema-campus",
+    "entity_id": "auditorium-teatro-grande",
+    "entity_type": "BUILDING",
+    "label": "TAU Teatro Auditorium Unical Cinema Campus",
+    "normalized": "tau-teatro-auditorium-unical-cinema-campus"
+  },
+  {
+    "alias_id": "alias-building-aula-magna-aula-magna-b-andreatta",
+    "entity_id": "aula-magna",
+    "entity_type": "BUILDING",
+    "label": "Aula Magna B. Andreatta",
+    "normalized": "aula-magna-b-andreatta"
+  },
+  {
+    "alias_id": "alias-building-cappella-universitaria-cappella",
+    "entity_id": "cappella-universitaria",
+    "entity_type": "BUILDING",
+    "label": "Cappella",
+    "normalized": "cappella"
+  },
+  {
+    "alias_id": "alias-building-cappella-universitaria-cappella-24b",
+    "entity_id": "cappella-universitaria",
+    "entity_type": "BUILDING",
+    "label": "Cappella 24B",
+    "normalized": "cappella-24b"
+  },
+  {
+    "alias_id": "alias-building-cappella-universitaria-cappella-universitaria",
+    "entity_id": "cappella-universitaria",
+    "entity_type": "BUILDING",
+    "label": "Cappella Universitaria",
+    "normalized": "cappella-universitaria"
+  },
+  {
+    "alias_id": "alias-building-centro-radiotelevisivo-aula-u-caldora",
+    "entity_id": "centro-radiotelevisivo",
+    "entity_type": "BUILDING",
+    "label": "Aula U. Caldora",
+    "normalized": "aula-u-caldora"
+  },
+  {
+    "alias_id": "alias-building-cla-centro-linguistico-d-ateneo-centro-linguistico-d-ateneo",
+    "entity_id": "cla-centro-linguistico-d-ateneo",
+    "entity_type": "BUILDING",
+    "label": "Centro Linguistico d'Ateneo",
+    "normalized": "centro-linguistico-d-ateneo"
+  },
+  {
+    "alias_id": "alias-building-cla-centro-linguistico-d-ateneo-cla-17a",
+    "entity_id": "cla-centro-linguistico-d-ateneo",
+    "entity_type": "BUILDING",
+    "label": "CLA 17A",
+    "normalized": "cla-17a"
+  },
+  {
+    "alias_id": "alias-building-cla-centro-linguistico-d-ateneo-cla-25c",
+    "entity_id": "cla-centro-linguistico-d-ateneo",
+    "entity_type": "BUILDING",
+    "label": "CLA 25C",
+    "normalized": "cla-25c"
+  },
+  {
+    "alias_id": "alias-building-cla-centro-linguistico-d-ateneo-cla-25c-17a",
+    "entity_id": "cla-centro-linguistico-d-ateneo",
+    "entity_type": "BUILDING",
+    "label": "CLA 25C - 17A",
+    "normalized": "cla-25c-17a"
+  },
+  {
+    "alias_id": "alias-building-cubo-24b-university-club",
+    "entity_id": "cubo-24b",
+    "entity_type": "BUILDING",
+    "label": "University Club",
+    "normalized": "university-club"
+  },
+  {
+    "alias_id": "alias-building-cubo-25b-direzione-generale",
+    "entity_id": "cubo-25b",
+    "entity_type": "BUILDING",
+    "label": "Direzione Generale",
+    "normalized": "direzione-generale"
+  },
+  {
+    "alias_id": "alias-building-cubo-25b-rettorato",
+    "entity_id": "cubo-25b",
+    "entity_type": "BUILDING",
+    "label": "Rettorato",
+    "normalized": "rettorato"
+  },
+  {
+    "alias_id": "alias-building-teatro-piccolo-piccolo-teatro-unical",
+    "entity_id": "teatro-piccolo",
+    "entity_type": "BUILDING",
+    "label": "Piccolo Teatro Unical",
+    "normalized": "piccolo-teatro-unical"
+  },
+  {
+    "alias_id": "alias-building-teatro-piccolo-ptu",
+    "entity_id": "teatro-piccolo",
+    "entity_type": "BUILDING",
+    "label": "PTU",
+    "normalized": "ptu"
+  },
+  {
+    "alias_id": "alias-building-teatro-piccolo-ptu-piccolo-teatro-unical",
+    "entity_id": "teatro-piccolo",
+    "entity_type": "BUILDING",
+    "label": "PTU Piccolo Teatro Unical",
+    "normalized": "ptu-piccolo-teatro-unical"
+  },
+  {
     "alias_id": "alias-place-aula-1-cubo-12b-1",
     "entity_id": "aula-1-cubo-12b",
     "entity_type": "PLACE",
@@ -9518,5 +9644,89 @@
     "entity_type": "PLACE",
     "label": "Zeus",
     "normalized": "zeus"
+  },
+  {
+    "alias_id": "alias-place-service-biblioteche-biblioteca",
+    "entity_id": "service-biblioteche",
+    "entity_type": "PLACE",
+    "label": "Biblioteca",
+    "normalized": "biblioteca"
+  },
+  {
+    "alias_id": "alias-place-service-biblioteche-biblioteca-di-ateneo",
+    "entity_id": "service-biblioteche",
+    "entity_type": "PLACE",
+    "label": "Biblioteca di Ateneo",
+    "normalized": "biblioteca-di-ateneo"
+  },
+  {
+    "alias_id": "alias-place-service-biblioteche-biblioteche",
+    "entity_id": "service-biblioteche",
+    "entity_type": "PLACE",
+    "label": "Biblioteche",
+    "normalized": "biblioteche"
+  },
+  {
+    "alias_id": "alias-place-service-centro-congressi-aula-magna-b-andreatta",
+    "entity_id": "service-centro-congressi",
+    "entity_type": "PLACE",
+    "label": "Aula Magna B. Andreatta",
+    "normalized": "aula-magna-b-andreatta"
+  },
+  {
+    "alias_id": "alias-place-service-centro-congressi-centro-congressi",
+    "entity_id": "service-centro-congressi",
+    "entity_type": "PLACE",
+    "label": "Centro Congressi",
+    "normalized": "centro-congressi"
+  },
+  {
+    "alias_id": "alias-place-service-centro-congressi-centro-congressi-aula-magna-b-andreatta",
+    "entity_id": "service-centro-congressi",
+    "entity_type": "PLACE",
+    "label": "Centro Congressi Aula Magna B. Andreatta",
+    "normalized": "centro-congressi-aula-magna-b-andreatta"
+  },
+  {
+    "alias_id": "alias-place-service-centro-sanitario-centro-sanitario-34b",
+    "entity_id": "service-centro-sanitario",
+    "entity_type": "PLACE",
+    "label": "Centro Sanitario 34B",
+    "normalized": "centro-sanitario-34b"
+  },
+  {
+    "alias_id": "alias-place-service-centro-sanitario-guardia-medica",
+    "entity_id": "service-centro-sanitario",
+    "entity_type": "PLACE",
+    "label": "Guardia Medica",
+    "normalized": "guardia-medica"
+  },
+  {
+    "alias_id": "alias-place-service-polo-infanzia-liaison-office-technest",
+    "entity_id": "service-polo-infanzia",
+    "entity_type": "PLACE",
+    "label": "Liaison Office - Technest",
+    "normalized": "liaison-office-technest"
+  },
+  {
+    "alias_id": "alias-place-service-polo-infanzia-polo-infanzia",
+    "entity_id": "service-polo-infanzia",
+    "entity_type": "PLACE",
+    "label": "Polo Infanzia",
+    "normalized": "polo-infanzia"
+  },
+  {
+    "alias_id": "alias-place-service-polo-infanzia-ufficio-postale",
+    "entity_id": "service-polo-infanzia",
+    "entity_type": "PLACE",
+    "label": "Ufficio postale",
+    "normalized": "ufficio-postale"
+  },
+  {
+    "alias_id": "alias-place-service-polo-infanzia-ufficio-postale-polo-infanzia",
+    "entity_id": "service-polo-infanzia",
+    "entity_type": "PLACE",
+    "label": "Ufficio postale Polo Infanzia",
+    "normalized": "ufficio-postale-polo-infanzia"
   }
 ]

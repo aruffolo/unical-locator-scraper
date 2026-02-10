@@ -14,7 +14,7 @@ from .extract.buildings import crawl_buildings
 from .extract.departments import crawl_departments
 from .extract.services import crawl_services
 from .extract.teachers import crawl_teachers
-from .transform.aliases import build_aula_place_aliases
+from .transform.aliases import build_search_aliases
 from .transform.normalize import (
     normalize_aulas,
     normalize_buildings,
@@ -421,16 +421,28 @@ def link_places_buildings_command(places_file: Path, buildings_file: Path) -> No
     type=click.Path(path_type=Path),
 )
 @click.option(
+    "--buildings-file",
+    default=str(DEFAULT_DATA_DIR / "buildings.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
     "--out-file",
     default=str(DEFAULT_DATA_DIR / "aliases.json"),
     show_default=True,
     type=click.Path(path_type=Path),
 )
-def link_aliases_command(aulas_file: Path, places_file: Path, out_file: Path) -> None:
-    """Generate deterministic PLACE aliases for aulas."""
+def link_aliases_command(
+    aulas_file: Path,
+    places_file: Path,
+    buildings_file: Path,
+    out_file: Path,
+) -> None:
+    """Generate deterministic aliases for aulas and landmark labels."""
     aulas = _load_json_array(aulas_file)
     places = _load_json_array(places_file)
-    aliases = build_aula_place_aliases(aulas=aulas, places=places)
+    buildings = _load_json_array(buildings_file)
+    aliases = build_search_aliases(aulas=aulas, places=places, buildings=buildings)
     write_json(out_file, aliases)
 
     click.echo(f"Generated aliases: {len(aliases)}")

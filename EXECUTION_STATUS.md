@@ -10,16 +10,16 @@ Owner: Elrond89
 - `blocked`: cannot proceed safely without input/dependency
 
 ## Current Baseline (2026-02-10)
-- Tests: `51 passed`
+- Tests: `53 passed`
 - Validation: all datasets schema-valid
 - Integrity: no issues
 - Dataset baseline:
-  - `buildings.json`: 150 records
+  - `buildings.json`: 151 records
   - `places.json`: 522 records of type `AULA` (549 total places)
   - `aulas.json`: 522 records
   - `departments.json`: 14 records
   - `people.json`: 4140 records
-  - `aliases.json`: 1360 records
+  - `aliases.json`: 1390 records
 - Aula linkage quality:
   - `aulas` with `building_id`: 522/522 (`100%`)
   - `aulas` with `floor`: 208/522
@@ -43,6 +43,7 @@ Owner: Elrond89
 - Cross-source aula dedupe intentionally keeps one canonical record (`normalized_name` + `building_id`), but provenance (`source_url`) may reflect one source when multiple sources report the same aula.
 - Some service entities remain intentionally non-linkable (`building_id = null`) because they are virtual or multi-site.
 - Aula aliases are now generated deterministically, but ranking/consumption policy must still be defined in the future app search layer.
+- Landmark alias mapping is currently config-driven (curated labels from campus map/PDF); it should be periodically reviewed when map labeling changes.
 
 ## Adaptations / Decisions Log
 - 2026-02-09: Keep execution in phased slices (source inventory -> departments -> buildings -> places -> coordinates -> quality hardening).
@@ -62,6 +63,7 @@ Owner: Elrond89
 - 2026-02-10: Resolved remaining missing aula links with manual-source rules and dropped confirmed false-positive planner entries.
 - 2026-02-10: Added CLA `studio-in-autonomia` extraction for multimedia labs and mapped them to CLA building context.
 - 2026-02-10: Final freeze pass executed (`pytest`, `validate`, `report`) with clean gates; dataset marked release-ready at this checkpoint.
+- 2026-02-10: Added landmark/search alias pass (`link aliases`) for map/PDF labels (PTU, TAU, Rettorato, Biblioteche, CLA, Polo Infanzia, etc.) and added `cappella-universitaria` building landmark entity.
 
 ## Blockers
 - No hard blockers at this checkpoint.

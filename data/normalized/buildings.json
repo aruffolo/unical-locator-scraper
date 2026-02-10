@@ -129,6 +129,16 @@
     "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
   },
   {
+    "building_id": "cappella-universitaria",
+    "description": "Landmark on official UNICAL campus map (area Cubo 24B).",
+    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "lat": 39.3615853,
+    "lng": 16.2262273,
+    "name": "Cappella Universitaria",
+    "source_id": "unical-campus-map",
+    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
     "building_id": "cedam-centro-di-educazione-e-documentazione-ambientale",
     "description": "Descrizione: Link informativo: http://www.unical.it/portale/strutture/centri/cedam/ Piano Terra: Primo piano: Secondo piano: Terzo piano: Quarto piano (ponte pedonale): Quinto piano : Sesto piano (ponte carrabile): Settimo piano: Altra collocazione: Evento:",
     "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
