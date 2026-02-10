@@ -10,7 +10,7 @@ Owner: Elrond89
 - `blocked`: cannot proceed safely without input/dependency
 
 ## Current Baseline (2026-02-10)
-- Tests: `56 passed`
+- Tests: `62 passed`
 - Validation: all datasets schema-valid
 - Integrity: no issues
 - Dataset baseline:
@@ -71,6 +71,8 @@ Owner: Elrond89
 - 2026-02-10: Added floor enrichment pass from explicit department-structure evidence (`dimes`/`dimeg`) and deterministic code hints (`CH-*`, `Lab *_nP`, `45B0*`, ponte markers), increasing floor coverage by +31.
 - 2026-02-10: Fixed table-parser column alignment on empty `<td>` cells and extended capacity extraction (`54posti`/`60persone` forms), improving `capacity` coverage and reducing noisy duplicate aula variants.
 - 2026-02-10: Extended floor extraction for department rows (`4º piano`, `ponte carrabile/pedonale`, `sottovia`) and added normalize hints (`29B1/29C2` code-floor inference, `superiore/inferiore`, planner/DIAM `Giannattasio`), increasing floor coverage by +73 (256 -> 329).
+- 2026-02-10: Added QA hardening checks in `integrity.py` for conflicting room-floor assignments and suspicious near-duplicate aulas (token-set based), with regression tests.
+- 2026-02-10: Freeze gate checkpoint refreshed after floor + QA hardening (`pytest`, `validate`, `report`) with clean integrity.
 
 ## Blockers
 - No hard blockers at this checkpoint.
