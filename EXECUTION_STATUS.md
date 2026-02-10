@@ -61,6 +61,7 @@ Owner: Elrond89
 - 2026-02-10: Added Polifunzionale/capannoni mapping pass and source-specific building overrides.
 - 2026-02-10: Resolved remaining missing aula links with manual-source rules and dropped confirmed false-positive planner entries.
 - 2026-02-10: Added CLA `studio-in-autonomia` extraction for multimedia labs and mapped them to CLA building context.
+- 2026-02-10: Final freeze pass executed (`pytest`, `validate`, `report`) with clean gates; dataset marked release-ready at this checkpoint.
 
 ## Blockers
 - No hard blockers at this checkpoint.
