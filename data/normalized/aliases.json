@@ -742,27 +742,6 @@
     "normalized": "aula-39b1c"
   },
   {
-    "alias_id": "alias-place-aula-39c-39-c",
-    "entity_id": "aula-39c",
-    "entity_type": "PLACE",
-    "label": "39 C",
-    "normalized": "39-c"
-  },
-  {
-    "alias_id": "alias-place-aula-39c-39c",
-    "entity_id": "aula-39c",
-    "entity_type": "PLACE",
-    "label": "39C",
-    "normalized": "39c"
-  },
-  {
-    "alias_id": "alias-place-aula-39c-aula-39c",
-    "entity_id": "aula-39c",
-    "entity_type": "PLACE",
-    "label": "Aula 39C",
-    "normalized": "aula-39c"
-  },
-  {
     "alias_id": "alias-place-aula-39c1a-cubo-39c-39-c-1-a",
     "entity_id": "aula-39c1a-cubo-39c",
     "entity_type": "PLACE",
@@ -2653,34 +2632,6 @@
     "normalized": "consolidata-40b1-dinci"
   },
   {
-    "alias_id": "alias-place-aula-consolidata-43b-aula-consolidata-43b",
-    "entity_id": "aula-consolidata-43b",
-    "entity_type": "PLACE",
-    "label": "Aula Consolidata 43B",
-    "normalized": "aula-consolidata-43b"
-  },
-  {
-    "alias_id": "alias-place-aula-consolidata-43b-consolidata-43-b",
-    "entity_id": "aula-consolidata-43b",
-    "entity_type": "PLACE",
-    "label": "CONSOLIDATA 43 B",
-    "normalized": "consolidata-43-b"
-  },
-  {
-    "alias_id": "alias-place-aula-consolidata-43b-consolidata-43b",
-    "entity_id": "aula-consolidata-43b",
-    "entity_type": "PLACE",
-    "label": "Consolidata 43B",
-    "normalized": "consolidata-43b"
-  },
-  {
-    "alias_id": "alias-place-aula-consolidata-43b-consolidata43b",
-    "entity_id": "aula-consolidata-43b",
-    "entity_type": "PLACE",
-    "label": "CONSOLIDATA43B",
-    "normalized": "consolidata43b"
-  },
-  {
     "alias_id": "alias-place-aula-consolidata-43b1-p-caparrini-cubo-43b-consolidata-43b1-p-caparrini",
     "entity_id": "aula-consolidata-43b1-p-caparrini-cubo-43b",
     "entity_type": "PLACE",
@@ -2721,27 +2672,6 @@
     "entity_type": "PLACE",
     "label": "CONSOLIDATA 5B",
     "normalized": "consolidata-5b"
-  },
-  {
-    "alias_id": "alias-place-aula-consolidata-b-aula-consolidata-b",
-    "entity_id": "aula-consolidata-b",
-    "entity_type": "PLACE",
-    "label": "Aula Consolidata B",
-    "normalized": "aula-consolidata-b"
-  },
-  {
-    "alias_id": "alias-place-aula-consolidata-b-consolidata-b",
-    "entity_id": "aula-consolidata-b",
-    "entity_type": "PLACE",
-    "label": "Consolidata B",
-    "normalized": "consolidata-b"
-  },
-  {
-    "alias_id": "alias-place-aula-consolidata-b-consolidatab",
-    "entity_id": "aula-consolidata-b",
-    "entity_type": "PLACE",
-    "label": "CONSOLIDATAB",
-    "normalized": "consolidatab"
   },
   {
     "alias_id": "alias-place-aula-consolidata-cubo-40b-aula-consolidata",
@@ -3771,27 +3701,6 @@
     "entity_type": "PLACE",
     "label": "DS4",
     "normalized": "ds4"
-  },
-  {
-    "alias_id": "alias-place-aula-ds4-piano-terra-aula-ds4-piano-terra",
-    "entity_id": "aula-ds4-piano-terra",
-    "entity_type": "PLACE",
-    "label": "Aula DS4 (Piano Terra)",
-    "normalized": "aula-ds4-piano-terra"
-  },
-  {
-    "alias_id": "alias-place-aula-ds4-piano-terra-ds4-piano-terra",
-    "entity_id": "aula-ds4-piano-terra",
-    "entity_type": "PLACE",
-    "label": "DS4 (Piano Terra)",
-    "normalized": "ds4-piano-terra"
-  },
-  {
-    "alias_id": "alias-place-aula-ds4-piano-terra-ds4-pianoterra",
-    "entity_id": "aula-ds4-piano-terra",
-    "entity_type": "PLACE",
-    "label": "DS4(PIANOTERRA)",
-    "normalized": "ds4-pianoterra"
   },
   {
     "alias_id": "alias-place-aula-ds5-cubo-41b-aula-ds-5",
@@ -6993,29 +6902,29 @@
     "normalized": "mod3"
   },
   {
-    "alias_id": "alias-place-aula-mod3a-aula-mod-3-a",
-    "entity_id": "aula-mod3a",
+    "alias_id": "alias-place-aula-mod3a-cubo-39c-aula-mod-3-a",
+    "entity_id": "aula-mod3a-cubo-39c",
     "entity_type": "PLACE",
     "label": "Aula MOD 3 A",
     "normalized": "aula-mod-3-a"
   },
   {
-    "alias_id": "alias-place-aula-mod3a-aula-mod3a",
-    "entity_id": "aula-mod3a",
+    "alias_id": "alias-place-aula-mod3a-cubo-39c-aula-mod3a",
+    "entity_id": "aula-mod3a-cubo-39c",
     "entity_type": "PLACE",
     "label": "Aula MOD3A",
     "normalized": "aula-mod3a"
   },
   {
-    "alias_id": "alias-place-aula-mod3a-mod-3-a",
-    "entity_id": "aula-mod3a",
+    "alias_id": "alias-place-aula-mod3a-cubo-39c-mod-3-a",
+    "entity_id": "aula-mod3a-cubo-39c",
     "entity_type": "PLACE",
     "label": "MOD 3 A",
     "normalized": "mod-3-a"
   },
   {
-    "alias_id": "alias-place-aula-mod3a-mod3a",
-    "entity_id": "aula-mod3a",
+    "alias_id": "alias-place-aula-mod3a-cubo-39c-mod3a",
+    "entity_id": "aula-mod3a-cubo-39c",
     "entity_type": "PLACE",
     "label": "MOD3A",
     "normalized": "mod3a"
@@ -7868,27 +7777,6 @@
     "normalized": "p1"
   },
   {
-    "alias_id": "alias-place-aula-p1-piano-ponte-carrabile-aula-p1-piano-ponte-carrabile",
-    "entity_id": "aula-p1-piano-ponte-carrabile",
-    "entity_type": "PLACE",
-    "label": "Aula P1 (Piano Ponte Carrabile)",
-    "normalized": "aula-p1-piano-ponte-carrabile"
-  },
-  {
-    "alias_id": "alias-place-aula-p1-piano-ponte-carrabile-p1-piano-ponte-carrabile",
-    "entity_id": "aula-p1-piano-ponte-carrabile",
-    "entity_type": "PLACE",
-    "label": "P1 (Piano Ponte Carrabile)",
-    "normalized": "p1-piano-ponte-carrabile"
-  },
-  {
-    "alias_id": "alias-place-aula-p1-piano-ponte-carrabile-p1-pianopontecarrabile",
-    "entity_id": "aula-p1-piano-ponte-carrabile",
-    "entity_type": "PLACE",
-    "label": "P1(PIANOPONTECARRABILE)",
-    "normalized": "p1-pianopontecarrabile"
-  },
-  {
     "alias_id": "alias-place-aula-p3-cubo-43c-aula-p-3",
     "entity_id": "aula-p3-cubo-43c",
     "entity_type": "PLACE",
@@ -8393,13 +8281,6 @@
     "normalized": "seminari-ex-dip-nto-farmaco-biol"
   },
   {
-    "alias_id": "alias-place-aula-seminari-giannattasio-aula-seminari-giannattasio",
-    "entity_id": "aula-seminari-giannattasio",
-    "entity_type": "PLACE",
-    "label": "Aula seminari (Giannattasio)",
-    "normalized": "aula-seminari-giannattasio"
-  },
-  {
     "alias_id": "alias-place-aula-seminari-giannattasio-cubo-45b-aula-seminari-giannattasio",
     "entity_id": "aula-seminari-giannattasio-cubo-45b",
     "entity_type": "PLACE",
@@ -8411,13 +8292,6 @@
     "entity_id": "aula-seminari-giannattasio-cubo-45b",
     "entity_type": "PLACE",
     "label": "SEMINARI \"GIANNATTASIO\"",
-    "normalized": "seminari-giannattasio"
-  },
-  {
-    "alias_id": "alias-place-aula-seminari-giannattasio-seminari-giannattasio",
-    "entity_id": "aula-seminari-giannattasio",
-    "entity_type": "PLACE",
-    "label": "seminari (Giannattasio)",
     "normalized": "seminari-giannattasio"
   },
   {
@@ -9415,15 +9289,29 @@
     "normalized": "studenti2"
   },
   {
-    "alias_id": "alias-place-aula-studenti-aula-studenti",
-    "entity_id": "aula-studenti",
+    "alias_id": "alias-place-aula-studenti-cubo-30b-aula-studenti",
+    "entity_id": "aula-studenti-cubo-30b",
+    "entity_type": "PLACE",
+    "label": "AULA STUDENTI)",
+    "normalized": "aula-studenti"
+  },
+  {
+    "alias_id": "alias-place-aula-studenti-cubo-30b-studenti",
+    "entity_id": "aula-studenti-cubo-30b",
+    "entity_type": "PLACE",
+    "label": "STUDENTI)",
+    "normalized": "studenti"
+  },
+  {
+    "alias_id": "alias-place-aula-studenti-cubo-41b-aula-studenti",
+    "entity_id": "aula-studenti-cubo-41b",
     "entity_type": "PLACE",
     "label": "Aula studenti)",
     "normalized": "aula-studenti"
   },
   {
-    "alias_id": "alias-place-aula-studenti-studenti",
-    "entity_id": "aula-studenti",
+    "alias_id": "alias-place-aula-studenti-cubo-41b-studenti",
+    "entity_id": "aula-studenti-cubo-41b",
     "entity_type": "PLACE",
     "label": "studenti)",
     "normalized": "studenti"

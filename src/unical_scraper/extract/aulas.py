@@ -622,10 +622,10 @@ def _parse_department_aulas_html(html_text: str, source_url: str) -> list[RawAul
 
     for table in soup.select("table"):
         rows = [
-            [cell for cell in (_normalize_text(node.get_text(" ", strip=True)) for node in tr.select("th, td")) if cell]
+            [(_normalize_text(node.get_text(" ", strip=True)) or "") for node in tr.select("th, td")]
             for tr in table.select("tr")
         ]
-        rows = [row for row in rows if row]
+        rows = [row for row in rows if any(cell for cell in row)]
         if not rows:
             continue
 
@@ -1214,12 +1214,21 @@ def _extract_capacity(text: str) -> int | None:
         return None
 
     explicit = re.search(
-        r"\b(?:capienza|posti|n[°º.]?\s*posti)\s*[:\-]?\s*([0-9]{1,4})\b",
+        r"\b(?:capienza|posti|n[°º.]?\s*posti)\s*[:\-]?\s*([0-9]{1,4})(?:\s*(?:posti|persone))?\b",
         cleaned,
         flags=re.IGNORECASE,
     )
     if explicit:
         value = int(explicit.group(1))
+        return value if 1 <= value <= 5000 else None
+
+    units_only = re.search(
+        r"\b([0-9]{1,4})\s*(?:posti|persone)\b",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    if units_only:
+        value = int(units_only.group(1))
         return value if 1 <= value <= 5000 else None
 
     benches_or_workstations = re.search(

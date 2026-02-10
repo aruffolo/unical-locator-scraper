@@ -558,3 +558,85 @@ def test_crawl_aulas_prefers_higher_capacity_on_duplicate_rows() -> None:
     target = next(item for item in aulas if item.name == "Aula OA/SG4")
     assert target.capacity == 120
     assert target.building_hint == "Cubo 3A"
+
+
+def test_crawl_aulas_keeps_table_column_alignment_with_empty_cells() -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    department_url = "https://dinci.unical.it/dipartimento/organizzazione/strutture/"
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        department_url: """
+            <html><body>
+              <table>
+                <tr>
+                  <th>Aula</th>
+                  <th>Ex denominazione</th>
+                  <th>Cubo</th>
+                  <th>Piano</th>
+                  <th>Posti</th>
+                  <th>Dotazione</th>
+                  <th>Rete</th>
+                </tr>
+                <tr>
+                  <td>Aula seminari (Giannattasio)</td>
+                  <td></td>
+                  <td>45B</td>
+                  <td>Ponte carrabile</td>
+                  <td>24</td>
+                  <td>si</td>
+                  <td>si</td>
+                </tr>
+                <tr>
+                  <td>DINCI 41B 6B (Aula studenti)</td>
+                  <td></td>
+                  <td>41B</td>
+                  <td>Sesto Piano</td>
+                  <td>70</td>
+                  <td>si</td>
+                  <td>si</td>
+                </tr>
+              </table>
+            </body></html>
+        """,
+    }
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages),
+        department_urls=(department_url,),
+        planner_base_url=None,
+    )
+
+    giannattasio = next(item for item in aulas if item.name == "Aula seminari (Giannattasio)")
+    assert giannattasio.capacity == 24
+
+    studenti = next(item for item in aulas if item.name == "Aula studenti)")
+    assert studenti.capacity == 70
+
+
+def test_crawl_aulas_parses_attached_posti_capacity_marker() -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    department_url = "https://disu.unical.it/dipartimento/organizzazione/strutture/"
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        department_url: """
+            <html><body>
+              <table>
+                <tr>
+                  <td><strong>Aula F 3</strong></td>
+                  <td>Ubicazione: Cubo 18C – 2º Piano<br/>Capienza: 54posti</td>
+                </tr>
+              </table>
+            </body></html>
+        """,
+    }
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages),
+        department_urls=(department_url,),
+        planner_base_url=None,
+    )
+
+    aula_f3 = next(item for item in aulas if item.name == "Aula F 3")
+    assert aula_f3.capacity == 54
