@@ -18,6 +18,7 @@
       "building_id": { "type": "string" },
       "floor": { "type": "string" },
       "room": { "type": "string" },
+      "capacity": { "type": "integer", "minimum": 1 },
       "department_id": { "type": "string" },
       "source_id": { "type": "string" },
       "source_url": { "type": "string" },

@@ -161,6 +161,118 @@
     "normalized": "aula-25"
   },
   {
+    "alias_id": "alias-place-aula-29-c2-fac-1-cubo-29c-29-c2-fac-1",
+    "entity_id": "aula-29-c2-fac-1-cubo-29c",
+    "entity_type": "PLACE",
+    "label": "29 C2 (FAC 1)",
+    "normalized": "29-c2-fac-1"
+  },
+  {
+    "alias_id": "alias-place-aula-29-c2-fac-1-cubo-29c-29c2-fac1",
+    "entity_id": "aula-29-c2-fac-1-cubo-29c",
+    "entity_type": "PLACE",
+    "label": "29C2(FAC1)",
+    "normalized": "29c2-fac1"
+  },
+  {
+    "alias_id": "alias-place-aula-29-c2-fac-1-cubo-29c-aula-29-c2-fac-1",
+    "entity_id": "aula-29-c2-fac-1-cubo-29c",
+    "entity_type": "PLACE",
+    "label": "Aula 29 C2 (FAC 1)",
+    "normalized": "aula-29-c2-fac-1"
+  },
+  {
+    "alias_id": "alias-place-aula-29-c3-fac-2-cubo-29c-29-c3-fac-2",
+    "entity_id": "aula-29-c3-fac-2-cubo-29c",
+    "entity_type": "PLACE",
+    "label": "29 C3 (FAC 2)",
+    "normalized": "29-c3-fac-2"
+  },
+  {
+    "alias_id": "alias-place-aula-29-c3-fac-2-cubo-29c-29c3-fac2",
+    "entity_id": "aula-29-c3-fac-2-cubo-29c",
+    "entity_type": "PLACE",
+    "label": "29C3(FAC2)",
+    "normalized": "29c3-fac2"
+  },
+  {
+    "alias_id": "alias-place-aula-29-c3-fac-2-cubo-29c-aula-29-c3-fac-2",
+    "entity_id": "aula-29-c3-fac-2-cubo-29c",
+    "entity_type": "PLACE",
+    "label": "Aula 29 C3 (FAC 2)",
+    "normalized": "aula-29-c3-fac-2"
+  },
+  {
+    "alias_id": "alias-place-aula-29b1-cubo-29b-29-b-1",
+    "entity_id": "aula-29b1-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29 B 1",
+    "normalized": "29-b-1"
+  },
+  {
+    "alias_id": "alias-place-aula-29b1-cubo-29b-29b1",
+    "entity_id": "aula-29b1-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29B1",
+    "normalized": "29b1"
+  },
+  {
+    "alias_id": "alias-place-aula-29b1-cubo-29b-aula-29b1",
+    "entity_id": "aula-29b1-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "Aula 29B1",
+    "normalized": "aula-29b1"
+  },
+  {
+    "alias_id": "alias-place-aula-29b1-d-dolci-cubo-29b-29-b-1-ddolci",
+    "entity_id": "aula-29b1-d-dolci-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29 B 1 DDOLCI",
+    "normalized": "29-b-1-ddolci"
+  },
+  {
+    "alias_id": "alias-place-aula-29b1-d-dolci-cubo-29b-29b1-d-dolci",
+    "entity_id": "aula-29b1-d-dolci-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29B1 - D. Dolci",
+    "normalized": "29b1-d-dolci"
+  },
+  {
+    "alias_id": "alias-place-aula-29b1-d-dolci-cubo-29b-29b1ddolci",
+    "entity_id": "aula-29b1-d-dolci-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29B1DDOLCI",
+    "normalized": "29b1ddolci"
+  },
+  {
+    "alias_id": "alias-place-aula-29b1-d-dolci-cubo-29b-aula-29b1-d-dolci",
+    "entity_id": "aula-29b1-d-dolci-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "Aula 29B1 - D. Dolci",
+    "normalized": "aula-29b1-d-dolci"
+  },
+  {
+    "alias_id": "alias-place-aula-29b2-cubo-29b-29-b-2",
+    "entity_id": "aula-29b2-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29 B 2",
+    "normalized": "29-b-2"
+  },
+  {
+    "alias_id": "alias-place-aula-29b2-cubo-29b-29b2",
+    "entity_id": "aula-29b2-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29B2",
+    "normalized": "29b2"
+  },
+  {
+    "alias_id": "alias-place-aula-29b2-cubo-29b-aula-29b2",
+    "entity_id": "aula-29b2-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "Aula 29B2",
+    "normalized": "aula-29b2"
+  },
+  {
     "alias_id": "alias-place-aula-29b2-s-aleramo-cubo-29b-29b2-s-aleramo",
     "entity_id": "aula-29b2-s-aleramo-cubo-29b",
     "entity_type": "PLACE",
@@ -173,6 +285,27 @@
     "entity_type": "PLACE",
     "label": "29B3-C. Mortati",
     "normalized": "29b3-c-mortati"
+  },
+  {
+    "alias_id": "alias-place-aula-29b3-cubo-29b-29-b-3",
+    "entity_id": "aula-29b3-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29 B 3",
+    "normalized": "29-b-3"
+  },
+  {
+    "alias_id": "alias-place-aula-29b3-cubo-29b-29b3",
+    "entity_id": "aula-29b3-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29B3",
+    "normalized": "29b3"
+  },
+  {
+    "alias_id": "alias-place-aula-29b3-cubo-29b-aula-29b3",
+    "entity_id": "aula-29b3-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "Aula 29B3",
+    "normalized": "aula-29b3"
   },
   {
     "alias_id": "alias-place-aula-3-3",
@@ -266,6 +399,48 @@
     "normalized": "aula-32b3"
   },
   {
+    "alias_id": "alias-place-aula-32c1-cubo-32c-32-c-1",
+    "entity_id": "aula-32c1-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "32 C 1",
+    "normalized": "32-c-1"
+  },
+  {
+    "alias_id": "alias-place-aula-32c1-cubo-32c-32c1",
+    "entity_id": "aula-32c1-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "32C1",
+    "normalized": "32c1"
+  },
+  {
+    "alias_id": "alias-place-aula-32c1-cubo-32c-aula-32c1",
+    "entity_id": "aula-32c1-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "Aula 32C1",
+    "normalized": "aula-32c1"
+  },
+  {
+    "alias_id": "alias-place-aula-32c1-ex-cf3-cubo-32c-32c1-ex-cf3",
+    "entity_id": "aula-32c1-ex-cf3-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "32C1 (ex CF3)",
+    "normalized": "32c1-ex-cf3"
+  },
+  {
+    "alias_id": "alias-place-aula-32c1-ex-cf3-cubo-32c-32c1-excf3",
+    "entity_id": "aula-32c1-ex-cf3-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "32C1(EXCF3)",
+    "normalized": "32c1-excf3"
+  },
+  {
+    "alias_id": "alias-place-aula-32c1-ex-cf3-cubo-32c-aula-32c1-ex-cf3",
+    "entity_id": "aula-32c1-ex-cf3-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "Aula 32C1 (ex CF3)",
+    "normalized": "aula-32c1-ex-cf3"
+  },
+  {
     "alias_id": "alias-place-aula-32c2-cubo-32c-32-c-2",
     "entity_id": "aula-32c2-cubo-32c",
     "entity_type": "PLACE",
@@ -308,88 +483,151 @@
     "normalized": "aula-32c3"
   },
   {
-    "alias_id": "alias-place-aula-39-c-2b-cubo-39c-39-c-2b",
-    "entity_id": "aula-39-c-2b-cubo-39c",
+    "alias_id": "alias-place-aula-39b1a-cubo-39b-39-b-1-a",
+    "entity_id": "aula-39b1a-cubo-39b",
     "entity_type": "PLACE",
-    "label": "39 C 2B",
-    "normalized": "39-c-2b"
+    "label": "39 B 1 A",
+    "normalized": "39-b-1-a"
   },
   {
-    "alias_id": "alias-place-aula-39-c-2b-cubo-39c-aula-39-c-2b",
-    "entity_id": "aula-39-c-2b-cubo-39c",
+    "alias_id": "alias-place-aula-39b1a-cubo-39b-39b1a",
+    "entity_id": "aula-39b1a-cubo-39b",
     "entity_type": "PLACE",
-    "label": "Aula 39 C 2B",
-    "normalized": "aula-39-c-2b"
+    "label": "39B1A",
+    "normalized": "39b1a"
   },
   {
-    "alias_id": "alias-place-aula-39b-1a-cubo-39b-39b-1a",
-    "entity_id": "aula-39b-1a-cubo-39b",
+    "alias_id": "alias-place-aula-39b1a-cubo-39b-aula-39b1a",
+    "entity_id": "aula-39b1a-cubo-39b",
     "entity_type": "PLACE",
-    "label": "39B 1A",
-    "normalized": "39b-1a"
+    "label": "Aula 39B1A",
+    "normalized": "aula-39b1a"
   },
   {
-    "alias_id": "alias-place-aula-39b-1a-cubo-39b-aula-39b-1a",
-    "entity_id": "aula-39b-1a-cubo-39b",
+    "alias_id": "alias-place-aula-39b1b-cubo-39b-39-b-1-b",
+    "entity_id": "aula-39b1b-cubo-39b",
     "entity_type": "PLACE",
-    "label": "Aula 39B 1A",
-    "normalized": "aula-39b-1a"
+    "label": "39 B 1 B",
+    "normalized": "39-b-1-b"
   },
   {
-    "alias_id": "alias-place-aula-39b-1b-cubo-39b-39b-1b",
-    "entity_id": "aula-39b-1b-cubo-39b",
+    "alias_id": "alias-place-aula-39b1b-cubo-39b-39b1b",
+    "entity_id": "aula-39b1b-cubo-39b",
     "entity_type": "PLACE",
-    "label": "39B 1B",
-    "normalized": "39b-1b"
+    "label": "39B1B",
+    "normalized": "39b1b"
   },
   {
-    "alias_id": "alias-place-aula-39b-1b-cubo-39b-aula-39b-1b",
-    "entity_id": "aula-39b-1b-cubo-39b",
+    "alias_id": "alias-place-aula-39b1b-cubo-39b-aula-39b1b",
+    "entity_id": "aula-39b1b-cubo-39b",
     "entity_type": "PLACE",
-    "label": "Aula 39B 1B",
-    "normalized": "aula-39b-1b"
+    "label": "Aula 39B1B",
+    "normalized": "aula-39b1b"
   },
   {
-    "alias_id": "alias-place-aula-39b-1c-cubo-39b-39b-1c",
-    "entity_id": "aula-39b-1c-cubo-39b",
+    "alias_id": "alias-place-aula-39b1c-cubo-39b-39-b-1-c",
+    "entity_id": "aula-39b1c-cubo-39b",
     "entity_type": "PLACE",
-    "label": "39B 1C",
-    "normalized": "39b-1c"
+    "label": "39 B 1 C",
+    "normalized": "39-b-1-c"
   },
   {
-    "alias_id": "alias-place-aula-39b-1c-cubo-39b-aula-39b-1c",
-    "entity_id": "aula-39b-1c-cubo-39b",
+    "alias_id": "alias-place-aula-39b1c-cubo-39b-39b1c",
+    "entity_id": "aula-39b1c-cubo-39b",
     "entity_type": "PLACE",
-    "label": "Aula 39B 1C",
-    "normalized": "aula-39b-1c"
+    "label": "39B1C",
+    "normalized": "39b1c"
   },
   {
-    "alias_id": "alias-place-aula-39c-1a-cubo-39c-39c-1a",
-    "entity_id": "aula-39c-1a-cubo-39c",
+    "alias_id": "alias-place-aula-39b1c-cubo-39b-aula-39b1c",
+    "entity_id": "aula-39b1c-cubo-39b",
     "entity_type": "PLACE",
-    "label": "39C 1A",
-    "normalized": "39c-1a"
+    "label": "Aula 39B1C",
+    "normalized": "aula-39b1c"
   },
   {
-    "alias_id": "alias-place-aula-39c-1a-cubo-39c-aula-39c-1a",
-    "entity_id": "aula-39c-1a-cubo-39c",
+    "alias_id": "alias-place-aula-39c-39-c",
+    "entity_id": "aula-39c",
     "entity_type": "PLACE",
-    "label": "Aula 39C 1A",
-    "normalized": "aula-39c-1a"
+    "label": "39 C",
+    "normalized": "39-c"
   },
   {
-    "alias_id": "alias-place-aula-39c-2a-cubo-39c-39c-2a",
-    "entity_id": "aula-39c-2a-cubo-39c",
+    "alias_id": "alias-place-aula-39c-39c",
+    "entity_id": "aula-39c",
     "entity_type": "PLACE",
-    "label": "39C 2A",
-    "normalized": "39c-2a"
+    "label": "39C",
+    "normalized": "39c"
   },
   {
-    "alias_id": "alias-place-aula-39c-2a-cubo-39c-aula-39c-2a",
-    "entity_id": "aula-39c-2a-cubo-39c",
+    "alias_id": "alias-place-aula-39c-aula-39c",
+    "entity_id": "aula-39c",
     "entity_type": "PLACE",
-    "label": "Aula 39C 2A",
-    "normalized": "aula-39c-2a"
+    "label": "Aula 39C",
+    "normalized": "aula-39c"
+  },
+  {
+    "alias_id": "alias-place-aula-39c1a-cubo-39c-39-c-1-a",
+    "entity_id": "aula-39c1a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "39 C 1 A",
+    "normalized": "39-c-1-a"
+  },
+  {
+    "alias_id": "alias-place-aula-39c1a-cubo-39c-39c1a",
+    "entity_id": "aula-39c1a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "39C1A",
+    "normalized": "39c1a"
+  },
+  {
+    "alias_id": "alias-place-aula-39c1a-cubo-39c-aula-39c1a",
+    "entity_id": "aula-39c1a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula 39C1A",
+    "normalized": "aula-39c1a"
+  },
+  {
+    "alias_id": "alias-place-aula-39c2a-cubo-39c-39-c-2-a",
+    "entity_id": "aula-39c2a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "39 C 2 A",
+    "normalized": "39-c-2-a"
+  },
+  {
+    "alias_id": "alias-place-aula-39c2a-cubo-39c-39c2a",
+    "entity_id": "aula-39c2a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "39C2A",
+    "normalized": "39c2a"
+  },
+  {
+    "alias_id": "alias-place-aula-39c2a-cubo-39c-aula-39c2a",
+    "entity_id": "aula-39c2a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula 39C2A",
+    "normalized": "aula-39c2a"
+  },
+  {
+    "alias_id": "alias-place-aula-39c2b-cubo-39c-39-c-2-b",
+    "entity_id": "aula-39c2b-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "39 C 2 B",
+    "normalized": "39-c-2-b"
+  },
+  {
+    "alias_id": "alias-place-aula-39c2b-cubo-39c-39c2b",
+    "entity_id": "aula-39c2b-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "39C2B",
+    "normalized": "39c2b"
+  },
+  {
+    "alias_id": "alias-place-aula-39c2b-cubo-39c-aula-39c2b",
+    "entity_id": "aula-39c2b-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula 39C2B",
+    "normalized": "aula-39c2b"
   },
   {
     "alias_id": "alias-place-aula-4-cubo-12b-4",
@@ -434,25 +672,67 @@
     "normalized": "aula-40c2"
   },
   {
-    "alias_id": "alias-place-aula-41b-0a-cubo-41b-41b-0a",
-    "entity_id": "aula-41b-0a-cubo-41b",
-    "entity_type": "PLACE",
-    "label": "41B 0A",
-    "normalized": "41b-0a"
-  },
-  {
-    "alias_id": "alias-place-aula-41b-0a-cubo-41b-aula-41b-0a",
-    "entity_id": "aula-41b-0a-cubo-41b",
-    "entity_type": "PLACE",
-    "label": "Aula 41B 0A",
-    "normalized": "aula-41b-0a"
-  },
-  {
     "alias_id": "alias-place-aula-41b-6a-marone-cubo-41b-41b-6a-marone",
     "entity_id": "aula-41b-6a-marone-cubo-41b",
     "entity_type": "PLACE",
     "label": "41B 6A (MARONE)",
     "normalized": "41b-6a-marone"
+  },
+  {
+    "alias_id": "alias-place-aula-41b0a-cubo-41b-41-b-0-a",
+    "entity_id": "aula-41b0a-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "41 B 0 A",
+    "normalized": "41-b-0-a"
+  },
+  {
+    "alias_id": "alias-place-aula-41b0a-cubo-41b-41b0a",
+    "entity_id": "aula-41b0a-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "41B0A",
+    "normalized": "41b0a"
+  },
+  {
+    "alias_id": "alias-place-aula-41b0a-cubo-41b-aula-41b0a",
+    "entity_id": "aula-41b0a-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "Aula 41B0A",
+    "normalized": "aula-41b0a"
+  },
+  {
+    "alias_id": "alias-place-aula-43b-43-b",
+    "entity_id": "aula-43b",
+    "entity_type": "PLACE",
+    "label": "43 B",
+    "normalized": "43-b"
+  },
+  {
+    "alias_id": "alias-place-aula-43b-43b",
+    "entity_id": "aula-43b",
+    "entity_type": "PLACE",
+    "label": "43B",
+    "normalized": "43b"
+  },
+  {
+    "alias_id": "alias-place-aula-43b-aula-43b",
+    "entity_id": "aula-43b",
+    "entity_type": "PLACE",
+    "label": "Aula 43B",
+    "normalized": "aula-43b"
+  },
+  {
+    "alias_id": "alias-place-aula-43b-consolidata-cubo-43b-43b-consolidata",
+    "entity_id": "aula-43b-consolidata-cubo-43b",
+    "entity_type": "PLACE",
+    "label": "43B (Consolidata)",
+    "normalized": "43b-consolidata"
+  },
+  {
+    "alias_id": "alias-place-aula-43b-consolidata-cubo-43b-aula-43b-consolidata",
+    "entity_id": "aula-43b-consolidata-cubo-43b",
+    "entity_type": "PLACE",
+    "label": "Aula 43B (Consolidata)",
+    "normalized": "aula-43b-consolidata"
   },
   {
     "alias_id": "alias-place-aula-43b2-cubo-43b-43-b-2",
@@ -546,18 +826,25 @@
     "normalized": "44"
   },
   {
-    "alias_id": "alias-place-aula-44b-4a-cubo-44b-44b-4a",
-    "entity_id": "aula-44b-4a-cubo-44b",
+    "alias_id": "alias-place-aula-44b4a-cubo-44b-44-b-4-a",
+    "entity_id": "aula-44b4a-cubo-44b",
     "entity_type": "PLACE",
-    "label": "44B 4A",
-    "normalized": "44b-4a"
+    "label": "44 B 4 A",
+    "normalized": "44-b-4-a"
   },
   {
-    "alias_id": "alias-place-aula-44b-4a-cubo-44b-aula-44b-4a",
-    "entity_id": "aula-44b-4a-cubo-44b",
+    "alias_id": "alias-place-aula-44b4a-cubo-44b-44b4a",
+    "entity_id": "aula-44b4a-cubo-44b",
     "entity_type": "PLACE",
-    "label": "Aula 44B 4A",
-    "normalized": "aula-44b-4a"
+    "label": "44B4A",
+    "normalized": "44b4a"
+  },
+  {
+    "alias_id": "alias-place-aula-44b4a-cubo-44b-aula-44b4a",
+    "entity_id": "aula-44b4a-cubo-44b",
+    "entity_type": "PLACE",
+    "label": "Aula 44B4A",
+    "normalized": "aula-44b4a"
   },
   {
     "alias_id": "alias-place-aula-45-45",
@@ -637,6 +924,69 @@
     "normalized": "aula-45b03"
   },
   {
+    "alias_id": "alias-place-aula-45b0a-cubo-45b-45-b-0-a",
+    "entity_id": "aula-45b0a-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "45 B 0 A",
+    "normalized": "45-b-0-a"
+  },
+  {
+    "alias_id": "alias-place-aula-45b0a-cubo-45b-45b0a",
+    "entity_id": "aula-45b0a-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "45B0A",
+    "normalized": "45b0a"
+  },
+  {
+    "alias_id": "alias-place-aula-45b0a-cubo-45b-aula-45b0a",
+    "entity_id": "aula-45b0a-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Aula 45B0A",
+    "normalized": "aula-45b0a"
+  },
+  {
+    "alias_id": "alias-place-aula-45b0b-cubo-45b-45-b-0-b",
+    "entity_id": "aula-45b0b-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "45 B 0 B",
+    "normalized": "45-b-0-b"
+  },
+  {
+    "alias_id": "alias-place-aula-45b0b-cubo-45b-45b0b",
+    "entity_id": "aula-45b0b-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "45B0B",
+    "normalized": "45b0b"
+  },
+  {
+    "alias_id": "alias-place-aula-45b0b-cubo-45b-aula-45b0b",
+    "entity_id": "aula-45b0b-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Aula 45B0B",
+    "normalized": "aula-45b0b"
+  },
+  {
+    "alias_id": "alias-place-aula-45b0c-cubo-45b-45-b-0-c",
+    "entity_id": "aula-45b0c-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "45 B 0 C",
+    "normalized": "45-b-0-c"
+  },
+  {
+    "alias_id": "alias-place-aula-45b0c-cubo-45b-45b0c",
+    "entity_id": "aula-45b0c-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "45B0C",
+    "normalized": "45b0c"
+  },
+  {
+    "alias_id": "alias-place-aula-45b0c-cubo-45b-aula-45b0c",
+    "entity_id": "aula-45b0c-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Aula 45B0C",
+    "normalized": "aula-45b0c"
+  },
+  {
     "alias_id": "alias-place-aula-46-46",
     "entity_id": "aula-46",
     "entity_type": "PLACE",
@@ -649,6 +999,27 @@
     "entity_type": "PLACE",
     "label": "Aula 46",
     "normalized": "aula-46"
+  },
+  {
+    "alias_id": "alias-place-aula-46c-46-c",
+    "entity_id": "aula-46c",
+    "entity_type": "PLACE",
+    "label": "46 C",
+    "normalized": "46-c"
+  },
+  {
+    "alias_id": "alias-place-aula-46c-46c",
+    "entity_id": "aula-46c",
+    "entity_type": "PLACE",
+    "label": "46C",
+    "normalized": "46c"
+  },
+  {
+    "alias_id": "alias-place-aula-46c-aula-46c",
+    "entity_id": "aula-46c",
+    "entity_type": "PLACE",
+    "label": "Aula 46C",
+    "normalized": "aula-46c"
   },
   {
     "alias_id": "alias-place-aula-52-52",
@@ -847,6 +1218,27 @@
     "normalized": "a"
   },
   {
+    "alias_id": "alias-place-aula-a-ling-cubo-20b-a-ling",
+    "entity_id": "aula-a-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "A Ling.",
+    "normalized": "a-ling"
+  },
+  {
+    "alias_id": "alias-place-aula-a-ling-cubo-20b-aling",
+    "entity_id": "aula-a-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "ALING",
+    "normalized": "aling"
+  },
+  {
+    "alias_id": "alias-place-aula-a-ling-cubo-20b-aula-a-ling",
+    "entity_id": "aula-a-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "Aula A Ling.",
+    "normalized": "aula-a-ling"
+  },
+  {
     "alias_id": "alias-place-aula-ag-cubo-40c-a-g",
     "entity_id": "aula-ag-cubo-40c",
     "entity_type": "PLACE",
@@ -878,14 +1270,14 @@
     "alias_id": "alias-place-aula-apollo-cubo-18b-apollo",
     "entity_id": "aula-apollo-cubo-18b",
     "entity_type": "PLACE",
-    "label": "APOLLO",
+    "label": "Apollo",
     "normalized": "apollo"
   },
   {
     "alias_id": "alias-place-aula-apollo-cubo-18b-aula-apollo",
     "entity_id": "aula-apollo-cubo-18b",
     "entity_type": "PLACE",
-    "label": "AULA APOLLO",
+    "label": "Aula Apollo",
     "normalized": "aula-apollo"
   },
   {
@@ -901,6 +1293,20 @@
     "entity_type": "PLACE",
     "label": "Aula Arancio",
     "normalized": "aula-arancio"
+  },
+  {
+    "alias_id": "alias-place-aula-ares-cubo-17b-ares",
+    "entity_id": "aula-ares-cubo-17b",
+    "entity_type": "PLACE",
+    "label": "ARES",
+    "normalized": "ares"
+  },
+  {
+    "alias_id": "alias-place-aula-ares-cubo-17b-aula-ares",
+    "entity_id": "aula-ares-cubo-17b",
+    "entity_type": "PLACE",
+    "label": "Aula ARES",
+    "normalized": "aula-ares"
   },
   {
     "alias_id": "alias-place-aula-arrighi-cubo-0b-arrighi",
@@ -920,14 +1326,14 @@
     "alias_id": "alias-place-aula-athena-cubo-18b-athena",
     "entity_id": "aula-athena-cubo-18b",
     "entity_type": "PLACE",
-    "label": "ATHENA",
+    "label": "Athena",
     "normalized": "athena"
   },
   {
     "alias_id": "alias-place-aula-athena-cubo-18b-aula-athena",
     "entity_id": "aula-athena-cubo-18b",
     "entity_type": "PLACE",
-    "label": "AULA ATHENA",
+    "label": "Aula Athena",
     "normalized": "aula-athena"
   },
   {
@@ -938,6 +1344,118 @@
     "normalized": "aule-conferenze"
   },
   {
+    "alias_id": "alias-place-aula-auletta-46c-cubo-46c-aula-auletta-46c",
+    "entity_id": "aula-auletta-46c-cubo-46c",
+    "entity_type": "PLACE",
+    "label": "Aula Auletta 46C",
+    "normalized": "aula-auletta-46c"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-46c-cubo-46c-auletta-46-c",
+    "entity_id": "aula-auletta-46c-cubo-46c",
+    "entity_type": "PLACE",
+    "label": "AULETTA 46 C",
+    "normalized": "auletta-46-c"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-46c-cubo-46c-auletta-46c",
+    "entity_id": "aula-auletta-46c-cubo-46c",
+    "entity_type": "PLACE",
+    "label": "Auletta 46C",
+    "normalized": "auletta-46c"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-46c-cubo-46c-auletta46c",
+    "entity_id": "aula-auletta-46c-cubo-46c",
+    "entity_type": "PLACE",
+    "label": "AULETTA46C",
+    "normalized": "auletta46c"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-bilbao-aula-auletta-bilbao",
+    "entity_id": "aula-auletta-bilbao",
+    "entity_type": "PLACE",
+    "label": "Aula Auletta Bilbao",
+    "normalized": "aula-auletta-bilbao"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-bilbao-auletta-bilbao",
+    "entity_id": "aula-auletta-bilbao",
+    "entity_type": "PLACE",
+    "label": "Auletta Bilbao",
+    "normalized": "auletta-bilbao"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-bilbao-aulettabilbao",
+    "entity_id": "aula-auletta-bilbao",
+    "entity_type": "PLACE",
+    "label": "AULETTABILBAO",
+    "normalized": "aulettabilbao"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-chaplin-aula-auletta-chaplin",
+    "entity_id": "aula-auletta-chaplin",
+    "entity_type": "PLACE",
+    "label": "Aula Auletta Chaplin",
+    "normalized": "aula-auletta-chaplin"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-chaplin-auletta-chaplin",
+    "entity_id": "aula-auletta-chaplin",
+    "entity_type": "PLACE",
+    "label": "Auletta Chaplin",
+    "normalized": "auletta-chaplin"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-chaplin-aulettachaplin",
+    "entity_id": "aula-auletta-chaplin",
+    "entity_type": "PLACE",
+    "label": "AULETTACHAPLIN",
+    "normalized": "aulettachaplin"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-douglas-calabria-aula-auletta-douglas-calabria",
+    "entity_id": "aula-auletta-douglas-calabria",
+    "entity_type": "PLACE",
+    "label": "Aula Auletta Douglas-Calabria",
+    "normalized": "aula-auletta-douglas-calabria"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-douglas-calabria-auletta-douglas-calabria",
+    "entity_id": "aula-auletta-douglas-calabria",
+    "entity_type": "PLACE",
+    "label": "Auletta Douglas-Calabria",
+    "normalized": "auletta-douglas-calabria"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-douglas-calabria-aulettadouglascalabria",
+    "entity_id": "aula-auletta-douglas-calabria",
+    "entity_type": "PLACE",
+    "label": "AULETTADOUGLASCALABRIA",
+    "normalized": "aulettadouglascalabria"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-orientale-aula-auletta-orientale",
+    "entity_id": "aula-auletta-orientale",
+    "entity_type": "PLACE",
+    "label": "Aula Auletta Orientale",
+    "normalized": "aula-auletta-orientale"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-orientale-auletta-orientale",
+    "entity_id": "aula-auletta-orientale",
+    "entity_type": "PLACE",
+    "label": "Auletta Orientale",
+    "normalized": "auletta-orientale"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-orientale-aulettaorientale",
+    "entity_id": "aula-auletta-orientale",
+    "entity_type": "PLACE",
+    "label": "AULETTAORIENTALE",
+    "normalized": "aulettaorientale"
+  },
+  {
     "alias_id": "alias-place-aula-auletta-seminari-cubo-1c-auletta-seminari",
     "entity_id": "aula-auletta-seminari-cubo-1c",
     "entity_type": "PLACE",
@@ -945,10 +1463,38 @@
     "normalized": "auletta-seminari"
   },
   {
+    "alias_id": "alias-place-aula-auletta-van-gogh-aula-auletta-van-gogh",
+    "entity_id": "aula-auletta-van-gogh",
+    "entity_type": "PLACE",
+    "label": "Aula Auletta van Gogh",
+    "normalized": "aula-auletta-van-gogh"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-van-gogh-auletta-van-gogh",
+    "entity_id": "aula-auletta-van-gogh",
+    "entity_type": "PLACE",
+    "label": "Auletta van Gogh",
+    "normalized": "auletta-van-gogh"
+  },
+  {
+    "alias_id": "alias-place-aula-auletta-van-gogh-aulettavangogh",
+    "entity_id": "aula-auletta-van-gogh",
+    "entity_type": "PLACE",
+    "label": "AULETTAVANGOGH",
+    "normalized": "aulettavangogh"
+  },
+  {
+    "alias_id": "alias-place-aula-aurora-cubo-17b-aula-aurora",
+    "entity_id": "aula-aurora-cubo-17b",
+    "entity_type": "PLACE",
+    "label": "Aula Aurora",
+    "normalized": "aula-aurora"
+  },
+  {
     "alias_id": "alias-place-aula-aurora-cubo-17b-aurora",
     "entity_id": "aula-aurora-cubo-17b",
     "entity_type": "PLACE",
-    "label": "AURORA",
+    "label": "Aurora",
     "normalized": "aurora"
   },
   {
@@ -980,11 +1526,39 @@
     "normalized": "b"
   },
   {
+    "alias_id": "alias-place-aula-b-c-cubo-31c-aula-b-c",
+    "entity_id": "aula-b-c-cubo-31c",
+    "entity_type": "PLACE",
+    "label": "Aula B/C",
+    "normalized": "aula-b-c"
+  },
+  {
     "alias_id": "alias-place-aula-b-c-cubo-31c-b-c",
     "entity_id": "aula-b-c-cubo-31c",
     "entity_type": "PLACE",
     "label": "B/C",
     "normalized": "b-c"
+  },
+  {
+    "alias_id": "alias-place-aula-b-c-cubo-31c-bc",
+    "entity_id": "aula-b-c-cubo-31c",
+    "entity_type": "PLACE",
+    "label": "BC",
+    "normalized": "bc"
+  },
+  {
+    "alias_id": "alias-place-aula-b-consolidata-cubo-43c-aula-b-consolidata",
+    "entity_id": "aula-b-consolidata-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "Aula B (Consolidata)",
+    "normalized": "aula-b-consolidata"
+  },
+  {
+    "alias_id": "alias-place-aula-b-consolidata-cubo-43c-b-consolidata",
+    "entity_id": "aula-b-consolidata-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "B (Consolidata)",
+    "normalized": "b-consolidata"
   },
   {
     "alias_id": "alias-place-aula-b-cubo-14b-b",
@@ -1034,6 +1608,27 @@
     "entity_type": "PLACE",
     "label": "B",
     "normalized": "b"
+  },
+  {
+    "alias_id": "alias-place-aula-b-ling-cubo-20b-aula-b-ling",
+    "entity_id": "aula-b-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "Aula B Ling.",
+    "normalized": "aula-b-ling"
+  },
+  {
+    "alias_id": "alias-place-aula-b-ling-cubo-20b-b-ling",
+    "entity_id": "aula-b-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "B Ling.",
+    "normalized": "b-ling"
+  },
+  {
+    "alias_id": "alias-place-aula-b-ling-cubo-20b-bling",
+    "entity_id": "aula-b-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "BLING",
+    "normalized": "bling"
   },
   {
     "alias_id": "alias-place-aula-b5-cubo-4d-aula-b-5",
@@ -1148,6 +1743,13 @@
     "normalized": "bp"
   },
   {
+    "alias_id": "alias-place-aula-c-cubo-15b-aula-c",
+    "entity_id": "aula-c-cubo-15b",
+    "entity_type": "PLACE",
+    "label": "Aula C",
+    "normalized": "aula-c"
+  },
+  {
     "alias_id": "alias-place-aula-c-cubo-15b-c",
     "entity_id": "aula-c-cubo-15b",
     "entity_type": "PLACE",
@@ -1183,6 +1785,27 @@
     "normalized": "c1"
   },
   {
+    "alias_id": "alias-place-aula-c1-ex-cf3-cubo-32c-aula-c1-ex-cf3",
+    "entity_id": "aula-c1-ex-cf3-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "Aula C1, ex CF3",
+    "normalized": "aula-c1-ex-cf3"
+  },
+  {
+    "alias_id": "alias-place-aula-c1-ex-cf3-cubo-32c-c1-ex-cf3",
+    "entity_id": "aula-c1-ex-cf3-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "C1, ex CF3",
+    "normalized": "c1-ex-cf3"
+  },
+  {
+    "alias_id": "alias-place-aula-c1-ex-cf3-cubo-32c-c1-excf3",
+    "entity_id": "aula-c1-ex-cf3-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "C1,EXCF3",
+    "normalized": "c1-excf3"
+  },
+  {
     "alias_id": "alias-place-aula-c2-cubo-32c-aula-c-2",
     "entity_id": "aula-c2-cubo-32c",
     "entity_type": "PLACE",
@@ -1211,6 +1834,27 @@
     "normalized": "c2"
   },
   {
+    "alias_id": "alias-place-aula-c2-ex-cf1-cubo-32c-aula-c2-ex-cf1",
+    "entity_id": "aula-c2-ex-cf1-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "Aula C2, ex CF1",
+    "normalized": "aula-c2-ex-cf1"
+  },
+  {
+    "alias_id": "alias-place-aula-c2-ex-cf1-cubo-32c-c2-ex-cf1",
+    "entity_id": "aula-c2-ex-cf1-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "C2, ex CF1",
+    "normalized": "c2-ex-cf1"
+  },
+  {
+    "alias_id": "alias-place-aula-c2-ex-cf1-cubo-32c-c2-excf1",
+    "entity_id": "aula-c2-ex-cf1-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "C2,EXCF1",
+    "normalized": "c2-excf1"
+  },
+  {
     "alias_id": "alias-place-aula-c3-cubo-32c-aula-c-3",
     "entity_id": "aula-c3-cubo-32c",
     "entity_type": "PLACE",
@@ -1237,6 +1881,27 @@
     "entity_type": "PLACE",
     "label": "C3",
     "normalized": "c3"
+  },
+  {
+    "alias_id": "alias-place-aula-c3-ex-cf2-cubo-32c-aula-c3-ex-cf2",
+    "entity_id": "aula-c3-ex-cf2-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "Aula C3, ex CF2",
+    "normalized": "aula-c3-ex-cf2"
+  },
+  {
+    "alias_id": "alias-place-aula-c3-ex-cf2-cubo-32c-c3-ex-cf2",
+    "entity_id": "aula-c3-ex-cf2-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "C3, ex CF2",
+    "normalized": "c3-ex-cf2"
+  },
+  {
+    "alias_id": "alias-place-aula-c3-ex-cf2-cubo-32c-c3-excf2",
+    "entity_id": "aula-c3-ex-cf2-cubo-32c",
+    "entity_type": "PLACE",
+    "label": "C3,EXCF2",
+    "normalized": "c3-excf2"
   },
   {
     "alias_id": "alias-place-aula-caldora-centro-radiotelevisivo-aula-caldora",
@@ -1372,6 +2037,27 @@
     "normalized": "collaborativa"
   },
   {
+    "alias_id": "alias-place-aula-consolidata-1-aula-consolidata-1",
+    "entity_id": "aula-consolidata-1",
+    "entity_type": "PLACE",
+    "label": "Aula CONSOLIDATA 1",
+    "normalized": "aula-consolidata-1"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-1-consolidata-1",
+    "entity_id": "aula-consolidata-1",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA 1",
+    "normalized": "consolidata-1"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-1-consolidata1",
+    "entity_id": "aula-consolidata-1",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA1",
+    "normalized": "consolidata1"
+  },
+  {
     "alias_id": "alias-place-aula-consolidata-13c1-cubo-13c-consolidata-13c1",
     "entity_id": "aula-consolidata-13c1-cubo-13c",
     "entity_type": "PLACE",
@@ -1391,6 +2077,27 @@
     "entity_type": "PLACE",
     "label": "Consolidata 19B2-F. Solano",
     "normalized": "consolidata-19b2-f-solano"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-2-aula-consolidata-2",
+    "entity_id": "aula-consolidata-2",
+    "entity_type": "PLACE",
+    "label": "Aula CONSOLIDATA 2",
+    "normalized": "aula-consolidata-2"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-2-consolidata-2",
+    "entity_id": "aula-consolidata-2",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA 2",
+    "normalized": "consolidata-2"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-2-consolidata2",
+    "entity_id": "aula-consolidata-2",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA2",
+    "normalized": "consolidata2"
   },
   {
     "alias_id": "alias-place-aula-consolidata-29b1-d-dolci-cubo-29b-consolidata-29b1-d-dolci",
@@ -1428,6 +2135,27 @@
     "normalized": "consolidata-2c"
   },
   {
+    "alias_id": "alias-place-aula-consolidata-3-aula-consolidata-3",
+    "entity_id": "aula-consolidata-3",
+    "entity_type": "PLACE",
+    "label": "Aula CONSOLIDATA 3",
+    "normalized": "aula-consolidata-3"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-3-consolidata-3",
+    "entity_id": "aula-consolidata-3",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA 3",
+    "normalized": "consolidata-3"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-3-consolidata3",
+    "entity_id": "aula-consolidata-3",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA3",
+    "normalized": "consolidata3"
+  },
+  {
     "alias_id": "alias-place-aula-consolidata-32b1-cubo-32b-consolidata-32b1",
     "entity_id": "aula-consolidata-32b1-cubo-32b",
     "entity_type": "PLACE",
@@ -1442,11 +2170,60 @@
     "normalized": "consolidata-32c1"
   },
   {
+    "alias_id": "alias-place-aula-consolidata-4-aula-consolidata-4",
+    "entity_id": "aula-consolidata-4",
+    "entity_type": "PLACE",
+    "label": "Aula CONSOLIDATA 4",
+    "normalized": "aula-consolidata-4"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-4-consolidata-4",
+    "entity_id": "aula-consolidata-4",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA 4",
+    "normalized": "consolidata-4"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-4-consolidata4",
+    "entity_id": "aula-consolidata-4",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA4",
+    "normalized": "consolidata4"
+  },
+  {
     "alias_id": "alias-place-aula-consolidata-40b1-dinci-cubo-40b-consolidata-40b1-dinci",
     "entity_id": "aula-consolidata-40b1-dinci-cubo-40b",
     "entity_type": "PLACE",
     "label": "Consolidata 40B1-DINCI",
     "normalized": "consolidata-40b1-dinci"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-43b-aula-consolidata-43b",
+    "entity_id": "aula-consolidata-43b",
+    "entity_type": "PLACE",
+    "label": "Aula Consolidata 43B",
+    "normalized": "aula-consolidata-43b"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-43b-consolidata-43-b",
+    "entity_id": "aula-consolidata-43b",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA 43 B",
+    "normalized": "consolidata-43-b"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-43b-consolidata-43b",
+    "entity_id": "aula-consolidata-43b",
+    "entity_type": "PLACE",
+    "label": "Consolidata 43B",
+    "normalized": "consolidata-43b"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-43b-consolidata43b",
+    "entity_id": "aula-consolidata-43b",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA43B",
+    "normalized": "consolidata43b"
   },
   {
     "alias_id": "alias-place-aula-consolidata-43b1-p-caparrini-cubo-43b-consolidata-43b1-p-caparrini",
@@ -1463,11 +2240,67 @@
     "normalized": "consolidata-43c1"
   },
   {
+    "alias_id": "alias-place-aula-consolidata-5-aula-consolidata-5",
+    "entity_id": "aula-consolidata-5",
+    "entity_type": "PLACE",
+    "label": "Aula CONSOLIDATA 5",
+    "normalized": "aula-consolidata-5"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-5-consolidata-5",
+    "entity_id": "aula-consolidata-5",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA 5",
+    "normalized": "consolidata-5"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-5-consolidata5",
+    "entity_id": "aula-consolidata-5",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATA5",
+    "normalized": "consolidata5"
+  },
+  {
     "alias_id": "alias-place-aula-consolidata-5b-cubo-5b-consolidata-5b",
     "entity_id": "aula-consolidata-5b-cubo-5b",
     "entity_type": "PLACE",
     "label": "CONSOLIDATA 5B",
     "normalized": "consolidata-5b"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-b-aula-consolidata-b",
+    "entity_id": "aula-consolidata-b",
+    "entity_type": "PLACE",
+    "label": "Aula Consolidata B",
+    "normalized": "aula-consolidata-b"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-b-consolidata-b",
+    "entity_id": "aula-consolidata-b",
+    "entity_type": "PLACE",
+    "label": "Consolidata B",
+    "normalized": "consolidata-b"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-b-consolidatab",
+    "entity_id": "aula-consolidata-b",
+    "entity_type": "PLACE",
+    "label": "CONSOLIDATAB",
+    "normalized": "consolidatab"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-cubo-40b-aula-consolidata",
+    "entity_id": "aula-consolidata-cubo-40b",
+    "entity_type": "PLACE",
+    "label": "Aula consolidata)",
+    "normalized": "aula-consolidata"
+  },
+  {
+    "alias_id": "alias-place-aula-consolidata-cubo-40b-consolidata",
+    "entity_id": "aula-consolidata-cubo-40b",
+    "entity_type": "PLACE",
+    "label": "consolidata)",
+    "normalized": "consolidata"
   },
   {
     "alias_id": "alias-place-aula-corallo-cubo-17a-aula-corallo",
@@ -1496,6 +2329,314 @@
     "entity_type": "PLACE",
     "label": "Covello",
     "normalized": "covello"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo40c-cubo-40c-aula-cubo-40-c",
+    "entity_id": "aula-cubo40c-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 40 C",
+    "normalized": "aula-cubo-40-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo40c-cubo-40c-aula-cubo40c",
+    "entity_id": "aula-cubo40c-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO40C",
+    "normalized": "aula-cubo40c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo40c-cubo-40c-cubo-40-c",
+    "entity_id": "aula-cubo40c-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "CUBO 40 C",
+    "normalized": "cubo-40-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo40c-cubo-40c-cubo40c",
+    "entity_id": "aula-cubo40c-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "CUBO40C",
+    "normalized": "cubo40c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo41b-cubo-41b-aula-cubo-41-b",
+    "entity_id": "aula-cubo41b-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 41 B",
+    "normalized": "aula-cubo-41-b"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo41b-cubo-41b-aula-cubo41b",
+    "entity_id": "aula-cubo41b-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO41B",
+    "normalized": "aula-cubo41b"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo41b-cubo-41b-cubo-41-b",
+    "entity_id": "aula-cubo41b-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "CUBO 41 B",
+    "normalized": "cubo-41-b"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo41b-cubo-41b-cubo41b",
+    "entity_id": "aula-cubo41b-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "CUBO41B",
+    "normalized": "cubo41b"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo41c-cubo-41c-aula-cubo-41-c",
+    "entity_id": "aula-cubo41c-cubo-41c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 41 C",
+    "normalized": "aula-cubo-41-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo41c-cubo-41c-aula-cubo41c",
+    "entity_id": "aula-cubo41c-cubo-41c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO41C",
+    "normalized": "aula-cubo41c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo41c-cubo-41c-cubo-41-c",
+    "entity_id": "aula-cubo41c-cubo-41c",
+    "entity_type": "PLACE",
+    "label": "CUBO 41 C",
+    "normalized": "cubo-41-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo41c-cubo-41c-cubo41c",
+    "entity_id": "aula-cubo41c-cubo-41c",
+    "entity_type": "PLACE",
+    "label": "CUBO41C",
+    "normalized": "cubo41c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo42c-cubo-42c-aula-cubo-42-c",
+    "entity_id": "aula-cubo42c-cubo-42c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 42 C",
+    "normalized": "aula-cubo-42-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo42c-cubo-42c-aula-cubo42c",
+    "entity_id": "aula-cubo42c-cubo-42c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO42C",
+    "normalized": "aula-cubo42c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo42c-cubo-42c-cubo-42-c",
+    "entity_id": "aula-cubo42c-cubo-42c",
+    "entity_type": "PLACE",
+    "label": "CUBO 42 C",
+    "normalized": "cubo-42-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo42c-cubo-42c-cubo42c",
+    "entity_id": "aula-cubo42c-cubo-42c",
+    "entity_type": "PLACE",
+    "label": "CUBO42C",
+    "normalized": "cubo42c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo43b-cubo-43b-aula-cubo-43-b",
+    "entity_id": "aula-cubo43b-cubo-43b",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 43 B",
+    "normalized": "aula-cubo-43-b"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo43b-cubo-43b-aula-cubo43b",
+    "entity_id": "aula-cubo43b-cubo-43b",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO43B",
+    "normalized": "aula-cubo43b"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo43b-cubo-43b-cubo-43-b",
+    "entity_id": "aula-cubo43b-cubo-43b",
+    "entity_type": "PLACE",
+    "label": "CUBO 43 B",
+    "normalized": "cubo-43-b"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo43b-cubo-43b-cubo43b",
+    "entity_id": "aula-cubo43b-cubo-43b",
+    "entity_type": "PLACE",
+    "label": "CUBO43B",
+    "normalized": "cubo43b"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo43c-cubo-43c-aula-cubo-43-c",
+    "entity_id": "aula-cubo43c-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 43 C",
+    "normalized": "aula-cubo-43-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo43c-cubo-43c-aula-cubo43c",
+    "entity_id": "aula-cubo43c-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO43C",
+    "normalized": "aula-cubo43c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo43c-cubo-43c-cubo-43-c",
+    "entity_id": "aula-cubo43c-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "CUBO 43 C",
+    "normalized": "cubo-43-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo43c-cubo-43c-cubo43c",
+    "entity_id": "aula-cubo43c-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "CUBO43C",
+    "normalized": "cubo43c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo44c-cubo-44c-aula-cubo-44-c",
+    "entity_id": "aula-cubo44c-cubo-44c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 44 C",
+    "normalized": "aula-cubo-44-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo44c-cubo-44c-aula-cubo44c",
+    "entity_id": "aula-cubo44c-cubo-44c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO44C",
+    "normalized": "aula-cubo44c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo44c-cubo-44c-cubo-44-c",
+    "entity_id": "aula-cubo44c-cubo-44c",
+    "entity_type": "PLACE",
+    "label": "CUBO 44 C",
+    "normalized": "cubo-44-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo44c-cubo-44c-cubo44c",
+    "entity_id": "aula-cubo44c-cubo-44c",
+    "entity_type": "PLACE",
+    "label": "CUBO44C",
+    "normalized": "cubo44c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo44d-cubo-44d-aula-cubo-44-d",
+    "entity_id": "aula-cubo44d-cubo-44d",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 44 D",
+    "normalized": "aula-cubo-44-d"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo44d-cubo-44d-aula-cubo44d",
+    "entity_id": "aula-cubo44d-cubo-44d",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO44D",
+    "normalized": "aula-cubo44d"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo44d-cubo-44d-cubo-44-d",
+    "entity_id": "aula-cubo44d-cubo-44d",
+    "entity_type": "PLACE",
+    "label": "CUBO 44 D",
+    "normalized": "cubo-44-d"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo44d-cubo-44d-cubo44d",
+    "entity_id": "aula-cubo44d-cubo-44d",
+    "entity_type": "PLACE",
+    "label": "CUBO44D",
+    "normalized": "cubo44d"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo45c-cubo-45c-aula-cubo-45-c",
+    "entity_id": "aula-cubo45c-cubo-45c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 45 C",
+    "normalized": "aula-cubo-45-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo45c-cubo-45c-aula-cubo45c",
+    "entity_id": "aula-cubo45c-cubo-45c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO45C",
+    "normalized": "aula-cubo45c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo45c-cubo-45c-cubo-45-c",
+    "entity_id": "aula-cubo45c-cubo-45c",
+    "entity_type": "PLACE",
+    "label": "CUBO 45 C",
+    "normalized": "cubo-45-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo45c-cubo-45c-cubo45c",
+    "entity_id": "aula-cubo45c-cubo-45c",
+    "entity_type": "PLACE",
+    "label": "CUBO45C",
+    "normalized": "cubo45c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo45d-cubo-45d-aula-cubo-45-d",
+    "entity_id": "aula-cubo45d-cubo-45d",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 45 D",
+    "normalized": "aula-cubo-45-d"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo45d-cubo-45d-aula-cubo45d",
+    "entity_id": "aula-cubo45d-cubo-45d",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO45D",
+    "normalized": "aula-cubo45d"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo45d-cubo-45d-cubo-45-d",
+    "entity_id": "aula-cubo45d-cubo-45d",
+    "entity_type": "PLACE",
+    "label": "CUBO 45 D",
+    "normalized": "cubo-45-d"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo45d-cubo-45d-cubo45d",
+    "entity_id": "aula-cubo45d-cubo-45d",
+    "entity_type": "PLACE",
+    "label": "CUBO45D",
+    "normalized": "cubo45d"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo46c-cubo-46c-aula-cubo-46-c",
+    "entity_id": "aula-cubo46c-cubo-46c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO 46 C",
+    "normalized": "aula-cubo-46-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo46c-cubo-46c-aula-cubo46c",
+    "entity_id": "aula-cubo46c-cubo-46c",
+    "entity_type": "PLACE",
+    "label": "Aula CUBO46C",
+    "normalized": "aula-cubo46c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo46c-cubo-46c-cubo-46-c",
+    "entity_id": "aula-cubo46c-cubo-46c",
+    "entity_type": "PLACE",
+    "label": "CUBO 46 C",
+    "normalized": "cubo-46-c"
+  },
+  {
+    "alias_id": "alias-place-aula-cubo46c-cubo-46c-cubo46c",
+    "entity_id": "aula-cubo46c-cubo-46c",
+    "entity_type": "PLACE",
+    "label": "CUBO46C",
+    "normalized": "cubo46c"
   },
   {
     "alias_id": "alias-place-aula-d-cubo-31c-aula-d",
@@ -1547,11 +2688,74 @@
     "normalized": "diautomatica"
   },
   {
+    "alias_id": "alias-place-aula-diam-a-cubo-40c-aula-diam-a",
+    "entity_id": "aula-diam-a-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "Aula DIAm A",
+    "normalized": "aula-diam-a"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-a-cubo-40c-diam-a",
+    "entity_id": "aula-diam-a-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "DIAm A",
+    "normalized": "diam-a"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-a-cubo-40c-diama",
+    "entity_id": "aula-diam-a-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "DIAMA",
+    "normalized": "diama"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-b-cubo-42b-aula-diam-b",
+    "entity_id": "aula-diam-b-cubo-42b",
+    "entity_type": "PLACE",
+    "label": "Aula DIAm B",
+    "normalized": "aula-diam-b"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-b-cubo-42b-diam-b",
+    "entity_id": "aula-diam-b-cubo-42b",
+    "entity_type": "PLACE",
+    "label": "DIAm B",
+    "normalized": "diam-b"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-b-cubo-42b-diamb",
+    "entity_id": "aula-diam-b-cubo-42b",
+    "entity_type": "PLACE",
+    "label": "DIAMB",
+    "normalized": "diamb"
+  },
+  {
     "alias_id": "alias-place-aula-diam-b-exds9-cubo-42b-diam-b-exds9",
     "entity_id": "aula-diam-b-exds9-cubo-42b",
     "entity_type": "PLACE",
     "label": "DIAM - B EXDS9",
     "normalized": "diam-b-exds9"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-c-cubo-42b-aula-diam-c",
+    "entity_id": "aula-diam-c-cubo-42b",
+    "entity_type": "PLACE",
+    "label": "Aula DIAm C",
+    "normalized": "aula-diam-c"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-c-cubo-42b-diam-c",
+    "entity_id": "aula-diam-c-cubo-42b",
+    "entity_type": "PLACE",
+    "label": "DIAm C",
+    "normalized": "diam-c"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-c-cubo-42b-diamc",
+    "entity_id": "aula-diam-c-cubo-42b",
+    "entity_type": "PLACE",
+    "label": "DIAMC",
+    "normalized": "diamc"
   },
   {
     "alias_id": "alias-place-aula-diam-c-ex-ds10-cubo-42b-diam-c-ex-ds10",
@@ -1561,6 +2765,27 @@
     "normalized": "diam-c-ex-ds10"
   },
   {
+    "alias_id": "alias-place-aula-diam-d-cubo-42b-aula-diam-d",
+    "entity_id": "aula-diam-d-cubo-42b",
+    "entity_type": "PLACE",
+    "label": "Aula DIAm D",
+    "normalized": "aula-diam-d"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-d-cubo-42b-diam-d",
+    "entity_id": "aula-diam-d-cubo-42b",
+    "entity_type": "PLACE",
+    "label": "DIAm D",
+    "normalized": "diam-d"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-d-cubo-42b-diamd",
+    "entity_id": "aula-diam-d-cubo-42b",
+    "entity_type": "PLACE",
+    "label": "DIAMD",
+    "normalized": "diamd"
+  },
+  {
     "alias_id": "alias-place-aula-diam-d-ex-ds12-cubo-42b-diam-d-ex-ds12",
     "entity_id": "aula-diam-d-ex-ds12-cubo-42b",
     "entity_type": "PLACE",
@@ -1568,32 +2793,88 @@
     "normalized": "diam-d-ex-ds12"
   },
   {
+    "alias_id": "alias-place-aula-diam-e-cubo-39c-aula-diam-e",
+    "entity_id": "aula-diam-e-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula DIAm E",
+    "normalized": "aula-diam-e"
+  },
+  {
     "alias_id": "alias-place-aula-diam-e-cubo-39c-diam-e",
     "entity_id": "aula-diam-e-cubo-39c",
     "entity_type": "PLACE",
-    "label": "DIAM - E",
+    "label": "DIAm E",
     "normalized": "diam-e"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-e-cubo-39c-diame",
+    "entity_id": "aula-diam-e-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "DIAME",
+    "normalized": "diame"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-f-cubo-39c-aula-diam-f",
+    "entity_id": "aula-diam-f-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula DIAm F",
+    "normalized": "aula-diam-f"
   },
   {
     "alias_id": "alias-place-aula-diam-f-cubo-39c-diam-f",
     "entity_id": "aula-diam-f-cubo-39c",
     "entity_type": "PLACE",
-    "label": "DIAM - F",
+    "label": "DIAm F",
     "normalized": "diam-f"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-f-cubo-39c-diamf",
+    "entity_id": "aula-diam-f-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "DIAMF",
+    "normalized": "diamf"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-g-cubo-39c-aula-diam-g",
+    "entity_id": "aula-diam-g-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula DIAm G",
+    "normalized": "aula-diam-g"
   },
   {
     "alias_id": "alias-place-aula-diam-g-cubo-39c-diam-g",
     "entity_id": "aula-diam-g-cubo-39c",
     "entity_type": "PLACE",
-    "label": "DIAM - G",
+    "label": "DIAm G",
     "normalized": "diam-g"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-g-cubo-39c-diamg",
+    "entity_id": "aula-diam-g-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "DIAMG",
+    "normalized": "diamg"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-h-cubo-39c-aula-diam-h",
+    "entity_id": "aula-diam-h-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula DIAm H",
+    "normalized": "aula-diam-h"
   },
   {
     "alias_id": "alias-place-aula-diam-h-cubo-39c-diam-h",
     "entity_id": "aula-diam-h-cubo-39c",
     "entity_type": "PLACE",
-    "label": "DIAM - H",
+    "label": "DIAm H",
     "normalized": "diam-h"
+  },
+  {
+    "alias_id": "alias-place-aula-diam-h-cubo-39c-diamh",
+    "entity_id": "aula-diam-h-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "DIAMH",
+    "normalized": "diamh"
   },
   {
     "alias_id": "alias-place-aula-didattica-del-giudalab-cubo-42c-8-piano-cubo-42c-aula-didattica-del-giudalab-cubo-42c-8-piano",
@@ -1624,11 +2905,88 @@
     "normalized": "didatticadelgiudalabcubo42c8piano"
   },
   {
+    "alias_id": "alias-place-aula-dioniso-cubo-17b-aula-dioniso",
+    "entity_id": "aula-dioniso-cubo-17b",
+    "entity_type": "PLACE",
+    "label": "Aula DIONISO",
+    "normalized": "aula-dioniso"
+  },
+  {
     "alias_id": "alias-place-aula-dioniso-cubo-17b-dioniso",
     "entity_id": "aula-dioniso-cubo-17b",
     "entity_type": "PLACE",
     "label": "DIONISO",
     "normalized": "dioniso"
+  },
+  {
+    "alias_id": "alias-place-aula-dolci-aula-dolci",
+    "entity_id": "aula-dolci",
+    "entity_type": "PLACE",
+    "label": "Aula Dolci",
+    "normalized": "aula-dolci"
+  },
+  {
+    "alias_id": "alias-place-aula-dolci-dolci",
+    "entity_id": "aula-dolci",
+    "entity_type": "PLACE",
+    "label": "Dolci",
+    "normalized": "dolci"
+  },
+  {
+    "alias_id": "alias-place-aula-ds11-cubo-44b-aula-ds-11",
+    "entity_id": "aula-ds11-cubo-44b",
+    "entity_type": "PLACE",
+    "label": "Aula DS 11",
+    "normalized": "aula-ds-11"
+  },
+  {
+    "alias_id": "alias-place-aula-ds11-cubo-44b-aula-ds11",
+    "entity_id": "aula-ds11-cubo-44b",
+    "entity_type": "PLACE",
+    "label": "Aula DS11",
+    "normalized": "aula-ds11"
+  },
+  {
+    "alias_id": "alias-place-aula-ds11-cubo-44b-ds-11",
+    "entity_id": "aula-ds11-cubo-44b",
+    "entity_type": "PLACE",
+    "label": "DS 11",
+    "normalized": "ds-11"
+  },
+  {
+    "alias_id": "alias-place-aula-ds11-cubo-44b-ds11",
+    "entity_id": "aula-ds11-cubo-44b",
+    "entity_type": "PLACE",
+    "label": "DS11",
+    "normalized": "ds11"
+  },
+  {
+    "alias_id": "alias-place-aula-ds3-cubo-41b-aula-ds-3",
+    "entity_id": "aula-ds3-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "Aula DS 3",
+    "normalized": "aula-ds-3"
+  },
+  {
+    "alias_id": "alias-place-aula-ds3-cubo-41b-aula-ds3",
+    "entity_id": "aula-ds3-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "Aula DS3",
+    "normalized": "aula-ds3"
+  },
+  {
+    "alias_id": "alias-place-aula-ds3-cubo-41b-ds-3",
+    "entity_id": "aula-ds3-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "DS 3",
+    "normalized": "ds-3"
+  },
+  {
+    "alias_id": "alias-place-aula-ds3-cubo-41b-ds3",
+    "entity_id": "aula-ds3-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "DS3",
+    "normalized": "ds3"
   },
   {
     "alias_id": "alias-place-aula-ds4-cubo-41b-aula-ds-4",
@@ -1657,6 +3015,27 @@
     "entity_type": "PLACE",
     "label": "DS4",
     "normalized": "ds4"
+  },
+  {
+    "alias_id": "alias-place-aula-ds4-piano-terra-aula-ds4-piano-terra",
+    "entity_id": "aula-ds4-piano-terra",
+    "entity_type": "PLACE",
+    "label": "Aula DS4 (Piano Terra)",
+    "normalized": "aula-ds4-piano-terra"
+  },
+  {
+    "alias_id": "alias-place-aula-ds4-piano-terra-ds4-piano-terra",
+    "entity_id": "aula-ds4-piano-terra",
+    "entity_type": "PLACE",
+    "label": "DS4 (Piano Terra)",
+    "normalized": "ds4-piano-terra"
+  },
+  {
+    "alias_id": "alias-place-aula-ds4-piano-terra-ds4-pianoterra",
+    "entity_id": "aula-ds4-piano-terra",
+    "entity_type": "PLACE",
+    "label": "DS4(PIANOTERRA)",
+    "normalized": "ds4-pianoterra"
   },
   {
     "alias_id": "alias-place-aula-ds5-cubo-41b-aula-ds-5",
@@ -1771,6 +3150,13 @@
     "normalized": "ds8"
   },
   {
+    "alias_id": "alias-place-aula-e-cubo-15b-aula-e",
+    "entity_id": "aula-e-cubo-15b",
+    "entity_type": "PLACE",
+    "label": "Aula E",
+    "normalized": "aula-e"
+  },
+  {
     "alias_id": "alias-place-aula-e-cubo-15b-e",
     "entity_id": "aula-e-cubo-15b",
     "entity_type": "PLACE",
@@ -1806,11 +3192,60 @@
     "normalized": "e"
   },
   {
+    "alias_id": "alias-place-aula-e-f-cubo-30c-aula-e-f",
+    "entity_id": "aula-e-f-cubo-30c",
+    "entity_type": "PLACE",
+    "label": "Aula E/F",
+    "normalized": "aula-e-f"
+  },
+  {
     "alias_id": "alias-place-aula-e-f-cubo-30c-e-f",
     "entity_id": "aula-e-f-cubo-30c",
     "entity_type": "PLACE",
     "label": "E/F",
     "normalized": "e-f"
+  },
+  {
+    "alias_id": "alias-place-aula-e-f-cubo-30c-ef",
+    "entity_id": "aula-e-f-cubo-30c",
+    "entity_type": "PLACE",
+    "label": "EF",
+    "normalized": "ef"
+  },
+  {
+    "alias_id": "alias-place-aula-e-ling-cubo-20b-aula-e-ling",
+    "entity_id": "aula-e-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "Aula E Ling.",
+    "normalized": "aula-e-ling"
+  },
+  {
+    "alias_id": "alias-place-aula-e-ling-cubo-20b-e-ling",
+    "entity_id": "aula-e-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "E Ling.",
+    "normalized": "e-ling"
+  },
+  {
+    "alias_id": "alias-place-aula-e-ling-cubo-20b-eling",
+    "entity_id": "aula-e-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "ELING",
+    "normalized": "eling"
+  },
+  {
+    "alias_id": "alias-place-aula-ep1-aula-ep-1",
+    "entity_id": "aula-ep1",
+    "entity_type": "PLACE",
+    "label": "Aula EP 1",
+    "normalized": "aula-ep-1"
+  },
+  {
+    "alias_id": "alias-place-aula-ep1-aula-ep1",
+    "entity_id": "aula-ep1",
+    "entity_type": "PLACE",
+    "label": "Aula EP1",
+    "normalized": "aula-ep1"
   },
   {
     "alias_id": "alias-place-aula-ep1-cubo-1d-aula-ep-1",
@@ -1841,6 +3276,34 @@
     "normalized": "ep1"
   },
   {
+    "alias_id": "alias-place-aula-ep1-ep-1",
+    "entity_id": "aula-ep1",
+    "entity_type": "PLACE",
+    "label": "EP 1",
+    "normalized": "ep-1"
+  },
+  {
+    "alias_id": "alias-place-aula-ep1-ep1",
+    "entity_id": "aula-ep1",
+    "entity_type": "PLACE",
+    "label": "EP1",
+    "normalized": "ep1"
+  },
+  {
+    "alias_id": "alias-place-aula-ep2-aula-ep-2",
+    "entity_id": "aula-ep2",
+    "entity_type": "PLACE",
+    "label": "Aula EP 2",
+    "normalized": "aula-ep-2"
+  },
+  {
+    "alias_id": "alias-place-aula-ep2-aula-ep2",
+    "entity_id": "aula-ep2",
+    "entity_type": "PLACE",
+    "label": "Aula EP2",
+    "normalized": "aula-ep2"
+  },
+  {
     "alias_id": "alias-place-aula-ep2-cubo-1d-aula-ep-2",
     "entity_id": "aula-ep2-cubo-1d",
     "entity_type": "PLACE",
@@ -1867,6 +3330,34 @@
     "entity_type": "PLACE",
     "label": "EP2",
     "normalized": "ep2"
+  },
+  {
+    "alias_id": "alias-place-aula-ep2-ep-2",
+    "entity_id": "aula-ep2",
+    "entity_type": "PLACE",
+    "label": "EP 2",
+    "normalized": "ep-2"
+  },
+  {
+    "alias_id": "alias-place-aula-ep2-ep2",
+    "entity_id": "aula-ep2",
+    "entity_type": "PLACE",
+    "label": "EP2",
+    "normalized": "ep2"
+  },
+  {
+    "alias_id": "alias-place-aula-ep3-aula-ep-3",
+    "entity_id": "aula-ep3",
+    "entity_type": "PLACE",
+    "label": "Aula EP 3",
+    "normalized": "aula-ep-3"
+  },
+  {
+    "alias_id": "alias-place-aula-ep3-aula-ep3",
+    "entity_id": "aula-ep3",
+    "entity_type": "PLACE",
+    "label": "Aula EP3",
+    "normalized": "aula-ep3"
   },
   {
     "alias_id": "alias-place-aula-ep3-cubo-1d-aula-ep-3",
@@ -1897,6 +3388,34 @@
     "normalized": "ep3"
   },
   {
+    "alias_id": "alias-place-aula-ep3-ep-3",
+    "entity_id": "aula-ep3",
+    "entity_type": "PLACE",
+    "label": "EP 3",
+    "normalized": "ep-3"
+  },
+  {
+    "alias_id": "alias-place-aula-ep3-ep3",
+    "entity_id": "aula-ep3",
+    "entity_type": "PLACE",
+    "label": "EP3",
+    "normalized": "ep3"
+  },
+  {
+    "alias_id": "alias-place-aula-ep4-aula-ep-4",
+    "entity_id": "aula-ep4",
+    "entity_type": "PLACE",
+    "label": "Aula EP 4",
+    "normalized": "aula-ep-4"
+  },
+  {
+    "alias_id": "alias-place-aula-ep4-aula-ep4",
+    "entity_id": "aula-ep4",
+    "entity_type": "PLACE",
+    "label": "Aula EP4",
+    "normalized": "aula-ep4"
+  },
+  {
     "alias_id": "alias-place-aula-ep4-cubo-1d-aula-ep-4",
     "entity_id": "aula-ep4-cubo-1d",
     "entity_type": "PLACE",
@@ -1923,6 +3442,34 @@
     "entity_type": "PLACE",
     "label": "EP4",
     "normalized": "ep4"
+  },
+  {
+    "alias_id": "alias-place-aula-ep4-ep-4",
+    "entity_id": "aula-ep4",
+    "entity_type": "PLACE",
+    "label": "EP 4",
+    "normalized": "ep-4"
+  },
+  {
+    "alias_id": "alias-place-aula-ep4-ep4",
+    "entity_id": "aula-ep4",
+    "entity_type": "PLACE",
+    "label": "EP4",
+    "normalized": "ep4"
+  },
+  {
+    "alias_id": "alias-place-aula-ep5-aula-ep-5",
+    "entity_id": "aula-ep5",
+    "entity_type": "PLACE",
+    "label": "Aula EP 5",
+    "normalized": "aula-ep-5"
+  },
+  {
+    "alias_id": "alias-place-aula-ep5-aula-ep5",
+    "entity_id": "aula-ep5",
+    "entity_type": "PLACE",
+    "label": "Aula EP5",
+    "normalized": "aula-ep5"
   },
   {
     "alias_id": "alias-place-aula-ep5-cubo-1d-aula-ep-5",
@@ -1953,6 +3500,34 @@
     "normalized": "ep5"
   },
   {
+    "alias_id": "alias-place-aula-ep5-ep-5",
+    "entity_id": "aula-ep5",
+    "entity_type": "PLACE",
+    "label": "EP 5",
+    "normalized": "ep-5"
+  },
+  {
+    "alias_id": "alias-place-aula-ep5-ep5",
+    "entity_id": "aula-ep5",
+    "entity_type": "PLACE",
+    "label": "EP5",
+    "normalized": "ep5"
+  },
+  {
+    "alias_id": "alias-place-aula-ep6-aula-ep-6",
+    "entity_id": "aula-ep6",
+    "entity_type": "PLACE",
+    "label": "Aula EP 6",
+    "normalized": "aula-ep-6"
+  },
+  {
+    "alias_id": "alias-place-aula-ep6-aula-ep6",
+    "entity_id": "aula-ep6",
+    "entity_type": "PLACE",
+    "label": "Aula EP6",
+    "normalized": "aula-ep6"
+  },
+  {
     "alias_id": "alias-place-aula-ep6-cubo-1d-aula-ep-6",
     "entity_id": "aula-ep6-cubo-1d",
     "entity_type": "PLACE",
@@ -1976,6 +3551,20 @@
   {
     "alias_id": "alias-place-aula-ep6-cubo-1d-ep6",
     "entity_id": "aula-ep6-cubo-1d",
+    "entity_type": "PLACE",
+    "label": "EP6",
+    "normalized": "ep6"
+  },
+  {
+    "alias_id": "alias-place-aula-ep6-ep-6",
+    "entity_id": "aula-ep6",
+    "entity_type": "PLACE",
+    "label": "EP 6",
+    "normalized": "ep-6"
+  },
+  {
+    "alias_id": "alias-place-aula-ep6-ep6",
+    "entity_id": "aula-ep6",
     "entity_type": "PLACE",
     "label": "EP6",
     "normalized": "ep6"
@@ -2023,6 +3612,27 @@
     "normalized": "f"
   },
   {
+    "alias_id": "alias-place-aula-f-ling-cubo-20b-aula-f-ling",
+    "entity_id": "aula-f-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "Aula F Ling.",
+    "normalized": "aula-f-ling"
+  },
+  {
+    "alias_id": "alias-place-aula-f-ling-cubo-20b-f-ling",
+    "entity_id": "aula-f-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "F Ling.",
+    "normalized": "f-ling"
+  },
+  {
+    "alias_id": "alias-place-aula-f-ling-cubo-20b-fling",
+    "entity_id": "aula-f-ling-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "FLING",
+    "normalized": "fling"
+  },
+  {
     "alias_id": "alias-place-aula-f1-cubo-18c-aula-f-1",
     "entity_id": "aula-f1-cubo-18c",
     "entity_type": "PLACE",
@@ -2051,18 +3661,144 @@
     "normalized": "f1"
   },
   {
+    "alias_id": "alias-place-aula-f2-cubo-18c-aula-f-2",
+    "entity_id": "aula-f2-cubo-18c",
+    "entity_type": "PLACE",
+    "label": "Aula F 2",
+    "normalized": "aula-f-2"
+  },
+  {
+    "alias_id": "alias-place-aula-f2-cubo-18c-aula-f2",
+    "entity_id": "aula-f2-cubo-18c",
+    "entity_type": "PLACE",
+    "label": "Aula F2",
+    "normalized": "aula-f2"
+  },
+  {
+    "alias_id": "alias-place-aula-f2-cubo-18c-f-2",
+    "entity_id": "aula-f2-cubo-18c",
+    "entity_type": "PLACE",
+    "label": "F 2",
+    "normalized": "f-2"
+  },
+  {
+    "alias_id": "alias-place-aula-f2-cubo-18c-f2",
+    "entity_id": "aula-f2-cubo-18c",
+    "entity_type": "PLACE",
+    "label": "F2",
+    "normalized": "f2"
+  },
+  {
+    "alias_id": "alias-place-aula-f3-cubo-18c-aula-f-3",
+    "entity_id": "aula-f3-cubo-18c",
+    "entity_type": "PLACE",
+    "label": "Aula F 3",
+    "normalized": "aula-f-3"
+  },
+  {
+    "alias_id": "alias-place-aula-f3-cubo-18c-aula-f3",
+    "entity_id": "aula-f3-cubo-18c",
+    "entity_type": "PLACE",
+    "label": "Aula F3",
+    "normalized": "aula-f3"
+  },
+  {
+    "alias_id": "alias-place-aula-f3-cubo-18c-f-3",
+    "entity_id": "aula-f3-cubo-18c",
+    "entity_type": "PLACE",
+    "label": "F 3",
+    "normalized": "f-3"
+  },
+  {
+    "alias_id": "alias-place-aula-f3-cubo-18c-f3",
+    "entity_id": "aula-f3-cubo-18c",
+    "entity_type": "PLACE",
+    "label": "F3",
+    "normalized": "f3"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-1-cubo-27b-aula-filol-1",
+    "entity_id": "aula-filol-1-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "Aula FILOL 1",
+    "normalized": "aula-filol-1"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-1-cubo-27b-filol-1",
+    "entity_id": "aula-filol-1-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "FILOL 1",
+    "normalized": "filol-1"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-1-cubo-27b-filol1",
+    "entity_id": "aula-filol-1-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "FILOL1",
+    "normalized": "filol1"
+  },
+  {
     "alias_id": "alias-place-aula-filol-2-cubo-27b-aula-filol-2",
     "entity_id": "aula-filol-2-cubo-27b",
     "entity_type": "PLACE",
-    "label": "Aula Filol 2",
+    "label": "Aula FILOL 2",
     "normalized": "aula-filol-2"
   },
   {
     "alias_id": "alias-place-aula-filol-2-cubo-27b-filol-2",
     "entity_id": "aula-filol-2-cubo-27b",
     "entity_type": "PLACE",
-    "label": "Filol 2",
+    "label": "FILOL 2",
     "normalized": "filol-2"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-2-cubo-27b-filol2",
+    "entity_id": "aula-filol-2-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "FILOL2",
+    "normalized": "filol2"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-3-cubo-27b-aula-filol-3",
+    "entity_id": "aula-filol-3-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "Aula FILOL 3",
+    "normalized": "aula-filol-3"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-3-cubo-27b-filol-3",
+    "entity_id": "aula-filol-3-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "FILOL 3",
+    "normalized": "filol-3"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-3-cubo-27b-filol3",
+    "entity_id": "aula-filol-3-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "FILOL3",
+    "normalized": "filol3"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-4-cubo-27b-aula-filol-4",
+    "entity_id": "aula-filol-4-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "Aula FILOL 4",
+    "normalized": "aula-filol-4"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-4-cubo-27b-filol-4",
+    "entity_id": "aula-filol-4-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "FILOL 4",
+    "normalized": "filol-4"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-4-cubo-27b-filol4",
+    "entity_id": "aula-filol-4-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "FILOL4",
+    "normalized": "filol4"
   },
   {
     "alias_id": "alias-place-aula-filol-5-cubo-28b-aula-filol-5",
@@ -2079,18 +3815,32 @@
     "normalized": "filol-5"
   },
   {
+    "alias_id": "alias-place-aula-filol-5-cubo-28b-filol5",
+    "entity_id": "aula-filol-5-cubo-28b",
+    "entity_type": "PLACE",
+    "label": "FILOL5",
+    "normalized": "filol5"
+  },
+  {
     "alias_id": "alias-place-aula-filol-9-cubo-28b-aula-filol-9",
     "entity_id": "aula-filol-9-cubo-28b",
     "entity_type": "PLACE",
-    "label": "Aula Filol 9",
+    "label": "Aula FILOL 9",
     "normalized": "aula-filol-9"
   },
   {
     "alias_id": "alias-place-aula-filol-9-cubo-28b-filol-9",
     "entity_id": "aula-filol-9-cubo-28b",
     "entity_type": "PLACE",
-    "label": "Filol 9",
+    "label": "FILOL 9",
     "normalized": "filol-9"
+  },
+  {
+    "alias_id": "alias-place-aula-filol-9-cubo-28b-filol9",
+    "entity_id": "aula-filol-9-cubo-28b",
+    "entity_type": "PLACE",
+    "label": "FILOL9",
+    "normalized": "filol9"
   },
   {
     "alias_id": "alias-place-aula-fis1-cubo-30c-aula-fis-1",
@@ -2224,6 +3974,20 @@
     "entity_type": "PLACE",
     "label": "G",
     "normalized": "g"
+  },
+  {
+    "alias_id": "alias-place-aula-g-leone-cubo-21b-aula-g-leone",
+    "entity_id": "aula-g-leone-cubo-21b",
+    "entity_type": "PLACE",
+    "label": "Aula G (LEONE)",
+    "normalized": "aula-g-leone"
+  },
+  {
+    "alias_id": "alias-place-aula-g-leone-cubo-21b-g-leone",
+    "entity_id": "aula-g-leone-cubo-21b",
+    "entity_type": "PLACE",
+    "label": "G (LEONE)",
+    "normalized": "g-leone"
   },
   {
     "alias_id": "alias-place-aula-g1-aula-g-1",
@@ -2422,6 +4186,20 @@
     "normalized": "gialla"
   },
   {
+    "alias_id": "alias-place-aula-giannattasio-cubo-45b-aula-giannattasio",
+    "entity_id": "aula-giannattasio-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Aula Giannattasio",
+    "normalized": "aula-giannattasio"
+  },
+  {
+    "alias_id": "alias-place-aula-giannattasio-cubo-45b-giannattasio",
+    "entity_id": "aula-giannattasio-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Giannattasio",
+    "normalized": "giannattasio"
+  },
+  {
     "alias_id": "alias-place-aula-giannattasio-cubo-46b-aula-giannattasio",
     "entity_id": "aula-giannattasio-cubo-46b",
     "entity_type": "PLACE",
@@ -2558,14 +4336,14 @@
     "alias_id": "alias-place-aula-hera-cubo-18b-aula-hera",
     "entity_id": "aula-hera-cubo-18b",
     "entity_type": "PLACE",
-    "label": "AULA HERA",
+    "label": "Aula Hera",
     "normalized": "aula-hera"
   },
   {
     "alias_id": "alias-place-aula-hera-cubo-18b-hera",
     "entity_id": "aula-hera-cubo-18b",
     "entity_type": "PLACE",
-    "label": "HERA",
+    "label": "Hera",
     "normalized": "hera"
   },
   {
@@ -2651,6 +4429,20 @@
     "entity_type": "PLACE",
     "label": "I3",
     "normalized": "i3"
+  },
+  {
+    "alias_id": "alias-place-aula-iana-cubo-19b-aula-iana",
+    "entity_id": "aula-iana-cubo-19b",
+    "entity_type": "PLACE",
+    "label": "Aula IANA",
+    "normalized": "aula-iana"
+  },
+  {
+    "alias_id": "alias-place-aula-iana-cubo-19b-iana",
+    "entity_id": "aula-iana-cubo-19b",
+    "entity_type": "PLACE",
+    "label": "IANA",
+    "normalized": "iana"
   },
   {
     "alias_id": "alias-place-aula-informatica-1-cubo-20b-aula-informatica-1",
@@ -2765,6 +4557,27 @@
     "normalized": "informatica-chimica"
   },
   {
+    "alias_id": "alias-place-aula-informatica-csdim-cubo-28a-aula-informatica-csdim",
+    "entity_id": "aula-informatica-csdim-cubo-28a",
+    "entity_type": "PLACE",
+    "label": "Aula INFORMATICA CSDIM",
+    "normalized": "aula-informatica-csdim"
+  },
+  {
+    "alias_id": "alias-place-aula-informatica-csdim-cubo-28a-informatica-csdim",
+    "entity_id": "aula-informatica-csdim-cubo-28a",
+    "entity_type": "PLACE",
+    "label": "INFORMATICA CSDIM",
+    "normalized": "informatica-csdim"
+  },
+  {
+    "alias_id": "alias-place-aula-informatica-csdim-cubo-28a-informaticacsdim",
+    "entity_id": "aula-informatica-csdim-cubo-28a",
+    "entity_type": "PLACE",
+    "label": "INFORMATICACSDIM",
+    "normalized": "informaticacsdim"
+  },
+  {
     "alias_id": "alias-place-aula-informatica-cubo-15b-aula-informatica",
     "entity_id": "aula-informatica-cubo-15b",
     "entity_type": "PLACE",
@@ -2777,6 +4590,20 @@
     "entity_type": "PLACE",
     "label": "Informatica",
     "normalized": "informatica"
+  },
+  {
+    "alias_id": "alias-place-aula-iris-cubo-29c-aula-iris",
+    "entity_id": "aula-iris-cubo-29c",
+    "entity_type": "PLACE",
+    "label": "Aula IRIS",
+    "normalized": "aula-iris"
+  },
+  {
+    "alias_id": "alias-place-aula-iris-cubo-29c-iris",
+    "entity_id": "aula-iris-cubo-29c",
+    "entity_type": "PLACE",
+    "label": "IRIS",
+    "normalized": "iris"
   },
   {
     "alias_id": "alias-place-aula-l1-aula-l-1",
@@ -3122,6 +4949,27 @@
     "normalized": "lab31b"
   },
   {
+    "alias_id": "alias-place-aula-labinfo-laboratorio-didattico-area-ingegneria-cubo-40b-aula-labinfo-laboratorio-didattico-area-ingegneria",
+    "entity_id": "aula-labinfo-laboratorio-didattico-area-ingegneria-cubo-40b",
+    "entity_type": "PLACE",
+    "label": "Aula LabInfo Laboratorio didattico Area Ingegneria",
+    "normalized": "aula-labinfo-laboratorio-didattico-area-ingegneria"
+  },
+  {
+    "alias_id": "alias-place-aula-labinfo-laboratorio-didattico-area-ingegneria-cubo-40b-labinfo-laboratorio-didattico-area-ingegneria",
+    "entity_id": "aula-labinfo-laboratorio-didattico-area-ingegneria-cubo-40b",
+    "entity_type": "PLACE",
+    "label": "LabInfo Laboratorio didattico Area Ingegneria",
+    "normalized": "labinfo-laboratorio-didattico-area-ingegneria"
+  },
+  {
+    "alias_id": "alias-place-aula-labinfo-laboratorio-didattico-area-ingegneria-cubo-40b-labinfolaboratoriodidatticoareaingegneria",
+    "entity_id": "aula-labinfo-laboratorio-didattico-area-ingegneria-cubo-40b",
+    "entity_type": "PLACE",
+    "label": "LABINFOLABORATORIODIDATTICOAREAINGEGNERIA",
+    "normalized": "labinfolaboratoriodidatticoareaingegneria"
+  },
+  {
     "alias_id": "alias-place-aula-labinfo40b-sala-a-cubo-40c-labinfo40b-sala-a",
     "entity_id": "aula-labinfo40b-sala-a-cubo-40c",
     "entity_type": "PLACE",
@@ -3169,6 +5017,48 @@
     "entity_type": "PLACE",
     "label": "Laboratorio C",
     "normalized": "laboratorio-c"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-chimico-b-aula-laboratorio-chimico-b",
+    "entity_id": "aula-laboratorio-chimico-b",
+    "entity_type": "PLACE",
+    "label": "Aula Laboratorio Chimico B",
+    "normalized": "aula-laboratorio-chimico-b"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-chimico-b-laboratorio-chimico-b",
+    "entity_id": "aula-laboratorio-chimico-b",
+    "entity_type": "PLACE",
+    "label": "Laboratorio Chimico B",
+    "normalized": "laboratorio-chimico-b"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-chimico-b-laboratoriochimicob",
+    "entity_id": "aula-laboratorio-chimico-b",
+    "entity_type": "PLACE",
+    "label": "LABORATORIOCHIMICOB",
+    "normalized": "laboratoriochimicob"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-chimico-c-aula-laboratorio-chimico-c",
+    "entity_id": "aula-laboratorio-chimico-c",
+    "entity_type": "PLACE",
+    "label": "Aula Laboratorio Chimico C",
+    "normalized": "aula-laboratorio-chimico-c"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-chimico-c-laboratorio-chimico-c",
+    "entity_id": "aula-laboratorio-chimico-c",
+    "entity_type": "PLACE",
+    "label": "Laboratorio Chimico C",
+    "normalized": "laboratorio-chimico-c"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-chimico-c-laboratoriochimicoc",
+    "entity_id": "aula-laboratorio-chimico-c",
+    "entity_type": "PLACE",
+    "label": "LABORATORIOCHIMICOC",
+    "normalized": "laboratoriochimicoc"
   },
   {
     "alias_id": "alias-place-aula-laboratorio-cm2-microsonda-tem-cubo-15a-laboratorio-cm2-microsonda-tem",
@@ -3395,6 +5285,13 @@
     "normalized": "laboratorio-idruri-metallici-mhes"
   },
   {
+    "alias_id": "alias-place-aula-laboratorio-informatica-aula-laboratorio-informatica",
+    "entity_id": "aula-laboratorio-informatica",
+    "entity_type": "PLACE",
+    "label": "Aula Laboratorio Informatica",
+    "normalized": "aula-laboratorio-informatica"
+  },
+  {
     "alias_id": "alias-place-aula-laboratorio-informatica-laboratorio-informatica",
     "entity_id": "aula-laboratorio-informatica",
     "entity_type": "PLACE",
@@ -3402,11 +5299,39 @@
     "normalized": "laboratorio-informatica"
   },
   {
+    "alias_id": "alias-place-aula-laboratorio-informatica-laboratorioinformatica",
+    "entity_id": "aula-laboratorio-informatica",
+    "entity_type": "PLACE",
+    "label": "LABORATORIOINFORMATICA",
+    "normalized": "laboratorioinformatica"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-multimediale-aula-laboratorio-multimediale",
+    "entity_id": "aula-laboratorio-multimediale",
+    "entity_type": "PLACE",
+    "label": "Aula Laboratorio Multimediale",
+    "normalized": "aula-laboratorio-multimediale"
+  },
+  {
     "alias_id": "alias-place-aula-laboratorio-multimediale-cubo-0b-laboratorio-multimediale",
     "entity_id": "aula-laboratorio-multimediale-cubo-0b",
     "entity_type": "PLACE",
     "label": "Laboratorio multimediale",
     "normalized": "laboratorio-multimediale"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-multimediale-laboratorio-multimediale",
+    "entity_id": "aula-laboratorio-multimediale",
+    "entity_type": "PLACE",
+    "label": "Laboratorio Multimediale",
+    "normalized": "laboratorio-multimediale"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-multimediale-laboratoriomultimediale",
+    "entity_id": "aula-laboratorio-multimediale",
+    "entity_type": "PLACE",
+    "label": "LABORATORIOMULTIMEDIALE",
+    "normalized": "laboratoriomultimediale"
   },
   {
     "alias_id": "alias-place-aula-laboratorio-prove-materiali-e-strutture-1-cubo-37b-laboratorio-prove-materiali-e-strutture-1",
@@ -3444,11 +5369,46 @@
     "normalized": "laboratorio-sezioni-sottili"
   },
   {
+    "alias_id": "alias-place-aula-laboratorio-sottovia-chimico-aula-laboratorio-sottovia-chimico",
+    "entity_id": "aula-laboratorio-sottovia-chimico",
+    "entity_type": "PLACE",
+    "label": "Aula Laboratorio Sottovia Chimico",
+    "normalized": "aula-laboratorio-sottovia-chimico"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-sottovia-chimico-laboratorio-sottovia-chimico",
+    "entity_id": "aula-laboratorio-sottovia-chimico",
+    "entity_type": "PLACE",
+    "label": "Laboratorio Sottovia Chimico",
+    "normalized": "laboratorio-sottovia-chimico"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-sottovia-chimico-laboratoriosottoviachimico",
+    "entity_id": "aula-laboratorio-sottovia-chimico",
+    "entity_type": "PLACE",
+    "label": "LABORATORIOSOTTOVIACHIMICO",
+    "normalized": "laboratoriosottoviachimico"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-sottovia-morfo-funzionale-aula-laboratorio-sottovia-morfo-funzionale",
+    "entity_id": "aula-laboratorio-sottovia-morfo-funzionale",
+    "entity_type": "PLACE",
+    "label": "Aula Laboratorio Sottovia Morfo-Funzionale",
+    "normalized": "aula-laboratorio-sottovia-morfo-funzionale"
+  },
+  {
     "alias_id": "alias-place-aula-laboratorio-sottovia-morfo-funzionale-laboratorio-sottovia-morfo-funzionale",
     "entity_id": "aula-laboratorio-sottovia-morfo-funzionale",
     "entity_type": "PLACE",
     "label": "Laboratorio Sottovia Morfo-Funzionale",
     "normalized": "laboratorio-sottovia-morfo-funzionale"
+  },
+  {
+    "alias_id": "alias-place-aula-laboratorio-sottovia-morfo-funzionale-laboratoriosottoviamorfofunzionale",
+    "entity_id": "aula-laboratorio-sottovia-morfo-funzionale",
+    "entity_type": "PLACE",
+    "label": "LABORATORIOSOTTOVIAMORFOFUNZIONALE",
+    "normalized": "laboratoriosottoviamorfofunzionale"
   },
   {
     "alias_id": "alias-place-aula-laboratorio-specialistico-in-fisica-della-materia-cubo-30c-laboratorio-specialistico-in-fisica-della-materia",
@@ -3477,6 +5437,48 @@
     "entity_type": "PLACE",
     "label": "Laboratorio XRF-XRD",
     "normalized": "laboratorio-xrf-xrd"
+  },
+  {
+    "alias_id": "alias-place-aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c-aula-laser-laboratory-for-application-of-smart-energy-and-renewables",
+    "entity_id": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c",
+    "entity_type": "PLACE",
+    "label": "Aula LASER Laboratory for Application of Smart Energy and Renewables",
+    "normalized": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables"
+  },
+  {
+    "alias_id": "alias-place-aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c-laser-laboratory-for-application-of-smart-energy-and-renewables",
+    "entity_id": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c",
+    "entity_type": "PLACE",
+    "label": "LASER Laboratory for Application of Smart Energy and Renewables",
+    "normalized": "laser-laboratory-for-application-of-smart-energy-and-renewables"
+  },
+  {
+    "alias_id": "alias-place-aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c-laserlaboratoryforapplicationofsmartenergyandrenewables",
+    "entity_id": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c",
+    "entity_type": "PLACE",
+    "label": "LASERLABORATORYFORAPPLICATIONOFSMARTENERGYANDRENEWABLES",
+    "normalized": "laserlaboratoryforapplicationofsmartenergyandrenewables"
+  },
+  {
+    "alias_id": "alias-place-aula-lime-laboratory-of-innovation-and-management-engineering-aula-lime-laboratory-of-innovation-and-management-engineering",
+    "entity_id": "aula-lime-laboratory-of-innovation-and-management-engineering",
+    "entity_type": "PLACE",
+    "label": "Aula LIME Laboratory of Innovation and Management Engineering",
+    "normalized": "aula-lime-laboratory-of-innovation-and-management-engineering"
+  },
+  {
+    "alias_id": "alias-place-aula-lime-laboratory-of-innovation-and-management-engineering-lime-laboratory-of-innovation-and-management-engineering",
+    "entity_id": "aula-lime-laboratory-of-innovation-and-management-engineering",
+    "entity_type": "PLACE",
+    "label": "LIME Laboratory of Innovation and Management Engineering",
+    "normalized": "lime-laboratory-of-innovation-and-management-engineering"
+  },
+  {
+    "alias_id": "alias-place-aula-lime-laboratory-of-innovation-and-management-engineering-limelaboratoryofinnovationandmanagementengineering",
+    "entity_id": "aula-lime-laboratory-of-innovation-and-management-engineering",
+    "entity_type": "PLACE",
+    "label": "LIMELABORATORYOFINNOVATIONANDMANAGEMENTENGINEERING",
+    "normalized": "limelaboratoryofinnovationandmanagementengineering"
   },
   {
     "alias_id": "alias-place-aula-lingue-1-cla-aula-lingue-1-cla",
@@ -3661,6 +5663,34 @@
     "normalized": "ls3"
   },
   {
+    "alias_id": "alias-place-aula-luigi-spezzaferro-cubo-21b-aula-luigi-spezzaferro",
+    "entity_id": "aula-luigi-spezzaferro-cubo-21b",
+    "entity_type": "PLACE",
+    "label": "Aula “LUIGI SPEZZAFERRO”",
+    "normalized": "aula-luigi-spezzaferro"
+  },
+  {
+    "alias_id": "alias-place-aula-luigi-spezzaferro-cubo-21b-luigi-spezzaferro",
+    "entity_id": "aula-luigi-spezzaferro-cubo-21b",
+    "entity_type": "PLACE",
+    "label": "“LUIGI SPEZZAFERRO”",
+    "normalized": "luigi-spezzaferro"
+  },
+  {
+    "alias_id": "alias-place-aula-luigi-spezzaferro-cubo-21b-luigispezzaferro",
+    "entity_id": "aula-luigi-spezzaferro-cubo-21b",
+    "entity_type": "PLACE",
+    "label": "“LUIGISPEZZAFERRO”",
+    "normalized": "luigispezzaferro"
+  },
+  {
+    "alias_id": "alias-place-aula-m-cubo-15b-aula-m",
+    "entity_id": "aula-m-cubo-15b",
+    "entity_type": "PLACE",
+    "label": "Aula M",
+    "normalized": "aula-m"
+  },
+  {
     "alias_id": "alias-place-aula-m-cubo-15b-m",
     "entity_id": "aula-m-cubo-15b",
     "entity_type": "PLACE",
@@ -3759,6 +5789,34 @@
     "normalized": "m3"
   },
   {
+    "alias_id": "alias-place-aula-m4-aula-seminari-bagni-studenti-bag-aula-m4-aula-seminari-bagni-studenti-bag",
+    "entity_id": "aula-m4-aula-seminari-bagni-studenti-bag",
+    "entity_type": "PLACE",
+    "label": "Aula M4 - Aula Seminari - Bagni Studenti - Bag",
+    "normalized": "aula-m4-aula-seminari-bagni-studenti-bag"
+  },
+  {
+    "alias_id": "alias-place-aula-m4-aula-seminari-bagni-studenti-bag-m-4-aulaseminaribagnistudentibag",
+    "entity_id": "aula-m4-aula-seminari-bagni-studenti-bag",
+    "entity_type": "PLACE",
+    "label": "M 4 AULASEMINARIBAGNISTUDENTIBAG",
+    "normalized": "m-4-aulaseminaribagnistudentibag"
+  },
+  {
+    "alias_id": "alias-place-aula-m4-aula-seminari-bagni-studenti-bag-m4-aula-seminari-bagni-studenti-bag",
+    "entity_id": "aula-m4-aula-seminari-bagni-studenti-bag",
+    "entity_type": "PLACE",
+    "label": "M4 - Aula Seminari - Bagni Studenti - Bag",
+    "normalized": "m4-aula-seminari-bagni-studenti-bag"
+  },
+  {
+    "alias_id": "alias-place-aula-m4-aula-seminari-bagni-studenti-bag-m4aulaseminaribagnistudentibag",
+    "entity_id": "aula-m4-aula-seminari-bagni-studenti-bag",
+    "entity_type": "PLACE",
+    "label": "M4AULASEMINARIBAGNISTUDENTIBAG",
+    "normalized": "m4aulaseminaribagnistudentibag"
+  },
+  {
     "alias_id": "alias-place-aula-m4-cubo-44c-aula-m-4",
     "entity_id": "aula-m4-cubo-44c",
     "entity_type": "PLACE",
@@ -3797,7 +5855,7 @@
     "alias_id": "alias-place-aula-magna-cubo-15b-aula-magna",
     "entity_id": "aula-magna-cubo-15b",
     "entity_type": "PLACE",
-    "label": "AULA MAGNA",
+    "label": "Aula MAGNA",
     "normalized": "aula-magna"
   },
   {
@@ -3815,6 +5873,41 @@
     "normalized": "magna"
   },
   {
+    "alias_id": "alias-place-aula-mario-alcaro-cubo-28b-aula-mario-alcaro",
+    "entity_id": "aula-mario-alcaro-cubo-28b",
+    "entity_type": "PLACE",
+    "label": "Aula “MARIO ALCARO”",
+    "normalized": "aula-mario-alcaro"
+  },
+  {
+    "alias_id": "alias-place-aula-mario-alcaro-cubo-28b-mario-alcaro",
+    "entity_id": "aula-mario-alcaro-cubo-28b",
+    "entity_type": "PLACE",
+    "label": "“MARIO ALCARO”",
+    "normalized": "mario-alcaro"
+  },
+  {
+    "alias_id": "alias-place-aula-mario-alcaro-cubo-28b-marioalcaro",
+    "entity_id": "aula-mario-alcaro-cubo-28b",
+    "entity_type": "PLACE",
+    "label": "“MARIOALCARO”",
+    "normalized": "marioalcaro"
+  },
+  {
+    "alias_id": "alias-place-aula-marone-cubo-41b-aula-marone",
+    "entity_id": "aula-marone-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "Aula Marone)",
+    "normalized": "aula-marone"
+  },
+  {
+    "alias_id": "alias-place-aula-marone-cubo-41b-marone",
+    "entity_id": "aula-marone-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "Marone)",
+    "normalized": "marone"
+  },
+  {
     "alias_id": "alias-place-aula-marrone-cubo-17a-aula-marrone",
     "entity_id": "aula-marrone-cubo-17a",
     "entity_type": "PLACE",
@@ -3827,6 +5920,27 @@
     "entity_type": "PLACE",
     "label": "MARRONE",
     "normalized": "marrone"
+  },
+  {
+    "alias_id": "alias-place-aula-mech-lab-laboratorio-di-ingegneria-meccanica-cubo-45c-aula-mech-lab-laboratorio-di-ingegneria-meccanica",
+    "entity_id": "aula-mech-lab-laboratorio-di-ingegneria-meccanica-cubo-45c",
+    "entity_type": "PLACE",
+    "label": "Aula Mech-LAB Laboratorio di Ingegneria Meccanica",
+    "normalized": "aula-mech-lab-laboratorio-di-ingegneria-meccanica"
+  },
+  {
+    "alias_id": "alias-place-aula-mech-lab-laboratorio-di-ingegneria-meccanica-cubo-45c-mech-lab-laboratorio-di-ingegneria-meccanica",
+    "entity_id": "aula-mech-lab-laboratorio-di-ingegneria-meccanica-cubo-45c",
+    "entity_type": "PLACE",
+    "label": "Mech-LAB Laboratorio di Ingegneria Meccanica",
+    "normalized": "mech-lab-laboratorio-di-ingegneria-meccanica"
+  },
+  {
+    "alias_id": "alias-place-aula-mech-lab-laboratorio-di-ingegneria-meccanica-cubo-45c-mechlablaboratoriodiingegneriameccanica",
+    "entity_id": "aula-mech-lab-laboratorio-di-ingegneria-meccanica-cubo-45c",
+    "entity_type": "PLACE",
+    "label": "MECHLABLABORATORIODIINGEGNERIAMECCANICA",
+    "normalized": "mechlablaboratoriodiingegneriameccanica"
   },
   {
     "alias_id": "alias-place-aula-medicina-traslazionale-aula-medicina-traslazionale",
@@ -3848,6 +5962,90 @@
     "entity_type": "PLACE",
     "label": "MEDICINATRASLAZIONALE",
     "normalized": "medicinatraslazionale"
+  },
+  {
+    "alias_id": "alias-place-aula-mod1a-cubo-39c-aula-mod-1-a",
+    "entity_id": "aula-mod1a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula MOD 1 A",
+    "normalized": "aula-mod-1-a"
+  },
+  {
+    "alias_id": "alias-place-aula-mod1a-cubo-39c-aula-mod1a",
+    "entity_id": "aula-mod1a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula MOD1A",
+    "normalized": "aula-mod1a"
+  },
+  {
+    "alias_id": "alias-place-aula-mod1a-cubo-39c-mod-1-a",
+    "entity_id": "aula-mod1a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "MOD 1 A",
+    "normalized": "mod-1-a"
+  },
+  {
+    "alias_id": "alias-place-aula-mod1a-cubo-39c-mod1a",
+    "entity_id": "aula-mod1a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "MOD1A",
+    "normalized": "mod1a"
+  },
+  {
+    "alias_id": "alias-place-aula-mod2d-cubo-39c-aula-mod-2-d",
+    "entity_id": "aula-mod2d-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula MOD 2 D",
+    "normalized": "aula-mod-2-d"
+  },
+  {
+    "alias_id": "alias-place-aula-mod2d-cubo-39c-aula-mod2d",
+    "entity_id": "aula-mod2d-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula MOD2D",
+    "normalized": "aula-mod2d"
+  },
+  {
+    "alias_id": "alias-place-aula-mod2d-cubo-39c-mod-2-d",
+    "entity_id": "aula-mod2d-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "MOD 2 D",
+    "normalized": "mod-2-d"
+  },
+  {
+    "alias_id": "alias-place-aula-mod2d-cubo-39c-mod2d",
+    "entity_id": "aula-mod2d-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "MOD2D",
+    "normalized": "mod2d"
+  },
+  {
+    "alias_id": "alias-place-aula-mod2e-cubo-39c-aula-mod-2-e",
+    "entity_id": "aula-mod2e-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula MOD 2 E",
+    "normalized": "aula-mod-2-e"
+  },
+  {
+    "alias_id": "alias-place-aula-mod2e-cubo-39c-aula-mod2e",
+    "entity_id": "aula-mod2e-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "Aula MOD2E",
+    "normalized": "aula-mod2e"
+  },
+  {
+    "alias_id": "alias-place-aula-mod2e-cubo-39c-mod-2-e",
+    "entity_id": "aula-mod2e-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "MOD 2 E",
+    "normalized": "mod-2-e"
+  },
+  {
+    "alias_id": "alias-place-aula-mod2e-cubo-39c-mod2e",
+    "entity_id": "aula-mod2e-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "MOD2E",
+    "normalized": "mod2e"
   },
   {
     "alias_id": "alias-place-aula-mod3-cubo-39c-aula-mod-3",
@@ -3878,6 +6076,20 @@
     "normalized": "mod3"
   },
   {
+    "alias_id": "alias-place-aula-mod3a-aula-mod-3-a",
+    "entity_id": "aula-mod3a",
+    "entity_type": "PLACE",
+    "label": "Aula MOD 3 A",
+    "normalized": "aula-mod-3-a"
+  },
+  {
+    "alias_id": "alias-place-aula-mod3a-aula-mod3a",
+    "entity_id": "aula-mod3a",
+    "entity_type": "PLACE",
+    "label": "Aula MOD3A",
+    "normalized": "aula-mod3a"
+  },
+  {
     "alias_id": "alias-place-aula-mod3a-cubo-39c-aula-mod-3-a",
     "entity_id": "aula-mod3a-cubo-39c",
     "entity_type": "PLACE",
@@ -3901,6 +6113,20 @@
   {
     "alias_id": "alias-place-aula-mod3a-cubo-39c-mod3a",
     "entity_id": "aula-mod3a-cubo-39c",
+    "entity_type": "PLACE",
+    "label": "MOD3A",
+    "normalized": "mod3a"
+  },
+  {
+    "alias_id": "alias-place-aula-mod3a-mod-3-a",
+    "entity_id": "aula-mod3a",
+    "entity_type": "PLACE",
+    "label": "MOD 3 A",
+    "normalized": "mod-3-a"
+  },
+  {
+    "alias_id": "alias-place-aula-mod3a-mod3a",
+    "entity_id": "aula-mod3a",
     "entity_type": "PLACE",
     "label": "MOD3A",
     "normalized": "mod3a"
@@ -4368,6 +6594,20 @@
     "normalized": "aula-multimediale"
   },
   {
+    "alias_id": "alias-place-aula-multimediale-cubo-20b-aula-multimediale",
+    "entity_id": "aula-multimediale-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "Aula Multimediale",
+    "normalized": "aula-multimediale"
+  },
+  {
+    "alias_id": "alias-place-aula-multimediale-cubo-20b-multimediale",
+    "entity_id": "aula-multimediale-cubo-20b",
+    "entity_type": "PLACE",
+    "label": "Multimediale",
+    "normalized": "multimediale"
+  },
+  {
     "alias_id": "alias-place-aula-multimediale-multimediale",
     "entity_id": "aula-multimediale",
     "entity_type": "PLACE",
@@ -4396,8 +6636,29 @@
     "normalized": "multimedialepiano1cubo25c"
   },
   {
+    "alias_id": "alias-place-aula-n-cubo-15b-aula-n",
+    "entity_id": "aula-n-cubo-15b",
+    "entity_type": "PLACE",
+    "label": "Aula N",
+    "normalized": "aula-n"
+  },
+  {
     "alias_id": "alias-place-aula-n-cubo-15b-n",
     "entity_id": "aula-n-cubo-15b",
+    "entity_type": "PLACE",
+    "label": "N",
+    "normalized": "n"
+  },
+  {
+    "alias_id": "alias-place-aula-n-cubo-18b-aula-n",
+    "entity_id": "aula-n-cubo-18b",
+    "entity_type": "PLACE",
+    "label": "Aula N",
+    "normalized": "aula-n"
+  },
+  {
+    "alias_id": "alias-place-aula-n-cubo-18b-n",
+    "entity_id": "aula-n-cubo-18b",
     "entity_type": "PLACE",
     "label": "N",
     "normalized": "n"
@@ -4410,11 +6671,25 @@
     "normalized": "n"
   },
   {
+    "alias_id": "alias-place-aula-nettuno-cubo-17b-aula-nettuno",
+    "entity_id": "aula-nettuno-cubo-17b",
+    "entity_type": "PLACE",
+    "label": "Aula Nettuno",
+    "normalized": "aula-nettuno"
+  },
+  {
     "alias_id": "alias-place-aula-nettuno-cubo-17b-nettuno",
     "entity_id": "aula-nettuno-cubo-17b",
     "entity_type": "PLACE",
-    "label": "NETTUNO",
+    "label": "Nettuno",
     "normalized": "nettuno"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg1-aula-oa-sg1",
+    "entity_id": "aula-oa-sg1",
+    "entity_type": "PLACE",
+    "label": "Aula OA/SG1",
+    "normalized": "aula-oa-sg1"
   },
   {
     "alias_id": "alias-place-aula-oa-sg1-cubo-3a-aula-oa-sg1",
@@ -4431,6 +6706,34 @@
     "normalized": "oa-sg1"
   },
   {
+    "alias_id": "alias-place-aula-oa-sg1-oa-sg1",
+    "entity_id": "aula-oa-sg1",
+    "entity_type": "PLACE",
+    "label": "OA/SG1",
+    "normalized": "oa-sg1"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg1-oasg-1",
+    "entity_id": "aula-oa-sg1",
+    "entity_type": "PLACE",
+    "label": "OASG 1",
+    "normalized": "oasg-1"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg1-oasg1",
+    "entity_id": "aula-oa-sg1",
+    "entity_type": "PLACE",
+    "label": "OASG1",
+    "normalized": "oasg1"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg2-aula-oa-sg2",
+    "entity_id": "aula-oa-sg2",
+    "entity_type": "PLACE",
+    "label": "Aula OA/SG2",
+    "normalized": "aula-oa-sg2"
+  },
+  {
     "alias_id": "alias-place-aula-oa-sg2-cubo-3a-aula-oa-sg2",
     "entity_id": "aula-oa-sg2-cubo-3a",
     "entity_type": "PLACE",
@@ -4443,6 +6746,34 @@
     "entity_type": "PLACE",
     "label": "OA/SG2",
     "normalized": "oa-sg2"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg2-oa-sg2",
+    "entity_id": "aula-oa-sg2",
+    "entity_type": "PLACE",
+    "label": "OA/SG2",
+    "normalized": "oa-sg2"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg2-oasg-2",
+    "entity_id": "aula-oa-sg2",
+    "entity_type": "PLACE",
+    "label": "OASG 2",
+    "normalized": "oasg-2"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg2-oasg2",
+    "entity_id": "aula-oa-sg2",
+    "entity_type": "PLACE",
+    "label": "OASG2",
+    "normalized": "oasg2"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg3-aula-oa-sg3",
+    "entity_id": "aula-oa-sg3",
+    "entity_type": "PLACE",
+    "label": "Aula OA/SG3",
+    "normalized": "aula-oa-sg3"
   },
   {
     "alias_id": "alias-place-aula-oa-sg3-cubo-3a-aula-oa-sg3",
@@ -4459,6 +6790,34 @@
     "normalized": "oa-sg3"
   },
   {
+    "alias_id": "alias-place-aula-oa-sg3-oa-sg3",
+    "entity_id": "aula-oa-sg3",
+    "entity_type": "PLACE",
+    "label": "OA/SG3",
+    "normalized": "oa-sg3"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg3-oasg-3",
+    "entity_id": "aula-oa-sg3",
+    "entity_type": "PLACE",
+    "label": "OASG 3",
+    "normalized": "oasg-3"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg3-oasg3",
+    "entity_id": "aula-oa-sg3",
+    "entity_type": "PLACE",
+    "label": "OASG3",
+    "normalized": "oasg3"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg4-aula-oa-sg4",
+    "entity_id": "aula-oa-sg4",
+    "entity_type": "PLACE",
+    "label": "Aula OA/SG4",
+    "normalized": "aula-oa-sg4"
+  },
+  {
     "alias_id": "alias-place-aula-oa-sg4-cubo-3a-aula-oa-sg4",
     "entity_id": "aula-oa-sg4-cubo-3a",
     "entity_type": "PLACE",
@@ -4471,6 +6830,27 @@
     "entity_type": "PLACE",
     "label": "OA/SG4",
     "normalized": "oa-sg4"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg4-oa-sg4",
+    "entity_id": "aula-oa-sg4",
+    "entity_type": "PLACE",
+    "label": "OA/SG4",
+    "normalized": "oa-sg4"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg4-oasg-4",
+    "entity_id": "aula-oa-sg4",
+    "entity_type": "PLACE",
+    "label": "OASG 4",
+    "normalized": "oasg-4"
+  },
+  {
+    "alias_id": "alias-place-aula-oa-sg4-oasg4",
+    "entity_id": "aula-oa-sg4",
+    "entity_type": "PLACE",
+    "label": "OASG4",
+    "normalized": "oasg4"
   },
   {
     "alias_id": "alias-place-aula-orto-botanico-aula-orto-botanico",
@@ -4492,6 +6872,111 @@
     "entity_type": "PLACE",
     "label": "ORTOBOTANICO",
     "normalized": "ortobotanico"
+  },
+  {
+    "alias_id": "alias-place-aula-p1-cubo-40c-aula-p-1",
+    "entity_id": "aula-p1-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "Aula P 1",
+    "normalized": "aula-p-1"
+  },
+  {
+    "alias_id": "alias-place-aula-p1-cubo-40c-aula-p1",
+    "entity_id": "aula-p1-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "Aula P1",
+    "normalized": "aula-p1"
+  },
+  {
+    "alias_id": "alias-place-aula-p1-cubo-40c-p-1",
+    "entity_id": "aula-p1-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "P 1",
+    "normalized": "p-1"
+  },
+  {
+    "alias_id": "alias-place-aula-p1-cubo-40c-p1",
+    "entity_id": "aula-p1-cubo-40c",
+    "entity_type": "PLACE",
+    "label": "P1",
+    "normalized": "p1"
+  },
+  {
+    "alias_id": "alias-place-aula-p1-piano-ponte-carrabile-aula-p1-piano-ponte-carrabile",
+    "entity_id": "aula-p1-piano-ponte-carrabile",
+    "entity_type": "PLACE",
+    "label": "Aula P1 (Piano Ponte Carrabile)",
+    "normalized": "aula-p1-piano-ponte-carrabile"
+  },
+  {
+    "alias_id": "alias-place-aula-p1-piano-ponte-carrabile-p1-piano-ponte-carrabile",
+    "entity_id": "aula-p1-piano-ponte-carrabile",
+    "entity_type": "PLACE",
+    "label": "P1 (Piano Ponte Carrabile)",
+    "normalized": "p1-piano-ponte-carrabile"
+  },
+  {
+    "alias_id": "alias-place-aula-p1-piano-ponte-carrabile-p1-pianopontecarrabile",
+    "entity_id": "aula-p1-piano-ponte-carrabile",
+    "entity_type": "PLACE",
+    "label": "P1(PIANOPONTECARRABILE)",
+    "normalized": "p1-pianopontecarrabile"
+  },
+  {
+    "alias_id": "alias-place-aula-p3-cubo-43c-aula-p-3",
+    "entity_id": "aula-p3-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "Aula P 3",
+    "normalized": "aula-p-3"
+  },
+  {
+    "alias_id": "alias-place-aula-p3-cubo-43c-aula-p3",
+    "entity_id": "aula-p3-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "Aula P3",
+    "normalized": "aula-p3"
+  },
+  {
+    "alias_id": "alias-place-aula-p3-cubo-43c-p-3",
+    "entity_id": "aula-p3-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "P 3",
+    "normalized": "p-3"
+  },
+  {
+    "alias_id": "alias-place-aula-p3-cubo-43c-p3",
+    "entity_id": "aula-p3-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "P3",
+    "normalized": "p3"
+  },
+  {
+    "alias_id": "alias-place-aula-p4-cubo-43c-aula-p-4",
+    "entity_id": "aula-p4-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "Aula P 4",
+    "normalized": "aula-p-4"
+  },
+  {
+    "alias_id": "alias-place-aula-p4-cubo-43c-aula-p4",
+    "entity_id": "aula-p4-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "Aula P4",
+    "normalized": "aula-p4"
+  },
+  {
+    "alias_id": "alias-place-aula-p4-cubo-43c-p-4",
+    "entity_id": "aula-p4-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "P 4",
+    "normalized": "p-4"
+  },
+  {
+    "alias_id": "alias-place-aula-p4-cubo-43c-p4",
+    "entity_id": "aula-p4-cubo-43c",
+    "entity_type": "PLACE",
+    "label": "P4",
+    "normalized": "p4"
   },
   {
     "alias_id": "alias-place-aula-p5-cubo-43b-aula-p-5",
@@ -4550,6 +7035,13 @@
     "normalized": "p6"
   },
   {
+    "alias_id": "alias-place-aula-pan-cubo-17b-aula-pan",
+    "entity_id": "aula-pan-cubo-17b",
+    "entity_type": "PLACE",
+    "label": "Aula PAN",
+    "normalized": "aula-pan"
+  },
+  {
     "alias_id": "alias-place-aula-pan-cubo-17b-pan",
     "entity_id": "aula-pan-cubo-17b",
     "entity_type": "PLACE",
@@ -4557,17 +7049,101 @@
     "normalized": "pan"
   },
   {
+    "alias_id": "alias-place-aula-pt1-cubo-45b-aula-pt-1",
+    "entity_id": "aula-pt1-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Aula PT 1",
+    "normalized": "aula-pt-1"
+  },
+  {
+    "alias_id": "alias-place-aula-pt1-cubo-45b-aula-pt1",
+    "entity_id": "aula-pt1-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Aula PT1",
+    "normalized": "aula-pt1"
+  },
+  {
+    "alias_id": "alias-place-aula-pt1-cubo-45b-pt-1",
+    "entity_id": "aula-pt1-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "PT 1",
+    "normalized": "pt-1"
+  },
+  {
+    "alias_id": "alias-place-aula-pt1-cubo-45b-pt1",
+    "entity_id": "aula-pt1-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "PT1",
+    "normalized": "pt1"
+  },
+  {
+    "alias_id": "alias-place-aula-pt2-cubo-45b-aula-pt-2",
+    "entity_id": "aula-pt2-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Aula PT 2",
+    "normalized": "aula-pt-2"
+  },
+  {
+    "alias_id": "alias-place-aula-pt2-cubo-45b-aula-pt2",
+    "entity_id": "aula-pt2-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Aula PT2",
+    "normalized": "aula-pt2"
+  },
+  {
+    "alias_id": "alias-place-aula-pt2-cubo-45b-pt-2",
+    "entity_id": "aula-pt2-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "PT 2",
+    "normalized": "pt-2"
+  },
+  {
+    "alias_id": "alias-place-aula-pt2-cubo-45b-pt2",
+    "entity_id": "aula-pt2-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "PT2",
+    "normalized": "pt2"
+  },
+  {
+    "alias_id": "alias-place-aula-pt3-cubo-45b-aula-pt-3",
+    "entity_id": "aula-pt3-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Aula PT 3",
+    "normalized": "aula-pt-3"
+  },
+  {
+    "alias_id": "alias-place-aula-pt3-cubo-45b-aula-pt3",
+    "entity_id": "aula-pt3-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "Aula PT3",
+    "normalized": "aula-pt3"
+  },
+  {
+    "alias_id": "alias-place-aula-pt3-cubo-45b-pt-3",
+    "entity_id": "aula-pt3-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "PT 3",
+    "normalized": "pt-3"
+  },
+  {
+    "alias_id": "alias-place-aula-pt3-cubo-45b-pt3",
+    "entity_id": "aula-pt3-cubo-45b",
+    "entity_type": "PLACE",
+    "label": "PT3",
+    "normalized": "pt3"
+  },
+  {
     "alias_id": "alias-place-aula-restauro-cubo-12b-aula-restauro",
     "entity_id": "aula-restauro-cubo-12b",
     "entity_type": "PLACE",
-    "label": "Aula Restauro",
+    "label": "AULA RESTAURO",
     "normalized": "aula-restauro"
   },
   {
     "alias_id": "alias-place-aula-restauro-cubo-12b-restauro",
     "entity_id": "aula-restauro-cubo-12b",
     "entity_type": "PLACE",
-    "label": "Restauro",
+    "label": "RESTAURO",
     "normalized": "restauro"
   },
   {
@@ -4648,6 +7224,48 @@
     "normalized": "sdipa2"
   },
   {
+    "alias_id": "alias-place-aula-seminari-1-cubo-17b-aula-seminari-1",
+    "entity_id": "aula-seminari-1-cubo-17b",
+    "entity_type": "PLACE",
+    "label": "Aula seminari 1",
+    "normalized": "aula-seminari-1"
+  },
+  {
+    "alias_id": "alias-place-aula-seminari-1-cubo-17b-seminari-1",
+    "entity_id": "aula-seminari-1-cubo-17b",
+    "entity_type": "PLACE",
+    "label": "seminari 1",
+    "normalized": "seminari-1"
+  },
+  {
+    "alias_id": "alias-place-aula-seminari-1-cubo-17b-seminari1",
+    "entity_id": "aula-seminari-1-cubo-17b",
+    "entity_type": "PLACE",
+    "label": "SEMINARI1",
+    "normalized": "seminari1"
+  },
+  {
+    "alias_id": "alias-place-aula-seminari-2-cubo-27b-aula-seminari-2",
+    "entity_id": "aula-seminari-2-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "Aula seminari 2",
+    "normalized": "aula-seminari-2"
+  },
+  {
+    "alias_id": "alias-place-aula-seminari-2-cubo-27b-seminari-2",
+    "entity_id": "aula-seminari-2-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "seminari 2",
+    "normalized": "seminari-2"
+  },
+  {
+    "alias_id": "alias-place-aula-seminari-2-cubo-27b-seminari2",
+    "entity_id": "aula-seminari-2-cubo-27b",
+    "entity_type": "PLACE",
+    "label": "SEMINARI2",
+    "normalized": "seminari2"
+  },
+  {
     "alias_id": "alias-place-aula-seminari-cubo-0b-aula-seminari",
     "entity_id": "aula-seminari-cubo-0b",
     "entity_type": "PLACE",
@@ -4686,14 +7304,14 @@
     "alias_id": "alias-place-aula-seminari-cubo-31c-aula-seminari",
     "entity_id": "aula-seminari-cubo-31c",
     "entity_type": "PLACE",
-    "label": "AULA SEMINARI",
+    "label": "Aula Seminari",
     "normalized": "aula-seminari"
   },
   {
     "alias_id": "alias-place-aula-seminari-cubo-31c-seminari",
     "entity_id": "aula-seminari-cubo-31c",
     "entity_type": "PLACE",
-    "label": "SEMINARI",
+    "label": "Seminari",
     "normalized": "seminari"
   },
   {
@@ -4711,11 +7329,32 @@
     "normalized": "seminari"
   },
   {
+    "alias_id": "alias-place-aula-seminari-cubo-44c-aula-seminari",
+    "entity_id": "aula-seminari-cubo-44c",
+    "entity_type": "PLACE",
+    "label": "Aula Seminari",
+    "normalized": "aula-seminari"
+  },
+  {
+    "alias_id": "alias-place-aula-seminari-cubo-44c-seminari",
+    "entity_id": "aula-seminari-cubo-44c",
+    "entity_type": "PLACE",
+    "label": "Seminari",
+    "normalized": "seminari"
+  },
+  {
     "alias_id": "alias-place-aula-seminari-ex-dip-nto-farmaco-biol-seminari-ex-dip-nto-farmaco-biol",
     "entity_id": "aula-seminari-ex-dip-nto-farmaco-biol",
     "entity_type": "PLACE",
     "label": "Seminari (EX Dip.nto FARMACO Biol.)",
     "normalized": "seminari-ex-dip-nto-farmaco-biol"
+  },
+  {
+    "alias_id": "alias-place-aula-seminari-giannattasio-aula-seminari-giannattasio",
+    "entity_id": "aula-seminari-giannattasio",
+    "entity_type": "PLACE",
+    "label": "Aula seminari (Giannattasio)",
+    "normalized": "aula-seminari-giannattasio"
   },
   {
     "alias_id": "alias-place-aula-seminari-giannattasio-cubo-45b-aula-seminari-giannattasio",
@@ -4729,6 +7368,13 @@
     "entity_id": "aula-seminari-giannattasio-cubo-45b",
     "entity_type": "PLACE",
     "label": "SEMINARI \"GIANNATTASIO\"",
+    "normalized": "seminari-giannattasio"
+  },
+  {
+    "alias_id": "alias-place-aula-seminari-giannattasio-seminari-giannattasio",
+    "entity_id": "aula-seminari-giannattasio",
+    "entity_type": "PLACE",
+    "label": "seminari (Giannattasio)",
     "normalized": "seminari-giannattasio"
   },
   {
@@ -4786,6 +7432,132 @@
     "entity_type": "PLACE",
     "label": "Senape",
     "normalized": "senape"
+  },
+  {
+    "alias_id": "alias-place-aula-sg1-aula-sg-1",
+    "entity_id": "aula-sg1",
+    "entity_type": "PLACE",
+    "label": "Aula SG 1",
+    "normalized": "aula-sg-1"
+  },
+  {
+    "alias_id": "alias-place-aula-sg1-aula-sg1",
+    "entity_id": "aula-sg1",
+    "entity_type": "PLACE",
+    "label": "Aula SG1",
+    "normalized": "aula-sg1"
+  },
+  {
+    "alias_id": "alias-place-aula-sg1-sg-1",
+    "entity_id": "aula-sg1",
+    "entity_type": "PLACE",
+    "label": "SG 1",
+    "normalized": "sg-1"
+  },
+  {
+    "alias_id": "alias-place-aula-sg1-sg1",
+    "entity_id": "aula-sg1",
+    "entity_type": "PLACE",
+    "label": "SG1",
+    "normalized": "sg1"
+  },
+  {
+    "alias_id": "alias-place-aula-sg2-aula-sg-2",
+    "entity_id": "aula-sg2",
+    "entity_type": "PLACE",
+    "label": "Aula SG 2",
+    "normalized": "aula-sg-2"
+  },
+  {
+    "alias_id": "alias-place-aula-sg2-aula-sg2",
+    "entity_id": "aula-sg2",
+    "entity_type": "PLACE",
+    "label": "Aula SG2",
+    "normalized": "aula-sg2"
+  },
+  {
+    "alias_id": "alias-place-aula-sg2-sg-2",
+    "entity_id": "aula-sg2",
+    "entity_type": "PLACE",
+    "label": "SG 2",
+    "normalized": "sg-2"
+  },
+  {
+    "alias_id": "alias-place-aula-sg2-sg2",
+    "entity_id": "aula-sg2",
+    "entity_type": "PLACE",
+    "label": "SG2",
+    "normalized": "sg2"
+  },
+  {
+    "alias_id": "alias-place-aula-sg3-aula-sg-3",
+    "entity_id": "aula-sg3",
+    "entity_type": "PLACE",
+    "label": "Aula SG 3",
+    "normalized": "aula-sg-3"
+  },
+  {
+    "alias_id": "alias-place-aula-sg3-aula-sg3",
+    "entity_id": "aula-sg3",
+    "entity_type": "PLACE",
+    "label": "Aula SG3",
+    "normalized": "aula-sg3"
+  },
+  {
+    "alias_id": "alias-place-aula-sg3-sg-3",
+    "entity_id": "aula-sg3",
+    "entity_type": "PLACE",
+    "label": "SG 3",
+    "normalized": "sg-3"
+  },
+  {
+    "alias_id": "alias-place-aula-sg3-sg3",
+    "entity_id": "aula-sg3",
+    "entity_type": "PLACE",
+    "label": "SG3",
+    "normalized": "sg3"
+  },
+  {
+    "alias_id": "alias-place-aula-sg4-aula-sg-4",
+    "entity_id": "aula-sg4",
+    "entity_type": "PLACE",
+    "label": "Aula SG 4",
+    "normalized": "aula-sg-4"
+  },
+  {
+    "alias_id": "alias-place-aula-sg4-aula-sg4",
+    "entity_id": "aula-sg4",
+    "entity_type": "PLACE",
+    "label": "Aula SG4",
+    "normalized": "aula-sg4"
+  },
+  {
+    "alias_id": "alias-place-aula-sg4-sg-4",
+    "entity_id": "aula-sg4",
+    "entity_type": "PLACE",
+    "label": "SG 4",
+    "normalized": "sg-4"
+  },
+  {
+    "alias_id": "alias-place-aula-sg4-sg4",
+    "entity_id": "aula-sg4",
+    "entity_type": "PLACE",
+    "label": "SG4",
+    "normalized": "sg4"
+  },
+  {
+    "alias_id": "alias-place-aula-solano-cubo-19b-aula-solano",
+    "entity_id": "aula-solano-cubo-19b",
+    "entity_type": "PLACE",
+    "label": "Aula Solano",
+    "normalized": "aula-solano"
+  },
+  {
+    "alias_id": "alias-place-aula-solano-cubo-19b-solano",
+    "entity_id": "aula-solano-cubo-19b",
+    "entity_type": "PLACE",
+    "label": "Solano",
+    "normalized": "solano"
   },
   {
     "alias_id": "alias-place-aula-spazio-mostre-spazio-mostre",
@@ -5054,11 +7826,305 @@
     "normalized": "stor7"
   },
   {
+    "alias_id": "alias-place-aula-storia-1-burgarella-cubo-28c-aula-storia-1-burgarella",
+    "entity_id": "aula-storia-1-burgarella-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "Aula Storia 1 (BURGARELLA)",
+    "normalized": "aula-storia-1-burgarella"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-1-burgarella-cubo-28c-storia-1-burgarella",
+    "entity_id": "aula-storia-1-burgarella-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "Storia 1 (BURGARELLA)",
+    "normalized": "storia-1-burgarella"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-1-burgarella-cubo-28c-storia1-burgarella",
+    "entity_id": "aula-storia-1-burgarella-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA1(BURGARELLA)",
+    "normalized": "storia1-burgarella"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2a-cubo-28c-aula-storia-2a",
+    "entity_id": "aula-storia-2a-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "Aula STORIA 2A",
+    "normalized": "aula-storia-2a"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2a-cubo-28c-storia-2-a",
+    "entity_id": "aula-storia-2a-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA 2 A",
+    "normalized": "storia-2-a"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2a-cubo-28c-storia-2a",
+    "entity_id": "aula-storia-2a-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA 2A",
+    "normalized": "storia-2a"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2a-cubo-28c-storia2a",
+    "entity_id": "aula-storia-2a-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA2A",
+    "normalized": "storia2a"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2b-cubo-28c-aula-storia-2b",
+    "entity_id": "aula-storia-2b-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "Aula STORIA 2B",
+    "normalized": "aula-storia-2b"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2b-cubo-28c-storia-2-b",
+    "entity_id": "aula-storia-2b-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA 2 B",
+    "normalized": "storia-2-b"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2b-cubo-28c-storia-2b",
+    "entity_id": "aula-storia-2b-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA 2B",
+    "normalized": "storia-2b"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2b-cubo-28c-storia2b",
+    "entity_id": "aula-storia-2b-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA2B",
+    "normalized": "storia2b"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2c-cubo-28c-aula-storia-2c",
+    "entity_id": "aula-storia-2c-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "Aula STORIA 2C",
+    "normalized": "aula-storia-2c"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2c-cubo-28c-storia-2-c",
+    "entity_id": "aula-storia-2c-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA 2 C",
+    "normalized": "storia-2-c"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2c-cubo-28c-storia-2c",
+    "entity_id": "aula-storia-2c-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA 2C",
+    "normalized": "storia-2c"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-2c-cubo-28c-storia2c",
+    "entity_id": "aula-storia-2c-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA2C",
+    "normalized": "storia2c"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-3-cubo-28c-aula-storia-3",
+    "entity_id": "aula-storia-3-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "Aula STORIA 3",
+    "normalized": "aula-storia-3"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-3-cubo-28c-storia-3",
+    "entity_id": "aula-storia-3-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA 3",
+    "normalized": "storia-3"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-3-cubo-28c-storia3",
+    "entity_id": "aula-storia-3-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA3",
+    "normalized": "storia3"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-4-cubo-28c-aula-storia-4",
+    "entity_id": "aula-storia-4-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "Aula STORIA 4",
+    "normalized": "aula-storia-4"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-4-cubo-28c-storia-4",
+    "entity_id": "aula-storia-4-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA 4",
+    "normalized": "storia-4"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-4-cubo-28c-storia4",
+    "entity_id": "aula-storia-4-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA4",
+    "normalized": "storia4"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-5-cubo-28c-aula-storia-5",
+    "entity_id": "aula-storia-5-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "Aula STORIA 5",
+    "normalized": "aula-storia-5"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-5-cubo-28c-storia-5",
+    "entity_id": "aula-storia-5-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA 5",
+    "normalized": "storia-5"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-5-cubo-28c-storia5",
+    "entity_id": "aula-storia-5-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA5",
+    "normalized": "storia5"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-6-cubo-28c-aula-storia-6",
+    "entity_id": "aula-storia-6-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "Aula STORIA 6",
+    "normalized": "aula-storia-6"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-6-cubo-28c-storia-6",
+    "entity_id": "aula-storia-6-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA 6",
+    "normalized": "storia-6"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-6-cubo-28c-storia6",
+    "entity_id": "aula-storia-6-cubo-28c",
+    "entity_type": "PLACE",
+    "label": "STORIA6",
+    "normalized": "storia6"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-7-cubo-28d-aula-storia-7",
+    "entity_id": "aula-storia-7-cubo-28d",
+    "entity_type": "PLACE",
+    "label": "Aula STORIA 7",
+    "normalized": "aula-storia-7"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-7-cubo-28d-storia-7",
+    "entity_id": "aula-storia-7-cubo-28d",
+    "entity_type": "PLACE",
+    "label": "STORIA 7",
+    "normalized": "storia-7"
+  },
+  {
+    "alias_id": "alias-place-aula-storia-7-cubo-28d-storia7",
+    "entity_id": "aula-storia-7-cubo-28d",
+    "entity_type": "PLACE",
+    "label": "STORIA7",
+    "normalized": "storia7"
+  },
+  {
     "alias_id": "alias-place-aula-storia2a-cubo-28c-storia2a",
     "entity_id": "aula-storia2a-cubo-28c",
     "entity_type": "PLACE",
     "label": "Storia2A",
     "normalized": "storia2a"
+  },
+  {
+    "alias_id": "alias-place-aula-str1-cubo-39b-aula-str-1",
+    "entity_id": "aula-str1-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "Aula STR 1",
+    "normalized": "aula-str-1"
+  },
+  {
+    "alias_id": "alias-place-aula-str1-cubo-39b-aula-str1",
+    "entity_id": "aula-str1-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "Aula STR1",
+    "normalized": "aula-str1"
+  },
+  {
+    "alias_id": "alias-place-aula-str1-cubo-39b-str-1",
+    "entity_id": "aula-str1-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "STR 1",
+    "normalized": "str-1"
+  },
+  {
+    "alias_id": "alias-place-aula-str1-cubo-39b-str1",
+    "entity_id": "aula-str1-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "STR1",
+    "normalized": "str1"
+  },
+  {
+    "alias_id": "alias-place-aula-str2-cubo-39b-aula-str-2",
+    "entity_id": "aula-str2-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "Aula STR 2",
+    "normalized": "aula-str-2"
+  },
+  {
+    "alias_id": "alias-place-aula-str2-cubo-39b-aula-str2",
+    "entity_id": "aula-str2-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "Aula STR2",
+    "normalized": "aula-str2"
+  },
+  {
+    "alias_id": "alias-place-aula-str2-cubo-39b-str-2",
+    "entity_id": "aula-str2-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "STR 2",
+    "normalized": "str-2"
+  },
+  {
+    "alias_id": "alias-place-aula-str2-cubo-39b-str2",
+    "entity_id": "aula-str2-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "STR2",
+    "normalized": "str2"
+  },
+  {
+    "alias_id": "alias-place-aula-str3-cubo-39b-aula-str-3",
+    "entity_id": "aula-str3-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "Aula STR 3",
+    "normalized": "aula-str-3"
+  },
+  {
+    "alias_id": "alias-place-aula-str3-cubo-39b-aula-str3",
+    "entity_id": "aula-str3-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "Aula STR3",
+    "normalized": "aula-str3"
+  },
+  {
+    "alias_id": "alias-place-aula-str3-cubo-39b-str-3",
+    "entity_id": "aula-str3-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "STR 3",
+    "normalized": "str-3"
+  },
+  {
+    "alias_id": "alias-place-aula-str3-cubo-39b-str3",
+    "entity_id": "aula-str3-cubo-39b",
+    "entity_type": "PLACE",
+    "label": "STR3",
+    "normalized": "str3"
   },
   {
     "alias_id": "alias-place-aula-studenti-1-cubo-30c-aula-studenti-1",
@@ -5103,6 +8169,13 @@
     "normalized": "studenti2"
   },
   {
+    "alias_id": "alias-place-aula-studenti-aula-studenti",
+    "entity_id": "aula-studenti",
+    "entity_type": "PLACE",
+    "label": "Aula studenti)",
+    "normalized": "aula-studenti"
+  },
+  {
     "alias_id": "alias-place-aula-studenti-cubo-30b-aula-studenti",
     "entity_id": "aula-studenti-cubo-30b",
     "entity_type": "PLACE",
@@ -5114,6 +8187,13 @@
     "entity_id": "aula-studenti-cubo-30b",
     "entity_type": "PLACE",
     "label": "STUDENTI)",
+    "normalized": "studenti"
+  },
+  {
+    "alias_id": "alias-place-aula-studenti-studenti",
+    "entity_id": "aula-studenti",
+    "entity_type": "PLACE",
+    "label": "studenti)",
     "normalized": "studenti"
   },
   {
@@ -5229,17 +8309,80 @@
     "normalized": "verde"
   },
   {
+    "alias_id": "alias-place-aula-visiting-professor-cubo-41b-aula-visiting-professor",
+    "entity_id": "aula-visiting-professor-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "Aula Visiting Professor",
+    "normalized": "aula-visiting-professor"
+  },
+  {
+    "alias_id": "alias-place-aula-visiting-professor-cubo-41b-visiting-professor",
+    "entity_id": "aula-visiting-professor-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "Visiting Professor",
+    "normalized": "visiting-professor"
+  },
+  {
+    "alias_id": "alias-place-aula-visiting-professor-cubo-41b-visitingprofessor",
+    "entity_id": "aula-visiting-professor-cubo-41b",
+    "entity_type": "PLACE",
+    "label": "VISITINGPROFESSOR",
+    "normalized": "visitingprofessor"
+  },
+  {
+    "alias_id": "alias-place-aula-zenith-1-aula-zenith-1",
+    "entity_id": "aula-zenith-1",
+    "entity_type": "PLACE",
+    "label": "Aula ZENITH 1",
+    "normalized": "aula-zenith-1"
+  },
+  {
+    "alias_id": "alias-place-aula-zenith-1-zenith-1",
+    "entity_id": "aula-zenith-1",
+    "entity_type": "PLACE",
+    "label": "ZENITH 1",
+    "normalized": "zenith-1"
+  },
+  {
+    "alias_id": "alias-place-aula-zenith-1-zenith1",
+    "entity_id": "aula-zenith-1",
+    "entity_type": "PLACE",
+    "label": "ZENITH1",
+    "normalized": "zenith1"
+  },
+  {
+    "alias_id": "alias-place-aula-zenith-2-aula-zenith-2",
+    "entity_id": "aula-zenith-2",
+    "entity_type": "PLACE",
+    "label": "Aula ZENITH 2",
+    "normalized": "aula-zenith-2"
+  },
+  {
+    "alias_id": "alias-place-aula-zenith-2-zenith-2",
+    "entity_id": "aula-zenith-2",
+    "entity_type": "PLACE",
+    "label": "ZENITH 2",
+    "normalized": "zenith-2"
+  },
+  {
+    "alias_id": "alias-place-aula-zenith-2-zenith2",
+    "entity_id": "aula-zenith-2",
+    "entity_type": "PLACE",
+    "label": "ZENITH2",
+    "normalized": "zenith2"
+  },
+  {
     "alias_id": "alias-place-aula-zeus-cubo-18b-aula-zeus",
     "entity_id": "aula-zeus-cubo-18b",
     "entity_type": "PLACE",
-    "label": "AULA ZEUS",
+    "label": "Aula Zeus",
     "normalized": "aula-zeus"
   },
   {
     "alias_id": "alias-place-aula-zeus-cubo-18b-zeus",
     "entity_id": "aula-zeus-cubo-18b",
     "entity_type": "PLACE",
-    "label": "ZEUS",
+    "label": "Zeus",
     "normalized": "zeus"
   }
 ]

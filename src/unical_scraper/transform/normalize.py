@@ -226,6 +226,7 @@ def normalize_aulas(
         short_code = _normalize_short_code(raw.short_code)
         room = none_if_empty(collapse_whitespace(raw.room))
         floor = none_if_empty(collapse_whitespace(raw.floor))
+        capacity = raw.capacity if isinstance(raw.capacity, int) and raw.capacity > 0 else None
         building_id = _resolve_aula_building_id(
             building_hint=raw.building_hint,
             lat=raw.lat,
@@ -262,6 +263,8 @@ def normalize_aulas(
             aula["floor"] = floor
         if room:
             aula["room"] = room
+        if capacity is not None:
+            aula["capacity"] = capacity
 
         place: dict[str, object] = {
             "place_id": place_id,

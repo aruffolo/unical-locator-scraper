@@ -136,6 +136,7 @@ def test_normalize_aulas_produces_aulas_and_aula_places() -> None:
             room="A G",
             short_code="AG",
             building_hint="Cubo 40C",
+            capacity=117,
         ),
         RawAula(
             name="Aula Magna",
@@ -163,6 +164,7 @@ def test_normalize_aulas_produces_aulas_and_aula_places() -> None:
     assert aula_ag["building_id"] == "cubo-40c"
     assert aula_ag["place_id"] == aula_ag["aula_id"]
     assert aula_ag["normalized_name"] == "aula a g"
+    assert aula_ag["capacity"] == 117
     assert "ag" in aula_ag["search_tokens"]
 
     aula_magna = next(aula for aula in aulas if aula["name"] == "Aula Magna")

@@ -39,6 +39,7 @@ def test_build_coverage_report_includes_aulas_and_places_metrics(tmp_path: Path)
                     "building_id": "cubo-18b",
                     "floor": "1",
                     "short_code": "P2",
+                    "capacity": 120,
                 },
                 {"aula_id": "aula-p3", "place_id": "aula-p3", "name": "Aula P3"},
             ]
@@ -68,3 +69,4 @@ def test_build_coverage_report_includes_aulas_and_places_metrics(tmp_path: Path)
     assert report["coverage"]["aulas"]["with_building_id"] == 1
     assert report["coverage"]["aulas"]["with_floor"] == 1
     assert report["coverage"]["aulas"]["with_short_code"] == 1
+    assert report["coverage"]["aulas"]["with_capacity"] == 1

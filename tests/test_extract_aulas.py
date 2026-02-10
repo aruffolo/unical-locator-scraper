@@ -118,8 +118,8 @@ def test_crawl_aulas_merges_department_and_planner_sources() -> None:
         department_url: """
             <html><body>
               <table>
-                <tr><th>Aula</th><th>Cubo</th></tr>
-                <tr><td>P2</td><td>Cubo 30C Piano II</td></tr>
+                <tr><th>Aula</th><th>Cubo</th><th>Capienza</th></tr>
+                <tr><td>P2</td><td>Cubo 30C Piano II</td><td>120</td></tr>
                 <tr><td>Studio Docente</td><td>Cubo 30C Piano II</td></tr>
               </table>
             </body></html>
@@ -235,3 +235,41 @@ def test_crawl_aulas_merges_department_and_planner_sources() -> None:
     aula_p2 = next(item for item in aulas if item.name == "Aula P2")
     assert aula_p2.floor == "Secondo piano"
     assert aula_p2.building_hint == "Cubo 30C"
+    assert aula_p2.capacity == 120
+
+
+def test_crawl_aulas_parses_department_strutture_capacity_and_floor_variants() -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    department_url = "https://dices.unical.it/dipartimento/organizzazione/strutture/"
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        department_url: """
+            <html><body>
+              <table>
+                <tr><th>Aula</th><th>Cubo</th><th>Piano/liv.</th><th>Posti</th></tr>
+                <tr><td>Apollo</td><td>18B</td><td>Piano 0</td><td>129</td></tr>
+                <tr><td>A Ling.</td><td>20B</td><td>Piano 0</td><td>63</td></tr>
+              </table>
+            </body></html>
+        """,
+        "https://planner.example/api/Edifici/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        "https://planner.example/api/Aule/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        "https://planner.example/api/Impegni/getImpegniPublic?dataInizio=2020-01-01&dataFine=2030-12-31&limit=20000": "[]",
+    }
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages),
+        department_urls=(department_url,),
+        planner_base_url="https://planner.example",
+        planner_client_id=None,
+    )
+
+    names = {item.name for item in aulas}
+    assert "Aula Apollo" in names
+    assert "Aula A Ling." in names
+
+    aula_apollo = next(item for item in aulas if item.name == "Aula Apollo")
+    assert aula_apollo.floor == "Piano Terra"
+    assert aula_apollo.building_hint == "Cubo 18B"
+    assert aula_apollo.capacity == 129

@@ -78,12 +78,29 @@ DEFAULT_CALENDAR_DISCOVERY_URLS = tuple(
     for path in PLANNER_CALENDAR_DISCOVERY_PATHS
 )
 LINK_CALENDAR_ID_PATTERN = re.compile(r"linkCalendarioId=([0-9a-f]{24})", flags=re.IGNORECASE)
-DEFAULT_DEPARTMENT_AULA_URLS = (
-    "https://fisica.unical.it/dipartimento/organizzazione/strutture/",
-    "https://dfssn.unical.it/dipartimento/organizzazione/strutture/",
-    "https://dispes.unical.it/dipartimento/organizzazione/strutture/",
-    "https://disu.unical.it/dipartimento/organizzazione/strutture/",
-    "https://www2.dimes.unical.it/it/content/aule-dipartimento",
+DEPARTMENT_SITE_SUBDOMAINS = (
+    "dibest",
+    "ctc",
+    "dices",
+    "desf",
+    "dfssn",
+    "fisica",
+    "dinci",
+    "diam",
+    "dimes",
+    "dimeg",
+    "demacs",
+    "discag",
+    "dispes",
+    "disu",
+)
+DEFAULT_DEPARTMENT_AULA_URLS = tuple(
+    sorted(
+        {
+            *(f"https://{subdomain}.unical.it/dipartimento/organizzazione/strutture/" for subdomain in DEPARTMENT_SITE_SUBDOMAINS),
+            "https://www2.dimes.unical.it/it/content/aule-dipartimento",
+        }
+    )
 )
 NOISE_AULA_TOKENS = (
     "nessun",
@@ -111,6 +128,7 @@ class RawAula:
     room: str | None = None
     short_code: str | None = None
     building_hint: str | None = None
+    capacity: int | None = None
 
 
 def crawl_aulas(
@@ -426,16 +444,17 @@ def _parse_planner_aula_items(
 
 
 def _dedupe_aulas(aulas: list[RawAula]) -> list[RawAula]:
-    unique_by_key: dict[tuple[str, str | None, str | None], RawAula] = {}
+    unique_by_key: dict[tuple[str, str | None], RawAula] = {}
     for aula in aulas:
         key = (
             collapse_whitespace(aula.name).casefold(),
-            aula.floor.casefold() if aula.floor else None,
             aula.building_hint.casefold() if aula.building_hint else None,
         )
         existing = unique_by_key.get(key)
-        if existing is None or _aula_quality_score(aula) > _aula_quality_score(existing):
+        if existing is None:
             unique_by_key[key] = aula
+            continue
+        unique_by_key[key] = _merge_aula_records(existing=existing, candidate=aula)
 
     return sorted(
         unique_by_key.values(),
@@ -459,7 +478,25 @@ def _aula_quality_score(aula: RawAula) -> int:
         score += 1
     if aula.room:
         score += 1
+    if aula.capacity is not None:
+        score += 1
     return score
+
+
+def _merge_aula_records(existing: RawAula, candidate: RawAula) -> RawAula:
+    primary = existing if _aula_quality_score(existing) >= _aula_quality_score(candidate) else candidate
+    secondary = candidate if primary is existing else existing
+    return RawAula(
+        name=primary.name,
+        source_url=primary.source_url,
+        lat=primary.lat if primary.lat is not None else secondary.lat,
+        lng=primary.lng if primary.lng is not None else secondary.lng,
+        floor=primary.floor or secondary.floor,
+        room=primary.room or secondary.room,
+        short_code=primary.short_code or secondary.short_code,
+        building_hint=primary.building_hint or secondary.building_hint,
+        capacity=primary.capacity if primary.capacity is not None else secondary.capacity,
+    )
 
 
 def _fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str:
@@ -575,36 +612,85 @@ def _parse_department_aulas_html(html_text: str, source_url: str) -> list[RawAul
     soup = BeautifulSoup(html_text, "html.parser")
     aulas: list[RawAula] = []
 
-    for row in soup.select("table tr"):
-        cells = [_normalize_text(cell.get_text(" ", strip=True)) for cell in row.select("th, td")]
-        cells = [cell for cell in cells if cell]
-        if not cells or _is_table_header_row(cells):
+    for table in soup.select("table"):
+        rows = [
+            [cell for cell in (_normalize_text(node.get_text(" ", strip=True)) for node in tr.select("th, td")) if cell]
+            for tr in table.select("tr")
+        ]
+        rows = [row for row in rows if row]
+        if not rows:
             continue
 
-        name_cell = cells[0]
-        location_text = " ".join(cells[1:3]) if len(cells) > 1 else ""
-        location_text = collapse_whitespace(location_text)
-        row_text = collapse_whitespace(" ".join(cells))
+        header_cells: list[str] | None = rows[0] if _is_table_header_row(rows[0]) else None
+        data_rows = rows[1:] if header_cells else rows
+        name_indexes = _find_column_indexes(header_cells, ("aula", "nome", "denominazione", "laboratorio"))
+        location_indexes = _find_column_indexes(
+            header_cells,
+            ("cubo", "ubicazione", "luogo", "posizione", "indirizzo", "piano", "liv"),
+        )
+        capacity_indexes = _find_column_indexes(header_cells, ("capienza", "posti"))
 
-        for candidate in _extract_department_candidates(name_cell):
-            canonical_name = _canonical_external_aula_name(candidate)
-            if not canonical_name:
+        for cells in data_rows:
+            if _is_table_header_row(cells):
                 continue
 
-            hint_text = location_text or row_text
+            row_text = collapse_whitespace(" ".join(cells))
+            if not row_text:
+                continue
+            if any(token in row_text.casefold() for token in ("wi-fi", "rete lan", "dotazione")) and "aula" not in row_text.casefold():
+                continue
+
+            name_values = _pick_row_values(cells, name_indexes) or [cells[0]]
+            location_values = _pick_row_values(cells, location_indexes)
+            capacity_values = _pick_row_values(cells, capacity_indexes)
+
+            location_text = collapse_whitespace(" ".join(location_values))
+            hint_text = collapse_whitespace(" ".join(location_values or cells[1:3])) or row_text
             building_hint = _extract_building_hint(hint_text)
             floor = _extract_floor_label(hint_text)
+            capacity = _extract_capacity(" ".join(capacity_values) or row_text)
 
-            room = _extract_room_label(canonical_name)
-            short_code = _extract_short_code(canonical_name)
+            for candidate in _extract_department_candidates(" ; ".join(name_values)):
+                canonical_name = _canonical_department_aula_name(candidate)
+                if not canonical_name:
+                    continue
+
+                room = _extract_room_label(canonical_name)
+                short_code = _extract_short_code(canonical_name)
+                aulas.append(
+                    RawAula(
+                        name=canonical_name,
+                        source_url=source_url,
+                        floor=floor,
+                        room=room,
+                        short_code=short_code,
+                        building_hint=building_hint,
+                        capacity=capacity,
+                    )
+                )
+
+            if not name_indexes and not _contains_aula_signal(name_values):
+                continue
+            fallback_name = _canonical_department_aula_name(name_values[0])
+            if not fallback_name:
+                continue
+            if any(
+                existing.name.casefold() == fallback_name.casefold()
+                and existing.source_url == source_url
+                and (existing.building_hint or "") == (building_hint or "")
+                for existing in aulas
+            ):
+                continue
+
             aulas.append(
                 RawAula(
-                    name=canonical_name,
+                    name=fallback_name,
                     source_url=source_url,
                     floor=floor,
-                    room=room,
-                    short_code=short_code,
+                    room=_extract_room_label(fallback_name),
+                    short_code=_extract_short_code(fallback_name),
                     building_hint=building_hint,
+                    capacity=capacity,
                 )
             )
 
@@ -612,11 +698,51 @@ def _parse_department_aulas_html(html_text: str, source_url: str) -> list[RawAul
 
 
 def _is_table_header_row(cells: list[str]) -> bool:
-    if not cells:
-        return True
-    header_tokens = {"aula", "cubo", "ubicazione", "capienza", "dotazione", "posti", "attrezzature"}
+    if len(cells) < 2:
+        return False
+    header_tokens = {"aula", "cubo", "ubicazione", "capienza", "dotazione", "posti", "attrezzature", "nome", "denominazione"}
     lowered = [cell.casefold() for cell in cells]
-    return all(any(token in cell for token in header_tokens) for cell in lowered)
+    token_hits = sum(1 for cell in lowered if any(token in cell for token in header_tokens))
+    if token_hits == 0:
+        return False
+    if any(":" in cell for cell in cells):
+        return False
+    if any(re.search(r"\b\d{1,4}\b", cell) for cell in cells):
+        return False
+    if any(len(cell) > 40 for cell in cells):
+        return False
+    return True
+
+
+def _find_column_indexes(headers: list[str] | None, tokens: tuple[str, ...]) -> list[int]:
+    if not headers:
+        return []
+    indexes: list[int] = []
+    lowered = [header.casefold() for header in headers]
+    for idx, value in enumerate(lowered):
+        if any(token in value for token in tokens):
+            indexes.append(idx)
+    return indexes
+
+
+def _pick_row_values(cells: list[str], indexes: list[int]) -> list[str]:
+    values: list[str] = []
+    for idx in indexes:
+        if idx < len(cells) and cells[idx]:
+            values.append(cells[idx])
+    return values
+
+
+def _contains_aula_signal(values: list[str]) -> bool:
+    merged = collapse_whitespace(" ".join(values))
+    if not merged:
+        return False
+    lowered = merged.casefold()
+    if "aula" in lowered:
+        return True
+    if _looks_like_room_code(merged):
+        return True
+    return bool(re.search(r"\b\d{1,2}[A-Za-z]\s*\d?[A-Za-z]?\b", merged))
 
 
 def _extract_department_candidates(value: str) -> list[str]:
@@ -644,6 +770,13 @@ def _extract_department_candidates(value: str) -> list[str]:
     if _looks_like_room_code(cleaned):
         return [cleaned]
 
+    inline_code_matches = [
+        collapse_whitespace(match.group(0))
+        for match in re.finditer(r"\b\d{1,2}[A-Za-z]\s*\d{0,2}[A-Za-z]?\b", cleaned)
+    ]
+    if inline_code_matches:
+        return inline_code_matches
+
     return []
 
 
@@ -656,7 +789,7 @@ def _looks_like_room_code(value: str) -> bool:
 
     if re.fullmatch(r"[A-Z]{1,4}\d{1,4}[A-Z]?", compact):
         return True
-    if re.fullmatch(r"\d{1,2}[A-Z]\d{0,2}", compact):
+    if re.fullmatch(r"\d{1,2}[A-Z]\d{0,2}[A-Z]?", compact):
         return True
     if re.fullmatch(r"[A-Z]\d{1,3}", compact):
         return True
@@ -768,6 +901,28 @@ def _canonical_external_aula_name(name: str | None) -> str | None:
     return None
 
 
+def _canonical_department_aula_name(name: str | None) -> str | None:
+    cleaned = none_if_empty(collapse_whitespace((name or "").replace("\xa0", " ")))
+    if not cleaned:
+        return None
+
+    cleaned = re.sub(r"^[A-Z]{2,8}\s+(?=\d{1,2}[A-Za-z])", "", cleaned)
+    cleaned = collapse_whitespace(cleaned)
+
+    canonical_external = _canonical_external_aula_name(cleaned)
+    if canonical_external:
+        return canonical_external
+
+    lowered = cleaned.casefold()
+    if any(token in lowered for token in NOISE_AULA_TOKENS):
+        return None
+    if len(cleaned) > 80:
+        return None
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9 .,_'()/\-]*", cleaned):
+        return None
+    return f"Aula {cleaned}"
+
+
 def _canonical_planner_aula_name(name: str | None) -> str | None:
     cleaned = none_if_empty(collapse_whitespace((name or "").replace("\xa0", " ")))
     if not cleaned:
@@ -788,6 +943,27 @@ def _canonical_planner_aula_name(name: str | None) -> str | None:
 
     # Public planner endpoint already returns aula resources; keep labels as-is.
     return cleaned
+
+
+def _extract_capacity(text: str) -> int | None:
+    cleaned = collapse_whitespace(text)
+    if not cleaned:
+        return None
+
+    explicit = re.search(
+        r"\b(?:capienza|posti|n[°º.]?\s*posti)\s*[:\-]?\s*([0-9]{1,4})\b",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    if explicit:
+        value = int(explicit.group(1))
+        return value if 1 <= value <= 5000 else None
+
+    if re.fullmatch(r"[0-9]{1,4}", cleaned):
+        value = int(cleaned)
+        return value if 1 <= value <= 5000 else None
+
+    return None
 
 
 def _extract_room_label(name: str) -> str | None:
@@ -831,6 +1007,12 @@ def _extract_building_hint(text: str) -> str | None:
         match = re.search(r"\bPolifunzionale\s+(Ovest|Est)\b", text, flags=re.IGNORECASE)
         if match:
             return f"Polifunzionale {match.group(1).capitalize()}"
+
+    if re.fullmatch(r"[0-9]{1,2}[A-Za-z]", text):
+        return f"Cubo {text.upper()}"
+    compact_cubo = re.search(r"\b([0-9]{1,2}[A-Za-z])\b", text)
+    if compact_cubo and any(token in text.casefold() for token in ("piano", "ponte", "ubicazione", "posizione", "luogo")):
+        return f"Cubo {compact_cubo.group(1).upper()}"
 
     return None
 

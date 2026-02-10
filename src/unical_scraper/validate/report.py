@@ -54,6 +54,7 @@ def build_coverage_report(
     aulas_with_building = sum(1 for aula in aulas if aula.get("building_id"))
     aulas_with_floor = sum(1 for aula in aulas if aula.get("floor"))
     aulas_with_short_code = sum(1 for aula in aulas if aula.get("short_code"))
+    aulas_with_capacity = sum(1 for aula in aulas if aula.get("capacity") is not None)
 
     with_email = sum(1 for person in people if person.get("email"))
     with_department = sum(1 for person in people if person.get("department_id"))
@@ -109,6 +110,8 @@ def build_coverage_report(
                 "with_floor_ratio": _ratio(aulas_with_floor, total_aulas),
                 "with_short_code": aulas_with_short_code,
                 "with_short_code_ratio": _ratio(aulas_with_short_code, total_aulas),
+                "with_capacity": aulas_with_capacity,
+                "with_capacity_ratio": _ratio(aulas_with_capacity, total_aulas),
             },
             "people": {
                 "total": total_people,
