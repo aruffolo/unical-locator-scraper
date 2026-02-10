@@ -216,3 +216,93 @@ def test_normalize_aulas_backfills_building_id_from_existing_matches() -> None:
     place_by_id = {place["place_id"]: place for place in aula_places}
     assert place_by_id[aula_two["place_id"]]["building_id"] == "cubo-12b"
     assert place_by_id[aula_39c["place_id"]]["building_id"] == "cubo-39c"
+
+
+def test_normalize_aulas_applies_manual_overrides_and_drops_known_false_positives() -> None:
+    planner_source = "https://unical.prod.up.cineca.it/calendar/activities/"
+    raw = [
+        RawAula(
+            name="Aula Studio per i soli studenti di Chimica",
+            source_url="https://ctc.unical.it/dipartimento/organizzazione/strutture/",
+        ),
+        RawAula(
+            name="Aula Dolci",
+            source_url="https://dices.unical.it/dipartimento/organizzazione/strutture/",
+        ),
+        RawAula(
+            name="Aula LIME Laboratory of Innovation and Management Engineering",
+            source_url="https://dimeg.unical.it/dipartimento/organizzazione/strutture/",
+        ),
+        RawAula(
+            name="Aula seminari (Giannattasio)",
+            source_url="https://dinci.unical.it/dipartimento/organizzazione/strutture/",
+        ),
+        RawAula(
+            name="AULA MULTIMEDIALE 25 C SELF STUDY",
+            source_url=planner_source,
+        ),
+        RawAula(
+            name="Aula Multimediale piano 1°cubo 25C",
+            source_url=planner_source,
+            floor="Primo piano",
+        ),
+        RawAula(
+            name="aula e",
+            source_url="https://dimes.unical.it/dipartimento/organizzazione/strutture/",
+        ),
+        RawAula(name="Aula Blu", source_url=planner_source),
+        RawAula(name="Aula Verde", source_url=planner_source),
+        RawAula(name="Laboratorio A", source_url=planner_source),
+        RawAula(name="Laboratorio B", source_url=planner_source),
+        RawAula(name="Laboratorio C", source_url=planner_source),
+        RawAula(name="SPAZIO MOSTRE", source_url=planner_source),
+    ]
+    buildings = [
+        {"building_id": "cubo-15c", "name": "Cubo 15C"},
+        {"building_id": "cubo-29b", "name": "Cubo 29B"},
+        {"building_id": "cubo-41c", "name": "Cubo 41C"},
+        {"building_id": "cubo-45b", "name": "Cubo 45B"},
+        {"building_id": "cla-centro-linguistico-d-ateneo", "name": "CLA"},
+    ]
+
+    aulas, aula_places = normalize_aulas(
+        raw_aulas=raw,
+        buildings=buildings,
+        verified_at=datetime(2026, 2, 10, tzinfo=timezone.utc),
+    )
+    aula_by_name = {str(aula["name"]): aula for aula in aulas}
+
+    assert "aula e" not in aula_by_name
+    assert "Aula Blu" not in aula_by_name
+    assert "Aula Verde" not in aula_by_name
+    assert "Laboratorio A" not in aula_by_name
+    assert "Laboratorio B" not in aula_by_name
+    assert "Laboratorio C" not in aula_by_name
+    assert "SPAZIO MOSTRE" not in aula_by_name
+
+    chimica = aula_by_name["Aula Studio per i soli studenti di Chimica"]
+    assert chimica["building_id"] == "cubo-15c"
+    assert chimica["floor"] == "Secondo piano"
+
+    dolci = aula_by_name["Aula Dolci"]
+    assert dolci["building_id"] == "cubo-29b"
+    assert dolci["floor"] == "Secondo piano"
+    assert dolci["capacity"] == 280
+
+    lime = aula_by_name["Aula LIME Laboratory of Innovation and Management Engineering"]
+    assert lime["building_id"] == "cubo-41c"
+
+    giannattasio = aula_by_name["Aula seminari (Giannattasio)"]
+    assert giannattasio["building_id"] == "cubo-45b"
+    assert giannattasio["floor"] == "Primo piano"
+
+    self_study = aula_by_name["AULA MULTIMEDIALE 25 C SELF STUDY"]
+    assert self_study["building_id"] == "cla-centro-linguistico-d-ateneo"
+
+    multimediale = aula_by_name["Aula Multimediale piano 1°cubo 25C"]
+    assert multimediale["building_id"] == "cla-centro-linguistico-d-ateneo"
+    assert multimediale["floor"] == "Primo piano"
+
+    place_names = {str(place["name"]) for place in aula_places}
+    assert "Aula Blu" not in place_names
+    assert "SPAZIO MOSTRE" not in place_names

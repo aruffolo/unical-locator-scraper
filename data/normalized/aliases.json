@@ -1841,20 +1841,6 @@
     "normalized": "bianca"
   },
   {
-    "alias_id": "alias-place-aula-blu-aula-blu",
-    "entity_id": "aula-blu",
-    "entity_type": "PLACE",
-    "label": "Aula Blu",
-    "normalized": "aula-blu"
-  },
-  {
-    "alias_id": "alias-place-aula-blu-blu",
-    "entity_id": "aula-blu",
-    "entity_type": "PLACE",
-    "label": "Blu",
-    "normalized": "blu"
-  },
-  {
     "alias_id": "alias-place-aula-bp-cubo-43c-aula-b-p",
     "entity_id": "aula-bp-cubo-43c",
     "entity_type": "PLACE",
@@ -3794,13 +3780,6 @@
     "normalized": "ds8"
   },
   {
-    "alias_id": "alias-place-aula-e-aula-e",
-    "entity_id": "aula-e",
-    "entity_type": "PLACE",
-    "label": "aula e",
-    "normalized": "aula-e"
-  },
-  {
     "alias_id": "alias-place-aula-e-cubo-15b-aula-e",
     "entity_id": "aula-e-cubo-15b",
     "entity_type": "PLACE",
@@ -3866,13 +3845,6 @@
   {
     "alias_id": "alias-place-aula-e-cubo-39b-e",
     "entity_id": "aula-e-cubo-39b",
-    "entity_type": "PLACE",
-    "label": "e",
-    "normalized": "e"
-  },
-  {
-    "alias_id": "alias-place-aula-e-e",
-    "entity_id": "aula-e",
     "entity_type": "PLACE",
     "label": "e",
     "normalized": "e"
@@ -5789,13 +5761,6 @@
     "normalized": "laboratorio-29-b-ponte-carrabile"
   },
   {
-    "alias_id": "alias-place-aula-laboratorio-a-laboratorio-a",
-    "entity_id": "aula-laboratorio-a",
-    "entity_type": "PLACE",
-    "label": "Laboratorio A",
-    "normalized": "laboratorio-a"
-  },
-  {
     "alias_id": "alias-place-aula-laboratorio-a-microbiologia-igiene-e-sanita-pubblica-polifunzionale-laboratorio-a-microbiologia-igiene-e-sanita-pubblica",
     "entity_id": "aula-laboratorio-a-microbiologia-igiene-e-sanita-pubblica-polifunzionale",
     "entity_type": "PLACE",
@@ -5808,20 +5773,6 @@
     "entity_type": "PLACE",
     "label": "Laboratorio audiovisivo “Raul Ruiz”",
     "normalized": "laboratorio-audiovisivo-raul-ruiz"
-  },
-  {
-    "alias_id": "alias-place-aula-laboratorio-b-laboratorio-b",
-    "entity_id": "aula-laboratorio-b",
-    "entity_type": "PLACE",
-    "label": "Laboratorio B",
-    "normalized": "laboratorio-b"
-  },
-  {
-    "alias_id": "alias-place-aula-laboratorio-c-laboratorio-c",
-    "entity_id": "aula-laboratorio-c",
-    "entity_type": "PLACE",
-    "label": "Laboratorio C",
-    "normalized": "laboratorio-c"
   },
   {
     "alias_id": "alias-place-aula-laboratorio-chimico-b-capannone-e-laboratorio-chimico-b",
@@ -8470,13 +8421,6 @@
     "normalized": "solano"
   },
   {
-    "alias_id": "alias-place-aula-spazio-mostre-spazio-mostre",
-    "entity_id": "aula-spazio-mostre",
-    "entity_type": "PLACE",
-    "label": "SPAZIO MOSTRE",
-    "normalized": "spazio-mostre"
-  },
-  {
     "alias_id": "alias-place-aula-spezzaferro-cubo-21b-spezzaferro",
     "entity_id": "aula-spezzaferro-cubo-21b",
     "entity_type": "PLACE",
@@ -9422,13 +9366,6 @@
     "normalized": "ventura"
   },
   {
-    "alias_id": "alias-place-aula-verde-aula-verde",
-    "entity_id": "aula-verde",
-    "entity_type": "PLACE",
-    "label": "Aula Verde",
-    "normalized": "aula-verde"
-  },
-  {
     "alias_id": "alias-place-aula-verde-muschio-cubo-17a-aula-verde-muschio",
     "entity_id": "aula-verde-muschio-cubo-17a",
     "entity_type": "PLACE",
@@ -9448,13 +9385,6 @@
     "entity_type": "PLACE",
     "label": "VERDEMUSCHIO",
     "normalized": "verdemuschio"
-  },
-  {
-    "alias_id": "alias-place-aula-verde-verde",
-    "entity_id": "aula-verde",
-    "entity_type": "PLACE",
-    "label": "Verde",
-    "normalized": "verde"
   },
   {
     "alias_id": "alias-place-aula-visiting-professor-cubo-41b-aula-visiting-professor",

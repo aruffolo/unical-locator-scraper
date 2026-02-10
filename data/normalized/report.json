@@ -1,112 +1,21 @@
 {
   "coverage": {
     "aulas": {
-      "missing_building_by_source": [
-        {
-          "count": 8,
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "count": 1,
-          "source_url": "https://ctc.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "count": 1,
-          "source_url": "https://dices.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "count": 1,
-          "source_url": "https://dimeg.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "count": 1,
-          "source_url": "https://dimes.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "count": 1,
-          "source_url": "https://dinci.unical.it/dipartimento/organizzazione/strutture/"
-        }
-      ],
-      "missing_building_examples": [
-        {
-          "aula_id": "aula-blu",
-          "name": "Aula Blu",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "aula_id": "aula-dolci",
-          "name": "Aula Dolci",
-          "source_url": "https://dices.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-e",
-          "name": "aula e",
-          "source_url": "https://dimes.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-laboratorio-a",
-          "name": "Laboratorio A",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "aula_id": "aula-laboratorio-b",
-          "name": "Laboratorio B",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "aula_id": "aula-laboratorio-c",
-          "name": "Laboratorio C",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "aula_id": "aula-lime-laboratory-of-innovation-and-management-engineering",
-          "name": "Aula LIME Laboratory of Innovation and Management Engineering",
-          "source_url": "https://dimeg.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-multimediale-25-c-self-study",
-          "name": "AULA MULTIMEDIALE 25 C SELF STUDY",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "aula_id": "aula-multimediale-piano-1cubo-25c",
-          "name": "Aula Multimediale piano 1°cubo 25C",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "aula_id": "aula-seminari-giannattasio",
-          "name": "Aula seminari (Giannattasio)",
-          "source_url": "https://dinci.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-spazio-mostre",
-          "name": "SPAZIO MOSTRE",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "aula_id": "aula-studio-per-i-soli-studenti-di-chimica",
-          "name": "Aula Studio per i soli studenti di Chimica",
-          "source_url": "https://ctc.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-verde",
-          "name": "Aula Verde",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        }
-      ],
-      "missing_building_id": 13,
-      "missing_building_id_ratio": 0.0247,
-      "total": 527,
-      "with_building_id": 514,
-      "with_building_id_ratio": 0.9753,
+      "missing_building_by_source": [],
+      "missing_building_examples": [],
+      "missing_building_id": 0,
+      "missing_building_id_ratio": 0.0,
+      "total": 520,
+      "with_building_id": 520,
+      "with_building_id_ratio": 1.0,
       "with_capacity": 273,
-      "with_capacity_ratio": 0.518,
-      "with_floor": 206,
-      "with_floor_ratio": 0.3909,
-      "with_place_id": 527,
+      "with_capacity_ratio": 0.525,
+      "with_floor": 208,
+      "with_floor_ratio": 0.4,
+      "with_place_id": 520,
       "with_place_id_ratio": 1.0,
-      "with_short_code": 139,
-      "with_short_code_ratio": 0.2638
+      "with_short_code": 138,
+      "with_short_code_ratio": 0.2654
     },
     "buildings": {
       "total": 150,
@@ -134,14 +43,14 @@
       "with_office_place_id_ratio": 0.0
     },
     "places": {
-      "total": 554,
-      "type_aula": 527,
-      "type_aula_ratio": 0.9513,
-      "with_building_id": 536,
-      "with_building_id_ratio": 0.9675
+      "total": 547,
+      "type_aula": 520,
+      "type_aula_ratio": 0.9506,
+      "with_building_id": 542,
+      "with_building_id_ratio": 0.9909
     }
   },
-  "generated_at": "2026-02-10T14:01:09.530242+00:00",
+  "generated_at": "2026-02-10T14:39:48.399370+00:00",
   "integrity": {
     "issues": []
   },

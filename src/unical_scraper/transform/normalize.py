@@ -299,6 +299,11 @@ def normalize_aulas(
         aula_places=aula_places,
         known_building_ids=building_ids,
     )
+    _apply_source_specific_aula_enrichments_and_drops(
+        aulas=aulas,
+        aula_places=aula_places,
+        known_building_ids=building_ids,
+    )
     deduped_aulas, deduped_places = _collapse_duplicate_aulas(
         aulas=aulas,
         aula_places=aula_places,
@@ -580,6 +585,106 @@ def _set_aula_building_id(
         place = place_by_id.get(place_id)
         if place is not None and (force or not isinstance(place.get("building_id"), str)):
             place["building_id"] = building_id
+
+
+def _apply_source_specific_aula_enrichments_and_drops(
+    aulas: list[dict[str, object]],
+    aula_places: list[dict[str, object]],
+    known_building_ids: set[str],
+) -> None:
+    place_by_id = {
+        str(place.get("place_id")): place
+        for place in aula_places
+        if isinstance(place.get("place_id"), str)
+    }
+
+    drop_place_ids: set[str] = set()
+    kept_aulas: list[dict[str, object]] = []
+
+    for aula in aulas:
+        source_url = str(aula.get("source_url") or "").casefold()
+        name = str(aula.get("name") or "")
+        lowered_name = name.casefold()
+
+        override_building_id: str | None = None
+        override_floor: str | None = None
+        override_capacity: int | None = None
+        should_drop = False
+
+        if "ctc.unical.it/dipartimento/organizzazione/strutture/" in source_url:
+            if lowered_name == "aula studio per i soli studenti di chimica":
+                override_building_id = "cubo-15c"
+                override_floor = "Secondo piano"
+
+        elif "dices.unical.it/dipartimento/organizzazione/strutture/" in source_url:
+            if lowered_name == "aula dolci":
+                override_building_id = "cubo-29b"
+                override_floor = "Secondo piano"
+                override_capacity = 280
+
+        elif "dimeg.unical.it/dipartimento/organizzazione/strutture/" in source_url:
+            if lowered_name == "aula lime laboratory of innovation and management engineering":
+                # Source text references 41C/42C/45C; use 41C as deterministic anchor.
+                override_building_id = "cubo-41c"
+
+        elif "dinci.unical.it/dipartimento/organizzazione/strutture/" in source_url:
+            if "giannattasio" in lowered_name:
+                override_building_id = "cubo-45b"
+                override_floor = "Primo piano"
+
+        elif "dimes.unical.it/dipartimento/organizzazione/strutture/" in source_url:
+            if lowered_name == "aula e":
+                should_drop = True
+
+        elif "unical.prod.up.cineca.it/calendar/activities/" in source_url:
+            if lowered_name in {
+                "aula blu",
+                "aula verde",
+                "laboratorio a",
+                "laboratorio b",
+                "laboratorio c",
+                "spazio mostre",
+            }:
+                should_drop = True
+            elif "multimediale" in lowered_name and "25" in lowered_name:
+                override_building_id = "cla-centro-linguistico-d-ateneo"
+
+        if should_drop:
+            place_id = aula.get("place_id")
+            if isinstance(place_id, str):
+                drop_place_ids.add(place_id)
+            continue
+
+        if override_building_id and override_building_id in known_building_ids:
+            _set_aula_building_id(
+                aula=aula,
+                building_id=override_building_id,
+                place_by_id=place_by_id,
+                force=True,
+            )
+
+        if override_floor and not isinstance(aula.get("floor"), str):
+            aula["floor"] = override_floor
+            place_id = aula.get("place_id")
+            if isinstance(place_id, str):
+                place = place_by_id.get(place_id)
+                if place is not None and not isinstance(place.get("floor"), str):
+                    place["floor"] = override_floor
+
+        if override_capacity is not None:
+            existing_capacity = aula.get("capacity")
+            if not isinstance(existing_capacity, int) or existing_capacity < override_capacity:
+                aula["capacity"] = override_capacity
+
+        kept_aulas.append(aula)
+
+    aulas[:] = kept_aulas
+    if drop_place_ids:
+        aula_places[:] = [
+            place
+            for place in aula_places
+            if not (isinstance(place.get("place_id"), str) and str(place.get("place_id")) in drop_place_ids)
+        ]
 
 
 def _normalize_lookup_value(value: object) -> str | None:
