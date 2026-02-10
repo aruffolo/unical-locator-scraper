@@ -694,6 +694,7 @@ def _parse_department_aulas_html(html_text: str, source_url: str) -> list[RawAul
                 )
             )
 
+    aulas.extend(_parse_department_aulas_accordions(soup=soup, source_url=source_url))
     return aulas
 
 
@@ -743,6 +744,49 @@ def _contains_aula_signal(values: list[str]) -> bool:
     if _looks_like_room_code(merged):
         return True
     return bool(re.search(r"\b\d{1,2}[A-Za-z]\s*\d?[A-Za-z]?\b", merged))
+
+
+def _parse_department_aulas_accordions(soup: BeautifulSoup, source_url: str) -> list[RawAula]:
+    aulas: list[RawAula] = []
+    for item in soup.select(".accordion-item"):
+        button = item.select_one("button.accordion-button")
+        if button is None:
+            continue
+        title = _normalize_text(button.get_text(" ", strip=True))
+        if not title:
+            continue
+        lowered_title = title.casefold()
+        if not (
+            _contains_aula_signal([title])
+            or "laboratorio" in lowered_title
+            or "aula studio" in lowered_title
+        ):
+            continue
+
+        canonical_name = _canonical_department_aula_name(title)
+        if not canonical_name:
+            continue
+
+        body = item.select_one(".accordion-body")
+        body_text = _normalize_text(body.get_text(" ", strip=True)) if body else None
+        hint_text = collapse_whitespace(" ".join(part for part in (body_text or "", title) if part))
+        body_hint = _extract_building_hint(body_text or "")
+        title_hint = _extract_building_hint(title)
+        building_hint = body_hint or title_hint
+        building_hint = _infer_building_hint_from_name(canonical_name, building_hint)
+
+        aulas.append(
+            RawAula(
+                name=canonical_name,
+                source_url=source_url,
+                floor=_extract_floor_label(hint_text),
+                room=_extract_room_label(canonical_name),
+                short_code=_extract_short_code(canonical_name),
+                building_hint=building_hint,
+                capacity=_extract_capacity(hint_text),
+            )
+        )
+    return aulas
 
 
 def _extract_department_candidates(value: str) -> list[str]:
@@ -909,11 +953,14 @@ def _canonical_department_aula_name(name: str | None) -> str | None:
     cleaned = re.sub(r"^[A-Z]{2,8}\s+(?=\d{1,2}[A-Za-z])", "", cleaned)
     cleaned = collapse_whitespace(cleaned)
 
+    lowered = cleaned.casefold()
+    if lowered.startswith("laboratorio "):
+        return cleaned
+
     canonical_external = _canonical_external_aula_name(cleaned)
     if canonical_external:
         return canonical_external
 
-    lowered = cleaned.casefold()
     if any(token in lowered for token in NOISE_AULA_TOKENS):
         return None
     if len(cleaned) > 80:
@@ -991,9 +1038,16 @@ def _extract_short_code(name: str) -> str | None:
 
 def _extract_building_hint(text: str) -> str | None:
     text = collapse_whitespace(text)
-    cubo_match = re.search(r"\bCubo\s+([0-9]{1,2}[A-Za-z])\b", text, flags=re.IGNORECASE)
+    cubo_match = re.search(
+        r"\bCubo\s+([0-9]{1,2})(?:\s*[-/]\s*|\s+)?([A-Za-z])?\b",
+        text,
+        flags=re.IGNORECASE,
+    )
     if cubo_match:
-        return f"Cubo {cubo_match.group(1).upper()}"
+        number = cubo_match.group(1)
+        letter = cubo_match.group(2)
+        suffix = f"{number}{letter.upper() if letter else ''}"
+        return f"Cubo {suffix}"
 
     cubi_match = re.search(
         r"\bCubi\s+([0-9]{1,2}(?:-[0-9]{1,2})?[A-Za-z])\b",
@@ -1008,13 +1062,35 @@ def _extract_building_hint(text: str) -> str | None:
         if match:
             return f"Polifunzionale {match.group(1).capitalize()}"
 
-    if re.fullmatch(r"[0-9]{1,2}[A-Za-z]", text):
-        return f"Cubo {text.upper()}"
-    compact_cubo = re.search(r"\b([0-9]{1,2}[A-Za-z])\b", text)
-    if compact_cubo and any(token in text.casefold() for token in ("piano", "ponte", "ubicazione", "posizione", "luogo")):
-        return f"Cubo {compact_cubo.group(1).upper()}"
+    compact = none_if_empty(re.sub(r"\s+", "", text))
+    if compact and re.fullmatch(r"[0-9]{1,2}[A-Za-z]", compact):
+        return f"Cubo {compact.upper()}"
+    token_match = re.search(r"\b([0-9]{1,2}[A-Za-z])\b", text)
+    lowered = text.casefold()
+    if token_match and any(token in lowered for token in ("piano", "ponte", "ubicazione", "posizione", "luogo", "cubo")):
+        return f"Cubo {token_match.group(1).upper()}"
 
     return None
+
+
+def _infer_building_hint_from_name(name: str, building_hint: str | None) -> str | None:
+    if building_hint and re.fullmatch(r"Cubo\s+[0-9]{1,2}[A-Za-z]", building_hint):
+        return building_hint
+
+    upper_name = name.upper()
+    match = re.search(
+        r"\b(?:CH-)?([0-9]{1,2})-[0-9]{1,2}([A-Z])(?:-[0-9]{1,2}[A-Z])?\b",
+        upper_name,
+    )
+    if not match:
+        return building_hint
+
+    inferred = f"Cubo {int(match.group(1))}{match.group(2)}"
+    if building_hint and re.fullmatch(r"Cubo\s+[0-9]{1,2}", building_hint):
+        return inferred
+    if building_hint:
+        return building_hint
+    return inferred
 
 
 def _extract_floor_label(text: str) -> str | None:

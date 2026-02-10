@@ -10,13 +10,13 @@ Owner: Elrond89
 - `blocked`: cannot proceed safely without input/dependency
 
 ## Current Baseline (2026-02-10)
-- Tests: `43 passed`
+- Tests: `44 passed`
 - Validation: all datasets schema-valid
 - Integrity: no issues
 - Dataset baseline:
   - `buildings.json`: 137 records
-  - `places.json`: 462 records of type `AULA` (489 total places)
-  - `aulas.json`: 462 records
+  - `places.json`: 470 records of type `AULA` (497 total places)
+  - `aulas.json`: 470 records
   - `departments.json`: 14 records
   - `people.json`: 4140 records
 
@@ -35,7 +35,7 @@ Owner: Elrond89
 ## Technical Debt / Issues
 - `Aule/getPerAutoCompletePublic` remains capped at 100; extraction now combines wider `Impegni/getImpegniPublic` window and curated public `linkCalendarioId` seeds, but both are still indirectly bounded by planner public API behavior.
 - Curated planner `linkCalendarioId` list requires periodic refresh because departments can rotate links over time.
-- Not every department `strutture` page currently yields parsable aula rows (notably `ctc`, `demacs`, `discag`), likely due page content format differences.
+- Not every department `strutture` page currently yields parsable aula rows (currently `demacs`, `discag`), likely due page content format differences.
 - Some service entities remain intentionally non-linkable (`building_id = null`) because they are virtual or multi-site.
 - Aula aliases are now generated deterministically, but ranking/consumption policy must still be defined in the future app search layer.
 
@@ -52,6 +52,7 @@ Owner: Elrond89
 - 2026-02-10: Added `link aliases` pipeline to generate deterministic `aliases.json` for AULA/PLACE variant recall, with integrity checks on alias targets.
 - 2026-02-10: Expanded default department `strutture` source set to all 14 UNICAL department domains (+ legacy `www2.dimes`) and added floor/capienza extraction from table variants.
 - 2026-02-10: Added `capacity` field to `aulas.json` schema and report coverage metrics (`with_capacity`).
+- 2026-02-10: Added dedicated accordion parsing for `strutture` pages (CTC pattern), extracting `Aula CH-*`, `Laboratorio ...`, and `Aula Studio` with floor/capacity/building hints.
 
 ## Blockers
 - No hard blockers at this checkpoint.

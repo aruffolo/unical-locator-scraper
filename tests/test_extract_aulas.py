@@ -273,3 +273,83 @@ def test_crawl_aulas_parses_department_strutture_capacity_and_floor_variants() -
     assert aula_apollo.floor == "Piano Terra"
     assert aula_apollo.building_hint == "Cubo 18B"
     assert aula_apollo.capacity == 129
+
+
+def test_crawl_aulas_parses_department_accordion_entries() -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    department_url = "https://ctc.unical.it/dipartimento/organizzazione/strutture/"
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        department_url: """
+            <html><body>
+              <div class="accordion accordion-left-icon">
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button class="accordion-button" type="button">Aula CH-15-6A-3T</button>
+                  </div>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Ubicazione: <i>Cubo 15 – Piano 6°</i></li>
+                        <li>Capienza: <i>60 posti</i></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion accordion-left-icon">
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button class="accordion-button" type="button">Laboratorio di CHIMICA ANALITICA</button>
+                  </div>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <p><i>Ubicazione:</i> <strong>Cubo 15 C</strong> - <strong>piano 1°</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion accordion-left-icon">
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button class="accordion-button" type="button">Aula Studio</button>
+                  </div>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <p>Collocata nell'ex Aula B, secondo piano, Cubo 15 C.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body></html>
+        """,
+        "https://planner.example/api/Edifici/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        "https://planner.example/api/Aule/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        "https://planner.example/api/Impegni/getImpegniPublic?dataInizio=2020-01-01&dataFine=2030-12-31&limit=20000": "[]",
+    }
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages),
+        department_urls=(department_url,),
+        planner_base_url="https://planner.example",
+        planner_client_id=None,
+    )
+
+    names = {item.name for item in aulas}
+    assert "Aula CH-15-6A-3T" in names
+    assert "Laboratorio di CHIMICA ANALITICA" in names
+    assert "Aula Studio" in names
+
+    aula_ch = next(item for item in aulas if item.name == "Aula CH-15-6A-3T")
+    assert aula_ch.floor == "Sesto piano"
+    assert aula_ch.building_hint == "Cubo 15A"
+    assert aula_ch.capacity == 60
+
+    lab = next(item for item in aulas if item.name == "Laboratorio di CHIMICA ANALITICA")
+    assert lab.floor == "Primo piano"
+    assert lab.building_hint == "Cubo 15C"
+
+    studio = next(item for item in aulas if item.name == "Aula Studio")
+    assert studio.floor == "Secondo piano"
+    assert studio.building_hint == "Cubo 15C"
