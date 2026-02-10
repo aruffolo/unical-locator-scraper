@@ -353,3 +353,92 @@ def test_crawl_aulas_parses_department_accordion_entries() -> None:
     studio = next(item for item in aulas if item.name == "Aula Studio")
     assert studio.floor == "Secondo piano"
     assert studio.building_hint == "Cubo 15C"
+
+
+def test_crawl_aulas_parses_nested_department_accordion_entries() -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    department_url = "https://demacs.unical.it/dipartimento/organizzazione/strutture/"
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        department_url: """
+            <html><body>
+              <div class="accordion accordion-left-icon">
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button class="accordion-button" type="button">Aule per la didattica e aule studio</button>
+                  </div>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <h3>Aula studio</h3>
+                      <p>L<strong>'Aula MT7</strong> (Collocazione: Cubo 30B - Piano terra) è utilizzata come sala studio.</p>
+                      <p><strong>Aula MT1</strong></p>
+                      <ul>
+                        <li>Ubicazione: Cubo 31B – Piano terra</li>
+                        <li>Capienza: 144 posti</li>
+                      </ul>
+                      <p><strong>Aula Turing (ex MT10)</strong></p>
+                      <ul>
+                        <li>Ubicazione: Cubo 30B - Piano secondo</li>
+                        <li>Capienza: 64 posti</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion accordion-left-icon">
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button class="accordion-button" type="button">Laboratori didattici</button>
+                  </div>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <h4>Laboratorio LAB-16C</h4>
+                      <p>Laboratorio riservato agli studenti del Corso di Laurea Triennale.</p>
+                      <ul>
+                        <li>Collocazione: Cubo 16C - Ponte Carrabile.</li>
+                        <li>Capienza: 60 persone.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body></html>
+        """,
+        "https://planner.example/api/Edifici/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        "https://planner.example/api/Aule/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        "https://planner.example/api/Impegni/getImpegniPublic?dataInizio=2020-01-01&dataFine=2030-12-31&limit=20000": "[]",
+    }
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages),
+        department_urls=(department_url,),
+        planner_base_url="https://planner.example",
+        planner_client_id=None,
+    )
+
+    names = {item.name for item in aulas}
+    assert "Aula MT1" in names
+    assert "Aula MT7" in names
+    assert "Aula Turing (ex MT10)" in names
+    assert "Laboratorio LAB-16C" in names
+    assert "Aula Aule per la didattica e aule studio" not in names
+    assert "Aula Laboratori didattici" not in names
+
+    aula_mt1 = next(item for item in aulas if item.name == "Aula MT1")
+    assert aula_mt1.floor == "Piano Terra"
+    assert aula_mt1.building_hint == "Cubo 31B"
+    assert aula_mt1.capacity == 144
+
+    aula_mt7 = next(item for item in aulas if item.name == "Aula MT7")
+    assert aula_mt7.floor == "Piano Terra"
+    assert aula_mt7.building_hint == "Cubo 30B"
+
+    turing = next(item for item in aulas if item.name == "Aula Turing (ex MT10)")
+    assert turing.floor == "Secondo piano"
+    assert turing.building_hint == "Cubo 30B"
+    assert turing.capacity == 64
+
+    lab = next(item for item in aulas if item.name == "Laboratorio LAB-16C")
+    assert lab.building_hint == "Cubo 16C"
+    assert lab.capacity == 60

@@ -9,7 +9,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from urllib.parse import parse_qs, urljoin, urlparse
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 from .planner_link_ids import CURATED_PUBLIC_LINK_CALENDAR_IDS
 from ..utils.html_cache import HtmlCache
@@ -749,11 +749,17 @@ def _contains_aula_signal(values: list[str]) -> bool:
 def _parse_department_aulas_accordions(soup: BeautifulSoup, source_url: str) -> list[RawAula]:
     aulas: list[RawAula] = []
     for item in soup.select(".accordion-item"):
+        body = item.select_one(".accordion-body")
+        if body is not None:
+            aulas.extend(_parse_department_accordion_body_entries(body=body, source_url=source_url))
+
         button = item.select_one("button.accordion-button")
         if button is None:
             continue
         title = _normalize_text(button.get_text(" ", strip=True))
         if not title:
+            continue
+        if _is_generic_accordion_heading(title):
             continue
         lowered_title = title.casefold()
         if not (
@@ -787,6 +793,123 @@ def _parse_department_aulas_accordions(soup: BeautifulSoup, source_url: str) -> 
             )
         )
     return aulas
+
+
+def _parse_department_accordion_body_entries(body: Tag, source_url: str) -> list[RawAula]:
+    aulas: list[RawAula] = []
+    blocks = [child for child in body.children if isinstance(child, Tag)]
+    idx = 0
+    while idx < len(blocks):
+        entry_titles = _extract_accordion_entry_titles(blocks[idx])
+        if not entry_titles:
+            idx += 1
+            continue
+
+        detail_parts = [_normalize_text(blocks[idx].get_text(" ", strip=True))]
+        cursor = idx + 1
+        while cursor < len(blocks):
+            if _extract_accordion_entry_titles(blocks[cursor]):
+                break
+            detail_parts.append(_normalize_text(blocks[cursor].get_text(" ", strip=True)))
+            cursor += 1
+
+        hint_text = collapse_whitespace(" ".join(part for part in detail_parts if part))
+        for entry_title in entry_titles:
+            canonical_name = _canonical_department_aula_name(entry_title)
+            if not canonical_name:
+                continue
+
+            body_hint = _extract_building_hint(hint_text)
+            title_hint = _extract_building_hint(entry_title)
+            building_hint = _infer_building_hint_from_name(canonical_name, body_hint or title_hint)
+
+            aulas.append(
+                RawAula(
+                    name=canonical_name,
+                    source_url=source_url,
+                    floor=_extract_floor_label(hint_text),
+                    room=_extract_room_label(canonical_name),
+                    short_code=_extract_short_code(canonical_name),
+                    building_hint=building_hint,
+                    capacity=_extract_capacity(hint_text),
+                )
+            )
+
+        idx = cursor
+
+    return aulas
+
+
+def _extract_accordion_entry_titles(block: Tag) -> list[str]:
+    block_text = _normalize_text(block.get_text(" ", strip=True))
+    if not block_text:
+        return []
+    if _is_generic_accordion_heading(block_text):
+        return []
+
+    candidates: list[str] = []
+    lowered_text = block_text.casefold()
+
+    if block.name == "h4" and lowered_text.startswith("laboratorio "):
+        candidates.append(block_text)
+
+    for strong in block.find_all("strong"):
+        strong_text = _normalize_text(strong.get_text(" ", strip=True))
+        if not strong_text:
+            continue
+        strong_text = strong_text.lstrip("'`\"").strip()
+        if not _is_likely_accordion_entry_name(strong_text):
+            continue
+        if _contains_location_marker(block_text) and not strong_text.casefold().startswith(("aula ", "laboratorio ")):
+            continue
+        candidates.append(strong_text)
+
+    if not candidates and block.name == "p" and ("aula" in lowered_text or "laboratorio" in lowered_text):
+        for candidate in _extract_department_candidates(block_text):
+            candidate = candidate.lstrip("'`\"").strip()
+            if not _is_likely_accordion_entry_name(candidate):
+                continue
+            candidates.append(candidate)
+
+    unique_candidates: list[str] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        key = collapse_whitespace(candidate).casefold()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        unique_candidates.append(candidate)
+    return unique_candidates
+
+
+def _is_likely_accordion_entry_name(value: str) -> bool:
+    cleaned = collapse_whitespace(value)
+    if not cleaned:
+        return False
+    lowered = cleaned.casefold()
+    if _is_generic_accordion_heading(cleaned):
+        return False
+    if lowered.startswith("aula "):
+        return True
+    if lowered.startswith("laboratorio "):
+        return True
+    return _looks_like_room_code(cleaned)
+
+
+def _contains_location_marker(text: str) -> bool:
+    lowered = text.casefold()
+    return any(token in lowered for token in ("ubicazione", "collocazione", "capienza", "posti", "attrezzature"))
+
+
+def _is_generic_accordion_heading(text: str) -> bool:
+    lowered = collapse_whitespace(text).casefold()
+    return (
+        lowered.startswith("aule per ")
+        or lowered.startswith("aule convegni")
+        or lowered.startswith("laboratori didattici")
+        or lowered.startswith("descrizione dei laboratori")
+        or lowered.startswith("aule del dipartimento")
+    )
 
 
 def _extract_department_candidates(value: str) -> list[str]:
@@ -1109,6 +1232,15 @@ def _extract_floor_label(text: str) -> str | None:
     )
     if word_match:
         label = FLOOR_WORD_TO_LABEL.get(word_match.group(1))
+        if label:
+            return label
+
+    reversed_word_match = re.search(
+        r"\bpiano\s+(terra|primo|secondo|terzo|quarto|quinto|sesto|settimo)\b",
+        lowered,
+    )
+    if reversed_word_match:
+        label = FLOOR_WORD_TO_LABEL.get(reversed_word_match.group(1))
         if label:
             return label
 
