@@ -176,6 +176,36 @@ def check_integrity(data_dir: Path) -> list[IntegrityIssue]:
                 )
             )
 
+    seen_aula_keys: dict[tuple[str, str], str] = {}
+    for aula in aulas:
+        aula_id = str(aula.get("aula_id") or "")
+        building_id = aula.get("building_id")
+        if not isinstance(building_id, str):
+            continue
+
+        normalized_name = str(aula.get("normalized_name") or aula.get("name") or "")
+        normalized_name = " ".join(normalized_name.split()).casefold()
+        if not normalized_name:
+            continue
+
+        key = (normalized_name, building_id)
+        previous_aula_id = seen_aula_keys.get(key)
+        if previous_aula_id and previous_aula_id != aula_id:
+            issues.append(
+                IntegrityIssue(
+                    level="error",
+                    file="aulas.json",
+                    record_id=aula_id or None,
+                    message=(
+                        "duplicate aula key for "
+                        f"normalized_name '{normalized_name}' and building_id '{building_id}' "
+                        f"(also in '{previous_aula_id}')"
+                    ),
+                )
+            )
+            continue
+        seen_aula_keys[key] = aula_id
+
     alias_targets = {
         "BUILDING": building_ids,
         "PLACE": place_ids,

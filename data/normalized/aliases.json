@@ -112,20 +112,6 @@
     "normalized": "aula-15"
   },
   {
-    "alias_id": "alias-place-aula-2-2",
-    "entity_id": "aula-2",
-    "entity_type": "PLACE",
-    "label": "2",
-    "normalized": "2"
-  },
-  {
-    "alias_id": "alias-place-aula-2-aula-2",
-    "entity_id": "aula-2",
-    "entity_type": "PLACE",
-    "label": "AULA 2",
-    "normalized": "aula-2"
-  },
-  {
     "alias_id": "alias-place-aula-2-cubo-12b-2",
     "entity_id": "aula-2-cubo-12b",
     "entity_type": "PLACE",
@@ -369,20 +355,6 @@
     "entity_type": "PLACE",
     "label": "Aula 29B3",
     "normalized": "aula-29b3"
-  },
-  {
-    "alias_id": "alias-place-aula-3-3",
-    "entity_id": "aula-3",
-    "entity_type": "PLACE",
-    "label": "3",
-    "normalized": "3"
-  },
-  {
-    "alias_id": "alias-place-aula-3-aula-3",
-    "entity_id": "aula-3",
-    "entity_type": "PLACE",
-    "label": "AULA 3",
-    "normalized": "aula-3"
   },
   {
     "alias_id": "alias-place-aula-3-cubo-12b-3",
@@ -5348,20 +5320,6 @@
     "normalized": "informaticacsdim"
   },
   {
-    "alias_id": "alias-place-aula-informatica-cubo-15b-aula-informatica",
-    "entity_id": "aula-informatica-cubo-15b",
-    "entity_type": "PLACE",
-    "label": "Aula Informatica",
-    "normalized": "aula-informatica"
-  },
-  {
-    "alias_id": "alias-place-aula-informatica-cubo-15b-informatica",
-    "entity_id": "aula-informatica-cubo-15b",
-    "entity_type": "PLACE",
-    "label": "Informatica",
-    "normalized": "informatica"
-  },
-  {
     "alias_id": "alias-place-aula-informatica-informatica",
     "entity_id": "aula-informatica",
     "entity_type": "PLACE",
@@ -5397,20 +5355,6 @@
     "normalized": "iris"
   },
   {
-    "alias_id": "alias-place-aula-l1-aula-l-1",
-    "entity_id": "aula-l1",
-    "entity_type": "PLACE",
-    "label": "Aula L 1",
-    "normalized": "aula-l-1"
-  },
-  {
-    "alias_id": "alias-place-aula-l1-aula-l1",
-    "entity_id": "aula-l1",
-    "entity_type": "PLACE",
-    "label": "Aula L1",
-    "normalized": "aula-l1"
-  },
-  {
     "alias_id": "alias-place-aula-l1-cubo-4a-aula-l-1",
     "entity_id": "aula-l1-cubo-4a",
     "entity_type": "PLACE",
@@ -5439,20 +5383,6 @@
     "normalized": "l1"
   },
   {
-    "alias_id": "alias-place-aula-l1-l-1",
-    "entity_id": "aula-l1",
-    "entity_type": "PLACE",
-    "label": "L 1",
-    "normalized": "l-1"
-  },
-  {
-    "alias_id": "alias-place-aula-l1-l1",
-    "entity_id": "aula-l1",
-    "entity_type": "PLACE",
-    "label": "L1",
-    "normalized": "l1"
-  },
-  {
     "alias_id": "alias-place-aula-l2-aula-l-2",
     "entity_id": "aula-l2",
     "entity_type": "PLACE",
@@ -5465,34 +5395,6 @@
     "entity_type": "PLACE",
     "label": "Aula L2",
     "normalized": "aula-l2"
-  },
-  {
-    "alias_id": "alias-place-aula-l2-cubo-4a-aula-l-2",
-    "entity_id": "aula-l2-cubo-4a",
-    "entity_type": "PLACE",
-    "label": "Aula L 2",
-    "normalized": "aula-l-2"
-  },
-  {
-    "alias_id": "alias-place-aula-l2-cubo-4a-aula-l2",
-    "entity_id": "aula-l2-cubo-4a",
-    "entity_type": "PLACE",
-    "label": "Aula L2",
-    "normalized": "aula-l2"
-  },
-  {
-    "alias_id": "alias-place-aula-l2-cubo-4a-l-2",
-    "entity_id": "aula-l2-cubo-4a",
-    "entity_type": "PLACE",
-    "label": "L 2",
-    "normalized": "l-2"
-  },
-  {
-    "alias_id": "alias-place-aula-l2-cubo-4a-l2",
-    "entity_id": "aula-l2-cubo-4a",
-    "entity_type": "PLACE",
-    "label": "L2",
-    "normalized": "l2"
   },
   {
     "alias_id": "alias-place-aula-l2-l-2",
@@ -6139,13 +6041,6 @@
     "normalized": "laboratorio-informatica"
   },
   {
-    "alias_id": "alias-place-aula-laboratorio-informatica-laboratorio-informatica",
-    "entity_id": "aula-laboratorio-informatica",
-    "entity_type": "PLACE",
-    "label": "Laboratorio Informatica",
-    "normalized": "laboratorio-informatica"
-  },
-  {
     "alias_id": "alias-place-aula-laboratorio-lab-16c-cubo-16c-laboratorio-lab-16c",
     "entity_id": "aula-laboratorio-lab-16c-cubo-16c",
     "entity_type": "PLACE",
@@ -6172,13 +6067,6 @@
     "entity_type": "PLACE",
     "label": "Laboratorio LAB-31B",
     "normalized": "laboratorio-lab-31b"
-  },
-  {
-    "alias_id": "alias-place-aula-laboratorio-multimediale-cubo-0b-laboratorio-multimediale",
-    "entity_id": "aula-laboratorio-multimediale-cubo-0b",
-    "entity_type": "PLACE",
-    "label": "Laboratorio multimediale",
-    "normalized": "laboratorio-multimediale"
   },
   {
     "alias_id": "alias-place-aula-laboratorio-multimediale-laboratorio-multimediale",
@@ -6937,34 +6825,6 @@
     "normalized": "aula-mod3a"
   },
   {
-    "alias_id": "alias-place-aula-mod3a-cubo-39c-aula-mod-3-a",
-    "entity_id": "aula-mod3a-cubo-39c",
-    "entity_type": "PLACE",
-    "label": "Aula MOD 3 A",
-    "normalized": "aula-mod-3-a"
-  },
-  {
-    "alias_id": "alias-place-aula-mod3a-cubo-39c-aula-mod3a",
-    "entity_id": "aula-mod3a-cubo-39c",
-    "entity_type": "PLACE",
-    "label": "Aula MOD3A",
-    "normalized": "aula-mod3a"
-  },
-  {
-    "alias_id": "alias-place-aula-mod3a-cubo-39c-mod-3-a",
-    "entity_id": "aula-mod3a-cubo-39c",
-    "entity_type": "PLACE",
-    "label": "MOD 3 A",
-    "normalized": "mod-3-a"
-  },
-  {
-    "alias_id": "alias-place-aula-mod3a-cubo-39c-mod3a",
-    "entity_id": "aula-mod3a-cubo-39c",
-    "entity_type": "PLACE",
-    "label": "MOD3A",
-    "normalized": "mod3a"
-  },
-  {
     "alias_id": "alias-place-aula-mod3a-mod-3-a",
     "entity_id": "aula-mod3a",
     "entity_type": "PLACE",
@@ -7511,13 +7371,6 @@
     "normalized": "multimediale25cselfstudy"
   },
   {
-    "alias_id": "alias-place-aula-multimediale-aula-multimediale",
-    "entity_id": "aula-multimediale",
-    "entity_type": "PLACE",
-    "label": "Aula Multimediale",
-    "normalized": "aula-multimediale"
-  },
-  {
     "alias_id": "alias-place-aula-multimediale-cubo-20b-aula-multimediale",
     "entity_id": "aula-multimediale-cubo-20b",
     "entity_type": "PLACE",
@@ -7527,13 +7380,6 @@
   {
     "alias_id": "alias-place-aula-multimediale-cubo-20b-multimediale",
     "entity_id": "aula-multimediale-cubo-20b",
-    "entity_type": "PLACE",
-    "label": "Multimediale",
-    "normalized": "multimediale"
-  },
-  {
-    "alias_id": "alias-place-aula-multimediale-multimediale",
-    "entity_id": "aula-multimediale",
     "entity_type": "PLACE",
     "label": "Multimediale",
     "normalized": "multimediale"
@@ -9345,20 +9191,6 @@
     "normalized": "aula-studenti"
   },
   {
-    "alias_id": "alias-place-aula-studenti-cubo-30b-aula-studenti",
-    "entity_id": "aula-studenti-cubo-30b",
-    "entity_type": "PLACE",
-    "label": "AULA STUDENTI)",
-    "normalized": "aula-studenti"
-  },
-  {
-    "alias_id": "alias-place-aula-studenti-cubo-30b-studenti",
-    "entity_id": "aula-studenti-cubo-30b",
-    "entity_type": "PLACE",
-    "label": "STUDENTI)",
-    "normalized": "studenti"
-  },
-  {
     "alias_id": "alias-place-aula-studenti-studenti",
     "entity_id": "aula-studenti",
     "entity_type": "PLACE",
@@ -9408,13 +9240,6 @@
     "normalized": "studio2"
   },
   {
-    "alias_id": "alias-place-aula-studio-aula-studio",
-    "entity_id": "aula-studio",
-    "entity_type": "PLACE",
-    "label": "Aula Studio",
-    "normalized": "aula-studio"
-  },
-  {
     "alias_id": "alias-place-aula-studio-cubo-15c-aula-studio",
     "entity_id": "aula-studio-cubo-15c",
     "entity_type": "PLACE",
@@ -9448,13 +9273,6 @@
     "entity_type": "PLACE",
     "label": "STUDIOPERISOLISTUDENTIDICHIMICA",
     "normalized": "studioperisolistudentidichimica"
-  },
-  {
-    "alias_id": "alias-place-aula-studio-studio",
-    "entity_id": "aula-studio",
-    "entity_type": "PLACE",
-    "label": "Studio",
-    "normalized": "studio"
   },
   {
     "alias_id": "alias-place-aula-t-sorrentino-cubo-3b-t-sorrentino",

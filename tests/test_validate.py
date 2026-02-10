@@ -168,3 +168,39 @@ def test_integrity_detects_invalid_alias_references(tmp_path: Path) -> None:
         "entity_id 'missing-building' does not exist for entity_type 'BUILDING'" in message
         for message in messages
     )
+
+
+def test_integrity_detects_duplicate_aula_identity_key(tmp_path: Path) -> None:
+    buildings = [{"building_id": "cubo-12b", "name": "Cubo 12B"}]
+    departments = []
+    people = []
+    places = [
+        {"place_id": "aula-2", "type": "AULA", "name": "Aula 2", "building_id": "cubo-12b"},
+        {"place_id": "aula-2-cubo-12b", "type": "AULA", "name": "Aula 2", "building_id": "cubo-12b"},
+    ]
+    aulas = [
+        {
+            "aula_id": "aula-2",
+            "place_id": "aula-2",
+            "name": "AULA 2",
+            "normalized_name": "aula 2",
+            "building_id": "cubo-12b",
+        },
+        {
+            "aula_id": "aula-2-cubo-12b",
+            "place_id": "aula-2-cubo-12b",
+            "name": "Aula 2",
+            "normalized_name": "aula 2",
+            "building_id": "cubo-12b",
+        },
+    ]
+
+    (tmp_path / "buildings.json").write_text(json.dumps(buildings), encoding="utf-8")
+    (tmp_path / "departments.json").write_text(json.dumps(departments), encoding="utf-8")
+    (tmp_path / "places.json").write_text(json.dumps(places), encoding="utf-8")
+    (tmp_path / "people.json").write_text(json.dumps(people), encoding="utf-8")
+    (tmp_path / "aulas.json").write_text(json.dumps(aulas), encoding="utf-8")
+
+    issues = check_integrity(data_dir=tmp_path)
+    messages = [issue.message for issue in issues]
+    assert any("duplicate aula key for normalized_name 'aula 2'" in message for message in messages)

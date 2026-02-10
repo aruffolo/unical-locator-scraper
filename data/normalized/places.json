@@ -1,7 +1,7 @@
 [
   {
     "building_id": "cubo-12b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 1",
     "place_id": "aula-1-cubo-12b",
     "room": "1",
@@ -10,7 +10,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA 1 - Seminari",
     "place_id": "aula-1-seminari",
     "room": "1 - Seminari",
@@ -19,7 +19,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 10G",
     "place_id": "aula-10g",
     "room": "10G",
@@ -28,7 +28,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 13",
     "place_id": "aula-13",
     "room": "13",
@@ -38,7 +38,7 @@
   },
   {
     "building_id": "cubo-13c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "13C2-Zenit1",
     "place_id": "aula-13c2-zenit1-cubo-13c",
     "source_id": "unical-aulas",
@@ -47,7 +47,7 @@
   },
   {
     "building_id": "cubo-13c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "13C3-Zenit2",
     "place_id": "aula-13c3-zenit2-cubo-13c",
     "source_id": "unical-aulas",
@@ -55,7 +55,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 14",
     "place_id": "aula-14",
     "room": "14",
@@ -64,7 +64,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 15",
     "place_id": "aula-15",
     "room": "15",
@@ -74,17 +74,7 @@
   },
   {
     "building_id": "cubo-12b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "AULA 2",
-    "place_id": "aula-2",
-    "room": "2",
-    "source_id": "unical-aulas",
-    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/",
-    "type": "AULA"
-  },
-  {
-    "building_id": "cubo-12b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 2",
     "place_id": "aula-2-cubo-12b",
     "room": "2",
@@ -93,7 +83,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 20",
     "place_id": "aula-20",
     "room": "20",
@@ -102,7 +92,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 21",
     "place_id": "aula-21",
     "room": "21",
@@ -111,7 +101,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 25",
     "place_id": "aula-25",
     "room": "25",
@@ -122,7 +112,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 29 C2 (FAC 1)",
     "place_id": "aula-29-c2-fac-1-cubo-28b",
     "room": "29 C2 (FAC 1)",
@@ -132,7 +122,7 @@
   },
   {
     "building_id": "cubo-29c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 29 C2 (FAC 1)",
     "place_id": "aula-29-c2-fac-1-cubo-29c",
     "room": "29 C2 (FAC 1)",
@@ -143,7 +133,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 29 C3 (FAC 2)",
     "place_id": "aula-29-c3-fac-2-cubo-28b",
     "room": "29 C3 (FAC 2)",
@@ -153,7 +143,7 @@
   },
   {
     "building_id": "cubo-29c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 29 C3 (FAC 2)",
     "place_id": "aula-29-c3-fac-2-cubo-29c",
     "room": "29 C3 (FAC 2)",
@@ -163,7 +153,7 @@
   },
   {
     "building_id": "cubo-29b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 29B1",
     "place_id": "aula-29b1-cubo-29b",
     "room": "29B1",
@@ -173,7 +163,7 @@
   },
   {
     "building_id": "cubo-29b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 29B1 - D. Dolci",
     "place_id": "aula-29b1-d-dolci-cubo-29b",
     "room": "29B1 - D. Dolci",
@@ -183,7 +173,7 @@
   },
   {
     "building_id": "cubo-29b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 29B2",
     "place_id": "aula-29b2-cubo-29b",
     "room": "29B2",
@@ -193,7 +183,7 @@
   },
   {
     "building_id": "cubo-29b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "29B2-S. Aleramo",
     "place_id": "aula-29b2-s-aleramo-cubo-29b",
     "source_id": "unical-aulas",
@@ -202,7 +192,7 @@
   },
   {
     "building_id": "cubo-29b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "29B3-C. Mortati",
     "place_id": "aula-29b3-c-mortati-cubo-29b",
     "source_id": "unical-aulas",
@@ -211,7 +201,7 @@
   },
   {
     "building_id": "cubo-29b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 29B3",
     "place_id": "aula-29b3-cubo-29b",
     "room": "29B3",
@@ -221,17 +211,7 @@
   },
   {
     "building_id": "cubo-12b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "AULA 3",
-    "place_id": "aula-3",
-    "room": "3",
-    "source_id": "unical-aulas",
-    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/",
-    "type": "AULA"
-  },
-  {
-    "building_id": "cubo-12b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 3",
     "place_id": "aula-3-cubo-12b",
     "room": "3",
@@ -242,7 +222,7 @@
   {
     "building_id": "cubo-31c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 31C",
     "place_id": "aula-31c",
     "room": "31C",
@@ -252,7 +232,7 @@
   },
   {
     "building_id": "cubo-32b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 32B1",
     "place_id": "aula-32b1-cubo-32b",
     "room": "32B1",
@@ -262,7 +242,7 @@
   },
   {
     "building_id": "cubo-32b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 32B2",
     "place_id": "aula-32b2-cubo-32b",
     "room": "32B2",
@@ -272,7 +252,7 @@
   },
   {
     "building_id": "cubo-32b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 32B3",
     "place_id": "aula-32b3-cubo-32b",
     "room": "32B3",
@@ -283,7 +263,7 @@
   {
     "building_id": "cubo-32c",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 32C1",
     "place_id": "aula-32c1-cubo-32c",
     "room": "32C1",
@@ -294,7 +274,7 @@
   {
     "building_id": "cubo-32c",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 32C1 (ex CF3)",
     "place_id": "aula-32c1-ex-cf3-cubo-32c",
     "room": "32C1 (ex CF3)",
@@ -304,7 +284,7 @@
   },
   {
     "building_id": "cubo-32c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 32C2",
     "place_id": "aula-32c2-cubo-32c",
     "room": "32C2",
@@ -314,7 +294,7 @@
   },
   {
     "building_id": "cubo-32c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 32C3",
     "place_id": "aula-32c3-cubo-32c",
     "room": "32C3",
@@ -324,7 +304,7 @@
   },
   {
     "building_id": "cubo-45b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 39B 1C Aula 41B 6B Aula Seminari",
     "place_id": "aula-39b-1c-aula-41b-6b-aula-seminari-cubo-45b",
     "room": "39B 1C Aula 41B 6B Aula Seminari",
@@ -335,7 +315,7 @@
   {
     "building_id": "cubo-39b",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 39B1A",
     "place_id": "aula-39b1a-cubo-39b",
     "room": "39B1A",
@@ -346,7 +326,7 @@
   {
     "building_id": "cubo-39b",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 39B1B",
     "place_id": "aula-39b1b-cubo-39b",
     "room": "39B1B",
@@ -357,7 +337,7 @@
   {
     "building_id": "cubo-39b",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 39B1C",
     "place_id": "aula-39b1c-cubo-39b",
     "room": "39B1C",
@@ -368,7 +348,7 @@
   {
     "building_id": "cubo-39c",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 39C",
     "place_id": "aula-39c",
     "room": "39C",
@@ -379,7 +359,7 @@
   {
     "building_id": "cubo-39c",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 39C1A",
     "place_id": "aula-39c1a-cubo-39c",
     "room": "39C1A",
@@ -390,7 +370,7 @@
   {
     "building_id": "cubo-39c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 39C2A",
     "place_id": "aula-39c2a-cubo-39c",
     "room": "39C2A",
@@ -401,7 +381,7 @@
   {
     "building_id": "cubo-39c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 39C2B",
     "place_id": "aula-39c2b-cubo-39c",
     "room": "39C2B",
@@ -411,7 +391,7 @@
   },
   {
     "building_id": "cubo-12b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 4",
     "place_id": "aula-4-cubo-12b",
     "room": "4",
@@ -421,7 +401,7 @@
   },
   {
     "building_id": "cubo-40c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "40C1-P. Borsellino",
     "place_id": "aula-40c1-p-borsellino-cubo-40c",
     "source_id": "unical-aulas",
@@ -430,7 +410,7 @@
   },
   {
     "building_id": "cubo-40c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 40C2",
     "place_id": "aula-40c2-cubo-40c",
     "room": "40C2",
@@ -440,7 +420,7 @@
   },
   {
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "41B 6A (MARONE)",
     "place_id": "aula-41b-6a-marone-cubo-41b",
     "source_id": "unical-aulas",
@@ -450,7 +430,7 @@
   {
     "building_id": "cubo-41b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 41B0A",
     "place_id": "aula-41b0a-cubo-41b",
     "room": "41B0A",
@@ -460,7 +440,7 @@
   },
   {
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 43B",
     "place_id": "aula-43b",
     "room": "43B",
@@ -470,7 +450,7 @@
   },
   {
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 43B (Consolidata)",
     "place_id": "aula-43b-consolidata-cubo-43b",
     "room": "43B (Consolidata)",
@@ -480,7 +460,7 @@
   },
   {
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 43B2",
     "place_id": "aula-43b2-cubo-43b",
     "room": "43B2",
@@ -490,7 +470,7 @@
   },
   {
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 43B3",
     "place_id": "aula-43b3-cubo-43b",
     "room": "43B3",
@@ -500,7 +480,7 @@
   },
   {
     "building_id": "cubo-43c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 43C2",
     "place_id": "aula-43c2-cubo-43c",
     "room": "43C2",
@@ -510,7 +490,7 @@
   },
   {
     "building_id": "cubo-43c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 43C3",
     "place_id": "aula-43c3-cubo-43c",
     "room": "43C3",
@@ -519,7 +499,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "44",
     "place_id": "aula-44",
     "source_id": "unical-aulas",
@@ -528,7 +508,7 @@
   },
   {
     "building_id": "cubo-44b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 44B4A",
     "place_id": "aula-44b4a-cubo-44b",
     "room": "44B4A",
@@ -537,7 +517,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 45",
     "place_id": "aula-45",
     "room": "45",
@@ -547,7 +527,7 @@
   },
   {
     "building_id": "cubo-45b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 45B01",
     "place_id": "aula-45b01-cubo-45b",
     "room": "45B01",
@@ -557,7 +537,7 @@
   },
   {
     "building_id": "cubo-45b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 45B02",
     "place_id": "aula-45b02-cubo-45b",
     "room": "45B02",
@@ -567,7 +547,7 @@
   },
   {
     "building_id": "cubo-45b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 45B03",
     "place_id": "aula-45b03-cubo-45b",
     "room": "45B03",
@@ -578,7 +558,7 @@
   {
     "building_id": "cubo-45b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 45B0A",
     "place_id": "aula-45b0a-cubo-45b",
     "room": "45B0A",
@@ -589,7 +569,7 @@
   {
     "building_id": "cubo-45b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 45B0B",
     "place_id": "aula-45b0b-cubo-45b",
     "room": "45B0B",
@@ -600,7 +580,7 @@
   {
     "building_id": "cubo-45b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 45B0C",
     "place_id": "aula-45b0c-cubo-45b",
     "room": "45B0C",
@@ -609,7 +589,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 46",
     "place_id": "aula-46",
     "room": "46",
@@ -620,7 +600,7 @@
   {
     "building_id": "cubo-46c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 46C",
     "place_id": "aula-46c",
     "room": "46C",
@@ -629,7 +609,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 52",
     "place_id": "aula-52",
     "room": "52",
@@ -638,7 +618,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 53",
     "place_id": "aula-53",
     "room": "53",
@@ -649,7 +629,7 @@
   {
     "building_id": "cubo-5b",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 5B2",
     "place_id": "aula-5b2-cubo-5b",
     "room": "5B2",
@@ -660,7 +640,7 @@
   {
     "building_id": "cubo-5b",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 5B3",
     "place_id": "aula-5b3-cubo-5b",
     "room": "5B3",
@@ -671,7 +651,7 @@
   {
     "building_id": "cubo-5c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 5C1",
     "place_id": "aula-5c1-cubo-5c",
     "room": "5C1",
@@ -682,7 +662,7 @@
   {
     "building_id": "cubo-5c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 5C2",
     "place_id": "aula-5c2-cubo-5c",
     "room": "5C2",
@@ -693,7 +673,7 @@
   {
     "building_id": "cubo-5c",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 5C3",
     "place_id": "aula-5c3-cubo-5c",
     "room": "5C3",
@@ -704,7 +684,7 @@
   {
     "building_id": "cubo-5c",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula 5C4",
     "place_id": "aula-5c4-cubo-5c",
     "room": "5C4",
@@ -714,7 +694,7 @@
   },
   {
     "building_id": "cubo-14b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "A",
     "place_id": "aula-a-cubo-14b",
     "source_id": "unical-aulas",
@@ -723,7 +703,7 @@
   },
   {
     "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula A",
     "place_id": "aula-a-cubo-15b",
     "room": "A",
@@ -733,7 +713,7 @@
   },
   {
     "building_id": "cubo-20b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA A",
     "place_id": "aula-a-cubo-20b",
     "room": "A",
@@ -744,7 +724,7 @@
   {
     "building_id": "cubo-30a",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula A",
     "place_id": "aula-a-cubo-30a",
     "room": "A",
@@ -754,7 +734,7 @@
   },
   {
     "building_id": "cubo-31c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "A",
     "place_id": "aula-a-cubo-31c",
     "source_id": "unical-aulas",
@@ -764,7 +744,7 @@
   {
     "building_id": "cubo-20b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula A Ling.",
     "place_id": "aula-a-ling-cubo-20b",
     "room": "A Ling.",
@@ -775,7 +755,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "lat": 39.365487,
     "lng": 16.2252684,
     "name": "Aula A G",
@@ -788,7 +768,7 @@
   {
     "building_id": "cubo-18b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Apollo",
     "place_id": "aula-apollo-cubo-18b",
     "room": "Apollo",
@@ -798,7 +778,7 @@
   },
   {
     "building_id": "cubo-17a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Arancio",
     "place_id": "aula-arancio-cubo-17a",
     "room": "Arancio",
@@ -809,7 +789,7 @@
   {
     "building_id": "cubo-17b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula ARES",
     "place_id": "aula-ares-cubo-17b",
     "room": "ARES",
@@ -820,7 +800,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula ARES",
     "place_id": "aula-ares-cubo-28b",
     "room": "ARES",
@@ -830,7 +810,7 @@
   },
   {
     "building_id": "cubo-0b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Arrighi",
     "place_id": "aula-arrighi-cubo-0b",
     "room": "Arrighi",
@@ -841,7 +821,7 @@
   {
     "building_id": "cubo-18b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Athena",
     "place_id": "aula-athena-cubo-18b",
     "room": "Athena",
@@ -851,7 +831,7 @@
   },
   {
     "building_id": "cubo-15a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aule Conferenze",
     "place_id": "aula-aule-conferenze-cubo-15a",
     "source_id": "unical-aulas",
@@ -861,7 +841,7 @@
   {
     "building_id": "cubo-46c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Auletta 46C",
     "place_id": "aula-auletta-46c-cubo-46c",
     "room": "Auletta 46C",
@@ -872,7 +852,7 @@
   {
     "building_id": "cubo-1c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Auletta Bilbao",
     "place_id": "aula-auletta-bilbao-cubo-1c",
     "room": "Auletta Bilbao",
@@ -883,7 +863,7 @@
   {
     "building_id": "cubo-1c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Auletta Chaplin",
     "place_id": "aula-auletta-chaplin-cubo-1c",
     "room": "Auletta Chaplin",
@@ -894,7 +874,7 @@
   {
     "building_id": "cubo-1c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Auletta Douglas-Calabria",
     "place_id": "aula-auletta-douglas-calabria-cubo-1c",
     "room": "Auletta Douglas-Calabria",
@@ -905,7 +885,7 @@
   {
     "building_id": "cubo-1c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Auletta Orientale",
     "place_id": "aula-auletta-orientale-cubo-1c",
     "room": "Auletta Orientale",
@@ -915,7 +895,7 @@
   },
   {
     "building_id": "cubo-1c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULETTA SEMINARI",
     "place_id": "aula-auletta-seminari-cubo-1c",
     "source_id": "unical-aulas",
@@ -925,7 +905,7 @@
   {
     "building_id": "cubo-1c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Auletta van Gogh",
     "place_id": "aula-auletta-van-gogh-cubo-1c",
     "room": "Auletta van Gogh",
@@ -936,7 +916,7 @@
   {
     "building_id": "cubo-17b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Aurora",
     "place_id": "aula-aurora-cubo-17b",
     "room": "Aurora",
@@ -947,7 +927,7 @@
   {
     "building_id": "cubo-32b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Automatica",
     "place_id": "aula-automatica-cubo-32b",
     "room": "Automatica",
@@ -957,7 +937,7 @@
   },
   {
     "building_id": "cubo-42c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Automatica",
     "place_id": "aula-automatica-cubo-42c",
     "room": "Automatica",
@@ -966,7 +946,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula B",
     "place_id": "aula-b",
     "room": "B",
@@ -977,7 +957,7 @@
   {
     "building_id": "cubo-31c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula B/C",
     "place_id": "aula-b-c-cubo-31c",
     "room": "B/C",
@@ -987,7 +967,7 @@
   },
   {
     "building_id": "cubo-43c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula B (Consolidata)",
     "place_id": "aula-b-consolidata-cubo-43c",
     "room": "B (Consolidata)",
@@ -997,7 +977,7 @@
   },
   {
     "building_id": "cubo-14b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "B",
     "place_id": "aula-b-cubo-14b",
     "source_id": "unical-aulas",
@@ -1006,7 +986,7 @@
   },
   {
     "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula B",
     "place_id": "aula-b-cubo-15b",
     "room": "B",
@@ -1017,7 +997,7 @@
   {
     "building_id": "cubo-15c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula B",
     "place_id": "aula-b-cubo-15c",
     "room": "B",
@@ -1027,7 +1007,7 @@
   },
   {
     "building_id": "cubo-20b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA B",
     "place_id": "aula-b-cubo-20b",
     "room": "B",
@@ -1038,7 +1018,7 @@
   {
     "building_id": "cubo-31c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula B",
     "place_id": "aula-b-cubo-31c",
     "room": "B",
@@ -1049,7 +1029,7 @@
   {
     "building_id": "cubo-20b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula B Ling.",
     "place_id": "aula-b-ling-cubo-20b",
     "room": "B Ling.",
@@ -1060,7 +1040,7 @@
   {
     "building_id": "cubo-4d",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula B5",
     "place_id": "aula-b5-cubo-4d",
     "room": "B5",
@@ -1071,7 +1051,7 @@
   {
     "building_id": "cubo-4d",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula B6",
     "place_id": "aula-b6-cubo-4d",
     "room": "B6",
@@ -1081,7 +1061,7 @@
   },
   {
     "building_id": "cubo-17a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Bianca",
     "place_id": "aula-bianca-cubo-17a",
     "room": "Bianca",
@@ -1090,7 +1070,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Blu",
     "place_id": "aula-blu",
     "room": "Blu",
@@ -1101,7 +1081,7 @@
   {
     "building_id": "cubo-43c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "lat": 39.3661589,
     "lng": 16.2251678,
     "name": "Aula B P",
@@ -1114,7 +1094,7 @@
   {
     "building_id": "cubo-15b",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula C",
     "place_id": "aula-c-cubo-15b",
     "room": "C",
@@ -1125,7 +1105,7 @@
   {
     "building_id": "cubo-32c",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula C1",
     "place_id": "aula-c1-cubo-32c",
     "room": "C1",
@@ -1136,7 +1116,7 @@
   {
     "building_id": "cubo-32c",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula C1, ex CF3",
     "place_id": "aula-c1-ex-cf3-cubo-32c",
     "room": "C1, ex CF3",
@@ -1147,7 +1127,7 @@
   {
     "building_id": "cubo-32c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula C2",
     "place_id": "aula-c2-cubo-32c",
     "room": "C2",
@@ -1158,7 +1138,7 @@
   {
     "building_id": "cubo-32c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula C2, ex CF1",
     "place_id": "aula-c2-ex-cf1-cubo-32c",
     "room": "C2, ex CF1",
@@ -1169,7 +1149,7 @@
   {
     "building_id": "cubo-32c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula C3",
     "place_id": "aula-c3-cubo-32c",
     "room": "C3",
@@ -1180,7 +1160,7 @@
   {
     "building_id": "cubo-32c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula C3, ex CF2",
     "place_id": "aula-c3-ex-cf2-cubo-32c",
     "room": "C3, ex CF2",
@@ -1190,7 +1170,7 @@
   },
   {
     "building_id": "centro-radiotelevisivo",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "lat": 39.3561912,
     "lng": 16.2250283,
     "name": "Aula Caldora",
@@ -1201,7 +1181,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Centro di Simulazione ( MED-TD )",
     "place_id": "aula-centro-di-simulazione-med-td",
     "room": "Centro di Simulazione ( MED-TD )",
@@ -1212,7 +1192,7 @@
   {
     "building_id": "cubo-15a",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CH-15-6A-3T",
     "place_id": "aula-ch-15-6a-3t-cubo-15a",
     "room": "CH-15-6A-3T",
@@ -1222,7 +1202,7 @@
   },
   {
     "building_id": "cubo-15c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CH-15-6A-3T",
     "place_id": "aula-ch-15-6a-3t-cubo-15c",
     "source_id": "unical-aulas",
@@ -1232,7 +1212,7 @@
   {
     "building_id": "cubo-15b",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CH-15-6B-1M",
     "place_id": "aula-ch-15-6b-1m-cubo-15b",
     "room": "CH-15-6B-1M",
@@ -1242,7 +1222,7 @@
   },
   {
     "building_id": "cubo-15c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CH-15-6B-1M",
     "place_id": "aula-ch-15-6b-1m-cubo-15c",
     "source_id": "unical-aulas",
@@ -1252,7 +1232,7 @@
   {
     "building_id": "cubo-15a",
     "floor": "Settimo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CH-15-7A",
     "place_id": "aula-ch-15-7a-cubo-15a",
     "room": "CH-15-7A",
@@ -1262,7 +1242,7 @@
   },
   {
     "building_id": "cubo-15c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CH-15-7A",
     "place_id": "aula-ch-15-7a-cubo-15c",
     "source_id": "unical-aulas",
@@ -1272,7 +1252,7 @@
   {
     "building_id": "cubo-17a",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CH-17-6A-2T",
     "place_id": "aula-ch-17-6a-2t-cubo-17a",
     "room": "CH-17-6A-2T",
@@ -1282,7 +1262,7 @@
   },
   {
     "building_id": "cubo-17c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CH-17-6A-2T",
     "place_id": "aula-ch-17-6a-2t-cubo-17c",
     "source_id": "unical-aulas",
@@ -1292,7 +1272,7 @@
   {
     "building_id": "cubo-17b",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CH-17-6B-2M",
     "place_id": "aula-ch-17-6b-2m-cubo-17b",
     "room": "CH-17-6B-2M",
@@ -1302,7 +1282,7 @@
   },
   {
     "building_id": "cubo-17c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CH-17-6B-2M",
     "place_id": "aula-ch-17-6b-2m-cubo-17c",
     "source_id": "unical-aulas",
@@ -1312,7 +1292,7 @@
   {
     "building_id": "cubo-17a",
     "floor": "Settimo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CH-17-7A-1T",
     "place_id": "aula-ch-17-7a-1t-cubo-17a",
     "room": "CH-17-7A-1T",
@@ -1322,7 +1302,7 @@
   },
   {
     "building_id": "cubo-17c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CH-17-7A-1T",
     "place_id": "aula-ch-17-7a-1t-cubo-17c",
     "source_id": "unical-aulas",
@@ -1332,7 +1312,7 @@
   {
     "building_id": "cubo-17b",
     "floor": "Settimo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CH-17-7B",
     "place_id": "aula-ch-17-7b-cubo-17b",
     "room": "CH-17-7B",
@@ -1342,7 +1322,7 @@
   },
   {
     "building_id": "cubo-17c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CH-17-7B",
     "place_id": "aula-ch-17-7b-cubo-17c",
     "source_id": "unical-aulas",
@@ -1350,7 +1330,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Circolare",
     "place_id": "aula-circolare",
     "room": "Circolare",
@@ -1360,7 +1340,7 @@
   },
   {
     "building_id": "cla-centro-linguistico-d-ateneo",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CLA",
     "place_id": "aula-cla",
     "room": "CLA",
@@ -1371,7 +1351,7 @@
   {
     "building_id": "cubo-30b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Collaborativa",
     "place_id": "aula-collaborativa-cubo-30b",
     "room": "Collaborativa",
@@ -1381,7 +1361,7 @@
   },
   {
     "building_id": "cubo-2c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CONSOLIDATA 1",
     "place_id": "aula-consolidata-1-cubo-2c",
     "room": "CONSOLIDATA 1",
@@ -1391,7 +1371,7 @@
   },
   {
     "building_id": "cubo-13c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CONSOLIDATA 13C1",
     "place_id": "aula-consolidata-13c1-cubo-13c",
     "source_id": "unical-aulas",
@@ -1400,7 +1380,7 @@
   },
   {
     "building_id": "cubo-16c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CONSOLIDATA 16C1",
     "place_id": "aula-consolidata-16c1-cubo-16c",
     "source_id": "unical-aulas",
@@ -1409,7 +1389,7 @@
   },
   {
     "building_id": "cubo-19b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Consolidata 19B2-F. Solano",
     "place_id": "aula-consolidata-19b2-f-solano-cubo-19b",
     "source_id": "unical-aulas",
@@ -1418,7 +1398,7 @@
   },
   {
     "building_id": "cubo-2b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CONSOLIDATA 2",
     "place_id": "aula-consolidata-2-cubo-2b",
     "room": "CONSOLIDATA 2",
@@ -1428,7 +1408,7 @@
   },
   {
     "building_id": "cubo-29b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Consolidata 29B1-D. Dolci",
     "place_id": "aula-consolidata-29b1-d-dolci-cubo-29b",
     "source_id": "unical-aulas",
@@ -1437,7 +1417,7 @@
   },
   {
     "building_id": "cubo-29c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Consolidata 29C1-Iris",
     "place_id": "aula-consolidata-29c1-iris-cubo-29c",
     "source_id": "unical-aulas",
@@ -1446,7 +1426,7 @@
   },
   {
     "building_id": "cubo-29c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Consolidata 29C2",
     "place_id": "aula-consolidata-29c2-cubo-29c",
     "source_id": "unical-aulas",
@@ -1455,7 +1435,7 @@
   },
   {
     "building_id": "cubo-2b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CONSOLIDATA 2B",
     "place_id": "aula-consolidata-2b-cubo-2b",
     "source_id": "unical-aulas",
@@ -1464,7 +1444,7 @@
   },
   {
     "building_id": "cubo-2c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CONSOLIDATA 2C",
     "place_id": "aula-consolidata-2c-cubo-2c",
     "source_id": "unical-aulas",
@@ -1473,7 +1453,7 @@
   },
   {
     "building_id": "cubo-16c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CONSOLIDATA 3",
     "place_id": "aula-consolidata-3-cubo-16c",
     "room": "CONSOLIDATA 3",
@@ -1483,7 +1463,7 @@
   },
   {
     "building_id": "cubo-32b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Consolidata 32B1",
     "place_id": "aula-consolidata-32b1-cubo-32b",
     "source_id": "unical-aulas",
@@ -1492,7 +1472,7 @@
   },
   {
     "building_id": "cubo-32c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Consolidata 32C1",
     "place_id": "aula-consolidata-32c1-cubo-32c",
     "source_id": "unical-aulas",
@@ -1501,7 +1481,7 @@
   },
   {
     "building_id": "cubo-5b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CONSOLIDATA 4",
     "place_id": "aula-consolidata-4-cubo-5b",
     "room": "CONSOLIDATA 4",
@@ -1511,7 +1491,7 @@
   },
   {
     "building_id": "cubo-40b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Consolidata 40B1-DINCI",
     "place_id": "aula-consolidata-40b1-dinci-cubo-40b",
     "source_id": "unical-aulas",
@@ -1520,7 +1500,7 @@
   },
   {
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Consolidata 43B",
     "place_id": "aula-consolidata-43b",
     "room": "Consolidata 43B",
@@ -1530,7 +1510,7 @@
   },
   {
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Consolidata 43B1-P. Caparrini",
     "place_id": "aula-consolidata-43b1-p-caparrini-cubo-43b",
     "source_id": "unical-aulas",
@@ -1539,7 +1519,7 @@
   },
   {
     "building_id": "cubo-43c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Consolidata 43C1",
     "place_id": "aula-consolidata-43c1-cubo-43c",
     "source_id": "unical-aulas",
@@ -1548,7 +1528,7 @@
   },
   {
     "building_id": "cubo-13c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CONSOLIDATA 5",
     "place_id": "aula-consolidata-5-cubo-13c",
     "room": "CONSOLIDATA 5",
@@ -1558,7 +1538,7 @@
   },
   {
     "building_id": "cubo-5b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "CONSOLIDATA 5B",
     "place_id": "aula-consolidata-5b-cubo-5b",
     "source_id": "unical-aulas",
@@ -1566,7 +1546,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Consolidata B",
     "place_id": "aula-consolidata-b",
     "room": "Consolidata B",
@@ -1576,7 +1556,7 @@
   },
   {
     "building_id": "cubo-40b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula consolidata)",
     "place_id": "aula-consolidata-cubo-40b",
     "room": "consolidata)",
@@ -1586,7 +1566,7 @@
   },
   {
     "building_id": "cubo-17a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Corallo",
     "place_id": "aula-corallo-cubo-17a",
     "room": "Corallo",
@@ -1596,7 +1576,7 @@
   },
   {
     "building_id": "cubo-6c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Covello",
     "place_id": "aula-covello-cubo-6c",
     "room": "Covello",
@@ -1607,7 +1587,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO40C",
     "place_id": "aula-cubo40c-cubo-40c",
     "room": "CUBO40C",
@@ -1618,7 +1598,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO41B",
     "place_id": "aula-cubo41b-cubo-40c",
     "room": "CUBO41B",
@@ -1628,7 +1608,7 @@
   },
   {
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO41B",
     "place_id": "aula-cubo41b-cubo-41b",
     "room": "CUBO41B",
@@ -1639,7 +1619,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO41C",
     "place_id": "aula-cubo41c-cubo-40c",
     "room": "CUBO41C",
@@ -1649,7 +1629,7 @@
   },
   {
     "building_id": "cubo-41c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO41C",
     "place_id": "aula-cubo41c-cubo-41c",
     "room": "CUBO41C",
@@ -1660,7 +1640,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO42C",
     "place_id": "aula-cubo42c-cubo-40c",
     "room": "CUBO42C",
@@ -1670,7 +1650,7 @@
   },
   {
     "building_id": "cubo-42c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO42C",
     "place_id": "aula-cubo42c-cubo-42c",
     "room": "CUBO42C",
@@ -1681,7 +1661,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO43B",
     "place_id": "aula-cubo43b-cubo-40c",
     "room": "CUBO43B",
@@ -1691,7 +1671,7 @@
   },
   {
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO43B",
     "place_id": "aula-cubo43b-cubo-43b",
     "room": "CUBO43B",
@@ -1702,7 +1682,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO43C",
     "place_id": "aula-cubo43c-cubo-40c",
     "room": "CUBO43C",
@@ -1712,7 +1692,7 @@
   },
   {
     "building_id": "cubo-43c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO43C",
     "place_id": "aula-cubo43c-cubo-43c",
     "room": "CUBO43C",
@@ -1723,7 +1703,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO44C",
     "place_id": "aula-cubo44c-cubo-40c",
     "room": "CUBO44C",
@@ -1733,7 +1713,7 @@
   },
   {
     "building_id": "cubo-44c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO44C",
     "place_id": "aula-cubo44c-cubo-44c",
     "room": "CUBO44C",
@@ -1744,7 +1724,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO44D",
     "place_id": "aula-cubo44d-cubo-40c",
     "room": "CUBO44D",
@@ -1754,7 +1734,7 @@
   },
   {
     "building_id": "cubo-44d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO44D",
     "place_id": "aula-cubo44d-cubo-44d",
     "room": "CUBO44D",
@@ -1765,7 +1745,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO45C",
     "place_id": "aula-cubo45c-cubo-40c",
     "room": "CUBO45C",
@@ -1775,7 +1755,7 @@
   },
   {
     "building_id": "cubo-45c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO45C",
     "place_id": "aula-cubo45c-cubo-45c",
     "room": "CUBO45C",
@@ -1786,7 +1766,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO45D",
     "place_id": "aula-cubo45d-cubo-40c",
     "room": "CUBO45D",
@@ -1796,7 +1776,7 @@
   },
   {
     "building_id": "cubo-45d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO45D",
     "place_id": "aula-cubo45d-cubo-45d",
     "room": "CUBO45D",
@@ -1807,7 +1787,7 @@
   {
     "building_id": "cubo-40c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO46C",
     "place_id": "aula-cubo46c-cubo-40c",
     "room": "CUBO46C",
@@ -1817,7 +1797,7 @@
   },
   {
     "building_id": "cubo-46c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula CUBO46C",
     "place_id": "aula-cubo46c-cubo-46c",
     "room": "CUBO46C",
@@ -1828,7 +1808,7 @@
   {
     "building_id": "cubo-31c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula D",
     "place_id": "aula-d-cubo-31c",
     "room": "D",
@@ -1838,7 +1818,7 @@
   },
   {
     "building_id": "cubo-17b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "DAMS",
     "place_id": "aula-dams-cubo-17b",
     "source_id": "unical-aulas",
@@ -1848,7 +1828,7 @@
   {
     "building_id": "cubo-31a",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DEA",
     "place_id": "aula-dea-cubo-31a",
     "room": "DEA",
@@ -1858,7 +1838,7 @@
   },
   {
     "building_id": "cubo-42c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula di automatica",
     "place_id": "aula-di-automatica-cubo-42c",
     "room": "di automatica",
@@ -1868,7 +1848,7 @@
   },
   {
     "building_id": "cubo-40c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DIAm A",
     "place_id": "aula-diam-a-cubo-40c",
     "room": "DIAm A",
@@ -1878,7 +1858,7 @@
   },
   {
     "building_id": "cubo-42b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DIAm B",
     "place_id": "aula-diam-b-cubo-42b",
     "room": "DIAm B",
@@ -1888,7 +1868,7 @@
   },
   {
     "building_id": "cubo-42b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "DIAM - B EXDS9",
     "place_id": "aula-diam-b-exds9-cubo-42b",
     "source_id": "unical-aulas",
@@ -1897,7 +1877,7 @@
   },
   {
     "building_id": "cubo-42b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DIAm C",
     "place_id": "aula-diam-c-cubo-42b",
     "room": "DIAm C",
@@ -1907,7 +1887,7 @@
   },
   {
     "building_id": "cubo-42b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "DIAM - C EX DS10",
     "place_id": "aula-diam-c-ex-ds10-cubo-42b",
     "source_id": "unical-aulas",
@@ -1916,7 +1896,7 @@
   },
   {
     "building_id": "cubo-42b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DIAm D",
     "place_id": "aula-diam-d-cubo-42b",
     "room": "DIAm D",
@@ -1926,7 +1906,7 @@
   },
   {
     "building_id": "cubo-42b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "DIAM - D EX DS12",
     "place_id": "aula-diam-d-ex-ds12-cubo-42b",
     "source_id": "unical-aulas",
@@ -1936,7 +1916,7 @@
   {
     "building_id": "cubo-39c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DIAm E",
     "place_id": "aula-diam-e-cubo-39c",
     "room": "DIAm E",
@@ -1946,7 +1926,7 @@
   },
   {
     "building_id": "cubo-39c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DIAm F",
     "place_id": "aula-diam-f-cubo-39c",
     "room": "DIAm F",
@@ -1956,7 +1936,7 @@
   },
   {
     "building_id": "cubo-39c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DIAm G",
     "place_id": "aula-diam-g-cubo-39c",
     "room": "DIAm G",
@@ -1966,7 +1946,7 @@
   },
   {
     "building_id": "cubo-39c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DIAm H",
     "place_id": "aula-diam-h-cubo-39c",
     "room": "DIAm H",
@@ -1976,7 +1956,7 @@
   },
   {
     "building_id": "cubo-42c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Didattica del Giudalab cubo 42C- 8 PIANO",
     "place_id": "aula-didattica-del-giudalab-cubo-42c-8-piano-cubo-42c",
     "room": "Didattica del Giudalab cubo 42C- 8 PIANO",
@@ -1986,7 +1966,7 @@
   },
   {
     "building_id": "cubo-17b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DIONISO",
     "place_id": "aula-dioniso-cubo-17b",
     "room": "DIONISO",
@@ -1997,7 +1977,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DIONISO",
     "place_id": "aula-dioniso-cubo-28b",
     "room": "DIONISO",
@@ -2007,7 +1987,7 @@
   },
   {
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Dolci",
     "place_id": "aula-dolci",
     "room": "Dolci",
@@ -2017,7 +1997,7 @@
   },
   {
     "building_id": "cubo-44b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DS11",
     "place_id": "aula-ds11-cubo-44b",
     "room": "DS11",
@@ -2028,7 +2008,7 @@
   {
     "building_id": "cubo-41b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DS3",
     "place_id": "aula-ds3-cubo-41b",
     "room": "DS3",
@@ -2039,7 +2019,7 @@
   {
     "building_id": "cubo-41b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DS4",
     "place_id": "aula-ds4-cubo-41b",
     "room": "DS4",
@@ -2049,7 +2029,7 @@
   },
   {
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DS4 (Piano Terra)",
     "place_id": "aula-ds4-piano-terra",
     "room": "DS4 (Piano Terra)",
@@ -2059,7 +2039,7 @@
   },
   {
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DS5",
     "place_id": "aula-ds5-cubo-41b",
     "room": "DS5",
@@ -2069,7 +2049,7 @@
   },
   {
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DS6",
     "place_id": "aula-ds6-cubo-41b",
     "room": "DS6",
@@ -2079,7 +2059,7 @@
   },
   {
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DS7",
     "place_id": "aula-ds7-cubo-41b",
     "room": "DS7",
@@ -2089,7 +2069,7 @@
   },
   {
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula DS8",
     "place_id": "aula-ds8-cubo-41b",
     "room": "DS8",
@@ -2098,7 +2078,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "aula e",
     "place_id": "aula-e",
     "room": "e",
@@ -2109,7 +2089,7 @@
   {
     "building_id": "cubo-15b",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula E",
     "place_id": "aula-e-cubo-15b",
     "room": "E",
@@ -2120,7 +2100,7 @@
   {
     "building_id": "cubo-20b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "aula e",
     "place_id": "aula-e-cubo-20b",
     "room": "e",
@@ -2130,7 +2110,7 @@
   },
   {
     "building_id": "cubo-2c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "aula e",
     "place_id": "aula-e-cubo-2c",
     "room": "e",
@@ -2141,7 +2121,7 @@
   {
     "building_id": "cubo-30c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula E",
     "place_id": "aula-e-cubo-30c",
     "room": "E",
@@ -2152,7 +2132,7 @@
   {
     "building_id": "cubo-39b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "aula e",
     "place_id": "aula-e-cubo-39b",
     "room": "e",
@@ -2163,7 +2143,7 @@
   {
     "building_id": "cubo-30c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula E/F",
     "place_id": "aula-e-f-cubo-30c",
     "room": "E/F",
@@ -2174,7 +2154,7 @@
   {
     "building_id": "cubo-20b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula E Ling.",
     "place_id": "aula-e-ling-cubo-20b",
     "room": "E Ling.",
@@ -2184,7 +2164,7 @@
   },
   {
     "building_id": "cubo-1d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula EP1",
     "place_id": "aula-ep1-cubo-1d",
     "room": "EP1",
@@ -2194,7 +2174,7 @@
   },
   {
     "building_id": "cubo-1d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula EP2",
     "place_id": "aula-ep2-cubo-1d",
     "room": "EP2",
@@ -2204,7 +2184,7 @@
   },
   {
     "building_id": "cubo-1d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula EP3",
     "place_id": "aula-ep3-cubo-1d",
     "room": "EP3",
@@ -2214,7 +2194,7 @@
   },
   {
     "building_id": "cubo-1d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula EP4",
     "place_id": "aula-ep4-cubo-1d",
     "room": "EP4",
@@ -2224,7 +2204,7 @@
   },
   {
     "building_id": "cubo-1d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula EP5",
     "place_id": "aula-ep5-cubo-1d",
     "room": "EP5",
@@ -2234,7 +2214,7 @@
   },
   {
     "building_id": "cubo-1d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula EP6",
     "place_id": "aula-ep6-cubo-1d",
     "room": "EP6",
@@ -2243,7 +2223,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "ex biblioteca Brandemayer",
     "place_id": "aula-ex-biblioteca-brandemayer",
     "source_id": "unical-aulas",
@@ -2252,7 +2232,7 @@
   },
   {
     "building_id": "cubo-14b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "F",
     "place_id": "aula-f-cubo-14b",
     "source_id": "unical-aulas",
@@ -2261,7 +2241,7 @@
   },
   {
     "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula F",
     "place_id": "aula-f-cubo-15b",
     "room": "F",
@@ -2271,7 +2251,7 @@
   },
   {
     "building_id": "cubo-20b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA F",
     "place_id": "aula-f-cubo-20b",
     "room": "F",
@@ -2282,7 +2262,7 @@
   {
     "building_id": "cubo-20b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula F Ling.",
     "place_id": "aula-f-ling-cubo-20b",
     "room": "F Ling.",
@@ -2292,7 +2272,7 @@
   },
   {
     "building_id": "cubo-18c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula F 1",
     "place_id": "aula-f1-cubo-18c",
     "room": "F 1",
@@ -2303,7 +2283,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula F 1",
     "place_id": "aula-f1-cubo-28b",
     "room": "F 1",
@@ -2313,7 +2293,7 @@
   },
   {
     "building_id": "cubo-18c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula F 2",
     "place_id": "aula-f2-cubo-18c",
     "room": "F 2",
@@ -2324,7 +2304,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula F 2",
     "place_id": "aula-f2-cubo-28b",
     "room": "F 2",
@@ -2334,7 +2314,7 @@
   },
   {
     "building_id": "cubo-18c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula F 3",
     "place_id": "aula-f3-cubo-18c",
     "room": "F 3",
@@ -2345,7 +2325,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula F 3",
     "place_id": "aula-f3-cubo-28b",
     "room": "F 3",
@@ -2356,7 +2336,7 @@
   {
     "building_id": "cubo-27b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FILOL 1",
     "place_id": "aula-filol-1-cubo-27b",
     "room": "FILOL 1",
@@ -2367,7 +2347,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FILOL 1",
     "place_id": "aula-filol-1-cubo-28b",
     "room": "FILOL 1",
@@ -2378,7 +2358,7 @@
   {
     "building_id": "cubo-27b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FILOL 2",
     "place_id": "aula-filol-2-cubo-27b",
     "room": "FILOL 2",
@@ -2389,7 +2369,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FILOL 2",
     "place_id": "aula-filol-2-cubo-28b",
     "room": "FILOL 2",
@@ -2400,7 +2380,7 @@
   {
     "building_id": "cubo-27b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FILOL 3",
     "place_id": "aula-filol-3-cubo-27b",
     "room": "FILOL 3",
@@ -2411,7 +2391,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FILOL 3",
     "place_id": "aula-filol-3-cubo-28b",
     "room": "FILOL 3",
@@ -2422,7 +2402,7 @@
   {
     "building_id": "cubo-27b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FILOL 4",
     "place_id": "aula-filol-4-cubo-27b",
     "room": "FILOL 4",
@@ -2433,7 +2413,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FILOL 4",
     "place_id": "aula-filol-4-cubo-28b",
     "room": "FILOL 4",
@@ -2444,7 +2424,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FILOL 5",
     "place_id": "aula-filol-5-cubo-28b",
     "room": "FILOL 5",
@@ -2455,7 +2435,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FILOL 9",
     "place_id": "aula-filol-9-cubo-28b",
     "room": "FILOL 9",
@@ -2466,7 +2446,7 @@
   {
     "building_id": "cubo-30c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FIS1",
     "place_id": "aula-fis1-cubo-30c",
     "room": "FIS1",
@@ -2477,7 +2457,7 @@
   {
     "building_id": "cubo-30c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FIS2",
     "place_id": "aula-fis2-cubo-30c",
     "room": "FIS2",
@@ -2488,7 +2468,7 @@
   {
     "building_id": "cubo-30c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FIS3",
     "place_id": "aula-fis3-cubo-30c",
     "room": "FIS3",
@@ -2499,7 +2479,7 @@
   {
     "building_id": "cubo-30c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula FIS4",
     "place_id": "aula-fis4-cubo-30c",
     "room": "FIS4",
@@ -2509,7 +2489,7 @@
   },
   {
     "building_id": "cubo-14b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "G",
     "place_id": "aula-g-cubo-14b",
     "source_id": "unical-aulas",
@@ -2519,7 +2499,7 @@
   {
     "building_id": "cubo-30c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula G",
     "place_id": "aula-g-cubo-30c",
     "room": "G",
@@ -2530,7 +2510,7 @@
   {
     "building_id": "cubo-21b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula G (LEONE)",
     "place_id": "aula-g-leone-cubo-21b",
     "room": "G (LEONE)",
@@ -2541,7 +2521,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula G (LEONE)",
     "place_id": "aula-g-leone-cubo-28b",
     "room": "G (LEONE)",
@@ -2550,7 +2530,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula G1",
     "place_id": "aula-g1",
     "room": "G1",
@@ -2559,7 +2539,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula G2",
     "place_id": "aula-g2",
     "room": "G2",
@@ -2568,7 +2548,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula G3",
     "place_id": "aula-g3",
     "room": "G3",
@@ -2577,7 +2557,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula G4",
     "place_id": "aula-g4",
     "room": "G4",
@@ -2586,7 +2566,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Gialla",
     "place_id": "aula-gialla",
     "room": "Gialla",
@@ -2595,7 +2575,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Gialla - A (superiore)",
     "place_id": "aula-gialla-a-superiore",
     "room": "Gialla - A (superiore)",
@@ -2604,7 +2584,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Gialla - B (inferiore)",
     "place_id": "aula-gialla-b-inferiore",
     "room": "Gialla - B (inferiore)",
@@ -2615,7 +2595,7 @@
   {
     "building_id": "cubo-0b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Gialla",
     "place_id": "aula-gialla-cubo-0b",
     "room": "Gialla",
@@ -2625,7 +2605,7 @@
   },
   {
     "building_id": "cubo-17a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Gialla",
     "place_id": "aula-gialla-cubo-17a",
     "room": "Gialla",
@@ -2635,7 +2615,7 @@
   },
   {
     "building_id": "cubo-45b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Giannattasio",
     "place_id": "aula-giannattasio-cubo-45b",
     "room": "Giannattasio",
@@ -2645,7 +2625,7 @@
   },
   {
     "building_id": "cubo-46b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Giannattasio",
     "place_id": "aula-giannattasio-cubo-46b",
     "room": "Giannattasio",
@@ -2656,7 +2636,7 @@
   {
     "building_id": "cubo-30b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Gödel (ex MT12)",
     "place_id": "aula-godel-ex-mt12-cubo-30b",
     "room": "Gödel (ex MT12)",
@@ -2666,7 +2646,7 @@
   },
   {
     "building_id": "cubo-3b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "GRAVINA",
     "place_id": "aula-gravina-cubo-3b",
     "source_id": "unical-aulas",
@@ -2674,7 +2654,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula H1",
     "place_id": "aula-h1",
     "room": "H1",
@@ -2683,7 +2663,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula H2",
     "place_id": "aula-h2",
     "room": "H2",
@@ -2692,7 +2672,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula H3",
     "place_id": "aula-h3",
     "room": "H3",
@@ -2701,7 +2681,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula H4",
     "place_id": "aula-h4",
     "room": "H4",
@@ -2712,7 +2692,7 @@
   {
     "building_id": "cubo-18b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Hera",
     "place_id": "aula-hera-cubo-18b",
     "room": "Hera",
@@ -2723,7 +2703,7 @@
   {
     "building_id": "cubo-42d",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula I1",
     "place_id": "aula-i1-cubo-42d",
     "room": "I1",
@@ -2734,7 +2714,7 @@
   {
     "building_id": "cubo-42d",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula I2",
     "place_id": "aula-i2-cubo-42d",
     "room": "I2",
@@ -2745,7 +2725,7 @@
   {
     "building_id": "cubo-42d",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula I3",
     "place_id": "aula-i3-cubo-42d",
     "room": "I3",
@@ -2755,7 +2735,7 @@
   },
   {
     "building_id": "cubo-19b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula IANA",
     "place_id": "aula-iana-cubo-19b",
     "room": "IANA",
@@ -2766,7 +2746,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula IANA",
     "place_id": "aula-iana-cubo-28b",
     "room": "IANA",
@@ -2776,7 +2756,7 @@
   },
   {
     "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Informatica",
     "place_id": "aula-informatica",
     "room": "Informatica",
@@ -2787,7 +2767,7 @@
   {
     "building_id": "cubo-20b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Informatica 1",
     "place_id": "aula-informatica-1-cubo-20b",
     "room": "Informatica 1",
@@ -2798,7 +2778,7 @@
   {
     "building_id": "cubo-31c",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Informatica 1",
     "place_id": "aula-informatica-1-cubo-31c",
     "room": "Informatica 1",
@@ -2809,7 +2789,7 @@
   {
     "building_id": "cubo-20b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Informatica 2",
     "place_id": "aula-informatica-2-cubo-20b",
     "room": "Informatica 2",
@@ -2820,7 +2800,7 @@
   {
     "building_id": "cubo-31c",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Informatica 2",
     "place_id": "aula-informatica-2-cubo-31c",
     "room": "Informatica 2",
@@ -2831,7 +2811,7 @@
   {
     "building_id": "cubo-31c",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Informatica 3",
     "place_id": "aula-informatica-3-cubo-31c",
     "room": "Informatica 3",
@@ -2841,7 +2821,7 @@
   },
   {
     "building_id": "cubo-15c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Informatica Chimica",
     "place_id": "aula-informatica-chimica-cubo-15c",
     "source_id": "unical-aulas",
@@ -2850,7 +2830,7 @@
   },
   {
     "building_id": "cubo-28a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula INFORMATICA CSDIM",
     "place_id": "aula-informatica-csdim-cubo-28a",
     "room": "INFORMATICA CSDIM",
@@ -2859,19 +2839,9 @@
     "type": "AULA"
   },
   {
-    "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "Aula Informatica",
-    "place_id": "aula-informatica-cubo-15b",
-    "room": "Informatica",
-    "source_id": "unical-aulas",
-    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/",
-    "type": "AULA"
-  },
-  {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula IRIS",
     "place_id": "aula-iris-cubo-28b",
     "room": "IRIS",
@@ -2881,7 +2851,7 @@
   },
   {
     "building_id": "cubo-29c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula IRIS",
     "place_id": "aula-iris-cubo-29c",
     "room": "IRIS",
@@ -2891,18 +2861,8 @@
   },
   {
     "building_id": "cubo-4a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "Aula L1",
-    "place_id": "aula-l1",
-    "room": "L1",
-    "source_id": "unical-aulas",
-    "source_url": "https://dispes.unical.it/dipartimento/organizzazione/strutture/",
-    "type": "AULA"
-  },
-  {
-    "building_id": "cubo-4a",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula L1",
     "place_id": "aula-l1-cubo-4a",
     "room": "L1",
@@ -2912,7 +2872,7 @@
   },
   {
     "building_id": "cubo-4a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula L2",
     "place_id": "aula-l2",
     "room": "L2",
@@ -2922,18 +2882,8 @@
   },
   {
     "building_id": "cubo-4a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "Aula L2",
-    "place_id": "aula-l2-cubo-4a",
-    "room": "L2",
-    "source_id": "unical-aulas",
-    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/",
-    "type": "AULA"
-  },
-  {
-    "building_id": "cubo-4a",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula L3",
     "place_id": "aula-l3-cubo-4a",
     "room": "L3",
@@ -2943,7 +2893,7 @@
   },
   {
     "building_id": "cubo-4a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula L4",
     "place_id": "aula-l4-cubo-4a",
     "room": "L4",
@@ -2954,7 +2904,7 @@
   {
     "building_id": "cubo-4a",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula L5",
     "place_id": "aula-l5-cubo-4a",
     "room": "L5",
@@ -2964,7 +2914,7 @@
   },
   {
     "building_id": "cubo-15c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Lab 15C_1P",
     "place_id": "aula-lab-15c-1p-cubo-15c",
     "source_id": "unical-aulas",
@@ -2973,7 +2923,7 @@
   },
   {
     "building_id": "cubo-15c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Lab 15C_2P",
     "place_id": "aula-lab-15c-2p-cubo-15c",
     "source_id": "unical-aulas",
@@ -2982,7 +2932,7 @@
   },
   {
     "building_id": "cubo-15c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Lab 15C_3P",
     "place_id": "aula-lab-15c-3p-cubo-15c",
     "source_id": "unical-aulas",
@@ -2991,7 +2941,7 @@
   },
   {
     "building_id": "cubo-15c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Lab 15C_5P",
     "place_id": "aula-lab-15c-5p-cubo-15c",
     "source_id": "unical-aulas",
@@ -3000,7 +2950,7 @@
   },
   {
     "building_id": "cubo-17c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Lab 17C_5P",
     "place_id": "aula-lab-17c-5p-cubo-17c",
     "source_id": "unical-aulas",
@@ -3009,7 +2959,7 @@
   },
   {
     "building_id": "cubo-16c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula LAB16C",
     "place_id": "aula-lab16c-cubo-16c",
     "room": "LAB16C",
@@ -3019,7 +2969,7 @@
   },
   {
     "building_id": "cubo-30a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula LAB30A",
     "place_id": "aula-lab30a-cubo-30a",
     "room": "LAB30A",
@@ -3029,7 +2979,7 @@
   },
   {
     "building_id": "cubo-31a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula LAB31A",
     "place_id": "aula-lab31a-cubo-31a",
     "room": "LAB31A",
@@ -3039,7 +2989,7 @@
   },
   {
     "building_id": "cubo-31b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula LAB31B",
     "place_id": "aula-lab31b-cubo-31b",
     "room": "LAB31B",
@@ -3050,7 +3000,7 @@
   {
     "building_id": "cubo-40b",
     "floor": "Settimo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula LabInfo Laboratorio didattico Area Ingegneria",
     "place_id": "aula-labinfo-laboratorio-didattico-area-ingegneria-cubo-40b",
     "room": "LabInfo Laboratorio didattico Area Ingegneria",
@@ -3060,7 +3010,7 @@
   },
   {
     "building_id": "cubo-40c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "LABINFO40B - Sala A",
     "place_id": "aula-labinfo40b-sala-a-cubo-40c",
     "source_id": "unical-aulas",
@@ -3069,7 +3019,7 @@
   },
   {
     "building_id": "cubo-40b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "LABINFO40B - Sala B",
     "place_id": "aula-labinfo40b-sala-b-cubo-40b",
     "source_id": "unical-aulas",
@@ -3078,7 +3028,7 @@
   },
   {
     "building_id": "cubo-42d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "LABINFO42D",
     "place_id": "aula-labinfo42d-cubo-42d",
     "source_id": "unical-aulas",
@@ -3087,7 +3037,7 @@
   },
   {
     "building_id": "cubo-29b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "LABORATORIO 29 B PONTE CARRABILE",
     "place_id": "aula-laboratorio-29-b-ponte-carrabile-cubo-29b",
     "source_id": "unical-aulas",
@@ -3095,7 +3045,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio A",
     "place_id": "aula-laboratorio-a",
     "source_id": "unical-aulas",
@@ -3103,7 +3053,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio A Microbiologia, Igiene e Sanità Pubblica",
     "place_id": "aula-laboratorio-a-microbiologia-igiene-e-sanita-pubblica",
     "source_id": "unical-aulas",
@@ -3112,7 +3062,7 @@
   },
   {
     "building_id": "cubo-17b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio audiovisivo “Raul Ruiz”",
     "place_id": "aula-laboratorio-audiovisivo-raul-ruiz-cubo-17b",
     "source_id": "unical-aulas",
@@ -3120,7 +3070,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio B",
     "place_id": "aula-laboratorio-b",
     "source_id": "unical-aulas",
@@ -3128,7 +3078,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio C",
     "place_id": "aula-laboratorio-c",
     "source_id": "unical-aulas",
@@ -3136,7 +3086,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Chimico B",
     "place_id": "aula-laboratorio-chimico-b",
     "source_id": "unical-aulas",
@@ -3144,7 +3094,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Chimico C",
     "place_id": "aula-laboratorio-chimico-c",
     "source_id": "unical-aulas",
@@ -3153,7 +3103,7 @@
   },
   {
     "building_id": "cubo-15a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio CM2 - Microsonda TEM",
     "place_id": "aula-laboratorio-cm2-microsonda-tem-cubo-15a",
     "source_id": "unical-aulas",
@@ -3162,7 +3112,7 @@
   },
   {
     "building_id": "cubo-15a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio CM2 SEM",
     "place_id": "aula-laboratorio-cm2-sem-cubo-15a",
     "source_id": "unical-aulas",
@@ -3171,7 +3121,7 @@
   },
   {
     "building_id": "cubo-20a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio DI Albanologia",
     "place_id": "aula-laboratorio-di-albanologia-cubo-20a",
     "source_id": "unical-aulas",
@@ -3180,7 +3130,7 @@
   },
   {
     "building_id": "cubo-4d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Biologia Sperimentale 1",
     "place_id": "aula-laboratorio-di-biologia-sperimentale-1-cubo-4d",
     "source_id": "unical-aulas",
@@ -3189,7 +3139,7 @@
   },
   {
     "building_id": "cubo-4d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Biologia Sperimentale 2",
     "place_id": "aula-laboratorio-di-biologia-sperimentale-2-cubo-4d",
     "source_id": "unical-aulas",
@@ -3198,7 +3148,7 @@
   },
   {
     "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Cartografia",
     "place_id": "aula-laboratorio-di-cartografia-cubo-15b",
     "source_id": "unical-aulas",
@@ -3208,7 +3158,7 @@
   {
     "building_id": "cubo-15c",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di CHIMICA ANALITICA",
     "place_id": "aula-laboratorio-di-chimica-analitica-cubo-15c",
     "source_id": "unical-aulas",
@@ -3218,7 +3168,7 @@
   {
     "building_id": "cubo-15c",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di CHIMICA FISICA",
     "place_id": "aula-laboratorio-di-chimica-fisica-cubo-15c",
     "source_id": "unical-aulas",
@@ -3228,7 +3178,7 @@
   {
     "building_id": "cubo-15c",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di CHIMICA GENERALE ED INORGANICA",
     "place_id": "aula-laboratorio-di-chimica-generale-ed-inorganica-cubo-15c",
     "source_id": "unical-aulas",
@@ -3238,7 +3188,7 @@
   {
     "building_id": "cubo-17c",
     "floor": "Quinto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di CHIMICA INORGANICA - PLS",
     "place_id": "aula-laboratorio-di-chimica-inorganica-pls-cubo-17c",
     "source_id": "unical-aulas",
@@ -3248,7 +3198,7 @@
   {
     "building_id": "cubo-15c",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di CHIMICA ORGANICA",
     "place_id": "aula-laboratorio-di-chimica-organica-cubo-15c",
     "source_id": "unical-aulas",
@@ -3258,7 +3208,7 @@
   {
     "building_id": "cubo-15c",
     "floor": "Quinto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di CHIMICA ORGANICA STRUMENTALE",
     "place_id": "aula-laboratorio-di-chimica-organica-strumentale-cubo-15c",
     "source_id": "unical-aulas",
@@ -3267,7 +3217,7 @@
   },
   {
     "building_id": "cubo-14b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Conservazione dei beni culturali",
     "place_id": "aula-laboratorio-di-conservazione-dei-beni-culturali-cubo-14b",
     "source_id": "unical-aulas",
@@ -3276,7 +3226,7 @@
   },
   {
     "building_id": "cubo-31a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di didattica delle scienze empiriche (ex MT15)",
     "place_id": "aula-laboratorio-di-didattica-delle-scienze-empiriche-ex-mt15-cubo-31a",
     "source_id": "unical-aulas",
@@ -3285,7 +3235,7 @@
   },
   {
     "building_id": "cubo-0c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Didattica Multimedial",
     "place_id": "aula-laboratorio-di-didattica-multimedial-cubo-0c",
     "source_id": "unical-aulas",
@@ -3294,7 +3244,7 @@
   },
   {
     "building_id": "cubo-6b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Ecologia ed Ecotossicologia",
     "place_id": "aula-laboratorio-di-ecologia-ed-ecotossicologia-cubo-6b",
     "source_id": "unical-aulas",
@@ -3303,7 +3253,7 @@
   },
   {
     "building_id": "cubo-31c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Elettromagnetismo e Ottica",
     "place_id": "aula-laboratorio-di-elettromagnetismo-e-ottica-cubo-31c",
     "source_id": "unical-aulas",
@@ -3312,7 +3262,7 @@
   },
   {
     "building_id": "cubo-6c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Fisiologia d'Organo e dei Sistemi",
     "place_id": "aula-laboratorio-di-fisiologia-d-organo-e-dei-sistemi-cubo-6c",
     "source_id": "unical-aulas",
@@ -3321,7 +3271,7 @@
   },
   {
     "building_id": "cubo-17b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di fotografia “Saverio Marra”",
     "place_id": "aula-laboratorio-di-fotografia-saverio-marra-cubo-17b",
     "source_id": "unical-aulas",
@@ -3330,7 +3280,7 @@
   },
   {
     "building_id": "cubo-45b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Gestione degli Interventi in Condizioni di Emergenze Ambientali",
     "place_id": "aula-laboratorio-di-gestione-degli-interventi-in-condizioni-di-emergenze-ambientali-cubo-45b",
     "source_id": "unical-aulas",
@@ -3339,7 +3289,7 @@
   },
   {
     "building_id": "cubo-44b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Idraulica e Idrologia Urbana (LIU)",
     "place_id": "aula-laboratorio-di-idraulica-e-idrologia-urbana-liu-cubo-44b",
     "source_id": "unical-aulas",
@@ -3349,7 +3299,7 @@
   {
     "building_id": "cubo-15c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di INFORMATICA CHIMICA",
     "place_id": "aula-laboratorio-di-informatica-chimica-cubo-15c",
     "source_id": "unical-aulas",
@@ -3358,7 +3308,7 @@
   },
   {
     "building_id": "cubo-4c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Informatica",
     "place_id": "aula-laboratorio-di-informatica-cubo-4c",
     "source_id": "unical-aulas",
@@ -3367,7 +3317,7 @@
   },
   {
     "building_id": "cubo-6c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Informatica",
     "place_id": "aula-laboratorio-di-informatica-cubo-6c",
     "source_id": "unical-aulas",
@@ -3376,7 +3326,7 @@
   },
   {
     "building_id": "cubo-39b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Ingegneria dei Materiali e delle Strutture (Stanza 1)",
     "place_id": "aula-laboratorio-di-ingegneria-dei-materiali-e-delle-strutture-stanza-1-cubo-39b",
     "source_id": "unical-aulas",
@@ -3385,7 +3335,7 @@
   },
   {
     "building_id": "cubo-39b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Ingegneria dei Materiali e delle Strutture (Stanza 2)",
     "place_id": "aula-laboratorio-di-ingegneria-dei-materiali-e-delle-strutture-stanza-2-cubo-39b",
     "source_id": "unical-aulas",
@@ -3394,7 +3344,7 @@
   },
   {
     "building_id": "cubo-39b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Ingegneria dei Materiali e delle Strutture (Stanza 3)",
     "place_id": "aula-laboratorio-di-ingegneria-dei-materiali-e-delle-strutture-stanza-3-cubo-39b",
     "source_id": "unical-aulas",
@@ -3403,7 +3353,7 @@
   },
   {
     "building_id": "cubo-39b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Ingegneria dei Materiali e delle Strutture (Stanza 4)",
     "place_id": "aula-laboratorio-di-ingegneria-dei-materiali-e-delle-strutture-stanza-4-cubo-39b",
     "source_id": "unical-aulas",
@@ -3412,7 +3362,7 @@
   },
   {
     "building_id": "cubo-31c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Meccanica e Termodinamica",
     "place_id": "aula-laboratorio-di-meccanica-e-termodinamica-cubo-31c",
     "source_id": "unical-aulas",
@@ -3421,7 +3371,7 @@
   },
   {
     "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Micropaleontologia",
     "place_id": "aula-laboratorio-di-micropaleontologia-cubo-15b",
     "source_id": "unical-aulas",
@@ -3430,7 +3380,7 @@
   },
   {
     "building_id": "cubo-15a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Microscopia Elettronica",
     "place_id": "aula-laboratorio-di-microscopia-elettronica-cubo-15a",
     "source_id": "unical-aulas",
@@ -3439,7 +3389,7 @@
   },
   {
     "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di microscopia Ottica",
     "place_id": "aula-laboratorio-di-microscopia-ottica-cubo-15b",
     "source_id": "unical-aulas",
@@ -3448,7 +3398,7 @@
   },
   {
     "building_id": "cubo-45b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Pianificazione Territoriale",
     "place_id": "aula-laboratorio-di-pianificazione-territoriale-cubo-45b",
     "source_id": "unical-aulas",
@@ -3457,7 +3407,7 @@
   },
   {
     "building_id": "cubo-14b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio di Preparazione Campioni",
     "place_id": "aula-laboratorio-di-preparazione-campioni-cubo-14b",
     "source_id": "unical-aulas",
@@ -3466,7 +3416,7 @@
   },
   {
     "building_id": "cubo-41c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio didattico 41C",
     "place_id": "aula-laboratorio-didattico-41c-cubo-41c",
     "source_id": "unical-aulas",
@@ -3476,7 +3426,7 @@
   {
     "building_id": "cubo-40b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio didattico di Elettronica",
     "place_id": "aula-laboratorio-didattico-di-elettronica-cubo-40b",
     "source_id": "unical-aulas",
@@ -3486,7 +3436,7 @@
   {
     "building_id": "cubo-40b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio didattico di informatica",
     "place_id": "aula-laboratorio-didattico-di-informatica-cubo-40b",
     "source_id": "unical-aulas",
@@ -3495,7 +3445,7 @@
   },
   {
     "building_id": "cubo-3d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio didattico Informatica 3",
     "place_id": "aula-laboratorio-didattico-informatica-3-cubo-3d",
     "source_id": "unical-aulas",
@@ -3504,7 +3454,7 @@
   },
   {
     "building_id": "cubo-46b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "LABORATORIO DIDATTICO INGEGNERIA DEI TRASPORTI",
     "place_id": "aula-laboratorio-didattico-ingegneria-dei-trasporti-cubo-46b",
     "source_id": "unical-aulas",
@@ -3513,7 +3463,7 @@
   },
   {
     "building_id": "cubo-17b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio e-learning",
     "place_id": "aula-laboratorio-e-learning-cubo-17b",
     "source_id": "unical-aulas",
@@ -3522,7 +3472,7 @@
   },
   {
     "building_id": "cubo-15a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio ICP-MS",
     "place_id": "aula-laboratorio-icp-ms-cubo-15a",
     "source_id": "unical-aulas",
@@ -3531,7 +3481,7 @@
   },
   {
     "building_id": "cubo-33c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Idruri Metallici MHES",
     "place_id": "aula-laboratorio-idruri-metallici-mhes-cubo-33c",
     "source_id": "unical-aulas",
@@ -3540,17 +3490,8 @@
   },
   {
     "building_id": "cubo-40b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "Laboratorio Informatica",
-    "place_id": "aula-laboratorio-informatica",
-    "source_id": "unical-aulas",
-    "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/",
-    "type": "AULA"
-  },
-  {
-    "building_id": "cubo-40b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Informatica",
     "place_id": "aula-laboratorio-informatica-cubo-40b",
     "source_id": "unical-aulas",
@@ -3559,7 +3500,7 @@
   },
   {
     "building_id": "cubo-16c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio LAB-16C",
     "place_id": "aula-laboratorio-lab-16c-cubo-16c",
     "source_id": "unical-aulas",
@@ -3569,7 +3510,7 @@
   {
     "building_id": "cubo-30a",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio LAB-30A",
     "place_id": "aula-laboratorio-lab-30a-cubo-30a",
     "source_id": "unical-aulas",
@@ -3579,7 +3520,7 @@
   {
     "building_id": "cubo-31a",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio LAB-31A",
     "place_id": "aula-laboratorio-lab-31a-cubo-31a",
     "source_id": "unical-aulas",
@@ -3589,7 +3530,7 @@
   {
     "building_id": "cubo-31b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio LAB-31B",
     "place_id": "aula-laboratorio-lab-31b-cubo-31b",
     "source_id": "unical-aulas",
@@ -3598,7 +3539,7 @@
   },
   {
     "building_id": "cubo-0b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Multimediale",
     "place_id": "aula-laboratorio-multimediale",
     "source_id": "unical-aulas",
@@ -3606,17 +3547,8 @@
     "type": "AULA"
   },
   {
-    "building_id": "cubo-0b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "Laboratorio multimediale",
-    "place_id": "aula-laboratorio-multimediale-cubo-0b",
-    "source_id": "unical-aulas",
-    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/",
-    "type": "AULA"
-  },
-  {
     "building_id": "cubo-37b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Prove Materiali e Strutture (1)",
     "place_id": "aula-laboratorio-prove-materiali-e-strutture-1-cubo-37b",
     "source_id": "unical-aulas",
@@ -3625,7 +3557,7 @@
   },
   {
     "building_id": "cubo-38b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Prove Materiali e Strutture (2)",
     "place_id": "aula-laboratorio-prove-materiali-e-strutture-2-cubo-38b",
     "source_id": "unical-aulas",
@@ -3634,7 +3566,7 @@
   },
   {
     "building_id": "cubo-38cde",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Prove Materiali e Strutture (3)",
     "place_id": "aula-laboratorio-prove-materiali-e-strutture-3-cubo-38cde",
     "source_id": "unical-aulas",
@@ -3643,7 +3575,7 @@
   },
   {
     "building_id": "cubo-15b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "laboratorio RAMAN",
     "place_id": "aula-laboratorio-raman-cubo-15b",
     "source_id": "unical-aulas",
@@ -3652,7 +3584,7 @@
   },
   {
     "building_id": "cubo-12b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Sezioni Sottili",
     "place_id": "aula-laboratorio-sezioni-sottili-cubo-12b",
     "source_id": "unical-aulas",
@@ -3660,7 +3592,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Sottovia Chimico",
     "place_id": "aula-laboratorio-sottovia-chimico",
     "source_id": "unical-aulas",
@@ -3668,7 +3600,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Sottovia Morfo-Funzionale",
     "place_id": "aula-laboratorio-sottovia-morfo-funzionale",
     "source_id": "unical-aulas",
@@ -3677,7 +3609,7 @@
   },
   {
     "building_id": "cubo-30c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio specialistico in Fisica della Materia",
     "place_id": "aula-laboratorio-specialistico-in-fisica-della-materia-cubo-30c",
     "source_id": "unical-aulas",
@@ -3686,7 +3618,7 @@
   },
   {
     "building_id": "cubo-3d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio statistico-informatico",
     "place_id": "aula-laboratorio-statistico-informatico-cubo-3d",
     "source_id": "unical-aulas",
@@ -3695,7 +3627,7 @@
   },
   {
     "building_id": "cubo-33b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio Superfici ed Interfacce - Fisica e Applicazioni della Soft Matter",
     "place_id": "aula-laboratorio-superfici-ed-interfacce-fisica-e-applicazioni-della-soft-matter-cubo-33b",
     "source_id": "unical-aulas",
@@ -3704,7 +3636,7 @@
   },
   {
     "building_id": "cubo-14b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Laboratorio XRF-XRD",
     "place_id": "aula-laboratorio-xrf-xrd-cubo-14b",
     "source_id": "unical-aulas",
@@ -3714,7 +3646,7 @@
   {
     "building_id": "cubo-44c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula LASER Laboratory for Application of Smart Energy and Renewables",
     "place_id": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c",
     "room": "LASER Laboratory for Application of Smart Energy and Renewables",
@@ -3723,7 +3655,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula LIME Laboratory of Innovation and Management Engineering",
     "place_id": "aula-lime-laboratory-of-innovation-and-management-engineering",
     "room": "LIME Laboratory of Innovation and Management Engineering",
@@ -3733,7 +3665,7 @@
   },
   {
     "building_id": "cla-centro-linguistico-d-ateneo",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula lingue 1 - CLA",
     "place_id": "aula-lingue-1-cla",
     "room": "lingue 1 - CLA",
@@ -3743,7 +3675,7 @@
   },
   {
     "building_id": "cla-centro-linguistico-d-ateneo",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula lingue 2 - CLA",
     "place_id": "aula-lingue-2-cla",
     "room": "lingue 2 - CLA",
@@ -3753,7 +3685,7 @@
   },
   {
     "building_id": "cla-centro-linguistico-d-ateneo",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula lingue 3 - CLA",
     "place_id": "aula-lingue-3-cla",
     "room": "lingue 3 - CLA",
@@ -3763,7 +3695,7 @@
   },
   {
     "building_id": "cla-centro-linguistico-d-ateneo",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula lingue 4 - CLA",
     "place_id": "aula-lingue-4-cla",
     "room": "lingue 4 - CLA",
@@ -3773,7 +3705,7 @@
   },
   {
     "building_id": "cla-centro-linguistico-d-ateneo",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula lingue 5 - CLA",
     "place_id": "aula-lingue-5-cla",
     "room": "lingue 5 - CLA",
@@ -3783,7 +3715,7 @@
   },
   {
     "building_id": "cla-centro-linguistico-d-ateneo",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula lingue 6 - CLA",
     "place_id": "aula-lingue-6-cla",
     "room": "lingue 6 - CLA",
@@ -3792,7 +3724,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula LS1",
     "place_id": "aula-ls1",
     "room": "LS1",
@@ -3801,7 +3733,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula LS3",
     "place_id": "aula-ls3",
     "room": "LS3",
@@ -3812,7 +3744,7 @@
   {
     "building_id": "cubo-21b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula “LUIGI SPEZZAFERRO”",
     "place_id": "aula-luigi-spezzaferro-cubo-21b",
     "room": "“LUIGI SPEZZAFERRO”",
@@ -3823,7 +3755,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula “LUIGI SPEZZAFERRO”",
     "place_id": "aula-luigi-spezzaferro-cubo-28b",
     "room": "“LUIGI SPEZZAFERRO”",
@@ -3834,7 +3766,7 @@
   {
     "building_id": "cubo-15b",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula M",
     "place_id": "aula-m-cubo-15b",
     "room": "M",
@@ -3844,7 +3776,7 @@
   },
   {
     "building_id": "cubo-12c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "M, TERENZI",
     "place_id": "aula-m-terenzi-cubo-12c",
     "source_id": "unical-aulas",
@@ -3853,7 +3785,7 @@
   },
   {
     "building_id": "cubo-44c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula M1",
     "place_id": "aula-m1-cubo-44c",
     "room": "M1",
@@ -3863,7 +3795,7 @@
   },
   {
     "building_id": "cubo-44c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula M2",
     "place_id": "aula-m2-cubo-44c",
     "room": "M2",
@@ -3873,7 +3805,7 @@
   },
   {
     "building_id": "cubo-44c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula M3",
     "place_id": "aula-m3-cubo-44c",
     "room": "M3",
@@ -3882,7 +3814,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula M4 - Aula Seminari - Bagni Studenti - Bag",
     "place_id": "aula-m4-aula-seminari-bagni-studenti-bag",
     "room": "M4 - Aula Seminari - Bagni Studenti - Bag",
@@ -3892,7 +3824,7 @@
   },
   {
     "building_id": "cubo-44c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula M4",
     "place_id": "aula-m4-cubo-44c",
     "room": "M4",
@@ -3903,7 +3835,7 @@
   {
     "building_id": "aula-magna",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "lat": 39.3583149,
     "lng": 16.2258276,
     "name": "Aula Magna",
@@ -3916,7 +3848,7 @@
   {
     "building_id": "cubo-15b",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MAGNA",
     "place_id": "aula-magna-cubo-15b",
     "room": "MAGNA",
@@ -3927,7 +3859,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula “MARIO ALCARO”",
     "place_id": "aula-mario-alcaro-cubo-28b",
     "room": "“MARIO ALCARO”",
@@ -3938,7 +3870,7 @@
   {
     "building_id": "cubo-41b",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Marone)",
     "place_id": "aula-marone-cubo-41b",
     "room": "Marone)",
@@ -3948,7 +3880,7 @@
   },
   {
     "building_id": "cubo-17a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA MARRONE",
     "place_id": "aula-marrone-cubo-17a",
     "room": "MARRONE",
@@ -3959,7 +3891,7 @@
   {
     "building_id": "cubo-45c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Mech-LAB Laboratorio di Ingegneria Meccanica",
     "place_id": "aula-mech-lab-laboratorio-di-ingegneria-meccanica-cubo-45c",
     "room": "Mech-LAB Laboratorio di Ingegneria Meccanica",
@@ -3968,7 +3900,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Medicina Traslazionale",
     "place_id": "aula-medicina-traslazionale",
     "room": "Medicina Traslazionale",
@@ -3979,7 +3911,7 @@
   {
     "building_id": "cubo-39c",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MOD1A",
     "place_id": "aula-mod1a-cubo-39c",
     "room": "MOD1A",
@@ -3990,7 +3922,7 @@
   {
     "building_id": "cubo-39c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MOD2D",
     "place_id": "aula-mod2d-cubo-39c",
     "room": "MOD2D",
@@ -4001,7 +3933,7 @@
   {
     "building_id": "cubo-39c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MOD2E",
     "place_id": "aula-mod2e-cubo-39c",
     "room": "MOD2E",
@@ -4011,7 +3943,7 @@
   },
   {
     "building_id": "cubo-39c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MOD3",
     "place_id": "aula-mod3-cubo-39c",
     "room": "MOD3",
@@ -4022,7 +3954,7 @@
   {
     "building_id": "cubo-39c",
     "floor": "Terzo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MOD3A",
     "place_id": "aula-mod3a",
     "room": "MOD3A",
@@ -4032,17 +3964,7 @@
   },
   {
     "building_id": "cubo-39c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "Aula MOD3A",
-    "place_id": "aula-mod3a-cubo-39c",
-    "room": "MOD3A",
-    "source_id": "unical-aulas",
-    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/",
-    "type": "AULA"
-  },
-  {
-    "building_id": "cubo-39c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MOD4",
     "place_id": "aula-mod4-cubo-39c",
     "room": "MOD4",
@@ -4052,7 +3974,7 @@
   },
   {
     "building_id": "cubo-39c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MOD5",
     "place_id": "aula-mod5-cubo-39c",
     "room": "MOD5",
@@ -4063,7 +3985,7 @@
   {
     "building_id": "cubo-31b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT1",
     "place_id": "aula-mt1-cubo-31b",
     "room": "MT1",
@@ -4073,7 +3995,7 @@
   },
   {
     "building_id": "cubo-30b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT10",
     "place_id": "aula-mt10-cubo-30b",
     "room": "MT10",
@@ -4083,7 +4005,7 @@
   },
   {
     "building_id": "cubo-30b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT11",
     "place_id": "aula-mt11-cubo-30b",
     "room": "MT11",
@@ -4093,7 +4015,7 @@
   },
   {
     "building_id": "cubo-30b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT12",
     "place_id": "aula-mt12-cubo-30b",
     "room": "MT12",
@@ -4104,7 +4026,7 @@
   {
     "building_id": "cubo-31b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT13",
     "place_id": "aula-mt13-cubo-31b",
     "room": "MT13",
@@ -4115,7 +4037,7 @@
   {
     "building_id": "cubo-31b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT14",
     "place_id": "aula-mt14-cubo-31b",
     "room": "MT14",
@@ -4126,7 +4048,7 @@
   {
     "building_id": "cubo-31a",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT15",
     "place_id": "aula-mt15-cubo-31a",
     "room": "MT15",
@@ -4136,7 +4058,7 @@
   },
   {
     "building_id": "cubo-31b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT2",
     "place_id": "aula-mt2-cubo-31b",
     "room": "MT2",
@@ -4147,7 +4069,7 @@
   {
     "building_id": "cubo-31b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT23",
     "place_id": "aula-mt23-cubo-31b",
     "room": "MT23",
@@ -4157,7 +4079,7 @@
   },
   {
     "building_id": "cubo-31b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT3",
     "place_id": "aula-mt3-cubo-31b",
     "room": "MT3",
@@ -4168,7 +4090,7 @@
   {
     "building_id": "cubo-30b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT4",
     "place_id": "aula-mt4-cubo-30b",
     "room": "MT4",
@@ -4178,7 +4100,7 @@
   },
   {
     "building_id": "cubo-31a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "MT5 BIS",
     "place_id": "aula-mt5-bis-cubo-31a",
     "source_id": "unical-aulas",
@@ -4188,7 +4110,7 @@
   {
     "building_id": "cubo-31a",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT5",
     "place_id": "aula-mt5-cubo-31a",
     "room": "MT5",
@@ -4199,7 +4121,7 @@
   {
     "building_id": "cubo-31a",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT5bis",
     "place_id": "aula-mt5bis-cubo-31a",
     "room": "MT5bis",
@@ -4210,7 +4132,7 @@
   {
     "building_id": "cubo-30b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT6",
     "place_id": "aula-mt6-cubo-30b",
     "room": "MT6",
@@ -4221,7 +4143,7 @@
   {
     "building_id": "cubo-30b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT7",
     "place_id": "aula-mt7-cubo-30b",
     "room": "MT7",
@@ -4232,7 +4154,7 @@
   {
     "building_id": "cubo-30b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula MT8",
     "place_id": "aula-mt8-cubo-30b",
     "room": "MT8",
@@ -4241,17 +4163,7 @@
     "type": "AULA"
   },
   {
-    "building_id": "cubo-20b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "Aula Multimediale",
-    "place_id": "aula-multimediale",
-    "room": "Multimediale",
-    "source_id": "unical-aulas",
-    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/",
-    "type": "AULA"
-  },
-  {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA MULTIMEDIALE 25 C SELF STUDY",
     "place_id": "aula-multimediale-25-c-self-study",
     "room": "MULTIMEDIALE 25 C SELF STUDY",
@@ -4262,7 +4174,7 @@
   {
     "building_id": "cubo-20b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Multimediale",
     "place_id": "aula-multimediale-cubo-20b",
     "room": "Multimediale",
@@ -4272,7 +4184,7 @@
   },
   {
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Multimediale piano 1°cubo 25C",
     "place_id": "aula-multimediale-piano-1cubo-25c",
     "room": "Multimediale piano 1°cubo 25C",
@@ -4283,7 +4195,7 @@
   {
     "building_id": "cubo-15b",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula N",
     "place_id": "aula-n-cubo-15b",
     "room": "N",
@@ -4294,7 +4206,7 @@
   {
     "building_id": "cubo-18b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula N",
     "place_id": "aula-n-cubo-18b",
     "room": "N",
@@ -4304,7 +4216,7 @@
   },
   {
     "building_id": "cubo-18c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "N",
     "place_id": "aula-n-cubo-18c",
     "source_id": "unical-aulas",
@@ -4314,7 +4226,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula N",
     "place_id": "aula-n-cubo-28b",
     "room": "N",
@@ -4325,7 +4237,7 @@
   {
     "building_id": "cubo-17b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Nettuno",
     "place_id": "aula-nettuno-cubo-17b",
     "room": "Nettuno",
@@ -4335,7 +4247,7 @@
   },
   {
     "building_id": "cubo-3a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula OA/SG1",
     "place_id": "aula-oa-sg1-cubo-3a",
     "room": "OA/SG1",
@@ -4345,7 +4257,7 @@
   },
   {
     "building_id": "cubo-3a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula OA/SG2",
     "place_id": "aula-oa-sg2-cubo-3a",
     "room": "OA/SG2",
@@ -4355,7 +4267,7 @@
   },
   {
     "building_id": "cubo-3a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula OA/SG3",
     "place_id": "aula-oa-sg3-cubo-3a",
     "room": "OA/SG3",
@@ -4365,7 +4277,7 @@
   },
   {
     "building_id": "cubo-3a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula OA/SG4",
     "place_id": "aula-oa-sg4-cubo-3a",
     "room": "OA/SG4",
@@ -4374,7 +4286,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Orto Botanico",
     "place_id": "aula-orto-botanico",
     "room": "Orto Botanico",
@@ -4384,7 +4296,7 @@
   },
   {
     "building_id": "cubo-40c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula P1",
     "place_id": "aula-p1-cubo-40c",
     "room": "P1",
@@ -4393,7 +4305,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula P1 (Piano Ponte Carrabile)",
     "place_id": "aula-p1-piano-ponte-carrabile",
     "room": "P1 (Piano Ponte Carrabile)",
@@ -4403,7 +4315,7 @@
   },
   {
     "building_id": "cubo-43c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula P3",
     "place_id": "aula-p3-cubo-43c",
     "room": "P3",
@@ -4413,7 +4325,7 @@
   },
   {
     "building_id": "cubo-43c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula P4",
     "place_id": "aula-p4-cubo-43c",
     "room": "P4",
@@ -4423,7 +4335,7 @@
   },
   {
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula P5",
     "place_id": "aula-p5-cubo-43b",
     "room": "P5",
@@ -4433,7 +4345,7 @@
   },
   {
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula P6",
     "place_id": "aula-p6-cubo-43b",
     "room": "P6",
@@ -4444,7 +4356,7 @@
   {
     "building_id": "cubo-17b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula PAN",
     "place_id": "aula-pan-cubo-17b",
     "room": "PAN",
@@ -4455,7 +4367,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula PAN",
     "place_id": "aula-pan-cubo-28b",
     "room": "PAN",
@@ -4466,7 +4378,7 @@
   {
     "building_id": "cubo-30b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Pitagora (ex MT11)",
     "place_id": "aula-pitagora-ex-mt11-cubo-30b",
     "room": "Pitagora (ex MT11)",
@@ -4477,7 +4389,7 @@
   {
     "building_id": "cubo-45b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula PT1",
     "place_id": "aula-pt1-cubo-45b",
     "room": "PT1",
@@ -4488,7 +4400,7 @@
   {
     "building_id": "cubo-45b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula PT2",
     "place_id": "aula-pt2-cubo-45b",
     "room": "PT2",
@@ -4499,7 +4411,7 @@
   {
     "building_id": "cubo-45b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula PT3",
     "place_id": "aula-pt3-cubo-45b",
     "room": "PT3",
@@ -4510,7 +4422,7 @@
   {
     "building_id": "cubo-12b",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA RESTAURO",
     "place_id": "aula-restauro-cubo-12b",
     "room": "RESTAURO",
@@ -4520,7 +4432,7 @@
   },
   {
     "building_id": "cubo-30a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "SALA A",
     "place_id": "aula-sala-a-cubo-30a",
     "source_id": "unical-aulas",
@@ -4530,7 +4442,7 @@
   {
     "building_id": "cubo-45c",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Sala Riunioni 45C sesto piano",
     "place_id": "aula-sala-riunioni-45c-sesto-piano-cubo-45c",
     "source_id": "unical-aulas",
@@ -4539,7 +4451,7 @@
   },
   {
     "building_id": "cubo-37b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "SALA RIUNIONI AREA STRUTTURE P 1 DINCI",
     "place_id": "aula-sala-riunioni-area-strutture-p-1-dinci-cubo-37b",
     "source_id": "unical-aulas",
@@ -4548,7 +4460,7 @@
   },
   {
     "building_id": "cubo-44a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Sala Riunioni",
     "place_id": "aula-sala-riunioni-cubo-44a",
     "source_id": "unical-aulas",
@@ -4557,7 +4469,7 @@
   },
   {
     "building_id": "cubo-45a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Sala Seminari",
     "place_id": "aula-sala-seminari-cubo-45a",
     "source_id": "unical-aulas",
@@ -4567,7 +4479,7 @@
   {
     "building_id": "cubo-44z",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Sala Studio piano terra cubo 44Z",
     "place_id": "aula-sala-studio-piano-terra-cubo-44z-cubo-44z",
     "source_id": "unical-aulas",
@@ -4576,7 +4488,7 @@
   },
   {
     "building_id": "cubo-41c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Saletta Riunioni cubo 41 C - Piano 8",
     "place_id": "aula-saletta-riunioni-cubo-41-c-piano-8-cubo-41c",
     "source_id": "unical-aulas",
@@ -4585,7 +4497,7 @@
   },
   {
     "building_id": "cubo-3d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "SDIPA1",
     "place_id": "aula-sdipa1-cubo-3d",
     "source_id": "unical-aulas",
@@ -4594,7 +4506,7 @@
   },
   {
     "building_id": "cubo-3d",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "SDIPA2",
     "place_id": "aula-sdipa2-cubo-3d",
     "source_id": "unical-aulas",
@@ -4603,7 +4515,7 @@
   },
   {
     "building_id": "cubo-17b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula seminari 1",
     "place_id": "aula-seminari-1-cubo-17b",
     "room": "seminari 1",
@@ -4613,7 +4525,7 @@
   },
   {
     "building_id": "cubo-17b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula seminari 2",
     "place_id": "aula-seminari-2-cubo-17b",
     "room": "seminari 2",
@@ -4623,7 +4535,7 @@
   },
   {
     "building_id": "cubo-27b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula seminari 2",
     "place_id": "aula-seminari-2-cubo-27b",
     "room": "seminari 2",
@@ -4633,7 +4545,7 @@
   },
   {
     "building_id": "cubo-0b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Seminari",
     "place_id": "aula-seminari-cubo-0b",
     "room": "Seminari",
@@ -4643,7 +4555,7 @@
   },
   {
     "building_id": "cubo-0c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA SEMINARI",
     "place_id": "aula-seminari-cubo-0c",
     "room": "SEMINARI",
@@ -4654,7 +4566,7 @@
   {
     "building_id": "cubo-15c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Seminari",
     "place_id": "aula-seminari-cubo-15c",
     "room": "Seminari",
@@ -4665,7 +4577,7 @@
   {
     "building_id": "cubo-31c",
     "floor": "Quarto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Seminari",
     "place_id": "aula-seminari-cubo-31c",
     "room": "Seminari",
@@ -4676,7 +4588,7 @@
   {
     "building_id": "cubo-32b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Seminari",
     "place_id": "aula-seminari-cubo-32b",
     "room": "Seminari",
@@ -4686,7 +4598,7 @@
   },
   {
     "building_id": "cubo-42c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Seminari",
     "place_id": "aula-seminari-cubo-42c",
     "room": "Seminari",
@@ -4696,7 +4608,7 @@
   },
   {
     "building_id": "cubo-44c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Seminari",
     "place_id": "aula-seminari-cubo-44c",
     "room": "Seminari",
@@ -4705,7 +4617,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Seminari (EX Dip.nto FARMACO Biol.)",
     "place_id": "aula-seminari-ex-dip-nto-farmaco-biol",
     "source_id": "unical-aulas",
@@ -4713,7 +4625,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula seminari (Giannattasio)",
     "place_id": "aula-seminari-giannattasio",
     "room": "seminari (Giannattasio)",
@@ -4723,7 +4635,7 @@
   },
   {
     "building_id": "cubo-45b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA SEMINARI \"GIANNATTASIO\"",
     "place_id": "aula-seminari-giannattasio-cubo-45b",
     "room": "SEMINARI \"GIANNATTASIO\"",
@@ -4733,7 +4645,7 @@
   },
   {
     "building_id": "cubo-17b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Seminari Laboratorio Psicologia Cognitiva e Modellazione Matematica",
     "place_id": "aula-seminari-laboratorio-psicologia-cognitiva-e-modellazione-matematica-cubo-17b",
     "room": "Seminari Laboratorio Psicologia Cognitiva e Modellazione Matematica",
@@ -4742,7 +4654,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Seminari Medicina",
     "place_id": "aula-seminari-medicina",
     "room": "Seminari Medicina",
@@ -4752,7 +4664,7 @@
   },
   {
     "building_id": "cubo-17a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Senape",
     "place_id": "aula-senape-cubo-17a",
     "room": "Senape",
@@ -4762,7 +4674,7 @@
   },
   {
     "building_id": "cubo-3a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula SG1",
     "place_id": "aula-sg1-cubo-3a",
     "room": "SG1",
@@ -4772,7 +4684,7 @@
   },
   {
     "building_id": "cubo-3a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula SG2",
     "place_id": "aula-sg2-cubo-3a",
     "room": "SG2",
@@ -4782,7 +4694,7 @@
   },
   {
     "building_id": "cubo-3a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula SG3",
     "place_id": "aula-sg3-cubo-3a",
     "room": "SG3",
@@ -4792,7 +4704,7 @@
   },
   {
     "building_id": "cubo-3a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula SG4",
     "place_id": "aula-sg4-cubo-3a",
     "room": "SG4",
@@ -4802,7 +4714,7 @@
   },
   {
     "building_id": "cubo-19b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Solano",
     "place_id": "aula-solano-cubo-19b",
     "room": "Solano",
@@ -4811,7 +4723,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "SPAZIO MOSTRE",
     "place_id": "aula-spazio-mostre",
     "source_id": "unical-aulas",
@@ -4820,7 +4732,7 @@
   },
   {
     "building_id": "cubo-21b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "SPEZZAFERRO",
     "place_id": "aula-spezzaferro-cubo-21b",
     "source_id": "unical-aulas",
@@ -4829,7 +4741,7 @@
   },
   {
     "building_id": "cubo-1a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula SSP1",
     "place_id": "aula-ssp1-cubo-1a",
     "room": "SSP1",
@@ -4839,7 +4751,7 @@
   },
   {
     "building_id": "cubo-1a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula SSP2",
     "place_id": "aula-ssp2-cubo-1a",
     "room": "SSP2",
@@ -4849,7 +4761,7 @@
   },
   {
     "building_id": "cubo-1a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula SSP3",
     "place_id": "aula-ssp3-cubo-1a",
     "room": "SSP3",
@@ -4859,7 +4771,7 @@
   },
   {
     "building_id": "cubo-1a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula SSP4",
     "place_id": "aula-ssp4-cubo-1a",
     "room": "SSP4",
@@ -4869,7 +4781,7 @@
   },
   {
     "building_id": "cubo-1a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula SSP5",
     "place_id": "aula-ssp5-cubo-1a",
     "room": "SSP5",
@@ -4879,7 +4791,7 @@
   },
   {
     "building_id": "cubo-28c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STOR1",
     "place_id": "aula-stor1-cubo-28c",
     "room": "STOR1",
@@ -4889,7 +4801,7 @@
   },
   {
     "building_id": "cubo-28c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STOR2B",
     "place_id": "aula-stor2b-cubo-28c",
     "room": "STOR2B",
@@ -4899,7 +4811,7 @@
   },
   {
     "building_id": "cubo-28c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STOR2C",
     "place_id": "aula-stor2c-cubo-28c",
     "room": "STOR2C",
@@ -4909,7 +4821,7 @@
   },
   {
     "building_id": "cubo-29c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STOR7",
     "place_id": "aula-stor7-cubo-29c",
     "room": "STOR7",
@@ -4920,7 +4832,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Storia 1 (BURGARELLA)",
     "place_id": "aula-storia-1-burgarella-cubo-28b",
     "room": "Storia 1 (BURGARELLA)",
@@ -4931,7 +4843,7 @@
   {
     "building_id": "cubo-28c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Storia 1 (BURGARELLA)",
     "place_id": "aula-storia-1-burgarella-cubo-28c",
     "room": "Storia 1 (BURGARELLA)",
@@ -4942,7 +4854,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 2A",
     "place_id": "aula-storia-2a-cubo-28b",
     "room": "STORIA 2A",
@@ -4953,7 +4865,7 @@
   {
     "building_id": "cubo-28c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 2A",
     "place_id": "aula-storia-2a-cubo-28c",
     "room": "STORIA 2A",
@@ -4964,7 +4876,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 2B",
     "place_id": "aula-storia-2b-cubo-28b",
     "room": "STORIA 2B",
@@ -4975,7 +4887,7 @@
   {
     "building_id": "cubo-28c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 2B",
     "place_id": "aula-storia-2b-cubo-28c",
     "room": "STORIA 2B",
@@ -4986,7 +4898,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 2C",
     "place_id": "aula-storia-2c-cubo-28b",
     "room": "STORIA 2C",
@@ -4997,7 +4909,7 @@
   {
     "building_id": "cubo-28c",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 2C",
     "place_id": "aula-storia-2c-cubo-28c",
     "room": "STORIA 2C",
@@ -5008,7 +4920,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 3",
     "place_id": "aula-storia-3-cubo-28b",
     "room": "STORIA 3",
@@ -5019,7 +4931,7 @@
   {
     "building_id": "cubo-28c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 3",
     "place_id": "aula-storia-3-cubo-28c",
     "room": "STORIA 3",
@@ -5030,7 +4942,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 4",
     "place_id": "aula-storia-4-cubo-28b",
     "room": "STORIA 4",
@@ -5041,7 +4953,7 @@
   {
     "building_id": "cubo-28c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 4",
     "place_id": "aula-storia-4-cubo-28c",
     "room": "STORIA 4",
@@ -5052,7 +4964,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 5",
     "place_id": "aula-storia-5-cubo-28b",
     "room": "STORIA 5",
@@ -5063,7 +4975,7 @@
   {
     "building_id": "cubo-28c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 5",
     "place_id": "aula-storia-5-cubo-28c",
     "room": "STORIA 5",
@@ -5074,7 +4986,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 6",
     "place_id": "aula-storia-6-cubo-28b",
     "room": "STORIA 6",
@@ -5085,7 +4997,7 @@
   {
     "building_id": "cubo-28c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 6",
     "place_id": "aula-storia-6-cubo-28c",
     "room": "STORIA 6",
@@ -5096,7 +5008,7 @@
   {
     "building_id": "cubo-28b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 7",
     "place_id": "aula-storia-7-cubo-28b",
     "room": "STORIA 7",
@@ -5107,7 +5019,7 @@
   {
     "building_id": "cubo-28d",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STORIA 7",
     "place_id": "aula-storia-7-cubo-28d",
     "room": "STORIA 7",
@@ -5117,7 +5029,7 @@
   },
   {
     "building_id": "cubo-28c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Storia2A",
     "place_id": "aula-storia2a-cubo-28c",
     "source_id": "unical-aulas",
@@ -5127,7 +5039,7 @@
   {
     "building_id": "cubo-39b",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STR1",
     "place_id": "aula-str1-cubo-39b",
     "room": "STR1",
@@ -5138,7 +5050,7 @@
   {
     "building_id": "cubo-39b",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STR2",
     "place_id": "aula-str2-cubo-39b",
     "room": "STR2",
@@ -5149,7 +5061,7 @@
   {
     "building_id": "cubo-39b",
     "floor": "Primo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula STR3",
     "place_id": "aula-str3-cubo-39b",
     "room": "STR3",
@@ -5160,7 +5072,7 @@
   {
     "building_id": "cubo-30b",
     "floor": "Sesto piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula studenti)",
     "place_id": "aula-studenti",
     "room": "studenti)",
@@ -5170,7 +5082,7 @@
   },
   {
     "building_id": "cubo-30c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA STUDENTI 1",
     "place_id": "aula-studenti-1-cubo-30c",
     "room": "STUDENTI 1",
@@ -5180,7 +5092,7 @@
   },
   {
     "building_id": "cubo-30c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "AULA STUDENTI 2",
     "place_id": "aula-studenti-2-cubo-30c",
     "room": "STUDENTI 2",
@@ -5189,29 +5101,9 @@
     "type": "AULA"
   },
   {
-    "building_id": "cubo-30b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "AULA STUDENTI)",
-    "place_id": "aula-studenti-cubo-30b",
-    "room": "STUDENTI)",
-    "source_id": "unical-aulas",
-    "source_url": "https://unical.prod.up.cineca.it/calendar/activities/",
-    "type": "AULA"
-  },
-  {
-    "building_id": "cubo-15c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
-    "name": "Aula Studio",
-    "place_id": "aula-studio",
-    "room": "Studio",
-    "source_id": "unical-aulas",
-    "source_url": "https://ctc.unical.it/dipartimento/organizzazione/strutture/",
-    "type": "AULA"
-  },
-  {
     "building_id": "cubo-30c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Studio 1",
     "place_id": "aula-studio-1-cubo-30c",
     "room": "Studio 1",
@@ -5222,7 +5114,7 @@
   {
     "building_id": "cubo-30c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Studio 2",
     "place_id": "aula-studio-2-cubo-30c",
     "room": "Studio 2",
@@ -5233,7 +5125,7 @@
   {
     "building_id": "cubo-15c",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Studio",
     "place_id": "aula-studio-cubo-15c",
     "room": "Studio",
@@ -5242,7 +5134,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Studio per i soli studenti di Chimica",
     "place_id": "aula-studio-per-i-soli-studenti-di-chimica",
     "room": "Studio per i soli studenti di Chimica",
@@ -5252,7 +5144,7 @@
   },
   {
     "building_id": "cubo-3b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "T. SORRENTINO",
     "place_id": "aula-t-sorrentino-cubo-3b",
     "source_id": "unical-aulas",
@@ -5262,7 +5154,7 @@
   {
     "building_id": "cubo-30b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Turing (ex MT10)",
     "place_id": "aula-turing-ex-mt10-cubo-30b",
     "room": "Turing (ex MT10)",
@@ -5273,7 +5165,7 @@
   {
     "building_id": "cubo-18b",
     "floor": "Piano Terra",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Ventura",
     "place_id": "aula-ventura-cubo-18b",
     "room": "Ventura",
@@ -5282,7 +5174,7 @@
     "type": "AULA"
   },
   {
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Verde",
     "place_id": "aula-verde",
     "room": "Verde",
@@ -5292,7 +5184,7 @@
   },
   {
     "building_id": "cubo-17a",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Verde Muschio",
     "place_id": "aula-verde-muschio-cubo-17a",
     "room": "Verde Muschio",
@@ -5302,7 +5194,7 @@
   },
   {
     "building_id": "cubo-41b",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Visiting Professor",
     "place_id": "aula-visiting-professor-cubo-41b",
     "room": "Visiting Professor",
@@ -5312,7 +5204,7 @@
   },
   {
     "building_id": "cubo-13c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula ZENITH 1",
     "place_id": "aula-zenith-1-cubo-13c",
     "room": "ZENITH 1",
@@ -5322,7 +5214,7 @@
   },
   {
     "building_id": "cubo-13c",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula ZENITH 2",
     "place_id": "aula-zenith-2-cubo-13c",
     "room": "ZENITH 2",
@@ -5333,7 +5225,7 @@
   {
     "building_id": "cubo-18b",
     "floor": "Secondo piano",
-    "last_verified_at": "2026-02-10T11:49:45.702308+00:00",
+    "last_verified_at": "2026-02-10T11:57:42.833425+00:00",
     "name": "Aula Zeus",
     "place_id": "aula-zeus-cubo-18b",
     "room": "Zeus",

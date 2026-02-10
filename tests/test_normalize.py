@@ -205,13 +205,14 @@ def test_normalize_aulas_backfills_building_id_from_existing_matches() -> None:
         verified_at=datetime(2026, 2, 10, tzinfo=timezone.utc),
     )
 
-    aula_upper = next(aula for aula in aulas if aula["name"] == "AULA 2")
-    assert aula_upper["building_id"] == "cubo-12b"
-    assert "cubo-12b" in aula_upper["search_tokens"]
+    aula_two = next(aula for aula in aulas if aula["normalized_name"] == "aula 2")
+    assert aula_two["building_id"] == "cubo-12b"
+    assert aula_two["name"] == "Aula 2"
+    assert "cubo-12b" in aula_two["search_tokens"]
 
     aula_39c = next(aula for aula in aulas if aula["name"] == "Aula 39C")
     assert aula_39c["building_id"] == "cubo-39c"
 
     place_by_id = {place["place_id"]: place for place in aula_places}
-    assert place_by_id[aula_upper["place_id"]]["building_id"] == "cubo-12b"
+    assert place_by_id[aula_two["place_id"]]["building_id"] == "cubo-12b"
     assert place_by_id[aula_39c["place_id"]]["building_id"] == "cubo-39c"

@@ -294,7 +294,11 @@ def normalize_aulas(
         aula_places=aula_places,
         known_building_ids=building_ids,
     )
-    return aulas, aula_places
+    deduped_aulas, deduped_places = _collapse_duplicate_aulas(
+        aulas=aulas,
+        aula_places=aula_places,
+    )
+    return deduped_aulas, deduped_places
 
 
 def _canonical_building_name(name: str) -> str | None:
@@ -515,6 +519,199 @@ def _extract_building_ids_from_text(text: str, known_building_ids: set[str]) -> 
             candidates.add(cla_id)
 
     return candidates
+
+
+def _collapse_duplicate_aulas(
+    aulas: list[dict[str, object]],
+    aula_places: list[dict[str, object]],
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    grouped: dict[str, list[dict[str, object]]] = {}
+    for aula in aulas:
+        key = _aula_duplicate_key(aula)
+        if key is None:
+            key = f"__single__{str(aula.get('aula_id') or '')}"
+        grouped.setdefault(key, []).append(aula)
+
+    place_by_id = {
+        str(place.get("place_id")): dict(place)
+        for place in aula_places
+        if isinstance(place.get("place_id"), str)
+    }
+
+    merged_aulas: list[dict[str, object]] = []
+    merged_places_by_id: dict[str, dict[str, object]] = {}
+
+    for key in sorted(grouped):
+        group = grouped[key]
+        if len(group) == 1:
+            aula = dict(group[0])
+            merged_aulas.append(aula)
+            place_id = aula.get("place_id")
+            if isinstance(place_id, str):
+                place = place_by_id.get(place_id)
+                if place:
+                    merged_places_by_id[place_id] = dict(place)
+            continue
+
+        merged_aula = _merge_duplicate_aula_group(group)
+        merged_aulas.append(merged_aula)
+
+        place_records = [
+            dict(place_by_id[place_id])
+            for place_id in (
+                aula.get("place_id")
+                for aula in group
+                if isinstance(aula.get("place_id"), str)
+            )
+            if isinstance(place_id, str) and place_id in place_by_id
+        ]
+
+        merged_place = _merge_duplicate_place_group(place_records=place_records, aula=merged_aula)
+        merged_places_by_id[str(merged_place["place_id"])] = merged_place
+
+    deduped_aulas = sorted(merged_aulas, key=lambda item: str(item.get("aula_id") or ""))
+    deduped_places = sorted(merged_places_by_id.values(), key=lambda item: str(item.get("place_id") or ""))
+    return deduped_aulas, deduped_places
+
+
+def _aula_duplicate_key(aula: dict[str, object]) -> str | None:
+    building_id = aula.get("building_id")
+    if not isinstance(building_id, str):
+        return None
+
+    normalized_name = _normalize_lookup_value(aula.get("normalized_name") or aula.get("name"))
+    if not normalized_name:
+        return None
+
+    return f"{normalized_name}|{building_id}"
+
+
+def _merge_duplicate_aula_group(group: list[dict[str, object]]) -> dict[str, object]:
+    ordered = sorted(group, key=_aula_merge_rank, reverse=True)
+    primary = dict(ordered[0])
+    secondary = ordered[1:]
+
+    for field in ("short_code", "room", "floor"):
+        if primary.get(field):
+            continue
+        for item in secondary:
+            value = item.get(field)
+            if isinstance(value, str) and value:
+                primary[field] = value
+                break
+
+    capacities = [
+        value
+        for value in (item.get("capacity") for item in ordered)
+        if isinstance(value, int) and value > 0
+    ]
+    if capacities:
+        primary["capacity"] = max(capacities)
+
+    tokens: set[str] = set(
+        token
+        for token in primary.get("search_tokens", [])
+        if isinstance(token, str) and token
+    )
+    for item in secondary:
+        tokens.update(
+            token
+            for token in item.get("search_tokens", [])
+            if isinstance(token, str) and token
+        )
+    if tokens:
+        primary["search_tokens"] = sorted(tokens)
+
+    return primary
+
+
+def _merge_duplicate_place_group(
+    place_records: list[dict[str, object]],
+    aula: dict[str, object],
+) -> dict[str, object]:
+    if not place_records:
+        merged: dict[str, object] = {
+            "place_id": str(aula.get("place_id") or aula.get("aula_id") or ""),
+            "type": "AULA",
+            "name": str(aula.get("name") or ""),
+            "source_id": str(aula.get("source_id") or "unical-aulas"),
+            "source_url": str(aula.get("source_url") or ""),
+            "last_verified_at": str(aula.get("last_verified_at") or ""),
+        }
+        if isinstance(aula.get("building_id"), str):
+            merged["building_id"] = aula["building_id"]
+        if isinstance(aula.get("floor"), str):
+            merged["floor"] = aula["floor"]
+        if isinstance(aula.get("room"), str):
+            merged["room"] = aula["room"]
+        return merged
+
+    ordered_places = sorted(place_records, key=_place_merge_rank, reverse=True)
+    primary = dict(ordered_places[0])
+    secondary = ordered_places[1:]
+
+    primary["place_id"] = str(aula.get("place_id") or primary.get("place_id") or "")
+    primary["type"] = "AULA"
+    primary["name"] = str(aula.get("name") or primary.get("name") or "")
+    primary["source_id"] = str(aula.get("source_id") or primary.get("source_id") or "unical-aulas")
+    primary["source_url"] = str(aula.get("source_url") or primary.get("source_url") or "")
+    primary["last_verified_at"] = str(aula.get("last_verified_at") or primary.get("last_verified_at") or "")
+
+    if isinstance(aula.get("building_id"), str):
+        primary["building_id"] = aula["building_id"]
+    if isinstance(aula.get("floor"), str):
+        primary["floor"] = aula["floor"]
+    elif not isinstance(primary.get("floor"), str):
+        for item in secondary:
+            value = item.get("floor")
+            if isinstance(value, str) and value:
+                primary["floor"] = value
+                break
+    if isinstance(aula.get("room"), str):
+        primary["room"] = aula["room"]
+    elif not isinstance(primary.get("room"), str):
+        for item in secondary:
+            value = item.get("room")
+            if isinstance(value, str) and value:
+                primary["room"] = value
+                break
+
+    if not (isinstance(primary.get("lat"), (int, float)) and isinstance(primary.get("lng"), (int, float))):
+        for item in secondary:
+            lat = item.get("lat")
+            lng = item.get("lng")
+            if isinstance(lat, (int, float)) and isinstance(lng, (int, float)):
+                primary["lat"] = lat
+                primary["lng"] = lng
+                break
+
+    return primary
+
+
+def _aula_merge_rank(aula: dict[str, object]) -> tuple[int, int, int, int, int, int, str]:
+    source_url = str(aula.get("source_url") or "").casefold()
+    name = str(aula.get("name") or "")
+    aula_id = str(aula.get("aula_id") or "")
+    building_id = str(aula.get("building_id") or "")
+    return (
+        1 if aula.get("floor") else 0,
+        1 if isinstance(aula.get("capacity"), int) else 0,
+        1 if aula.get("short_code") else 0,
+        1 if aula.get("room") else 0,
+        1 if "calendar/activities" not in source_url else 0,
+        1 if building_id and building_id in aula_id else 0,
+        1 if any(char.islower() for char in name) else 0,
+    )
+
+
+def _place_merge_rank(place: dict[str, object]) -> tuple[int, int, int, int]:
+    source_url = str(place.get("source_url") or "").casefold()
+    return (
+        1 if isinstance(place.get("lat"), (int, float)) and isinstance(place.get("lng"), (int, float)) else 0,
+        1 if place.get("floor") else 0,
+        1 if place.get("room") else 0,
+        1 if "calendar/activities" not in source_url else 0,
+    )
 
 
 def _haversine_meters(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
