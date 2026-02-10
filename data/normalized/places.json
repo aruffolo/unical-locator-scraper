@@ -433,6 +433,7 @@
   },
   {
     "building_id": "cubo-41b",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "41B 6A (MARONE)",
     "place_id": "aula-41b-6a-marone-cubo-41b",
@@ -532,6 +533,7 @@
   },
   {
     "building_id": "cubo-44b",
+    "floor": "Quarto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 44B4A",
     "place_id": "aula-44b4a-cubo-44b",
@@ -553,6 +555,7 @@
   },
   {
     "building_id": "cubo-45b",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 45B01",
     "place_id": "aula-45b01-cubo-45b",
@@ -563,6 +566,7 @@
   },
   {
     "building_id": "cubo-45b",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 45B02",
     "place_id": "aula-45b02-cubo-45b",
@@ -573,6 +577,7 @@
   },
   {
     "building_id": "cubo-45b",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 45B03",
     "place_id": "aula-45b03-cubo-45b",
@@ -990,6 +995,7 @@
   },
   {
     "building_id": "cubo-43c",
+    "floor": "Quarto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula B (Consolidata)",
     "place_id": "aula-b-consolidata-cubo-43c",
@@ -1227,6 +1233,7 @@
   },
   {
     "building_id": "cubo-15c",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "CH-15-6A-3T",
     "place_id": "aula-ch-15-6a-3t-cubo-15c",
@@ -1247,6 +1254,7 @@
   },
   {
     "building_id": "cubo-15c",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "CH-15-6B-1M",
     "place_id": "aula-ch-15-6b-1m-cubo-15c",
@@ -1267,6 +1275,7 @@
   },
   {
     "building_id": "cubo-15c",
+    "floor": "Settimo piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "CH-15-7A",
     "place_id": "aula-ch-15-7a-cubo-15c",
@@ -1287,6 +1296,7 @@
   },
   {
     "building_id": "cubo-17c",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "CH-17-6A-2T",
     "place_id": "aula-ch-17-6a-2t-cubo-17c",
@@ -1307,6 +1317,7 @@
   },
   {
     "building_id": "cubo-17c",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "CH-17-6B-2M",
     "place_id": "aula-ch-17-6b-2m-cubo-17c",
@@ -1327,6 +1338,7 @@
   },
   {
     "building_id": "cubo-17c",
+    "floor": "Settimo piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "CH-17-7A-1T",
     "place_id": "aula-ch-17-7a-1t-cubo-17c",
@@ -1347,6 +1359,7 @@
   },
   {
     "building_id": "cubo-17c",
+    "floor": "Settimo piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "CH-17-7B",
     "place_id": "aula-ch-17-7b-cubo-17c",
@@ -1526,6 +1539,7 @@
   },
   {
     "building_id": "cubo-43b",
+    "floor": "Quarto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula Consolidata 43B",
     "place_id": "aula-consolidata-43b",
@@ -1573,6 +1587,7 @@
   },
   {
     "building_id": "cubo-43c",
+    "floor": "Quarto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula Consolidata B",
     "place_id": "aula-consolidata-b",
@@ -2068,6 +2083,7 @@
   },
   {
     "building_id": "cubo-41b",
+    "floor": "Secondo piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula DS5",
     "place_id": "aula-ds5-cubo-41b",
@@ -2078,6 +2094,7 @@
   },
   {
     "building_id": "cubo-41b",
+    "floor": "Secondo piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula DS6",
     "place_id": "aula-ds6-cubo-41b",
@@ -2088,6 +2105,7 @@
   },
   {
     "building_id": "cubo-41b",
+    "floor": "Secondo piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula DS7",
     "place_id": "aula-ds7-cubo-41b",
@@ -2098,6 +2116,7 @@
   },
   {
     "building_id": "cubo-41b",
+    "floor": "Secondo piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula DS8",
     "place_id": "aula-ds8-cubo-41b",
@@ -2996,6 +3015,7 @@
   },
   {
     "building_id": "cubo-15c",
+    "floor": "Primo piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Lab 15C_1P",
     "place_id": "aula-lab-15c-1p-cubo-15c",
@@ -3005,6 +3025,7 @@
   },
   {
     "building_id": "cubo-15c",
+    "floor": "Secondo piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Lab 15C_2P",
     "place_id": "aula-lab-15c-2p-cubo-15c",
@@ -3014,6 +3035,7 @@
   },
   {
     "building_id": "cubo-15c",
+    "floor": "Terzo piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Lab 15C_3P",
     "place_id": "aula-lab-15c-3p-cubo-15c",
@@ -3023,6 +3045,7 @@
   },
   {
     "building_id": "cubo-15c",
+    "floor": "Quinto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Lab 15C_5P",
     "place_id": "aula-lab-15c-5p-cubo-15c",
@@ -3032,6 +3055,7 @@
   },
   {
     "building_id": "cubo-17c",
+    "floor": "Quinto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Lab 17C_5P",
     "place_id": "aula-lab-17c-5p-cubo-17c",
@@ -3119,6 +3143,7 @@
   },
   {
     "building_id": "cubo-29b",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "LABORATORIO 29 B PONTE CARRABILE",
     "place_id": "aula-laboratorio-29-b-ponte-carrabile-cubo-29b",
@@ -4400,6 +4425,7 @@
   },
   {
     "building_id": "cubo-40c",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula P1",
     "place_id": "aula-p1-cubo-40c",
@@ -4410,6 +4436,7 @@
   },
   {
     "building_id": "cubo-40c",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula P1 (Piano Ponte Carrabile)",
     "place_id": "aula-p1-piano-ponte-carrabile",
@@ -4420,6 +4447,7 @@
   },
   {
     "building_id": "cubo-43c",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula P3",
     "place_id": "aula-p3-cubo-43c",
@@ -4430,6 +4458,7 @@
   },
   {
     "building_id": "cubo-43c",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula P4",
     "place_id": "aula-p4-cubo-43c",
@@ -4440,6 +4469,7 @@
   },
   {
     "building_id": "cubo-43b",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula P5",
     "place_id": "aula-p5-cubo-43b",
@@ -4450,6 +4480,7 @@
   },
   {
     "building_id": "cubo-43b",
+    "floor": "Sesto piano",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula P6",
     "place_id": "aula-p6-cubo-43b",

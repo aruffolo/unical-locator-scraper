@@ -10,7 +10,7 @@ Owner: Elrond89
 - `blocked`: cannot proceed safely without input/dependency
 
 ## Current Baseline (2026-02-10)
-- Tests: `54 passed`
+- Tests: `56 passed`
 - Validation: all datasets schema-valid
 - Integrity: no issues
 - Dataset baseline:
@@ -22,7 +22,7 @@ Owner: Elrond89
   - `aliases.json`: 1390 records
 - Aula linkage quality:
   - `aulas` with `building_id`: 522/522 (`100%`)
-  - `aulas` with `floor`: 231/522
+  - `aulas` with `floor`: 262/522
   - `aulas` with `capacity`: 273/522
 
 ## Workstream Status
@@ -45,6 +45,7 @@ Owner: Elrond89
 - Aula aliases are now generated deterministically, but ranking/consumption policy must still be defined in the future app search layer.
 - Landmark alias mapping is currently config-driven (curated labels from campus map/PDF); it should be periodically reviewed when map labeling changes.
 - Crawl command for full aulas refresh can intermittently stall on remote endpoints; current floor enrichment pass applied deterministically on normalized datasets with matching normalization rule in code.
+- Remaining floor gaps are concentrated in records where source pages provide building but not explicit floor (notably CLA generic labels, Polifunzionale generic labels, and some legacy planner labels).
 
 ## Adaptations / Decisions Log
 - 2026-02-09: Keep execution in phased slices (source inventory -> departments -> buildings -> places -> coordinates -> quality hardening).
@@ -66,6 +67,7 @@ Owner: Elrond89
 - 2026-02-10: Final freeze pass executed (`pytest`, `validate`, `report`) with clean gates; dataset marked release-ready at this checkpoint.
 - 2026-02-10: Added landmark/search alias pass (`link aliases`) for map/PDF labels (PTU, TAU, Rettorato, Biblioteche, CLA, Polo Infanzia, etc.) and added `cappella-universitaria` building landmark entity.
 - 2026-02-10: Added deterministic capannone floor enrichment rule (`capannone-*` + missing floor -> `Piano Terra`) and propagated to normalized `aulas/places`.
+- 2026-02-10: Added floor enrichment pass from explicit department-structure evidence (`dimes`/`dimeg`) and deterministic code hints (`CH-*`, `Lab *_nP`, `45B0*`, ponte markers), increasing floor coverage by +31.
 
 ## Blockers
 - No hard blockers at this checkpoint.

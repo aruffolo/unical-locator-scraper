@@ -631,6 +631,15 @@ def _apply_source_specific_aula_enrichments_and_drops(
                 override_building_id = "cubo-15c"
                 override_floor = "Secondo piano"
 
+        elif "dimes.unical.it/dipartimento/organizzazione/strutture/" in source_url:
+            if lowered_name == "aula e":
+                should_drop = True
+            elif lowered_name in {"aula ds5", "aula ds6", "aula ds7", "aula ds8"}:
+                override_floor = "Secondo piano"
+            elif lowered_name in {"aula p1", "aula p5", "aula p6"}:
+                # Dimes page reports these aulas on "Ponte Carrabile".
+                override_floor = "Sesto piano"
+
         elif "dices.unical.it/dipartimento/organizzazione/strutture/" in source_url:
             if lowered_name == "aula dolci":
                 override_building_id = "cubo-29b"
@@ -641,15 +650,17 @@ def _apply_source_specific_aula_enrichments_and_drops(
             if lowered_name == "aula lime laboratory of innovation and management engineering":
                 # Source text references 41C/42C/45C; use 41C as deterministic anchor.
                 override_building_id = "cubo-41c"
+            elif lowered_name in {"aula p1", "aula p3", "aula p4"}:
+                # Dimeg page reports these aulas on "Ponte Carrabile".
+                override_floor = "Sesto piano"
+            elif lowered_name in {"aula consolidata 43b", "aula b (consolidata)", "aula consolidata b"}:
+                # Dimeg page reports consolidated 43B/43C aulas on "Ponte Pedonale".
+                override_floor = "Quarto piano"
 
         elif "dinci.unical.it/dipartimento/organizzazione/strutture/" in source_url:
             if "giannattasio" in lowered_name:
                 override_building_id = "cubo-45b"
                 override_floor = "Primo piano"
-
-        elif "dimes.unical.it/dipartimento/organizzazione/strutture/" in source_url:
-            if lowered_name == "aula e":
-                should_drop = True
 
         elif "unical.prod.up.cineca.it/calendar/activities/" in source_url:
             if lowered_name in {
@@ -666,6 +677,14 @@ def _apply_source_specific_aula_enrichments_and_drops(
         elif "cla.unical.it/servizi-linguistici/studio-in-autonomia/" in source_url:
             if "multimediale cla" in lowered_name:
                 override_building_id = "cla-centro-linguistico-d-ateneo"
+
+        if not override_floor and not isinstance(aula.get("floor"), str):
+            override_floor = _infer_floor_from_code_hints(
+                name=name,
+                room=aula.get("room"),
+                short_code=aula.get("short_code"),
+                building_id=existing_building_id,
+            )
 
         if should_drop:
             place_id = aula.get("place_id")
@@ -703,6 +722,60 @@ def _apply_source_specific_aula_enrichments_and_drops(
             for place in aula_places
             if not (isinstance(place.get("place_id"), str) and str(place.get("place_id")) in drop_place_ids)
         ]
+
+
+def _infer_floor_from_code_hints(
+    name: str,
+    room: object,
+    short_code: object,
+    building_id: str | None,
+) -> str | None:
+    values = [name]
+    if isinstance(room, str):
+        values.append(room)
+    if isinstance(short_code, str):
+        values.append(short_code)
+    joined = " ".join(values)
+    lowered = joined.casefold()
+    upper = joined.upper()
+
+    if "ponte carrabile" in lowered:
+        return "Sesto piano"
+    if "ponte pedonale" in lowered:
+        return "Quarto piano"
+
+    ch_style = re.search(r"\b(?:[A-Z]{1,4}-)?\d{1,2}-([0-7])[A-Z](?:-\d{1,2}[A-Z])?\b", upper)
+    if ch_style:
+        return _floor_label_from_digit(int(ch_style.group(1)))
+
+    lab_style = re.search(r"\bLAB\s*\d{1,2}[A-Z][_-]([0-7])P\b", upper)
+    if lab_style:
+        return _floor_label_from_digit(int(lab_style.group(1)))
+
+    if building_id == "cubo-45b" and re.search(r"\b45B0[0-9A-Z]\b", upper):
+        return "Piano Terra"
+
+    cubo_floor_tokens = re.findall(r"\b\d{1,2}[A-Z]\s*([0-7])[A-Z]\d?\b", upper)
+    if cubo_floor_tokens:
+        digits = {int(token) for token in cubo_floor_tokens}
+        if len(digits) == 1:
+            return _floor_label_from_digit(digits.pop())
+
+    return None
+
+
+def _floor_label_from_digit(value: int) -> str:
+    labels = {
+        0: "Piano Terra",
+        1: "Primo piano",
+        2: "Secondo piano",
+        3: "Terzo piano",
+        4: "Quarto piano",
+        5: "Quinto piano",
+        6: "Sesto piano",
+        7: "Settimo piano",
+    }
+    return labels[value]
 
 
 def _normalize_lookup_value(value: object) -> str | None:

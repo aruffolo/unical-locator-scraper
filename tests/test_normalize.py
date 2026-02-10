@@ -339,3 +339,88 @@ def test_normalize_aulas_defaults_capannone_floor_to_ground() -> None:
     assert len(aula_places) == 1
     assert aula_places[0]["building_id"] == "capannone-f"
     assert aula_places[0]["floor"] == "Piano Terra"
+
+
+def test_normalize_aulas_applies_floor_overrides_from_dimes_dimeg_pages() -> None:
+    raw = [
+        RawAula(
+            name="Aula DS5",
+            source_url="https://dimes.unical.it/dipartimento/organizzazione/strutture/",
+            building_hint="Cubo 41B",
+        ),
+        RawAula(
+            name="Aula P5",
+            source_url="https://dimes.unical.it/dipartimento/organizzazione/strutture/",
+            building_hint="Cubo 43B",
+        ),
+        RawAula(
+            name="Aula P3",
+            source_url="https://dimeg.unical.it/dipartimento/organizzazione/strutture/",
+            building_hint="Cubo 43C",
+        ),
+        RawAula(
+            name="Aula Consolidata B",
+            source_url="https://dimeg.unical.it/dipartimento/organizzazione/strutture/",
+            building_hint="Cubo 43C",
+        ),
+    ]
+    buildings = [
+        {"building_id": "cubo-41b", "name": "Cubo 41B"},
+        {"building_id": "cubo-43b", "name": "Cubo 43B"},
+        {"building_id": "cubo-43c", "name": "Cubo 43C"},
+    ]
+
+    aulas, _ = normalize_aulas(
+        raw_aulas=raw,
+        buildings=buildings,
+        verified_at=datetime(2026, 2, 10, tzinfo=timezone.utc),
+    )
+    by_name = {str(aula["name"]): aula for aula in aulas}
+
+    assert by_name["Aula DS5"]["floor"] == "Secondo piano"
+    assert by_name["Aula P5"]["floor"] == "Sesto piano"
+    assert by_name["Aula P3"]["floor"] == "Sesto piano"
+    assert by_name["Aula Consolidata B"]["floor"] == "Quarto piano"
+
+
+def test_normalize_aulas_infers_floor_from_code_hints() -> None:
+    raw = [
+        RawAula(
+            name="CH-15-6A-3T",
+            source_url="https://unical.prod.up.cineca.it/calendar/activities/",
+            building_hint="Cubo 15C",
+        ),
+        RawAula(
+            name="Lab 15C_3P",
+            source_url="https://unical.prod.up.cineca.it/calendar/activities/",
+            building_hint="Cubo 15C",
+        ),
+        RawAula(
+            name="Aula 45B01",
+            room="45B01",
+            source_url="https://unical.prod.up.cineca.it/calendar/activities/",
+            building_hint="Cubo 45B",
+        ),
+        RawAula(
+            name="Aula P1 (Piano Ponte Carrabile)",
+            source_url="https://dimeg.unical.it/dipartimento/organizzazione/strutture/",
+            building_hint="Cubo 40C",
+        ),
+    ]
+    buildings = [
+        {"building_id": "cubo-15c", "name": "Cubo 15C"},
+        {"building_id": "cubo-45b", "name": "Cubo 45B"},
+        {"building_id": "cubo-40c", "name": "Cubo 40C"},
+    ]
+
+    aulas, _ = normalize_aulas(
+        raw_aulas=raw,
+        buildings=buildings,
+        verified_at=datetime(2026, 2, 10, tzinfo=timezone.utc),
+    )
+    by_name = {str(aula["name"]): aula for aula in aulas}
+
+    assert by_name["CH-15-6A-3T"]["floor"] == "Sesto piano"
+    assert by_name["Lab 15C_3P"]["floor"] == "Terzo piano"
+    assert by_name["Aula 45B01"]["floor"] == "Piano Terra"
+    assert by_name["Aula P1 (Piano Ponte Carrabile)"]["floor"] == "Sesto piano"
