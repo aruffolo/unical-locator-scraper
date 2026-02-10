@@ -10,32 +10,37 @@ Owner: Elrond89
 - `blocked`: cannot proceed safely without input/dependency
 
 ## Current Baseline (2026-02-10)
-- Tests: `44 passed`
+- Tests: `51 passed`
 - Validation: all datasets schema-valid
 - Integrity: no issues
 - Dataset baseline:
-  - `buildings.json`: 137 records
-  - `places.json`: 470 records of type `AULA` (497 total places)
-  - `aulas.json`: 470 records
+  - `buildings.json`: 150 records
+  - `places.json`: 522 records of type `AULA` (549 total places)
+  - `aulas.json`: 522 records
   - `departments.json`: 14 records
   - `people.json`: 4140 records
+  - `aliases.json`: 1360 records
+- Aula linkage quality:
+  - `aulas` with `building_id`: 522/522 (`100%`)
+  - `aulas` with `floor`: 208/522
+  - `aulas` with `capacity`: 273/522
 
 ## Workstream Status
 
 | Workstream | Status | Owner | Notes |
 |---|---|---|---|
-| Source inventory (`sources.json`) | in_progress | Elrond89 | 5 official sources tracked, including aula map extraction |
+| Source inventory (`sources.json`) | in_progress | Elrond89 | Extended source set (department `strutture`, planner public API, CLA autonomy page) |
 | Departments extraction | done | Elrond89 | Extracted and normalized |
 | Buildings extraction (cubi + others) | done | Elrond89 | Campus map extraction complete |
 | Services/places extraction | done | Elrond89 | Services + museum split implemented |
-| Aule extraction/search (variable naming use case) | done | Elrond89 | Multi-source pass active (map KML + department tables + planner public API incl. `Impegni/getImpegniPublic`), `aulas.json` + AULA entries in `places.json` |
+| Aule extraction/search (variable naming use case) | done | Elrond89 | Multi-source pass active (map KML + department tables + planner public API incl. `Impegni/getImpegniPublic` + CLA autonomy source), `aulas.json` + AULA entries in `places.json` |
 | Coordinates completion | done | Elrond89 | Building coordinates currently complete |
 | Coverage/integrity expansion | done | Elrond89 | Report includes `buildings`/`places`/`aulas` metrics and integrity checks |
 
 ## Technical Debt / Issues
 - `Aule/getPerAutoCompletePublic` remains capped at 100; extraction now combines wider `Impegni/getImpegniPublic` window and curated public `linkCalendarioId` seeds, but both are still indirectly bounded by planner public API behavior.
 - Curated planner `linkCalendarioId` list requires periodic refresh because departments can rotate links over time.
-- Not every department `strutture` page currently yields parsable aula rows (currently `demacs`, `discag`), likely due page content format differences.
+- Cross-source aula dedupe intentionally keeps one canonical record (`normalized_name` + `building_id`), but provenance (`source_url`) may reflect one source when multiple sources report the same aula.
 - Some service entities remain intentionally non-linkable (`building_id = null`) because they are virtual or multi-site.
 - Aula aliases are now generated deterministically, but ranking/consumption policy must still be defined in the future app search layer.
 
@@ -53,6 +58,9 @@ Owner: Elrond89
 - 2026-02-10: Expanded default department `strutture` source set to all 14 UNICAL department domains (+ legacy `www2.dimes`) and added floor/capienza extraction from table variants.
 - 2026-02-10: Added `capacity` field to `aulas.json` schema and report coverage metrics (`with_capacity`).
 - 2026-02-10: Added dedicated accordion parsing for `strutture` pages (CTC pattern), extracting `Aula CH-*`, `Laboratorio ...`, and `Aula Studio` with floor/capacity/building hints.
+- 2026-02-10: Added Polifunzionale/capannoni mapping pass and source-specific building overrides.
+- 2026-02-10: Resolved remaining missing aula links with manual-source rules and dropped confirmed false-positive planner entries.
+- 2026-02-10: Added CLA `studio-in-autonomia` extraction for multimedia labs and mapped them to CLA building context.
 
 ## Blockers
 - No hard blockers at this checkpoint.
