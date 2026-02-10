@@ -35,27 +35,6 @@
     "normalized": "aula-1-seminari"
   },
   {
-    "alias_id": "alias-place-aula-10g-10-g",
-    "entity_id": "aula-10g",
-    "entity_type": "PLACE",
-    "label": "10 G",
-    "normalized": "10-g"
-  },
-  {
-    "alias_id": "alias-place-aula-10g-10g",
-    "entity_id": "aula-10g",
-    "entity_type": "PLACE",
-    "label": "10G",
-    "normalized": "10g"
-  },
-  {
-    "alias_id": "alias-place-aula-10g-aula-10g",
-    "entity_id": "aula-10g",
-    "entity_type": "PLACE",
-    "label": "Aula 10G",
-    "normalized": "aula-10g"
-  },
-  {
     "alias_id": "alias-place-aula-13-capannone-c-13",
     "entity_id": "aula-13-capannone-c",
     "entity_type": "PLACE",
@@ -397,27 +376,6 @@
     "entity_type": "PLACE",
     "label": "Aula 3",
     "normalized": "aula-3"
-  },
-  {
-    "alias_id": "alias-place-aula-31c-31-c",
-    "entity_id": "aula-31c",
-    "entity_type": "PLACE",
-    "label": "31 C",
-    "normalized": "31-c"
-  },
-  {
-    "alias_id": "alias-place-aula-31c-31c",
-    "entity_id": "aula-31c",
-    "entity_type": "PLACE",
-    "label": "31C",
-    "normalized": "31c"
-  },
-  {
-    "alias_id": "alias-place-aula-31c-aula-31c",
-    "entity_id": "aula-31c",
-    "entity_type": "PLACE",
-    "label": "Aula 31C",
-    "normalized": "aula-31c"
   },
   {
     "alias_id": "alias-place-aula-32b1-cubo-32b-32-b-1",
@@ -6076,8 +6034,8 @@
     "normalized": "laboratorio-di-ingegneria-dei-materiali-e-delle-strutture-stanza-4"
   },
   {
-    "alias_id": "alias-place-aula-laboratorio-di-meccanica-e-termodinamica-cubo-31c-laboratorio-di-meccanica-e-termodinamica",
-    "entity_id": "aula-laboratorio-di-meccanica-e-termodinamica-cubo-31c",
+    "alias_id": "alias-place-aula-laboratorio-di-meccanica-e-termodinamica-laboratorio-di-meccanica-e-termodinamica",
+    "entity_id": "aula-laboratorio-di-meccanica-e-termodinamica",
     "entity_type": "PLACE",
     "label": "Laboratorio di Meccanica e Termodinamica",
     "normalized": "laboratorio-di-meccanica-e-termodinamica"

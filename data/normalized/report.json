@@ -12,10 +12,6 @@
         },
         {
           "count": 1,
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "count": 1,
           "source_url": "https://dices.unical.it/dipartimento/organizzazione/strutture/"
         },
         {
@@ -32,11 +28,6 @@
         }
       ],
       "missing_building_examples": [
-        {
-          "aula_id": "aula-10g",
-          "name": "Aula 10G",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
         {
           "aula_id": "aula-blu",
           "name": "Aula Blu",
@@ -103,19 +94,19 @@
           "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
         }
       ],
-      "missing_building_id": 14,
-      "missing_building_id_ratio": 0.0265,
-      "total": 529,
-      "with_building_id": 515,
-      "with_building_id_ratio": 0.9735,
-      "with_capacity": 265,
-      "with_capacity_ratio": 0.5009,
+      "missing_building_id": 13,
+      "missing_building_id_ratio": 0.0247,
+      "total": 527,
+      "with_building_id": 514,
+      "with_building_id_ratio": 0.9753,
+      "with_capacity": 273,
+      "with_capacity_ratio": 0.518,
       "with_floor": 206,
-      "with_floor_ratio": 0.3894,
-      "with_place_id": 529,
+      "with_floor_ratio": 0.3909,
+      "with_place_id": 527,
       "with_place_id_ratio": 1.0,
       "with_short_code": 139,
-      "with_short_code_ratio": 0.2628
+      "with_short_code_ratio": 0.2638
     },
     "buildings": {
       "total": 150,
@@ -143,14 +134,14 @@
       "with_office_place_id_ratio": 0.0
     },
     "places": {
-      "total": 556,
-      "type_aula": 529,
-      "type_aula_ratio": 0.9514,
-      "with_building_id": 537,
-      "with_building_id_ratio": 0.9658
+      "total": 554,
+      "type_aula": 527,
+      "type_aula_ratio": 0.9513,
+      "with_building_id": 536,
+      "with_building_id_ratio": 0.9675
     }
   },
-  "generated_at": "2026-02-10T13:32:32.124362+00:00",
+  "generated_at": "2026-02-10T14:01:09.530242+00:00",
   "integrity": {
     "issues": []
   },

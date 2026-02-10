@@ -756,14 +756,22 @@ def _contains_aula_signal(values: list[str]) -> bool:
 def _parse_department_aulas_accordions(soup: BeautifulSoup, source_url: str) -> list[RawAula]:
     aulas: list[RawAula] = []
     for item in soup.select(".accordion-item"):
+        button = item.select_one("button.accordion-button")
+        accordion_title = _normalize_text(button.get_text(" ", strip=True)) if button is not None else None
+
         body = item.select_one(".accordion-body")
         if body is not None:
-            aulas.extend(_parse_department_accordion_body_entries(body=body, source_url=source_url))
+            aulas.extend(
+                _parse_department_accordion_body_entries(
+                    body=body,
+                    source_url=source_url,
+                    accordion_title=accordion_title,
+                )
+            )
 
-        button = item.select_one("button.accordion-button")
         if button is None:
             continue
-        title = _normalize_text(button.get_text(" ", strip=True))
+        title = accordion_title
         if not title:
             continue
         if _is_generic_accordion_heading(title):
@@ -802,12 +810,20 @@ def _parse_department_aulas_accordions(soup: BeautifulSoup, source_url: str) -> 
     return aulas
 
 
-def _parse_department_accordion_body_entries(body: Tag, source_url: str) -> list[RawAula]:
+def _parse_department_accordion_body_entries(
+    body: Tag,
+    source_url: str,
+    accordion_title: str | None = None,
+) -> list[RawAula]:
     aulas: list[RawAula] = []
+    in_laboratory_section = "laborator" in (accordion_title or "").casefold()
     blocks = [child for child in body.children if isinstance(child, Tag)]
     idx = 0
     while idx < len(blocks):
-        entry_titles = _extract_accordion_entry_titles(blocks[idx])
+        entry_titles = _extract_accordion_entry_titles(
+            blocks[idx],
+            in_laboratory_section=in_laboratory_section,
+        )
         if not entry_titles:
             idx += 1
             continue
@@ -815,7 +831,10 @@ def _parse_department_accordion_body_entries(body: Tag, source_url: str) -> list
         detail_parts = [_normalize_text(blocks[idx].get_text(" ", strip=True))]
         cursor = idx + 1
         while cursor < len(blocks):
-            if _extract_accordion_entry_titles(blocks[cursor]):
+            if _extract_accordion_entry_titles(
+                blocks[cursor],
+                in_laboratory_section=in_laboratory_section,
+            ):
                 break
             detail_parts.append(_normalize_text(blocks[cursor].get_text(" ", strip=True)))
             cursor += 1
@@ -829,16 +848,26 @@ def _parse_department_accordion_body_entries(body: Tag, source_url: str) -> list
             body_hint = _extract_building_hint(hint_text)
             title_hint = _extract_building_hint(entry_title)
             building_hint = _infer_building_hint_from_name(canonical_name, body_hint or title_hint)
+            floor = _extract_floor_label(hint_text)
+            capacity = _extract_capacity(hint_text)
+
+            if (
+                in_laboratory_section
+                and canonical_name.casefold().startswith("laboratorio di ")
+                and not (building_hint or floor or capacity)
+            ):
+                # Skip broad laboratory headings with no actionable location/capacity details.
+                continue
 
             aulas.append(
                 RawAula(
                     name=canonical_name,
                     source_url=source_url,
-                    floor=_extract_floor_label(hint_text),
+                    floor=floor,
                     room=_extract_room_label(canonical_name),
                     short_code=_extract_short_code(canonical_name),
                     building_hint=building_hint,
-                    capacity=_extract_capacity(hint_text),
+                    capacity=capacity,
                 )
             )
 
@@ -847,7 +876,10 @@ def _parse_department_accordion_body_entries(body: Tag, source_url: str) -> list
     return aulas
 
 
-def _extract_accordion_entry_titles(block: Tag) -> list[str]:
+def _extract_accordion_entry_titles(
+    block: Tag,
+    in_laboratory_section: bool = False,
+) -> list[str]:
     block_text = _normalize_text(block.get_text(" ", strip=True))
     if not block_text:
         return []
@@ -857,8 +889,12 @@ def _extract_accordion_entry_titles(block: Tag) -> list[str]:
     candidates: list[str] = []
     lowered_text = block_text.casefold()
 
-    if block.name == "h4" and lowered_text.startswith("laboratorio "):
-        candidates.append(block_text)
+    if block.name == "h4":
+        if lowered_text.startswith("laboratorio "):
+            candidates.append(block_text)
+        elif in_laboratory_section and _is_likely_laboratory_heading(block_text):
+            prefix = "Laboratorio " if lowered_text.startswith("di ") else "Laboratorio di "
+            candidates.append(f"{prefix}{block_text}")
 
     for strong in block.find_all("strong"):
         strong_text = _normalize_text(strong.get_text(" ", strip=True))
@@ -874,6 +910,8 @@ def _extract_accordion_entry_titles(block: Tag) -> list[str]:
     if not candidates and block.name == "p" and ("aula" in lowered_text or "laboratorio" in lowered_text):
         for candidate in _extract_department_candidates(block_text):
             candidate = candidate.lstrip("'`\"").strip()
+            if not candidate.casefold().startswith(("aula ", "laboratorio ")):
+                continue
             if not _is_likely_accordion_entry_name(candidate):
                 continue
             candidates.append(candidate)
@@ -901,6 +939,20 @@ def _is_likely_accordion_entry_name(value: str) -> bool:
     if lowered.startswith("laboratorio "):
         return True
     return _looks_like_room_code(cleaned)
+
+
+def _is_likely_laboratory_heading(value: str) -> bool:
+    cleaned = collapse_whitespace(value)
+    if not cleaned or _is_generic_accordion_heading(cleaned):
+        return False
+    if len(cleaned) > 80:
+        return False
+    if ":" in cleaned:
+        return False
+    lowered = cleaned.casefold()
+    if lowered.startswith(("responsabile", "preposto", "dotazione", "capienza", "ubicazione", "collocazione")):
+        return False
+    return bool(re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9 .,_'()/\-]*", cleaned))
 
 
 def _contains_location_marker(text: str) -> bool:
@@ -1134,6 +1186,15 @@ def _extract_capacity(text: str) -> int | None:
     )
     if explicit:
         value = int(explicit.group(1))
+        return value if 1 <= value <= 5000 else None
+
+    benches_or_workstations = re.search(
+        r"\b(?:dotat[oa]\s+di\s+)?([0-9]{1,4})\s*(?:banchi\s+di\s+lavoro|postazioni)\b",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    if benches_or_workstations:
+        value = int(benches_or_workstations.group(1))
         return value if 1 <= value <= 5000 else None
 
     if re.fullmatch(r"[0-9]{1,4}", cleaned):

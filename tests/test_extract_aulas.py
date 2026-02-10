@@ -444,6 +444,56 @@ def test_crawl_aulas_parses_nested_department_accordion_entries() -> None:
     assert lab.capacity == 60
 
 
+def test_crawl_aulas_parses_fisica_lab_headings_and_bench_capacity() -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    department_url = "https://fisica.unical.it/dipartimento/organizzazione/strutture/"
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        department_url: """
+            <html><body>
+              <div class="accordion accordion-left-icon">
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button class="accordion-button" type="button">Laboratori Didattici di base</button>
+                  </div>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <h4>Elettromagnetismo e Ottica</h4>
+                      <p>Il Laboratorio, ubicato al secondo piano del Cubo 31C, è dotato di 20 banchi di lavoro alimentati.</p>
+                      <h4>Meccanica e Termodinamica</h4>
+                      <p>Il Laboratorio è dotato di 16 banchi di lavoro alimentati.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body></html>
+        """,
+        "https://planner.example/api/Edifici/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        "https://planner.example/api/Aule/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        "https://planner.example/api/Impegni/getImpegniPublic?dataInizio=2020-01-01&dataFine=2030-12-31&limit=20000": "[]",
+    }
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages),
+        department_urls=(department_url,),
+        planner_base_url="https://planner.example",
+        planner_client_id=None,
+    )
+
+    names = {item.name for item in aulas}
+    assert "Laboratorio di Elettromagnetismo e Ottica" in names
+    assert "Laboratorio di Meccanica e Termodinamica" in names
+
+    electromagnetism = next(item for item in aulas if item.name == "Laboratorio di Elettromagnetismo e Ottica")
+    assert electromagnetism.floor == "Secondo piano"
+    assert electromagnetism.building_hint == "Cubo 31C"
+    assert electromagnetism.capacity == 20
+
+    mechanics = next(item for item in aulas if item.name == "Laboratorio di Meccanica e Termodinamica")
+    assert mechanics.capacity == 16
+
+
 def test_crawl_aulas_prefers_higher_capacity_on_duplicate_rows() -> None:
     base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
     first_department_url = "https://a.example/strutture/"
