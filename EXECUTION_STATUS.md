@@ -73,6 +73,7 @@ Owner: Elrond89
 - 2026-02-10: Extended floor extraction for department rows (`4º piano`, `ponte carrabile/pedonale`, `sottovia`) and added normalize hints (`29B1/29C2` code-floor inference, `superiore/inferiore`, planner/DIAM `Giannattasio`), increasing floor coverage by +73 (256 -> 329).
 - 2026-02-10: Added QA hardening checks in `integrity.py` for conflicting room-floor assignments and suspicious near-duplicate aulas (token-set based), with regression tests.
 - 2026-02-10: Freeze gate checkpoint refreshed after floor + QA hardening (`pytest`, `validate`, `report`) with clean integrity.
+- 2026-02-10: Added CI coverage guardrails (baseline-vs-candidate report gate): `coverage.aulas.with_floor` must not decrease and `coverage.aulas.with_building_id == coverage.aulas.total`.
 
 ## Blockers
 - No hard blockers at this checkpoint.

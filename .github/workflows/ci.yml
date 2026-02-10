@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -33,3 +35,19 @@ jobs:
         run: |
           mkdir -p /tmp/unical-report
           python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out /tmp/unical-report/report.json
+
+      - name: Coverage Guardrails
+        run: |
+          mkdir -p /tmp/unical-report
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
+            git show "origin/${{ github.base_ref }}:data/normalized/report.json" > /tmp/unical-report/baseline-report.json
+          elif git rev-parse --verify HEAD^ >/dev/null 2>&1; then
+            git show HEAD^:data/normalized/report.json > /tmp/unical-report/baseline-report.json
+          else
+            cp data/normalized/report.json /tmp/unical-report/baseline-report.json
+          fi
+
+          python -m unical_scraper.validate.coverage_gate \
+            --baseline /tmp/unical-report/baseline-report.json \
+            --candidate /tmp/unical-report/report.json
