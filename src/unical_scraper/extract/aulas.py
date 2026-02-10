@@ -1187,10 +1187,22 @@ def _extract_building_hint(text: str) -> str | None:
     if cubi_match:
         return f"Cubi {cubi_match.group(1).upper()}"
 
+    capannone_match = re.search(r"\bCapannone\s+([A-Za-z])\b", text, flags=re.IGNORECASE)
+    if capannone_match:
+        return f"Capannone {capannone_match.group(1).upper()}"
+
+    if re.search(r"\bAmpliamento\s+Polifunzionale\b", text, flags=re.IGNORECASE):
+        return "Ampliamento Polifunzionale"
+
+    if re.search(r"\bOrto\s+Botanico\b", text, flags=re.IGNORECASE):
+        return "Orto Botanico"
+
     if re.search(r"\bPolifunzionale\s+(Ovest|Est)\b", text, flags=re.IGNORECASE):
         match = re.search(r"\bPolifunzionale\s+(Ovest|Est)\b", text, flags=re.IGNORECASE)
         if match:
             return f"Polifunzionale {match.group(1).capitalize()}"
+    if re.search(r"\bPolifunzionale\b", text, flags=re.IGNORECASE):
+        return "Polifunzionale"
 
     compact = none_if_empty(re.sub(r"\s+", "", text))
     if compact and re.fullmatch(r"[0-9]{1,2}[A-Za-z]", compact):

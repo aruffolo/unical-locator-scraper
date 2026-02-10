@@ -14,22 +14,22 @@
     "normalized": "aula-1"
   },
   {
-    "alias_id": "alias-place-aula-1-seminari-1-seminari",
-    "entity_id": "aula-1-seminari",
+    "alias_id": "alias-place-aula-1-seminari-ampliamento-polifunzionale-1-seminari",
+    "entity_id": "aula-1-seminari-ampliamento-polifunzionale",
     "entity_type": "PLACE",
     "label": "1 - Seminari",
     "normalized": "1-seminari"
   },
   {
-    "alias_id": "alias-place-aula-1-seminari-1seminari",
-    "entity_id": "aula-1-seminari",
+    "alias_id": "alias-place-aula-1-seminari-ampliamento-polifunzionale-1seminari",
+    "entity_id": "aula-1-seminari-ampliamento-polifunzionale",
     "entity_type": "PLACE",
     "label": "1SEMINARI",
     "normalized": "1seminari"
   },
   {
-    "alias_id": "alias-place-aula-1-seminari-aula-1-seminari",
-    "entity_id": "aula-1-seminari",
+    "alias_id": "alias-place-aula-1-seminari-ampliamento-polifunzionale-aula-1-seminari",
+    "entity_id": "aula-1-seminari-ampliamento-polifunzionale",
     "entity_type": "PLACE",
     "label": "AULA 1 - Seminari",
     "normalized": "aula-1-seminari"
@@ -56,15 +56,15 @@
     "normalized": "aula-10g"
   },
   {
-    "alias_id": "alias-place-aula-13-13",
-    "entity_id": "aula-13",
+    "alias_id": "alias-place-aula-13-capannone-c-13",
+    "entity_id": "aula-13-capannone-c",
     "entity_type": "PLACE",
     "label": "13",
     "normalized": "13"
   },
   {
-    "alias_id": "alias-place-aula-13-aula-13",
-    "entity_id": "aula-13",
+    "alias_id": "alias-place-aula-13-capannone-c-aula-13",
+    "entity_id": "aula-13-capannone-c",
     "entity_type": "PLACE",
     "label": "Aula 13",
     "normalized": "aula-13"
@@ -84,32 +84,46 @@
     "normalized": "13c3-zenit2"
   },
   {
-    "alias_id": "alias-place-aula-14-14",
-    "entity_id": "aula-14",
+    "alias_id": "alias-place-aula-14-capannone-c-14",
+    "entity_id": "aula-14-capannone-c",
     "entity_type": "PLACE",
     "label": "14",
     "normalized": "14"
   },
   {
-    "alias_id": "alias-place-aula-14-aula-14",
-    "entity_id": "aula-14",
+    "alias_id": "alias-place-aula-14-capannone-c-aula-14",
+    "entity_id": "aula-14-capannone-c",
     "entity_type": "PLACE",
     "label": "Aula 14",
     "normalized": "aula-14"
   },
   {
-    "alias_id": "alias-place-aula-15-15",
-    "entity_id": "aula-15",
+    "alias_id": "alias-place-aula-15-capannone-c-15",
+    "entity_id": "aula-15-capannone-c",
     "entity_type": "PLACE",
     "label": "15",
     "normalized": "15"
   },
   {
-    "alias_id": "alias-place-aula-15-aula-15",
-    "entity_id": "aula-15",
+    "alias_id": "alias-place-aula-15-capannone-c-aula-15",
+    "entity_id": "aula-15-capannone-c",
     "entity_type": "PLACE",
     "label": "Aula 15",
     "normalized": "aula-15"
+  },
+  {
+    "alias_id": "alias-place-aula-2-ampliamento-polifunzionale-2",
+    "entity_id": "aula-2-ampliamento-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "2",
+    "normalized": "2"
+  },
+  {
+    "alias_id": "alias-place-aula-2-ampliamento-polifunzionale-aula-2",
+    "entity_id": "aula-2-ampliamento-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "AULA 2",
+    "normalized": "aula-2"
   },
   {
     "alias_id": "alias-place-aula-2-cubo-12b-2",
@@ -126,43 +140,43 @@
     "normalized": "aula-2"
   },
   {
-    "alias_id": "alias-place-aula-20-20",
-    "entity_id": "aula-20",
+    "alias_id": "alias-place-aula-20-capannone-d-20",
+    "entity_id": "aula-20-capannone-d",
     "entity_type": "PLACE",
     "label": "20",
     "normalized": "20"
   },
   {
-    "alias_id": "alias-place-aula-20-aula-20",
-    "entity_id": "aula-20",
+    "alias_id": "alias-place-aula-20-capannone-d-aula-20",
+    "entity_id": "aula-20-capannone-d",
     "entity_type": "PLACE",
     "label": "Aula 20",
     "normalized": "aula-20"
   },
   {
-    "alias_id": "alias-place-aula-21-21",
-    "entity_id": "aula-21",
+    "alias_id": "alias-place-aula-21-capannone-d-21",
+    "entity_id": "aula-21-capannone-d",
     "entity_type": "PLACE",
     "label": "21",
     "normalized": "21"
   },
   {
-    "alias_id": "alias-place-aula-21-aula-21",
-    "entity_id": "aula-21",
+    "alias_id": "alias-place-aula-21-capannone-d-aula-21",
+    "entity_id": "aula-21-capannone-d",
     "entity_type": "PLACE",
     "label": "Aula 21",
     "normalized": "aula-21"
   },
   {
-    "alias_id": "alias-place-aula-25-25",
-    "entity_id": "aula-25",
+    "alias_id": "alias-place-aula-25-capannone-d-25",
+    "entity_id": "aula-25-capannone-d",
     "entity_type": "PLACE",
     "label": "25",
     "normalized": "25"
   },
   {
-    "alias_id": "alias-place-aula-25-aula-25",
-    "entity_id": "aula-25",
+    "alias_id": "alias-place-aula-25-capannone-d-aula-25",
+    "entity_id": "aula-25-capannone-d",
     "entity_type": "PLACE",
     "label": "Aula 25",
     "normalized": "aula-25"
@@ -355,6 +369,20 @@
     "entity_type": "PLACE",
     "label": "Aula 29B3",
     "normalized": "aula-29b3"
+  },
+  {
+    "alias_id": "alias-place-aula-3-ampliamento-polifunzionale-3",
+    "entity_id": "aula-3-ampliamento-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "3",
+    "normalized": "3"
+  },
+  {
+    "alias_id": "alias-place-aula-3-ampliamento-polifunzionale-aula-3",
+    "entity_id": "aula-3-ampliamento-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "AULA 3",
+    "normalized": "aula-3"
   },
   {
     "alias_id": "alias-place-aula-3-cubo-12b-3",
@@ -903,11 +931,25 @@
     "normalized": "aula-43c3"
   },
   {
-    "alias_id": "alias-place-aula-44-44",
-    "entity_id": "aula-44",
+    "alias_id": "alias-place-aula-44-ampliamento-polifunzionale-44",
+    "entity_id": "aula-44-ampliamento-polifunzionale",
     "entity_type": "PLACE",
     "label": "44",
     "normalized": "44"
+  },
+  {
+    "alias_id": "alias-place-aula-44-polifunzionale-44",
+    "entity_id": "aula-44-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "44",
+    "normalized": "44"
+  },
+  {
+    "alias_id": "alias-place-aula-44-polifunzionale-aula-44",
+    "entity_id": "aula-44-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "Aula 44",
+    "normalized": "aula-44"
   },
   {
     "alias_id": "alias-place-aula-44b4a-cubo-44b-44-b-4-a",
@@ -931,15 +973,15 @@
     "normalized": "aula-44b4a"
   },
   {
-    "alias_id": "alias-place-aula-45-45",
-    "entity_id": "aula-45",
+    "alias_id": "alias-place-aula-45-capannone-f-45",
+    "entity_id": "aula-45-capannone-f",
     "entity_type": "PLACE",
     "label": "45",
     "normalized": "45"
   },
   {
-    "alias_id": "alias-place-aula-45-aula-45",
-    "entity_id": "aula-45",
+    "alias_id": "alias-place-aula-45-capannone-f-aula-45",
+    "entity_id": "aula-45-capannone-f",
     "entity_type": "PLACE",
     "label": "Aula 45",
     "normalized": "aula-45"
@@ -1071,15 +1113,15 @@
     "normalized": "aula-45b0c"
   },
   {
-    "alias_id": "alias-place-aula-46-46",
-    "entity_id": "aula-46",
+    "alias_id": "alias-place-aula-46-capannone-f-46",
+    "entity_id": "aula-46-capannone-f",
     "entity_type": "PLACE",
     "label": "46",
     "normalized": "46"
   },
   {
-    "alias_id": "alias-place-aula-46-aula-46",
-    "entity_id": "aula-46",
+    "alias_id": "alias-place-aula-46-capannone-f-aula-46",
+    "entity_id": "aula-46-capannone-f",
     "entity_type": "PLACE",
     "label": "Aula 46",
     "normalized": "aula-46"
@@ -1106,29 +1148,29 @@
     "normalized": "aula-46c"
   },
   {
-    "alias_id": "alias-place-aula-52-52",
-    "entity_id": "aula-52",
+    "alias_id": "alias-place-aula-52-capannone-f-52",
+    "entity_id": "aula-52-capannone-f",
     "entity_type": "PLACE",
     "label": "52",
     "normalized": "52"
   },
   {
-    "alias_id": "alias-place-aula-52-aula-52",
-    "entity_id": "aula-52",
+    "alias_id": "alias-place-aula-52-capannone-f-aula-52",
+    "entity_id": "aula-52-capannone-f",
     "entity_type": "PLACE",
     "label": "Aula 52",
     "normalized": "aula-52"
   },
   {
-    "alias_id": "alias-place-aula-53-53",
-    "entity_id": "aula-53",
+    "alias_id": "alias-place-aula-53-capannone-f-53",
+    "entity_id": "aula-53-capannone-f",
     "entity_type": "PLACE",
     "label": "53",
     "normalized": "53"
   },
   {
-    "alias_id": "alias-place-aula-53-aula-53",
-    "entity_id": "aula-53",
+    "alias_id": "alias-place-aula-53-capannone-f-aula-53",
+    "entity_id": "aula-53-capannone-f",
     "entity_type": "PLACE",
     "label": "Aula 53",
     "normalized": "aula-53"
@@ -1638,20 +1680,6 @@
     "normalized": "automatica"
   },
   {
-    "alias_id": "alias-place-aula-b-aula-b",
-    "entity_id": "aula-b",
-    "entity_type": "PLACE",
-    "label": "Aula B",
-    "normalized": "aula-b"
-  },
-  {
-    "alias_id": "alias-place-aula-b-b",
-    "entity_id": "aula-b",
-    "entity_type": "PLACE",
-    "label": "B",
-    "normalized": "b"
-  },
-  {
     "alias_id": "alias-place-aula-b-c-cubo-31c-aula-b-c",
     "entity_id": "aula-b-c-cubo-31c",
     "entity_type": "PLACE",
@@ -1769,6 +1797,20 @@
     "entity_type": "PLACE",
     "label": "BLING",
     "normalized": "bling"
+  },
+  {
+    "alias_id": "alias-place-aula-b-polifunzionale-aula-b",
+    "entity_id": "aula-b-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "Aula B",
+    "normalized": "aula-b"
+  },
+  {
+    "alias_id": "alias-place-aula-b-polifunzionale-b",
+    "entity_id": "aula-b-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "B",
+    "normalized": "b"
   },
   {
     "alias_id": "alias-place-aula-b5-cubo-4d-aula-b-5",
@@ -2058,22 +2100,22 @@
     "normalized": "caldora"
   },
   {
-    "alias_id": "alias-place-aula-centro-di-simulazione-med-td-aula-centro-di-simulazione-med-td",
-    "entity_id": "aula-centro-di-simulazione-med-td",
+    "alias_id": "alias-place-aula-centro-di-simulazione-med-td-polifunzionale-aula-centro-di-simulazione-med-td",
+    "entity_id": "aula-centro-di-simulazione-med-td-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula Centro di Simulazione ( MED-TD )",
     "normalized": "aula-centro-di-simulazione-med-td"
   },
   {
-    "alias_id": "alias-place-aula-centro-di-simulazione-med-td-centro-di-simulazione-med-td",
-    "entity_id": "aula-centro-di-simulazione-med-td",
+    "alias_id": "alias-place-aula-centro-di-simulazione-med-td-polifunzionale-centro-di-simulazione-med-td",
+    "entity_id": "aula-centro-di-simulazione-med-td-polifunzionale",
     "entity_type": "PLACE",
     "label": "Centro di Simulazione ( MED-TD )",
     "normalized": "centro-di-simulazione-med-td"
   },
   {
-    "alias_id": "alias-place-aula-centro-di-simulazione-med-td-centrodisimulazione-medtd",
-    "entity_id": "aula-centro-di-simulazione-med-td",
+    "alias_id": "alias-place-aula-centro-di-simulazione-med-td-polifunzionale-centrodisimulazione-medtd",
+    "entity_id": "aula-centro-di-simulazione-med-td-polifunzionale",
     "entity_type": "PLACE",
     "label": "CENTRODISIMULAZIONE(MEDTD)",
     "normalized": "centrodisimulazione-medtd"
@@ -2338,15 +2380,15 @@
     "normalized": "ch-17-7b"
   },
   {
-    "alias_id": "alias-place-aula-circolare-aula-circolare",
-    "entity_id": "aula-circolare",
+    "alias_id": "alias-place-aula-circolare-polifunzionale-aula-circolare",
+    "entity_id": "aula-circolare-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula Circolare",
     "normalized": "aula-circolare"
   },
   {
-    "alias_id": "alias-place-aula-circolare-circolare",
-    "entity_id": "aula-circolare",
+    "alias_id": "alias-place-aula-circolare-polifunzionale-circolare",
+    "entity_id": "aula-circolare-polifunzionale",
     "entity_type": "PLACE",
     "label": "Circolare",
     "normalized": "circolare"
@@ -4088,8 +4130,8 @@
     "normalized": "ep6"
   },
   {
-    "alias_id": "alias-place-aula-ex-biblioteca-brandemayer-ex-biblioteca-brandemayer",
-    "entity_id": "aula-ex-biblioteca-brandemayer",
+    "alias_id": "alias-place-aula-ex-biblioteca-brandemayer-polifunzionale-ex-biblioteca-brandemayer",
+    "entity_id": "aula-ex-biblioteca-brandemayer-polifunzionale",
     "entity_type": "PLACE",
     "label": "ex biblioteca Brandemayer",
     "normalized": "ex-biblioteca-brandemayer"
@@ -4690,162 +4732,183 @@
     "normalized": "g-leone"
   },
   {
-    "alias_id": "alias-place-aula-g1-aula-g-1",
-    "entity_id": "aula-g1",
+    "alias_id": "alias-place-aula-g1-ampliamento-polifunzionale-aula-g-1",
+    "entity_id": "aula-g1-ampliamento-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula G 1",
     "normalized": "aula-g-1"
   },
   {
-    "alias_id": "alias-place-aula-g1-aula-g1",
-    "entity_id": "aula-g1",
+    "alias_id": "alias-place-aula-g1-ampliamento-polifunzionale-aula-g1",
+    "entity_id": "aula-g1-ampliamento-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula G1",
     "normalized": "aula-g1"
   },
   {
-    "alias_id": "alias-place-aula-g1-g-1",
-    "entity_id": "aula-g1",
+    "alias_id": "alias-place-aula-g1-ampliamento-polifunzionale-g-1",
+    "entity_id": "aula-g1-ampliamento-polifunzionale",
     "entity_type": "PLACE",
     "label": "G 1",
     "normalized": "g-1"
   },
   {
-    "alias_id": "alias-place-aula-g1-g1",
-    "entity_id": "aula-g1",
+    "alias_id": "alias-place-aula-g1-ampliamento-polifunzionale-g1",
+    "entity_id": "aula-g1-ampliamento-polifunzionale",
     "entity_type": "PLACE",
     "label": "G1",
     "normalized": "g1"
   },
   {
-    "alias_id": "alias-place-aula-g2-aula-g-2",
-    "entity_id": "aula-g2",
+    "alias_id": "alias-place-aula-g1-polifunzionale-aula-g-1",
+    "entity_id": "aula-g1-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "Aula G 1",
+    "normalized": "aula-g-1"
+  },
+  {
+    "alias_id": "alias-place-aula-g1-polifunzionale-aula-g1",
+    "entity_id": "aula-g1-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "Aula G1",
+    "normalized": "aula-g1"
+  },
+  {
+    "alias_id": "alias-place-aula-g1-polifunzionale-g-1",
+    "entity_id": "aula-g1-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "G 1",
+    "normalized": "g-1"
+  },
+  {
+    "alias_id": "alias-place-aula-g1-polifunzionale-g1",
+    "entity_id": "aula-g1-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "G1",
+    "normalized": "g1"
+  },
+  {
+    "alias_id": "alias-place-aula-g2-polifunzionale-aula-g-2",
+    "entity_id": "aula-g2-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula G 2",
     "normalized": "aula-g-2"
   },
   {
-    "alias_id": "alias-place-aula-g2-aula-g2",
-    "entity_id": "aula-g2",
+    "alias_id": "alias-place-aula-g2-polifunzionale-aula-g2",
+    "entity_id": "aula-g2-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula G2",
     "normalized": "aula-g2"
   },
   {
-    "alias_id": "alias-place-aula-g2-g-2",
-    "entity_id": "aula-g2",
+    "alias_id": "alias-place-aula-g2-polifunzionale-g-2",
+    "entity_id": "aula-g2-polifunzionale",
     "entity_type": "PLACE",
     "label": "G 2",
     "normalized": "g-2"
   },
   {
-    "alias_id": "alias-place-aula-g2-g2",
-    "entity_id": "aula-g2",
+    "alias_id": "alias-place-aula-g2-polifunzionale-g2",
+    "entity_id": "aula-g2-polifunzionale",
     "entity_type": "PLACE",
     "label": "G2",
     "normalized": "g2"
   },
   {
-    "alias_id": "alias-place-aula-g3-aula-g-3",
-    "entity_id": "aula-g3",
+    "alias_id": "alias-place-aula-g3-polifunzionale-aula-g-3",
+    "entity_id": "aula-g3-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula G 3",
     "normalized": "aula-g-3"
   },
   {
-    "alias_id": "alias-place-aula-g3-aula-g3",
-    "entity_id": "aula-g3",
+    "alias_id": "alias-place-aula-g3-polifunzionale-aula-g3",
+    "entity_id": "aula-g3-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula G3",
     "normalized": "aula-g3"
   },
   {
-    "alias_id": "alias-place-aula-g3-g-3",
-    "entity_id": "aula-g3",
+    "alias_id": "alias-place-aula-g3-polifunzionale-g-3",
+    "entity_id": "aula-g3-polifunzionale",
     "entity_type": "PLACE",
     "label": "G 3",
     "normalized": "g-3"
   },
   {
-    "alias_id": "alias-place-aula-g3-g3",
-    "entity_id": "aula-g3",
+    "alias_id": "alias-place-aula-g3-polifunzionale-g3",
+    "entity_id": "aula-g3-polifunzionale",
     "entity_type": "PLACE",
     "label": "G3",
     "normalized": "g3"
   },
   {
-    "alias_id": "alias-place-aula-g4-aula-g-4",
-    "entity_id": "aula-g4",
+    "alias_id": "alias-place-aula-g4-polifunzionale-aula-g-4",
+    "entity_id": "aula-g4-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula G 4",
     "normalized": "aula-g-4"
   },
   {
-    "alias_id": "alias-place-aula-g4-aula-g4",
-    "entity_id": "aula-g4",
+    "alias_id": "alias-place-aula-g4-polifunzionale-aula-g4",
+    "entity_id": "aula-g4-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula G4",
     "normalized": "aula-g4"
   },
   {
-    "alias_id": "alias-place-aula-g4-g-4",
-    "entity_id": "aula-g4",
+    "alias_id": "alias-place-aula-g4-polifunzionale-g-4",
+    "entity_id": "aula-g4-polifunzionale",
     "entity_type": "PLACE",
     "label": "G 4",
     "normalized": "g-4"
   },
   {
-    "alias_id": "alias-place-aula-g4-g4",
-    "entity_id": "aula-g4",
+    "alias_id": "alias-place-aula-g4-polifunzionale-g4",
+    "entity_id": "aula-g4-polifunzionale",
     "entity_type": "PLACE",
     "label": "G4",
     "normalized": "g4"
   },
   {
-    "alias_id": "alias-place-aula-gialla-a-superiore-aula-gialla-a-superiore",
-    "entity_id": "aula-gialla-a-superiore",
+    "alias_id": "alias-place-aula-gialla-a-superiore-polifunzionale-aula-gialla-a-superiore",
+    "entity_id": "aula-gialla-a-superiore-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula Gialla - A (superiore)",
     "normalized": "aula-gialla-a-superiore"
   },
   {
-    "alias_id": "alias-place-aula-gialla-a-superiore-gialla-a-superiore",
-    "entity_id": "aula-gialla-a-superiore",
+    "alias_id": "alias-place-aula-gialla-a-superiore-polifunzionale-gialla-a-superiore",
+    "entity_id": "aula-gialla-a-superiore-polifunzionale",
     "entity_type": "PLACE",
     "label": "Gialla - A (superiore)",
     "normalized": "gialla-a-superiore"
   },
   {
-    "alias_id": "alias-place-aula-gialla-a-superiore-giallaa-superiore",
-    "entity_id": "aula-gialla-a-superiore",
+    "alias_id": "alias-place-aula-gialla-a-superiore-polifunzionale-giallaa-superiore",
+    "entity_id": "aula-gialla-a-superiore-polifunzionale",
     "entity_type": "PLACE",
     "label": "GIALLAA(SUPERIORE)",
     "normalized": "giallaa-superiore"
   },
   {
-    "alias_id": "alias-place-aula-gialla-aula-gialla",
-    "entity_id": "aula-gialla",
-    "entity_type": "PLACE",
-    "label": "Aula Gialla",
-    "normalized": "aula-gialla"
-  },
-  {
-    "alias_id": "alias-place-aula-gialla-b-inferiore-aula-gialla-b-inferiore",
-    "entity_id": "aula-gialla-b-inferiore",
+    "alias_id": "alias-place-aula-gialla-b-inferiore-polifunzionale-aula-gialla-b-inferiore",
+    "entity_id": "aula-gialla-b-inferiore-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula Gialla - B (inferiore)",
     "normalized": "aula-gialla-b-inferiore"
   },
   {
-    "alias_id": "alias-place-aula-gialla-b-inferiore-gialla-b-inferiore",
-    "entity_id": "aula-gialla-b-inferiore",
+    "alias_id": "alias-place-aula-gialla-b-inferiore-polifunzionale-gialla-b-inferiore",
+    "entity_id": "aula-gialla-b-inferiore-polifunzionale",
     "entity_type": "PLACE",
     "label": "Gialla - B (inferiore)",
     "normalized": "gialla-b-inferiore"
   },
   {
-    "alias_id": "alias-place-aula-gialla-b-inferiore-giallab-inferiore",
-    "entity_id": "aula-gialla-b-inferiore",
+    "alias_id": "alias-place-aula-gialla-b-inferiore-polifunzionale-giallab-inferiore",
+    "entity_id": "aula-gialla-b-inferiore-polifunzionale",
     "entity_type": "PLACE",
     "label": "GIALLAB(INFERIORE)",
     "normalized": "giallab-inferiore"
@@ -4879,8 +4942,15 @@
     "normalized": "gialla"
   },
   {
-    "alias_id": "alias-place-aula-gialla-gialla",
-    "entity_id": "aula-gialla",
+    "alias_id": "alias-place-aula-gialla-polifunzionale-aula-gialla",
+    "entity_id": "aula-gialla-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "Aula Gialla",
+    "normalized": "aula-gialla"
+  },
+  {
+    "alias_id": "alias-place-aula-gialla-polifunzionale-gialla",
+    "entity_id": "aula-gialla-polifunzionale",
     "entity_type": "PLACE",
     "label": "Gialla",
     "normalized": "gialla"
@@ -4942,113 +5012,113 @@
     "normalized": "gravina"
   },
   {
-    "alias_id": "alias-place-aula-h1-aula-h-1",
-    "entity_id": "aula-h1",
+    "alias_id": "alias-place-aula-h1-polifunzionale-aula-h-1",
+    "entity_id": "aula-h1-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula H 1",
     "normalized": "aula-h-1"
   },
   {
-    "alias_id": "alias-place-aula-h1-aula-h1",
-    "entity_id": "aula-h1",
+    "alias_id": "alias-place-aula-h1-polifunzionale-aula-h1",
+    "entity_id": "aula-h1-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula H1",
     "normalized": "aula-h1"
   },
   {
-    "alias_id": "alias-place-aula-h1-h-1",
-    "entity_id": "aula-h1",
+    "alias_id": "alias-place-aula-h1-polifunzionale-h-1",
+    "entity_id": "aula-h1-polifunzionale",
     "entity_type": "PLACE",
     "label": "H 1",
     "normalized": "h-1"
   },
   {
-    "alias_id": "alias-place-aula-h1-h1",
-    "entity_id": "aula-h1",
+    "alias_id": "alias-place-aula-h1-polifunzionale-h1",
+    "entity_id": "aula-h1-polifunzionale",
     "entity_type": "PLACE",
     "label": "H1",
     "normalized": "h1"
   },
   {
-    "alias_id": "alias-place-aula-h2-aula-h-2",
-    "entity_id": "aula-h2",
+    "alias_id": "alias-place-aula-h2-polifunzionale-aula-h-2",
+    "entity_id": "aula-h2-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula H 2",
     "normalized": "aula-h-2"
   },
   {
-    "alias_id": "alias-place-aula-h2-aula-h2",
-    "entity_id": "aula-h2",
+    "alias_id": "alias-place-aula-h2-polifunzionale-aula-h2",
+    "entity_id": "aula-h2-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula H2",
     "normalized": "aula-h2"
   },
   {
-    "alias_id": "alias-place-aula-h2-h-2",
-    "entity_id": "aula-h2",
+    "alias_id": "alias-place-aula-h2-polifunzionale-h-2",
+    "entity_id": "aula-h2-polifunzionale",
     "entity_type": "PLACE",
     "label": "H 2",
     "normalized": "h-2"
   },
   {
-    "alias_id": "alias-place-aula-h2-h2",
-    "entity_id": "aula-h2",
+    "alias_id": "alias-place-aula-h2-polifunzionale-h2",
+    "entity_id": "aula-h2-polifunzionale",
     "entity_type": "PLACE",
     "label": "H2",
     "normalized": "h2"
   },
   {
-    "alias_id": "alias-place-aula-h3-aula-h-3",
-    "entity_id": "aula-h3",
+    "alias_id": "alias-place-aula-h3-polifunzionale-aula-h-3",
+    "entity_id": "aula-h3-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula H 3",
     "normalized": "aula-h-3"
   },
   {
-    "alias_id": "alias-place-aula-h3-aula-h3",
-    "entity_id": "aula-h3",
+    "alias_id": "alias-place-aula-h3-polifunzionale-aula-h3",
+    "entity_id": "aula-h3-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula H3",
     "normalized": "aula-h3"
   },
   {
-    "alias_id": "alias-place-aula-h3-h-3",
-    "entity_id": "aula-h3",
+    "alias_id": "alias-place-aula-h3-polifunzionale-h-3",
+    "entity_id": "aula-h3-polifunzionale",
     "entity_type": "PLACE",
     "label": "H 3",
     "normalized": "h-3"
   },
   {
-    "alias_id": "alias-place-aula-h3-h3",
-    "entity_id": "aula-h3",
+    "alias_id": "alias-place-aula-h3-polifunzionale-h3",
+    "entity_id": "aula-h3-polifunzionale",
     "entity_type": "PLACE",
     "label": "H3",
     "normalized": "h3"
   },
   {
-    "alias_id": "alias-place-aula-h4-aula-h-4",
-    "entity_id": "aula-h4",
+    "alias_id": "alias-place-aula-h4-polifunzionale-aula-h-4",
+    "entity_id": "aula-h4-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula H 4",
     "normalized": "aula-h-4"
   },
   {
-    "alias_id": "alias-place-aula-h4-aula-h4",
-    "entity_id": "aula-h4",
+    "alias_id": "alias-place-aula-h4-polifunzionale-aula-h4",
+    "entity_id": "aula-h4-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula H4",
     "normalized": "aula-h4"
   },
   {
-    "alias_id": "alias-place-aula-h4-h-4",
-    "entity_id": "aula-h4",
+    "alias_id": "alias-place-aula-h4-polifunzionale-h-4",
+    "entity_id": "aula-h4-polifunzionale",
     "entity_type": "PLACE",
     "label": "H 4",
     "normalized": "h-4"
   },
   {
-    "alias_id": "alias-place-aula-h4-h4",
-    "entity_id": "aula-h4",
+    "alias_id": "alias-place-aula-h4-polifunzionale-h4",
+    "entity_id": "aula-h4-polifunzionale",
     "entity_type": "PLACE",
     "label": "H4",
     "normalized": "h4"
@@ -5320,6 +5390,20 @@
     "normalized": "informaticacsdim"
   },
   {
+    "alias_id": "alias-place-aula-informatica-cubo-15b-aula-informatica",
+    "entity_id": "aula-informatica-cubo-15b",
+    "entity_type": "PLACE",
+    "label": "Aula Informatica",
+    "normalized": "aula-informatica"
+  },
+  {
+    "alias_id": "alias-place-aula-informatica-cubo-15b-informatica",
+    "entity_id": "aula-informatica-cubo-15b",
+    "entity_type": "PLACE",
+    "label": "Informatica",
+    "normalized": "informatica"
+  },
+  {
     "alias_id": "alias-place-aula-informatica-informatica",
     "entity_id": "aula-informatica",
     "entity_type": "PLACE",
@@ -5383,29 +5467,85 @@
     "normalized": "l1"
   },
   {
-    "alias_id": "alias-place-aula-l2-aula-l-2",
-    "entity_id": "aula-l2",
+    "alias_id": "alias-place-aula-l1-polifunzionale-aula-l-1",
+    "entity_id": "aula-l1-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "Aula L 1",
+    "normalized": "aula-l-1"
+  },
+  {
+    "alias_id": "alias-place-aula-l1-polifunzionale-aula-l1",
+    "entity_id": "aula-l1-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "Aula L1",
+    "normalized": "aula-l1"
+  },
+  {
+    "alias_id": "alias-place-aula-l1-polifunzionale-l-1",
+    "entity_id": "aula-l1-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "L 1",
+    "normalized": "l-1"
+  },
+  {
+    "alias_id": "alias-place-aula-l1-polifunzionale-l1",
+    "entity_id": "aula-l1-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "L1",
+    "normalized": "l1"
+  },
+  {
+    "alias_id": "alias-place-aula-l2-cubo-4a-aula-l-2",
+    "entity_id": "aula-l2-cubo-4a",
     "entity_type": "PLACE",
     "label": "Aula L 2",
     "normalized": "aula-l-2"
   },
   {
-    "alias_id": "alias-place-aula-l2-aula-l2",
-    "entity_id": "aula-l2",
+    "alias_id": "alias-place-aula-l2-cubo-4a-aula-l2",
+    "entity_id": "aula-l2-cubo-4a",
     "entity_type": "PLACE",
     "label": "Aula L2",
     "normalized": "aula-l2"
   },
   {
-    "alias_id": "alias-place-aula-l2-l-2",
-    "entity_id": "aula-l2",
+    "alias_id": "alias-place-aula-l2-cubo-4a-l-2",
+    "entity_id": "aula-l2-cubo-4a",
     "entity_type": "PLACE",
     "label": "L 2",
     "normalized": "l-2"
   },
   {
-    "alias_id": "alias-place-aula-l2-l2",
-    "entity_id": "aula-l2",
+    "alias_id": "alias-place-aula-l2-cubo-4a-l2",
+    "entity_id": "aula-l2-cubo-4a",
+    "entity_type": "PLACE",
+    "label": "L2",
+    "normalized": "l2"
+  },
+  {
+    "alias_id": "alias-place-aula-l2-polifunzionale-aula-l-2",
+    "entity_id": "aula-l2-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "Aula L 2",
+    "normalized": "aula-l-2"
+  },
+  {
+    "alias_id": "alias-place-aula-l2-polifunzionale-aula-l2",
+    "entity_id": "aula-l2-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "Aula L2",
+    "normalized": "aula-l2"
+  },
+  {
+    "alias_id": "alias-place-aula-l2-polifunzionale-l-2",
+    "entity_id": "aula-l2-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "L 2",
+    "normalized": "l-2"
+  },
+  {
+    "alias_id": "alias-place-aula-l2-polifunzionale-l2",
+    "entity_id": "aula-l2-polifunzionale",
     "entity_type": "PLACE",
     "label": "L2",
     "normalized": "l2"
@@ -5698,8 +5838,8 @@
     "normalized": "laboratorio-a"
   },
   {
-    "alias_id": "alias-place-aula-laboratorio-a-microbiologia-igiene-e-sanita-pubblica-laboratorio-a-microbiologia-igiene-e-sanita-pubblica",
-    "entity_id": "aula-laboratorio-a-microbiologia-igiene-e-sanita-pubblica",
+    "alias_id": "alias-place-aula-laboratorio-a-microbiologia-igiene-e-sanita-pubblica-polifunzionale-laboratorio-a-microbiologia-igiene-e-sanita-pubblica",
+    "entity_id": "aula-laboratorio-a-microbiologia-igiene-e-sanita-pubblica-polifunzionale",
     "entity_type": "PLACE",
     "label": "Laboratorio A Microbiologia, Igiene e Sanità Pubblica",
     "normalized": "laboratorio-a-microbiologia-igiene-e-sanita-pubblica"
@@ -5726,15 +5866,15 @@
     "normalized": "laboratorio-c"
   },
   {
-    "alias_id": "alias-place-aula-laboratorio-chimico-b-laboratorio-chimico-b",
-    "entity_id": "aula-laboratorio-chimico-b",
+    "alias_id": "alias-place-aula-laboratorio-chimico-b-capannone-e-laboratorio-chimico-b",
+    "entity_id": "aula-laboratorio-chimico-b-capannone-e",
     "entity_type": "PLACE",
     "label": "Laboratorio Chimico B",
     "normalized": "laboratorio-chimico-b"
   },
   {
-    "alias_id": "alias-place-aula-laboratorio-chimico-c-laboratorio-chimico-c",
-    "entity_id": "aula-laboratorio-chimico-c",
+    "alias_id": "alias-place-aula-laboratorio-chimico-c-capannone-e-laboratorio-chimico-c",
+    "entity_id": "aula-laboratorio-chimico-c-capannone-e",
     "entity_type": "PLACE",
     "label": "Laboratorio Chimico C",
     "normalized": "laboratorio-chimico-c"
@@ -6041,6 +6181,13 @@
     "normalized": "laboratorio-informatica"
   },
   {
+    "alias_id": "alias-place-aula-laboratorio-informatica-polifunzionale-laboratorio-informatica",
+    "entity_id": "aula-laboratorio-informatica-polifunzionale",
+    "entity_type": "PLACE",
+    "label": "Laboratorio Informatica",
+    "normalized": "laboratorio-informatica"
+  },
+  {
     "alias_id": "alias-place-aula-laboratorio-lab-16c-cubo-16c-laboratorio-lab-16c",
     "entity_id": "aula-laboratorio-lab-16c-cubo-16c",
     "entity_type": "PLACE",
@@ -6111,15 +6258,15 @@
     "normalized": "laboratorio-sezioni-sottili"
   },
   {
-    "alias_id": "alias-place-aula-laboratorio-sottovia-chimico-laboratorio-sottovia-chimico",
-    "entity_id": "aula-laboratorio-sottovia-chimico",
+    "alias_id": "alias-place-aula-laboratorio-sottovia-chimico-polifunzionale-laboratorio-sottovia-chimico",
+    "entity_id": "aula-laboratorio-sottovia-chimico-polifunzionale",
     "entity_type": "PLACE",
     "label": "Laboratorio Sottovia Chimico",
     "normalized": "laboratorio-sottovia-chimico"
   },
   {
-    "alias_id": "alias-place-aula-laboratorio-sottovia-morfo-funzionale-laboratorio-sottovia-morfo-funzionale",
-    "entity_id": "aula-laboratorio-sottovia-morfo-funzionale",
+    "alias_id": "alias-place-aula-laboratorio-sottovia-morfo-funzionale-polifunzionale-laboratorio-sottovia-morfo-funzionale",
+    "entity_id": "aula-laboratorio-sottovia-morfo-funzionale-polifunzionale",
     "entity_type": "PLACE",
     "label": "Laboratorio Sottovia Morfo-Funzionale",
     "normalized": "laboratorio-sottovia-morfo-funzionale"
@@ -6153,22 +6300,22 @@
     "normalized": "laboratorio-xrf-xrd"
   },
   {
-    "alias_id": "alias-place-aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c-aula-laser-laboratory-for-application-of-smart-energy-and-renewables",
-    "entity_id": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c",
+    "alias_id": "alias-place-aula-laser-laboratory-for-application-of-smart-energy-and-renewables-polifunzionale-aula-laser-laboratory-for-application-of-smart-energy-and-renewables",
+    "entity_id": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula LASER Laboratory for Application of Smart Energy and Renewables",
     "normalized": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables"
   },
   {
-    "alias_id": "alias-place-aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c-laser-laboratory-for-application-of-smart-energy-and-renewables",
-    "entity_id": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c",
+    "alias_id": "alias-place-aula-laser-laboratory-for-application-of-smart-energy-and-renewables-polifunzionale-laser-laboratory-for-application-of-smart-energy-and-renewables",
+    "entity_id": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables-polifunzionale",
     "entity_type": "PLACE",
     "label": "LASER Laboratory for Application of Smart Energy and Renewables",
     "normalized": "laser-laboratory-for-application-of-smart-energy-and-renewables"
   },
   {
-    "alias_id": "alias-place-aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c-laserlaboratoryforapplicationofsmartenergyandrenewables",
-    "entity_id": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables-cubo-44c",
+    "alias_id": "alias-place-aula-laser-laboratory-for-application-of-smart-energy-and-renewables-polifunzionale-laserlaboratoryforapplicationofsmartenergyandrenewables",
+    "entity_id": "aula-laser-laboratory-for-application-of-smart-energy-and-renewables-polifunzionale",
     "entity_type": "PLACE",
     "label": "LASERLABORATORYFORAPPLICATIONOFSMARTENERGYANDRENEWABLES",
     "normalized": "laserlaboratoryforapplicationofsmartenergyandrenewables"
@@ -6321,57 +6468,57 @@
     "normalized": "lingue6cla"
   },
   {
-    "alias_id": "alias-place-aula-ls1-aula-ls-1",
-    "entity_id": "aula-ls1",
+    "alias_id": "alias-place-aula-ls1-polifunzionale-aula-ls-1",
+    "entity_id": "aula-ls1-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula LS 1",
     "normalized": "aula-ls-1"
   },
   {
-    "alias_id": "alias-place-aula-ls1-aula-ls1",
-    "entity_id": "aula-ls1",
+    "alias_id": "alias-place-aula-ls1-polifunzionale-aula-ls1",
+    "entity_id": "aula-ls1-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula LS1",
     "normalized": "aula-ls1"
   },
   {
-    "alias_id": "alias-place-aula-ls1-ls-1",
-    "entity_id": "aula-ls1",
+    "alias_id": "alias-place-aula-ls1-polifunzionale-ls-1",
+    "entity_id": "aula-ls1-polifunzionale",
     "entity_type": "PLACE",
     "label": "LS 1",
     "normalized": "ls-1"
   },
   {
-    "alias_id": "alias-place-aula-ls1-ls1",
-    "entity_id": "aula-ls1",
+    "alias_id": "alias-place-aula-ls1-polifunzionale-ls1",
+    "entity_id": "aula-ls1-polifunzionale",
     "entity_type": "PLACE",
     "label": "LS1",
     "normalized": "ls1"
   },
   {
-    "alias_id": "alias-place-aula-ls3-aula-ls-3",
-    "entity_id": "aula-ls3",
+    "alias_id": "alias-place-aula-ls3-polifunzionale-aula-ls-3",
+    "entity_id": "aula-ls3-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula LS 3",
     "normalized": "aula-ls-3"
   },
   {
-    "alias_id": "alias-place-aula-ls3-aula-ls3",
-    "entity_id": "aula-ls3",
+    "alias_id": "alias-place-aula-ls3-polifunzionale-aula-ls3",
+    "entity_id": "aula-ls3-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula LS3",
     "normalized": "aula-ls3"
   },
   {
-    "alias_id": "alias-place-aula-ls3-ls-3",
-    "entity_id": "aula-ls3",
+    "alias_id": "alias-place-aula-ls3-polifunzionale-ls-3",
+    "entity_id": "aula-ls3-polifunzionale",
     "entity_type": "PLACE",
     "label": "LS 3",
     "normalized": "ls-3"
   },
   {
-    "alias_id": "alias-place-aula-ls3-ls3",
-    "entity_id": "aula-ls3",
+    "alias_id": "alias-place-aula-ls3-polifunzionale-ls3",
+    "entity_id": "aula-ls3-polifunzionale",
     "entity_type": "PLACE",
     "label": "LS3",
     "normalized": "ls3"
@@ -7581,22 +7728,22 @@
     "normalized": "oasg4"
   },
   {
-    "alias_id": "alias-place-aula-orto-botanico-aula-orto-botanico",
-    "entity_id": "aula-orto-botanico",
+    "alias_id": "alias-place-aula-orto-botanico-polifunzionale-aula-orto-botanico",
+    "entity_id": "aula-orto-botanico-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula Orto Botanico",
     "normalized": "aula-orto-botanico"
   },
   {
-    "alias_id": "alias-place-aula-orto-botanico-orto-botanico",
-    "entity_id": "aula-orto-botanico",
+    "alias_id": "alias-place-aula-orto-botanico-polifunzionale-orto-botanico",
+    "entity_id": "aula-orto-botanico-polifunzionale",
     "entity_type": "PLACE",
     "label": "Orto Botanico",
     "normalized": "orto-botanico"
   },
   {
-    "alias_id": "alias-place-aula-orto-botanico-ortobotanico",
-    "entity_id": "aula-orto-botanico",
+    "alias_id": "alias-place-aula-orto-botanico-polifunzionale-ortobotanico",
+    "entity_id": "aula-orto-botanico-polifunzionale",
     "entity_type": "PLACE",
     "label": "ORTOBOTANICO",
     "normalized": "ortobotanico"
@@ -8148,8 +8295,8 @@
     "normalized": "seminari"
   },
   {
-    "alias_id": "alias-place-aula-seminari-ex-dip-nto-farmaco-biol-seminari-ex-dip-nto-farmaco-biol",
-    "entity_id": "aula-seminari-ex-dip-nto-farmaco-biol",
+    "alias_id": "alias-place-aula-seminari-ex-dip-nto-farmaco-biol-polifunzionale-seminari-ex-dip-nto-farmaco-biol",
+    "entity_id": "aula-seminari-ex-dip-nto-farmaco-biol-polifunzionale",
     "entity_type": "PLACE",
     "label": "Seminari (EX Dip.nto FARMACO Biol.)",
     "normalized": "seminari-ex-dip-nto-farmaco-biol"
@@ -8204,22 +8351,22 @@
     "normalized": "seminarilaboratoriopsicologiacognitivaemodellazionematematica"
   },
   {
-    "alias_id": "alias-place-aula-seminari-medicina-aula-seminari-medicina",
-    "entity_id": "aula-seminari-medicina",
+    "alias_id": "alias-place-aula-seminari-medicina-polifunzionale-aula-seminari-medicina",
+    "entity_id": "aula-seminari-medicina-polifunzionale",
     "entity_type": "PLACE",
     "label": "Aula Seminari Medicina",
     "normalized": "aula-seminari-medicina"
   },
   {
-    "alias_id": "alias-place-aula-seminari-medicina-seminari-medicina",
-    "entity_id": "aula-seminari-medicina",
+    "alias_id": "alias-place-aula-seminari-medicina-polifunzionale-seminari-medicina",
+    "entity_id": "aula-seminari-medicina-polifunzionale",
     "entity_type": "PLACE",
     "label": "Seminari Medicina",
     "normalized": "seminari-medicina"
   },
   {
-    "alias_id": "alias-place-aula-seminari-medicina-seminarimedicina",
-    "entity_id": "aula-seminari-medicina",
+    "alias_id": "alias-place-aula-seminari-medicina-polifunzionale-seminarimedicina",
+    "entity_id": "aula-seminari-medicina-polifunzionale",
     "entity_type": "PLACE",
     "label": "SEMINARIMEDICINA",
     "normalized": "seminarimedicina"

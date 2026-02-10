@@ -16,6 +16,9 @@ from ..utils.text import collapse_whitespace, none_if_empty
 
 
 KML_NS = {"kml": "http://www.opengis.net/kml/2.2"}
+SUPPLEMENTAL_BUILDING_KML_URLS = (
+    "https://www.google.com/maps/d/kml?mid=17RXFIMpyGYs5LC7TGMFLzcFw52Q&forcekml=1",
+)
 
 
 @dataclass(frozen=True)
@@ -37,17 +40,42 @@ def crawl_buildings(
     """Crawl building-like map markers from the official UNICAL map page."""
     map_html = _fetch_html(base_url, client, cache)
     kml_url = _extract_kml_url(map_html=map_html, base_url=base_url)
-    if not kml_url:
-        return []
+    buildings: list[RawBuilding] = []
+    if kml_url:
+        kml_text = _fetch_html(kml_url, client, cache)
+        buildings.extend(_parse_buildings_kml(kml_text=kml_text, source_url=base_url))
 
-    kml_text = _fetch_html(kml_url, client, cache)
-    return _parse_buildings_kml(kml_text=kml_text, source_url=base_url)
+    for supplemental_url in SUPPLEMENTAL_BUILDING_KML_URLS:
+        if kml_url and supplemental_url == kml_url:
+            continue
+        supplemental_kml_text = _try_fetch_html(supplemental_url, client, cache)
+        if not supplemental_kml_text:
+            continue
+        buildings.extend(
+            _parse_buildings_kml(
+                kml_text=supplemental_kml_text,
+                source_url=supplemental_url,
+            )
+        )
+
+    unique_by_name: dict[str, RawBuilding] = {}
+    for building in buildings:
+        key = building.name.casefold()
+        unique_by_name.setdefault(key, building)
+    return sorted(unique_by_name.values(), key=lambda item: item.name.casefold())
 
 
 def _fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str:
     if cache is None:
         return client.get_text(url)
     return cache.get_or_fetch(url, client.get_text)
+
+
+def _try_fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str | None:
+    try:
+        return _fetch_html(url, client, cache)
+    except Exception:
+        return None
 
 
 def _extract_kml_url(map_html: str, base_url: str) -> str | None:
@@ -171,6 +199,9 @@ def _strip_html(value: str | None) -> str:
 
 def _is_building_candidate(name: str) -> bool:
     lowered = name.casefold()
+    if re.match(r"^p[0-9]+\b", lowered):
+        # Markers like "P2" indicate parking areas, not buildings.
+        return False
 
     excluded_tokens = [
         "fontanella",
@@ -194,6 +225,7 @@ def _is_building_candidate(name: str) -> bool:
     include_tokens = [
         "aula magna",
         "teatro",
+        "anfiteatro",
         "biblioteca",
         "mensa",
         "residenza",
@@ -204,5 +236,10 @@ def _is_building_candidate(name: str) -> bool:
         "centro",
         "museo",
         "cla",
+        "capannone",
+        "polifunzionale",
+        "orto botanico",
+        "ampliamento polifunzionale",
+        "stabilario",
     ]
     return any(token in lowered for token in include_tokens)

@@ -3,20 +3,8 @@
     "aulas": {
       "missing_building_by_source": [
         {
-          "count": 18,
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "count": 18,
+          "count": 8,
           "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "count": 11,
-          "source_url": "https://dispes.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "count": 5,
-          "source_url": "https://dimeg.unical.it/dipartimento/organizzazione/strutture/"
         },
         {
           "count": 1,
@@ -24,7 +12,15 @@
         },
         {
           "count": 1,
+          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
+        },
+        {
+          "count": 1,
           "source_url": "https://dices.unical.it/dipartimento/organizzazione/strutture/"
+        },
+        {
+          "count": 1,
+          "source_url": "https://dimeg.unical.it/dipartimento/organizzazione/strutture/"
         },
         {
           "count": 1,
@@ -37,74 +33,9 @@
       ],
       "missing_building_examples": [
         {
-          "aula_id": "aula-1-seminari",
-          "name": "AULA 1 - Seminari",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
           "aula_id": "aula-10g",
           "name": "Aula 10G",
           "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-13",
-          "name": "Aula 13",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-14",
-          "name": "Aula 14",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-15",
-          "name": "Aula 15",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-20",
-          "name": "Aula 20",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-21",
-          "name": "Aula 21",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-25",
-          "name": "Aula 25",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-44",
-          "name": "44",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "aula_id": "aula-45",
-          "name": "Aula 45",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-46",
-          "name": "Aula 46",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-52",
-          "name": "Aula 52",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-53",
-          "name": "Aula 53",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-b",
-          "name": "Aula B",
-          "source_url": "https://dispes.unical.it/dipartimento/organizzazione/strutture/"
         },
         {
           "aula_id": "aula-blu",
@@ -112,48 +43,83 @@
           "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
         },
         {
-          "aula_id": "aula-centro-di-simulazione-med-td",
-          "name": "Aula Centro di Simulazione ( MED-TD )",
-          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
-        },
-        {
-          "aula_id": "aula-circolare",
-          "name": "Aula Circolare",
-          "source_url": "https://dfssn.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
-          "aula_id": "aula-consolidata-b",
-          "name": "Aula Consolidata B",
-          "source_url": "https://dimeg.unical.it/dipartimento/organizzazione/strutture/"
-        },
-        {
           "aula_id": "aula-dolci",
           "name": "Aula Dolci",
           "source_url": "https://dices.unical.it/dipartimento/organizzazione/strutture/"
         },
         {
-          "aula_id": "aula-ds4-piano-terra",
-          "name": "Aula DS4 (Piano Terra)",
+          "aula_id": "aula-e",
+          "name": "aula e",
+          "source_url": "https://dimes.unical.it/dipartimento/organizzazione/strutture/"
+        },
+        {
+          "aula_id": "aula-laboratorio-a",
+          "name": "Laboratorio A",
+          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+        },
+        {
+          "aula_id": "aula-laboratorio-b",
+          "name": "Laboratorio B",
+          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+        },
+        {
+          "aula_id": "aula-laboratorio-c",
+          "name": "Laboratorio C",
+          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+        },
+        {
+          "aula_id": "aula-lime-laboratory-of-innovation-and-management-engineering",
+          "name": "Aula LIME Laboratory of Innovation and Management Engineering",
           "source_url": "https://dimeg.unical.it/dipartimento/organizzazione/strutture/"
+        },
+        {
+          "aula_id": "aula-multimediale-25-c-self-study",
+          "name": "AULA MULTIMEDIALE 25 C SELF STUDY",
+          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+        },
+        {
+          "aula_id": "aula-multimediale-piano-1cubo-25c",
+          "name": "Aula Multimediale piano 1°cubo 25C",
+          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+        },
+        {
+          "aula_id": "aula-seminari-giannattasio",
+          "name": "Aula seminari (Giannattasio)",
+          "source_url": "https://dinci.unical.it/dipartimento/organizzazione/strutture/"
+        },
+        {
+          "aula_id": "aula-spazio-mostre",
+          "name": "SPAZIO MOSTRE",
+          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
+        },
+        {
+          "aula_id": "aula-studio-per-i-soli-studenti-di-chimica",
+          "name": "Aula Studio per i soli studenti di Chimica",
+          "source_url": "https://ctc.unical.it/dipartimento/organizzazione/strutture/"
+        },
+        {
+          "aula_id": "aula-verde",
+          "name": "Aula Verde",
+          "source_url": "https://unical.prod.up.cineca.it/calendar/activities/"
         }
       ],
-      "missing_building_id": 56,
-      "missing_building_id_ratio": 0.1075,
-      "total": 521,
-      "with_building_id": 465,
-      "with_building_id_ratio": 0.8925,
-      "with_capacity": 263,
-      "with_capacity_ratio": 0.5048,
+      "missing_building_id": 14,
+      "missing_building_id_ratio": 0.0265,
+      "total": 529,
+      "with_building_id": 515,
+      "with_building_id_ratio": 0.9735,
+      "with_capacity": 265,
+      "with_capacity_ratio": 0.5009,
       "with_floor": 206,
-      "with_floor_ratio": 0.3954,
-      "with_place_id": 521,
+      "with_floor_ratio": 0.3894,
+      "with_place_id": 529,
       "with_place_id_ratio": 1.0,
-      "with_short_code": 136,
-      "with_short_code_ratio": 0.261
+      "with_short_code": 139,
+      "with_short_code_ratio": 0.2628
     },
     "buildings": {
-      "total": 137,
-      "with_coordinates": 137,
+      "total": 150,
+      "with_coordinates": 150,
       "with_coordinates_ratio": 1.0
     },
     "departments": {
@@ -177,14 +143,14 @@
       "with_office_place_id_ratio": 0.0
     },
     "places": {
-      "total": 548,
-      "type_aula": 521,
-      "type_aula_ratio": 0.9507,
-      "with_building_id": 487,
-      "with_building_id_ratio": 0.8887
+      "total": 556,
+      "type_aula": 529,
+      "type_aula_ratio": 0.9514,
+      "with_building_id": 537,
+      "with_building_id_ratio": 0.9658
     }
   },
-  "generated_at": "2026-02-10T11:57:52.942946+00:00",
+  "generated_at": "2026-02-10T13:32:32.124362+00:00",
   "integrity": {
     "issues": []
   },

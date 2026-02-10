@@ -294,6 +294,11 @@ def normalize_aulas(
         aula_places=aula_places,
         known_building_ids=building_ids,
     )
+    _apply_source_specific_building_overrides(
+        aulas=aulas,
+        aula_places=aula_places,
+        known_building_ids=building_ids,
+    )
     deduped_aulas, deduped_places = _collapse_duplicate_aulas(
         aulas=aulas,
         aula_places=aula_places,
@@ -464,21 +469,117 @@ def _backfill_missing_aula_buildings(
         if not chosen:
             continue
 
-        aula["building_id"] = chosen
-        existing_tokens = [
-            token
-            for token in aula.get("search_tokens", [])
-            if isinstance(token, str) and token
-        ]
-        token_set = set(existing_tokens)
-        token_set.add(chosen.casefold())
-        aula["search_tokens"] = sorted(token_set)
+        _set_aula_building_id(
+            aula=aula,
+            building_id=chosen,
+            place_by_id=place_by_id,
+            force=False,
+        )
 
-        place_id = aula.get("place_id")
-        if isinstance(place_id, str):
-            place = place_by_id.get(place_id)
-            if place is not None and not isinstance(place.get("building_id"), str):
-                place["building_id"] = chosen
+
+def _apply_source_specific_building_overrides(
+    aulas: list[dict[str, object]],
+    aula_places: list[dict[str, object]],
+    known_building_ids: set[str],
+) -> None:
+    place_by_id = {
+        str(place.get("place_id")): place
+        for place in aula_places
+        if isinstance(place.get("place_id"), str)
+    }
+
+    for aula in aulas:
+        source_url = str(aula.get("source_url") or "").casefold()
+        room = str(aula.get("room") or "").strip().upper()
+        short_code = str(aula.get("short_code") or "").strip().upper()
+        code = short_code or room
+        name = str(aula.get("name") or "")
+        lowered_name = name.casefold()
+
+        override_building_id: str | None = None
+
+        if "dispes.unical.it/dipartimento/organizzazione/strutture/" in source_url:
+            if code in {"G1", "G2", "G3", "G4"}:
+                override_building_id = "capannone-g"
+            elif code in {"H1", "H2", "H3", "H4"}:
+                override_building_id = "capannone-h"
+            elif code in {"L1", "L2"}:
+                override_building_id = "capannone-l"
+            elif code in {"LS1", "LS3", "B", "44"}:
+                override_building_id = "polifunzionale"
+
+        elif "dfssn.unical.it/dipartimento/organizzazione/strutture/" in source_url:
+            if code in {"13", "14", "15"}:
+                override_building_id = "capannone-c"
+            elif code in {"20", "21", "25"}:
+                override_building_id = "capannone-d"
+            elif code in {"45", "46", "52", "53"}:
+                override_building_id = "capannone-f"
+            elif "aula circolare" in lowered_name or "aula gialla" in lowered_name or "aula informatica" in lowered_name:
+                override_building_id = "polifunzionale-dfssn"
+            elif "laboratorio chimico b" in lowered_name or "laboratorio chimico c" in lowered_name:
+                override_building_id = "capannone-e"
+            elif "microbiologia" in lowered_name:
+                override_building_id = "capannone-e"
+
+        elif "dimeg.unical.it/dipartimento/organizzazione/strutture/" in source_url:
+            if "consolidata b" in lowered_name:
+                override_building_id = "cubo-43c"
+            elif "ds4" in lowered_name:
+                override_building_id = "cubo-41b"
+            elif re.search(r"\bp1\b", code.casefold()) and "piano ponte carrabile" in lowered_name:
+                override_building_id = "cubo-40c"
+            elif lowered_name.startswith("aula m4 - aula seminari"):
+                override_building_id = "cubo-44c"
+
+        elif "unical.prod.up.cineca.it/calendar/activities/" in source_url:
+            if lowered_name.startswith("aula gialla -"):
+                override_building_id = "polifunzionale-dfssn"
+            elif "medicina traslazionale" in lowered_name or "seminari medicina" in lowered_name:
+                override_building_id = "polifunzionale-dfssn"
+            elif "centro di simulazione" in lowered_name and "med-td" in lowered_name:
+                override_building_id = "polifunzionale-dfssn"
+            elif lowered_name == "aula orto botanico":
+                override_building_id = "orto-botanico"
+            elif " lingue " in f" {lowered_name} " or lowered_name.endswith(" cla") or lowered_name == "aula cla":
+                override_building_id = "cla-centro-linguistico-d-ateneo"
+
+        if not override_building_id or override_building_id not in known_building_ids:
+            continue
+
+        _set_aula_building_id(
+            aula=aula,
+            building_id=override_building_id,
+            place_by_id=place_by_id,
+            force=True,
+        )
+
+
+def _set_aula_building_id(
+    aula: dict[str, object],
+    building_id: str,
+    place_by_id: dict[str, dict[str, object]],
+    force: bool,
+) -> None:
+    existing_building_id = aula.get("building_id")
+    if isinstance(existing_building_id, str) and existing_building_id and not force:
+        return
+
+    aula["building_id"] = building_id
+    existing_tokens = [
+        token
+        for token in aula.get("search_tokens", [])
+        if isinstance(token, str) and token
+    ]
+    token_set = set(existing_tokens)
+    token_set.add(building_id.casefold())
+    aula["search_tokens"] = sorted(token_set)
+
+    place_id = aula.get("place_id")
+    if isinstance(place_id, str):
+        place = place_by_id.get(place_id)
+        if place is not None and (force or not isinstance(place.get("building_id"), str)):
+            place["building_id"] = building_id
 
 
 def _normalize_lookup_value(value: object) -> str | None:
@@ -512,6 +613,23 @@ def _extract_building_ids_from_text(text: str, known_building_ids: set[str]) -> 
         building_id = f"cubo-{match.group(1)}{match.group(2)}"
         if building_id in known_building_ids:
             candidates.add(building_id)
+
+    for match in re.finditer(r"\bcapannone\s+([a-z])\b", lowered):
+        building_id = f"capannone-{match.group(1)}"
+        if building_id in known_building_ids:
+            candidates.add(building_id)
+
+    if "orto botanico" in lowered and "orto-botanico" in known_building_ids:
+        candidates.add("orto-botanico")
+
+    if "polifunzionale" in lowered:
+        polifunzionale_ids = sorted(
+            building_id
+            for building_id in known_building_ids
+            if building_id.startswith("polifunzionale")
+        )
+        if len(polifunzionale_ids) == 1:
+            candidates.add(polifunzionale_ids[0])
 
     if any(token in lowered for token in (" cla ", "centro linguistico", "centro-linguistico")):
         cla_id = "cla-centro-linguistico-d-ateneo"
