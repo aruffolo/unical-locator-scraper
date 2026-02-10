@@ -139,3 +139,32 @@ def test_integrity_detects_invalid_aula_references(tmp_path: Path) -> None:
     assert any("department_id 'dimeg' does not exist" in message for message in messages)
     assert any("place_id 'service-1' points to a non-AULA place" in message for message in messages)
     assert any("place_id 'missing-place' does not exist" in message for message in messages)
+
+
+def test_integrity_detects_invalid_alias_references(tmp_path: Path) -> None:
+    buildings = [{"building_id": "cubo-18b", "name": "Cubo 18B"}]
+    departments = [{"department_id": "dimes", "name": "DIMES"}]
+    people = [{"person_id": "rossi-mario", "full_name": "Mario Rossi", "role": "PROFESSOR"}]
+    places = [{"place_id": "aula-p2", "type": "AULA", "name": "Aula P2"}]
+    aulas = [{"aula_id": "aula-p2", "place_id": "aula-p2", "name": "Aula P2"}]
+    aliases = [
+        {"alias_id": "ok-place", "entity_type": "PLACE", "entity_id": "aula-p2", "label": "P2"},
+        {"alias_id": "bad-place", "entity_type": "PLACE", "entity_id": "missing-place", "label": "P 2"},
+        {"alias_id": "bad-building", "entity_type": "BUILDING", "entity_id": "missing-building", "label": "Cubo 99"},
+    ]
+
+    (tmp_path / "buildings.json").write_text(json.dumps(buildings), encoding="utf-8")
+    (tmp_path / "departments.json").write_text(json.dumps(departments), encoding="utf-8")
+    (tmp_path / "places.json").write_text(json.dumps(places), encoding="utf-8")
+    (tmp_path / "people.json").write_text(json.dumps(people), encoding="utf-8")
+    (tmp_path / "aulas.json").write_text(json.dumps(aulas), encoding="utf-8")
+    (tmp_path / "aliases.json").write_text(json.dumps(aliases), encoding="utf-8")
+
+    issues = check_integrity(data_dir=tmp_path)
+    messages = [issue.message for issue in issues]
+
+    assert any("entity_id 'missing-place' does not exist for entity_type 'PLACE'" in message for message in messages)
+    assert any(
+        "entity_id 'missing-building' does not exist for entity_type 'BUILDING'" in message
+        for message in messages
+    )

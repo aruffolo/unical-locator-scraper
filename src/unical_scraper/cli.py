@@ -14,6 +14,7 @@ from .extract.buildings import crawl_buildings
 from .extract.departments import crawl_departments
 from .extract.services import crawl_services
 from .extract.teachers import crawl_teachers
+from .transform.aliases import build_aula_place_aliases
 from .transform.normalize import (
     normalize_aulas,
     normalize_buildings,
@@ -404,6 +405,36 @@ def link_places_buildings_command(places_file: Path, buildings_file: Path) -> No
     write_json(places_file, linked_places)
     click.echo(f"Linked places with building_id: {linked_count}/{len(linked_places)}")
     click.echo(f"Wrote: {places_file}")
+
+
+@link.command("aliases")
+@click.option(
+    "--aulas-file",
+    default=str(DEFAULT_DATA_DIR / "aulas.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--places-file",
+    default=str(DEFAULT_DATA_DIR / "places.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--out-file",
+    default=str(DEFAULT_DATA_DIR / "aliases.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+def link_aliases_command(aulas_file: Path, places_file: Path, out_file: Path) -> None:
+    """Generate deterministic PLACE aliases for aulas."""
+    aulas = _load_json_array(aulas_file)
+    places = _load_json_array(places_file)
+    aliases = build_aula_place_aliases(aulas=aulas, places=places)
+    write_json(out_file, aliases)
+
+    click.echo(f"Generated aliases: {len(aliases)}")
+    click.echo(f"Wrote: {out_file}")
 
 
 @cli.command("validate")

@@ -31,12 +31,13 @@ def _load_array(path: Path) -> list[dict[str, Any]]:
 
 
 def check_integrity(data_dir: Path) -> list[IntegrityIssue]:
-    """Run referential checks across people/departments/places/aulas."""
+    """Run referential checks across people/departments/places/aulas/aliases."""
     buildings = _load_array(data_dir / "buildings.json")
     departments = _load_array(data_dir / "departments.json")
     places = _load_array(data_dir / "places.json")
     people = _load_array(data_dir / "people.json")
     aulas = _load_array(data_dir / "aulas.json")
+    aliases = _load_array(data_dir / "aliases.json")
 
     building_ids = {item.get("building_id") for item in buildings if item.get("building_id")}
     department_ids = {item.get("department_id") for item in departments if item.get("department_id")}
@@ -51,6 +52,7 @@ def check_integrity(data_dir: Path) -> list[IntegrityIssue]:
         for item in places
         if item.get("place_id")
     }
+    person_ids = {item.get("person_id") for item in people if item.get("person_id")}
 
     issues: list[IntegrityIssue] = []
     for department in departments:
@@ -171,6 +173,33 @@ def check_integrity(data_dir: Path) -> list[IntegrityIssue]:
                     file="aulas.json",
                     record_id=str(aula_id) if aula_id else None,
                     message=f"department_id '{department_id}' does not exist in departments.json",
+                )
+            )
+
+    alias_targets = {
+        "BUILDING": building_ids,
+        "PLACE": place_ids,
+        "PERSON": person_ids,
+        "DEPARTMENT": department_ids,
+    }
+    for alias in aliases:
+        alias_id = alias.get("alias_id")
+        entity_type = alias.get("entity_type")
+        entity_id = alias.get("entity_id")
+        if not isinstance(entity_type, str) or not entity_id:
+            continue
+
+        target_ids = alias_targets.get(entity_type)
+        if target_ids is None:
+            continue
+
+        if entity_id not in target_ids:
+            issues.append(
+                IntegrityIssue(
+                    level="error",
+                    file="aliases.json",
+                    record_id=str(alias_id) if alias_id else None,
+                    message=f"entity_id '{entity_id}' does not exist for entity_type '{entity_type}'",
                 )
             )
 
