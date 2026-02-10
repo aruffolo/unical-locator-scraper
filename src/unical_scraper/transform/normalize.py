@@ -610,6 +610,21 @@ def _apply_source_specific_aula_enrichments_and_drops(
         override_floor: str | None = None
         override_capacity: int | None = None
         should_drop = False
+        existing_building_id = (
+            str(aula.get("building_id")).strip()
+            if isinstance(aula.get("building_id"), str)
+            else None
+        )
+
+        # Campus map/department sources often omit explicit floor for capannoni.
+        # Domain rule from manual review: capannoni aulas default to ground floor.
+        if (
+            existing_building_id
+            and existing_building_id.startswith("capannone-")
+            and existing_building_id in known_building_ids
+            and not isinstance(aula.get("floor"), str)
+        ):
+            override_floor = "Piano Terra"
 
         if "ctc.unical.it/dipartimento/organizzazione/strutture/" in source_url:
             if lowered_name == "aula studio per i soli studenti di chimica":

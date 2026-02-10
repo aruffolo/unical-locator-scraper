@@ -314,3 +314,28 @@ def test_normalize_aulas_applies_manual_overrides_and_drops_known_false_positive
     place_names = {str(place["name"]) for place in aula_places}
     assert "Aula Blu" not in place_names
     assert "SPAZIO MOSTRE" not in place_names
+
+
+def test_normalize_aulas_defaults_capannone_floor_to_ground() -> None:
+    raw = [
+        RawAula(
+            name="Aula 45",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            building_hint="Capannone F",
+        )
+    ]
+    buildings = [{"building_id": "capannone-f", "name": "Capannone F"}]
+
+    aulas, aula_places = normalize_aulas(
+        raw_aulas=raw,
+        buildings=buildings,
+        verified_at=datetime(2026, 2, 10, tzinfo=timezone.utc),
+    )
+
+    assert len(aulas) == 1
+    assert aulas[0]["building_id"] == "capannone-f"
+    assert aulas[0]["floor"] == "Piano Terra"
+
+    assert len(aula_places) == 1
+    assert aula_places[0]["building_id"] == "capannone-f"
+    assert aula_places[0]["floor"] == "Piano Terra"

@@ -10,8 +10,8 @@
       "with_building_id_ratio": 1.0,
       "with_capacity": 273,
       "with_capacity_ratio": 0.523,
-      "with_floor": 208,
-      "with_floor_ratio": 0.3985,
+      "with_floor": 231,
+      "with_floor_ratio": 0.4425,
       "with_place_id": 522,
       "with_place_id_ratio": 1.0,
       "with_short_code": 138,
@@ -50,7 +50,7 @@
       "with_building_id_ratio": 0.9909
     }
   },
-  "generated_at": "2026-02-10T15:29:57.361412+00:00",
+  "generated_at": "2026-02-10T15:57:54.879552+00:00",
   "integrity": {
     "issues": []
   },

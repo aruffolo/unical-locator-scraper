@@ -21,6 +21,7 @@
   },
   {
     "building_id": "capannone-c",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 13",
     "place_id": "aula-13-capannone-c",
@@ -49,6 +50,7 @@
   },
   {
     "building_id": "capannone-c",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 14",
     "place_id": "aula-14-capannone-c",
@@ -59,6 +61,7 @@
   },
   {
     "building_id": "capannone-c",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 15",
     "place_id": "aula-15-capannone-c",
@@ -89,6 +92,7 @@
   },
   {
     "building_id": "capannone-d",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 20",
     "place_id": "aula-20-capannone-d",
@@ -99,6 +103,7 @@
   },
   {
     "building_id": "capannone-d",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 21",
     "place_id": "aula-21-capannone-d",
@@ -109,6 +114,7 @@
   },
   {
     "building_id": "capannone-d",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 25",
     "place_id": "aula-25-capannone-d",
@@ -536,6 +542,7 @@
   },
   {
     "building_id": "capannone-f",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 45",
     "place_id": "aula-45-capannone-f",
@@ -609,6 +616,7 @@
   },
   {
     "building_id": "capannone-f",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 46",
     "place_id": "aula-46-capannone-f",
@@ -630,6 +638,7 @@
   },
   {
     "building_id": "capannone-f",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 52",
     "place_id": "aula-52-capannone-f",
@@ -640,6 +649,7 @@
   },
   {
     "building_id": "capannone-f",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula 53",
     "place_id": "aula-53-capannone-f",
@@ -2552,6 +2562,7 @@
   },
   {
     "building_id": "capannone-g",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula G1",
     "place_id": "aula-g1-polifunzionale",
@@ -2562,6 +2573,7 @@
   },
   {
     "building_id": "capannone-g",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula G2",
     "place_id": "aula-g2-polifunzionale",
@@ -2572,6 +2584,7 @@
   },
   {
     "building_id": "capannone-g",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula G3",
     "place_id": "aula-g3-polifunzionale",
@@ -2582,6 +2595,7 @@
   },
   {
     "building_id": "capannone-g",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula G4",
     "place_id": "aula-g4-polifunzionale",
@@ -2683,6 +2697,7 @@
   },
   {
     "building_id": "capannone-h",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula H1",
     "place_id": "aula-h1-polifunzionale",
@@ -2693,6 +2708,7 @@
   },
   {
     "building_id": "capannone-h",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula H2",
     "place_id": "aula-h2-polifunzionale",
@@ -2703,6 +2719,7 @@
   },
   {
     "building_id": "capannone-h",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula H3",
     "place_id": "aula-h3-polifunzionale",
@@ -2713,6 +2730,7 @@
   },
   {
     "building_id": "capannone-h",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula H4",
     "place_id": "aula-h4-polifunzionale",
@@ -2914,6 +2932,7 @@
   },
   {
     "building_id": "capannone-l",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula L1",
     "place_id": "aula-l1-polifunzionale",
@@ -2934,6 +2953,7 @@
   },
   {
     "building_id": "capannone-l",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Aula L2",
     "place_id": "aula-l2-polifunzionale",
@@ -3108,6 +3128,7 @@
   },
   {
     "building_id": "capannone-e",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Laboratorio A Microbiologia, Igiene e Sanità Pubblica",
     "place_id": "aula-laboratorio-a-microbiologia-igiene-e-sanita-pubblica-polifunzionale",
@@ -3126,6 +3147,7 @@
   },
   {
     "building_id": "capannone-e",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Laboratorio Chimico B",
     "place_id": "aula-laboratorio-chimico-b-capannone-e",
@@ -3135,6 +3157,7 @@
   },
   {
     "building_id": "capannone-e",
+    "floor": "Piano Terra",
     "last_verified_at": "2026-02-10T14:59:38.275356+00:00",
     "name": "Laboratorio Chimico C",
     "place_id": "aula-laboratorio-chimico-c-capannone-e",
