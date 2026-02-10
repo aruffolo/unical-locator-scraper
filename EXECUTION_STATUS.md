@@ -22,7 +22,7 @@ Owner: Elrond89
   - `aliases.json`: 1374 records
 - Aula linkage quality:
   - `aulas` with `building_id`: 517/517 (`100%`)
-  - `aulas` with `floor`: 256/517
+  - `aulas` with `floor`: 329/517
   - `aulas` with `capacity`: 280/517
 
 ## Workstream Status
@@ -46,6 +46,7 @@ Owner: Elrond89
 - Landmark alias mapping is currently config-driven (curated labels from campus map/PDF); it should be periodically reviewed when map labeling changes.
 - Crawl command for full aulas refresh can intermittently stall on remote endpoints; current floor enrichment pass applied deterministically on normalized datasets with matching normalization rule in code.
 - Remaining floor gaps are concentrated in records where source pages provide building but not explicit floor (notably CLA generic labels, Polifunzionale generic labels, and some legacy planner labels).
+- Remaining floor gaps on phase-3 target buildings after this pass: `cla-centro-linguistico-d-ateneo` (10), `polifunzionale` (7), `polifunzionale-dfssn` (6), `cubo-15b` (8), `cubo-17b` (5), `cubo-29b` (0), `cubo-29c` (1).
 
 ## Adaptations / Decisions Log
 - 2026-02-09: Keep execution in phased slices (source inventory -> departments -> buildings -> places -> coordinates -> quality hardening).
@@ -69,6 +70,7 @@ Owner: Elrond89
 - 2026-02-10: Added deterministic capannone floor enrichment rule (`capannone-*` + missing floor -> `Piano Terra`) and propagated to normalized `aulas/places`.
 - 2026-02-10: Added floor enrichment pass from explicit department-structure evidence (`dimes`/`dimeg`) and deterministic code hints (`CH-*`, `Lab *_nP`, `45B0*`, ponte markers), increasing floor coverage by +31.
 - 2026-02-10: Fixed table-parser column alignment on empty `<td>` cells and extended capacity extraction (`54posti`/`60persone` forms), improving `capacity` coverage and reducing noisy duplicate aula variants.
+- 2026-02-10: Extended floor extraction for department rows (`4º piano`, `ponte carrabile/pedonale`, `sottovia`) and added normalize hints (`29B1/29C2` code-floor inference, `superiore/inferiore`, planner/DIAM `Giannattasio`), increasing floor coverage by +73 (256 -> 329).
 
 ## Blockers
 - No hard blockers at this checkpoint.

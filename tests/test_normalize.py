@@ -406,11 +406,17 @@ def test_normalize_aulas_infers_floor_from_code_hints() -> None:
             source_url="https://dimeg.unical.it/dipartimento/organizzazione/strutture/",
             building_hint="Cubo 40C",
         ),
+        RawAula(
+            name="Aula 29B1 - D. Dolci",
+            source_url="https://unical.prod.up.cineca.it/calendar/activities/",
+            building_hint="Cubo 29B",
+        ),
     ]
     buildings = [
         {"building_id": "cubo-15c", "name": "Cubo 15C"},
         {"building_id": "cubo-45b", "name": "Cubo 45B"},
         {"building_id": "cubo-40c", "name": "Cubo 40C"},
+        {"building_id": "cubo-29b", "name": "Cubo 29B"},
     ]
 
     aulas, _ = normalize_aulas(
@@ -424,3 +430,40 @@ def test_normalize_aulas_infers_floor_from_code_hints() -> None:
     assert by_name["Lab 15C_3P"]["floor"] == "Terzo piano"
     assert by_name["Aula 45B01"]["floor"] == "Piano Terra"
     assert by_name["Aula P1 (Piano Ponte Carrabile)"]["floor"] == "Sesto piano"
+    assert by_name["Aula 29B1 - D. Dolci"]["floor"] == "Primo piano"
+
+
+def test_normalize_aulas_applies_semantic_floor_overrides_for_superiore_inferiore() -> None:
+    planner_source = "https://unical.prod.up.cineca.it/calendar/activities/"
+    raw = [
+        RawAula(
+            name="Aula Gialla - A (superiore)",
+            source_url=planner_source,
+            building_hint="Polifunzionale",
+        ),
+        RawAula(
+            name="Aula Gialla - B (inferiore)",
+            source_url=planner_source,
+            building_hint="Polifunzionale",
+        ),
+        RawAula(
+            name='AULA SEMINARI "GIANNATTASIO"',
+            source_url=planner_source,
+            building_hint="Cubo 45B",
+        ),
+    ]
+    buildings = [
+        {"building_id": "polifunzionale-dfssn", "name": "Polifunzionale"},
+        {"building_id": "cubo-45b", "name": "Cubo 45B"},
+    ]
+
+    aulas, _ = normalize_aulas(
+        raw_aulas=raw,
+        buildings=buildings,
+        verified_at=datetime(2026, 2, 10, tzinfo=timezone.utc),
+    )
+    by_name = {str(aula["name"]): aula for aula in aulas}
+
+    assert by_name["Aula Gialla - A (superiore)"]["floor"] == "Primo piano"
+    assert by_name["Aula Gialla - B (inferiore)"]["floor"] == "Piano Terra"
+    assert by_name['AULA SEMINARI "GIANNATTASIO"']["floor"] == "Primo piano"

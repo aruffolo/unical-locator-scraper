@@ -640,3 +640,39 @@ def test_crawl_aulas_parses_attached_posti_capacity_marker() -> None:
 
     aula_f3 = next(item for item in aulas if item.name == "Aula F 3")
     assert aula_f3.capacity == 54
+    assert aula_f3.floor == "Secondo piano"
+
+
+def test_crawl_aulas_parses_bridge_floor_labels_from_department_rows() -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    department_url = "https://disu.unical.it/dipartimento/organizzazione/strutture/"
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        department_url: """
+            <html><body>
+              <table>
+                <tr>
+                  <td><strong>Aula 29 C2 (FAC 1)</strong></td>
+                  <td>Ubicazione: Cubo 29C – Piano ponte carrabile<br/>Capienza: 90 posti</td>
+                </tr>
+                <tr>
+                  <td><strong>Aula IRIS</strong></td>
+                  <td>Ubicazione: Cubo 29C – Piano ponte pedonale<br/>Capienza: 230 posti</td>
+                </tr>
+              </table>
+            </body></html>
+        """,
+    }
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages),
+        department_urls=(department_url,),
+        planner_base_url=None,
+    )
+
+    fac = next(item for item in aulas if item.name == "Aula 29 C2 (FAC 1)")
+    assert fac.floor == "Sesto piano"
+
+    iris = next(item for item in aulas if item.name == "Aula IRIS")
+    assert iris.floor == "Quarto piano"

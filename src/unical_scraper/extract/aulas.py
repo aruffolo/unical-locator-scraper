@@ -1345,9 +1345,40 @@ def _extract_floor_label(text: str) -> str | None:
         return None
 
     lowered = cleaned.casefold()
+    if "ponte carrabile" in lowered:
+        return "Sesto piano"
+    if "ponte pedonale" in lowered or "ponte coperto" in lowered:
+        return "Quarto piano"
+    if "sotto via" in lowered or "sottovia" in lowered:
+        return "Altra collocazione"
+
     for label in FLOOR_LABELS:
         if label.casefold() in lowered:
             return label
+
+    ordinal_before_match = re.search(r"\b([ivxlcdm]+|[0-9]+)\s*[°ºo]?\s*piano\b", lowered)
+    if ordinal_before_match:
+        value = ordinal_before_match.group(1)
+        numeric_value: int | None = None
+        if value.isdigit():
+            numeric_value = int(value)
+        else:
+            numeric_value = _roman_to_int(value.upper())
+        if numeric_value is not None:
+            if numeric_value == 0:
+                return "Piano Terra"
+            by_index = {
+                1: "Primo piano",
+                2: "Secondo piano",
+                3: "Terzo piano",
+                4: "Quarto piano",
+                5: "Quinto piano",
+                6: "Sesto piano",
+                7: "Settimo piano",
+            }
+            by_ordinal = by_index.get(numeric_value)
+            if by_ordinal:
+                return by_ordinal
 
     word_match = re.search(
         r"\b(terra|primo|secondo|terzo|quarto|quinto|sesto|settimo)\s+piano\b",

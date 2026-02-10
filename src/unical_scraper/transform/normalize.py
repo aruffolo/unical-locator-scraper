@@ -674,9 +674,18 @@ def _apply_source_specific_aula_enrichments_and_drops(
                 should_drop = True
             elif "multimediale" in lowered_name and "25" in lowered_name:
                 override_building_id = "cla-centro-linguistico-d-ateneo"
+            elif "giannattasio" in lowered_name and existing_building_id == "cubo-45b":
+                override_floor = "Primo piano"
+            elif "superiore" in lowered_name:
+                override_floor = "Primo piano"
+            elif "inferiore" in lowered_name:
+                override_floor = "Piano Terra"
         elif "cla.unical.it/servizi-linguistici/studio-in-autonomia/" in source_url:
             if "multimediale cla" in lowered_name:
                 override_building_id = "cla-centro-linguistico-d-ateneo"
+        elif "diam.unical.it/dipartimento/organizzazione/strutture/" in source_url:
+            if "giannattasio" in lowered_name and existing_building_id == "cubo-45b":
+                override_floor = "Primo piano"
 
         if not override_floor and not isinstance(aula.get("floor"), str):
             override_floor = _infer_floor_from_code_hints(
@@ -760,6 +769,16 @@ def _infer_floor_from_code_hints(
         digits = {int(token) for token in cubo_floor_tokens}
         if len(digits) == 1:
             return _floor_label_from_digit(digits.pop())
+
+    if building_id:
+        building_match = re.fullmatch(r"cubo-([0-9]{1,2})([a-z])", building_id)
+        if building_match:
+            number = building_match.group(1)
+            letter = building_match.group(2).upper()
+            prefix = rf"\b{number}\s*{letter}\s*([0-7])(?:[A-Z]\d?)?\b"
+            floor_digits = {int(token) for token in re.findall(prefix, upper)}
+            if len(floor_digits) == 1:
+                return _floor_label_from_digit(floor_digits.pop())
 
     return None
 
