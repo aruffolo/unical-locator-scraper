@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -206,6 +207,72 @@ def check_integrity(data_dir: Path) -> list[IntegrityIssue]:
             continue
         seen_aula_keys[key] = aula_id
 
+    room_floor_by_key: dict[tuple[str, str], dict[str, set[str]]] = {}
+    for aula in aulas:
+        aula_id = str(aula.get("aula_id") or "")
+        building_id = aula.get("building_id")
+        room = aula.get("room")
+        floor = aula.get("floor")
+        if not isinstance(building_id, str) or not building_id.strip():
+            continue
+        if not isinstance(room, str) or not room.strip():
+            continue
+        if not isinstance(floor, str) or not floor.strip():
+            continue
+
+        key = (building_id.strip(), " ".join(room.split()).casefold())
+        floor_label = " ".join(floor.split())
+        room_floor_by_key.setdefault(key, {}).setdefault(floor_label, set()).add(aula_id)
+
+    for (building_id, room_key), floors_map in sorted(room_floor_by_key.items()):
+        if len(floors_map) <= 1:
+            continue
+        floor_labels = sorted(floors_map.keys())
+        aula_ids = sorted(aula_id for ids in floors_map.values() for aula_id in ids if aula_id)
+        issues.append(
+            IntegrityIssue(
+                level="error",
+                file="aulas.json",
+                record_id=aula_ids[0] if aula_ids else None,
+                message=(
+                    f"conflicting floor for room '{room_key}' in building_id '{building_id}': "
+                    f"{', '.join(floor_labels)}"
+                ),
+            )
+        )
+
+    seen_near_duplicate_keys: dict[tuple[str, tuple[str, ...]], set[str]] = {}
+    for aula in aulas:
+        aula_id = str(aula.get("aula_id") or "")
+        building_id = aula.get("building_id")
+        if not isinstance(building_id, str) or not building_id.strip():
+            continue
+
+        raw_name = str(aula.get("normalized_name") or aula.get("name") or "")
+        tokens = _aula_token_set(raw_name)
+        if len(tokens) < 2:
+            continue
+
+        key = (building_id.strip(), tokens)
+        seen_near_duplicate_keys.setdefault(key, set()).add(aula_id)
+
+    for (building_id, tokens), aula_ids in sorted(seen_near_duplicate_keys.items()):
+        if len(aula_ids) <= 1:
+            continue
+        sorted_ids = sorted(aula_id for aula_id in aula_ids if aula_id)
+        issues.append(
+            IntegrityIssue(
+                level="warning",
+                file="aulas.json",
+                record_id=sorted_ids[0] if sorted_ids else None,
+                message=(
+                    "suspicious near-duplicate aulas for "
+                    f"building_id '{building_id}' and token_set '{' '.join(tokens)}': "
+                    f"{', '.join(sorted_ids)}"
+                ),
+            )
+        )
+
     alias_targets = {
         "BUILDING": building_ids,
         "PLACE": place_ids,
@@ -247,3 +314,14 @@ def issues_to_dicts(issues: list[IntegrityIssue]) -> list[dict[str, str]]:
         }
         for issue in issues
     ]
+
+
+def _aula_token_set(value: str) -> tuple[str, ...]:
+    cleaned = value.casefold()
+    cleaned = re.sub(r"[^a-z0-9]+", " ", cleaned)
+    tokens = {
+        token
+        for token in cleaned.split()
+        if token and token not in {"aula", "laboratorio", "lab"}
+    }
+    return tuple(sorted(tokens))

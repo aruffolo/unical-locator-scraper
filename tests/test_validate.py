@@ -204,3 +204,83 @@ def test_integrity_detects_duplicate_aula_identity_key(tmp_path: Path) -> None:
     issues = check_integrity(data_dir=tmp_path)
     messages = [issue.message for issue in issues]
     assert any("duplicate aula key for normalized_name 'aula 2'" in message for message in messages)
+
+
+def test_integrity_detects_conflicting_floor_for_same_room_and_building(tmp_path: Path) -> None:
+    buildings = [{"building_id": "cubo-30b", "name": "Cubo 30B"}]
+    departments = []
+    people = []
+    places = [
+        {"place_id": "aula-mt1-a", "type": "AULA", "name": "Aula MT1", "building_id": "cubo-30b"},
+        {"place_id": "aula-mt1-b", "type": "AULA", "name": "Aula MT1", "building_id": "cubo-30b"},
+    ]
+    aulas = [
+        {
+            "aula_id": "aula-mt1-a",
+            "place_id": "aula-mt1-a",
+            "name": "Aula MT1",
+            "normalized_name": "aula mt1",
+            "building_id": "cubo-30b",
+            "room": "MT1",
+            "floor": "Piano Terra",
+        },
+        {
+            "aula_id": "aula-mt1-b",
+            "place_id": "aula-mt1-b",
+            "name": "Aula MT1",
+            "normalized_name": "mt1 aula",
+            "building_id": "cubo-30b",
+            "room": "MT1",
+            "floor": "Secondo piano",
+        },
+    ]
+
+    (tmp_path / "buildings.json").write_text(json.dumps(buildings), encoding="utf-8")
+    (tmp_path / "departments.json").write_text(json.dumps(departments), encoding="utf-8")
+    (tmp_path / "places.json").write_text(json.dumps(places), encoding="utf-8")
+    (tmp_path / "people.json").write_text(json.dumps(people), encoding="utf-8")
+    (tmp_path / "aulas.json").write_text(json.dumps(aulas), encoding="utf-8")
+
+    issues = check_integrity(data_dir=tmp_path)
+    messages = [issue.message for issue in issues]
+    assert any("conflicting floor for room 'mt1'" in message for message in messages)
+
+
+def test_integrity_detects_suspicious_near_duplicate_aulas_by_token_set(tmp_path: Path) -> None:
+    buildings = [{"building_id": "cubo-29b", "name": "Cubo 29B"}]
+    departments = []
+    people = []
+    places = [
+        {"place_id": "aula-dolci-a", "type": "AULA", "name": "Aula 29B1 - D. Dolci", "building_id": "cubo-29b"},
+        {"place_id": "aula-dolci-b", "type": "AULA", "name": "29B1 D Dolci Aula", "building_id": "cubo-29b"},
+    ]
+    aulas = [
+        {
+            "aula_id": "aula-dolci-a",
+            "place_id": "aula-dolci-a",
+            "name": "Aula 29B1 - D. Dolci",
+            "normalized_name": "aula 29b1 d dolci",
+            "building_id": "cubo-29b",
+            "room": "29B1",
+            "floor": "Primo piano",
+        },
+        {
+            "aula_id": "aula-dolci-b",
+            "place_id": "aula-dolci-b",
+            "name": "29B1 D Dolci Aula",
+            "normalized_name": "29b1 dolci d aula",
+            "building_id": "cubo-29b",
+            "room": "29B1X",
+            "floor": "Primo piano",
+        },
+    ]
+
+    (tmp_path / "buildings.json").write_text(json.dumps(buildings), encoding="utf-8")
+    (tmp_path / "departments.json").write_text(json.dumps(departments), encoding="utf-8")
+    (tmp_path / "places.json").write_text(json.dumps(places), encoding="utf-8")
+    (tmp_path / "people.json").write_text(json.dumps(people), encoding="utf-8")
+    (tmp_path / "aulas.json").write_text(json.dumps(aulas), encoding="utf-8")
+
+    issues = check_integrity(data_dir=tmp_path)
+    near_dup_issues = [issue for issue in issues if issue.level == "warning"]
+    assert any("suspicious near-duplicate aulas" in issue.message for issue in near_dup_issues)
