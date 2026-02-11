@@ -1,20 +1,24 @@
-"""Teacher extraction helpers.
-
-This module intentionally starts small and deterministic.
-TODO: adapt selectors to real UNICAL HTML once source pages are frozen.
-"""
+"""Teacher extraction helpers."""
 
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
-from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlsplit, urlunsplit
+from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlparse, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup
 
 from ..utils.html_cache import HtmlCache
 from ..utils.http import HttpClient
 from ..utils.text import collapse_whitespace, none_if_empty
+
+
+TEACHERS_API_PATTERN = re.compile(
+    r"(?:https?:)?//[^\"'\s>]*?/api/ricerca/teachers/?(?:\?[^\"'\s>]*)?"
+    r"|/api/ricerca/teachers/?(?:\?[^\"'\s>]*)?",
+    flags=re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -86,7 +90,7 @@ def _fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str:
 
 
 def _parse_teacher_links(index_html: str, base_url: str) -> set[str]:
-    """Extract candidate teacher profile links from an index/list page."""
+    """Extract teacher profile links from a teachers listing page."""
     soup = BeautifulSoup(index_html, "html.parser")
     base_host = urlparse(base_url).netloc
 
@@ -102,12 +106,14 @@ def _parse_teacher_links(index_html: str, base_url: str) -> set[str]:
             continue
         if parsed.netloc and parsed.netloc != base_host:
             continue
+        if "/storage/teachers/" in parsed.path:
+            links.add(_strip_query_and_fragment(absolute))
+            continue
 
         lower_url = absolute.lower()
         lower_text = anchor.get_text(" ", strip=True).lower()
         if any(token in lower_url for token in ["/privacy", "/cookie", "/credits", "/sitemap"]):
             continue
-        # TODO: replace heuristics with stable selectors when source HTML is finalized.
         if any(token in lower_url for token in ["docent", "teacher", "profile", "person"]):
             links.add(absolute)
         elif "docente" in lower_text or "prof." in lower_text:
@@ -118,21 +124,8 @@ def _parse_teacher_links(index_html: str, base_url: str) -> set[str]:
 
 def _parse_teacher_detail(detail_html: str, source_url: str) -> RawTeacher | None:
     """Parse one teacher profile page into a `RawTeacher` record."""
+    payload = _extract_teacher_results_payload(detail_html)
     soup = BeautifulSoup(detail_html, "html.parser")
-
-    name_candidate = None
-    for selector in ["h1", "h2", ".page-title", ".title"]:
-        element = soup.select_one(selector)
-        if element:
-            name_candidate = collapse_whitespace(element.get_text(" ", strip=True))
-            break
-
-    if not name_candidate:
-        title = soup.title.string.strip() if soup.title and soup.title.string else None
-        name_candidate = collapse_whitespace(title) if title else None
-
-    if not name_candidate:
-        return None
 
     email = None
     email_link = soup.select_one("a[href^='mailto:']")
@@ -146,7 +139,38 @@ def _parse_teacher_detail(detail_html: str, source_url: str) -> RawTeacher | Non
             website_url = href
             break
 
-    # TODO: use source-specific selectors to extract department and office hours accurately.
+    if payload:
+        full_name = _teacher_full_name_from_payload(payload) or _extract_heading_name(soup)
+        if not full_name:
+            return None
+
+        payload_email = _extract_first_string(payload.get("TeacherEmail"))
+        payload_website = _extract_first_string(payload.get("TeacherWebSite"))
+        payload_phone = _extract_first_string(payload.get("TeacherTelOffice"))
+        office = _extract_text(payload.get("TeacherOffice"))
+        office_reference = ", ".join(_extract_string_list(payload.get("TeacherOfficeReference")))
+        notes_parts = []
+        if office:
+            notes_parts.append(f"Office: {office}")
+        if office_reference:
+            notes_parts.append(f"Office references: {office_reference}")
+        notes = " | ".join(notes_parts) if notes_parts else None
+
+        return RawTeacher(
+            full_name=full_name,
+            source_url=source_url,
+            email=payload_email or email,
+            phone=payload_phone,
+            department_name=_extract_text(payload.get("TeacherDepartmentName")),
+            website_url=payload_website or website_url,
+            office_hours=_extract_text(payload.get("ReceptionHours")),
+            notes=notes,
+        )
+
+    name_candidate = _extract_heading_name(soup)
+    if not name_candidate:
+        return None
+
     return RawTeacher(
         full_name=name_candidate,
         source_url=source_url,
@@ -161,9 +185,15 @@ def _extract_teachers_api_url(index_html: str, base_url: str) -> str | None:
         href = anchor.get("href", "")
         if "/api/ricerca/teachers" not in href:
             continue
-        if "format=json" not in href:
+        candidate = _to_absolute_url(base_url=base_url, href=href)
+        return _normalize_teachers_api_url(candidate)
+
+    for match in TEACHERS_API_PATTERN.finditer(index_html):
+        candidate = _clean_url_candidate(match.group(0))
+        if not candidate:
             continue
-        return _to_absolute_url(base_url=base_url, href=href)
+        absolute = _to_absolute_url(base_url=base_url, href=candidate)
+        return _normalize_teachers_api_url(absolute)
     return None
 
 
@@ -181,6 +211,7 @@ def _crawl_teachers_from_api(
     cache: HtmlCache | None,
 ) -> list[RawTeacher]:
     teachers: list[RawTeacher] = []
+    api_url = _normalize_teachers_api_url(api_url)
     next_url: str | None = _with_page_size(api_url, page_size=200)
     visited: set[str] = set()
 
@@ -200,8 +231,13 @@ def _crawl_teachers_from_api(
                 continue
 
             email = _extract_first_email(item.get("Email"))
+            teacher_id = _extract_text(item.get("TeacherID"))
             department_name = _extract_text(item.get("TeacherDepartmentName"))
-            website_url = _teacher_profile_url(base_url=base_url, email=email)
+            website_url = _teacher_profile_url(
+                base_url=base_url,
+                email=email,
+                teacher_id=teacher_id,
+            )
             source_url = website_url or api_url
 
             teachers.append(
@@ -232,32 +268,150 @@ def _crawl_teachers_from_api(
 
 
 def _extract_first_email(value: object) -> str | None:
-    if isinstance(value, list):
-        for entry in value:
-            if isinstance(entry, str):
-                email = none_if_empty(entry.strip())
-                if email:
-                    return email
+    email = _extract_first_string(value)
+    if not email:
         return None
-    if isinstance(value, str):
-        return none_if_empty(value.strip())
-    return None
+    return none_if_empty(email.strip())
 
 
-def _teacher_profile_url(base_url: str, email: str | None) -> str | None:
-    if not email or "@" not in email:
-        return None
-    local_part = email.split("@", maxsplit=1)[0].strip()
-    slug = none_if_empty(local_part)
+def _teacher_profile_url(base_url: str, email: str | None, teacher_id: str | None) -> str | None:
+    slug = None
+    if email and "@" in email:
+        local_part = email.split("@", maxsplit=1)[0].strip()
+        slug = none_if_empty(local_part)
+    if not slug:
+        slug = teacher_id
     if not slug:
         return None
-    return _to_absolute_url(base_url=base_url, href=f"/storage/teachers/{slug}/")
+    quoted_slug = quote(slug, safe="._-")
+    return _to_absolute_url(base_url=base_url, href=f"/storage/teachers/{quoted_slug}/")
 
 
 def _extract_text(value: object) -> str | None:
     if not isinstance(value, str):
         return None
     return none_if_empty(collapse_whitespace(value))
+
+
+def _extract_first_string(value: object) -> str | None:
+    if isinstance(value, list):
+        for entry in value:
+            if not isinstance(entry, str):
+                continue
+            text = _extract_text(entry)
+            if text:
+                return text
+        return None
+    return _extract_text(value)
+
+
+def _extract_string_list(value: object) -> list[str]:
+    if not isinstance(value, list):
+        return []
+
+    results: list[str] = []
+    for entry in value:
+        if not isinstance(entry, str):
+            continue
+        text = _extract_text(entry)
+        if text:
+            results.append(text)
+    return results
+
+
+def _extract_heading_name(soup: BeautifulSoup) -> str | None:
+    for selector in ["h1", "h2", ".page-title", ".title"]:
+        element = soup.select_one(selector)
+        if element:
+            text = none_if_empty(collapse_whitespace(element.get_text(" ", strip=True)))
+            if text:
+                return text
+
+    title = soup.title.string.strip() if soup.title and soup.title.string else None
+    if not title:
+        return None
+    return none_if_empty(collapse_whitespace(title))
+
+
+def _extract_teacher_results_payload(detail_html: str) -> dict[str, object] | None:
+    marker = "item:"
+    index = detail_html.find(marker)
+    while index != -1:
+        object_start = detail_html.find("{", index)
+        if object_start == -1:
+            break
+
+        object_text, next_index = _extract_balanced_json_object(detail_html, object_start)
+        if object_text:
+            try:
+                parsed = json.loads(object_text)
+            except json.JSONDecodeError:
+                parsed = None
+            if isinstance(parsed, dict):
+                results = parsed.get("results")
+                if isinstance(results, dict):
+                    return results
+
+        index = detail_html.find(marker, max(index + len(marker), next_index))
+
+    return None
+
+
+def _extract_balanced_json_object(text: str, start_index: int) -> tuple[str | None, int]:
+    if start_index < 0 or start_index >= len(text) or text[start_index] != "{":
+        return None, start_index + 1
+
+    depth = 0
+    in_string = False
+    escaped = False
+    for index in range(start_index, len(text)):
+        char = text[index]
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            continue
+
+        if char == '"':
+            in_string = True
+            continue
+        if char == "{":
+            depth += 1
+            continue
+        if char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start_index : index + 1], index + 1
+
+    return None, len(text)
+
+
+def _teacher_full_name_from_payload(payload: dict[str, object]) -> str | None:
+    first_name = _extract_text(payload.get("TeacherFirstName"))
+    last_name = _extract_text(payload.get("TeacherLastName"))
+    if first_name and last_name:
+        return f"{first_name} {last_name}"
+    return _extract_text(payload.get("TeacherName"))
+
+
+def _normalize_teachers_api_url(url: str) -> str:
+    parts = urlsplit(url)
+    params = dict(parse_qsl(parts.query, keep_blank_values=True))
+    params["format"] = "json"
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(params), parts.fragment))
+
+
+def _clean_url_candidate(candidate: str) -> str:
+    cleaned = candidate.strip().strip("\"'`")
+    return cleaned.rstrip("),;")
+
+
+def _strip_query_and_fragment(url: str) -> str:
+    parts = urlsplit(url)
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
 
 
 def _with_page_size(url: str, page_size: int) -> str:

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from unical_scraper.extract.teachers import crawl_teachers
 
 
@@ -9,6 +11,13 @@ class FakeHttpClient:
 
     def get_text(self, url: str) -> str:
         return self._pages[url]
+
+
+FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures" / "teachers"
+
+
+def _fixture(name: str) -> str:
+    return (FIXTURES_DIR / name).read_text(encoding="utf-8")
 
 
 def test_crawl_teachers_uses_embedded_api_endpoint() -> None:
@@ -65,3 +74,60 @@ def test_crawl_teachers_uses_embedded_api_endpoint() -> None:
     assert teachers[1].full_name == "Mario Rossi"
     assert teachers[1].email == "mario.rossi@unical.it"
     assert teachers[1].website_url == "https://www.unical.it/storage/teachers/mario.rossi/"
+
+
+def test_crawl_teachers_discovers_api_url_from_script() -> None:
+    base_url = "https://www.unical.it/storage/teachers/"
+    api_url_with_page_size = (
+        "https://storage.portale.unical.it/api/ricerca/teachers/?format=json&page_size=200"
+    )
+    pages = {
+        base_url: _fixture("index_with_script_api.html"),
+        api_url_with_page_size: """
+            {
+              "results": [
+                {
+                  "TeacherID": "teacher-123",
+                  "TeacherName": "Rosa Adamo",
+                  "TeacherDepartmentName": "DISAG",
+                  "Email": ["rosa.adamo@unical.it"]
+                }
+              ],
+              "next": null
+            }
+        """,
+    }
+
+    teachers = crawl_teachers(base_url=base_url, client=FakeHttpClient(pages))
+
+    assert len(teachers) == 1
+    assert teachers[0].full_name == "Rosa Adamo"
+    assert teachers[0].email == "rosa.adamo@unical.it"
+    assert teachers[0].website_url == "https://www.unical.it/storage/teachers/rosa.adamo/"
+
+
+def test_crawl_teachers_parses_embedded_profile_payload() -> None:
+    base_url = "https://www.unical.it/storage/teachers/"
+    detail_url = "https://www.unical.it/storage/teachers/rosa.adamo/"
+    pages = {
+        base_url: """
+            <html><body>
+              <a href="/storage/teachers/rosa.adamo/?lang=it">Rosa Adamo</a>
+            </body></html>
+        """,
+        detail_url: _fixture("detail_with_payload.html"),
+    }
+
+    teachers = crawl_teachers(base_url=base_url, client=FakeHttpClient(pages))
+
+    assert len(teachers) == 1
+    teacher = teachers[0]
+    assert teacher.full_name == "Rosa ADAMO"
+    assert teacher.email == "rosa.adamo@unical.it"
+    assert teacher.phone == "0984/492272"
+    assert teacher.department_name == "Dipartimento di Scienze Aziendali e Giuridiche"
+    assert teacher.office_hours == "Lunedi 10:00-12:00"
+    assert teacher.website_url == "https://example.org/profile"
+    assert teacher.notes == (
+        "Office: Dipartimento di Scienze Aziendali e Giuridiche | Office references: Cubo 3C"
+    )
