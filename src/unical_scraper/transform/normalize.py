@@ -26,6 +26,7 @@ from .ids import (
 
 def normalize_teachers(
     raw_teachers: list[RawTeacher],
+    departments: list[dict[str, object]] | None = None,
     source_id: str = "unical-teachers",
     verified_at: datetime | None = None,
 ) -> list[dict[str, str]]:
@@ -37,6 +38,8 @@ def normalize_teachers(
         verified_at = datetime.now(timezone.utc)
 
     verified_iso = verified_at.isoformat()
+    department_resolver = _DepartmentResolver(departments or [])
+    office_place_ids = build_teacher_office_place_ids(raw_teachers)
 
     normalized: list[dict[str, str]] = []
     for raw in raw_teachers:
@@ -58,11 +61,18 @@ def normalize_teachers(
         if raw.phone:
             person["phone"] = raw.phone.strip()
         if raw.department_name:
-            person["department_id"] = make_department_id(raw.department_name)
+            resolved_department_id = department_resolver.resolve(raw.department_name)
+            if resolved_department_id:
+                person["department_id"] = resolved_department_id
+            elif not departments:
+                person["department_id"] = make_department_id(raw.department_name)
         if raw.website_url:
             person["website_url"] = raw.website_url.strip()
         if raw.office_hours:
             person["office_hours"] = collapse_whitespace(raw.office_hours)
+        office_place_id = office_place_ids.get(_teacher_office_key(raw))
+        if office_place_id:
+            person["office_place_id"] = office_place_id
         if raw.notes:
             person["notes"] = collapse_whitespace(raw.notes)
 
@@ -70,6 +80,213 @@ def normalize_teachers(
 
     deduped = dedupe_people(normalized)
     return sorted(deduped, key=lambda person: person["person_id"])
+
+
+_DEPARTMENT_ACRONYM_RE = re.compile(r"\b([A-Z][A-Za-z]{2,8})\b")
+_CUBO_BUILDING_RE = re.compile(r"\bcubo\s*([0-9]{1,2})([a-z])\b", re.IGNORECASE)
+_FLOOR_RE = re.compile(r"\bpiano\s*([0-9a-z]+)\b", re.IGNORECASE)
+_ROOM_RE = re.compile(r"\bstanza\s*([0-9a-z]+)\b", re.IGNORECASE)
+
+
+class _DepartmentResolver:
+    def __init__(self, departments: list[dict[str, object]]) -> None:
+        self._by_id = {
+            str(item.get("department_id")): str(item.get("department_id"))
+            for item in departments
+            if item.get("department_id")
+        }
+        self._normalized_name_to_id: dict[str, str] = {}
+        self._acronym_to_id: dict[str, str] = {}
+
+        for item in departments:
+            department_id = item.get("department_id")
+            name = item.get("name")
+            if not isinstance(department_id, str) or not isinstance(name, str):
+                continue
+            normalized_name = _normalize_department_name(name)
+            if normalized_name:
+                self._normalized_name_to_id.setdefault(normalized_name, department_id)
+            for acronym in _department_acronyms(name):
+                self._acronym_to_id.setdefault(acronym, department_id)
+            source_url = item.get("source_url")
+            if isinstance(source_url, str):
+                source_acronym = _department_acronym_from_source_url(source_url)
+                if source_acronym:
+                    self._acronym_to_id.setdefault(source_acronym, department_id)
+
+    def resolve(self, raw_department_name: str) -> str | None:
+        raw_text = none_if_empty(collapse_whitespace(raw_department_name))
+        if not raw_text:
+            return None
+
+        direct_id = make_department_id(raw_text)
+        if direct_id in self._by_id:
+            return direct_id
+
+        normalized = _normalize_department_name(raw_text)
+        if normalized and normalized in self._normalized_name_to_id:
+            return self._normalized_name_to_id[normalized]
+
+        raw_upper = raw_text.upper()
+        if raw_upper in self._acronym_to_id:
+            return self._acronym_to_id[raw_upper]
+
+        for token in _department_acronyms(raw_text):
+            if token in self._acronym_to_id:
+                return self._acronym_to_id[token]
+
+        return None
+
+
+def normalize_teacher_office_places(
+    raw_teachers: list[RawTeacher],
+    existing_places: list[dict[str, object]],
+    buildings: list[dict[str, object]] | None = None,
+    source_id: str = "unical-teachers",
+    verified_at: datetime | None = None,
+) -> list[dict[str, object]]:
+    if verified_at is None:
+        verified_at = datetime.now(timezone.utc)
+    verified_iso = verified_at.isoformat()
+
+    building_ids = {
+        str(item.get("building_id"))
+        for item in (buildings or [])
+        if isinstance(item.get("building_id"), str)
+    }
+
+    preserved_places = [place for place in existing_places if place.get("source_id") != source_id]
+    by_id: dict[str, dict[str, object]] = {
+        str(place["place_id"]): dict(place)
+        for place in preserved_places
+        if isinstance(place, dict) and isinstance(place.get("place_id"), str)
+    }
+
+    for raw in raw_teachers:
+        office_reference = _extract_teacher_office_reference(raw)
+        if not office_reference or not _is_structured_office_reference(office_reference):
+            continue
+
+        place_id = _office_place_id_from_reference(office_reference)
+        place: dict[str, object] = {
+            "place_id": place_id,
+            "type": "OFFICE",
+            "name": f"Ufficio {office_reference}",
+            "source_id": source_id,
+            "source_url": raw.source_url,
+            "last_verified_at": verified_iso,
+        }
+        if raw.office_hours:
+            place["opening_hours"] = collapse_whitespace(raw.office_hours)
+        if raw.notes:
+            place["description"] = collapse_whitespace(raw.notes)
+
+        building_id = _infer_office_building_id(office_reference, building_ids)
+        if building_id:
+            place["building_id"] = building_id
+        floor = _extract_floor(office_reference)
+        if floor:
+            place["floor"] = floor
+        room = _extract_room(office_reference)
+        if room:
+            place["room"] = room
+
+        by_id.setdefault(place_id, place)
+
+    return sorted(by_id.values(), key=lambda place: str(place.get("place_id", "")))
+
+
+def build_teacher_office_place_ids(raw_teachers: list[RawTeacher]) -> dict[str, str]:
+    result: dict[str, str] = {}
+    for raw in raw_teachers:
+        office_reference = _extract_teacher_office_reference(raw)
+        if not office_reference or not _is_structured_office_reference(office_reference):
+            continue
+        result[_teacher_office_key(raw)] = _office_place_id_from_reference(office_reference)
+    return result
+
+
+def _normalize_department_name(name: str) -> str:
+    normalized = slugify(name)
+    if not normalized:
+        return ""
+    for token in ["-dip", "-dipartimento", "-di", "-desf", "-dices", "-diam", "-dimes"]:
+        normalized = normalized.replace(token, "")
+    normalized = re.sub(r"-+", "-", normalized).strip("-")
+    return normalized
+
+
+def _department_acronyms(name: str) -> set[str]:
+    acronyms: set[str] = set()
+    for match in _DEPARTMENT_ACRONYM_RE.finditer(name):
+        token = match.group(1).upper()
+        if token.startswith("D") and len(token) >= 4:
+            acronyms.add(token)
+
+    if "-" in name:
+        suffix = name.rsplit("-", maxsplit=1)[-1].strip().upper()
+        suffix = re.sub(r"[^A-Z]", "", suffix)
+        if suffix.startswith("D") and len(suffix) >= 4:
+            acronyms.add(suffix)
+
+    return acronyms
+
+
+def _department_acronym_from_source_url(source_url: str) -> str | None:
+    candidate = source_url.rstrip("/").rsplit("/", maxsplit=1)[-1].upper()
+    candidate = re.sub(r"[^A-Z]", "", candidate)
+    if candidate.startswith("D") and len(candidate) >= 4:
+        return candidate
+    return None
+
+
+def _teacher_office_key(raw: RawTeacher) -> str:
+    return (
+        _extract_teacher_office_reference(raw)
+        or none_if_empty(collapse_whitespace(raw.full_name))
+        or ""
+    )
+
+
+def _extract_teacher_office_reference(raw: RawTeacher) -> str | None:
+    if raw.office_reference:
+        return none_if_empty(collapse_whitespace(raw.office_reference))
+    if raw.notes:
+        match = re.search(r"Office references:\s*([^|]+)", raw.notes, flags=re.IGNORECASE)
+        if match:
+            return none_if_empty(collapse_whitespace(match.group(1)))
+    return None
+
+
+def _is_structured_office_reference(value: str) -> bool:
+    lowered = value.lower()
+    return "cubo" in lowered or "piano" in lowered or "stanza" in lowered
+
+
+def _office_place_id_from_reference(office_reference: str) -> str:
+    return make_place_id(name=f"Ufficio {office_reference}", place_type="OFFICE")
+
+
+def _infer_office_building_id(office_reference: str, known_building_ids: set[str]) -> str | None:
+    match = _CUBO_BUILDING_RE.search(office_reference)
+    if not match:
+        return None
+    building_id = f"cubo-{match.group(1)}{match.group(2).lower()}"
+    return building_id if building_id in known_building_ids else None
+
+
+def _extract_floor(office_reference: str) -> str | None:
+    match = _FLOOR_RE.search(office_reference)
+    if not match:
+        return None
+    return f"Piano {match.group(1)}"
+
+
+def _extract_room(office_reference: str) -> str | None:
+    match = _ROOM_RE.search(office_reference)
+    if not match:
+        return None
+    return f"Stanza {match.group(1)}"
 
 
 def normalize_departments(

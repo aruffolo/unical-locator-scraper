@@ -32,6 +32,7 @@ class RawTeacher:
     department_name: str | None = None
     website_url: str | None = None
     office_hours: str | None = None
+    office_reference: str | None = None
     notes: str | None = None
 
 
@@ -164,6 +165,7 @@ def _parse_teacher_detail(detail_html: str, source_url: str) -> RawTeacher | Non
             department_name=_extract_text(payload.get("TeacherDepartmentName")),
             website_url=payload_website or website_url,
             office_hours=_extract_text(payload.get("ReceptionHours")),
+            office_reference=office_reference or None,
             notes=notes,
         )
 
@@ -232,21 +234,43 @@ def _crawl_teachers_from_api(
 
             email = _extract_first_email(item.get("Email"))
             teacher_id = _extract_text(item.get("TeacherID"))
-            department_name = _extract_text(item.get("TeacherDepartmentName"))
+            department_name = _extract_first_string(item.get("TeacherDepartmentName"))
             website_url = _teacher_profile_url(
                 base_url=base_url,
                 email=email,
                 teacher_id=teacher_id,
             )
             source_url = website_url or api_url
+            detail = _fetch_teacher_detail_payload(
+                api_url=api_url,
+                teacher_id=teacher_id,
+                client=client,
+                cache=cache,
+            )
+            office_reference = _extract_first_string(
+                detail.get("TeacherOfficeReference") if detail else None
+            )
+            office = _extract_text(detail.get("TeacherOffice")) if detail else None
+            notes = office
+            if office and office_reference:
+                notes = f"Office: {office} | Office references: {office_reference}"
+            elif office_reference:
+                notes = f"Office references: {office_reference}"
 
             teachers.append(
                 RawTeacher(
                     full_name=full_name,
                     source_url=source_url,
-                    email=email,
-                    department_name=department_name,
-                    website_url=website_url,
+                    email=(_extract_first_email(detail.get("TeacherEmail")) if detail else None) or email,
+                    phone=_extract_first_string(detail.get("TeacherTelOffice")) if detail else None,
+                    department_name=_extract_first_string(detail.get("TeacherDepartmentName"))
+                    if detail
+                    else department_name,
+                    website_url=(_extract_first_string(detail.get("TeacherWebSite")) if detail else None)
+                    or website_url,
+                    office_hours=_extract_text(detail.get("ReceptionHours")) if detail else None,
+                    office_reference=office_reference,
+                    notes=notes,
                 )
             )
 
@@ -285,6 +309,40 @@ def _teacher_profile_url(base_url: str, email: str | None, teacher_id: str | Non
         return None
     quoted_slug = quote(slug, safe="._-")
     return _to_absolute_url(base_url=base_url, href=f"/storage/teachers/{quoted_slug}/")
+
+
+def _fetch_teacher_detail_payload(
+    api_url: str,
+    teacher_id: str | None,
+    client: HttpClient,
+    cache: HtmlCache | None,
+) -> dict[str, object] | None:
+    if not teacher_id:
+        return None
+
+    detail_url = _teacher_detail_api_url(api_url=api_url, teacher_id=teacher_id)
+    try:
+        payload = json.loads(_fetch_html(detail_url, client, cache))
+    except Exception:
+        return None
+
+    results = payload.get("results") if isinstance(payload, dict) else None
+    return results if isinstance(results, dict) else None
+
+
+def _teacher_detail_api_url(api_url: str, teacher_id: str) -> str:
+    parts = urlsplit(api_url)
+    base_path = parts.path.rstrip("/")
+    quoted_teacher_id = quote(teacher_id, safe="")
+    return urlunsplit(
+        (
+            parts.scheme,
+            parts.netloc,
+            f"{base_path}/{quoted_teacher_id}/",
+            "format=json",
+            "",
+        )
+    )
 
 
 def _extract_text(value: object) -> str | None:

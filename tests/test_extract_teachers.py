@@ -42,6 +42,7 @@ def test_crawl_teachers_uses_embedded_api_endpoint() -> None:
             {
               "results": [
                 {
+                  "TeacherID": "teacher-mario",
                   "TeacherName": "Mario Rossi",
                   "TeacherDepartmentName": "DIMES",
                   "Email": ["mario.rossi@unical.it"]
@@ -54,12 +55,29 @@ def test_crawl_teachers_uses_embedded_api_endpoint() -> None:
             {
               "results": [
                 {
+                  "TeacherID": "teacher-anna",
                   "TeacherName": "Anna Bianchi",
                   "TeacherDepartmentName": "DIBEST",
                   "Email": []
                 }
               ],
               "next": null
+            }
+        """,
+        "https://storage.portale.unical.it/api/ricerca/teachers/teacher-mario/?format=json": """
+            {
+              "results": {
+                "TeacherDepartmentName": "DIMES",
+                "TeacherOfficeReference": ["Cubo 3C Piano 2 Stanza 8"],
+                "ReceptionHours": "Mercoledi 11:00-13:00"
+              }
+            }
+        """,
+        "https://storage.portale.unical.it/api/ricerca/teachers/teacher-anna/?format=json": """
+            {
+              "results": {
+                "TeacherDepartmentName": "DIBEST"
+              }
             }
         """,
     }
@@ -74,6 +92,8 @@ def test_crawl_teachers_uses_embedded_api_endpoint() -> None:
     assert teachers[1].full_name == "Mario Rossi"
     assert teachers[1].email == "mario.rossi@unical.it"
     assert teachers[1].website_url == "https://www.unical.it/storage/teachers/mario.rossi/"
+    assert teachers[1].office_reference == "Cubo 3C Piano 2 Stanza 8"
+    assert teachers[1].office_hours == "Mercoledi 11:00-13:00"
 
 
 def test_crawl_teachers_discovers_api_url_from_script() -> None:
@@ -94,6 +114,14 @@ def test_crawl_teachers_discovers_api_url_from_script() -> None:
                 }
               ],
               "next": null
+            }
+        """,
+        "https://storage.portale.unical.it/api/ricerca/teachers/teacher-123/?format=json": """
+            {
+              "results": {
+                "TeacherDepartmentName": "DISAG",
+                "TeacherOfficeReference": ["Cubo 3C"]
+              }
             }
         """,
     }

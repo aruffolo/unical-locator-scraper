@@ -16,6 +16,7 @@ from .extract.services import crawl_services
 from .extract.teachers import crawl_teachers
 from .transform.aliases import build_search_aliases
 from .transform.normalize import (
+    normalize_teacher_office_places,
     normalize_aulas,
     normalize_buildings,
     normalize_departments,
@@ -119,6 +120,27 @@ def link() -> None:
     type=click.Path(path_type=Path),
     help="Optional cache dir for HTML snapshots.",
 )
+@click.option(
+    "--departments-file",
+    default=str(DEFAULT_DATA_DIR / "departments.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+    help="Departments dataset used to resolve teacher department_id values.",
+)
+@click.option(
+    "--places-file",
+    default=str(DEFAULT_DATA_DIR / "places.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+    help="Places dataset where extracted teacher offices are upserted.",
+)
+@click.option(
+    "--buildings-file",
+    default=str(DEFAULT_DATA_DIR / "buildings.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+    help="Buildings dataset used to infer office building_id.",
+)
 @click.option("--rate-limit", default=0.5, show_default=True, type=float)
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
 @click.option("--max-retries", default=2, show_default=True, type=int)
@@ -127,6 +149,9 @@ def crawl_teachers_command(
     base_url: str,
     out_file: Path,
     cache_dir: Path | None,
+    departments_file: Path,
+    places_file: Path,
+    buildings_file: Path,
     rate_limit: float,
     user_agent: str,
     max_retries: int,
@@ -144,8 +169,18 @@ def crawl_teachers_command(
         raw_teachers = crawl_teachers(base_url=base_url, client=client, cache=cache)
         _emit_http_diagnostics(client)
 
-    people = normalize_teachers(raw_teachers)
+    departments = _load_json_array(departments_file)
+    buildings = _load_json_array(buildings_file)
+    existing_places = _load_json_array(places_file)
+
+    people = normalize_teachers(raw_teachers, departments=departments)
+    teacher_office_places = normalize_teacher_office_places(
+        raw_teachers=raw_teachers,
+        existing_places=existing_places,
+        buildings=buildings,
+    )
     write_json(out_file, people)
+    write_json(places_file, teacher_office_places)
 
     sources_file = out_file.parent / "sources.json"
     source_entry = {
@@ -158,7 +193,9 @@ def crawl_teachers_command(
     _upsert_source_entry(sources_file=sources_file, source_entry=source_entry)
 
     click.echo(f"Crawled {len(raw_teachers)} teachers")
+    click.echo(f"Teacher office places: {len(teacher_office_places)}")
     click.echo(f"Wrote: {out_file}")
+    click.echo(f"Wrote: {places_file}")
     click.echo(f"Wrote: {sources_file}")
 
 

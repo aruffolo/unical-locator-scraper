@@ -14,7 +14,7 @@
 - Next milestone: close Phase 1 hardening gaps, then complete Phase 4 operational hardening
 
 ## Verification Snapshot (2026-02-11)
-- `pytest -q`: 71 passed
+- `pytest -q`: 73 passed
 - `python -m unical_scraper validate --data-dir data/normalized --schemas-dir data/schema`: OK + integrity OK
 - `python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out data/normalized/report.json`: generated
 
@@ -31,7 +31,9 @@
 - [x] DONE API-driven teachers extraction path implemented with deterministic ordering
 - [x] DONE Tests exist for teachers API extraction path
 - [x] DONE Source-specific selector hardening for current known teacher page layouts
-- [ ] IN_PROGRESS Rich office extraction still missing (`office_hours`, `office_place_id` currently 0 in report)
+- [x] DONE Teacher detail API enrichment wired (`department_name`, `office_hours`, `office_reference`, `phone`)
+- [x] DONE Teacher office places upsert flow wired in `crawl teachers` (`places.json` + `office_place_id` linking rules)
+- [ ] IN_PROGRESS Dataset refresh pending to materialize improved people/office coverage in normalized artifacts
 
 ### Phase 2 — Departments and services expansion
 - [x] DONE `crawl departments` implemented and normalized output produced
@@ -71,7 +73,7 @@
 - aulas with capacity: 280 (54.16%)
 
 ## Open Work (Priority)
-1. Improve people enrichment (department mapping quality, office fields where public data is available).
+1. Run full teacher refresh and confirm coverage deltas for `department_id`, `office_hours`, `office_place_id`.
 2. Expand teacher parser fixtures for additional HTML variants as they are discovered.
 3. Keep release gates green after each extraction/normalization refresh.
 

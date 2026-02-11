@@ -6,6 +6,7 @@ from unical_scraper.extract.departments import RawDepartment
 from unical_scraper.extract.services import RawService
 from unical_scraper.extract.teachers import RawTeacher
 from unical_scraper.transform.normalize import (
+    normalize_teacher_office_places,
     normalize_aulas,
     normalize_buildings,
     normalize_departments,
@@ -39,6 +40,66 @@ def test_normalize_teachers_produces_people_schema_shape() -> None:
     assert person["department_id"] == "dimes"
     assert person["source_id"] == "unical-teachers"
     assert person["last_verified_at"] == "2026-02-09T00:00:00+00:00"
+
+
+def test_normalize_teachers_resolves_department_id_from_department_dataset() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Mario Rossi",
+            department_name="DIMES",
+            source_url="https://www.unical.it/storage/teachers/mario.rossi/",
+        )
+    ]
+    departments = [
+        {
+            "department_id": "dipartimento-di-ingegneria-informatica-modellistica-elettronica-e-sistemistica",
+            "name": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica",
+            "source_url": "https://www.unical.it/ateneo/dipartimenti/dimes",
+        }
+    ]
+
+    people = normalize_teachers(
+        raw_teachers=raw,
+        departments=departments,
+        verified_at=datetime(2026, 2, 11, tzinfo=timezone.utc),
+    )
+
+    assert len(people) == 1
+    assert (
+        people[0]["department_id"]
+        == "dipartimento-di-ingegneria-informatica-modellistica-elettronica-e-sistemistica"
+    )
+
+
+def test_normalize_teacher_office_places_generates_structured_office_records() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Rosa Adamo",
+            source_url="https://www.unical.it/storage/teachers/rosa.adamo/",
+            office_reference="Cubo 3C Piano 2 Stanza 8",
+            office_hours="Lunedi 10:00-12:00",
+            notes="Office references: Cubo 3C Piano 2 Stanza 8",
+        ),
+        RawTeacher(
+            full_name="No Structured Office",
+            source_url="https://www.unical.it/storage/teachers/no-office/",
+            office_reference="Direzione Generale",
+        ),
+    ]
+
+    places = normalize_teacher_office_places(
+        raw_teachers=raw,
+        existing_places=[],
+        buildings=[{"building_id": "cubo-3c", "name": "Cubo 3C"}],
+        verified_at=datetime(2026, 2, 11, tzinfo=timezone.utc),
+    )
+
+    assert len(places) == 1
+    place = places[0]
+    assert place["type"] == "OFFICE"
+    assert place["building_id"] == "cubo-3c"
+    assert place["floor"] == "Piano 2"
+    assert place["room"] == "Stanza 8"
 
 
 def test_normalize_departments_produces_departments_schema_shape() -> None:
