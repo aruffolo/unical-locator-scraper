@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 import math
 from pathlib import Path
 import re
+from urllib.parse import urlparse
 
 from ..extract.aulas import RawAula
 from ..extract.buildings import RawBuilding
@@ -61,11 +62,23 @@ def normalize_teachers(
         if raw.phone:
             person["phone"] = raw.phone.strip()
         if raw.department_name:
-            resolved_department_id = department_resolver.resolve(raw.department_name)
+            resolved_department_id = department_resolver.resolve(
+                raw.department_name,
+                email=raw.email,
+                website_url=raw.website_url,
+            )
             if resolved_department_id:
                 person["department_id"] = resolved_department_id
             elif not departments:
                 person["department_id"] = make_department_id(raw.department_name)
+        elif departments:
+            resolved_department_id = department_resolver.resolve(
+                "",
+                email=raw.email,
+                website_url=raw.website_url,
+            )
+            if resolved_department_id:
+                person["department_id"] = resolved_department_id
         if raw.website_url:
             person["website_url"] = raw.website_url.strip()
         if raw.office_hours:
@@ -97,6 +110,7 @@ class _DepartmentResolver:
         }
         self._normalized_name_to_id: dict[str, str] = {}
         self._acronym_to_id: dict[str, str] = {}
+        self._domain_alias_to_id: dict[str, str] = {}
 
         for item in departments:
             department_id = item.get("department_id")
@@ -108,33 +122,59 @@ class _DepartmentResolver:
                 self._normalized_name_to_id.setdefault(normalized_name, department_id)
             for acronym in _department_acronyms(name):
                 self._acronym_to_id.setdefault(acronym, department_id)
+                self._domain_alias_to_id.setdefault(acronym.casefold(), department_id)
             source_url = item.get("source_url")
             if isinstance(source_url, str):
                 source_acronym = _department_acronym_from_source_url(source_url)
                 if source_acronym:
                     self._acronym_to_id.setdefault(source_acronym, department_id)
+                    self._domain_alias_to_id.setdefault(source_acronym.casefold(), department_id)
+            for alias in _department_domain_aliases(name):
+                self._domain_alias_to_id.setdefault(alias, department_id)
 
-    def resolve(self, raw_department_name: str) -> str | None:
+    def resolve(
+        self,
+        raw_department_name: str,
+        email: str | None = None,
+        website_url: str | None = None,
+    ) -> str | None:
         raw_text = none_if_empty(collapse_whitespace(raw_department_name))
-        if not raw_text:
-            return None
+        if raw_text:
+            direct_id = make_department_id(raw_text)
+            if direct_id in self._by_id:
+                return direct_id
 
-        direct_id = make_department_id(raw_text)
-        if direct_id in self._by_id:
-            return direct_id
+            normalized = _normalize_department_name(raw_text)
+            if normalized and normalized in self._normalized_name_to_id:
+                return self._normalized_name_to_id[normalized]
 
-        normalized = _normalize_department_name(raw_text)
-        if normalized and normalized in self._normalized_name_to_id:
-            return self._normalized_name_to_id[normalized]
+            raw_upper = raw_text.upper()
+            if raw_upper in self._acronym_to_id:
+                return self._acronym_to_id[raw_upper]
 
-        raw_upper = raw_text.upper()
-        if raw_upper in self._acronym_to_id:
-            return self._acronym_to_id[raw_upper]
+            for token in _department_acronyms(raw_text):
+                if token in self._acronym_to_id:
+                    return self._acronym_to_id[token]
 
-        for token in _department_acronyms(raw_text):
-            if token in self._acronym_to_id:
-                return self._acronym_to_id[token]
+        from_domain = self._resolve_from_email_domain(email=email, website_url=website_url)
+        if from_domain:
+            return from_domain
 
+        return None
+
+    def _resolve_from_email_domain(self, email: str | None, website_url: str | None) -> str | None:
+        candidates: list[str] = []
+        if email and "@" in email:
+            candidates.append(email.split("@", maxsplit=1)[1].casefold())
+        if website_url:
+            parsed = urlparse(website_url)
+            if parsed.netloc:
+                candidates.append(parsed.netloc.casefold())
+
+        for domain in candidates:
+            alias = _department_alias_from_domain(domain)
+            if alias and alias in self._domain_alias_to_id:
+                return self._domain_alias_to_id[alias]
         return None
 
 
@@ -232,11 +272,28 @@ def _department_acronyms(name: str) -> set[str]:
     return acronyms
 
 
+def _department_domain_aliases(name: str) -> set[str]:
+    lowered = name.casefold()
+    aliases: set[str] = set()
+    if "fisica" in lowered:
+        aliases.add("fis")
+    return aliases
+
+
 def _department_acronym_from_source_url(source_url: str) -> str | None:
     candidate = source_url.rstrip("/").rsplit("/", maxsplit=1)[-1].upper()
     candidate = re.sub(r"[^A-Z]", "", candidate)
     if candidate.startswith("D") and len(candidate) >= 4:
         return candidate
+    return None
+
+
+def _department_alias_from_domain(domain: str) -> str | None:
+    clean = domain.strip().lstrip("www.")
+    if clean.endswith(".unical.it"):
+        prefix = clean[: -len(".unical.it")]
+        if prefix and "." not in prefix:
+            return prefix
     return None
 
 

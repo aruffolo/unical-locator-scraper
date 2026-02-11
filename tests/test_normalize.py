@@ -71,6 +71,46 @@ def test_normalize_teachers_resolves_department_id_from_department_dataset() -> 
     )
 
 
+def test_normalize_teachers_resolves_department_id_from_email_domain_alias() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Marta B",
+            email="marta.b@dimes.unical.it",
+            source_url="https://www.unical.it/storage/teachers/marta.b/",
+        ),
+        RawTeacher(
+            full_name="Carlo F",
+            email="carlo.f@fis.unical.it",
+            source_url="https://www.unical.it/storage/teachers/carlo.f/",
+        ),
+    ]
+    departments = [
+        {
+            "department_id": "dipartimento-di-ingegneria-informatica-modellistica-elettronica-e-sistemistica",
+            "name": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica",
+            "source_url": "https://www.unical.it/ateneo/dipartimenti/dimes",
+        },
+        {
+            "department_id": "dipartimento-di-fisica",
+            "name": "Dipartimento di Fisica",
+            "source_url": "https://www.unical.it/ateneo/dipartimenti/df",
+        },
+    ]
+
+    people = normalize_teachers(
+        raw_teachers=raw,
+        departments=departments,
+        verified_at=datetime(2026, 2, 11, tzinfo=timezone.utc),
+    )
+    by_name = {p["full_name"]: p for p in people}
+
+    assert (
+        by_name["Marta B"]["department_id"]
+        == "dipartimento-di-ingegneria-informatica-modellistica-elettronica-e-sistemistica"
+    )
+    assert by_name["Carlo F"]["department_id"] == "dipartimento-di-fisica"
+
+
 def test_normalize_teacher_office_places_generates_structured_office_records() -> None:
     raw = [
         RawTeacher(
