@@ -11,6 +11,7 @@ import click
 
 from .extract.aulas import crawl_aulas
 from .extract.buildings import crawl_buildings
+from .extract.department_teacher_map import crawl_department_teacher_map
 from .extract.departments import crawl_departments
 from .extract.services import crawl_services
 from .extract.teachers import crawl_teachers
@@ -159,6 +160,7 @@ def crawl_teachers_command(
 ) -> None:
     """Crawl professor pages and write normalized `people.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
+    departments = _load_json_array(departments_file)
 
     with HttpClient(
         user_agent=user_agent,
@@ -167,13 +169,21 @@ def crawl_teachers_command(
         retry_backoff_seconds=retry_backoff,
     ) as client:
         raw_teachers = crawl_teachers(base_url=base_url, client=client, cache=cache)
+        department_teacher_map = crawl_department_teacher_map(
+            departments=departments,
+            client=client,
+            cache=cache,
+        )
         _emit_http_diagnostics(client)
 
-    departments = _load_json_array(departments_file)
     buildings = _load_json_array(buildings_file)
     existing_places = _load_json_array(places_file)
 
-    people = normalize_teachers(raw_teachers, departments=departments)
+    people = normalize_teachers(
+        raw_teachers,
+        departments=departments,
+        department_teacher_map=department_teacher_map,
+    )
     teacher_office_places = normalize_teacher_office_places(
         raw_teachers=raw_teachers,
         existing_places=existing_places,
@@ -193,6 +203,7 @@ def crawl_teachers_command(
     _upsert_source_entry(sources_file=sources_file, source_entry=source_entry)
 
     click.echo(f"Crawled {len(raw_teachers)} teachers")
+    click.echo(f"Department teacher fallback keys: {len(department_teacher_map)}")
     click.echo(f"Teacher office places: {len(teacher_office_places)}")
     click.echo(f"Wrote: {out_file}")
     click.echo(f"Wrote: {places_file}")

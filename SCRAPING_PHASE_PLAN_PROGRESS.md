@@ -14,7 +14,7 @@
 - Next milestone: close Phase 1 hardening gaps, then complete Phase 4 operational hardening
 
 ## Verification Snapshot (2026-02-11)
-- `pytest -q`: 74 passed
+- `pytest -q`: 76 passed
 - `python -m unical_scraper validate --data-dir data/normalized --schemas-dir data/schema`: OK + integrity OK
 - `python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out data/normalized/report.json`: generated
 
@@ -62,7 +62,7 @@
 ## Data & Coverage Snapshot (`data/normalized/report.json`)
 - people total: 4156
 - people with email: 1469 (35.35%)
-- people with department_id: 1335 (32.12%)
+- people with department_id: 1337 (32.17%)
 - people with office_hours: 438 (10.54%)
 - people with office_place_id: 621 (14.94%)
 - places total: 876 (AULA: 517, OFFICE: 333, SERVICE: 26)
@@ -73,7 +73,7 @@
 - aulas with capacity: 280 (54.16%)
 
 ## Open Work (Priority)
-1. Improve department resolution coverage (source has department fields only for ~32% of teachers; remaining gains require additional public sources).
+1. Improve department resolution coverage further (teacher API + department-site fallback currently reaches ~32.17%).
 2. Expand teacher parser fixtures for additional HTML variants as they are discovered.
 3. Keep release gates green after each extraction/normalization refresh.
 

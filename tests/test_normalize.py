@@ -111,6 +111,28 @@ def test_normalize_teachers_resolves_department_id_from_email_domain_alias() -> 
     assert by_name["Carlo F"]["department_id"] == "dipartimento-di-fisica"
 
 
+def test_normalize_teachers_resolves_department_id_from_department_teacher_map() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Giulia Neri",
+            email="giulia.neri@unical.it",
+            website_url="https://www.unical.it/storage/teachers/giulia.neri/",
+            source_url="https://www.unical.it/storage/teachers/giulia.neri/",
+        )
+    ]
+    mapping = {"slug:giulia.neri": "dipartimento-di-matematica-e-informatica"}
+
+    people = normalize_teachers(
+        raw_teachers=raw,
+        departments=[],
+        department_teacher_map=mapping,
+        verified_at=datetime(2026, 2, 11, tzinfo=timezone.utc),
+    )
+
+    assert len(people) == 1
+    assert people[0]["department_id"] == "dipartimento-di-matematica-e-informatica"
+
+
 def test_normalize_teacher_office_places_generates_structured_office_records() -> None:
     raw = [
         RawTeacher(

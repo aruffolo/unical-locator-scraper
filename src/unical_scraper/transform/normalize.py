@@ -28,6 +28,7 @@ from .ids import (
 def normalize_teachers(
     raw_teachers: list[RawTeacher],
     departments: list[dict[str, object]] | None = None,
+    department_teacher_map: dict[str, str] | None = None,
     source_id: str = "unical-teachers",
     verified_at: datetime | None = None,
 ) -> list[dict[str, str]]:
@@ -41,6 +42,7 @@ def normalize_teachers(
     verified_iso = verified_at.isoformat()
     department_resolver = _DepartmentResolver(departments or [])
     office_place_ids = build_teacher_office_place_ids(raw_teachers)
+    department_teacher_map = department_teacher_map or {}
 
     normalized: list[dict[str, str]] = []
     for raw in raw_teachers:
@@ -79,6 +81,13 @@ def normalize_teachers(
             )
             if resolved_department_id:
                 person["department_id"] = resolved_department_id
+        if "department_id" not in person and department_teacher_map:
+            mapped_department_id = _resolve_department_from_teacher_map(
+                raw=raw,
+                department_teacher_map=department_teacher_map,
+            )
+            if mapped_department_id:
+                person["department_id"] = mapped_department_id
         if raw.website_url:
             person["website_url"] = raw.website_url.strip()
         if raw.office_hours:
@@ -303,6 +312,34 @@ def _teacher_office_key(raw: RawTeacher) -> str:
         or none_if_empty(collapse_whitespace(raw.full_name))
         or ""
     )
+
+
+def _resolve_department_from_teacher_map(
+    raw: RawTeacher,
+    department_teacher_map: dict[str, str],
+) -> str | None:
+    website_slug = _teacher_profile_slug(raw.website_url or raw.source_url)
+    if website_slug:
+        mapped = department_teacher_map.get(f"slug:{website_slug}")
+        if mapped:
+            return mapped
+
+    if raw.email and "@" in raw.email:
+        local_part = none_if_empty(raw.email.split("@", maxsplit=1)[0].strip().casefold())
+        if local_part:
+            mapped = department_teacher_map.get(f"email_local:{local_part}")
+            if mapped:
+                return mapped
+    return None
+
+
+def _teacher_profile_slug(url: str | None) -> str | None:
+    if not url:
+        return None
+    match = re.search(r"/storage/teachers/([^/?#]+)/?", url, flags=re.IGNORECASE)
+    if not match:
+        return None
+    return none_if_empty(match.group(1).strip().casefold())
 
 
 def _extract_teacher_office_reference(raw: RawTeacher) -> str | None:
