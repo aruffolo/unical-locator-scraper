@@ -33,7 +33,7 @@
 - [x] DONE Source-specific selector hardening for current known teacher page layouts
 - [x] DONE Teacher detail API enrichment wired (`department_name`, `office_hours`, `office_reference`, `phone`)
 - [x] DONE Teacher office places upsert flow wired in `crawl teachers` (`places.json` + `office_place_id` linking rules)
-- [ ] IN_PROGRESS Dataset refresh pending to materialize improved people/office coverage in normalized artifacts
+- [x] DONE Dataset refresh executed; people/office coverage materially improved
 
 ### Phase 2 — Departments and services expansion
 - [x] DONE `crawl departments` implemented and normalized output produced
@@ -60,20 +60,20 @@
 - [ ] IN_PROGRESS Teacher parser robustness for source HTML variations remains open
 
 ## Data & Coverage Snapshot (`data/normalized/report.json`)
-- people total: 4140
-- people with email: 1376 (33.24%)
-- people with department_id: 1332 (32.17%)
-- people with office_hours: 0
-- people with office_place_id: 0
-- places total: 544 (AULA: 517)
-- places with building_id: 539 (99.08%)
+- people total: 4156
+- people with email: 1469 (35.35%)
+- people with department_id: 1333 (32.07%)
+- people with office_hours: 438 (10.54%)
+- people with office_place_id: 621 (14.94%)
+- places total: 1419 (AULA: 517)
+- places with building_id: 1414 (99.65%)
 - aulas total: 517
 - aulas with building_id: 517 (100%)
 - aulas with floor: 329 (63.64%)
 - aulas with capacity: 280 (54.16%)
 
 ## Open Work (Priority)
-1. Run full teacher refresh and confirm coverage deltas for `department_id`, `office_hours`, `office_place_id`.
+1. Improve department resolution coverage (current +1 record only after enrichment).
 2. Expand teacher parser fixtures for additional HTML variants as they are discovered.
 3. Keep release gates green after each extraction/normalization refresh.
 
