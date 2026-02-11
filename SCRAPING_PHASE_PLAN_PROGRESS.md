@@ -14,7 +14,7 @@
 - Next milestone: close Phase 1 hardening gaps, then complete Phase 4 operational hardening
 
 ## Verification Snapshot (2026-02-11)
-- `pytest -q`: 67 passed
+- `pytest -q`: 69 passed
 - `python -m unical_scraper validate --data-dir data/normalized --schemas-dir data/schema`: OK + integrity OK
 - `python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out data/normalized/report.json`: generated
 
@@ -30,7 +30,7 @@
 - [x] DONE Teachers crawl command writes `people.json` and updates `sources.json`
 - [x] DONE API-driven teachers extraction path implemented with deterministic ordering
 - [x] DONE Tests exist for teachers API extraction path
-- [ ] IN_PROGRESS Source-specific selector hardening still pending (`extract/teachers.py` TODO markers)
+- [x] DONE Source-specific selector hardening for current known teacher page layouts
 - [ ] IN_PROGRESS Rich office extraction still missing (`office_hours`, `office_place_id` currently 0 in report)
 
 ### Phase 2 — Departments and services expansion
@@ -71,9 +71,9 @@
 - aulas with capacity: 280 (54.16%)
 
 ## Open Work (Priority)
-1. Replace teacher parsing heuristics with source-specific selectors and add fixtures for real HTML layouts.
-2. Improve people enrichment (department mapping quality, office fields where public data is available).
-3. Add explicit retry/backoff + structured scrape diagnostics for fragile endpoints.
+1. Improve people enrichment (department mapping quality, office fields where public data is available).
+2. Add explicit retry/backoff + structured scrape diagnostics for fragile endpoints.
+3. Expand teacher parser fixtures for additional HTML variants as they are discovered.
 4. Keep release gates green after each extraction/normalization refresh.
 
 ## Notes
