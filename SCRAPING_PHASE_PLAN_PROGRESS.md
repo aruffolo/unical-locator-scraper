@@ -14,7 +14,7 @@
 - Next milestone: close Phase 1 hardening gaps, then complete Phase 4 operational hardening
 
 ## Verification Snapshot (2026-02-11)
-- `pytest -q`: 69 passed
+- `pytest -q`: 71 passed
 - `python -m unical_scraper validate --data-dir data/normalized --schemas-dir data/schema`: OK + integrity OK
 - `python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out data/normalized/report.json`: generated
 
@@ -54,7 +54,7 @@
 ### Phase 4 — Quality hardening and release workflow
 - [x] DONE Contributor gate commands and CI checks exist
 - [x] DONE Coverage/report + contract consistency guardrails exist in CI
-- [ ] IN_PROGRESS Retry/backoff and scrape diagnostics are limited
+- [x] DONE Retry/backoff and structured HTTP diagnostics available in crawl flows
 - [ ] IN_PROGRESS Teacher parser robustness for source HTML variations remains open
 
 ## Data & Coverage Snapshot (`data/normalized/report.json`)
@@ -72,9 +72,8 @@
 
 ## Open Work (Priority)
 1. Improve people enrichment (department mapping quality, office fields where public data is available).
-2. Add explicit retry/backoff + structured scrape diagnostics for fragile endpoints.
-3. Expand teacher parser fixtures for additional HTML variants as they are discovered.
-4. Keep release gates green after each extraction/normalization refresh.
+2. Expand teacher parser fixtures for additional HTML variants as they are discovered.
+3. Keep release gates green after each extraction/normalization refresh.
 
 ## Notes
 - Duplicate parent data root (`../data`) was removed; scraper-local `data/` is now the only source of truth.

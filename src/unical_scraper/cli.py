@@ -79,6 +79,11 @@ def _merge_places_with_aulas(
     return sorted(by_id.values(), key=lambda item: str(item.get("place_id", "")))
 
 
+def _emit_http_diagnostics(client: HttpClient) -> None:
+    summary = client.diagnostics_summary()
+    click.echo(f"HTTP diagnostics: {json.dumps(summary, sort_keys=True)}")
+
+
 @click.group()
 def cli() -> None:
     """UNICAL data extraction, normalization, and validation CLI."""
@@ -116,18 +121,28 @@ def link() -> None:
 )
 @click.option("--rate-limit", default=0.5, show_default=True, type=float)
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
+@click.option("--max-retries", default=2, show_default=True, type=int)
+@click.option("--retry-backoff", default=0.5, show_default=True, type=float)
 def crawl_teachers_command(
     base_url: str,
     out_file: Path,
     cache_dir: Path | None,
     rate_limit: float,
     user_agent: str,
+    max_retries: int,
+    retry_backoff: float,
 ) -> None:
     """Crawl professor pages and write normalized `people.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
 
-    with HttpClient(user_agent=user_agent, rate_limit_seconds=rate_limit) as client:
+    with HttpClient(
+        user_agent=user_agent,
+        rate_limit_seconds=rate_limit,
+        max_retries=max_retries,
+        retry_backoff_seconds=retry_backoff,
+    ) as client:
         raw_teachers = crawl_teachers(base_url=base_url, client=client, cache=cache)
+        _emit_http_diagnostics(client)
 
     people = normalize_teachers(raw_teachers)
     write_json(out_file, people)
@@ -169,18 +184,28 @@ def crawl_teachers_command(
 )
 @click.option("--rate-limit", default=0.5, show_default=True, type=float)
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
+@click.option("--max-retries", default=2, show_default=True, type=int)
+@click.option("--retry-backoff", default=0.5, show_default=True, type=float)
 def crawl_departments_command(
     base_url: str,
     out_file: Path,
     cache_dir: Path | None,
     rate_limit: float,
     user_agent: str,
+    max_retries: int,
+    retry_backoff: float,
 ) -> None:
     """Crawl department pages and write normalized `departments.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
 
-    with HttpClient(user_agent=user_agent, rate_limit_seconds=rate_limit) as client:
+    with HttpClient(
+        user_agent=user_agent,
+        rate_limit_seconds=rate_limit,
+        max_retries=max_retries,
+        retry_backoff_seconds=retry_backoff,
+    ) as client:
         raw_departments = crawl_departments(base_url=base_url, client=client, cache=cache)
+        _emit_http_diagnostics(client)
 
     departments = normalize_departments(raw_departments)
     write_json(out_file, departments)
@@ -221,18 +246,28 @@ def crawl_departments_command(
 )
 @click.option("--rate-limit", default=0.5, show_default=True, type=float)
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
+@click.option("--max-retries", default=2, show_default=True, type=int)
+@click.option("--retry-backoff", default=0.5, show_default=True, type=float)
 def crawl_services_command(
     base_url: str,
     out_file: Path,
     cache_dir: Path | None,
     rate_limit: float,
     user_agent: str,
+    max_retries: int,
+    retry_backoff: float,
 ) -> None:
     """Crawl service pages and write normalized `places.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
 
-    with HttpClient(user_agent=user_agent, rate_limit_seconds=rate_limit) as client:
+    with HttpClient(
+        user_agent=user_agent,
+        rate_limit_seconds=rate_limit,
+        max_retries=max_retries,
+        retry_backoff_seconds=retry_backoff,
+    ) as client:
         raw_services = crawl_services(base_url=base_url, client=client, cache=cache)
+        _emit_http_diagnostics(client)
 
     places = normalize_services(raw_services)
     write_json(out_file, places)
@@ -274,18 +309,28 @@ def crawl_services_command(
 )
 @click.option("--rate-limit", default=0.5, show_default=True, type=float)
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
+@click.option("--max-retries", default=2, show_default=True, type=int)
+@click.option("--retry-backoff", default=0.5, show_default=True, type=float)
 def crawl_buildings_command(
     base_url: str,
     out_file: Path,
     cache_dir: Path | None,
     rate_limit: float,
     user_agent: str,
+    max_retries: int,
+    retry_backoff: float,
 ) -> None:
     """Crawl campus buildings and write normalized `buildings.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
 
-    with HttpClient(user_agent=user_agent, rate_limit_seconds=rate_limit) as client:
+    with HttpClient(
+        user_agent=user_agent,
+        rate_limit_seconds=rate_limit,
+        max_retries=max_retries,
+        retry_backoff_seconds=retry_backoff,
+    ) as client:
         raw_buildings = crawl_buildings(base_url=base_url, client=client, cache=cache)
+        _emit_http_diagnostics(client)
 
     buildings = normalize_buildings(raw_buildings)
     write_json(out_file, buildings)
@@ -341,6 +386,8 @@ def crawl_buildings_command(
 )
 @click.option("--rate-limit", default=0.5, show_default=True, type=float)
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
+@click.option("--max-retries", default=2, show_default=True, type=int)
+@click.option("--retry-backoff", default=0.5, show_default=True, type=float)
 def crawl_aulas_command(
     base_url: str,
     aulas_file: Path,
@@ -349,12 +396,20 @@ def crawl_aulas_command(
     cache_dir: Path | None,
     rate_limit: float,
     user_agent: str,
+    max_retries: int,
+    retry_backoff: float,
 ) -> None:
     """Crawl aulas and write both `aulas.json` and AULA records in `places.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
 
-    with HttpClient(user_agent=user_agent, rate_limit_seconds=rate_limit) as client:
+    with HttpClient(
+        user_agent=user_agent,
+        rate_limit_seconds=rate_limit,
+        max_retries=max_retries,
+        retry_backoff_seconds=retry_backoff,
+    ) as client:
         raw_aulas = crawl_aulas(base_url=base_url, client=client, cache=cache)
+        _emit_http_diagnostics(client)
 
     buildings = _load_json_array(buildings_file)
     aulas, aula_places = normalize_aulas(raw_aulas=raw_aulas, buildings=buildings)
