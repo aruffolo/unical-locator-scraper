@@ -40,3 +40,124 @@ def test_crawl_department_teacher_map_extracts_teacher_slug_and_email_keys() -> 
 
     assert mapping["slug:mario.rossi"] == "dipartimento-di-matematica-e-informatica"
     assert mapping["email_local:luca.verdi"] == "dipartimento-di-matematica-e-informatica"
+
+
+def test_crawl_department_teacher_map_follows_people_pagination_links() -> None:
+    departments = [
+        {
+            "department_id": "dipartimento-di-fisica",
+            "website_url": "https://fisica.unical.it/",
+        }
+    ]
+    pages = {
+        "https://fisica.unical.it/": "<html><body>Home</body></html>",
+        "https://fisica.unical.it/dipartimento/presentazione/persone/": """
+            <html><body>
+              <a href="/dipartimento/presentazione/persone/?page=2">next ></a>
+            </body></html>
+        """,
+        "https://fisica.unical.it/dipartimento/presentazione/persone/?lang=it": """
+            <html><body>
+              <a href="/dipartimento/presentazione/persone/?page=2">next ></a>
+            </body></html>
+        """,
+        "https://fisica.unical.it/dipartimento/presentazione/persone/?page=2": """
+            <html><body>
+              <a href="https://www.unical.it/storage/teachers/anna.rossi/">Anna Rossi</a>
+            </body></html>
+        """,
+    }
+
+    mapping = crawl_department_teacher_map(
+        departments=departments,
+        client=FakeHttpClient(pages),
+        max_pages_per_department=6,
+    )
+
+    assert mapping["slug:anna.rossi"] == "dipartimento-di-fisica"
+
+
+def test_crawl_department_teacher_map_follows_people_category_links() -> None:
+    departments = [
+        {
+            "department_id": "dipartimento-di-chimica-e-tecnologie-chimiche",
+            "website_url": "https://ctc.unical.it/",
+        }
+    ]
+    pages = {
+        "https://ctc.unical.it/": "<html><body>Home</body></html>",
+        "https://ctc.unical.it/dipartimento/presentazione/persone/": """
+            <html><body>
+              <a href="/dipartimento/presentazione/persone/professori-di-i-fascia/">
+                Professori di I fascia
+              </a>
+            </body></html>
+        """,
+        "https://ctc.unical.it/dipartimento/presentazione/persone/?lang=it": "<html><body></body></html>",
+        "https://ctc.unical.it/dipartimento/presentazione/persone/professori-di-i-fascia/": """
+            <html><body>
+              <a href="https://www.unical.it/storage/teachers/anna.maria.napoli/">
+                Prof.ssa Anna Maria C. NAPOLI
+              </a>
+            </body></html>
+        """,
+    }
+
+    mapping = crawl_department_teacher_map(
+        departments=departments,
+        client=FakeHttpClient(pages),
+        max_pages_per_department=6,
+    )
+
+    assert (
+        mapping["slug:anna.maria.napoli"]
+        == "dipartimento-di-chimica-e-tecnologie-chimiche"
+    )
+
+
+def test_crawl_department_teacher_map_uses_addressbook_api_from_people_page() -> None:
+    departments = [
+        {
+            "department_id": "dipartimento-di-biologia-ecologia-e-scienze-della-terra",
+            "website_url": "https://dibest.unical.it/",
+        }
+    ]
+    pages = {
+        "https://dibest.unical.it/": "<html><body>Home</body></html>",
+        "https://dibest.unical.it/dipartimento/presentazione/persone/": """
+            <html><body>
+              <script>
+                let url = "https://storage.portale.unical.it/api/ricerca/addressbook/?structuretree=002014";
+              </script>
+            </body></html>
+        """,
+        "https://dibest.unical.it/dipartimento/presentazione/persone/?lang=it": "<html><body></body></html>",
+        "https://storage.portale.unical.it/api/ricerca/addressbook/?structuretree=002014": """
+            {
+              "results": [
+                {"ID": "mirellaaurora.aceto", "Email": ["mirellaaurora.aceto@unical.it"]}
+              ],
+              "next": "//storage.portale.unical.it/api/ricerca/addressbook/?page=2&structuretree=002014"
+            }
+        """,
+        "https://storage.portale.unical.it/api/ricerca/addressbook/?page=2&structuretree=002014": """
+            {
+              "results": [
+                {"ID": "rosanna.adduci", "Email": ["rosanna.adduci@unical.it"]}
+              ],
+              "next": null
+            }
+        """,
+    }
+
+    mapping = crawl_department_teacher_map(
+        departments=departments,
+        client=FakeHttpClient(pages),
+        max_pages_per_department=6,
+    )
+
+    expected = "dipartimento-di-biologia-ecologia-e-scienze-della-terra"
+    assert mapping["slug:mirellaaurora.aceto"] == expected
+    assert mapping["slug:rosanna.adduci"] == expected
+    assert mapping["email_local:mirellaaurora.aceto"] == expected
+    assert mapping["email_local:rosanna.adduci"] == expected

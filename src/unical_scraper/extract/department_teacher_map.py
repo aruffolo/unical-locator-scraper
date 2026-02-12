@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 from urllib.parse import urljoin, urlparse, urlsplit
 
@@ -12,15 +13,30 @@ from ..utils.http import HttpClient
 from ..utils.text import none_if_empty
 
 
-_STAFF_LINK_TOKENS = ("docent", "ricerc", "person", "people", "staff")
+_STAFF_LINK_TOKENS = (
+    "docent",
+    "ricerc",
+    "person",
+    "people",
+    "staff",
+    "professor",
+    "fascia",
+    "assegn",
+    "dottor",
+)
+_PEOPLE_PATH_TOKEN = "/dipartimento/presentazione/persone"
 _TEACHER_PATH_RE = re.compile(r"/storage/teachers/([^/?#]+)/?", flags=re.IGNORECASE)
+_ADDRESSBOOK_STRUCTURE_RE = re.compile(
+    r"https://storage\.portale\.unical\.it/api/ricerca/addressbook/\?[^\"'\s>]*structuretree=([0-9]+)",
+    flags=re.IGNORECASE,
+)
 
 
 def crawl_department_teacher_map(
     departments: list[dict[str, object]],
     client: HttpClient,
     cache: HtmlCache | None = None,
-    max_pages_per_department: int = 8,
+    max_pages_per_department: int = 10,
 ) -> dict[str, str]:
     """Map teacher keys to department_id by crawling department public websites.
 
@@ -67,6 +83,20 @@ def _crawl_department_keys(
         if html is None:
             continue
 
+        structure_codes = _extract_addressbook_structure_codes(html)
+        for structure_code in structure_codes:
+            keys.update(
+                _crawl_addressbook_keys(
+                    structure_code=structure_code,
+                    client=client,
+                    cache=cache,
+                )
+            )
+        if structure_codes:
+            # Addressbook API already returns the complete people list for the structure.
+            # Avoid broad HTML navigation when this source is available.
+            continue
+
         page_keys, candidate_links = _extract_keys_and_candidate_links(
             html=html,
             page_url=url,
@@ -90,6 +120,7 @@ def _department_seed_urls(department: dict[str, object]) -> list[str]:
         normalized = _normalize_seed_url(value)
         if normalized:
             seeds.add(normalized)
+            seeds.update(_people_seed_urls(normalized))
     return sorted(seeds)
 
 
@@ -104,6 +135,15 @@ def _normalize_seed_url(url: str) -> str | None:
     if not path.endswith("/"):
         path = f"{path}/"
     return f"{base}{path}"
+
+
+def _people_seed_urls(base_url: str) -> set[str]:
+    parsed = urlparse(base_url)
+    origin = f"{parsed.scheme}://{parsed.netloc}"
+    return {
+        f"{origin}{_PEOPLE_PATH_TOKEN}/",
+        f"{origin}{_PEOPLE_PATH_TOKEN}/?lang=it",
+    }
 
 
 def _extract_keys_and_candidate_links(
@@ -142,6 +182,9 @@ def _extract_keys_and_candidate_links(
             token in lower_url for token in _STAFF_LINK_TOKENS
         ):
             candidate_links.add(_strip_query_fragment(absolute))
+            continue
+        if _is_people_navigation_link(page_url=page_url, candidate_url=absolute, link_text=lower_text):
+            candidate_links.add(_strip_query_fragment(absolute))
 
     return keys, candidate_links
 
@@ -163,7 +206,79 @@ def _email_local_part(email: str) -> str | None:
 
 def _strip_query_fragment(url: str) -> str:
     parts = urlsplit(url)
-    return f"{parts.scheme}://{parts.netloc}{parts.path}"
+    query = f"?{parts.query}" if parts.query else ""
+    return f"{parts.scheme}://{parts.netloc}{parts.path}{query}"
+
+
+def _is_people_navigation_link(page_url: str, candidate_url: str, link_text: str) -> bool:
+    current = urlparse(page_url)
+    candidate = urlparse(candidate_url)
+    current_path = current.path.casefold()
+    candidate_path = candidate.path.casefold()
+
+    if _PEOPLE_PATH_TOKEN not in current_path and _PEOPLE_PATH_TOKEN not in candidate_path:
+        return False
+    if _PEOPLE_PATH_TOKEN in candidate_path:
+        return True
+    if "page=" in candidate.query.casefold():
+        return True
+    if "next" in link_text or "precedent" in link_text:
+        return True
+    return False
+
+
+def _extract_addressbook_structure_codes(html: str) -> set[str]:
+    return {match.group(1) for match in _ADDRESSBOOK_STRUCTURE_RE.finditer(html)}
+
+
+def _crawl_addressbook_keys(
+    structure_code: str,
+    client: HttpClient,
+    cache: HtmlCache | None,
+) -> set[str]:
+    keys: set[str] = set()
+    next_url = (
+        f"https://storage.portale.unical.it/api/ricerca/addressbook/?structuretree={structure_code}"
+    )
+    visited: set[str] = set()
+
+    while next_url and next_url not in visited:
+        visited.add(next_url)
+        payload_text = _try_fetch_html(url=next_url, client=client, cache=cache)
+        if payload_text is None:
+            break
+        try:
+            payload = json.loads(payload_text)
+        except json.JSONDecodeError:
+            break
+
+        results = payload.get("results") if isinstance(payload, dict) else None
+        if isinstance(results, list):
+            for item in results:
+                if not isinstance(item, dict):
+                    continue
+                slug = none_if_empty(str(item.get("ID") or "").strip().casefold())
+                if slug:
+                    keys.add(f"slug:{slug}")
+
+                emails = item.get("Email")
+                if isinstance(emails, list):
+                    for value in emails:
+                        if isinstance(value, str):
+                            local_part = _email_local_part(value)
+                            if local_part:
+                                keys.add(f"email_local:{local_part}")
+
+        raw_next = payload.get("next") if isinstance(payload, dict) else None
+        if isinstance(raw_next, str) and raw_next:
+            if raw_next.startswith("//"):
+                next_url = f"https:{raw_next}"
+            else:
+                next_url = urljoin(next_url, raw_next)
+        else:
+            next_url = None
+
+    return keys
 
 
 def _try_fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str | None:
