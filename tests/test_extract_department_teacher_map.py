@@ -161,3 +161,36 @@ def test_crawl_department_teacher_map_uses_addressbook_api_from_people_page() ->
     assert mapping["slug:rosanna.adduci"] == expected
     assert mapping["email_local:mirellaaurora.aceto"] == expected
     assert mapping["email_local:rosanna.adduci"] == expected
+
+
+def test_crawl_department_teacher_map_extracts_generic_structuretree_pattern() -> None:
+    departments = [
+        {
+            "department_id": "dipartimento-di-fisica",
+            "website_url": "https://fisica.unical.it/",
+        }
+    ]
+    pages = {
+        "https://fisica.unical.it/": "<html><body>Home</body></html>",
+        "https://fisica.unical.it/dipartimento/presentazione/persone/": """
+            <html><body>
+              <script>
+                const cfg = { structuretree: "002019" };
+              </script>
+            </body></html>
+        """,
+        "https://fisica.unical.it/dipartimento/presentazione/persone/?lang=it": "<html><body></body></html>",
+        "https://storage.portale.unical.it/api/ricerca/addressbook/?structuretree=002019": """
+            {
+              "results": [{"ID": "anna.rossi", "Email": []}],
+              "next": null
+            }
+        """,
+    }
+
+    mapping = crawl_department_teacher_map(
+        departments=departments,
+        client=FakeHttpClient(pages),
+        max_pages_per_department=6,
+    )
+    assert mapping["slug:anna.rossi"] == "dipartimento-di-fisica"

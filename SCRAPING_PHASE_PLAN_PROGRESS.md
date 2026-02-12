@@ -14,7 +14,7 @@
 - Next milestone: close Phase 1 hardening gaps, then complete Phase 4 operational hardening
 
 ## Verification Snapshot (2026-02-11)
-- `pytest -q`: 76 passed
+- `pytest -q`: 81 passed
 - `python -m unical_scraper validate --data-dir data/normalized --schemas-dir data/schema`: OK + integrity OK
 - `python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out data/normalized/report.json`: generated
 
@@ -74,7 +74,7 @@
 
 ## Open Work (Priority)
 1. Improve department resolution coverage further (teacher API + department-site fallback now reaches ~38.43%).
-2. Expand teacher parser fixtures for additional HTML variants as they are discovered.
+2. Expand teacher parser fixtures for additional HTML/API variants as they are discovered (pagination/category/structuretree patterns hardened; coverage unchanged in latest run).
 3. Keep release gates green after each extraction/normalization refresh.
 
 ## Notes

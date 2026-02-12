@@ -133,6 +133,30 @@ def test_normalize_teachers_resolves_department_id_from_department_teacher_map()
     assert people[0]["department_id"] == "dipartimento-di-matematica-e-informatica"
 
 
+def test_normalize_teachers_resolves_department_id_from_encoded_teacher_slug() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Encrypted Profile",
+            source_url=(
+                "https://www.unical.it/storage/teachers/"
+                "gAAAAABpjRXoV34BdbpbKEeVOdE_nUevks5Z9XrOw_k0ZVaXo3n9YfHp%3D%3D/"
+            ),
+        )
+    ]
+    mapping = {
+        "slug:gaaaaabpjrxov34bdbpbkeevode_nuevks5z9xrow_k0zvaxo3n9yfhp==": "dipartimento-di-fisica"
+    }
+    people = normalize_teachers(
+        raw_teachers=raw,
+        departments=[],
+        department_teacher_map=mapping,
+        verified_at=datetime(2026, 2, 12, tzinfo=timezone.utc),
+    )
+
+    assert len(people) == 1
+    assert people[0]["department_id"] == "dipartimento-di-fisica"
+
+
 def test_normalize_teacher_office_places_generates_structured_office_records() -> None:
     raw = [
         RawTeacher(

@@ -30,6 +30,10 @@ _ADDRESSBOOK_STRUCTURE_RE = re.compile(
     r"https://storage\.portale\.unical\.it/api/ricerca/addressbook/\?[^\"'\s>]*structuretree=([0-9]+)",
     flags=re.IGNORECASE,
 )
+_ADDRESSBOOK_STRUCTURE_GENERIC_RE = re.compile(
+    r"structuretree(?:=|['\"\s:]+)['\"]?([0-9]{6})",
+    flags=re.IGNORECASE,
+)
 
 
 def crawl_department_teacher_map(
@@ -228,7 +232,9 @@ def _is_people_navigation_link(page_url: str, candidate_url: str, link_text: str
 
 
 def _extract_addressbook_structure_codes(html: str) -> set[str]:
-    return {match.group(1) for match in _ADDRESSBOOK_STRUCTURE_RE.finditer(html)}
+    codes = {match.group(1) for match in _ADDRESSBOOK_STRUCTURE_RE.finditer(html)}
+    codes.update(match.group(1) for match in _ADDRESSBOOK_STRUCTURE_GENERIC_RE.finditer(html))
+    return codes
 
 
 def _crawl_addressbook_keys(

@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 import math
 from pathlib import Path
 import re
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 
 from ..extract.aulas import RawAula
 from ..extract.buildings import RawBuilding
@@ -323,6 +323,11 @@ def _resolve_department_from_teacher_map(
         mapped = department_teacher_map.get(f"slug:{website_slug}")
         if mapped:
             return mapped
+        encoded_slug = _teacher_profile_slug_encoded(website_slug)
+        if encoded_slug:
+            mapped = department_teacher_map.get(f"slug:{encoded_slug}")
+        if mapped:
+            return mapped
 
     if raw.email and "@" in raw.email:
         local_part = none_if_empty(raw.email.split("@", maxsplit=1)[0].strip().casefold())
@@ -339,7 +344,15 @@ def _teacher_profile_slug(url: str | None) -> str | None:
     match = re.search(r"/storage/teachers/([^/?#]+)/?", url, flags=re.IGNORECASE)
     if not match:
         return None
-    return none_if_empty(match.group(1).strip().casefold())
+    return none_if_empty(unquote(match.group(1)).strip().casefold())
+
+
+def _teacher_profile_slug_encoded(slug: str) -> str | None:
+    if not slug:
+        return None
+    return none_if_empty(
+        re.sub(r"[^a-z0-9._-]", lambda m: f"%{ord(m.group(0)):02x}", slug).casefold()
+    )
 
 
 def _extract_teacher_office_reference(raw: RawTeacher) -> str | None:
