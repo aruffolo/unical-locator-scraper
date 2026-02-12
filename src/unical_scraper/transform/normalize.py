@@ -14,7 +14,7 @@ from ..extract.buildings import RawBuilding
 from ..extract.departments import RawDepartment
 from ..extract.services import RawService
 from ..extract.teachers import RawTeacher
-from ..utils.text import collapse_whitespace, none_if_empty, slugify
+from ..utils.text import collapse_whitespace, none_if_empty, person_name_key, slugify
 from .dedupe import dedupe_people
 from .ids import (
     make_aula_id,
@@ -348,6 +348,11 @@ def _resolve_department_from_teacher_map(
     normalized_name = none_if_empty(collapse_whitespace(raw.full_name).casefold())
     if normalized_name:
         mapped = department_teacher_map.get(f"name:{normalized_name}")
+        if mapped:
+            return mapped
+    key = person_name_key(raw.full_name)
+    if key:
+        mapped = department_teacher_map.get(f"name_key:{key}")
         if mapped:
             return mapped
     return None

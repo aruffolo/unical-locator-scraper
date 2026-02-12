@@ -134,6 +134,47 @@ def test_crawl_teachers_discovers_api_url_from_script() -> None:
     assert teachers[0].website_url == "https://www.unical.it/storage/teachers/rosa.adamo/"
 
 
+def test_crawl_teachers_keeps_list_department_when_detail_department_missing() -> None:
+    base_url = "https://www.unical.it/storage/teachers/"
+    api_url_with_page_size = (
+        "https://storage.portale.unical.it/api/ricerca/teachers/?format=json&page_size=200"
+    )
+    pages = {
+        base_url: """
+            <html><body>
+              <script>
+                const endpoint = "https://storage.portale.unical.it/api/ricerca/teachers/?format=json";
+              </script>
+            </body></html>
+        """,
+        api_url_with_page_size: """
+            {
+              "results": [
+                {
+                  "TeacherID": "teacher-x",
+                  "TeacherName": "X Name",
+                  "TeacherDepartmentName": "Dipartimento di Fisica",
+                  "Email": []
+                }
+              ],
+              "next": null
+            }
+        """,
+        "https://storage.portale.unical.it/api/ricerca/teachers/teacher-x/?format=json": """
+            {
+              "results": {
+                "TeacherDepartmentName": null
+              }
+            }
+        """,
+    }
+
+    teachers = crawl_teachers(base_url=base_url, client=FakeHttpClient(pages))
+
+    assert len(teachers) == 1
+    assert teachers[0].department_name == "Dipartimento di Fisica"
+
+
 def test_crawl_teachers_parses_embedded_profile_payload() -> None:
     base_url = "https://www.unical.it/storage/teachers/"
     detail_url = "https://www.unical.it/storage/teachers/rosa.adamo/"

@@ -163,6 +163,8 @@ def test_crawl_department_teacher_map_uses_addressbook_api_from_people_page() ->
     assert mapping["email_local:rosanna.adduci"] == expected
     assert mapping["name:aceto mirella aurora"] == expected
     assert mapping["name:adduci rosanna"] == expected
+    assert mapping["name_key:aceto-aurora-mirella"] == expected
+    assert mapping["name_key:adduci-rosanna"] == expected
 
 
 def test_crawl_department_teacher_map_extracts_generic_structuretree_pattern() -> None:
@@ -229,5 +231,6 @@ def test_crawl_department_teacher_map_drops_ambiguous_name_keys() -> None:
     )
 
     assert "name:mario rossi" not in mapping
+    assert "name_key:mario-rossi" not in mapping
     assert mapping["slug:x.a"] == "dep-a"
     assert mapping["slug:x.b"] == "dep-b"

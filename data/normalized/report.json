@@ -33,8 +33,8 @@
     },
     "people": {
       "total": 4156,
-      "with_department_id": 1719,
-      "with_department_id_ratio": 0.4136,
+      "with_department_id": 1721,
+      "with_department_id_ratio": 0.4141,
       "with_email": 1469,
       "with_email_ratio": 0.3535,
       "with_office_hours": 438,
@@ -50,7 +50,7 @@
       "with_building_id_ratio": 0.983
     }
   },
-  "generated_at": "2026-02-12T08:23:07.090078+00:00",
+  "generated_at": "2026-02-12T08:29:57.881301+00:00",
   "integrity": {
     "issues": []
   },
@@ -79,7 +79,7 @@
         "retries": 0,
         "source_id": "unical-teachers",
         "status": "ok",
-        "updated_at": "2026-02-12T08:22:36.962159+00:00"
+        "updated_at": "2026-02-12T08:29:43.073882+00:00"
       }
     },
     "warning_count": 1,

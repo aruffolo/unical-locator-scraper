@@ -8,6 +8,21 @@ import unicodedata
 
 _WHITESPACE_RE = re.compile(r"\s+")
 _SLUG_INVALID_RE = re.compile(r"[^a-z0-9]+")
+_NAME_NOISE_TOKENS = {
+    "prof",
+    "professore",
+    "professoressa",
+    "profssa",
+    "ssa",
+    "dott",
+    "dottoressa",
+    "ing",
+    "arch",
+    "avv",
+    "dr",
+    "sig",
+    "sigra",
+}
 
 
 def collapse_whitespace(value: str | None) -> str:
@@ -34,3 +49,19 @@ def slugify(value: str | None) -> str:
     slug = _SLUG_INVALID_RE.sub("-", lowered).strip("-")
     slug = re.sub(r"-+", "-", slug)
     return slug
+
+
+def person_name_key(value: str | None) -> str | None:
+    """Return a canonical, order-agnostic key for person-name matching."""
+    base = slugify(value)
+    if not base:
+        return None
+
+    tokens = [
+        token
+        for token in base.split("-")
+        if token and len(token) > 1 and token not in _NAME_NOISE_TOKENS
+    ]
+    if len(tokens) < 2:
+        return None
+    return "-".join(sorted(set(tokens)))

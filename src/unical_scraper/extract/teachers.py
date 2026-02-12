@@ -247,6 +247,9 @@ def _crawl_teachers_from_api(
                 client=client,
                 cache=cache,
             )
+            detail_department_name = (
+                _extract_first_string(detail.get("TeacherDepartmentName")) if detail else None
+            )
             office_reference = _extract_first_string(
                 detail.get("TeacherOfficeReference") if detail else None
             )
@@ -263,9 +266,7 @@ def _crawl_teachers_from_api(
                     source_url=source_url,
                     email=(_extract_first_email(detail.get("TeacherEmail")) if detail else None) or email,
                     phone=_extract_first_string(detail.get("TeacherTelOffice")) if detail else None,
-                    department_name=_extract_first_string(detail.get("TeacherDepartmentName"))
-                    if detail
-                    else department_name,
+                    department_name=detail_department_name or department_name,
                     website_url=(_extract_first_string(detail.get("TeacherWebSite")) if detail else None)
                     or website_url,
                     office_hours=_extract_text(detail.get("ReceptionHours")) if detail else None,

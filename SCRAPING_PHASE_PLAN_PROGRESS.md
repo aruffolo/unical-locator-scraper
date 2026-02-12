@@ -7,14 +7,14 @@
 - BLOCKED
 
 ## Current Snapshot
-- Date: 2026-02-11
+- Date: 2026-02-12
 - Overall status: IN_PROGRESS
 - Canonical plan: `SCRAPING_PHASE_PLAN_UNICAL.md` (this folder)
 - Canonical datasets path: `scraper/data/normalized`
-- Next milestone: close Phase 1 hardening gaps, then complete Phase 4 operational hardening
+- Next milestone: raise teacher `department_id` coverage and close residual parser hardening
 
-## Verification Snapshot (2026-02-11)
-- `pytest -q`: 83 passed
+## Verification Snapshot (2026-02-12)
+- `pytest -q`: 87 passed
 - `python -m unical_scraper validate --data-dir data/normalized --schemas-dir data/schema`: OK + integrity OK
 - `python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out data/normalized/report.json`: generated
 
@@ -39,7 +39,7 @@
 - [x] DONE `crawl departments` implemented and normalized output produced
 - [x] DONE `crawl services` implemented and normalized output produced
 - [x] DONE Integrity checks include `people.department_id` references
-- [ ] IN_PROGRESS `people.department_id` coverage remains partial (1332/4140, ~32.17%)
+- [ ] IN_PROGRESS `people.department_id` coverage remains partial (1721/4156, ~41.41%)
 
 ### Phase 3 — Places/buildings enrichment and linking
 - [x] DONE Buildings extraction and normalization in place (`buildings.json`)
@@ -62,9 +62,9 @@
 ## Data & Coverage Snapshot (`data/normalized/report.json`)
 - people total: 4156
 - people with email: 1469 (35.35%)
-- people with department_id: 1719 (41.36%)
+- people with department_id: 1721 (41.41%)
 - people with office_hours: 438 (10.54%)
-- people with office_place_id: 621 (14.94%)
+- people with office_place_id: 626 (15.06%)
 - places total: 876 (AULA: 517, OFFICE: 333, SERVICE: 26)
 - places with building_id: 871 (99.43%)
 - aulas total: 517
@@ -73,8 +73,8 @@
 - aulas with capacity: 280 (54.16%)
 
 ## Open Work (Priority)
-1. Improve department resolution coverage further (teacher API + department-site fallback now reaches ~41.36%).
-2. Expand teacher parser fixtures for additional HTML/API variants as they are discovered (name-based unique mapping + encoded slug + generic structuretree now covered).
+1. Improve department resolution coverage further (teacher API + department-site fallback now reaches ~41.41%).
+2. Expand teacher parser fixtures for additional HTML/API variants as they are discovered (name-key matching + encoded slug + generic structuretree now covered).
 3. Keep release gates green after each extraction/normalization refresh.
 
 ## Notes

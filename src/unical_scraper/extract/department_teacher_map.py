@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 
 from ..utils.html_cache import HtmlCache
 from ..utils.http import HttpClient
-from ..utils.text import collapse_whitespace, none_if_empty
+from ..utils.text import collapse_whitespace, none_if_empty, person_name_key
 
 
 _STAFF_LINK_TOKENS = (
@@ -178,8 +178,12 @@ def _extract_keys_and_candidate_links(
         parsed = urlparse(absolute)
         if parsed.scheme not in {"http", "https"}:
             continue
-        lower_text = anchor.get_text(" ", strip=True).casefold()
+        link_text = anchor.get_text(" ", strip=True)
+        lower_text = link_text.casefold()
         lower_url = absolute.casefold()
+        name_key = person_name_key(link_text)
+        if name_key:
+            keys.add(f"name_key:{name_key}")
 
         slug = _teacher_slug_from_url(absolute)
         if slug:
@@ -275,6 +279,9 @@ def _crawl_addressbook_keys(
                 normalized_name = _normalized_person_name(item.get("Name"))
                 if normalized_name:
                     keys.add(f"name:{normalized_name}")
+                name_key = person_name_key(item.get("Name"))
+                if name_key:
+                    keys.add(f"name_key:{name_key}")
 
                 emails = item.get("Email")
                 if isinstance(emails, list):
