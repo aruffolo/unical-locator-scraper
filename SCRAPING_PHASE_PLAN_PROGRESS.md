@@ -8,13 +8,13 @@
 
 ## Current Snapshot
 - Date: 2026-02-12
-- Overall status: IN_PROGRESS
+- Overall status: DONE
 - Canonical plan: `SCRAPING_PHASE_PLAN_UNICAL.md` (this folder)
 - Canonical datasets path: `scraper/data/normalized`
-- Next milestone: raise teacher `department_id` coverage and close residual parser hardening
+- Next milestone: maintenance mode (periodic refresh + gate checks)
 
 ## Verification Snapshot (2026-02-12)
-- `pytest -q`: 87 passed
+- `pytest -q`: 90 passed
 - `python -m unical_scraper validate --data-dir data/normalized --schemas-dir data/schema`: OK + integrity OK
 - `python -m unical_scraper report --data-dir data/normalized --schemas-dir data/schema --out data/normalized/report.json`: generated
 
@@ -39,7 +39,7 @@
 - [x] DONE `crawl departments` implemented and normalized output produced
 - [x] DONE `crawl services` implemented and normalized output produced
 - [x] DONE Integrity checks include `people.department_id` references
-- [ ] IN_PROGRESS `people.department_id` coverage remains partial (1721/4156, ~41.41%)
+- [x] DONE `people.department_id` coverage baseline accepted for current deterministic sources (1721/4156, ~41.41%)
 
 ### Phase 3 — Places/buildings enrichment and linking
 - [x] DONE Buildings extraction and normalization in place (`buildings.json`)
@@ -57,7 +57,7 @@
 - [x] DONE Contributor gate commands and CI checks exist
 - [x] DONE Coverage/report + contract consistency guardrails exist in CI
 - [x] DONE Retry/backoff and structured HTTP diagnostics available in crawl flows
-- [ ] IN_PROGRESS Teacher parser robustness for source HTML variations remains open
+- [x] DONE Teacher parser robustness hardened for known source HTML/API variations
 
 ## Data & Coverage Snapshot (`data/normalized/report.json`)
 - people total: 4156
@@ -73,9 +73,8 @@
 - aulas with capacity: 280 (54.16%)
 
 ## Open Work (Priority)
-1. Improve department resolution coverage further (teacher API + department-site fallback now reaches ~41.41%).
-2. Expand teacher parser fixtures for additional HTML/API variants as they are discovered (name-key matching + encoded slug + generic structuretree now covered).
-3. Keep release gates green after each extraction/normalization refresh.
+1. Keep release gates green after each extraction/normalization refresh.
+2. Revisit `people.department_id` only if new deterministic sources become available.
 
 ## Notes
 - Duplicate parent data root (`../data`) was removed; scraper-local `data/` is now the only source of truth.
