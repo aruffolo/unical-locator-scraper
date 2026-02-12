@@ -202,3 +202,60 @@ def test_crawl_teachers_parses_embedded_profile_payload() -> None:
     assert teacher.notes == (
         "Office: Dipartimento di Scienze Aziendali e Giuridiche | Office references: Cubo 3C"
     )
+
+
+def test_crawl_teachers_parses_payload_with_quoted_item_marker() -> None:
+    base_url = "https://www.unical.it/storage/teachers/"
+    detail_url = "https://www.unical.it/storage/teachers/a.b/"
+    pages = {
+        base_url: """
+            <html><body>
+              <a href="/storage/teachers/a.b/">A B</a>
+            </body></html>
+        """,
+        detail_url: """
+            <html><body>
+              <script>
+                const state = {"item" : {"results": {
+                  "TeacherFirstName": "Anna",
+                  "TeacherLastName": "Bianchi",
+                  "TeacherEmail": ["anna.bianchi@unical.it"]
+                }}};
+              </script>
+            </body></html>
+        """,
+    }
+
+    teachers = crawl_teachers(base_url=base_url, client=FakeHttpClient(pages))
+
+    assert len(teachers) == 1
+    assert teachers[0].full_name == "Anna Bianchi"
+    assert teachers[0].email == "anna.bianchi@unical.it"
+
+
+def test_crawl_teachers_parses_string_office_reference_from_payload() -> None:
+    base_url = "https://www.unical.it/storage/teachers/"
+    detail_url = "https://www.unical.it/storage/teachers/r.rossi/"
+    pages = {
+        base_url: """
+            <html><body>
+              <a href="/storage/teachers/r.rossi/">Rosa Rossi</a>
+            </body></html>
+        """,
+        detail_url: """
+            <html><body>
+              <script>
+                const state = {item: {"results": {
+                  "TeacherName": "Rosa Rossi",
+                  "TeacherOfficeReference": "Cubo 3C Piano 2 Stanza 8"
+                }}};
+              </script>
+            </body></html>
+        """,
+    }
+
+    teachers = crawl_teachers(base_url=base_url, client=FakeHttpClient(pages))
+
+    assert len(teachers) == 1
+    assert teachers[0].office_reference == "Cubo 3C Piano 2 Stanza 8"
+    assert teachers[0].notes == "Office references: Cubo 3C Piano 2 Stanza 8"

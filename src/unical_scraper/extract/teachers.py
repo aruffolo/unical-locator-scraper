@@ -19,6 +19,7 @@ TEACHERS_API_PATTERN = re.compile(
     r"|/api/ricerca/teachers/?(?:\?[^\"'\s>]*)?",
     flags=re.IGNORECASE,
 )
+_ITEM_PAYLOAD_MARKER_RE = re.compile(r"[\"']?item[\"']?\s*:", flags=re.IGNORECASE)
 
 
 @dataclass(frozen=True)
@@ -372,6 +373,9 @@ def _extract_first_string(value: object) -> str | None:
 
 
 def _extract_string_list(value: object) -> list[str]:
+    if isinstance(value, str):
+        text = _extract_text(value)
+        return [text] if text else []
     if not isinstance(value, list):
         return []
 
@@ -400,14 +404,13 @@ def _extract_heading_name(soup: BeautifulSoup) -> str | None:
 
 
 def _extract_teacher_results_payload(detail_html: str) -> dict[str, object] | None:
-    marker = "item:"
-    index = detail_html.find(marker)
-    while index != -1:
-        object_start = detail_html.find("{", index)
+    for match in _ITEM_PAYLOAD_MARKER_RE.finditer(detail_html):
+        index = match.start()
+        object_start = detail_html.find("{", match.end())
         if object_start == -1:
-            break
+            continue
 
-        object_text, next_index = _extract_balanced_json_object(detail_html, object_start)
+        object_text, _ = _extract_balanced_json_object(detail_html, object_start)
         if object_text:
             try:
                 parsed = json.loads(object_text)
@@ -417,8 +420,8 @@ def _extract_teacher_results_payload(detail_html: str) -> dict[str, object] | No
                 results = parsed.get("results")
                 if isinstance(results, dict):
                     return results
-
-        index = detail_html.find(marker, max(index + len(marker), next_index))
+            if isinstance(parsed, dict):
+                return parsed
 
     return None
 
