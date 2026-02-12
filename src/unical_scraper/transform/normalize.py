@@ -203,6 +203,11 @@ def normalize_teacher_office_places(
         for item in (buildings or [])
         if isinstance(item.get("building_id"), str)
     }
+    building_name_slugs = {
+        str(item.get("building_id")): slugify(str(item.get("name")))
+        for item in (buildings or [])
+        if isinstance(item.get("building_id"), str) and isinstance(item.get("name"), str)
+    }
 
     preserved_places = [place for place in existing_places if place.get("source_id") != source_id]
     by_id: dict[str, dict[str, object]] = {
@@ -230,7 +235,11 @@ def normalize_teacher_office_places(
         if raw.notes:
             place["description"] = collapse_whitespace(raw.notes)
 
-        building_id = _infer_office_building_id(office_reference, building_ids)
+        building_id = _infer_office_building_id(
+            office_reference,
+            known_building_ids=building_ids,
+            building_name_slugs=building_name_slugs,
+        )
         if building_id:
             place["building_id"] = building_id
         floor = _extract_floor(office_reference)
@@ -372,20 +381,52 @@ def _extract_teacher_office_reference(raw: RawTeacher) -> str | None:
 
 
 def _is_structured_office_reference(value: str) -> bool:
-    lowered = value.lower()
-    return "cubo" in lowered or "piano" in lowered or "stanza" in lowered
+    lowered = collapse_whitespace(value).casefold()
+    return any(
+        token in lowered
+        for token in (
+            "cubo",
+            "piano",
+            "stanza",
+            "edificio",
+            "capannone",
+            "polifunzionale",
+            "orto botanico",
+            "centro sanitario",
+            "centro linguistico",
+        )
+    )
 
 
 def _office_place_id_from_reference(office_reference: str) -> str:
     return make_place_id(name=f"Ufficio {office_reference}", place_type="OFFICE")
 
 
-def _infer_office_building_id(office_reference: str, known_building_ids: set[str]) -> str | None:
-    match = _CUBO_BUILDING_RE.search(office_reference)
-    if not match:
-        return None
-    building_id = f"cubo-{match.group(1)}{match.group(2).lower()}"
-    return building_id if building_id in known_building_ids else None
+def _infer_office_building_id(
+    office_reference: str,
+    known_building_ids: set[str],
+    building_name_slugs: dict[str, str],
+) -> str | None:
+    candidates = _extract_building_ids_from_text(
+        text=office_reference,
+        known_building_ids=known_building_ids,
+    )
+
+    lowered_reference = collapse_whitespace(office_reference).casefold()
+    if "centro sanitario" in lowered_reference and "centro-sanitario" in known_building_ids:
+        candidates.add("centro-sanitario")
+
+    reference_slug = slugify(office_reference)
+    if reference_slug:
+        for building_id, building_slug in building_name_slugs.items():
+            if not building_slug or len(building_slug) < 8:
+                continue
+            if building_slug in reference_slug:
+                candidates.add(building_id)
+
+    if len(candidates) == 1:
+        return next(iter(candidates))
+    return None
 
 
 def _extract_floor(office_reference: str) -> str | None:

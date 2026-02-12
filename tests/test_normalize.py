@@ -207,6 +207,46 @@ def test_normalize_teacher_office_places_generates_structured_office_records() -
     assert place["room"] == "Stanza 8"
 
 
+def test_normalize_teacher_office_places_maps_edificio_patterns_to_buildings() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Mario Uno",
+            source_url="https://www.unical.it/storage/teachers/mario-uno/",
+            office_reference="Edificio Centro Sanitario",
+        ),
+        RawTeacher(
+            full_name="Mario Due",
+            source_url="https://www.unical.it/storage/teachers/mario-due/",
+            office_reference="Edificio Polifunzionale",
+        ),
+        RawTeacher(
+            full_name="Mario Tre",
+            source_url="https://www.unical.it/storage/teachers/mario-tre/",
+            office_reference="Edificio Museo di Storia Naturale e Orto Botanico",
+        ),
+    ]
+
+    places = normalize_teacher_office_places(
+        raw_teachers=raw,
+        existing_places=[],
+        buildings=[
+            {"building_id": "centro-sanitario", "name": "Centro Sanitario"},
+            {"building_id": "polifunzionale", "name": "Edificio Polifunzionale"},
+            {"building_id": "orto-botanico", "name": "Museo di Storia Naturale e Orto Botanico"},
+        ],
+        verified_at=datetime(2026, 2, 12, tzinfo=timezone.utc),
+    )
+
+    assert len(places) == 3
+    by_name = {str(item["name"]): item for item in places}
+    assert by_name["Ufficio Edificio Centro Sanitario"]["building_id"] == "centro-sanitario"
+    assert by_name["Ufficio Edificio Polifunzionale"]["building_id"] == "polifunzionale"
+    assert (
+        by_name["Ufficio Edificio Museo di Storia Naturale e Orto Botanico"]["building_id"]
+        == "orto-botanico"
+    )
+
+
 def test_normalize_departments_produces_departments_schema_shape() -> None:
     raw = [
         RawDepartment(

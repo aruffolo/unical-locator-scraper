@@ -39,18 +39,18 @@
       "with_email_ratio": 0.3535,
       "with_office_hours": 438,
       "with_office_hours_ratio": 0.1054,
-      "with_office_place_id": 621,
-      "with_office_place_id_ratio": 0.1494
+      "with_office_place_id": 626,
+      "with_office_place_id_ratio": 0.1506
     },
     "places": {
-      "total": 876,
+      "total": 880,
       "type_aula": 517,
-      "type_aula_ratio": 0.5902,
-      "with_building_id": 848,
-      "with_building_id_ratio": 0.968
+      "type_aula_ratio": 0.5875,
+      "with_building_id": 865,
+      "with_building_id_ratio": 0.983
     }
   },
-  "generated_at": "2026-02-12T08:19:51.334217+00:00",
+  "generated_at": "2026-02-12T08:23:07.090078+00:00",
   "integrity": {
     "issues": []
   },
@@ -70,9 +70,27 @@
     }
   },
   "scrape_diagnostics": {
-    "sources": {},
-    "warning_count": 0,
-    "warnings": []
+    "sources": {
+      "unical-teachers": {
+        "attempts": 1,
+        "failure_budget": 10,
+        "final_failures": 1,
+        "requests": 1,
+        "retries": 0,
+        "source_id": "unical-teachers",
+        "status": "ok",
+        "updated_at": "2026-02-12T08:22:36.962159+00:00"
+      }
+    },
+    "warning_count": 1,
+    "warnings": [
+      {
+        "failure_budget": 10,
+        "final_failures": 1,
+        "message": "unical-teachers: 1 final failures (budget 10)",
+        "source_id": "unical-teachers"
+      }
+    ]
   },
   "summary": {
     "integrity_issues": 0,
