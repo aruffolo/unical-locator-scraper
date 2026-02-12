@@ -73,3 +73,43 @@ def test_build_coverage_report_includes_aulas_and_places_metrics(tmp_path: Path)
     assert report["coverage"]["aulas"]["with_capacity"] == 1
     assert report["coverage"]["aulas"]["missing_building_by_source"][0]["count"] == 1
     assert report["coverage"]["aulas"]["missing_building_examples"][0]["aula_id"] == "aula-p3"
+
+
+def test_build_coverage_report_includes_scrape_diagnostics_warnings(tmp_path: Path) -> None:
+    (tmp_path / "buildings.json").write_text("[]", encoding="utf-8")
+    (tmp_path / "departments.json").write_text("[]", encoding="utf-8")
+    (tmp_path / "places.json").write_text("[]", encoding="utf-8")
+    (tmp_path / "aulas.json").write_text("[]", encoding="utf-8")
+    (tmp_path / "people.json").write_text("[]", encoding="utf-8")
+    (tmp_path / "scrape_diagnostics.json").write_text(
+        json.dumps(
+            {
+                "sources": {
+                    "unical-aulas": {
+                        "final_failures": 1,
+                        "failure_budget": 2,
+                    },
+                    "unical-teachers": {
+                        "final_failures": 3,
+                        "failure_budget": 1,
+                    },
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_coverage_report(
+        data_dir=tmp_path,
+        schema_results={},
+        integrity_issues=[],
+    )
+
+    scrape_diagnostics = report["scrape_diagnostics"]
+    assert list(scrape_diagnostics["sources"].keys()) == ["unical-aulas", "unical-teachers"]
+    assert scrape_diagnostics["warning_count"] == 2
+    assert scrape_diagnostics["warnings"][0]["message"] == "unical-aulas: 1 final failures (budget 2)"
+    assert (
+        scrape_diagnostics["warnings"][1]["message"]
+        == "unical-teachers: 3 final failures (budget 1) [EXCEEDED]"
+    )

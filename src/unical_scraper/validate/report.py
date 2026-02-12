@@ -18,6 +18,14 @@ def _load_array(path: Path) -> list[dict[str, Any]]:
     return []
 
 
+def _load_object(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    with path.open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+    return payload if isinstance(payload, dict) else {}
+
+
 def _ratio(numerator: int, denominator: int) -> float:
     if denominator == 0:
         return 0.0
@@ -35,6 +43,7 @@ def build_coverage_report(
     places = _load_array(data_dir / "places.json")
     aulas = _load_array(data_dir / "aulas.json")
     people = _load_array(data_dir / "people.json")
+    scrape_diagnostics_raw = _load_object(data_dir / "scrape_diagnostics.json")
 
     total_buildings = len(buildings)
     total_departments = len(departments)
@@ -81,6 +90,34 @@ def build_coverage_report(
         dataset: errors for dataset, errors in schema_results.items() if errors
     }
 
+    scrape_sources_raw = scrape_diagnostics_raw.get("sources")
+    scrape_sources: dict[str, dict[str, Any]] = (
+        scrape_sources_raw if isinstance(scrape_sources_raw, dict) else {}
+    )
+    scrape_warnings: list[dict[str, Any]] = []
+    for source_id in sorted(scrape_sources):
+        entry = scrape_sources[source_id]
+        if not isinstance(entry, dict):
+            continue
+        final_failures = int(entry.get("final_failures", 0) or 0)
+        failure_budget = int(entry.get("failure_budget", 0) or 0)
+        if final_failures <= 0:
+            continue
+        message = (
+            f"{source_id}: {final_failures} final failures"
+            f" (budget {failure_budget})"
+        )
+        if final_failures > failure_budget:
+            message = f"{message} [EXCEEDED]"
+        scrape_warnings.append(
+            {
+                "source_id": source_id,
+                "final_failures": final_failures,
+                "failure_budget": failure_budget,
+                "message": message,
+            }
+        )
+
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "summary": {
@@ -93,6 +130,11 @@ def build_coverage_report(
         },
         "integrity": {
             "issues": integrity_issues,
+        },
+        "scrape_diagnostics": {
+            "sources": {key: scrape_sources[key] for key in sorted(scrape_sources)},
+            "warnings": scrape_warnings,
+            "warning_count": len(scrape_warnings),
         },
         "coverage": {
             "buildings": {

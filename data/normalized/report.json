@@ -50,7 +50,7 @@
       "with_building_id_ratio": 0.968
     }
   },
-  "generated_at": "2026-02-12T08:05:28.578879+00:00",
+  "generated_at": "2026-02-12T08:19:51.334217+00:00",
   "integrity": {
     "issues": []
   },
@@ -68,6 +68,11 @@
       "places.json": [],
       "sources.json": []
     }
+  },
+  "scrape_diagnostics": {
+    "sources": {},
+    "warning_count": 0,
+    "warnings": []
   },
   "summary": {
     "integrity_issues": 0,

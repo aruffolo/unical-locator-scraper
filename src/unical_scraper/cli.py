@@ -51,6 +51,14 @@ def _load_json_array(path: Path) -> list[dict[str, Any]]:
     return [item for item in payload if isinstance(item, dict)]
 
 
+def _load_json_object(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    with path.open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+    return payload if isinstance(payload, dict) else {}
+
+
 def _upsert_source_entry(sources_file: Path, source_entry: dict[str, str]) -> None:
     existing = _load_json_array(sources_file)
     by_id: dict[str, dict[str, Any]] = {
@@ -81,9 +89,55 @@ def _merge_places_with_aulas(
     return sorted(by_id.values(), key=lambda item: str(item.get("place_id", "")))
 
 
-def _emit_http_diagnostics(client: HttpClient) -> None:
+def _emit_http_diagnostics(client: HttpClient) -> dict[str, Any]:
     summary = client.diagnostics_summary()
     click.echo(f"HTTP diagnostics: {json.dumps(summary, sort_keys=True)}")
+    return summary
+
+
+def _record_scrape_diagnostics(
+    *,
+    data_dir: Path,
+    source_id: str,
+    summary: dict[str, Any],
+    failure_budget: int,
+) -> None:
+    diagnostics_file = data_dir / "scrape_diagnostics.json"
+    payload = _load_json_object(diagnostics_file)
+    sources = payload.get("sources")
+    if not isinstance(sources, dict):
+        sources = {}
+
+    final_failures = int(summary.get("final_failures", 0) or 0)
+    diagnostics_entry = {
+        "source_id": source_id,
+        "requests": int(summary.get("requests", 0) or 0),
+        "attempts": int(summary.get("attempts", 0) or 0),
+        "retries": int(summary.get("retries", 0) or 0),
+        "final_failures": final_failures,
+        "failure_budget": max(failure_budget, 0),
+        "status": "warning" if final_failures > max(failure_budget, 0) else "ok",
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+    }
+    sources[source_id] = diagnostics_entry
+    payload["sources"] = {key: sources[key] for key in sorted(sources)}
+    payload["generated_at"] = datetime.now(timezone.utc).isoformat()
+    write_json(diagnostics_file, payload)
+
+
+def _enforce_failure_budget(source_id: str, summary: dict[str, Any], failure_budget: int) -> None:
+    final_failures = int(summary.get("final_failures", 0) or 0)
+    budget = max(failure_budget, 0)
+    if final_failures == 0:
+        return
+    click.echo(
+        f"[WARN] {source_id}: {final_failures} final HTTP failures detected "
+        f"(budget: {budget})."
+    )
+    if final_failures > budget:
+        raise SystemExit(
+            f"{source_id} exceeded HTTP failure budget: {final_failures} > {budget}"
+        )
 
 
 @click.group()
@@ -146,6 +200,7 @@ def link() -> None:
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
 @click.option("--max-retries", default=2, show_default=True, type=int)
 @click.option("--retry-backoff", default=0.5, show_default=True, type=float)
+@click.option("--failure-budget", default=0, show_default=True, type=int)
 def crawl_teachers_command(
     base_url: str,
     out_file: Path,
@@ -157,6 +212,7 @@ def crawl_teachers_command(
     user_agent: str,
     max_retries: int,
     retry_backoff: float,
+    failure_budget: int,
 ) -> None:
     """Crawl professor pages and write normalized `people.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
@@ -174,7 +230,19 @@ def crawl_teachers_command(
             client=client,
             cache=cache,
         )
-        _emit_http_diagnostics(client)
+        http_summary = _emit_http_diagnostics(client)
+
+    _record_scrape_diagnostics(
+        data_dir=out_file.parent,
+        source_id="unical-teachers",
+        summary=http_summary,
+        failure_budget=failure_budget,
+    )
+    _enforce_failure_budget(
+        source_id="unical-teachers",
+        summary=http_summary,
+        failure_budget=failure_budget,
+    )
 
     buildings = _load_json_array(buildings_file)
     existing_places = _load_json_array(places_file)
@@ -234,6 +302,7 @@ def crawl_teachers_command(
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
 @click.option("--max-retries", default=2, show_default=True, type=int)
 @click.option("--retry-backoff", default=0.5, show_default=True, type=float)
+@click.option("--failure-budget", default=0, show_default=True, type=int)
 def crawl_departments_command(
     base_url: str,
     out_file: Path,
@@ -242,6 +311,7 @@ def crawl_departments_command(
     user_agent: str,
     max_retries: int,
     retry_backoff: float,
+    failure_budget: int,
 ) -> None:
     """Crawl department pages and write normalized `departments.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
@@ -253,7 +323,19 @@ def crawl_departments_command(
         retry_backoff_seconds=retry_backoff,
     ) as client:
         raw_departments = crawl_departments(base_url=base_url, client=client, cache=cache)
-        _emit_http_diagnostics(client)
+        http_summary = _emit_http_diagnostics(client)
+
+    _record_scrape_diagnostics(
+        data_dir=out_file.parent,
+        source_id="unical-departments",
+        summary=http_summary,
+        failure_budget=failure_budget,
+    )
+    _enforce_failure_budget(
+        source_id="unical-departments",
+        summary=http_summary,
+        failure_budget=failure_budget,
+    )
 
     departments = normalize_departments(raw_departments)
     write_json(out_file, departments)
@@ -296,6 +378,7 @@ def crawl_departments_command(
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
 @click.option("--max-retries", default=2, show_default=True, type=int)
 @click.option("--retry-backoff", default=0.5, show_default=True, type=float)
+@click.option("--failure-budget", default=0, show_default=True, type=int)
 def crawl_services_command(
     base_url: str,
     out_file: Path,
@@ -304,6 +387,7 @@ def crawl_services_command(
     user_agent: str,
     max_retries: int,
     retry_backoff: float,
+    failure_budget: int,
 ) -> None:
     """Crawl service pages and write normalized `places.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
@@ -315,7 +399,19 @@ def crawl_services_command(
         retry_backoff_seconds=retry_backoff,
     ) as client:
         raw_services = crawl_services(base_url=base_url, client=client, cache=cache)
-        _emit_http_diagnostics(client)
+        http_summary = _emit_http_diagnostics(client)
+
+    _record_scrape_diagnostics(
+        data_dir=out_file.parent,
+        source_id="unical-services",
+        summary=http_summary,
+        failure_budget=failure_budget,
+    )
+    _enforce_failure_budget(
+        source_id="unical-services",
+        summary=http_summary,
+        failure_budget=failure_budget,
+    )
 
     places = normalize_services(raw_services)
     write_json(out_file, places)
@@ -359,6 +455,7 @@ def crawl_services_command(
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
 @click.option("--max-retries", default=2, show_default=True, type=int)
 @click.option("--retry-backoff", default=0.5, show_default=True, type=float)
+@click.option("--failure-budget", default=0, show_default=True, type=int)
 def crawl_buildings_command(
     base_url: str,
     out_file: Path,
@@ -367,6 +464,7 @@ def crawl_buildings_command(
     user_agent: str,
     max_retries: int,
     retry_backoff: float,
+    failure_budget: int,
 ) -> None:
     """Crawl campus buildings and write normalized `buildings.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
@@ -378,7 +476,19 @@ def crawl_buildings_command(
         retry_backoff_seconds=retry_backoff,
     ) as client:
         raw_buildings = crawl_buildings(base_url=base_url, client=client, cache=cache)
-        _emit_http_diagnostics(client)
+        http_summary = _emit_http_diagnostics(client)
+
+    _record_scrape_diagnostics(
+        data_dir=out_file.parent,
+        source_id="unical-campus-map",
+        summary=http_summary,
+        failure_budget=failure_budget,
+    )
+    _enforce_failure_budget(
+        source_id="unical-campus-map",
+        summary=http_summary,
+        failure_budget=failure_budget,
+    )
 
     buildings = normalize_buildings(raw_buildings)
     write_json(out_file, buildings)
@@ -436,6 +546,7 @@ def crawl_buildings_command(
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
 @click.option("--max-retries", default=2, show_default=True, type=int)
 @click.option("--retry-backoff", default=0.5, show_default=True, type=float)
+@click.option("--failure-budget", default=0, show_default=True, type=int)
 def crawl_aulas_command(
     base_url: str,
     aulas_file: Path,
@@ -446,6 +557,7 @@ def crawl_aulas_command(
     user_agent: str,
     max_retries: int,
     retry_backoff: float,
+    failure_budget: int,
 ) -> None:
     """Crawl aulas and write both `aulas.json` and AULA records in `places.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
@@ -457,7 +569,19 @@ def crawl_aulas_command(
         retry_backoff_seconds=retry_backoff,
     ) as client:
         raw_aulas = crawl_aulas(base_url=base_url, client=client, cache=cache)
-        _emit_http_diagnostics(client)
+        http_summary = _emit_http_diagnostics(client)
+
+    _record_scrape_diagnostics(
+        data_dir=aulas_file.parent,
+        source_id="unical-aulas",
+        summary=http_summary,
+        failure_budget=failure_budget,
+    )
+    _enforce_failure_budget(
+        source_id="unical-aulas",
+        summary=http_summary,
+        failure_budget=failure_budget,
+    )
 
     buildings = _load_json_array(buildings_file)
     aulas, aula_places = normalize_aulas(raw_aulas=raw_aulas, buildings=buildings)
