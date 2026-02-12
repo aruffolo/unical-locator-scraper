@@ -62,7 +62,7 @@
 ## Data & Coverage Snapshot (`data/normalized/report.json`)
 - people total: 4156
 - people with email: 1469 (35.35%)
-- people with department_id: 1337 (32.17%)
+- people with department_id: 1597 (38.43%)
 - people with office_hours: 438 (10.54%)
 - people with office_place_id: 621 (14.94%)
 - places total: 876 (AULA: 517, OFFICE: 333, SERVICE: 26)
@@ -73,7 +73,7 @@
 - aulas with capacity: 280 (54.16%)
 
 ## Open Work (Priority)
-1. Improve department resolution coverage further (teacher API + department-site fallback currently reaches ~32.17%).
+1. Improve department resolution coverage further (teacher API + department-site fallback now reaches ~38.43%).
 2. Expand teacher parser fixtures for additional HTML variants as they are discovered.
 3. Keep release gates green after each extraction/normalization refresh.
 

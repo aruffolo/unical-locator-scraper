@@ -33,8 +33,8 @@
     },
     "people": {
       "total": 4156,
-      "with_department_id": 1337,
-      "with_department_id_ratio": 0.3217,
+      "with_department_id": 1597,
+      "with_department_id_ratio": 0.3843,
       "with_email": 1469,
       "with_email_ratio": 0.3535,
       "with_office_hours": 438,
@@ -50,7 +50,7 @@
       "with_building_id_ratio": 0.968
     }
   },
-  "generated_at": "2026-02-11T20:22:55.000369+00:00",
+  "generated_at": "2026-02-12T00:21:48.429883+00:00",
   "integrity": {
     "issues": []
   },
