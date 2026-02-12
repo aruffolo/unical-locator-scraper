@@ -327,6 +327,13 @@ def _resolve_department_from_teacher_map(
     raw: RawTeacher,
     department_teacher_map: dict[str, str],
 ) -> str | None:
+    if raw.department_code:
+        code = none_if_empty(raw.department_code.strip())
+        if code:
+            mapped = department_teacher_map.get(f"department_code:{code}")
+            if mapped:
+                return mapped
+
     website_slug = _teacher_profile_slug(raw.website_url or raw.source_url)
     if website_slug:
         mapped = department_teacher_map.get(f"slug:{website_slug}")

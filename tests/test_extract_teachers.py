@@ -154,6 +154,7 @@ def test_crawl_teachers_keeps_list_department_when_detail_department_missing() -
                   "TeacherID": "teacher-x",
                   "TeacherName": "X Name",
                   "TeacherDepartmentName": "Dipartimento di Fisica",
+                  "TeacherDepartmentCod": "002019",
                   "Email": []
                 }
               ],
@@ -173,6 +174,7 @@ def test_crawl_teachers_keeps_list_department_when_detail_department_missing() -
 
     assert len(teachers) == 1
     assert teachers[0].department_name == "Dipartimento di Fisica"
+    assert teachers[0].department_code == "002019"
 
 
 def test_crawl_teachers_parses_embedded_profile_payload() -> None:

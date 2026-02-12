@@ -50,7 +50,7 @@
       "with_building_id_ratio": 0.983
     }
   },
-  "generated_at": "2026-02-12T08:29:57.881301+00:00",
+  "generated_at": "2026-02-12T08:39:17.916635+00:00",
   "integrity": {
     "issues": []
   },
@@ -79,7 +79,7 @@
         "retries": 0,
         "source_id": "unical-teachers",
         "status": "ok",
-        "updated_at": "2026-02-12T08:29:43.073882+00:00"
+        "updated_at": "2026-02-12T08:39:07.839939+00:00"
       }
     },
     "warning_count": 1,

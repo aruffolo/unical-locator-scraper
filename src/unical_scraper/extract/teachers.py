@@ -30,6 +30,7 @@ class RawTeacher:
     email: str | None = None
     phone: str | None = None
     department_name: str | None = None
+    department_code: str | None = None
     website_url: str | None = None
     office_hours: str | None = None
     office_reference: str | None = None
@@ -163,6 +164,7 @@ def _parse_teacher_detail(detail_html: str, source_url: str) -> RawTeacher | Non
             email=payload_email or email,
             phone=payload_phone,
             department_name=_extract_text(payload.get("TeacherDepartmentName")),
+            department_code=_extract_text(payload.get("TeacherDepartmentCod")),
             website_url=payload_website or website_url,
             office_hours=_extract_text(payload.get("ReceptionHours")),
             office_reference=office_reference or None,
@@ -235,6 +237,7 @@ def _crawl_teachers_from_api(
             email = _extract_first_email(item.get("Email"))
             teacher_id = _extract_text(item.get("TeacherID"))
             department_name = _extract_first_string(item.get("TeacherDepartmentName"))
+            department_code = _extract_first_string(item.get("TeacherDepartmentCod"))
             website_url = _teacher_profile_url(
                 base_url=base_url,
                 email=email,
@@ -249,6 +252,9 @@ def _crawl_teachers_from_api(
             )
             detail_department_name = (
                 _extract_first_string(detail.get("TeacherDepartmentName")) if detail else None
+            )
+            detail_department_code = (
+                _extract_first_string(detail.get("TeacherDepartmentCod")) if detail else None
             )
             office_reference = _extract_first_string(
                 detail.get("TeacherOfficeReference") if detail else None
@@ -267,6 +273,7 @@ def _crawl_teachers_from_api(
                     email=(_extract_first_email(detail.get("TeacherEmail")) if detail else None) or email,
                     phone=_extract_first_string(detail.get("TeacherTelOffice")) if detail else None,
                     department_name=detail_department_name or department_name,
+                    department_code=detail_department_code or department_code,
                     website_url=(_extract_first_string(detail.get("TeacherWebSite")) if detail else None)
                     or website_url,
                     office_hours=_extract_text(detail.get("ReceptionHours")) if detail else None,

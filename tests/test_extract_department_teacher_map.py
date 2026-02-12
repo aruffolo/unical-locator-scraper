@@ -159,6 +159,7 @@ def test_crawl_department_teacher_map_uses_addressbook_api_from_people_page() ->
     expected = "dipartimento-di-biologia-ecologia-e-scienze-della-terra"
     assert mapping["slug:mirellaaurora.aceto"] == expected
     assert mapping["slug:rosanna.adduci"] == expected
+    assert mapping["department_code:002014"] == expected
     assert mapping["email_local:mirellaaurora.aceto"] == expected
     assert mapping["email_local:rosanna.adduci"] == expected
     assert mapping["name:aceto mirella aurora"] == expected

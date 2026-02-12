@@ -195,6 +195,26 @@ def test_normalize_teachers_resolves_department_id_from_name_key_map() -> None:
     assert people[0]["department_id"] == "dipartimento-di-chimica-e-tecnologie-chimiche"
 
 
+def test_normalize_teachers_resolves_department_id_from_department_code_map() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Mario Rossi",
+            department_code="002019",
+            source_url="https://www.unical.it/storage/teachers/unknown/",
+        )
+    ]
+    mapping = {"department_code:002019": "dipartimento-di-fisica"}
+    people = normalize_teachers(
+        raw_teachers=raw,
+        departments=[],
+        department_teacher_map=mapping,
+        verified_at=datetime(2026, 2, 12, tzinfo=timezone.utc),
+    )
+
+    assert len(people) == 1
+    assert people[0]["department_id"] == "dipartimento-di-fisica"
+
+
 def test_normalize_teacher_office_places_generates_structured_office_records() -> None:
     raw = [
         RawTeacher(

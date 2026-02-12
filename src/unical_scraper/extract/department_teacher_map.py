@@ -94,6 +94,7 @@ def _crawl_department_keys(
 
         structure_codes = _extract_addressbook_structure_codes(html)
         for structure_code in structure_codes:
+            keys.add(f"department_code:{structure_code}")
             keys.update(
                 _crawl_addressbook_keys(
                     structure_code=structure_code,
