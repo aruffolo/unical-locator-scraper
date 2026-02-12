@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 
 from ..utils.html_cache import HtmlCache
 from ..utils.http import HttpClient
-from ..utils.text import none_if_empty
+from ..utils.text import collapse_whitespace, none_if_empty
 
 
 _STAFF_LINK_TOKENS = (
@@ -48,7 +48,7 @@ def crawl_department_teacher_map(
     - `slug:<teacher_profile_slug>`
     - `email_local:<local_part>`
     """
-    mapping: dict[str, str] = {}
+    candidate_mapping: dict[str, set[str]] = {}
     for department in departments:
         department_id = department.get("department_id")
         if not isinstance(department_id, str) or not department_id:
@@ -62,7 +62,12 @@ def crawl_department_teacher_map(
                 cache=cache,
                 max_pages=max_pages_per_department,
             ):
-                mapping.setdefault(key, department_id)
+                candidate_mapping.setdefault(key, set()).add(department_id)
+
+    mapping: dict[str, str] = {}
+    for key, department_ids in candidate_mapping.items():
+        if len(department_ids) == 1:
+            mapping[key] = next(iter(department_ids))
     return mapping
 
 
@@ -267,6 +272,10 @@ def _crawl_addressbook_keys(
                 if slug:
                     keys.add(f"slug:{slug}")
 
+                normalized_name = _normalized_person_name(item.get("Name"))
+                if normalized_name:
+                    keys.add(f"name:{normalized_name}")
+
                 emails = item.get("Email")
                 if isinstance(emails, list):
                     for value in emails:
@@ -285,6 +294,12 @@ def _crawl_addressbook_keys(
             next_url = None
 
     return keys
+
+
+def _normalized_person_name(value: object) -> str | None:
+    if not isinstance(value, str):
+        return None
+    return none_if_empty(collapse_whitespace(value).casefold())
 
 
 def _try_fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str | None:

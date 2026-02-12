@@ -135,7 +135,7 @@ def test_crawl_department_teacher_map_uses_addressbook_api_from_people_page() ->
         "https://storage.portale.unical.it/api/ricerca/addressbook/?structuretree=002014": """
             {
               "results": [
-                {"ID": "mirellaaurora.aceto", "Email": ["mirellaaurora.aceto@unical.it"]}
+                {"ID": "mirellaaurora.aceto", "Name": "ACETO MIRELLA AURORA", "Email": ["mirellaaurora.aceto@unical.it"]}
               ],
               "next": "//storage.portale.unical.it/api/ricerca/addressbook/?page=2&structuretree=002014"
             }
@@ -143,7 +143,7 @@ def test_crawl_department_teacher_map_uses_addressbook_api_from_people_page() ->
         "https://storage.portale.unical.it/api/ricerca/addressbook/?page=2&structuretree=002014": """
             {
               "results": [
-                {"ID": "rosanna.adduci", "Email": ["rosanna.adduci@unical.it"]}
+                {"ID": "rosanna.adduci", "Name": "ADDUCI ROSANNA", "Email": ["rosanna.adduci@unical.it"]}
               ],
               "next": null
             }
@@ -161,6 +161,8 @@ def test_crawl_department_teacher_map_uses_addressbook_api_from_people_page() ->
     assert mapping["slug:rosanna.adduci"] == expected
     assert mapping["email_local:mirellaaurora.aceto"] == expected
     assert mapping["email_local:rosanna.adduci"] == expected
+    assert mapping["name:aceto mirella aurora"] == expected
+    assert mapping["name:adduci rosanna"] == expected
 
 
 def test_crawl_department_teacher_map_extracts_generic_structuretree_pattern() -> None:
@@ -194,3 +196,38 @@ def test_crawl_department_teacher_map_extracts_generic_structuretree_pattern() -
         max_pages_per_department=6,
     )
     assert mapping["slug:anna.rossi"] == "dipartimento-di-fisica"
+
+
+def test_crawl_department_teacher_map_drops_ambiguous_name_keys() -> None:
+    departments = [
+        {"department_id": "dep-a", "website_url": "https://a.unical.it/"},
+        {"department_id": "dep-b", "website_url": "https://b.unical.it/"},
+    ]
+    pages = {
+        "https://a.unical.it/": "<html></html>",
+        "https://a.unical.it/dipartimento/presentazione/persone/": (
+            "<script>let url='https://storage.portale.unical.it/api/ricerca/addressbook/?structuretree=000001';</script>"
+        ),
+        "https://a.unical.it/dipartimento/presentazione/persone/?lang=it": "<html></html>",
+        "https://storage.portale.unical.it/api/ricerca/addressbook/?structuretree=000001": (
+            '{"results":[{"ID":"x.a","Name":"Mario Rossi","Email":["x.a@unical.it"]}],"next":null}'
+        ),
+        "https://b.unical.it/": "<html></html>",
+        "https://b.unical.it/dipartimento/presentazione/persone/": (
+            "<script>let url='https://storage.portale.unical.it/api/ricerca/addressbook/?structuretree=000002';</script>"
+        ),
+        "https://b.unical.it/dipartimento/presentazione/persone/?lang=it": "<html></html>",
+        "https://storage.portale.unical.it/api/ricerca/addressbook/?structuretree=000002": (
+            '{"results":[{"ID":"x.b","Name":"Mario Rossi","Email":["x.b@unical.it"]}],"next":null}'
+        ),
+    }
+
+    mapping = crawl_department_teacher_map(
+        departments=departments,
+        client=FakeHttpClient(pages),
+        max_pages_per_department=4,
+    )
+
+    assert "name:mario rossi" not in mapping
+    assert mapping["slug:x.a"] == "dep-a"
+    assert mapping["slug:x.b"] == "dep-b"

@@ -335,6 +335,12 @@ def _resolve_department_from_teacher_map(
             mapped = department_teacher_map.get(f"email_local:{local_part}")
             if mapped:
                 return mapped
+
+    normalized_name = none_if_empty(collapse_whitespace(raw.full_name).casefold())
+    if normalized_name:
+        mapped = department_teacher_map.get(f"name:{normalized_name}")
+        if mapped:
+            return mapped
     return None
 
 
