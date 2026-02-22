@@ -108,6 +108,19 @@ _DEPARTMENT_ACRONYM_RE = re.compile(r"\b([A-Z][A-Za-z]{2,8})\b")
 _CUBO_BUILDING_RE = re.compile(r"\bcubo\s*([0-9]{1,2})([a-z])\b", re.IGNORECASE)
 _FLOOR_RE = re.compile(r"\bpiano\s*([0-9a-z]+)\b", re.IGNORECASE)
 _ROOM_RE = re.compile(r"\bstanza\s*([0-9a-z]+)\b", re.IGNORECASE)
+_BUILDING_DESCRIPTION_STOP_RE = re.compile(
+    r"\b("
+    r"link informativo|"
+    r"piano terra|primo piano|secondo piano|terzo piano|"
+    r"quarto piano|quinto piano|sesto piano|settimo piano|"
+    r"altra collocazione|evento|zona copertura outdoor"
+    r")\s*:",
+    flags=re.IGNORECASE,
+)
+_BUILDING_WIFI_METADATA_RE = re.compile(
+    r"\baule/zone coperte da wifi\s*:",
+    flags=re.IGNORECASE,
+)
 
 
 class _DepartmentResolver:
@@ -563,12 +576,37 @@ def normalize_buildings(
             "source_url": raw.source_url,
             "last_verified_at": verified_iso,
         }
-        if raw.description:
-            building["description"] = collapse_whitespace(raw.description)
+        description = _normalize_building_description(raw.description)
+        if description:
+            building["description"] = description
 
         unique_by_id.setdefault(building_id, building)
 
     return sorted(unique_by_id.values(), key=lambda item: str(item["building_id"]))
+
+
+def _normalize_building_description(value: str | None) -> str | None:
+    text = none_if_empty(collapse_whitespace(value))
+    if not text:
+        return None
+
+    if _BUILDING_WIFI_METADATA_RE.search(text):
+        return None
+
+    text = re.sub(r"^\s*descrizione\s*:\s*", "", text, flags=re.IGNORECASE)
+    stop_match = _BUILDING_DESCRIPTION_STOP_RE.search(text)
+    if stop_match:
+        text = text[: stop_match.start()]
+
+    cleaned = none_if_empty(text.strip(" -:;,."))
+    if not cleaned:
+        return None
+
+    # Metadata-only payloads are low-signal and should not surface in detail About.
+    if cleaned.casefold() in {"blocco x", "blocco 11", "palazzo a"}:
+        return None
+
+    return cleaned
 
 
 def normalize_aulas(

@@ -370,6 +370,39 @@ def test_normalize_buildings_produces_buildings_schema_shape() -> None:
     assert building["last_verified_at"] == "2026-02-09T00:00:00+00:00"
 
 
+def test_normalize_buildings_cleans_map_metadata_descriptions_without_dropping_entities() -> None:
+    raw = [
+        RawBuilding(
+            name="Palestra CUS",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.3625000,
+            lng=16.2261000,
+            description="Aule/zone coperte da WiFi: Zona Copertura Outdoor: Punto-Punto",
+        ),
+        RawBuilding(
+            name="Cubo 1B",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.3605000,
+            lng=16.2266000,
+            description=(
+                "Descrizione: Dipartimento di Scienze Politiche e Sociali "
+                "Link informativo: http://example.test/ "
+                "Piano Terra: Primo piano:"
+            ),
+        ),
+    ]
+
+    buildings = normalize_buildings(
+        raw_buildings=raw,
+        verified_at=datetime(2026, 2, 13, tzinfo=timezone.utc),
+    )
+
+    assert len(buildings) == 2
+    by_id = {item["building_id"]: item for item in buildings}
+    assert "description" not in by_id["palestra-cus"]
+    assert by_id["cubo-1b"]["description"] == "Dipartimento di Scienze Politiche e Sociali"
+
+
 def test_normalize_aulas_produces_aulas_and_aula_places() -> None:
     raw = [
         RawAula(
