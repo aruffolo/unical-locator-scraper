@@ -273,6 +273,54 @@ def test_normalize_teacher_office_places_splits_office_notes_into_description_an
     assert place["office_reference_text"] == "Cubo 0B Piano 3 Stanza A310"
 
 
+def test_normalize_teacher_office_places_strips_html_from_non_teams_opening_hours() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Mario Rossi",
+            source_url="https://example.org/docenti/mario-rossi",
+            office_hours=(
+                "<p>Durante il periodo di lezione: lunedì dalle 14 alle 16</p>"
+                "<p>Durante il resto dell'anno: su appuntamento scrivendo una mail "
+                "a <a href=\"mailto:mario.rossi@unical.it\">mario.rossi@unical.it</a></p>"
+            ),
+            notes="Office references: Cubo 0B Piano 3 Stanza A302",
+        ),
+    ]
+
+    places = normalize_teacher_office_places(
+        raw_teachers=raw,
+        existing_places=[],
+        verified_at=datetime(2026, 3, 11, tzinfo=timezone.utc),
+    )
+
+    assert (
+        places[0]["opening_hours"]
+        == "Durante il periodo di lezione: lunedì dalle 14 alle 16 • Durante il resto dell'anno: su appuntamento scrivendo una mail a mario.rossi@unical.it"
+    )
+
+
+def test_normalize_teacher_office_places_preserves_teams_rich_opening_hours() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Mario Rossi",
+            source_url="https://example.org/docenti/mario-rossi",
+            office_hours=(
+                "<p>Martedì dalle 10:30 alle 12:30. Eventualmente, via e-mail, possono "
+                "essere concordati con il docente giorno e orario diversi, anche tramite TEAMS.</p>"
+            ),
+            notes="Office references: Cubo 0B Piano 3 Stanza A305",
+        ),
+    ]
+
+    places = normalize_teacher_office_places(
+        raw_teachers=raw,
+        existing_places=[],
+        verified_at=datetime(2026, 3, 11, tzinfo=timezone.utc),
+    )
+
+    assert places[0]["opening_hours"] == raw[0].office_hours
+
+
 def test_normalize_teacher_office_places_maps_edificio_patterns_to_buildings() -> None:
     raw = [
         RawTeacher(

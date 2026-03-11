@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from datetime import datetime, timezone
+import html
 import math
 from pathlib import Path
 import re
@@ -269,7 +270,7 @@ def normalize_teacher_office_places(
             "last_verified_at": verified_iso,
         }
         if raw.office_hours:
-            place["opening_hours"] = collapse_whitespace(raw.office_hours)
+            place["opening_hours"] = _normalize_teacher_opening_hours(raw.office_hours)
         office_description, office_reference_text = _normalize_office_place_metadata(
             notes=raw.notes,
             office_reference=office_reference,
@@ -296,6 +297,26 @@ def normalize_teacher_office_places(
         by_id.setdefault(place_id, place)
 
     return sorted(by_id.values(), key=lambda place: str(place.get("place_id", "")))
+
+
+def _normalize_teacher_opening_hours(value: str) -> str:
+    if _should_preserve_rich_opening_hours(value):
+        return collapse_whitespace(value)
+    return _strip_html_text(value)
+
+
+def _should_preserve_rich_opening_hours(value: str) -> bool:
+    lowered = value.casefold()
+    return "teams" in lowered or "teams.microsoft.com" in lowered or "|" in value
+
+
+def _strip_html_text(value: str) -> str:
+    with_breaks = re.sub(r"<br\\s*/?>|</p>|</div>|</li>|</h\\d>", "\n", value, flags=re.IGNORECASE)
+    without_tags = re.sub(r"<[^>]+>", " ", with_breaks)
+    unescaped = html.unescape(without_tags)
+    lines = [collapse_whitespace(line) for line in unescaped.splitlines()]
+    compact = "\n".join(line for line in lines if line)
+    return collapse_whitespace(compact.replace("\n", " • "))
 
 
 def _normalize_office_place_metadata(
