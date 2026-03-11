@@ -147,6 +147,32 @@ _OFFICE_REFERENCE_ONLY_RE = re.compile(
     r"^\s*Office references:\s*(?P<reference>.+?)\s*$",
     flags=re.IGNORECASE,
 )
+_MEETING_URL_RE = re.compile(r"https://teams\.microsoft\.com/[^\s<\">]+", flags=re.IGNORECASE)
+_MEETING_CODE_RE = re.compile(
+    r"\bcodice(?:\s+canale)?(?:\s*:\s*|\s+)(?P<code>[a-z0-9]{5,10})\b",
+    flags=re.IGNORECASE,
+)
+_STANDALONE_MEETING_CODE_RE = re.compile(
+    r"^(?=.*[a-z])(?=.*\d)[a-z0-9]{5,10}$",
+    flags=re.IGNORECASE,
+)
+_MEETING_LINK_ONLY_RE = re.compile(
+    r"^(link(?::.*| al team.*:)?|link per team.*:|codice e link.*:|oppure|si può accedere tramite link|o tramite il codice)$",
+    flags=re.IGNORECASE,
+)
+_MEETING_EXTRACTION_PLACE_IDS = {
+    "office-ufficio-cubo-0b-piano-3-stanza-a312",
+    "office-ufficio-cubo-17b-piano-7-stanza-6",
+    "office-ufficio-cubo-18b-piano-4-stanza-12",
+    "office-ufficio-cubo-18b-piano-4-stanza-3",
+    "office-ufficio-cubo-1b-piano-2-stanza-b203",
+    "office-ufficio-cubo-1b-piano-3-stanza-b302",
+    "office-ufficio-cubo-1c-piano-2",
+    "office-ufficio-cubo-28b-piano-4-stanza-10",
+    "office-ufficio-cubo-3b-piano-1",
+    "office-ufficio-cubo-46b-piano-2",
+    "office-ufficio-cubo-4c-piano-3",
+}
 
 
 class _DepartmentResolver:
@@ -270,7 +296,16 @@ def normalize_teacher_office_places(
             "last_verified_at": verified_iso,
         }
         if raw.office_hours:
-            place["opening_hours"] = _normalize_teacher_opening_hours(raw.office_hours)
+            opening_hours, meeting_url, meeting_code = _normalize_teacher_opening_hours(
+                place_id=place_id,
+                value=raw.office_hours,
+            )
+            if opening_hours:
+                place["opening_hours"] = opening_hours
+            if meeting_url:
+                place["meeting_url"] = meeting_url
+            if meeting_code:
+                place["meeting_code"] = meeting_code
         office_description, office_reference_text = _normalize_office_place_metadata(
             notes=raw.notes,
             office_reference=office_reference,
@@ -299,10 +334,16 @@ def normalize_teacher_office_places(
     return sorted(by_id.values(), key=lambda place: str(place.get("place_id", "")))
 
 
-def _normalize_teacher_opening_hours(value: str) -> str:
+def _normalize_teacher_opening_hours(
+    *,
+    place_id: str,
+    value: str,
+) -> tuple[str | None, str | None, str | None]:
+    if place_id in _MEETING_EXTRACTION_PLACE_IDS:
+        return _extract_teacher_meeting_metadata(value)
     if _should_preserve_rich_opening_hours(value):
-        return collapse_whitespace(value)
-    return _strip_html_text(value)
+        return collapse_whitespace(value), None, None
+    return _strip_html_text(value), None, None
 
 
 def _should_preserve_rich_opening_hours(value: str) -> bool:
@@ -317,6 +358,65 @@ def _strip_html_text(value: str) -> str:
     lines = [collapse_whitespace(line) for line in unescaped.splitlines()]
     compact = "\n".join(line for line in lines if line)
     return collapse_whitespace(compact.replace("\n", " • "))
+
+
+def _extract_teacher_meeting_metadata(value: str) -> tuple[str | None, str | None, str | None]:
+    unescaped = html.unescape(value)
+    meeting_url = _extract_first_match(_MEETING_URL_RE, unescaped)
+    segments = _split_html_segments(unescaped)
+    meeting_code = _extract_meeting_code(unescaped) or _extract_standalone_meeting_code(segments)
+    cleaned_segments = _clean_meeting_segments(segments)
+    opening_hours = none_if_empty(" • ".join(cleaned_segments))
+    return opening_hours, meeting_url, meeting_code
+
+
+def _extract_first_match(pattern: re.Pattern[str], value: str) -> str | None:
+    match = pattern.search(value)
+    if not match:
+        return None
+    return none_if_empty(collapse_whitespace(match.group(0)))
+
+
+def _extract_meeting_code(value: str) -> str | None:
+    match = _MEETING_CODE_RE.search(value)
+    if not match:
+        return None
+    return none_if_empty(collapse_whitespace(match.group("code")))
+
+
+def _extract_standalone_meeting_code(segments: list[str]) -> str | None:
+    for segment in segments:
+        if _STANDALONE_MEETING_CODE_RE.fullmatch(segment):
+            return segment
+    return None
+
+
+def _split_html_segments(value: str) -> list[str]:
+    with_breaks = re.sub(r"<br\\s*/?>|</p>|</div>|</li>|</h\\d>", "\n", value, flags=re.IGNORECASE)
+    stripped = re.sub(r"<[^>]+>", " ", with_breaks)
+    return [collapse_whitespace(part) for part in stripped.splitlines() if collapse_whitespace(part)]
+
+
+def _clean_meeting_segments(segments: list[str]) -> list[str]:
+    cleaned: list[str] = []
+    for segment in segments:
+        lowered = segment.casefold()
+        if _MEETING_LINK_ONLY_RE.match(segment):
+            continue
+        if _STANDALONE_MEETING_CODE_RE.fullmatch(segment):
+            continue
+        if "microsoft teams" in lowered and "|" in segment:
+            continue
+        if _MEETING_URL_RE.search(segment):
+            segment = _MEETING_URL_RE.sub("", segment)
+        if _MEETING_CODE_RE.search(segment):
+            segment = _MEETING_CODE_RE.sub("", segment)
+        segment = re.sub(r",?\s+all'indirizzo\s*$", "", segment, flags=re.IGNORECASE)
+        segment = collapse_whitespace(segment)
+        if not segment:
+            continue
+        cleaned.append(segment)
+    return cleaned
 
 
 def _normalize_office_place_metadata(

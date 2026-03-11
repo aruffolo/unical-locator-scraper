@@ -5638,13 +5638,15 @@
     "floor": "Piano 3",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 0B Piano 3 Stanza A312",
-    "opening_hours": "<p>Nei periodi non di lezione il ricevimento sarà on line è comunque consigliabile inviare una e-m a francesco.raniolo@unical.it</p><p>si può accedere tramite link&nbsp;</p><p>https://teams.microsoft.com/l/team/19%3a5da3y1iqsBd9sWsXInLNI46i5gUeGttPfXWK6e0kv9o1%40thread.tacv2/conversations?groupId=9c750963-448c-4493-a848-c13e114fb4fe&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57</p><p>o tramite il codice</p><p>q4g2183</p><p>per eventuali urgenze o esigenze particolari sono raggiungibile all'indirizzo e-m seguente:&nbsp;<strong>francesco.raniolo@unical.it</strong></p><p>Causa impegni istituzionali, anche nel periodo di lezione (II Semestre),&nbsp;<strong> l'orario di ricevimento verrà definito di volta in volta inviando una e-m al seguente indirizzo francesco.raniolo@unical.it.</strong> <strong>Sarà comunque sempre possibile concordare un ricevimento on-line.&nbsp;</strong></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>",
+    "opening_hours": "Nei periodi non di lezione il ricevimento sarà on line è comunque consigliabile inviare una e-m a francesco.raniolo@unical.it • per eventuali urgenze o esigenze particolari sono raggiungibile all'indirizzo e-m seguente: francesco.raniolo@unical.it • Causa impegni istituzionali, anche nel periodo di lezione (II Semestre), l'orario di ricevimento verrà definito di volta in volta inviando una e-m al seguente indirizzo francesco.raniolo@unical.it. Sarà comunque sempre possibile concordare un ricevimento on-line.",
     "place_id": "office-ufficio-cubo-0b-piano-3-stanza-a312",
     "room": "Stanza A312",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/francesco.raniolo/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 0B Piano 3 Stanza A312"
+    "office_reference_text": "Cubo 0B Piano 3 Stanza A312",
+    "meeting_url": "https://teams.microsoft.com/l/team/19%3a5da3y1iqsBd9sWsXInLNI46i5gUeGttPfXWK6e0kv9o1%40thread.tacv2/conversations?groupId=9c750963-448c-4493-a848-c13e114fb4fe&tenantId=7519d0cd-2106-47d9-adcb-320023abff57",
+    "meeting_code": "q4g2183"
   },
   {
     "building_id": "cubo-0b",
@@ -6080,13 +6082,14 @@
     "floor": "Piano 7",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 17B Piano 7 Stanza 6",
-    "opening_hours": "<p>Mercoled&igrave; dalle ore 17 alle ore 18 piattaforma Teams codice canale&nbsp;l61ol0s</p>",
+    "opening_hours": "Mercoledì dalle ore 17 alle ore 18 piattaforma Teams",
     "place_id": "office-ufficio-cubo-17b-piano-7-stanza-6",
     "room": "Stanza 6",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/anna.rovella/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 17B Piano 7 Stanza 6"
+    "office_reference_text": "Cubo 17B Piano 7 Stanza 6",
+    "meeting_code": "l61ol0s"
   },
   {
     "building_id": "cubo-17d",
@@ -6159,13 +6162,14 @@
     "floor": "Piano 4",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 18B Piano 4 Stanza 12",
-    "opening_hours": "<p>RICEVIMENTO ONLINE FEBBRAIO</p><p>MARTEDI' 3 &nbsp;ORE 11.30</p><p>GIOVEDI' 12 &nbsp;ORE 12.30</p><p>MERCOLEDI' 18 ORE 12.30</p><p>GIOVEDI' 26 ORE 11.00</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p><a href=\"https://teams.microsoft.com/l/channel/19%3A0c6664715b6d48bb9adcf8244c8fc5e2%40thread.tacv2/GIOVEDI%2012%20FEBBRAIO%20ORE%2012.30?groupId=f8a940d5-d962-4314-854c-1558576cfb2a&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57\">GIOVEDI 12 FEBBRAIO ORE 12.30 | RICEVIMENTO STUDENTI | Microsoft Teams</a></p><p>&nbsp;</p>",
+    "opening_hours": "RICEVIMENTO ONLINE FEBBRAIO • MARTEDI' 3 ORE 11.30 • GIOVEDI' 12 ORE 12.30 • MERCOLEDI' 18 ORE 12.30 • GIOVEDI' 26 ORE 11.00",
     "place_id": "office-ufficio-cubo-18b-piano-4-stanza-12",
     "room": "Stanza 12",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/flaviana.tenuta/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 18B Piano 4 Stanza 12"
+    "office_reference_text": "Cubo 18B Piano 4 Stanza 12",
+    "meeting_url": "https://teams.microsoft.com/l/channel/19%3A0c6664715b6d48bb9adcf8244c8fc5e2%40thread.tacv2/GIOVEDI%2012%20FEBBRAIO%20ORE%2012.30?groupId=f8a940d5-d962-4314-854c-1558576cfb2a&tenantId=7519d0cd-2106-47d9-adcb-320023abff57"
   },
   {
     "building_id": "cubo-18b",
@@ -6187,13 +6191,14 @@
     "floor": "Piano 4",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 18B Piano 4 Stanza 3",
-    "opening_hours": "<p>&nbsp;</p><p>Orario di ricevimento online&nbsp;</p><p>5 febbraio ore 13-15</p><p>12 febbraio ore 13-15</p><p>23 febbraio ore 13-15</p><p>Da marzo ogni lunedì ore 11-13</p><p>&nbsp;</p><p><a href=\"https://teams.microsoft.com/l/team/19%3A5616a409eded4179be5360636dcc1f1d%40thread.tacv2/conversations?groupId=f8dde428-246e-498e-838b-b4ad8b7da077&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57\">Generale | orario ricevimento | Microsoft Teams</a></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>",
+    "opening_hours": "Orario di ricevimento online • 5 febbraio ore 13-15 • 12 febbraio ore 13-15 • 23 febbraio ore 13-15 • Da marzo ogni lunedì ore 11-13",
     "place_id": "office-ufficio-cubo-18b-piano-4-stanza-3",
     "room": "Stanza 3",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/a.costabile/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 18B Piano 4 Stanza 3"
+    "office_reference_text": "Cubo 18B Piano 4 Stanza 3",
+    "meeting_url": "https://teams.microsoft.com/l/team/19%3A5616a409eded4179be5360636dcc1f1d%40thread.tacv2/conversations?groupId=f8dde428-246e-498e-838b-b4ad8b7da077&tenantId=7519d0cd-2106-47d9-adcb-320023abff57"
   },
   {
     "building_id": "cubo-18b",
@@ -6772,13 +6777,15 @@
     "floor": "Piano 2",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 1B Piano 2 Stanza B203",
-    "opening_hours": "<p>Il ricevimento studenti per il 1° Semestre a.a. 2025/2026 si svolgerà in base al seguente calendario:</p><p>- nel periodo di svolgimento dei corsi (22/09/2025 – 22/12/2025):</p><p>&nbsp; &nbsp; &nbsp; Lunedì Ore 13.00-14.00</p><p>&nbsp; &nbsp; &nbsp;Venerdì Ore 10.00-12.00</p><p>&nbsp;</p><p>- nel periodo della sessione di esami (07/01/2026 – 21/02/2026):</p><p>&nbsp; &nbsp;Martedì 13 gennaio ore 10.00-12.00</p><p>&nbsp; &nbsp;Martedì 27 gennaio ore 10.00-12.00</p><p>&nbsp; &nbsp;Martedì 10 febbraio ore 10.00-12.00&nbsp;</p><p>&nbsp; &nbsp;</p><p>Il ricevimento studenti si svolgerà in presenza presso lo studio del docente, stanza 203, Cubo 1B, 2° piano.</p><p>In caso di necessità lo stesso potrà svolgersi anche in modalità telematica sulla piattaforma Microsoft Teams, previo appuntamento concordato con il docente.</p><p>Coloro i quali intendono partecipare al ricevimento telematico devono essere dotati di adeguati strumenti per consentire il collegamento audio e video durante la riunione.</p><p>Codice e Link per l’accesso al Team “Ricevimento Studenti” sono riportati di seguito:</p><p>&nbsp;</p><p><strong>Codice: kvu1b5h</strong></p><p><strong>Link:</strong>&nbsp;<a href=\"https://teams.microsoft.com/l/team/19%3a4c50a37692934a29bd7bd62e22c7df0c%40thread.tacv2/conversations?groupId=bb903d2c-a525-471e-bbcd-b2829d584e5a&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57&nbsp;\">Team Ricevimento Studenti</a></p><p><strong>NB:</strong>&nbsp;ogni eventuale variazione di orario e/o modalità di svolgimento del ricevimento studenti verrà pubblicata tempestivamente sulla pagina del docente, pertanto si consiglia di consultare periodicamente il servizio.</p>",
+    "opening_hours": "Il ricevimento studenti per il 1° Semestre a.a. 2025/2026 si svolgerà in base al seguente calendario: • - nel periodo di svolgimento dei corsi (22/09/2025 – 22/12/2025): • Lunedì Ore 13.00-14.00 • Venerdì Ore 10.00-12.00 • - nel periodo della sessione di esami (07/01/2026 – 21/02/2026): • Martedì 13 gennaio ore 10.00-12.00 • Martedì 27 gennaio ore 10.00-12.00 • Martedì 10 febbraio ore 10.00-12.00 • Il ricevimento studenti si svolgerà in presenza presso lo studio del docente, stanza 203, Cubo 1B, 2° piano. • In caso di necessità lo stesso potrà svolgersi anche in modalità telematica sulla piattaforma Microsoft Teams, previo appuntamento concordato con il docente. • Coloro i quali intendono partecipare al ricevimento telematico devono essere dotati di adeguati strumenti per consentire il collegamento audio e video durante la riunione. • NB: ogni eventuale variazione di orario e/o modalità di svolgimento del ricevimento studenti verrà pubblicata tempestivamente sulla pagina del docente, pertanto si consiglia di consultare periodicamente il servizio.",
     "place_id": "office-ufficio-cubo-1b-piano-2-stanza-b203",
     "room": "Stanza B203",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/g.tocci/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 1B Piano 2 Stanza B203"
+    "office_reference_text": "Cubo 1B Piano 2 Stanza B203",
+    "meeting_url": "https://teams.microsoft.com/l/team/19%3a4c50a37692934a29bd7bd62e22c7df0c%40thread.tacv2/conversations?groupId=bb903d2c-a525-471e-bbcd-b2829d584e5a&tenantId=7519d0cd-2106-47d9-adcb-320023abff57",
+    "meeting_code": "kvu1b5h"
   },
   {
     "building_id": "cubo-1b",
@@ -6867,13 +6874,14 @@
     "floor": "Piano 3",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 1B Piano 3 Stanza B302",
-    "opening_hours": "<p>Dal 17 novembre il ricevimento si terrà online su Teams, prendendo appuntamento con la docente via mail (giuseppina.pellegrino@unical.it).</p><p>&nbsp;</p><p>Link al Team dell'insegnamento di Comunicazione pubblica e istituzionale:</p><p><a href=\"https://teams.microsoft.com/l/channel/19%3AyS94jhYXsn8E5VYXQjfHI0MN0g0HK-koLkO6iqmzlaU1%40thread.tacv2/General?groupId=9c560d94-e0e9-48cc-a961-fb2572065e46&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57\">General | Comunicazione pubblica e istituzionale a.a. 25-26 prof.ssa Pellegrino 5 cfu | Microsoft Teams</a></p><p>&nbsp;</p>",
+    "opening_hours": "Dal 17 novembre il ricevimento si terrà online su Teams, prendendo appuntamento con la docente via mail (giuseppina.pellegrino@unical.it).",
     "place_id": "office-ufficio-cubo-1b-piano-3-stanza-b302",
     "room": "Stanza B302",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/giuseppina.pellegrino/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 1B Piano 3 Stanza B302"
+    "office_reference_text": "Cubo 1B Piano 3 Stanza B302",
+    "meeting_url": "https://teams.microsoft.com/l/channel/19%3AyS94jhYXsn8E5VYXQjfHI0MN0g0HK-koLkO6iqmzlaU1%40thread.tacv2/General?groupId=9c560d94-e0e9-48cc-a961-fb2572065e46&tenantId=7519d0cd-2106-47d9-adcb-320023abff57"
   },
   {
     "building_id": "cubo-1b",
@@ -6977,12 +6985,13 @@
     "floor": "Piano 2",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 1C Piano 2",
-    "opening_hours": "<p>Mercoledì, 11.30 TEAMS</p><p><a href=\"https://teams.microsoft.com/l/team/19%3A727625094b60479f82bb16b4620f5624%40thread.tacv2/conversations?groupId=34cf883b-67ec-4d39-bffa-84f189d512fa&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57\">https://teams.microsoft.com/l/team/19%3A727625094b60479f82bb16b4620f5624%40thread.tacv2/conversations?groupId=34cf883b-67ec-4d39-bffa-84f189d512fa&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57</a></p>",
+    "opening_hours": "Mercoledì, 11.30 TEAMS",
     "place_id": "office-ufficio-cubo-1c-piano-2",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/m.agostino/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 1C Piano 2"
+    "office_reference_text": "Cubo 1C Piano 2",
+    "meeting_url": "https://teams.microsoft.com/l/team/19%3A727625094b60479f82bb16b4620f5624%40thread.tacv2/conversations?groupId=34cf883b-67ec-4d39-bffa-84f189d512fa&tenantId=7519d0cd-2106-47d9-adcb-320023abff57"
   },
   {
     "building_id": "cubo-1c",
@@ -7316,13 +7325,14 @@
     "floor": "Piano 4",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 28B Piano 4 Stanza 10",
-    "opening_hours": "<p>Venerdì, 12-13 &nbsp;sul canale Ricevimento di TEAMS</p><p>Link:</p><p>oppure</p><p>https://teams.microsoft.com/l/meetup-join/19%3a17d0a23f34904298b5d1c43cb636497d%40thread.tacv2/1725267007809?context=%7b%22Tid%22%3a%227519d0cd-2106-47d9-adcb-320023abff57%22%2c%22Oid%22%3a%22b26eaf97-d245-4c5c-9ec1-ebc713c2e1dd%22%7d</p>",
+    "opening_hours": "Venerdì, 12-13 sul canale Ricevimento di TEAMS",
     "place_id": "office-ufficio-cubo-28b-piano-4-stanza-10",
     "room": "Stanza 10",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/donata.bulotta/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 28B Piano 4 Stanza 10"
+    "office_reference_text": "Cubo 28B Piano 4 Stanza 10",
+    "meeting_url": "https://teams.microsoft.com/l/meetup-join/19%3a17d0a23f34904298b5d1c43cb636497d%40thread.tacv2/1725267007809?context=%7b%22Tid%22%3a%227519d0cd-2106-47d9-adcb-320023abff57%22%2c%22Oid%22%3a%22b26eaf97-d245-4c5c-9ec1-ebc713c2e1dd%22%7d"
   },
   {
     "building_id": "cubo-28b",
@@ -8445,12 +8455,13 @@
     "floor": "Piano 1",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 3B Piano 1",
-    "opening_hours": "<p>Per il primo semestre 2025 ore 14:00 giovedì, con prosieguo dalla 16,30.&nbsp;&nbsp;E' preferibile la prenotazione via mail istituzionale (daniele.dalessandro@unical.it)</p><p>Link per team Diritto sanitario e dei servizi sociali:</p><p><a href=\"https://teams.microsoft.com/l/channel/19%3ATFHhN2oUJaXM5BuQFREawW7INxVQZROoKf8YBJsI7-c1%40thread.tacv2/General?groupId=52460b14-0753-4dcb-b07c-5efbeb64aa1b&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57\">General | DIRITTO SOCIO-SANITARIO AA 25/26 | Microsoft Teams</a></p><p>https://teams.microsoft.com/l/channel/19%3ATFHhN2oUJaXM5BuQFREawW7INxVQZROoKf8YBJsI7-c1%40thread.tacv2/General?groupId=52460b14-0753-4dcb-b07c-5efbeb64aa1b&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57</p>",
+    "opening_hours": "Per il primo semestre 2025 ore 14:00 giovedì, con prosieguo dalla 16,30. E' preferibile la prenotazione via mail istituzionale (daniele.dalessandro@unical.it)",
     "place_id": "office-ufficio-cubo-3b-piano-1",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/daniele.dalessandro/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 3B Piano 1"
+    "office_reference_text": "Cubo 3B Piano 1",
+    "meeting_url": "https://teams.microsoft.com/l/channel/19%3ATFHhN2oUJaXM5BuQFREawW7INxVQZROoKf8YBJsI7-c1%40thread.tacv2/General?groupId=52460b14-0753-4dcb-b07c-5efbeb64aa1b&tenantId=7519d0cd-2106-47d9-adcb-320023abff57"
   },
   {
     "building_id": "cubo-3b",
@@ -9293,12 +9304,13 @@
     "floor": "Piano 2",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 46B Piano 2",
-    "opening_hours": "<p>Marted&igrave; dalle 15:00 alle 17:00, previo appuntamento tramite email a: marilena.desimone@unical.it In presenza: Cubo 46B 2&deg; piano Online: Teams canale &quot;Ricevimento studenti M. De Simone&quot; https://teams.microsoft.com/l/team/19%3aMvtk24KW6eM05F92_Ht7U6kJF61ZIQ9KjkCCP2pCjqA1%40thread.tacv2/conversations?groupId=eac08fef-9a93-41c6-952b-299d8172c2a4&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57</p>",
+    "opening_hours": "Martedì dalle 15:00 alle 17:00, previo appuntamento tramite email a: marilena.desimone@unical.it In presenza: Cubo 46B 2° piano Online: Teams canale \"Ricevimento studenti M. De Simone\"",
     "place_id": "office-ufficio-cubo-46b-piano-2",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/marilena.desimone/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 46B Piano 2"
+    "office_reference_text": "Cubo 46B Piano 2",
+    "meeting_url": "https://teams.microsoft.com/l/team/19%3aMvtk24KW6eM05F92_Ht7U6kJF61ZIQ9KjkCCP2pCjqA1%40thread.tacv2/conversations?groupId=eac08fef-9a93-41c6-952b-299d8172c2a4&tenantId=7519d0cd-2106-47d9-adcb-320023abff57"
   },
   {
     "building_id": "cubo-46b",
@@ -9488,12 +9500,14 @@
     "floor": "Piano 3",
     "last_verified_at": "2026-02-12T08:39:08.037643+00:00",
     "name": "Ufficio Cubo 4C Piano 3",
-    "opening_hours": "<p>Sempre disponibile online su canale Teams dedicato, all'indirizzo&nbsp;</p><p>https://teams.microsoft.com/l/channel/19%3af0388511aae74456b914e49a90f55a47%40thread.tacv2/Ricevimento?groupId=7560e2c8-9a02-4417-ad9b-9826377b4d3e&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57</p><p>codice:&nbsp;6wlha6g</p><p>Per il ricevimento in presenza si prega di richiedere appuntamento via mail.&nbsp;</p>",
+    "opening_hours": "Sempre disponibile online su canale Teams dedicato • Per il ricevimento in presenza si prega di richiedere appuntamento via mail.",
     "place_id": "office-ufficio-cubo-4c-piano-3",
     "source_id": "unical-teachers",
     "source_url": "https://www.unical.it/storage/teachers/serena.dato/",
     "type": "OFFICE",
-    "office_reference_text": "Cubo 4C Piano 3"
+    "office_reference_text": "Cubo 4C Piano 3",
+    "meeting_url": "https://teams.microsoft.com/l/channel/19%3af0388511aae74456b914e49a90f55a47%40thread.tacv2/Ricevimento?groupId=7560e2c8-9a02-4417-ad9b-9826377b4d3e&tenantId=7519d0cd-2106-47d9-adcb-320023abff57",
+    "meeting_code": "6wlha6g"
   },
   {
     "building_id": "cubo-4c",

@@ -319,6 +319,40 @@ def test_normalize_teacher_office_places_preserves_teams_rich_opening_hours() ->
     )
 
     assert places[0]["opening_hours"] == raw[0].office_hours
+    assert "meeting_url" not in places[0]
+    assert "meeting_code" not in places[0]
+
+
+def test_normalize_teacher_office_places_extracts_meeting_metadata_for_reviewed_cases() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Mario Rossi",
+            source_url="https://example.org/docenti/mario-rossi",
+            office_hours=(
+                "<p>Sempre disponibile online su canale Teams dedicato, all'indirizzo&nbsp;</p>"
+                "<p>https://teams.microsoft.com/l/channel/19%3af0388511aae74456b914e49a90f55a47%40thread.tacv2/Ricevimento?groupId=7560e2c8-9a02-4417-ad9b-9826377b4d3e&amp;tenantId=7519d0cd-2106-47d9-adcb-320023abff57</p>"
+                "<p>codice:&nbsp;6wlha6g</p>"
+                "<p>Per il ricevimento in presenza si prega di richiedere appuntamento via mail.&nbsp;</p>"
+            ),
+            notes="Office references: Cubo 4C Piano 3",
+        ),
+    ]
+
+    places = normalize_teacher_office_places(
+        raw_teachers=raw,
+        existing_places=[],
+        verified_at=datetime(2026, 3, 11, tzinfo=timezone.utc),
+    )
+
+    assert (
+        places[0]["opening_hours"]
+        == "Sempre disponibile online su canale Teams dedicato • Per il ricevimento in presenza si prega di richiedere appuntamento via mail."
+    )
+    assert (
+        places[0]["meeting_url"]
+        == "https://teams.microsoft.com/l/channel/19%3af0388511aae74456b914e49a90f55a47%40thread.tacv2/Ricevimento?groupId=7560e2c8-9a02-4417-ad9b-9826377b4d3e&tenantId=7519d0cd-2106-47d9-adcb-320023abff57"
+    )
+    assert places[0]["meeting_code"] == "6wlha6g"
 
 
 def test_normalize_teacher_office_places_maps_edificio_patterns_to_buildings() -> None:
