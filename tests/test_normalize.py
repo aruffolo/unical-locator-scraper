@@ -447,6 +447,38 @@ def test_normalize_buildings_drops_low_signal_descriptions() -> None:
     assert "description" not in by_id["orto-botanico-area"]
 
 
+def test_normalize_buildings_trims_portal_metadata_and_normalizes_separators() -> None:
+    raw = [
+        RawBuilding(
+            name="Cubo 20",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.3610209,
+            lng=16.2263592,
+            description=(
+                "Dipartimento di Lingue e Scienze dell'Educazione "
+                "Link portale: http://www.unical.it/portale/strutture/dipartimenti_240/dlse/ "
+                "Uffici Strutture presenti: altro"
+            ),
+        ),
+        RawBuilding(
+            name="Cubo 20B",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.3610209,
+            lng=16.2263592,
+            description="Dipartimento di Culture, Educazione e Società - - DiCES",
+        ),
+    ]
+
+    buildings = normalize_buildings(
+        raw_buildings=raw,
+        verified_at=datetime(2026, 3, 11, tzinfo=timezone.utc),
+    )
+
+    by_id = {item["building_id"]: item for item in buildings}
+    assert by_id["cubo-20"]["description"] == "Dipartimento di Lingue e Scienze dell'Educazione"
+    assert by_id["cubo-20b"]["description"] == "Dipartimento di Culture, Educazione e Società - DiCES"
+
+
 def test_normalize_aulas_produces_aulas_and_aula_places() -> None:
     raw = [
         RawAula(

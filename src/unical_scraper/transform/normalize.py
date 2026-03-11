@@ -111,6 +111,8 @@ _ROOM_RE = re.compile(r"\bstanza\s*([0-9a-z]+)\b", re.IGNORECASE)
 _BUILDING_DESCRIPTION_STOP_RE = re.compile(
     r"\b("
     r"link informativo|"
+    r"link portale|"
+    r"uffici strutture presenti|"
     r"piano terra|primo piano|secondo piano|terzo piano|"
     r"quarto piano|quinto piano|sesto piano|settimo piano|"
     r"altra collocazione|evento|zona copertura outdoor"
@@ -612,6 +614,7 @@ def _normalize_building_description(value: str | None) -> str | None:
     cleaned = none_if_empty(text.strip(" -:;,."))
     if not cleaned:
         return None
+    cleaned = re.sub(r"\s*-\s*-\s*", " - ", cleaned)
 
     # Metadata-only payloads are low-signal and should not surface in detail About.
     if cleaned.casefold() in {"blocco x", "blocco 11", "palazzo a"}:
