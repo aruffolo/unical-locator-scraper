@@ -1202,7 +1202,6 @@
   },
   {
     "building_id": "cubo-libro",
-    "description": "link: descrizione",
     "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
     "lat": 39.3616973,
     "lng": 16.2263104,
@@ -1296,7 +1295,6 @@
   },
   {
     "building_id": "orto-botanico",
-    "description": "Uffici",
     "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
     "lat": 39.3571245,
     "lng": 16.2298911,
@@ -1306,7 +1304,6 @@
   },
   {
     "building_id": "orto-botanico-area",
-    "description": "Area di pertinenza",
     "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
     "lat": 39.3568228,
     "lng": 16.2288812,

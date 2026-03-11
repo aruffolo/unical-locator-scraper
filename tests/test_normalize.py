@@ -411,6 +411,42 @@ def test_normalize_buildings_cleans_map_metadata_descriptions_without_dropping_e
     assert "description" not in by_id["cappella-universitaria"]
 
 
+def test_normalize_buildings_drops_low_signal_descriptions() -> None:
+    raw = [
+        RawBuilding(
+            name="Cubo LIBRO",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.3616973,
+            lng=16.2263104,
+            description="link: descrizione",
+        ),
+        RawBuilding(
+            name="Orto Botanico",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.3571245,
+            lng=16.2298911,
+            description="Uffici",
+        ),
+        RawBuilding(
+            name="Orto Botanico - area",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.3568228,
+            lng=16.2288812,
+            description="Area di pertinenza",
+        ),
+    ]
+
+    buildings = normalize_buildings(
+        raw_buildings=raw,
+        verified_at=datetime(2026, 3, 11, tzinfo=timezone.utc),
+    )
+
+    by_id = {item["building_id"]: item for item in buildings}
+    assert "description" not in by_id["cubo-libro"]
+    assert "description" not in by_id["orto-botanico"]
+    assert "description" not in by_id["orto-botanico-area"]
+
+
 def test_normalize_aulas_produces_aulas_and_aula_places() -> None:
     raw = [
         RawAula(

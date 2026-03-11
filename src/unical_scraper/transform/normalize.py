@@ -125,6 +125,11 @@ _BUILDING_MAP_METADATA_RE = re.compile(
     r"^(landmark|building)\s+on\s+official\s+unical\s+campus\s+map\b",
     flags=re.IGNORECASE,
 )
+_BUILDING_LOW_SIGNAL_DESCRIPTIONS = {
+    "area di pertinenza",
+    "link: descrizione",
+    "uffici",
+}
 
 
 class _DepartmentResolver:
@@ -610,6 +615,8 @@ def _normalize_building_description(value: str | None) -> str | None:
 
     # Metadata-only payloads are low-signal and should not surface in detail About.
     if cleaned.casefold() in {"blocco x", "blocco 11", "palazzo a"}:
+        return None
+    if cleaned.casefold() in _BUILDING_LOW_SIGNAL_DESCRIPTIONS:
         return None
 
     return cleaned
