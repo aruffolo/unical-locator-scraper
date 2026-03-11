@@ -121,6 +121,10 @@ _BUILDING_WIFI_METADATA_RE = re.compile(
     r"\baule/zone coperte da wifi\s*:",
     flags=re.IGNORECASE,
 )
+_BUILDING_MAP_METADATA_RE = re.compile(
+    r"^(landmark|building)\s+on\s+official\s+unical\s+campus\s+map\b",
+    flags=re.IGNORECASE,
+)
 
 
 class _DepartmentResolver:
@@ -591,6 +595,8 @@ def _normalize_building_description(value: str | None) -> str | None:
         return None
 
     if _BUILDING_WIFI_METADATA_RE.search(text):
+        return None
+    if _BUILDING_MAP_METADATA_RE.search(text):
         return None
 
     text = re.sub(r"^\s*descrizione\s*:\s*", "", text, flags=re.IGNORECASE)

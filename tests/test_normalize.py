@@ -390,6 +390,13 @@ def test_normalize_buildings_cleans_map_metadata_descriptions_without_dropping_e
                 "Piano Terra: Primo piano:"
             ),
         ),
+        RawBuilding(
+            name="Cappella Universitaria",
+            source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+            lat=39.3615853,
+            lng=16.2262273,
+            description="Landmark on official UNICAL campus map (area Cubo 24B)",
+        ),
     ]
 
     buildings = normalize_buildings(
@@ -397,10 +404,11 @@ def test_normalize_buildings_cleans_map_metadata_descriptions_without_dropping_e
         verified_at=datetime(2026, 2, 13, tzinfo=timezone.utc),
     )
 
-    assert len(buildings) == 2
+    assert len(buildings) == 3
     by_id = {item["building_id"]: item for item in buildings}
     assert "description" not in by_id["palestra-cus"]
     assert by_id["cubo-1b"]["description"] == "Dipartimento di Scienze Politiche e Sociali"
+    assert "description" not in by_id["cappella-universitaria"]
 
 
 def test_normalize_aulas_produces_aulas_and_aula_places() -> None:
