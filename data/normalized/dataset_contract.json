@@ -49,7 +49,7 @@
     {
       "name": "people.json",
       "records": 4156,
-      "sha256": "e5242ccbd0f766c192dbd1f43702b18816b286b9472c80f854fb4a659ce98aa1"
+      "sha256": "61804489ab6551c2eb19195479d16047f3c000a537a1310ae5b2a317e9b69db9"
     },
     {
       "name": "places.json",
@@ -62,5 +62,5 @@
       "sha256": "9685089b9153acaf31fe898a6a9a66a5616eb34f245ed6fff89cacc605fda1e3"
     }
   ],
-  "revision": "27ad42ad3e81d064a03bb635c990040c2be4f3d0947ca7abd1d00dcba8f26530"
+  "revision": "9517df0aa80dd2c31d44fcf9d693afc3fc1117b34b12840eaf83ad9a62493113"
 }

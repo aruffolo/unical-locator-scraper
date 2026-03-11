@@ -95,8 +95,14 @@ def normalize_teachers(
         office_place_id = office_place_ids.get(_teacher_office_key(raw))
         if office_place_id:
             person["office_place_id"] = office_place_id
-        if raw.notes:
-            person["notes"] = collapse_whitespace(raw.notes)
+        teacher_notes, office_reference_text = _normalize_teacher_notes_metadata(
+            notes=raw.notes,
+            office_reference=raw.office_reference,
+        )
+        if teacher_notes:
+            person["notes"] = teacher_notes
+        if office_reference_text:
+            person["office_reference_text"] = office_reference_text
 
         normalized.append(person)
 
@@ -315,6 +321,31 @@ def _normalize_office_place_metadata(
     office_description = none_if_empty(collapse_whitespace(match.group("office")))
     extracted_reference = none_if_empty(collapse_whitespace(match.group("reference")))
     return office_description, extracted_reference or normalized_reference
+
+
+def _normalize_teacher_notes_metadata(
+    *,
+    notes: str | None,
+    office_reference: str | None,
+) -> tuple[str | None, str | None]:
+    normalized_reference = none_if_empty(collapse_whitespace(office_reference))
+    normalized_notes = none_if_empty(collapse_whitespace(notes))
+    if not normalized_notes:
+        return None, normalized_reference
+
+    match = _OFFICE_NOTE_RE.match(normalized_notes)
+    if not match:
+        reference_only_match = _OFFICE_REFERENCE_ONLY_RE.match(normalized_notes)
+        if reference_only_match:
+            extracted_reference = none_if_empty(
+                collapse_whitespace(reference_only_match.group("reference"))
+            )
+            return None, extracted_reference or normalized_reference
+        return normalized_notes, normalized_reference
+
+    cleaned_notes = none_if_empty(collapse_whitespace(match.group("office")))
+    extracted_reference = none_if_empty(collapse_whitespace(match.group("reference")))
+    return cleaned_notes, extracted_reference or normalized_reference
 
 
 def build_teacher_office_place_ids(raw_teachers: list[RawTeacher]) -> dict[str, str]:

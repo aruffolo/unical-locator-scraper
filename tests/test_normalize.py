@@ -313,6 +313,39 @@ def test_normalize_teacher_office_places_maps_edificio_patterns_to_buildings() -
     )
 
 
+def test_normalize_teachers_splits_office_notes_into_notes_and_reference() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Rosa Adamo",
+            source_url="https://www.unical.it/storage/teachers/rosa.adamo/",
+            notes=(
+                "Office: Dipartimento di Scienze Aziendali e Giuridiche | "
+                "Office references: Cubo 3C"
+            ),
+            office_reference="Cubo 3C",
+        ),
+        RawTeacher(
+            full_name="Mario Rossi",
+            source_url="https://www.unical.it/storage/teachers/mario.rossi/",
+            notes="Office references: Cubo 3C Piano 2 Stanza 8",
+            office_reference="Cubo 3C Piano 2 Stanza 8",
+        ),
+    ]
+
+    people = normalize_teachers(
+        raw_teachers=raw,
+        departments=[],
+        department_teacher_map={},
+        verified_at=datetime(2026, 2, 12, tzinfo=timezone.utc),
+    )
+
+    by_name = {person["full_name"]: person for person in people}
+    assert by_name["Rosa Adamo"]["notes"] == "Dipartimento di Scienze Aziendali e Giuridiche"
+    assert by_name["Rosa Adamo"]["office_reference_text"] == "Cubo 3C"
+    assert "notes" not in by_name["Mario Rossi"]
+    assert by_name["Mario Rossi"]["office_reference_text"] == "Cubo 3C Piano 2 Stanza 8"
+
+
 def test_normalize_departments_produces_departments_schema_shape() -> None:
     raw = [
         RawDepartment(

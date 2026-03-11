@@ -16,6 +16,7 @@
       "office_place_id": { "type": "string" },
       "office_hours": { "type": "string" },
       "notes": { "type": "string" },
+      "office_reference_text": { "type": "string" },
       "source_id": { "type": "string" },
       "source_url": { "type": "string" },
       "last_verified_at": { "type": "string" }
@@ -23,4 +24,3 @@
     "additionalProperties": false
   }
 }
-
