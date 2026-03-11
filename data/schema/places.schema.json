@@ -16,6 +16,7 @@
       "floor": { "type": "string" },
       "room": { "type": "string" },
       "description": { "type": "string" },
+      "office_reference_text": { "type": "string" },
       "email": { "type": "string" },
       "phone": { "type": "string" },
       "opening_hours": { "type": "string" },
@@ -30,4 +31,3 @@
     "additionalProperties": false
   }
 }
-

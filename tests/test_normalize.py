@@ -244,6 +244,33 @@ def test_normalize_teacher_office_places_generates_structured_office_records() -
     assert place["building_id"] == "cubo-3c"
     assert place["floor"] == "Piano 2"
     assert place["room"] == "Stanza 8"
+    assert place["office_reference_text"] == "Cubo 3C Piano 2 Stanza 8"
+    assert "description" not in place
+
+
+def test_normalize_teacher_office_places_splits_office_notes_into_description_and_reference() -> None:
+    raw = [
+        RawTeacher(
+            full_name="Paola Verde",
+            source_url="https://www.unical.it/storage/teachers/paola-verde/",
+            office_reference="Cubo 0B Piano 3 Stanza A310",
+            notes=(
+                "Office: Non assegnato | Office references: Cubo 0B Piano 3 Stanza A310"
+            ),
+        ),
+    ]
+
+    places = normalize_teacher_office_places(
+        raw_teachers=raw,
+        existing_places=[],
+        buildings=[{"building_id": "cubo-0b", "name": "Cubo 0B"}],
+        verified_at=datetime(2026, 2, 11, tzinfo=timezone.utc),
+    )
+
+    assert len(places) == 1
+    place = places[0]
+    assert place["description"] == "Non assegnato"
+    assert place["office_reference_text"] == "Cubo 0B Piano 3 Stanza A310"
 
 
 def test_normalize_teacher_office_places_maps_edificio_patterns_to_buildings() -> None:

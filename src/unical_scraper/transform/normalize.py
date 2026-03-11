@@ -132,6 +132,14 @@ _BUILDING_LOW_SIGNAL_DESCRIPTIONS = {
     "link: descrizione",
     "uffici",
 }
+_OFFICE_NOTE_RE = re.compile(
+    r"^\s*Office:\s*(?P<office>[^|]+?)\s*\|\s*Office references:\s*(?P<reference>.+?)\s*$",
+    flags=re.IGNORECASE,
+)
+_OFFICE_REFERENCE_ONLY_RE = re.compile(
+    r"^\s*Office references:\s*(?P<reference>.+?)\s*$",
+    flags=re.IGNORECASE,
+)
 
 
 class _DepartmentResolver:
@@ -256,8 +264,14 @@ def normalize_teacher_office_places(
         }
         if raw.office_hours:
             place["opening_hours"] = collapse_whitespace(raw.office_hours)
-        if raw.notes:
-            place["description"] = collapse_whitespace(raw.notes)
+        office_description, office_reference_text = _normalize_office_place_metadata(
+            notes=raw.notes,
+            office_reference=office_reference,
+        )
+        if office_description:
+            place["description"] = office_description
+        if office_reference_text:
+            place["office_reference_text"] = office_reference_text
 
         building_id = _infer_office_building_id(
             office_reference,
@@ -276,6 +290,31 @@ def normalize_teacher_office_places(
         by_id.setdefault(place_id, place)
 
     return sorted(by_id.values(), key=lambda place: str(place.get("place_id", "")))
+
+
+def _normalize_office_place_metadata(
+    *,
+    notes: str | None,
+    office_reference: str,
+) -> tuple[str | None, str | None]:
+    normalized_reference = none_if_empty(collapse_whitespace(office_reference))
+    normalized_notes = none_if_empty(collapse_whitespace(notes))
+    if not normalized_notes:
+        return None, normalized_reference
+
+    match = _OFFICE_NOTE_RE.match(normalized_notes)
+    if not match:
+        reference_only_match = _OFFICE_REFERENCE_ONLY_RE.match(normalized_notes)
+        if reference_only_match:
+            extracted_reference = none_if_empty(
+                collapse_whitespace(reference_only_match.group("reference"))
+            )
+            return None, extracted_reference or normalized_reference
+        return normalized_notes, normalized_reference
+
+    office_description = none_if_empty(collapse_whitespace(match.group("office")))
+    extracted_reference = none_if_empty(collapse_whitespace(match.group("reference")))
+    return office_description, extracted_reference or normalized_reference
 
 
 def build_teacher_office_place_ids(raw_teachers: list[RawTeacher]) -> dict[str, str]:
