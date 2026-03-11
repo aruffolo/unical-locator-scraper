@@ -19,6 +19,7 @@
       "office_reference_text": { "type": "string" },
       "email": { "type": "string" },
       "phone": { "type": "string" },
+      "website_url": { "type": "string" },
       "opening_hours": { "type": "string" },
       "access_notes": { "type": "string" },
       "lat": { "type": "number" },

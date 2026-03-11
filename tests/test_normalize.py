@@ -396,6 +396,8 @@ def test_normalize_services_produces_places_schema_shape() -> None:
     assert place["type"] == "SECRETARY"
     assert place["name"] == "Segreteria Studenti DIMES"
     assert place["email"] == "segreteria@unical.it"
+    assert place["website_url"] == "https://www.unical.it/servizi/segreteria-dimes"
+    assert "access_notes" not in place
     assert place["source_id"] == "unical-services"
     assert place["last_verified_at"] == "2026-02-09T00:00:00+00:00"
 

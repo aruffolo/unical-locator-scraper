@@ -5376,7 +5376,6 @@
     "type": "AULA"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Per facilitare l’interazione degli studenti con il Centro Residenziale è possibile accedere agli sportelli on-line.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -5385,7 +5384,8 @@
     "place_id": "office-front-office-on-line",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/didattica/diritto-allo-studio/front-office-on-line-cr/",
-    "type": "OFFICE"
+    "type": "OFFICE",
+    "website_url": "https://my.unical.it/"
   },
   {
     "building_id": "cubo-0c",
@@ -9736,7 +9736,6 @@
     "office_reference_text": "Laboratorio di Genetics Cubo 4C Piano 3"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "cubo-libro",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
     "name": "Biblioteche",
@@ -9744,10 +9743,10 @@
     "place_id": "service-biblioteche",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "aula-magna",
     "description": "L'Ateneo offre alla comunità universitaria e al territorio un sistema di sale convegni attrezzate per lo svolgimento di congressi, conferenze, simposi, mostre, seminari, presentazioni, lectio magistralis, corsi di aggiornamento, convention , career day e giornate di recruitment .",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9756,10 +9755,10 @@
     "place_id": "service-centro-congressi",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "cla-centro-linguistico-d-ateneo",
     "email": "maria.sasso@unical.it",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9768,10 +9767,10 @@
     "place_id": "service-centro-linguistico-di-ateneo",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-linguistico-di-ateneo/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "centro-sanitario",
     "email": "118cosenza@tiscali.it",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9779,10 +9778,10 @@
     "place_id": "service-centro-sanitario",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-sanitario/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "centro-universitario-sportivo",
     "description": "Lo sport è una componente essenziale nel Campus. Il Cus – Centro universitario sportivo d’ateneo – è una vera cittadella dello sport e del tempo libero, il motore di un’intensa attività che consente a studenti, docenti, personale tecnico-amministrativo e cittadini dell’area urbana di praticare numerose discipline, anche a livello agonistico con risultati significativi ottenuti in vari campionati universitari nazionali.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9790,10 +9789,10 @@
     "place_id": "service-centro-sportivo",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-sportivo/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Via Pietro Bucci 87036 Rende CS Posta certificata C.F. 80003950781 / P.I. 00419160783",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9801,20 +9800,20 @@
     "place_id": "service-diritto-allo-studio",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/didattica/diritto-allo-studio/altri-benefici/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "centro-sanitario",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
     "name": "Emergenze e assistenza sanitaria",
     "place_id": "service-emergenze-e-assistenza-sanitaria",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/didattica/diritto-allo-studio/emergenze-e-assistenza-sanitaria/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Il Centro Residenziale ha attivato degli indirizzi di posta elettronica ai quali gli studenti possono rivolgersi per presentare richieste o segnalare problemi inerenti: le borse di studio, i premi di laurea, i contributi per la mobilità internazionale, i servizi alloggi e mensa, il portale dei servizi online del Centro Residenziale, etc.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9822,10 +9821,10 @@
     "place_id": "service-helpdesk-e-contatti-cr",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/didattica/diritto-allo-studio/segnalazioni-e-richieste-cr/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Il Bando per il diritto allo studio stabilisce, ogni anno, i requisiti economici e patrimoniali per accedere ai benefici e servizi del diritto allo studio universitario.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9833,20 +9832,20 @@
     "place_id": "service-info-isee",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/didattica/diritto-allo-studio/info-isee/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "description": "Il Museo Interattivo di Archeologia Informatica (MIAI) nasce dal privato sociale, ideato e gestito sin dalla sua nascita nel 2002 da studenti ed ex studenti dell’Università della Calabria.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
     "name": "Miai",
     "place_id": "service-miai",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/miai/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "cubo-14b",
     "description": "La sezione di Mineralogia e Petrografia del MuSNOB al momento propone un percorso nel “Giardino geologico”, una parte open air della sezione mineralogica-petrografica, in cui sono esposti 16 grossi blocchi rocciosi, rappresentativi dei minerali e delle rocce più diffuse nell’appennino calabrese.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9854,40 +9853,40 @@
     "place_id": "service-mineralogia-e-petrografia",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/mineralogia-e-petrografia/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "description": "Nelle diverse sezioni del MuSNOB distribuite nel Campus, sono visibili collezioni che nell'insieme danno un quadro approfondito della storia naturale di questa speciale regione.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
     "name": "Musnob",
     "place_id": "service-musnob",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "cubi-7-11b",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
     "name": "Orientamento",
     "place_id": "service-orientamento",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/didattica/orientamento/career-service/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "description": "L’Orto Botanico è il cuore verde del Sistema Museale dell’Università della Calabria, nonché una delle 178 ZSC (Zona Speciale di Conservazione) presenti in Calabria, tutelate per la presenza di ambienti e specie di pregio naturalistico.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
     "name": "Orto Botanico",
     "place_id": "service-orto-botanico",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/orto-botanico/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "cubo-14b",
     "description": "La Sezione di Paleontologia ospita una ricca collezione di animali e piante fossili provenienti da diverse località della nostra regione e da svariate parti del mondo.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9895,10 +9894,10 @@
     "place_id": "service-paleontologia",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/paleontologia/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "auditorium-teatro-grande",
     "description": "Il “Polo d'Infanzia” è stato attivato nel 2012 per favorire la conciliazione dei tempi di vita privata e di lavoro per le famiglie della comunità accademica e, da questo punto di vista, rappresenta ancora oggi una realtà pressoché unica nel territorio.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9906,10 +9905,10 @@
     "place_id": "service-polo-infanzia",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Per informazioni sulle modalità di assegnazione delle residenze agli studenti consulta il bando di concorso e il Regolamento sui Servizi del Centro Residenziale .",
     "email": "francesco.rocchetto@unical.it",
@@ -9918,20 +9917,20 @@
     "place_id": "service-quartieri",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "description": "Il RiMuseum è dedicato interamente al tema dei rifiuti.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
     "name": "Rimuseum",
     "place_id": "service-rimuseum",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/rimuseum/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "cubo-22b",
     "description": "Su ticket.unical.it/tickets/new/ict accedi direttamente alle richieste on-line disponibili per i servizi IT:",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9939,10 +9938,10 @@
     "place_id": "service-servizi-ict",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/servizi-ict/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "I servizi erogati online dal Centro Residenziale consentono a studenti, docenti e personale tecnico-amministrativo di richiedere e gestire i benefici ed i servizi erogati nel campus (borse di studio, alloggi studenti, foresterie, servizio mensa, premi di laurea, contributi, ecc.).",
     "email": "servizi_informativi.cr@unical.it",
@@ -9951,10 +9950,10 @@
     "place_id": "service-servizi-online-centro-residenziale",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/didattica/diritto-allo-studio/serv-cr/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "Il servizio è rivolto al personale universitario (docente e tecnico-amministrativo) di ruolo; in caso di disponibilità, possono usufruirne anche tutti coloro i quali abbiano un rapporto di interesse con l’Università della Calabria.",
     "email": "direzione.cr@unical.it",
@@ -9963,10 +9962,10 @@
     "place_id": "service-servizio-foresteria",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "uffici-centro-residenziale-e-area-didattica",
     "description": "La comunità accademica può usufruire del servizio di ristorazione che viene erogato attraverso le cinque mense presenti nel campus universitario, in gestione indiretta, a tariffe differenziate in base al reddito,",
     "email": "direzione.cr@unical.it",
@@ -9976,20 +9975,20 @@
     "place_id": "service-servizio-mensa",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "description": "Il nostro Campus non è solo un luogo di studio, ma anche uno spazio dinamico dove costruire relazioni, condividere esperienze e partecipare alla vita comunitaria.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
     "name": "Socialità nel Campus",
     "place_id": "service-socialita-nel-campus",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/socialita/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "cubo-22b",
     "description": "Aggiornamento pagina ogni 5 secondi. Ping ai sistemi ogni 60 secondi.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -9997,20 +9996,20 @@
     "place_id": "service-stato-dei-servizi-web",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/servizi-ict/stato-servizi-web/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "auditorium-teatro-grande",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
     "name": "Teatri E Cinema",
     "place_id": "service-teatri-e-cinema",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   },
   {
-    "access_notes": "Sito: https://my.unical.it/",
     "building_id": "cubo-14b",
     "description": "Il Museo di Zoologia espone la straordinaria ricchezza faunistica del territorio e offre uno sguardo consapevole su un futuro in cui la biodiversità è minacciata dai mutamenti provocati dalle attività umane. Nato con obiettivi scientifici, didattici e divulgativi, il Museo è un centro dinamico per l’approfondimento delle conoscenze sulla fauna regionale e sui suoi cambiamenti nel tempo.",
     "last_verified_at": "2026-02-09T14:44:43.757542+00:00",
@@ -10018,6 +10017,7 @@
     "place_id": "service-zoologia",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/zoologia/",
-    "type": "SERVICE"
+    "type": "SERVICE",
+    "website_url": "https://my.unical.it/"
   }
 ]

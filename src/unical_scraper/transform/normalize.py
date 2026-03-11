@@ -621,7 +621,7 @@ def normalize_services(
         if raw.phone:
             place["phone"] = collapse_whitespace(raw.phone)
         if raw.website_url:
-            place["access_notes"] = f"Sito: {raw.website_url.strip()}"
+            place["website_url"] = raw.website_url.strip()
         if raw.opening_hours:
             place["opening_hours"] = collapse_whitespace(raw.opening_hours)
 
