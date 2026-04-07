@@ -8,6 +8,7 @@ import pytest
 from unical_scraper.transform.manual_corrections import (
     CorrectionTarget,
     ManualCorrectionsError,
+    apply_manual_corrections_to_data_dir,
     load_destructive_allowlist,
     load_manual_corrections,
     select_rule_for_target,
@@ -16,6 +17,10 @@ from unical_scraper.transform.manual_corrections import (
 
 def _write_payload(path: Path, payload: object) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def _read_payload(path: Path) -> object:
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def test_load_manual_corrections_accepts_json_compatible_yaml(tmp_path: Path) -> None:
@@ -45,6 +50,34 @@ def test_load_manual_corrections_accepts_json_compatible_yaml(tmp_path: Path) ->
     assert len(rules) == 1
     assert rules[0].id == "rule-001"
     assert rules[0].priority == 0
+
+
+def test_load_manual_corrections_normalizes_plural_entity_type_alias(tmp_path: Path) -> None:
+    registry_path = tmp_path / "manual_corrections.yaml"
+    _write_payload(
+        registry_path,
+        {
+            "version": 1,
+            "corrections": [
+                {
+                    "id": "rule-001b",
+                    "action": "replace",
+                    "entity_type": "people",
+                    "entity_id": "francesco-scarcello",
+                    "field": "notes",
+                    "value": "Updated notes",
+                    "reason": "Alias acceptance test",
+                    "author": "Elrond89",
+                    "created_at": "2026-04-07T10:00:00+00:00",
+                    "status": "draft",
+                }
+            ],
+        },
+    )
+
+    rules = load_manual_corrections(registry_path)
+
+    assert rules[0].target.entity_type == "person"
 
 
 def test_load_manual_corrections_requires_reviewer_for_approved_status(tmp_path: Path) -> None:
@@ -217,3 +250,207 @@ def test_load_destructive_allowlist_supports_empty_registry(tmp_path: Path) -> N
     assert loaded.version == 1
     assert loaded.allowed_rule_ids == frozenset()
 
+
+def test_apply_manual_corrections_blocks_destructive_rule_when_not_allowlisted(
+    tmp_path: Path,
+) -> None:
+    data_dir = tmp_path / "normalized"
+    data_dir.mkdir(parents=True)
+    places_path = data_dir / "places.json"
+    _write_payload(
+        places_path,
+        [
+            {
+                "place_id": "service-centro-sportivo",
+                "access_notes": "Obsolete text",
+            }
+        ],
+    )
+    registry_path = tmp_path / "manual_corrections.yaml"
+    _write_payload(
+        registry_path,
+        {
+            "version": 1,
+            "corrections": [
+                {
+                    "id": "rule-blocked-set-null",
+                    "action": "set_null",
+                    "entity_type": "place",
+                    "entity_id": "service-centro-sportivo",
+                    "field": "access_notes",
+                    "reason": "Remove invalid notes",
+                    "author": "Elrond89",
+                    "reviewer": "Elrond89",
+                    "created_at": "2026-04-07T10:00:00+00:00",
+                    "status": "approved",
+                }
+            ],
+        },
+    )
+    allowlist_path = tmp_path / "destructive_allowlist.yaml"
+    _write_payload(allowlist_path, {"version": 1, "allowed_rule_ids": []})
+
+    with pytest.raises(ManualCorrectionsError) as exc:
+        apply_manual_corrections_to_data_dir(
+            data_dir=data_dir,
+            registry_path=registry_path,
+            allowlist_path=allowlist_path,
+            dataset_names=["places.json"],
+        )
+
+    assert "destructive rules must be allowlisted" in str(exc.value)
+    assert "rule-blocked-set-null" in str(exc.value)
+
+
+def test_apply_manual_corrections_updates_dataset_with_supported_actions(tmp_path: Path) -> None:
+    data_dir = tmp_path / "normalized"
+    data_dir.mkdir(parents=True)
+    buildings_path = data_dir / "buildings.json"
+    _write_payload(
+        buildings_path,
+        [
+            {
+                "building_id": "cubo-20",
+                "description": "Old description",
+                "nickname": "",
+            },
+            {
+                "building_id": "cubo-21",
+                "description": "Building on official UNICAL campus map - Cube 21",
+                "nickname": "Keep me",
+            },
+        ],
+    )
+    registry_path = tmp_path / "manual_corrections.yaml"
+    _write_payload(
+        registry_path,
+        {
+            "version": 1,
+            "corrections": [
+                {
+                    "id": "rule-replace-desc",
+                    "action": "replace",
+                    "entity_type": "building",
+                    "entity_id": "cubo-20",
+                    "field": "description",
+                    "value": "Dipartimento di Lingue e Scienze dell'Educazione",
+                    "reason": "Canonical description",
+                    "author": "Elrond89",
+                    "reviewer": "Elrond89",
+                    "created_at": "2026-04-07T10:00:00+00:00",
+                    "status": "approved",
+                    "priority": 10,
+                },
+                {
+                    "id": "rule-override-empty-nickname",
+                    "action": "override",
+                    "entity_type": "building",
+                    "entity_id": "cubo-20",
+                    "field": "nickname",
+                    "value": "Cubo Venti",
+                    "reason": "Fill empty nickname",
+                    "author": "Elrond89",
+                    "reviewer": "Elrond89",
+                    "created_at": "2026-04-07T10:01:00+00:00",
+                    "status": "approved",
+                },
+                {
+                    "id": "rule-override-non-empty-noop",
+                    "action": "override",
+                    "entity_type": "building",
+                    "entity_id": "cubo-21",
+                    "field": "nickname",
+                    "value": "Should not override",
+                    "reason": "Do not replace existing nickname",
+                    "author": "Elrond89",
+                    "reviewer": "Elrond89",
+                    "created_at": "2026-04-07T10:02:00+00:00",
+                    "status": "approved",
+                },
+                {
+                    "id": "rule-drop-prefix",
+                    "action": "drop_if_prefix",
+                    "entity_type": "building",
+                    "entity_id": "cubo-21",
+                    "field": "description",
+                    "patterns": ["Building on official UNICAL campus map"],
+                    "reason": "Drop map boilerplate",
+                    "author": "Elrond89",
+                    "reviewer": "Elrond89",
+                    "created_at": "2026-04-07T10:03:00+00:00",
+                    "status": "approved",
+                },
+            ],
+        },
+    )
+    allowlist_path = tmp_path / "destructive_allowlist.yaml"
+    _write_payload(
+        allowlist_path,
+        {"version": 1, "allowed_rule_ids": ["rule-drop-prefix"]},
+    )
+
+    summary = apply_manual_corrections_to_data_dir(
+        data_dir=data_dir,
+        registry_path=registry_path,
+        allowlist_path=allowlist_path,
+        dataset_names=["buildings.json"],
+    )
+    changed_rows = _read_payload(buildings_path)
+
+    assert summary.datasets_scanned == ("buildings.json",)
+    assert summary.rules_considered == 4
+    assert summary.rules_applied == 3
+    assert summary.fields_changed == 3
+    assert isinstance(changed_rows, list)
+    assert changed_rows[0]["description"] == "Dipartimento di Lingue e Scienze dell'Educazione"
+    assert changed_rows[0]["nickname"] == "Cubo Venti"
+    assert changed_rows[1]["description"] is None
+    assert changed_rows[1]["nickname"] == "Keep me"
+
+
+def test_apply_manual_corrections_rejects_unsupported_apply_time_action(tmp_path: Path) -> None:
+    data_dir = tmp_path / "normalized"
+    data_dir.mkdir(parents=True)
+    places_path = data_dir / "places.json"
+    _write_payload(
+        places_path,
+        [
+            {
+                "place_id": "service-centro-sportivo",
+                "name": "Centro Sportivo",
+            }
+        ],
+    )
+    registry_path = tmp_path / "manual_corrections.yaml"
+    _write_payload(
+        registry_path,
+        {
+            "version": 1,
+            "corrections": [
+                {
+                    "id": "rule-unsupported-alias",
+                    "action": "alias",
+                    "entity_type": "place",
+                    "entity_id": "service-centro-sportivo",
+                    "field": "name",
+                    "reason": "Not implemented in apply step yet",
+                    "author": "Elrond89",
+                    "reviewer": "Elrond89",
+                    "created_at": "2026-04-07T10:00:00+00:00",
+                    "status": "approved",
+                }
+            ],
+        },
+    )
+    allowlist_path = tmp_path / "destructive_allowlist.yaml"
+    _write_payload(allowlist_path, {"version": 1, "allowed_rule_ids": []})
+
+    with pytest.raises(ManualCorrectionsError) as exc:
+        apply_manual_corrections_to_data_dir(
+            data_dir=data_dir,
+            registry_path=registry_path,
+            allowlist_path=allowlist_path,
+            dataset_names=["places.json"],
+        )
+
+    assert "unsupported apply-time action 'alias'" in str(exc.value)

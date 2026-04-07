@@ -26,6 +26,10 @@ from .transform.normalize import (
     write_json,
 )
 from .transform.linking import link_places_to_buildings
+from .transform.manual_corrections import (
+    ManualCorrectionsError,
+    apply_manual_corrections_to_data_dir,
+)
 from .utils.html_cache import HtmlCache
 from .utils.http import DEFAULT_USER_AGENT, HttpClient
 from .validate.integrity import check_integrity, issues_to_dicts
@@ -37,6 +41,10 @@ from .validate.contract import build_dataset_contract
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DATA_DIR = REPO_ROOT / "data" / "normalized"
 DEFAULT_SCHEMAS_DIR = REPO_ROOT / "data" / "schema"
+DEFAULT_CORRECTIONS_FILE = REPO_ROOT / "data" / "corrections" / "manual_corrections.yaml"
+DEFAULT_DESTRUCTIVE_ALLOWLIST_FILE = (
+    REPO_ROOT / "data" / "corrections" / "destructive_allowlist.yaml"
+)
 
 
 def _load_json_array(path: Path) -> list[dict[str, Any]]:
@@ -140,6 +148,39 @@ def _enforce_failure_budget(source_id: str, summary: dict[str, Any], failure_bud
         )
 
 
+def _apply_manual_corrections_for_paths(paths: list[Path]) -> None:
+    grouped_dataset_names: dict[Path, set[str]] = {}
+    for path in paths:
+        if path.suffix != ".json":
+            continue
+        grouped_dataset_names.setdefault(path.parent, set()).add(path.name)
+
+    for data_dir, dataset_names in grouped_dataset_names.items():
+        if not DEFAULT_CORRECTIONS_FILE.exists() or not DEFAULT_DESTRUCTIVE_ALLOWLIST_FILE.exists():
+            click.echo(
+                "[WARN] correction files missing; skipped manual correction apply "
+                f"for {data_dir}"
+            )
+            continue
+
+        try:
+            summary = apply_manual_corrections_to_data_dir(
+                data_dir=data_dir,
+                registry_path=DEFAULT_CORRECTIONS_FILE,
+                allowlist_path=DEFAULT_DESTRUCTIVE_ALLOWLIST_FILE,
+                dataset_names=dataset_names,
+            )
+        except ManualCorrectionsError as exc:
+            raise SystemExit(f"manual corrections failed: {exc}") from exc
+        if summary.fields_changed > 0:
+            click.echo(
+                "Applied manual corrections: "
+                f"datasets={len(summary.datasets_scanned)} "
+                f"rules={summary.rules_applied} "
+                f"field_changes={summary.fields_changed}"
+            )
+
+
 @click.group()
 def cli() -> None:
     """UNICAL data extraction, normalization, and validation CLI."""
@@ -153,6 +194,11 @@ def crawl() -> None:
 @cli.group()
 def link() -> None:
     """Link normalized datasets through deterministic references."""
+
+
+@cli.group()
+def corrections() -> None:
+    """Apply manual correction registry to canonical datasets."""
 
 
 @crawl.command("teachers")
@@ -269,6 +315,7 @@ def crawl_teachers_command(
         "last_crawled_at": datetime.now(timezone.utc).isoformat(),
     }
     _upsert_source_entry(sources_file=sources_file, source_entry=source_entry)
+    _apply_manual_corrections_for_paths([out_file, places_file, sources_file])
 
     click.echo(f"Crawled {len(raw_teachers)} teachers")
     click.echo(f"Department teacher fallback keys: {len(department_teacher_map)}")
@@ -349,6 +396,7 @@ def crawl_departments_command(
         "last_crawled_at": datetime.now(timezone.utc).isoformat(),
     }
     _upsert_source_entry(sources_file=sources_file, source_entry=source_entry)
+    _apply_manual_corrections_for_paths([out_file, sources_file])
 
     click.echo(f"Crawled {len(raw_departments)} departments")
     click.echo(f"Wrote: {out_file}")
@@ -425,6 +473,7 @@ def crawl_services_command(
         "last_crawled_at": datetime.now(timezone.utc).isoformat(),
     }
     _upsert_source_entry(sources_file=sources_file, source_entry=source_entry)
+    _apply_manual_corrections_for_paths([out_file, sources_file])
 
     click.echo(f"Crawled {len(raw_services)} services")
     click.echo(f"Wrote: {out_file}")
@@ -502,6 +551,7 @@ def crawl_buildings_command(
         "last_crawled_at": datetime.now(timezone.utc).isoformat(),
     }
     _upsert_source_entry(sources_file=sources_file, source_entry=source_entry)
+    _apply_manual_corrections_for_paths([out_file, sources_file])
 
     click.echo(f"Crawled {len(raw_buildings)} buildings")
     click.echo(f"Wrote: {out_file}")
@@ -600,6 +650,7 @@ def crawl_aulas_command(
         "last_crawled_at": datetime.now(timezone.utc).isoformat(),
     }
     _upsert_source_entry(sources_file=sources_file, source_entry=source_entry)
+    _apply_manual_corrections_for_paths([aulas_file, places_file, sources_file])
 
     click.echo(f"Crawled raw aulas: {len(raw_aulas)}")
     click.echo(f"Normalized aulas: {len(aulas)}")
@@ -631,6 +682,7 @@ def link_places_buildings_command(places_file: Path, buildings_file: Path) -> No
     linked_count = sum(1 for place in linked_places if place.get("building_id"))
 
     write_json(places_file, linked_places)
+    _apply_manual_corrections_for_paths([places_file])
     click.echo(f"Linked places with building_id: {linked_count}/{len(linked_places)}")
     click.echo(f"Wrote: {places_file}")
 
@@ -672,9 +724,54 @@ def link_aliases_command(
     buildings = _load_json_array(buildings_file)
     aliases = build_search_aliases(aulas=aulas, places=places, buildings=buildings)
     write_json(out_file, aliases)
+    _apply_manual_corrections_for_paths([out_file])
 
     click.echo(f"Generated aliases: {len(aliases)}")
     click.echo(f"Wrote: {out_file}")
+
+
+@corrections.command("apply")
+@click.option(
+    "--data-dir",
+    default=str(DEFAULT_DATA_DIR),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--registry-file",
+    default=str(DEFAULT_CORRECTIONS_FILE),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--allowlist-file",
+    default=str(DEFAULT_DESTRUCTIVE_ALLOWLIST_FILE),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+def corrections_apply_command(
+    data_dir: Path,
+    registry_file: Path,
+    allowlist_file: Path,
+) -> None:
+    """Apply approved manual corrections to canonical normalized datasets."""
+    try:
+        summary = apply_manual_corrections_to_data_dir(
+            data_dir=data_dir,
+            registry_path=registry_file,
+            allowlist_path=allowlist_file,
+            dataset_names=None,
+        )
+    except ManualCorrectionsError as exc:
+        raise SystemExit(f"manual corrections failed: {exc}") from exc
+
+    click.echo(
+        "Manual corrections complete: "
+        f"datasets={len(summary.datasets_scanned)} "
+        f"rules_considered={summary.rules_considered} "
+        f"rules_applied={summary.rules_applied} "
+        f"field_changes={summary.fields_changed}"
+    )
 
 
 @cli.command("validate")
