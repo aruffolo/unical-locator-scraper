@@ -113,6 +113,7 @@ def test_crawl_full_command_allows_canonical_dir_with_explicit_flag(monkeypatch)
     monkeypatch.setattr("unical_scraper.cli.validate_command", record("validate"))
     monkeypatch.setattr("unical_scraper.cli.report_command", record("report"))
     monkeypatch.setattr("unical_scraper.cli.contract_command", record("contract"))
+    monkeypatch.setattr("unical_scraper.cli._preserve_dataset_rows", lambda *args, **kwargs: None)
 
     runner = CliRunner()
     result = runner.invoke(cli, ["crawl", "full", "--allow-canonical-write"])
