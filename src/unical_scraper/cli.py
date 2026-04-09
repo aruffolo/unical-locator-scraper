@@ -596,7 +596,17 @@ def crawl_buildings_command(
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
 @click.option("--max-retries", default=2, show_default=True, type=int)
 @click.option("--retry-backoff", default=0.5, show_default=True, type=float)
+@click.option("--timeout", "timeout_seconds", default=30.0, show_default=True, type=float)
 @click.option("--failure-budget", default=0, show_default=True, type=int)
+@click.option("--planner-discovery/--no-planner-discovery", default=True, show_default=True)
+@click.option("--planner-public-links/--no-planner-public-links", default=True, show_default=True)
+@click.option("--planner-impegni/--no-planner-impegni", default=True, show_default=True)
+@click.option(
+    "--planner-max-link-ids",
+    default=None,
+    type=int,
+    help="Optional deterministic cap for planner public calendar link IDs.",
+)
 def crawl_aulas_command(
     base_url: str,
     aulas_file: Path,
@@ -607,13 +617,19 @@ def crawl_aulas_command(
     user_agent: str,
     max_retries: int,
     retry_backoff: float,
+    timeout_seconds: float,
     failure_budget: int,
+    planner_discovery: bool,
+    planner_public_links: bool,
+    planner_impegni: bool,
+    planner_max_link_ids: int | None,
 ) -> None:
     """Crawl aulas and write both `aulas.json` and AULA records in `places.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
 
     with HttpClient(
         user_agent=user_agent,
+        timeout_seconds=timeout_seconds,
         rate_limit_seconds=rate_limit,
         max_retries=max_retries,
         retry_backoff_seconds=retry_backoff,
@@ -622,6 +638,10 @@ def crawl_aulas_command(
             base_url=base_url,
             client=client,
             cache=cache,
+            planner_enable_discovery=planner_discovery,
+            planner_enable_public_links=planner_public_links,
+            planner_enable_impegni=planner_impegni,
+            planner_max_link_ids=planner_max_link_ids,
             progress_reporter=lambda message: click.echo(f"[aulas] {message}"),
         )
         http_summary = _emit_http_diagnostics(client)

@@ -247,6 +247,136 @@ def test_crawl_aulas_merges_department_and_planner_sources() -> None:
     assert any(message.startswith("crawl: deduped to ") for message in progress_messages)
 
 
+def test_crawl_aulas_can_disable_public_links_and_impegni() -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    department_url = "https://department.example/strutture/"
+    planner_base_url = "https://planner.example"
+
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        department_url: """
+            <html><body>
+              <table>
+                <tr><th>Aula</th><th>Cubo</th><th>Capienza</th></tr>
+                <tr><td>P2</td><td>Cubo 30C Piano II</td><td>120</td></tr>
+              </table>
+            </body></html>
+        """,
+        f"{planner_base_url}/api/Edifici/getPerAutoCompletePublic?lookupFields=codice&limit=100": """
+            [{"id": "ed2", "codice": "ED_002", "descrizione": "Cubo 30C"}]
+        """,
+        f"{planner_base_url}/api/Aule/getPerAutoCompletePublic?lookupFields=codice&limit=100": """
+            [{"id": "a3", "codice": "AU_777", "descrizione": "P5"}]
+        """,
+        f"{planner_base_url}/api/Aule/getByIdPublic?id=a3": """
+            {"id": "a3", "codice": "AU_777", "descrizione": "P5", "edificioId": "ed2"}
+        """,
+        f"{planner_base_url}/api/Impegni/getImpegniPublic?dataInizio=2020-01-01&dataFine=2030-12-31&limit=20000": """
+            [{"id": "imp-1", "aule": [{"id": "room-imp", "codice": "AU_1234", "descrizione": "MT 10", "edificioId": "ed2"}]}]
+        """,
+    }
+    post_pages = {
+        (
+            f"{planner_base_url}/api/Aule/getAulePerCalendarioPubblico",
+            json.dumps(
+                {
+                    "linkCalendarioId": "62306d204f9d7f00e457a21c",
+                    "clienteId": "5de6319d4414ab02f80b613a",
+                },
+                sort_keys=True,
+            ),
+        ): """
+            [{"id": "room-link", "codice": "AU_5555", "descrizione": "Aula T1", "edificioId": "ed2"}]
+        """,
+    }
+    progress_messages: list[str] = []
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages, post_pages=post_pages),
+        department_urls=(department_url,),
+        planner_base_url=planner_base_url,
+        planner_enable_public_links=False,
+        planner_enable_impegni=False,
+        progress_reporter=progress_messages.append,
+    )
+
+    names = {item.name for item in aulas}
+    assert "Aula P2" in names
+    assert "Aula P5" in names
+    assert "Aula T1" not in names
+    assert "Aula MT10" not in names
+    assert "planner public links: disabled" in progress_messages
+    assert "planner impegni: disabled" in progress_messages
+
+
+def test_crawl_aulas_caps_public_link_ids_deterministically(monkeypatch) -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    planner_base_url = "https://planner.example"
+    discovery_url = "https://ctc.unical.it/didattica/frequentare-i-corsi/"
+    endpoint = f"{planner_base_url}/api/Aule/getAulePerCalendarioPubblico"
+
+    monkeypatch.setattr(
+        "unical_scraper.extract.aulas.CURATED_PUBLIC_LINK_CALENDAR_IDS",
+        (),
+    )
+
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        discovery_url: """
+            <html><body>
+              <a href="https://planner.example/calendarioPubblico/linkCalendarioId=bbbbbbbbbbbbbbbbbbbbbbbb">B</a>
+              <a href="https://planner.example/calendarioPubblico/linkCalendarioId=aaaaaaaaaaaaaaaaaaaaaaaa">A</a>
+            </body></html>
+        """,
+        f"{planner_base_url}/api/Edifici/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        f"{planner_base_url}/api/Aule/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        f"{planner_base_url}/api/Impegni/getImpegniPublic?dataInizio=2020-01-01&dataFine=2030-12-31&limit=20000": "[]",
+    }
+    post_pages = {
+        (
+            endpoint,
+            json.dumps(
+                {
+                    "linkCalendarioId": "aaaaaaaaaaaaaaaaaaaaaaaa",
+                    "clienteId": "client-1",
+                },
+                sort_keys=True,
+            ),
+        ): """
+            [{"id": "room-link-a", "codice": "AU_1000", "descrizione": "Aula A1"}]
+        """,
+        (
+            endpoint,
+            json.dumps(
+                {
+                    "linkCalendarioId": "bbbbbbbbbbbbbbbbbbbbbbbb",
+                    "clienteId": "client-1",
+                },
+                sort_keys=True,
+            ),
+        ): """
+            [{"id": "room-link-b", "codice": "AU_2000", "descrizione": "Aula B1"}]
+        """,
+    }
+    progress_messages: list[str] = []
+
+    aulas = crawl_aulas(
+        base_url=base_url,
+        client=FakeHttpClient(pages, post_pages=post_pages),
+        planner_base_url=planner_base_url,
+        planner_client_id="client-1",
+        planner_calendar_discovery_urls=(discovery_url,),
+        planner_enable_impegni=False,
+        planner_max_link_ids=1,
+        progress_reporter=progress_messages.append,
+    )
+
+    names = {item.name for item in aulas}
+    assert names == {"Aula A1"}
+    assert "planner public links: capped to 1 calendar ids" in progress_messages
+
+
 def test_crawl_aulas_parses_department_strutture_capacity_and_floor_variants() -> None:
     base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
     department_url = "https://dices.unical.it/dipartimento/organizzazione/strutture/"

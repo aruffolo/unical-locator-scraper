@@ -150,6 +150,10 @@ def crawl_aulas(
     planner_impegni_start: str | None = PLANNER_IMPEGNI_START,
     planner_impegni_end: str | None = PLANNER_IMPEGNI_END,
     planner_impegni_limit: int = PLANNER_IMPEGNI_LIMIT,
+    planner_enable_discovery: bool = True,
+    planner_enable_public_links: bool = True,
+    planner_enable_impegni: bool = True,
+    planner_max_link_ids: int | None = None,
     progress_reporter: ProgressReporter | None = None,
 ) -> list[RawAula]:
     """Crawl aulas from map, department pages and planner public endpoints."""
@@ -183,11 +187,15 @@ def crawl_aulas(
                 progress_reporter=progress_reporter,
                 planner_client_id=planner_client_id,
                 calendar_discovery_urls=tuple(
-                    planner_calendar_discovery_urls or DEFAULT_CALENDAR_DISCOVERY_URLS
+                planner_calendar_discovery_urls or DEFAULT_CALENDAR_DISCOVERY_URLS
                 ),
                 impegni_start=planner_impegni_start,
                 impegni_end=planner_impegni_end,
                 impegni_limit=planner_impegni_limit,
+                planner_enable_discovery=planner_enable_discovery,
+                planner_enable_public_links=planner_enable_public_links,
+                planner_enable_impegni=planner_enable_impegni,
+                planner_max_link_ids=planner_max_link_ids,
             )
         )
 
@@ -273,6 +281,10 @@ def _crawl_planner_aulas(
     impegni_start: str | None,
     impegni_end: str | None,
     impegni_limit: int,
+    planner_enable_discovery: bool,
+    planner_enable_public_links: bool,
+    planner_enable_impegni: bool,
+    planner_max_link_ids: int | None,
 ) -> list[RawAula]:
     base = planner_base_url.rstrip("/")
     source_url = f"{base}/calendar/activities/"
@@ -363,9 +375,9 @@ def _crawl_planner_aulas(
             interval=PLANNER_DETAILS_PROGRESS_INTERVAL,
         )
 
-    if planner_client_id:
+    if planner_enable_public_links and planner_client_id:
         link_ids = set(CURATED_PUBLIC_LINK_CALENDAR_IDS)
-        if calendar_discovery_urls:
+        if planner_enable_discovery and calendar_discovery_urls:
             link_ids.update(
                 _discover_calendar_link_ids(
                     urls=calendar_discovery_urls,
@@ -374,6 +386,16 @@ def _crawl_planner_aulas(
                     progress_reporter=progress_reporter,
                 )
             )
+        elif not planner_enable_discovery:
+            _report_progress(progress_reporter, "planner discovery: disabled")
+        if planner_max_link_ids is not None and planner_max_link_ids >= 0:
+            capped_link_ids = set(sorted(link_ids)[:planner_max_link_ids])
+            if len(capped_link_ids) != len(link_ids):
+                _report_progress(
+                    progress_reporter,
+                    f"planner public links: capped to {len(capped_link_ids)} calendar ids",
+                )
+            link_ids = capped_link_ids
         if link_ids:
             aulas.extend(
                 _crawl_planner_aulas_from_public_links(
@@ -387,8 +409,12 @@ def _crawl_planner_aulas(
                     progress_reporter=progress_reporter,
                 )
             )
+        else:
+            _report_progress(progress_reporter, "planner public links: no calendar ids available")
+    elif not planner_enable_public_links:
+        _report_progress(progress_reporter, "planner public links: disabled")
 
-    if impegni_start and impegni_end and impegni_limit > 0:
+    if planner_enable_impegni and impegni_start and impegni_end and impegni_limit > 0:
         aulas.extend(
             _crawl_planner_aulas_from_impegni(
                 planner_base_url=base,
@@ -402,6 +428,8 @@ def _crawl_planner_aulas(
                 progress_reporter=progress_reporter,
             )
         )
+    elif not planner_enable_impegni:
+        _report_progress(progress_reporter, "planner impegni: disabled")
 
     _report_progress(progress_reporter, f"planner: extracted {len(aulas)} raw aulas")
     return aulas

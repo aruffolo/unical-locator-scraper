@@ -13,14 +13,14 @@ A phase can be marked complete only after:
 
 - [x] Phase 1. Services hard-failure fix
 - [x] Phase 2. Aulas observability
-- [ ] Phase 3. Aulas control knobs
+- [x] Phase 3. Aulas control knobs
 - [ ] Phase 4. Planner request caching
 - [ ] Phase 5. Full replay wrapper
 
 ## Current Status
 
-- Active phase: Phase 3. Aulas control knobs
-- Next phase after verification: Phase 4. Planner request caching
+- Active phase: Phase 4. Planner request caching
+- Next phase after verification: Phase 5. Full replay wrapper
 
 ## Baseline Findings
 
@@ -51,6 +51,16 @@ A phase can be marked complete only after:
       - `planner details: processed 25/100 ... 100/100`
       - `planner discovery: scanned 20/84 ... 84/84`
       - `planner public links: querying 151 calendar ids`
+- Phase 3:
+  - `.venv/bin/pytest -q tests/test_extract_aulas.py tests/test_cli_aulas.py` -> `15 passed`
+  - constrained `/tmp` smoke run:
+    - `.venv/bin/python -m unical_scraper crawl aulas --base-url https://www.unical.it/campus/visita-il-campus/mappa/ --aulas-file /tmp/unical-aulas-constrained-*/aulas.json --places-file /tmp/unical-aulas-constrained-*/places.json --buildings-file /tmp/unical-aulas-constrained-*/buildings.json --cache-dir .cache --timeout 10 --no-planner-discovery --no-planner-public-links --no-planner-impegni`
+    - result:
+      - `planner public links: disabled`
+      - `planner impegni: disabled`
+      - `HTTP diagnostics` reported `0` requests and `0` final failures on cached replay
+      - `Crawled raw aulas: 415`
+      - `Normalized aulas: 400`
 
 ## Blockers
 
