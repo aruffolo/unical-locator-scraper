@@ -336,6 +336,8 @@ def _canonical_service_url(url: str) -> str | None:
 
     lowered_segments = [segment.casefold() for segment in path_segments]
     lowered_path = "/".join(lowered_segments)
+    if lowered_segments[:2] == ["media", "medias"]:
+        return None
 
     blocked_tokens = [
         "contents",

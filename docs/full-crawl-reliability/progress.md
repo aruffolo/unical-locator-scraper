@@ -11,7 +11,7 @@ A phase can be marked complete only after:
 
 ## Phase Checklist
 
-- [ ] Phase 1. Services hard-failure fix
+- [x] Phase 1. Services hard-failure fix
 - [ ] Phase 2. Aulas observability
 - [ ] Phase 3. Aulas control knobs
 - [ ] Phase 4. Planner request caching
@@ -19,8 +19,8 @@ A phase can be marked complete only after:
 
 ## Current Status
 
-- Active phase: Phase 1. Services hard-failure fix
-- Next phase after verification: Phase 2. Aulas observability
+- Active phase: Phase 2. Aulas observability
+- Next phase after verification: Phase 3. Aulas control knobs
 
 ## Baseline Findings
 
@@ -34,7 +34,12 @@ A phase can be marked complete only after:
 
 ## Verification Log
 
-- pending
+- Phase 1:
+  - `.venv/bin/pytest -q tests/test_extract_services.py` -> `8 passed`
+  - strict smoke run:
+    - `.venv/bin/python -m unical_scraper crawl services --base-url https://www.unical.it/campus/servizi/ --out-file /tmp/unical-services-strict-*/places.json --cache-dir .cache`
+    - result: `HTTP diagnostics` reported `0` requests and `0` final failures on cached replay
+    - result: `Crawled 30 services`
 
 ## Blockers
 
