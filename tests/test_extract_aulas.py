@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 
 from unical_scraper.extract.aulas import crawl_aulas
+from unical_scraper.utils.html_cache import HtmlCache
 
 
 class FakeHttpClient:
@@ -20,6 +21,20 @@ class FakeHttpClient:
     def post_json(self, url: str, payload: dict[str, object]) -> str:
         key = (url, json.dumps(payload, sort_keys=True))
         return self._post_pages[key]
+
+
+class CountingFakeHttpClient(FakeHttpClient):
+    def __init__(
+        self,
+        pages: dict[str, str],
+        post_pages: dict[tuple[str, str], str] | None = None,
+    ) -> None:
+        super().__init__(pages, post_pages=post_pages)
+        self.post_calls = 0
+
+    def post_json(self, url: str, payload: dict[str, object]) -> str:
+        self.post_calls += 1
+        return super().post_json(url, payload)
 
 
 def test_crawl_aulas_extracts_direct_markers_and_floor_mentions() -> None:
@@ -375,6 +390,73 @@ def test_crawl_aulas_caps_public_link_ids_deterministically(monkeypatch) -> None
     names = {item.name for item in aulas}
     assert names == {"Aula A1"}
     assert "planner public links: capped to 1 calendar ids" in progress_messages
+
+
+def test_crawl_aulas_reuses_cached_planner_public_link_posts(tmp_path, monkeypatch) -> None:
+    base_url = "https://www.unical.it/campus/visita-il-campus/mappa/"
+    planner_base_url = "https://planner.example"
+    discovery_url = "https://ctc.unical.it/didattica/frequentare-i-corsi/"
+    endpoint = f"{planner_base_url}/api/Aule/getAulePerCalendarioPubblico"
+
+    monkeypatch.setattr(
+        "unical_scraper.extract.aulas.CURATED_PUBLIC_LINK_CALENDAR_IDS",
+        (),
+    )
+
+    pages = {
+        base_url: "<html><body>No map iframe</body></html>",
+        discovery_url: """
+            <html><body>
+              <a href="https://planner.example/calendarioPubblico/linkCalendarioId=aaaaaaaaaaaaaaaaaaaaaaaa">A</a>
+            </body></html>
+        """,
+        f"{planner_base_url}/api/Edifici/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+        f"{planner_base_url}/api/Aule/getPerAutoCompletePublic?lookupFields=codice&limit=100": "[]",
+    }
+    post_pages = {
+        (
+            endpoint,
+            json.dumps(
+                {
+                    "linkCalendarioId": "aaaaaaaaaaaaaaaaaaaaaaaa",
+                    "clienteId": "client-1",
+                },
+                sort_keys=True,
+            ),
+        ): """
+            [{"id": "room-link-a", "codice": "AU_1000", "descrizione": "Aula A1"}]
+        """,
+    }
+    cache = HtmlCache(tmp_path / "cache")
+
+    first_client = CountingFakeHttpClient(pages, post_pages=post_pages)
+    second_client = CountingFakeHttpClient(pages, post_pages=post_pages)
+
+    first_aulas = crawl_aulas(
+        base_url=base_url,
+        client=first_client,
+        cache=cache,
+        planner_base_url=planner_base_url,
+        planner_client_id="client-1",
+        planner_calendar_discovery_urls=(discovery_url,),
+        planner_enable_impegni=False,
+        planner_max_link_ids=1,
+    )
+    second_aulas = crawl_aulas(
+        base_url=base_url,
+        client=second_client,
+        cache=cache,
+        planner_base_url=planner_base_url,
+        planner_client_id="client-1",
+        planner_calendar_discovery_urls=(discovery_url,),
+        planner_enable_impegni=False,
+        planner_max_link_ids=1,
+    )
+
+    assert {item.name for item in first_aulas} == {"Aula A1"}
+    assert {item.name for item in second_aulas} == {"Aula A1"}
+    assert first_client.post_calls == 1
+    assert second_client.post_calls == 0
 
 
 def test_crawl_aulas_parses_department_strutture_capacity_and_floor_variants() -> None:

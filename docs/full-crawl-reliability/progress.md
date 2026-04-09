@@ -14,13 +14,13 @@ A phase can be marked complete only after:
 - [x] Phase 1. Services hard-failure fix
 - [x] Phase 2. Aulas observability
 - [x] Phase 3. Aulas control knobs
-- [ ] Phase 4. Planner request caching
+- [x] Phase 4. Planner request caching
 - [ ] Phase 5. Full replay wrapper
 
 ## Current Status
 
-- Active phase: Phase 4. Planner request caching
-- Next phase after verification: Phase 5. Full replay wrapper
+- Active phase: Phase 5. Full replay wrapper
+- Next phase after verification: final full verification
 
 ## Baseline Findings
 
@@ -61,6 +61,15 @@ A phase can be marked complete only after:
       - `HTTP diagnostics` reported `0` requests and `0` final failures on cached replay
       - `Crawled raw aulas: 415`
       - `Normalized aulas: 400`
+- Phase 4:
+  - `.venv/bin/pytest -q tests/test_html_cache.py tests/test_extract_aulas.py` -> `17 passed`
+  - two-pass `/tmp` replay against a fresh cache dir:
+    - `.venv/bin/python -m unical_scraper crawl aulas --base-url https://www.unical.it/campus/visita-il-campus/mappa/ --aulas-file /tmp/unical-aulas-cache-run1-*/aulas.json --places-file /tmp/unical-aulas-cache-run1-*/places.json --buildings-file /tmp/unical-aulas-cache-run1-*/buildings.json --cache-dir /tmp/unical-aulas-cache-* --timeout 10 --no-planner-discovery --planner-max-link-ids 1 --no-planner-impegni`
+    - same command repeated into `/tmp/unical-aulas-cache-run2-*` with the same `--cache-dir`
+    - result:
+      - pass 1: `HTTP diagnostics` reported `121` requests, `0` final failures
+      - pass 2: `HTTP diagnostics` reported `0` requests, `0` final failures
+      - both passes produced `Crawled raw aulas: 432`, `Normalized aulas: 413`
 
 ## Blockers
 

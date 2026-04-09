@@ -494,7 +494,7 @@ def _crawl_planner_aulas_from_public_links(
             "linkCalendarioId": link_id,
             "clienteId": planner_client_id,
         }
-        response_text = _try_post_json(url=endpoint, payload=payload, client=client)
+        response_text = _try_post_json(url=endpoint, payload=payload, client=client, cache=cache)
         if not response_text:
             _report_count_progress(
                 progress_reporter,
@@ -736,9 +736,30 @@ def _try_fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> st
         return None
 
 
-def _try_post_json(url: str, payload: dict[str, object], client: HttpClient) -> str | None:
-    try:
+def _post_json(
+    url: str,
+    payload: dict[str, object],
+    client: HttpClient,
+    cache: HtmlCache | None,
+) -> str:
+    if cache is None:
         return client.post_json(url=url, payload=payload)
+    return cache.get_or_fetch_request(
+        method="POST",
+        url=url,
+        payload=payload,
+        fetcher=lambda: client.post_json(url=url, payload=payload),
+    )
+
+
+def _try_post_json(
+    url: str,
+    payload: dict[str, object],
+    client: HttpClient,
+    cache: HtmlCache | None,
+) -> str | None:
+    try:
+        return _post_json(url=url, payload=payload, client=client, cache=cache)
     except Exception:
         return None
 
