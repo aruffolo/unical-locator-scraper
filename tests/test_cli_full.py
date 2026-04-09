@@ -73,6 +73,54 @@ def test_crawl_full_command_uses_fast_profile(monkeypatch, tmp_path: Path) -> No
     assert (data_dir / "people.json").exists()
 
 
+def test_crawl_full_command_refuses_canonical_dir_without_explicit_flag(monkeypatch) -> None:
+    def fail(**kwargs: object) -> None:
+        raise AssertionError("crawl steps should not run")
+
+    monkeypatch.setattr("unical_scraper.cli.crawl_departments_command", fail)
+    monkeypatch.setattr("unical_scraper.cli.crawl_buildings_command", fail)
+    monkeypatch.setattr("unical_scraper.cli.crawl_services_command", fail)
+    monkeypatch.setattr("unical_scraper.cli.crawl_teachers_command", fail)
+    monkeypatch.setattr("unical_scraper.cli.crawl_aulas_command", fail)
+    monkeypatch.setattr("unical_scraper.cli.link_places_buildings_command", fail)
+    monkeypatch.setattr("unical_scraper.cli.link_aliases_command", fail)
+    monkeypatch.setattr("unical_scraper.cli.validate_command", fail)
+    monkeypatch.setattr("unical_scraper.cli.report_command", fail)
+    monkeypatch.setattr("unical_scraper.cli.contract_command", fail)
+
+    runner = CliRunner()
+    result = runner.invoke(cli, ["crawl", "full"])
+
+    assert result.exit_code != 0
+    assert "refuses canonical writes by default" in result.output
+
+
+def test_crawl_full_command_allows_canonical_dir_with_explicit_flag(monkeypatch) -> None:
+    calls: list[str] = []
+
+    def record(name: str):
+        def _recorder(**kwargs: object) -> None:
+            calls.append(name)
+        return _recorder
+
+    monkeypatch.setattr("unical_scraper.cli.crawl_departments_command", record("departments"))
+    monkeypatch.setattr("unical_scraper.cli.crawl_buildings_command", record("buildings"))
+    monkeypatch.setattr("unical_scraper.cli.crawl_services_command", record("services"))
+    monkeypatch.setattr("unical_scraper.cli.crawl_teachers_command", record("teachers"))
+    monkeypatch.setattr("unical_scraper.cli.crawl_aulas_command", record("aulas"))
+    monkeypatch.setattr("unical_scraper.cli.link_places_buildings_command", record("link_places"))
+    monkeypatch.setattr("unical_scraper.cli.link_aliases_command", record("link_aliases"))
+    monkeypatch.setattr("unical_scraper.cli.validate_command", record("validate"))
+    monkeypatch.setattr("unical_scraper.cli.report_command", record("report"))
+    monkeypatch.setattr("unical_scraper.cli.contract_command", record("contract"))
+
+    runner = CliRunner()
+    result = runner.invoke(cli, ["crawl", "full", "--allow-canonical-write"])
+
+    assert result.exit_code == 0
+    assert calls[0] == "departments"
+
+
 def test_crawl_full_command_uses_full_profile(monkeypatch, tmp_path: Path) -> None:
     captured_aulas_kwargs: dict[str, object] = {}
     captured_teachers_kwargs: dict[str, object] = {}

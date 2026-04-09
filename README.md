@@ -49,6 +49,11 @@ Replay wrapper for `/tmp` health checks:
 
 `full` keeps the broader network path enabled.
 
+Safety guard:
+- `crawl full` refuses writes into `data/normalized/` by default
+- use `/tmp/...` for hot tests
+- add `--allow-canonical-write` only for deliberate canonical refreshes
+
 ## Release Guardrails
 
 - Schema + integrity validation: `unical_scraper validate`

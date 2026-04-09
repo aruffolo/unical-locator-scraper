@@ -24,6 +24,7 @@ A phase can be marked complete only after:
 - Operational path:
   - canonical `crawl full --profile fast` now refreshes `people.json` too
   - `full` still keeps the broader teacher enrichment path
+  - `crawl full` now refuses canonical writes by default unless explicitly unlocked
 
 ## Baseline Findings
 
@@ -99,6 +100,9 @@ A phase can be marked complete only after:
     - failures came from locked canonical-data regressions, not from the new teacher code:
       - `cappella-universitaria` missing from refreshed `buildings.json`
       - refreshed `aliases.json` dropped to `1172` rows vs locked minimum `1374`
+- Hot-test safety follow-up:
+  - restored `data/normalized/` back to `HEAD`
+  - added `crawl full --allow-canonical-write` gate for deliberate canonical refreshes only
 
 ## Blockers
 

@@ -61,6 +61,10 @@ STATIC_DATASET_PLACEHOLDERS = {
 }
 
 
+def _is_canonical_data_dir(path: Path) -> bool:
+    return path.resolve() == DEFAULT_DATA_DIR.resolve()
+
+
 @dataclass(frozen=True)
 class FullCrawlProfile:
     aulas_failure_budget: int
@@ -828,6 +832,11 @@ def crawl_aulas_command(
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
 @click.option("--max-retries", default=2, show_default=True, type=int)
 @click.option("--retry-backoff", default=0.5, show_default=True, type=float)
+@click.option(
+    "--allow-canonical-write",
+    is_flag=True,
+    help="Allow writing full-crawl output into the canonical data/normalized dir.",
+)
 def crawl_full_command(
     data_dir: Path,
     schemas_dir: Path,
@@ -837,8 +846,14 @@ def crawl_full_command(
     user_agent: str,
     max_retries: int,
     retry_backoff: float,
+    allow_canonical_write: bool,
 ) -> None:
     """Run the full scraper replay sequence into one target data dir."""
+    if _is_canonical_data_dir(data_dir) and not allow_canonical_write:
+        raise SystemExit(
+            "crawl full refuses canonical writes by default; "
+            "use --data-dir /tmp/... for hot tests or add --allow-canonical-write"
+        )
     selected_profile = FULL_CRAWL_PROFILES[profile.lower()]
     paths = _dataset_paths(data_dir)
     _ensure_static_dataset_placeholders(data_dir)
