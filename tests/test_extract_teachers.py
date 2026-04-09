@@ -8,8 +8,10 @@ from unical_scraper.extract.teachers import crawl_teachers
 class FakeHttpClient:
     def __init__(self, pages: dict[str, str]) -> None:
         self._pages = pages
+        self.requested_urls: list[str] = []
 
     def get_text(self, url: str) -> str:
+        self.requested_urls.append(url)
         return self._pages[url]
 
 
@@ -259,3 +261,48 @@ def test_crawl_teachers_parses_string_office_reference_from_payload() -> None:
     assert len(teachers) == 1
     assert teachers[0].office_reference == "Cubo 3C Piano 2 Stanza 8"
     assert teachers[0].notes == "Office references: Cubo 3C Piano 2 Stanza 8"
+
+
+def test_crawl_teachers_skips_detail_enrichment_when_disabled() -> None:
+    base_url = "https://www.unical.it/storage/teachers/"
+    api_url_with_page_size = (
+        "https://storage.portale.unical.it/api/ricerca/teachers/?format=json&page_size=200"
+    )
+    pages = {
+        base_url: """
+            <html><body>
+              <a href="https://storage.portale.unical.it/api/ricerca/teachers/?format=json">Json</a>
+            </body></html>
+        """,
+        api_url_with_page_size: """
+            {
+              "results": [
+                {
+                  "TeacherID": "teacher-lite",
+                  "TeacherName": "Giulia Neri",
+                  "TeacherDepartmentName": "DIMES",
+                  "TeacherDepartmentCod": "123456",
+                  "Email": ["giulia.neri@unical.it"]
+                }
+              ],
+              "next": null
+            }
+        """,
+    }
+    client = FakeHttpClient(pages)
+    progress_messages: list[str] = []
+
+    teachers = crawl_teachers(
+        base_url=base_url,
+        client=client,
+        detail_enrichment=False,
+        progress_reporter=progress_messages.append,
+    )
+
+    assert len(teachers) == 1
+    assert teachers[0].full_name == "Giulia Neri"
+    assert teachers[0].department_name == "DIMES"
+    assert teachers[0].department_code == "123456"
+    assert teachers[0].office_reference is None
+    assert client.requested_urls == [base_url, api_url_with_page_size]
+    assert "api details: disabled" in progress_messages

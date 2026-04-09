@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 import json
 import re
 from dataclasses import dataclass
@@ -20,6 +21,9 @@ TEACHERS_API_PATTERN = re.compile(
     flags=re.IGNORECASE,
 )
 _ITEM_PAYLOAD_MARKER_RE = re.compile(r"[\"']?item[\"']?\s*:", flags=re.IGNORECASE)
+TEACHER_API_PAGE_PROGRESS_INTERVAL = 5
+TEACHER_DETAIL_PROGRESS_INTERVAL = 100
+ProgressReporter = Callable[[str], None]
 
 
 @dataclass(frozen=True)
@@ -42,6 +46,8 @@ def crawl_teachers(
     base_url: str,
     client: HttpClient,
     cache: HtmlCache | None = None,
+    detail_enrichment: bool = True,
+    progress_reporter: ProgressReporter | None = None,
 ) -> list[RawTeacher]:
     """Crawl teachers from a UNICAL public page.
 
@@ -49,20 +55,29 @@ def crawl_teachers(
     - links are deduplicated and sorted
     - output is sorted by normalized name
     """
+    _report_progress(progress_reporter, "crawl: start")
     index_html = _fetch_html(base_url, client, cache)
 
     api_url = _extract_teachers_api_url(index_html=index_html, base_url=base_url)
     if api_url:
+        _report_progress(progress_reporter, f"api: discovered endpoint {api_url}")
         teachers_from_api = _crawl_teachers_from_api(
             api_url=api_url,
             base_url=base_url,
             client=client,
             cache=cache,
+            detail_enrichment=detail_enrichment,
+            progress_reporter=progress_reporter,
         )
         if teachers_from_api:
+            _report_progress(
+                progress_reporter,
+                f"crawl: completed from api with {len(teachers_from_api)} teachers",
+            )
             return teachers_from_api
 
     detail_urls = sorted(_parse_teacher_links(index_html, base_url))
+    _report_progress(progress_reporter, f"html fallback: discovered {len(detail_urls)} profile urls")
 
     teachers: list[RawTeacher] = []
     if not detail_urls:
@@ -70,20 +85,31 @@ def crawl_teachers(
         maybe_teacher = _parse_teacher_detail(index_html, base_url)
         if maybe_teacher:
             teachers.append(maybe_teacher)
+        _report_progress(progress_reporter, f"html fallback: extracted {len(teachers)} teachers")
         return teachers
 
-    for url in detail_urls:
+    total_urls = len(detail_urls)
+    for index, url in enumerate(detail_urls, start=1):
         html = _fetch_html(url, client, cache)
         teacher = _parse_teacher_detail(html, url)
         if teacher:
             teachers.append(teacher)
+        _report_count_progress(
+            progress_reporter,
+            label="html fallback: processed profiles",
+            current=index,
+            total=total_urls,
+            interval=TEACHER_API_PAGE_PROGRESS_INTERVAL,
+        )
 
     unique_by_key: dict[tuple[str, str | None], RawTeacher] = {}
     for teacher in teachers:
         key = (teacher.full_name.casefold(), teacher.email)
         unique_by_key.setdefault(key, teacher)
 
-    return sorted(unique_by_key.values(), key=lambda t: t.full_name.casefold())
+    deduped_teachers = sorted(unique_by_key.values(), key=lambda t: t.full_name.casefold())
+    _report_progress(progress_reporter, f"html fallback: deduped to {len(deduped_teachers)} teachers")
+    return deduped_teachers
 
 
 def _fetch_html(url: str, client: HttpClient, cache: HtmlCache | None) -> str:
@@ -214,18 +240,27 @@ def _crawl_teachers_from_api(
     base_url: str,
     client: HttpClient,
     cache: HtmlCache | None,
+    detail_enrichment: bool,
+    progress_reporter: ProgressReporter | None,
 ) -> list[RawTeacher]:
     teachers: list[RawTeacher] = []
     api_url = _normalize_teachers_api_url(api_url)
     next_url: str | None = _with_page_size(api_url, page_size=200)
     visited: set[str] = set()
+    page_count = 0
+    detail_attempts = 0
 
     while next_url and next_url not in visited:
         visited.add(next_url)
+        page_count += 1
         payload = json.loads(_fetch_html(next_url, client, cache))
         results = payload.get("results", []) if isinstance(payload, dict) else []
         if not isinstance(results, list):
             results = []
+        _report_progress(
+            progress_reporter,
+            f"api pages: loaded page {page_count} with {len(results)} teachers",
+        )
 
         for item in results:
             if not isinstance(item, dict):
@@ -245,12 +280,21 @@ def _crawl_teachers_from_api(
                 teacher_id=teacher_id,
             )
             source_url = website_url or api_url
-            detail = _fetch_teacher_detail_payload(
-                api_url=api_url,
-                teacher_id=teacher_id,
-                client=client,
-                cache=cache,
-            )
+            detail = None
+            if detail_enrichment:
+                detail_attempts += 1
+                detail = _fetch_teacher_detail_payload(
+                    api_url=api_url,
+                    teacher_id=teacher_id,
+                    client=client,
+                    cache=cache,
+                )
+                _report_interval_progress(
+                    progress_reporter,
+                    label="api details: fetched",
+                    current=detail_attempts,
+                    interval=TEACHER_DETAIL_PROGRESS_INTERVAL,
+                )
             detail_department_name = (
                 _extract_first_string(detail.get("TeacherDepartmentName")) if detail else None
             )
@@ -292,12 +336,22 @@ def _crawl_teachers_from_api(
         else:
             next_url = None
 
+    if not detail_enrichment:
+        _report_progress(progress_reporter, "api details: disabled")
+    elif detail_attempts > 0:
+        _report_progress(progress_reporter, f"api details: fetched {detail_attempts}")
+
     unique_by_key: dict[tuple[str, str | None], RawTeacher] = {}
     for teacher in teachers:
         key = (teacher.full_name.casefold(), teacher.email)
         unique_by_key.setdefault(key, teacher)
 
-    return sorted(unique_by_key.values(), key=lambda teacher: teacher.full_name.casefold())
+    deduped_teachers = sorted(unique_by_key.values(), key=lambda teacher: teacher.full_name.casefold())
+    _report_progress(
+        progress_reporter,
+        f"api: deduped to {len(deduped_teachers)} teachers across {page_count} pages",
+    )
+    return deduped_teachers
 
 
 def _extract_first_email(value: object) -> str | None:
@@ -305,6 +359,40 @@ def _extract_first_email(value: object) -> str | None:
     if not email:
         return None
     return none_if_empty(email.strip())
+
+
+def _report_progress(progress_reporter: ProgressReporter | None, message: str) -> None:
+    if progress_reporter is None:
+        return
+    progress_reporter(message)
+
+
+def _report_count_progress(
+    progress_reporter: ProgressReporter | None,
+    *,
+    label: str,
+    current: int,
+    total: int,
+    interval: int,
+) -> None:
+    if progress_reporter is None:
+        return
+    effective_total = max(total, current)
+    if current == effective_total or current % max(interval, 1) == 0:
+        progress_reporter(f"{label} {current}/{effective_total}")
+
+
+def _report_interval_progress(
+    progress_reporter: ProgressReporter | None,
+    *,
+    label: str,
+    current: int,
+    interval: int,
+) -> None:
+    if progress_reporter is None:
+        return
+    if current % max(interval, 1) == 0:
+        progress_reporter(f"{label} {current}")
 
 
 def _teacher_profile_url(base_url: str, email: str | None, teacher_id: str | None) -> str | None:

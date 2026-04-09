@@ -20,7 +20,10 @@ A phase can be marked complete only after:
 ## Current Status
 
 - Active phase: complete
-- Next phase after verification: first real operator use on reported bad data
+- Post-plan follow-up: complete
+- Operational path:
+  - canonical `crawl full --profile fast` now refreshes `people.json` too
+  - `full` still keeps the broader teacher enrichment path
 
 ## Baseline Findings
 
@@ -76,16 +79,31 @@ A phase can be marked complete only after:
     - `.venv/bin/python -m unical_scraper crawl full --profile fast --data-dir /tmp/unical-full-fast-*/ --cache-dir .cache`
     - result:
       - departments/buildings/services completed
-      - teachers explicitly skipped by `fast` profile
+      - teachers were still skipped by the initial `fast` profile
       - aulas completed with bounded planner path
       - `contract`, `validate`, `report` completed
       - wrapper ended with `[crawl full] complete`
 - Final verification:
   - `.venv/bin/pytest -q` -> `120 passed`
+- Teacher follow-up:
+  - `.venv/bin/pytest -q tests/test_extract_teachers.py tests/test_cli_full.py` -> `9 passed`
+  - canonical fast replay:
+    - `.venv/bin/python -m unical_scraper crawl full --profile fast --data-dir data/normalized --cache-dir .cache`
+    - result:
+      - teachers completed with `detail_enrichment=false` and `department_fallback=false`
+      - `people.json` rewritten with `4592` teachers
+      - wrapper reached `validate` and `report`
+      - `[crawl full] complete`
+  - broader suite after the canonical refresh:
+    - `.venv/bin/pytest -q` -> `3 failed, 118 passed`
+    - failures came from locked canonical-data regressions, not from the new teacher code:
+      - `cappella-universitaria` missing from refreshed `buildings.json`
+      - refreshed `aliases.json` dropped to `1172` rows vs locked minimum `1374`
 
 ## Blockers
 
-- no active implementation blocker
-- operational caveat:
-  - `crawl full --profile fast` skips teacher crawling to stay reliable
-  - `crawl full --profile full` keeps the broader network path, including teachers
+- no active implementation blocker for the teacher-step hardening
+- operational caveats:
+  - `crawl full --profile fast` is now the reliable command path
+  - refreshed canonical data still needs separate investigation before commit because locked data-regression tests fail
+  - `crawl full --profile full` still keeps the broader teacher enrichment + fallback path

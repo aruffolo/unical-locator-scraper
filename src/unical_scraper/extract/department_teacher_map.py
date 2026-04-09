@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 import json
 import re
 from urllib.parse import urljoin, urlparse, urlsplit
@@ -34,6 +35,8 @@ _ADDRESSBOOK_STRUCTURE_GENERIC_RE = re.compile(
     r"structuretree(?:=|['\"\s:]+)['\"]?([0-9]{6})",
     flags=re.IGNORECASE,
 )
+DEPARTMENT_FALLBACK_PROGRESS_INTERVAL = 3
+ProgressReporter = Callable[[str], None]
 
 
 def crawl_department_teacher_map(
@@ -41,6 +44,7 @@ def crawl_department_teacher_map(
     client: HttpClient,
     cache: HtmlCache | None = None,
     max_pages_per_department: int = 10,
+    progress_reporter: ProgressReporter | None = None,
 ) -> dict[str, str]:
     """Map teacher keys to department_id by crawling department public websites.
 
@@ -49,9 +53,17 @@ def crawl_department_teacher_map(
     - `email_local:<local_part>`
     """
     candidate_mapping: dict[str, set[str]] = {}
-    for department in departments:
+    total_departments = len(departments)
+    for index, department in enumerate(departments, start=1):
         department_id = department.get("department_id")
         if not isinstance(department_id, str) or not department_id:
+            _report_count_progress(
+                progress_reporter,
+                label="department fallback: scanned",
+                current=index,
+                total=total_departments,
+                interval=DEPARTMENT_FALLBACK_PROGRESS_INTERVAL,
+            )
             continue
 
         base_urls = _department_seed_urls(department)
@@ -63,12 +75,33 @@ def crawl_department_teacher_map(
                 max_pages=max_pages_per_department,
             ):
                 candidate_mapping.setdefault(key, set()).add(department_id)
+        _report_count_progress(
+            progress_reporter,
+            label="department fallback: scanned",
+            current=index,
+            total=total_departments,
+            interval=DEPARTMENT_FALLBACK_PROGRESS_INTERVAL,
+        )
 
     mapping: dict[str, str] = {}
     for key, department_ids in candidate_mapping.items():
         if len(department_ids) == 1:
             mapping[key] = next(iter(department_ids))
     return mapping
+
+
+def _report_count_progress(
+    progress_reporter: ProgressReporter | None,
+    *,
+    label: str,
+    current: int,
+    total: int,
+    interval: int,
+) -> None:
+    if progress_reporter is None or total <= 0:
+        return
+    if current == total or current % max(interval, 1) == 0:
+        progress_reporter(f"{label} {current}/{total}")
 
 
 def _crawl_department_keys(

@@ -45,7 +45,7 @@ Replay wrapper for `/tmp` health checks:
 
 `fast` is the operational health-check profile:
 - bounded aula planner path
-- skips teacher crawl to avoid the current long-running remote step
+- bounded teacher crawl with API-only payloads and no department fallback
 
 `full` keeps the broader network path enabled.
 

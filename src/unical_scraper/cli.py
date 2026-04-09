@@ -71,16 +71,20 @@ class FullCrawlProfile:
     aulas_timeout_seconds: float
     services_failure_budget: int
     teachers_enabled: bool
+    teachers_detail_enrichment: bool
     teachers_department_fallback: bool
     teachers_failure_budget: int
+    teachers_timeout_seconds: float
 
 
 FULL_CRAWL_PROFILES = {
     "fast": FullCrawlProfile(
         services_failure_budget=0,
-        teachers_enabled=False,
+        teachers_enabled=True,
+        teachers_detail_enrichment=False,
         teachers_failure_budget=10,
         teachers_department_fallback=False,
+        teachers_timeout_seconds=10.0,
         aulas_failure_budget=10,
         aulas_timeout_seconds=10.0,
         aulas_planner_discovery=False,
@@ -91,8 +95,10 @@ FULL_CRAWL_PROFILES = {
     "full": FullCrawlProfile(
         services_failure_budget=0,
         teachers_enabled=True,
+        teachers_detail_enrichment=True,
         teachers_failure_budget=10,
         teachers_department_fallback=True,
+        teachers_timeout_seconds=30.0,
         aulas_failure_budget=10,
         aulas_timeout_seconds=30.0,
         aulas_planner_discovery=True,
@@ -329,7 +335,9 @@ def corrections() -> None:
 @click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
 @click.option("--max-retries", default=2, show_default=True, type=int)
 @click.option("--retry-backoff", default=0.5, show_default=True, type=float)
+@click.option("--timeout", "timeout_seconds", default=30.0, show_default=True, type=float)
 @click.option("--failure-budget", default=0, show_default=True, type=int)
+@click.option("--detail-enrichment/--no-detail-enrichment", default=True, show_default=True)
 @click.option("--department-fallback/--no-department-fallback", default=True, show_default=True)
 @click.option("--department-max-pages", default=10, show_default=True, type=int)
 def crawl_teachers_command(
@@ -343,7 +351,9 @@ def crawl_teachers_command(
     user_agent: str,
     max_retries: int,
     retry_backoff: float,
+    timeout_seconds: float,
     failure_budget: int,
+    detail_enrichment: bool,
     department_fallback: bool,
     department_max_pages: int,
 ) -> None:
@@ -353,19 +363,29 @@ def crawl_teachers_command(
 
     with HttpClient(
         user_agent=user_agent,
+        timeout_seconds=timeout_seconds,
         rate_limit_seconds=rate_limit,
         max_retries=max_retries,
         retry_backoff_seconds=retry_backoff,
     ) as client:
-        raw_teachers = crawl_teachers(base_url=base_url, client=client, cache=cache)
+        raw_teachers = crawl_teachers(
+            base_url=base_url,
+            client=client,
+            cache=cache,
+            detail_enrichment=detail_enrichment,
+            progress_reporter=lambda message: click.echo(f"[teachers] {message}"),
+        )
         if department_fallback:
+            click.echo("[teachers] department fallback: start")
             department_teacher_map = crawl_department_teacher_map(
                 departments=departments,
                 client=client,
                 cache=cache,
                 max_pages_per_department=department_max_pages,
+                progress_reporter=lambda message: click.echo(f"[teachers] {message}"),
             )
         else:
+            click.echo("[teachers] department fallback: disabled")
             department_teacher_map = {}
         http_summary = _emit_http_diagnostics(client)
 
@@ -878,7 +898,9 @@ def crawl_full_command(
             user_agent=user_agent,
             max_retries=max_retries,
             retry_backoff=retry_backoff,
+            timeout_seconds=selected_profile.teachers_timeout_seconds,
             failure_budget=selected_profile.teachers_failure_budget,
+            detail_enrichment=selected_profile.teachers_detail_enrichment,
             department_fallback=selected_profile.teachers_department_fallback,
             department_max_pages=10,
         )

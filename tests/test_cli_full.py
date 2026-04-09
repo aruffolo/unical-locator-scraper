@@ -9,16 +9,21 @@ from unical_scraper.cli import cli
 
 def test_crawl_full_command_uses_fast_profile(monkeypatch, tmp_path: Path) -> None:
     calls: list[tuple[str, dict[str, object]]] = []
+    captured_teachers_kwargs: dict[str, object] = {}
 
     def record(name: str):
         def _recorder(**kwargs: object) -> None:
             calls.append((name, kwargs))
         return _recorder
 
+    def capture_teachers(**kwargs: object) -> None:
+        calls.append(("teachers", kwargs))
+        captured_teachers_kwargs.update(kwargs)
+
     monkeypatch.setattr("unical_scraper.cli.crawl_departments_command", record("departments"))
     monkeypatch.setattr("unical_scraper.cli.crawl_buildings_command", record("buildings"))
     monkeypatch.setattr("unical_scraper.cli.crawl_services_command", record("services"))
-    monkeypatch.setattr("unical_scraper.cli.crawl_teachers_command", record("teachers"))
+    monkeypatch.setattr("unical_scraper.cli.crawl_teachers_command", capture_teachers)
     monkeypatch.setattr("unical_scraper.cli.crawl_aulas_command", record("aulas"))
     monkeypatch.setattr("unical_scraper.cli.link_places_buildings_command", record("link_places"))
     monkeypatch.setattr("unical_scraper.cli.link_aliases_command", record("link_aliases"))
@@ -43,6 +48,7 @@ def test_crawl_full_command_uses_fast_profile(monkeypatch, tmp_path: Path) -> No
         "departments",
         "buildings",
         "services",
+        "teachers",
         "aulas",
         "link_places",
         "link_aliases",
@@ -51,13 +57,15 @@ def test_crawl_full_command_uses_fast_profile(monkeypatch, tmp_path: Path) -> No
         "report",
     ]
 
-    aulas_kwargs = dict(calls[3][1])
+    aulas_kwargs = dict(calls[4][1])
     assert aulas_kwargs["timeout_seconds"] == 10.0
     assert aulas_kwargs["planner_discovery"] is False
     assert aulas_kwargs["planner_public_links"] is True
     assert aulas_kwargs["planner_impegni"] is False
     assert aulas_kwargs["planner_max_link_ids"] == 1
-    assert "step=teachers skipped by profile" in result.output
+    assert captured_teachers_kwargs["timeout_seconds"] == 10.0
+    assert captured_teachers_kwargs["detail_enrichment"] is False
+    assert captured_teachers_kwargs["department_fallback"] is False
 
     assert (data_dir / "building_entrances.json").exists()
     assert (data_dir / "glossary.json").exists()
@@ -108,4 +116,6 @@ def test_crawl_full_command_uses_full_profile(monkeypatch, tmp_path: Path) -> No
     assert captured_aulas_kwargs["planner_public_links"] is True
     assert captured_aulas_kwargs["planner_impegni"] is True
     assert captured_aulas_kwargs["planner_max_link_ids"] is None
+    assert captured_teachers_kwargs["timeout_seconds"] == 30.0
+    assert captured_teachers_kwargs["detail_enrichment"] is True
     assert captured_teachers_kwargs["department_fallback"] is True
