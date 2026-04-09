@@ -12,15 +12,15 @@ A phase can be marked complete only after:
 ## Phase Checklist
 
 - [x] Phase 1. Services hard-failure fix
-- [ ] Phase 2. Aulas observability
+- [x] Phase 2. Aulas observability
 - [ ] Phase 3. Aulas control knobs
 - [ ] Phase 4. Planner request caching
 - [ ] Phase 5. Full replay wrapper
 
 ## Current Status
 
-- Active phase: Phase 2. Aulas observability
-- Next phase after verification: Phase 3. Aulas control knobs
+- Active phase: Phase 3. Aulas control knobs
+- Next phase after verification: Phase 4. Planner request caching
 
 ## Baseline Findings
 
@@ -40,6 +40,17 @@ A phase can be marked complete only after:
     - `.venv/bin/python -m unical_scraper crawl services --base-url https://www.unical.it/campus/servizi/ --out-file /tmp/unical-services-strict-*/places.json --cache-dir .cache`
     - result: `HTTP diagnostics` reported `0` requests and `0` final failures on cached replay
     - result: `Crawled 30 services`
+- Phase 2:
+  - `.venv/bin/pytest -q tests/test_extract_aulas.py` -> `12 passed`
+  - live `/tmp` smoke run:
+    - `.venv/bin/python -m unical_scraper crawl aulas --base-url https://www.unical.it/campus/visita-il-campus/mappa/ --aulas-file /tmp/unical-aulas-progress-*/aulas.json --places-file /tmp/unical-aulas-progress-*/places.json --buildings-file /tmp/unical-aulas-progress-*/buildings.json --cache-dir .cache`
+    - observed live progress output before completion:
+      - `map: extracted 6 raw aulas`
+      - `departments: extracted 378 raw aulas from 16 pages`
+      - `planner: loaded 90 buildings and 100 aula summaries`
+      - `planner details: processed 25/100 ... 100/100`
+      - `planner discovery: scanned 20/84 ... 84/84`
+      - `planner public links: querying 151 calendar ids`
 
 ## Blockers
 

@@ -618,7 +618,12 @@ def crawl_aulas_command(
         max_retries=max_retries,
         retry_backoff_seconds=retry_backoff,
     ) as client:
-        raw_aulas = crawl_aulas(base_url=base_url, client=client, cache=cache)
+        raw_aulas = crawl_aulas(
+            base_url=base_url,
+            client=client,
+            cache=cache,
+            progress_reporter=lambda message: click.echo(f"[aulas] {message}"),
+        )
         http_summary = _emit_http_diagnostics(client)
 
     _record_scrape_diagnostics(

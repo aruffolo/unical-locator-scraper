@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 import html
 import json
 import re
@@ -115,6 +116,12 @@ NOISE_AULA_TOKENS = (
     "vibora",
     "chiodo",
 )
+PLANNER_DETAILS_PROGRESS_INTERVAL = 25
+PLANNER_DISCOVERY_PROGRESS_INTERVAL = 20
+PLANNER_PUBLIC_LINKS_PROGRESS_INTERVAL = 25
+PLANNER_IMPEGNI_PROGRESS_INTERVAL = 200
+DEPARTMENT_PROGRESS_INTERVAL = 5
+ProgressReporter = Callable[[str], None]
 
 
 @dataclass(frozen=True)
@@ -143,13 +150,29 @@ def crawl_aulas(
     planner_impegni_start: str | None = PLANNER_IMPEGNI_START,
     planner_impegni_end: str | None = PLANNER_IMPEGNI_END,
     planner_impegni_limit: int = PLANNER_IMPEGNI_LIMIT,
+    progress_reporter: ProgressReporter | None = None,
 ) -> list[RawAula]:
     """Crawl aulas from map, department pages and planner public endpoints."""
+    _report_progress(progress_reporter, "crawl: start")
     aulas: list[RawAula] = []
-    aulas.extend(_crawl_map_aulas(base_url=base_url, client=client, cache=cache))
+    aulas.extend(
+        _crawl_map_aulas(
+            base_url=base_url,
+            client=client,
+            cache=cache,
+            progress_reporter=progress_reporter,
+        )
+    )
 
     source_department_urls = tuple(department_urls or DEFAULT_DEPARTMENT_AULA_URLS)
-    aulas.extend(_crawl_department_aulas(urls=source_department_urls, client=client, cache=cache))
+    aulas.extend(
+        _crawl_department_aulas(
+            urls=source_department_urls,
+            client=client,
+            cache=cache,
+            progress_reporter=progress_reporter,
+        )
+    )
 
     if planner_base_url:
         aulas.extend(
@@ -157,6 +180,7 @@ def crawl_aulas(
                 planner_base_url=planner_base_url,
                 client=client,
                 cache=cache,
+                progress_reporter=progress_reporter,
                 planner_client_id=planner_client_id,
                 calendar_discovery_urls=tuple(
                     planner_calendar_discovery_urls or DEFAULT_CALENDAR_DISCOVERY_URLS
@@ -167,37 +191,75 @@ def crawl_aulas(
             )
         )
 
-    return _dedupe_aulas(aulas)
+    deduped_aulas = _dedupe_aulas(aulas)
+    _report_progress(progress_reporter, f"crawl: deduped to {len(deduped_aulas)} aulas")
+    return deduped_aulas
 
 
-def _crawl_map_aulas(base_url: str, client: HttpClient, cache: HtmlCache | None) -> list[RawAula]:
+def _crawl_map_aulas(
+    base_url: str,
+    client: HttpClient,
+    cache: HtmlCache | None,
+    progress_reporter: ProgressReporter | None,
+) -> list[RawAula]:
+    _report_progress(progress_reporter, "map: fetching campus map")
     try:
         map_html = _fetch_html(base_url, client, cache)
     except Exception:
+        _report_progress(progress_reporter, "map: failed to fetch campus map")
         return []
 
     kml_url = _extract_kml_url(map_html=map_html, base_url=base_url)
     if not kml_url:
+        _report_progress(progress_reporter, "map: no KML source found")
         return []
 
+    _report_progress(progress_reporter, f"map: loading KML {kml_url}")
     try:
         kml_text = _fetch_html(kml_url, client, cache)
     except Exception:
+        _report_progress(progress_reporter, "map: failed to fetch KML source")
         return []
-    return _parse_aulas_kml(kml_text=kml_text, source_url=base_url)
+    aulas = _parse_aulas_kml(kml_text=kml_text, source_url=base_url)
+    _report_progress(progress_reporter, f"map: extracted {len(aulas)} raw aulas")
+    return aulas
 
 
 def _crawl_department_aulas(
     urls: tuple[str, ...],
     client: HttpClient,
     cache: HtmlCache | None,
+    progress_reporter: ProgressReporter | None,
 ) -> list[RawAula]:
+    source_urls = tuple(sorted(set(urls)))
+    _report_progress(progress_reporter, f"departments: scanning {len(source_urls)} urls")
     aulas: list[RawAula] = []
-    for url in sorted(set(urls)):
+    fetched_pages = 0
+    total_urls = len(source_urls)
+    for index, url in enumerate(source_urls, start=1):
         html_text = _try_fetch_html(url=url, client=client, cache=cache)
         if not html_text:
+            _report_count_progress(
+                progress_reporter,
+                label="departments: fetched pages",
+                current=index,
+                total=total_urls,
+                interval=DEPARTMENT_PROGRESS_INTERVAL,
+            )
             continue
+        fetched_pages += 1
         aulas.extend(_parse_department_aulas_html(html_text=html_text, source_url=url))
+        _report_count_progress(
+            progress_reporter,
+            label="departments: fetched pages",
+            current=index,
+            total=total_urls,
+            interval=DEPARTMENT_PROGRESS_INTERVAL,
+        )
+    _report_progress(
+        progress_reporter,
+        f"departments: extracted {len(aulas)} raw aulas from {fetched_pages} pages",
+    )
     return aulas
 
 
@@ -205,6 +267,7 @@ def _crawl_planner_aulas(
     planner_base_url: str,
     client: HttpClient,
     cache: HtmlCache | None,
+    progress_reporter: ProgressReporter | None,
     planner_client_id: str | None,
     calendar_discovery_urls: tuple[str, ...],
     impegni_start: str | None,
@@ -214,12 +277,14 @@ def _crawl_planner_aulas(
     base = planner_base_url.rstrip("/")
     source_url = f"{base}/calendar/activities/"
 
+    _report_progress(progress_reporter, "planner: loading building and aula summary lists")
     edifici_url = f"{base}/api/Edifici/getPerAutoCompletePublic?lookupFields=codice&limit=100"
     aula_list_url = f"{base}/api/Aule/getPerAutoCompletePublic?lookupFields=codice&limit=100"
 
     edifici_payload = _try_fetch_html(edifici_url, client=client, cache=cache)
     aule_payload = _try_fetch_html(aula_list_url, client=client, cache=cache)
     if not aule_payload:
+        _report_progress(progress_reporter, "planner: aula summary list unavailable")
         return []
 
     edifici_map: dict[str, str] = {}
@@ -229,22 +294,49 @@ def _crawl_planner_aulas(
         if isinstance(item_id, str) and descrizione:
             edifici_map[item_id] = descrizione
 
+    summaries = _load_json_array(aule_payload)
+    _report_progress(
+        progress_reporter,
+        f"planner: loaded {len(edifici_map)} buildings and {len(summaries)} aula summaries",
+    )
     aulas: list[RawAula] = []
-    for summary in _load_json_array(aule_payload):
+    total_summaries = len(summaries)
+    for index, summary in enumerate(summaries, start=1):
         aula_id = summary.get("id")
         if not isinstance(aula_id, str):
+            _report_count_progress(
+                progress_reporter,
+                label="planner details: processed",
+                current=index,
+                total=total_summaries,
+                interval=PLANNER_DETAILS_PROGRESS_INTERVAL,
+            )
             continue
 
         detail_url = f"{base}/api/Aule/getByIdPublic?id={aula_id}"
         detail_payload = _try_fetch_html(detail_url, client=client, cache=cache)
         detail = _load_json_object(detail_payload)
         if not detail:
+            _report_count_progress(
+                progress_reporter,
+                label="planner details: processed",
+                current=index,
+                total=total_summaries,
+                interval=PLANNER_DETAILS_PROGRESS_INTERVAL,
+            )
             continue
 
         descrizione = _normalize_text(str(detail.get("descrizione") or summary.get("descrizione") or ""))
         codice = _normalize_text(str(detail.get("codice") or summary.get("codice") or ""))
         candidate_name = _canonical_planner_aula_name(descrizione or codice)
         if not candidate_name:
+            _report_count_progress(
+                progress_reporter,
+                label="planner details: processed",
+                current=index,
+                total=total_summaries,
+                interval=PLANNER_DETAILS_PROGRESS_INTERVAL,
+            )
             continue
 
         edificio_id = detail.get("edificioId")
@@ -263,6 +355,13 @@ def _crawl_planner_aulas(
                 building_hint=building_hint,
             )
         )
+        _report_count_progress(
+            progress_reporter,
+            label="planner details: processed",
+            current=index,
+            total=total_summaries,
+            interval=PLANNER_DETAILS_PROGRESS_INTERVAL,
+        )
 
     if planner_client_id:
         link_ids = set(CURATED_PUBLIC_LINK_CALENDAR_IDS)
@@ -272,6 +371,7 @@ def _crawl_planner_aulas(
                     urls=calendar_discovery_urls,
                     client=client,
                     cache=cache,
+                    progress_reporter=progress_reporter,
                 )
             )
         if link_ids:
@@ -284,6 +384,7 @@ def _crawl_planner_aulas(
                     cache=cache,
                     source_url=source_url,
                     building_map=edifici_map,
+                    progress_reporter=progress_reporter,
                 )
             )
 
@@ -298,9 +399,11 @@ def _crawl_planner_aulas(
                 cache=cache,
                 source_url=source_url,
                 building_map=edifici_map,
+                progress_reporter=progress_reporter,
             )
         )
 
+    _report_progress(progress_reporter, f"planner: extracted {len(aulas)} raw aulas")
     return aulas
 
 
@@ -308,15 +411,34 @@ def _discover_calendar_link_ids(
     urls: tuple[str, ...],
     client: HttpClient,
     cache: HtmlCache | None,
+    progress_reporter: ProgressReporter | None,
 ) -> set[str]:
+    source_urls = tuple(sorted(set(urls)))
+    _report_progress(progress_reporter, f"planner discovery: scanning {len(source_urls)} urls")
     link_ids: set[str] = set()
-    for url in sorted(set(urls)):
+    total_urls = len(source_urls)
+    for index, url in enumerate(source_urls, start=1):
         html_text = _try_fetch_html(url=url, client=client, cache=cache)
         if not html_text:
+            _report_count_progress(
+                progress_reporter,
+                label="planner discovery: scanned",
+                current=index,
+                total=total_urls,
+                interval=PLANNER_DISCOVERY_PROGRESS_INTERVAL,
+            )
             continue
         decoded = html.unescape(html_text)
         for match in LINK_CALENDAR_ID_PATTERN.finditer(decoded):
             link_ids.add(match.group(1).lower())
+        _report_count_progress(
+            progress_reporter,
+            label="planner discovery: scanned",
+            current=index,
+            total=total_urls,
+            interval=PLANNER_DISCOVERY_PROGRESS_INTERVAL,
+        )
+    _report_progress(progress_reporter, f"planner discovery: found {len(link_ids)} calendar ids")
     return link_ids
 
 
@@ -328,17 +450,31 @@ def _crawl_planner_aulas_from_public_links(
     cache: HtmlCache | None,
     source_url: str,
     building_map: dict[str, str],
+    progress_reporter: ProgressReporter | None,
 ) -> list[RawAula]:
     endpoint = f"{planner_base_url}/api/Aule/getAulePerCalendarioPubblico"
     aulas: list[RawAula] = []
+    sorted_link_ids = sorted(link_ids)
+    total_link_ids = len(sorted_link_ids)
+    _report_progress(
+        progress_reporter,
+        f"planner public links: querying {total_link_ids} calendar ids",
+    )
 
-    for link_id in sorted(link_ids):
+    for index, link_id in enumerate(sorted_link_ids, start=1):
         payload = {
             "linkCalendarioId": link_id,
             "clienteId": planner_client_id,
         }
         response_text = _try_post_json(url=endpoint, payload=payload, client=client)
         if not response_text:
+            _report_count_progress(
+                progress_reporter,
+                label="planner public links: processed",
+                current=index,
+                total=total_link_ids,
+                interval=PLANNER_PUBLIC_LINKS_PROGRESS_INTERVAL,
+            )
             continue
 
         aulas.extend(
@@ -348,7 +484,15 @@ def _crawl_planner_aulas_from_public_links(
                 building_map=building_map,
             )
         )
+        _report_count_progress(
+            progress_reporter,
+            label="planner public links: processed",
+            current=index,
+            total=total_link_ids,
+            interval=PLANNER_PUBLIC_LINKS_PROGRESS_INTERVAL,
+        )
 
+    _report_progress(progress_reporter, f"planner public links: extracted {len(aulas)} raw aulas")
     return aulas
 
 
@@ -361,19 +505,35 @@ def _crawl_planner_aulas_from_impegni(
     cache: HtmlCache | None,
     source_url: str,
     building_map: dict[str, str],
+    progress_reporter: ProgressReporter | None,
 ) -> list[RawAula]:
     impegni_url = (
         f"{planner_base_url}/api/Impegni/getImpegniPublic"
         f"?dataInizio={impegni_start}&dataFine={impegni_end}&limit={impegni_limit}"
     )
+    _report_progress(
+        progress_reporter,
+        f"planner impegni: fetching {impegni_start}..{impegni_end} limit {impegni_limit}",
+    )
     payload = _try_fetch_html(impegni_url, client=client, cache=cache)
     if not payload:
+        _report_progress(progress_reporter, "planner impegni: payload unavailable")
         return []
 
+    impegni_items = _load_json_array(payload)
+    _report_progress(progress_reporter, f"planner impegni: loaded {len(impegni_items)} schedule entries")
     aulas: list[RawAula] = []
-    for impegno in _load_json_array(payload):
+    total_impegni = len(impegni_items)
+    for index, impegno in enumerate(impegni_items, start=1):
         raw_aule = impegno.get("aule")
         if not isinstance(raw_aule, list):
+            _report_count_progress(
+                progress_reporter,
+                label="planner impegni: processed",
+                current=index,
+                total=total_impegni,
+                interval=PLANNER_IMPEGNI_PROGRESS_INTERVAL,
+            )
             continue
 
         for item in raw_aule:
@@ -404,8 +564,36 @@ def _crawl_planner_aulas_from_impegni(
                     building_hint=building_hint,
                 )
             )
+        _report_count_progress(
+            progress_reporter,
+            label="planner impegni: processed",
+            current=index,
+            total=total_impegni,
+            interval=PLANNER_IMPEGNI_PROGRESS_INTERVAL,
+        )
 
+    _report_progress(progress_reporter, f"planner impegni: extracted {len(aulas)} raw aulas")
     return aulas
+
+
+def _report_progress(progress_reporter: ProgressReporter | None, message: str) -> None:
+    if progress_reporter is None:
+        return
+    progress_reporter(message)
+
+
+def _report_count_progress(
+    progress_reporter: ProgressReporter | None,
+    *,
+    label: str,
+    current: int,
+    total: int,
+    interval: int,
+) -> None:
+    if progress_reporter is None or total <= 0:
+        return
+    if current == total or current % max(interval, 1) == 0:
+        progress_reporter(f"{label} {current}/{total}")
 
 
 def _parse_planner_aula_items(

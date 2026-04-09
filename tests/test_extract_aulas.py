@@ -211,6 +211,7 @@ def test_crawl_aulas_merges_department_and_planner_sources() -> None:
         </body></html>
     """
 
+    progress_messages: list[str] = []
     aulas = crawl_aulas(
         base_url=base_url,
         client=FakeHttpClient(pages, post_pages=post_pages),
@@ -219,6 +220,7 @@ def test_crawl_aulas_merges_department_and_planner_sources() -> None:
         planner_calendar_discovery_urls=(
             "https://ctc.unical.it/didattica/iscriversi-studiare-laurearsi/frequentare-i-corsi/",
         ),
+        progress_reporter=progress_messages.append,
     )
 
     names = {item.name for item in aulas}
@@ -236,6 +238,13 @@ def test_crawl_aulas_merges_department_and_planner_sources() -> None:
     assert aula_p2.floor == "Secondo piano"
     assert aula_p2.building_hint == "Cubo 30C"
     assert aula_p2.capacity == 120
+    assert "crawl: start" in progress_messages
+    assert "planner: loaded 2 buildings and 3 aula summaries" in progress_messages
+    assert "planner details: processed 3/3" in progress_messages
+    assert "planner discovery: scanned 1/1" in progress_messages
+    assert "planner public links: extracted 1 raw aulas" in progress_messages
+    assert "planner impegni: loaded 1 schedule entries" in progress_messages
+    assert any(message.startswith("crawl: deduped to ") for message in progress_messages)
 
 
 def test_crawl_aulas_parses_department_strutture_capacity_and_floor_variants() -> None:
