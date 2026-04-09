@@ -43,6 +43,16 @@ Replay wrapper for `/tmp` health checks:
   --cache-dir .cache
 ```
 
+Real-update rehearsal in `/tmp` from the current canonical baseline:
+
+```bash
+.venv/bin/python -m unical_scraper crawl full \
+  --profile fast \
+  --data-dir /tmp/unical-full-release-sim \
+  --seed-from data/normalized \
+  --cache-dir .cache
+```
+
 `fast` is the operational health-check profile:
 - bounded aula planner path
 - bounded teacher crawl with API-only payloads and no department fallback
@@ -53,6 +63,7 @@ Safety guard:
 - `crawl full` refuses writes into `data/normalized/` by default
 - use `/tmp/...` for hot tests
 - add `--allow-canonical-write` only for deliberate canonical refreshes
+- use `--seed-from data/normalized` when you want a zero-loss rehearsal in `/tmp`
 
 ## Release Guardrails
 

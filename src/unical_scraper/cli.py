@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -58,6 +59,13 @@ STATIC_DATASET_PLACEHOLDERS = {
     "glossary.json": [],
     "faqs.json": [],
     "people.json": [],
+}
+BASELINE_PRESERVED_DATASETS: dict[str, str] = {
+    "aulas": "place_id",
+    "buildings": "building_id",
+    "departments": "department_id",
+    "people": "person_id",
+    "places": "place_id",
 }
 
 
@@ -267,6 +275,68 @@ def _dataset_paths(data_dir: Path) -> dict[str, Path]:
         "people": data_dir / "people.json",
         "report": data_dir / "report.json",
     }
+
+
+def _snapshot_baseline_rows(data_dir: Path) -> dict[str, list[dict[str, Any]]]:
+    paths = _dataset_paths(data_dir)
+    return {
+        dataset_name: _load_json_array(path)
+        for dataset_name, path in paths.items()
+        if dataset_name in BASELINE_PRESERVED_DATASETS
+    }
+
+
+def _seed_data_dir(data_dir: Path, seed_from: Path) -> None:
+    data_dir.mkdir(parents=True, exist_ok=True)
+    target_paths = _dataset_paths(data_dir)
+    for dataset_name, source_path in _dataset_paths(seed_from).items():
+        if not source_path.exists():
+            continue
+        target_path = target_paths.get(dataset_name)
+        if target_path is None:
+            continue
+        shutil.copy2(source_path, target_path)
+
+
+def _merge_rows_by_id(
+    existing_rows: list[dict[str, Any]],
+    refreshed_rows: list[dict[str, Any]],
+    *,
+    id_field: str,
+) -> list[dict[str, Any]]:
+    merged_by_id: dict[str, dict[str, Any]] = {}
+
+    for row in existing_rows:
+        row_id = row.get(id_field)
+        if isinstance(row_id, str) and row_id:
+            merged_by_id[row_id] = dict(row)
+
+    for row in refreshed_rows:
+        row_id = row.get(id_field)
+        if not isinstance(row_id, str) or not row_id:
+            continue
+        merged = dict(merged_by_id.get(row_id, {}))
+        merged.update(row)
+        merged_by_id[row_id] = merged
+
+    return sorted(merged_by_id.values(), key=lambda item: str(item.get(id_field, "")))
+
+
+def _preserve_dataset_rows(
+    dataset_name: str,
+    *,
+    baseline_rows: dict[str, list[dict[str, Any]]],
+    data_dir: Path,
+) -> None:
+    id_field = BASELINE_PRESERVED_DATASETS[dataset_name]
+    target_path = _dataset_paths(data_dir)[dataset_name]
+    current_rows = _load_json_array(target_path)
+    preserved_rows = _merge_rows_by_id(
+        existing_rows=baseline_rows[dataset_name],
+        refreshed_rows=current_rows,
+        id_field=id_field,
+    )
+    write_json(target_path, preserved_rows)
 
 
 def _invoke_command(command: Any, **kwargs: Any) -> None:
@@ -822,6 +892,12 @@ def crawl_aulas_command(
     help="Optional shared cache dir for replay requests.",
 )
 @click.option(
+    "--seed-from",
+    default=None,
+    type=click.Path(path_type=Path),
+    help="Optional baseline dataset dir copied into --data-dir before replay.",
+)
+@click.option(
     "--profile",
     default="fast",
     show_default=True,
@@ -841,6 +917,7 @@ def crawl_full_command(
     data_dir: Path,
     schemas_dir: Path,
     cache_dir: Path | None,
+    seed_from: Path | None,
     profile: str,
     rate_limit: float,
     user_agent: str,
@@ -854,11 +931,22 @@ def crawl_full_command(
             "crawl full refuses canonical writes by default; "
             "use --data-dir /tmp/... for hot tests or add --allow-canonical-write"
         )
+
+    if seed_from is not None and seed_from.resolve() == data_dir.resolve():
+        raise SystemExit("--seed-from must differ from --data-dir")
+
+    baseline_source_dir = seed_from or data_dir
+    baseline_rows = _snapshot_baseline_rows(baseline_source_dir)
+    if seed_from is not None:
+        _seed_data_dir(data_dir=data_dir, seed_from=seed_from)
+
     selected_profile = FULL_CRAWL_PROFILES[profile.lower()]
     paths = _dataset_paths(data_dir)
     _ensure_static_dataset_placeholders(data_dir)
 
     click.echo(f"[crawl full] profile={profile.lower()} data_dir={data_dir}")
+    if seed_from is not None:
+        click.echo(f"[crawl full] seed_from={seed_from}")
 
     click.echo("[crawl full] step=departments")
     _invoke_command(
@@ -872,6 +960,7 @@ def crawl_full_command(
         retry_backoff=retry_backoff,
         failure_budget=0,
     )
+    _preserve_dataset_rows("departments", baseline_rows=baseline_rows, data_dir=data_dir)
 
     click.echo("[crawl full] step=buildings")
     _invoke_command(
@@ -885,6 +974,7 @@ def crawl_full_command(
         retry_backoff=retry_backoff,
         failure_budget=0,
     )
+    _preserve_dataset_rows("buildings", baseline_rows=baseline_rows, data_dir=data_dir)
 
     click.echo("[crawl full] step=services")
     _invoke_command(
@@ -919,6 +1009,8 @@ def crawl_full_command(
             department_fallback=selected_profile.teachers_department_fallback,
             department_max_pages=10,
         )
+        _preserve_dataset_rows("people", baseline_rows=baseline_rows, data_dir=data_dir)
+        _preserve_dataset_rows("places", baseline_rows=baseline_rows, data_dir=data_dir)
     else:
         click.echo("[crawl full] step=teachers skipped by profile")
 
@@ -941,6 +1033,8 @@ def crawl_full_command(
         planner_impegni=selected_profile.aulas_planner_impegni,
         planner_max_link_ids=selected_profile.aulas_planner_max_link_ids,
     )
+    _preserve_dataset_rows("aulas", baseline_rows=baseline_rows, data_dir=data_dir)
+    _preserve_dataset_rows("places", baseline_rows=baseline_rows, data_dir=data_dir)
 
     click.echo("[crawl full] step=link places-buildings")
     _invoke_command(

@@ -4,7 +4,7 @@ from pathlib import Path
 
 from click.testing import CliRunner
 
-from unical_scraper.cli import cli
+from unical_scraper.cli import _merge_rows_by_id, cli
 
 
 def test_crawl_full_command_uses_fast_profile(monkeypatch, tmp_path: Path) -> None:
@@ -121,6 +121,49 @@ def test_crawl_full_command_allows_canonical_dir_with_explicit_flag(monkeypatch)
     assert calls[0] == "departments"
 
 
+def test_crawl_full_command_supports_seed_from(monkeypatch, tmp_path: Path) -> None:
+    calls: list[str] = []
+
+    def record(name: str):
+        def _recorder(**kwargs: object) -> None:
+            calls.append(name)
+        return _recorder
+
+    seed_dir = tmp_path / "seed"
+    seed_dir.mkdir()
+    (seed_dir / "buildings.json").write_text("[]", encoding="utf-8")
+
+    monkeypatch.setattr("unical_scraper.cli.crawl_departments_command", record("departments"))
+    monkeypatch.setattr("unical_scraper.cli.crawl_buildings_command", record("buildings"))
+    monkeypatch.setattr("unical_scraper.cli.crawl_services_command", record("services"))
+    monkeypatch.setattr("unical_scraper.cli.crawl_teachers_command", record("teachers"))
+    monkeypatch.setattr("unical_scraper.cli.crawl_aulas_command", record("aulas"))
+    monkeypatch.setattr("unical_scraper.cli.link_places_buildings_command", record("link_places"))
+    monkeypatch.setattr("unical_scraper.cli.link_aliases_command", record("link_aliases"))
+    monkeypatch.setattr("unical_scraper.cli.validate_command", record("validate"))
+    monkeypatch.setattr("unical_scraper.cli.report_command", record("report"))
+    monkeypatch.setattr("unical_scraper.cli.contract_command", record("contract"))
+
+    runner = CliRunner()
+    data_dir = tmp_path / "replay"
+    result = runner.invoke(
+        cli,
+        [
+            "crawl",
+            "full",
+            "--data-dir",
+            str(data_dir),
+            "--seed-from",
+            str(seed_dir),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "seed_from=" in result.output
+    assert calls[0] == "departments"
+    assert (data_dir / "buildings.json").exists()
+
+
 def test_crawl_full_command_uses_full_profile(monkeypatch, tmp_path: Path) -> None:
     captured_aulas_kwargs: dict[str, object] = {}
     captured_teachers_kwargs: dict[str, object] = {}
@@ -167,3 +210,24 @@ def test_crawl_full_command_uses_full_profile(monkeypatch, tmp_path: Path) -> No
     assert captured_teachers_kwargs["timeout_seconds"] == 30.0
     assert captured_teachers_kwargs["detail_enrichment"] is True
     assert captured_teachers_kwargs["department_fallback"] is True
+
+
+def test_merge_rows_by_id_preserves_missing_rows_and_fields() -> None:
+    existing_rows = [
+        {"building_id": "cappella-universitaria", "name": "Cappella Universitaria"},
+        {"building_id": "cubo-20", "description": "Existing description", "name": "Cubo 20"},
+    ]
+    refreshed_rows = [
+        {"building_id": "cubo-20", "name": "Cubo 20 refreshed"},
+    ]
+
+    merged_rows = _merge_rows_by_id(
+        existing_rows=existing_rows,
+        refreshed_rows=refreshed_rows,
+        id_field="building_id",
+    )
+
+    by_id = {row["building_id"]: row for row in merged_rows}
+    assert by_id["cappella-universitaria"]["name"] == "Cappella Universitaria"
+    assert by_id["cubo-20"]["name"] == "Cubo 20 refreshed"
+    assert by_id["cubo-20"]["description"] == "Existing description"

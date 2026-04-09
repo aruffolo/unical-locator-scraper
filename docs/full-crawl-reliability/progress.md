@@ -25,6 +25,7 @@ A phase can be marked complete only after:
   - canonical `crawl full --profile fast` now refreshes `people.json` too
   - `full` still keeps the broader teacher enrichment path
   - `crawl full` now refuses canonical writes by default unless explicitly unlocked
+  - `crawl full --seed-from ...` supports zero-loss refresh rehearsals in `/tmp`
 
 ## Baseline Findings
 
@@ -103,6 +104,19 @@ A phase can be marked complete only after:
 - Hot-test safety follow-up:
   - restored `data/normalized/` back to `HEAD`
   - added `crawl full --allow-canonical-write` gate for deliberate canonical refreshes only
+- Real-refresh rehearsal follow-up:
+  - added `--seed-from` baseline copy support to `crawl full`
+  - full wrapper now preserves baseline rows for `departments`, `buildings`, `people`, `places`, and `aulas`
+  - zero-loss `/tmp` rehearsal:
+    - `.venv/bin/python -m unical_scraper crawl full --profile fast --data-dir /tmp/unical-full-release-sim --seed-from data/normalized --cache-dir .cache`
+    - result:
+      - `buildings.json`: `151 -> 151`
+      - `places.json`: `880 -> 880`
+      - `aulas.json`: `517 -> 517`
+      - `aliases.json`: `1374 -> 1381`
+      - `people.json`: `4156 -> 4739`
+      - `people` with `office_place_id`: `626`
+      - locked entities such as `cappella-universitaria` and `office-ufficio-cubo-4c-piano-3` remained present
 
 ## Blockers
 
