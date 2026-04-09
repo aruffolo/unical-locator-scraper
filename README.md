@@ -34,6 +34,21 @@ Main extraction command:
 .venv/bin/python -m unical_scraper crawl aulas --cache-dir .cache
 ```
 
+Replay wrapper for `/tmp` health checks:
+
+```bash
+.venv/bin/python -m unical_scraper crawl full \
+  --profile fast \
+  --data-dir /tmp/unical-full-replay \
+  --cache-dir .cache
+```
+
+`fast` is the operational health-check profile:
+- bounded aula planner path
+- skips teacher crawl to avoid the current long-running remote step
+
+`full` keeps the broader network path enabled.
+
 ## Release Guardrails
 
 - Schema + integrity validation: `unical_scraper validate`

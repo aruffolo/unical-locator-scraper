@@ -15,12 +15,12 @@ A phase can be marked complete only after:
 - [x] Phase 2. Aulas observability
 - [x] Phase 3. Aulas control knobs
 - [x] Phase 4. Planner request caching
-- [ ] Phase 5. Full replay wrapper
+- [x] Phase 5. Full replay wrapper
 
 ## Current Status
 
-- Active phase: Phase 5. Full replay wrapper
-- Next phase after verification: final full verification
+- Active phase: complete
+- Next phase after verification: first real operator use on reported bad data
 
 ## Baseline Findings
 
@@ -70,7 +70,22 @@ A phase can be marked complete only after:
       - pass 1: `HTTP diagnostics` reported `121` requests, `0` final failures
       - pass 2: `HTTP diagnostics` reported `0` requests, `0` final failures
       - both passes produced `Crawled raw aulas: 432`, `Normalized aulas: 413`
+- Phase 5:
+  - `.venv/bin/pytest -q tests/test_cli_full.py tests/test_cli_aulas.py` -> `3 passed`
+  - real wrapper smoke run:
+    - `.venv/bin/python -m unical_scraper crawl full --profile fast --data-dir /tmp/unical-full-fast-*/ --cache-dir .cache`
+    - result:
+      - departments/buildings/services completed
+      - teachers explicitly skipped by `fast` profile
+      - aulas completed with bounded planner path
+      - `contract`, `validate`, `report` completed
+      - wrapper ended with `[crawl full] complete`
+- Final verification:
+  - `.venv/bin/pytest -q` -> `120 passed`
 
 ## Blockers
 
-- none currently beyond the known reliability defects above
+- no active implementation blocker
+- operational caveat:
+  - `crawl full --profile fast` skips teacher crawling to stay reliable
+  - `crawl full --profile full` keeps the broader network path, including teachers

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -45,6 +46,61 @@ DEFAULT_CORRECTIONS_FILE = REPO_ROOT / "data" / "corrections" / "manual_correcti
 DEFAULT_DESTRUCTIVE_ALLOWLIST_FILE = (
     REPO_ROOT / "data" / "corrections" / "destructive_allowlist.yaml"
 )
+DEFAULT_TEACHERS_BASE_URL = "https://www.unical.it/storage/teachers/"
+DEFAULT_DEPARTMENTS_BASE_URL = "https://www.unical.it/organizzazione/strutture/dipartimenti/"
+DEFAULT_SERVICES_BASE_URL = "https://www.unical.it/campus/servizi/"
+DEFAULT_BUILDINGS_BASE_URL = "https://www.unical.it/campus/visita-il-campus/mappa/"
+DEFAULT_AULAS_BASE_URL = "https://www.unical.it/campus/visita-il-campus/mappa/"
+DEFAULT_CONTRACT_COMPATIBILITY_VERSION = 1
+DEFAULT_CONTRACT_VERSION = "1.0.0"
+STATIC_DATASET_PLACEHOLDERS = {
+    "building_entrances.json": [],
+    "glossary.json": [],
+    "faqs.json": [],
+    "people.json": [],
+}
+
+
+@dataclass(frozen=True)
+class FullCrawlProfile:
+    aulas_failure_budget: int
+    aulas_planner_discovery: bool
+    aulas_planner_impegni: bool
+    aulas_planner_max_link_ids: int | None
+    aulas_planner_public_links: bool
+    aulas_timeout_seconds: float
+    services_failure_budget: int
+    teachers_enabled: bool
+    teachers_department_fallback: bool
+    teachers_failure_budget: int
+
+
+FULL_CRAWL_PROFILES = {
+    "fast": FullCrawlProfile(
+        services_failure_budget=0,
+        teachers_enabled=False,
+        teachers_failure_budget=10,
+        teachers_department_fallback=False,
+        aulas_failure_budget=10,
+        aulas_timeout_seconds=10.0,
+        aulas_planner_discovery=False,
+        aulas_planner_public_links=True,
+        aulas_planner_impegni=False,
+        aulas_planner_max_link_ids=1,
+    ),
+    "full": FullCrawlProfile(
+        services_failure_budget=0,
+        teachers_enabled=True,
+        teachers_failure_budget=10,
+        teachers_department_fallback=True,
+        aulas_failure_budget=10,
+        aulas_timeout_seconds=30.0,
+        aulas_planner_discovery=True,
+        aulas_planner_public_links=True,
+        aulas_planner_impegni=True,
+        aulas_planner_max_link_ids=None,
+    ),
+}
 
 
 def _load_json_array(path: Path) -> list[dict[str, Any]]:
@@ -181,6 +237,33 @@ def _apply_manual_corrections_for_paths(paths: list[Path]) -> None:
             )
 
 
+def _ensure_static_dataset_placeholders(data_dir: Path) -> None:
+    data_dir.mkdir(parents=True, exist_ok=True)
+    for dataset_name, payload in STATIC_DATASET_PLACEHOLDERS.items():
+        dataset_path = data_dir / dataset_name
+        if dataset_path.exists():
+            continue
+        write_json(dataset_path, payload)
+
+
+def _dataset_paths(data_dir: Path) -> dict[str, Path]:
+    return {
+        "aliases": data_dir / "aliases.json",
+        "aulas": data_dir / "aulas.json",
+        "buildings": data_dir / "buildings.json",
+        "contract": data_dir / "dataset_contract.json",
+        "departments": data_dir / "departments.json",
+        "places": data_dir / "places.json",
+        "people": data_dir / "people.json",
+        "report": data_dir / "report.json",
+    }
+
+
+def _invoke_command(command: Any, **kwargs: Any) -> None:
+    callback = getattr(command, "callback", command)
+    callback(**kwargs)
+
+
 @click.group()
 def cli() -> None:
     """UNICAL data extraction, normalization, and validation CLI."""
@@ -204,7 +287,7 @@ def corrections() -> None:
 @crawl.command("teachers")
 @click.option(
     "--base-url",
-    default="https://www.unical.it/storage/teachers/",
+    default=DEFAULT_TEACHERS_BASE_URL,
     show_default=True,
     help="Entry URL used to discover teacher pages.",
 )
@@ -247,6 +330,8 @@ def corrections() -> None:
 @click.option("--max-retries", default=2, show_default=True, type=int)
 @click.option("--retry-backoff", default=0.5, show_default=True, type=float)
 @click.option("--failure-budget", default=0, show_default=True, type=int)
+@click.option("--department-fallback/--no-department-fallback", default=True, show_default=True)
+@click.option("--department-max-pages", default=10, show_default=True, type=int)
 def crawl_teachers_command(
     base_url: str,
     out_file: Path,
@@ -259,6 +344,8 @@ def crawl_teachers_command(
     max_retries: int,
     retry_backoff: float,
     failure_budget: int,
+    department_fallback: bool,
+    department_max_pages: int,
 ) -> None:
     """Crawl professor pages and write normalized `people.json`."""
     cache = HtmlCache(cache_dir) if cache_dir else None
@@ -271,11 +358,15 @@ def crawl_teachers_command(
         retry_backoff_seconds=retry_backoff,
     ) as client:
         raw_teachers = crawl_teachers(base_url=base_url, client=client, cache=cache)
-        department_teacher_map = crawl_department_teacher_map(
-            departments=departments,
-            client=client,
-            cache=cache,
-        )
+        if department_fallback:
+            department_teacher_map = crawl_department_teacher_map(
+                departments=departments,
+                client=client,
+                cache=cache,
+                max_pages_per_department=department_max_pages,
+            )
+        else:
+            department_teacher_map = {}
         http_summary = _emit_http_diagnostics(client)
 
     _record_scrape_diagnostics(
@@ -328,7 +419,7 @@ def crawl_teachers_command(
 @crawl.command("departments")
 @click.option(
     "--base-url",
-    default="https://www.unical.it/ateneo/dipartimenti",
+    default=DEFAULT_DEPARTMENTS_BASE_URL,
     show_default=True,
     help="Departments page URL.",
 )
@@ -483,7 +574,7 @@ def crawl_services_command(
 @crawl.command("buildings")
 @click.option(
     "--base-url",
-    default="https://www.unical.it/campus/visita-il-campus/mappa/",
+    default=DEFAULT_BUILDINGS_BASE_URL,
     show_default=True,
     help="Campus map page URL.",
 )
@@ -561,7 +652,7 @@ def crawl_buildings_command(
 @crawl.command("aulas")
 @click.option(
     "--base-url",
-    default="https://www.unical.it/campus/visita-il-campus/mappa/",
+    default=DEFAULT_AULAS_BASE_URL,
     show_default=True,
     help="Campus map page URL used for aula discovery.",
 )
@@ -683,6 +774,179 @@ def crawl_aulas_command(
     click.echo(f"Wrote: {aulas_file}")
     click.echo(f"Wrote: {places_file}")
     click.echo(f"Wrote: {sources_file}")
+
+
+@crawl.command("full")
+@click.option(
+    "--data-dir",
+    default=str(DEFAULT_DATA_DIR),
+    show_default=True,
+    type=click.Path(path_type=Path),
+    help="Output dir for normalized replay datasets.",
+)
+@click.option(
+    "--schemas-dir",
+    default=str(DEFAULT_SCHEMAS_DIR),
+    show_default=True,
+    type=click.Path(path_type=Path),
+    help="Schema dir used by trailing validate/report steps.",
+)
+@click.option(
+    "--cache-dir",
+    default=None,
+    type=click.Path(path_type=Path),
+    help="Optional shared cache dir for replay requests.",
+)
+@click.option(
+    "--profile",
+    default="fast",
+    show_default=True,
+    type=click.Choice(sorted(FULL_CRAWL_PROFILES.keys()), case_sensitive=False),
+    help="Replay profile balancing reliability vs coverage breadth.",
+)
+@click.option("--rate-limit", default=0.5, show_default=True, type=float)
+@click.option("--user-agent", default=DEFAULT_USER_AGENT, show_default=True)
+@click.option("--max-retries", default=2, show_default=True, type=int)
+@click.option("--retry-backoff", default=0.5, show_default=True, type=float)
+def crawl_full_command(
+    data_dir: Path,
+    schemas_dir: Path,
+    cache_dir: Path | None,
+    profile: str,
+    rate_limit: float,
+    user_agent: str,
+    max_retries: int,
+    retry_backoff: float,
+) -> None:
+    """Run the full scraper replay sequence into one target data dir."""
+    selected_profile = FULL_CRAWL_PROFILES[profile.lower()]
+    paths = _dataset_paths(data_dir)
+    _ensure_static_dataset_placeholders(data_dir)
+
+    click.echo(f"[crawl full] profile={profile.lower()} data_dir={data_dir}")
+
+    click.echo("[crawl full] step=departments")
+    _invoke_command(
+        crawl_departments_command,
+        base_url=DEFAULT_DEPARTMENTS_BASE_URL,
+        out_file=paths["departments"],
+        cache_dir=cache_dir,
+        rate_limit=rate_limit,
+        user_agent=user_agent,
+        max_retries=max_retries,
+        retry_backoff=retry_backoff,
+        failure_budget=0,
+    )
+
+    click.echo("[crawl full] step=buildings")
+    _invoke_command(
+        crawl_buildings_command,
+        base_url=DEFAULT_BUILDINGS_BASE_URL,
+        out_file=paths["buildings"],
+        cache_dir=cache_dir,
+        rate_limit=rate_limit,
+        user_agent=user_agent,
+        max_retries=max_retries,
+        retry_backoff=retry_backoff,
+        failure_budget=0,
+    )
+
+    click.echo("[crawl full] step=services")
+    _invoke_command(
+        crawl_services_command,
+        base_url=DEFAULT_SERVICES_BASE_URL,
+        out_file=paths["places"],
+        cache_dir=cache_dir,
+        rate_limit=rate_limit,
+        user_agent=user_agent,
+        max_retries=max_retries,
+        retry_backoff=retry_backoff,
+        failure_budget=selected_profile.services_failure_budget,
+    )
+
+    click.echo("[crawl full] step=teachers")
+    if selected_profile.teachers_enabled:
+        _invoke_command(
+            crawl_teachers_command,
+            base_url=DEFAULT_TEACHERS_BASE_URL,
+            out_file=paths["people"],
+            cache_dir=cache_dir,
+            departments_file=paths["departments"],
+            places_file=paths["places"],
+            buildings_file=paths["buildings"],
+            rate_limit=rate_limit,
+            user_agent=user_agent,
+            max_retries=max_retries,
+            retry_backoff=retry_backoff,
+            failure_budget=selected_profile.teachers_failure_budget,
+            department_fallback=selected_profile.teachers_department_fallback,
+            department_max_pages=10,
+        )
+    else:
+        click.echo("[crawl full] step=teachers skipped by profile")
+
+    click.echo("[crawl full] step=aulas")
+    _invoke_command(
+        crawl_aulas_command,
+        base_url=DEFAULT_AULAS_BASE_URL,
+        aulas_file=paths["aulas"],
+        places_file=paths["places"],
+        buildings_file=paths["buildings"],
+        cache_dir=cache_dir,
+        rate_limit=rate_limit,
+        user_agent=user_agent,
+        max_retries=max_retries,
+        retry_backoff=retry_backoff,
+        timeout_seconds=selected_profile.aulas_timeout_seconds,
+        failure_budget=selected_profile.aulas_failure_budget,
+        planner_discovery=selected_profile.aulas_planner_discovery,
+        planner_public_links=selected_profile.aulas_planner_public_links,
+        planner_impegni=selected_profile.aulas_planner_impegni,
+        planner_max_link_ids=selected_profile.aulas_planner_max_link_ids,
+    )
+
+    click.echo("[crawl full] step=link places-buildings")
+    _invoke_command(
+        link_places_buildings_command,
+        places_file=paths["places"],
+        buildings_file=paths["buildings"],
+    )
+
+    click.echo("[crawl full] step=link aliases")
+    _invoke_command(
+        link_aliases_command,
+        aulas_file=paths["aulas"],
+        places_file=paths["places"],
+        buildings_file=paths["buildings"],
+        out_file=paths["aliases"],
+    )
+
+    click.echo("[crawl full] step=contract")
+    _invoke_command(
+        contract_command,
+        data_dir=data_dir,
+        out=paths["contract"],
+        compatibility_version=DEFAULT_CONTRACT_COMPATIBILITY_VERSION,
+        contract_version=DEFAULT_CONTRACT_VERSION,
+    )
+
+    click.echo("[crawl full] step=validate")
+    _invoke_command(
+        validate_command,
+        data_dir=data_dir,
+        schemas_dir=schemas_dir,
+        verbose=False,
+    )
+
+    click.echo("[crawl full] step=report")
+    _invoke_command(
+        report_command,
+        data_dir=data_dir,
+        schemas_dir=schemas_dir,
+        out=paths["report"],
+    )
+
+    click.echo("[crawl full] complete")
 
 
 @link.command("places-buildings")
@@ -888,14 +1152,14 @@ def report_command(data_dir: Path, schemas_dir: Path, out: Path) -> None:
 )
 @click.option(
     "--compatibility-version",
-    default=1,
+    default=DEFAULT_CONTRACT_COMPATIBILITY_VERSION,
     show_default=True,
     type=int,
     help="Bump only on breaking data-contract changes expected by app clients.",
 )
 @click.option(
     "--contract-version",
-    default="1.0.0",
+    default=DEFAULT_CONTRACT_VERSION,
     show_default=True,
     help="Semantic version of the contract manifest format.",
 )
