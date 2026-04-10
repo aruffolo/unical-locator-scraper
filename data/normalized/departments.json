@@ -1,7 +1,7 @@
 [
   {
     "department_id": "dipartimento-di-biologia-ecologia-e-scienze-della-terra",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Biologia, Ecologia e Scienze della Terra",
     "source_id": "unical-departments",
     "source_url": "https://dibest.unical.it",
@@ -9,7 +9,7 @@
   },
   {
     "department_id": "dipartimento-di-chimica-e-tecnologie-chimiche",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Chimica e Tecnologie Chimiche",
     "source_id": "unical-departments",
     "source_url": "https://ctc.unical.it",
@@ -17,7 +17,7 @@
   },
   {
     "department_id": "dipartimento-di-culture-educazione-e-societa-dices",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Culture, Educazione e Società - DiCES",
     "source_id": "unical-departments",
     "source_url": "https://dices.unical.it",
@@ -25,7 +25,7 @@
   },
   {
     "department_id": "dipartimento-di-economia-statistica-e-finanza-giovanni-anania-desf",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Economia, Statistica e Finanza \"Giovanni Anania\"- DESF",
     "source_id": "unical-departments",
     "source_url": "https://desf.unical.it",
@@ -33,7 +33,7 @@
   },
   {
     "department_id": "dipartimento-di-farmacia-e-scienze-della-salute-e-della-nutrizione",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Farmacia e Scienze della Salute e della Nutrizione",
     "source_id": "unical-departments",
     "source_url": "https://dfssn.unical.it",
@@ -41,7 +41,7 @@
   },
   {
     "department_id": "dipartimento-di-fisica",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Fisica",
     "source_id": "unical-departments",
     "source_url": "https://fisica.unical.it",
@@ -49,7 +49,7 @@
   },
   {
     "department_id": "dipartimento-di-ingegneria-civile",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Ingegneria Civile",
     "source_id": "unical-departments",
     "source_url": "https://dinci.unical.it",
@@ -57,7 +57,7 @@
   },
   {
     "department_id": "dipartimento-di-ingegneria-dellambiente-diam",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Ingegneria dell’Ambiente - (DIAm)",
     "source_id": "unical-departments",
     "source_url": "https://diam.unical.it",
@@ -65,7 +65,7 @@
   },
   {
     "department_id": "dipartimento-di-ingegneria-informatica-modellistica-elettronica-e-sistemistica",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica",
     "source_id": "unical-departments",
     "source_url": "https://dimes.unical.it",
@@ -73,7 +73,7 @@
   },
   {
     "department_id": "dipartimento-di-ingegneria-meccanica-energetica-e-gestionale",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Ingegneria Meccanica, Energetica e Gestionale",
     "source_id": "unical-departments",
     "source_url": "https://dimeg.unical.it",
@@ -81,7 +81,7 @@
   },
   {
     "department_id": "dipartimento-di-matematica-e-informatica",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Matematica e Informatica",
     "source_id": "unical-departments",
     "source_url": "https://demacs.unical.it",
@@ -89,7 +89,7 @@
   },
   {
     "department_id": "dipartimento-di-scienze-aziendali-e-giuridiche",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Scienze Aziendali e Giuridiche",
     "source_id": "unical-departments",
     "source_url": "https://discag.unical.it",
@@ -97,7 +97,7 @@
   },
   {
     "department_id": "dipartimento-di-scienze-politiche-e-sociali",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Scienze Politiche e Sociali",
     "source_id": "unical-departments",
     "source_url": "https://dispes.unical.it",
@@ -105,7 +105,7 @@
   },
   {
     "department_id": "dipartimento-di-studi-umanistici",
-    "last_verified_at": "2026-02-09T11:45:46.055580+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.626639+00:00",
     "name": "Dipartimento di Studi Umanistici",
     "source_id": "unical-departments",
     "source_url": "https://disu.unical.it",

@@ -1,7 +1,7 @@
 [
   {
     "building_id": "ampliamento-polifunzionale",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.356074,
     "lng": 16.230362,
     "name": "Ampliamento polifunzionale",
@@ -10,7 +10,7 @@
   },
   {
     "building_id": "anfiteatro-polifunzionale",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3561975,
     "lng": 16.231007,
     "name": "Anfiteatro polifunzionale",
@@ -19,7 +19,7 @@
   },
   {
     "building_id": "auditorium-teatro-grande",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3676094,
     "lng": 16.2254199,
     "name": "Auditorium Teatro Grande",
@@ -29,7 +29,7 @@
   {
     "building_id": "aula-magna",
     "description": "Aula Magna Beniamino Andreatta",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3583149,
     "lng": 16.2258276,
     "name": "Aula Magna",
@@ -38,7 +38,7 @@
   },
   {
     "building_id": "aula-magna-convegno-societa-italiana-di-fisica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3581846,
     "lng": 16.2256829,
     "name": "Aula Magna - Convegno Società Italiana di Fisica",
@@ -47,7 +47,7 @@
   },
   {
     "building_id": "capannone-c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3580204,
     "lng": 16.2304625,
     "name": "Capannone C",
@@ -56,7 +56,7 @@
   },
   {
     "building_id": "capannone-d",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3582651,
     "lng": 16.2308648,
     "name": "Capannone D",
@@ -65,7 +65,7 @@
   },
   {
     "building_id": "capannone-e",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3579188,
     "lng": 16.2318707,
     "name": "Capannone E",
@@ -74,7 +74,7 @@
   },
   {
     "building_id": "capannone-f",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3571027,
     "lng": 16.2317928,
     "name": "Capannone F",
@@ -83,7 +83,7 @@
   },
   {
     "building_id": "capannone-g",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3574501,
     "lng": 16.2314871,
     "name": "Capannone G",
@@ -92,7 +92,7 @@
   },
   {
     "building_id": "capannone-h",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3572261,
     "lng": 16.2319216,
     "name": "Capannone H",
@@ -102,7 +102,7 @@
   {
     "building_id": "capannone-i-cnr",
     "description": "Istituto CNR - IIA",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3573412,
     "lng": 16.2319806,
     "name": "Capannone I - CNR",
@@ -111,7 +111,7 @@
   },
   {
     "building_id": "capannone-l",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3574439,
     "lng": 16.2327813,
     "name": "Capannone L",
@@ -129,7 +129,7 @@
   },
   {
     "building_id": "cedam-centro-di-educazione-e-documentazione-ambientale",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3390698,
     "lng": 16.2432043,
     "name": "CEDAM - Centro di Educazione e Documentazione Ambientale",
@@ -138,7 +138,7 @@
   },
   {
     "building_id": "centro-didattico-multifunzionale-centro-materia",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3642552,
     "lng": 16.2274477,
     "name": "Centro didattico multifunzionale, Centro Materia",
@@ -147,7 +147,7 @@
   },
   {
     "building_id": "centro-editoriale-librario",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3572126,
     "lng": 16.2305108,
     "name": "Centro Editoriale librario",
@@ -156,7 +156,7 @@
   },
   {
     "building_id": "centro-radiotelevisivo",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3556385,
     "lng": 16.2253797,
     "name": "Centro Radiotelevisivo",
@@ -166,7 +166,7 @@
   {
     "building_id": "centro-sanitario",
     "description": "P11 - Parcheggio Unical aperto al pubblico",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3634953,
     "lng": 16.2267932,
     "name": "Centro Sanitario",
@@ -175,7 +175,7 @@
   },
   {
     "building_id": "centro-universitario-sportivo",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3539493,
     "lng": 16.223529,
     "name": "Centro Universitario Sportivo",
@@ -184,7 +184,7 @@
   },
   {
     "building_id": "cla-centro-linguistico-d-ateneo",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3619711,
     "lng": 16.225963,
     "name": "CLA - Centro Linguistico d'Ateneo",
@@ -194,7 +194,7 @@
   {
     "building_id": "cubi-7-11b",
     "description": "Cubo 7-11B Uffici",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3589972,
     "lng": 16.2267543,
     "name": "Cubi 7-11B",
@@ -204,7 +204,7 @@
   {
     "building_id": "cubi-8c-9c",
     "description": "Istituto CNR - ICAR",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3586042,
     "lng": 16.2262755,
     "name": "Cubi 8C-9C",
@@ -214,7 +214,7 @@
   {
     "building_id": "cubo-0b",
     "description": "Dipartimento di Scienze Politiche e Sociali - Department of Political and Social Science",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3564981,
     "lng": 16.2270454,
     "name": "Cubo 0B",
@@ -224,7 +224,7 @@
   {
     "building_id": "cubo-0c",
     "description": "Dipartimento di Economia, Statistica e Finanza \"Giovanni Anania\"",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3564629,
     "lng": 16.226584,
     "name": "Cubo 0C",
@@ -234,7 +234,7 @@
   {
     "building_id": "cubo-11c",
     "description": "Dipartimento di Scienze Politiche e Sociali - Department of Political and Social Science",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3589226,
     "lng": 16.2262111,
     "name": "Cubo 11C",
@@ -244,7 +244,7 @@
   {
     "building_id": "cubo-11d",
     "description": "Dipartimento di Scienze Politiche e Sociali - Department of Political and Social Science",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3588976,
     "lng": 16.2259188,
     "name": "Cubo 11D",
@@ -253,7 +253,7 @@
   },
   {
     "building_id": "cubo-12b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3592181,
     "lng": 16.226576,
     "name": "Cubo 12B",
@@ -263,7 +263,7 @@
   {
     "building_id": "cubo-12c",
     "description": "Dipartimento di Chimica e Tecnologie Chimiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3591818,
     "lng": 16.2261656,
     "name": "Cubo 12C",
@@ -272,7 +272,7 @@
   },
   {
     "building_id": "cubo-13c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3594244,
     "lng": 16.2264123,
     "name": "Cubo 13C",
@@ -282,7 +282,7 @@
   {
     "building_id": "cubo-14b",
     "description": "Dipartimento di Biologia, Ecologia e Scienze della Terra",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3596951,
     "lng": 16.2268187,
     "name": "Cubo 14B",
@@ -292,7 +292,7 @@
   {
     "building_id": "cubo-14c",
     "description": "Dipartimento di Chimica e Tecnologie Chimiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3596515,
     "lng": 16.2263533,
     "name": "Cubo 14C",
@@ -302,7 +302,7 @@
   {
     "building_id": "cubo-14d",
     "description": "Dipartimento di Chimica e Tecnologie Chimiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.359607,
     "lng": 16.2260569,
     "name": "Cubo 14D",
@@ -312,7 +312,7 @@
   {
     "building_id": "cubo-15a",
     "description": "Dipartimento di Biologia, Ecologia e Scienze della Terra",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3599263,
     "lng": 16.2270669,
     "name": "Cubo 15A",
@@ -322,7 +322,7 @@
   {
     "building_id": "cubo-15b",
     "description": "Dipartimento di Biologia, Ecologia e Scienze della Terra",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3599273,
     "lng": 16.2267798,
     "name": "Cubo 15B",
@@ -332,7 +332,7 @@
   {
     "building_id": "cubo-15c",
     "description": "Dipartimento di Chimica e Tecnologie Chimiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3598599,
     "lng": 16.2260718,
     "name": "Cubo 15C",
@@ -342,7 +342,7 @@
   {
     "building_id": "cubo-15d",
     "description": "Dipartimento di Chimica e Tecnologie Chimiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3598081,
     "lng": 16.2257794,
     "name": "Cubo 15D",
@@ -351,7 +351,7 @@
   },
   {
     "building_id": "cubo-16c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3600756,
     "lng": 16.2260596,
     "name": "Cubo 16C",
@@ -360,7 +360,7 @@
   },
   {
     "building_id": "cubo-17a",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3603732,
     "lng": 16.2269997,
     "name": "Cubo 17A",
@@ -370,7 +370,7 @@
   {
     "building_id": "cubo-17b",
     "description": "Dipartimento di Studi Umanistici",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3603473,
     "lng": 16.226474,
     "name": "Cubo 17B",
@@ -380,7 +380,7 @@
   {
     "building_id": "cubo-17c",
     "description": "Dipartimento di Chimica e Tecnologie Chimiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3603099,
     "lng": 16.2260127,
     "name": "Cubo 17C",
@@ -390,7 +390,7 @@
   {
     "building_id": "cubo-17d",
     "description": "Dipartimento di Chimica e Tecnologie Chimiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.360255,
     "lng": 16.2257083,
     "name": "Cubo 17D",
@@ -400,7 +400,7 @@
   {
     "building_id": "cubo-18b",
     "description": "Dipartimento di Culture, Educazione e Società",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3605961,
     "lng": 16.2266846,
     "name": "Cubo 18B",
@@ -410,7 +410,7 @@
   {
     "building_id": "cubo-18c",
     "description": "Dipartimento di Studi Umanistici",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3605287,
     "lng": 16.2259751,
     "name": "Cubo 18C",
@@ -420,7 +420,7 @@
   {
     "building_id": "cubo-18d",
     "description": "Dipartimento di Chimica e Tecnologie Chimiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3604997,
     "lng": 16.2259202,
     "name": "Cubo 18D",
@@ -429,7 +429,7 @@
   },
   {
     "building_id": "cubo-19b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3606075,
     "lng": 16.226407,
     "name": "Cubo 19B",
@@ -439,7 +439,7 @@
   {
     "building_id": "cubo-1a",
     "description": "Dipartimento di Scienze Politiche e Sociali - Department of Political and Social Science",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3567709,
     "lng": 16.2275376,
     "name": "Cubo 1A",
@@ -449,7 +449,7 @@
   {
     "building_id": "cubo-1b",
     "description": "Dipartimento di Scienze Politiche e Sociali - Department of Political and Social Science",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3567481,
     "lng": 16.2272532,
     "name": "Cubo 1B",
@@ -459,7 +459,7 @@
   {
     "building_id": "cubo-1c",
     "description": "Dipartimento di Economia, Statistica e Finanza \"Giovanni Anania\"",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3567004,
     "lng": 16.2267892,
     "name": "Cubo 1C",
@@ -469,7 +469,7 @@
   {
     "building_id": "cubo-1d",
     "description": "Dipartimento di Economia, Statistica e Finanza \"Giovanni Anania\"",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3564867,
     "lng": 16.2265237,
     "name": "Cubo 1D",
@@ -479,7 +479,7 @@
   {
     "building_id": "cubo-20",
     "description": "Dipartimento di Lingue e Scienze dell'Educazione",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3610209,
     "lng": 16.2263592,
     "name": "Cubo 20",
@@ -489,7 +489,7 @@
   {
     "building_id": "cubo-20a",
     "description": "Dipartimento di Culture, Educazione e Società",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3610544,
     "lng": 16.2269018,
     "name": "Cubo 20A",
@@ -499,7 +499,7 @@
   {
     "building_id": "cubo-20b",
     "description": "Dipartimento di Culture, Educazione e Società - DiCES",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3610209,
     "lng": 16.2263592,
     "name": "Cubo 20B",
@@ -509,7 +509,7 @@
   {
     "building_id": "cubo-21b",
     "description": "Dipartimento di Studi Umanistici",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3612837,
     "lng": 16.2263058,
     "name": "Cubo 21B",
@@ -519,7 +519,7 @@
   {
     "building_id": "cubo-22b",
     "description": "(Macro) Area Servizi Informatici e Tecnologici",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3614857,
     "lng": 16.2262461,
     "name": "Cubo 22B",
@@ -528,7 +528,7 @@
   },
   {
     "building_id": "cubo-23b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3616289,
     "lng": 16.2259644,
     "name": "Cubo 23B",
@@ -537,7 +537,7 @@
   },
   {
     "building_id": "cubo-24b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3618477,
     "lng": 16.226301,
     "name": "Cubo 24B",
@@ -546,7 +546,7 @@
   },
   {
     "building_id": "cubo-25b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3620686,
     "lng": 16.226458,
     "name": "Cubo 25B",
@@ -556,7 +556,7 @@
   {
     "building_id": "cubo-27b",
     "description": "Dipartimento di Studi Umanistici",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3626263,
     "lng": 16.2263936,
     "name": "Cubo 27B",
@@ -566,7 +566,7 @@
   {
     "building_id": "cubo-28a",
     "description": "Dipartimento di Studi Umanistici",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3628586,
     "lng": 16.2266362,
     "name": "Cubo 28A",
@@ -576,7 +576,7 @@
   {
     "building_id": "cubo-28b",
     "description": "Dipartimento di Studi Umanistici",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3626543,
     "lng": 16.2263708,
     "name": "Cubo 28B",
@@ -586,7 +586,7 @@
   {
     "building_id": "cubo-28c",
     "description": "Dipartimento di Studi Umanistici",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3628078,
     "lng": 16.2258907,
     "name": "Cubo 28C",
@@ -596,7 +596,7 @@
   {
     "building_id": "cubo-28d",
     "description": "Dipartimento di Studi Umanistici",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3627506,
     "lng": 16.2253514,
     "name": "Cubo 28D",
@@ -605,7 +605,7 @@
   },
   {
     "building_id": "cubo-29b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3630431,
     "lng": 16.2260609,
     "name": "Cubo 29B",
@@ -614,7 +614,7 @@
   },
   {
     "building_id": "cubo-29c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3630058,
     "lng": 16.2256398,
     "name": "Cubo 29C",
@@ -623,7 +623,7 @@
   },
   {
     "building_id": "cubo-2b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3569731,
     "lng": 16.2271957,
     "name": "Cubo 2B",
@@ -632,7 +632,7 @@
   },
   {
     "building_id": "cubo-2c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3569254,
     "lng": 16.2267852,
     "name": "Cubo 2C",
@@ -642,7 +642,7 @@
   {
     "building_id": "cubo-30a",
     "description": "Dipartimento di Matematica e Informatica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3633118,
     "lng": 16.2265706,
     "name": "Cubo 30A",
@@ -652,7 +652,7 @@
   {
     "building_id": "cubo-30b",
     "description": "Dipartimento di Matematica e Informatica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3632878,
     "lng": 16.2260342,
     "name": "Cubo 30B",
@@ -662,7 +662,7 @@
   {
     "building_id": "cubo-30c",
     "description": "Dipartimento di Fisica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3632453,
     "lng": 16.2255769,
     "name": "Cubo 30C",
@@ -672,7 +672,7 @@
   {
     "building_id": "cubo-30d",
     "description": "Dipartimento di Fisica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3631987,
     "lng": 16.2252818,
     "name": "Cubo 30D",
@@ -682,7 +682,7 @@
   {
     "building_id": "cubo-31a",
     "description": "Dipartimento di Matematica e Informatica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3635409,
     "lng": 16.2265344,
     "name": "Cubo 31A",
@@ -692,7 +692,7 @@
   {
     "building_id": "cubo-31b",
     "description": "Dipartimento di Matematica e Informatica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3635102,
     "lng": 16.2259966,
     "name": "Cubo 31B",
@@ -702,7 +702,7 @@
   {
     "building_id": "cubo-31c",
     "description": "Dipartimento di Fisica - Istituto CNR NANOTEC",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3634621,
     "lng": 16.2255433,
     "name": "Cubo 31C",
@@ -712,7 +712,7 @@
   {
     "building_id": "cubo-31d",
     "description": "Dipartimento di Fisica - Istituto CNR NANOTEC",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3634216,
     "lng": 16.2252482,
     "name": "Cubo 31D",
@@ -721,7 +721,7 @@
   },
   {
     "building_id": "cubo-32b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3637493,
     "lng": 16.2261918,
     "name": "Cubo 32B",
@@ -730,7 +730,7 @@
   },
   {
     "building_id": "cubo-32c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3635295,
     "lng": 16.2258008,
     "name": "Cubo 32C",
@@ -740,7 +740,7 @@
   {
     "building_id": "cubo-33b",
     "description": "Dipartimento di Fisica - Istituto CNR NANOTEC",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3639566,
     "lng": 16.2259377,
     "name": "Cubo 33B",
@@ -750,7 +750,7 @@
   {
     "building_id": "cubo-33c",
     "description": "Dipartimento di Fisica - Istituto CNR NANOTEC",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3639349,
     "lng": 16.2257257,
     "name": "Cubo 33C",
@@ -760,7 +760,7 @@
   {
     "building_id": "cubo-34b",
     "description": "Centro Sanitario",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3641795,
     "lng": 16.2259008,
     "name": "Cubo 34B",
@@ -770,7 +770,7 @@
   {
     "building_id": "cubo-37b",
     "description": "Dipartimento Ingegneria Civile",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3647115,
     "lng": 16.2260697,
     "name": "Cubo 37B",
@@ -779,7 +779,7 @@
   },
   {
     "building_id": "cubo-37c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3648266,
     "lng": 16.2255943,
     "name": "Cubo 37C",
@@ -788,7 +788,7 @@
   },
   {
     "building_id": "cubo-37d",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.364755,
     "lng": 16.2250726,
     "name": "Cubo 37D",
@@ -797,7 +797,7 @@
   },
   {
     "building_id": "cubo-37e",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3647022,
     "lng": 16.2247708,
     "name": "Cubo 37E",
@@ -806,7 +806,7 @@
   },
   {
     "building_id": "cubo-37f",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3647307,
     "lng": 16.2244724,
     "name": "Cubo 37F",
@@ -816,7 +816,7 @@
   {
     "building_id": "cubo-38b",
     "description": "Dipartimento Ingegneria Civile",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3650733,
     "lng": 16.2258088,
     "name": "Cubo 38B",
@@ -826,7 +826,7 @@
   {
     "building_id": "cubo-38cde",
     "description": "Dipartimento Ingegneria Civile",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3650547,
     "lng": 16.2255273,
     "name": "Cubo 38CDE",
@@ -836,7 +836,7 @@
   {
     "building_id": "cubo-39b",
     "description": "Dipartimento Ingegneria Civile",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3653326,
     "lng": 16.2259886,
     "name": "Cubo 39B",
@@ -846,7 +846,7 @@
   {
     "building_id": "cubo-39c",
     "description": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3652662,
     "lng": 16.2252912,
     "name": "Cubo 39C",
@@ -856,7 +856,7 @@
   {
     "building_id": "cubo-3a",
     "description": "Dipartimento di Scienze Aziendali e Giuridiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3572241,
     "lng": 16.2274691,
     "name": "Cubo 3A",
@@ -866,7 +866,7 @@
   {
     "building_id": "cubo-3b",
     "description": "Dipartimento di Scienze Aziendali e Giuridiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3571992,
     "lng": 16.2271822,
     "name": "Cubo 3B",
@@ -876,7 +876,7 @@
   {
     "building_id": "cubo-3c",
     "description": "Dipartimento di Scienze Aziendali e Giuridiche",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3571556,
     "lng": 16.2267343,
     "name": "Cubo 3C",
@@ -886,7 +886,7 @@
   {
     "building_id": "cubo-3d",
     "description": "Dipartimento di Economia, Statistica e Finanza \"Giovanni Anania\"",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3571172,
     "lng": 16.2264258,
     "name": "Cubo 3D",
@@ -895,7 +895,7 @@
   },
   {
     "building_id": "cubo-40b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3655409,
     "lng": 16.2259403,
     "name": "Cubo 40B",
@@ -904,7 +904,7 @@
   },
   {
     "building_id": "cubo-40c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.365487,
     "lng": 16.2252684,
     "name": "Cubo 40C",
@@ -914,7 +914,7 @@
   {
     "building_id": "cubo-41a",
     "description": "Dipartimento di Ingegneria dell'Ambiente",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3658043,
     "lng": 16.2262005,
     "name": "Cubo 41A",
@@ -924,7 +924,7 @@
   {
     "building_id": "cubo-41b",
     "description": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3657608,
     "lng": 16.2256788,
     "name": "Cubo 41B",
@@ -934,7 +934,7 @@
   {
     "building_id": "cubo-41c",
     "description": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3657504,
     "lng": 16.2254602,
     "name": "Cubo 41C",
@@ -944,7 +944,7 @@
   {
     "building_id": "cubo-41d",
     "description": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3656726,
     "lng": 16.2249023,
     "name": "Cubo 41D",
@@ -954,7 +954,7 @@
   {
     "building_id": "cubo-41z",
     "description": "Dipartimento Ingegneria Civile",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3658075,
     "lng": 16.2262648,
     "name": "Cubo 41Z",
@@ -964,7 +964,7 @@
   {
     "building_id": "cubo-42a",
     "description": "Dipartimento di Ingegneria dell'Ambiente",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3660272,
     "lng": 16.2261683,
     "name": "Cubo 42A",
@@ -974,7 +974,7 @@
   {
     "building_id": "cubo-42b",
     "description": "Dipartimento Ingegneria Civile",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3659816,
     "lng": 16.2256479,
     "name": "Cubo 42B",
@@ -984,7 +984,7 @@
   {
     "building_id": "cubo-42c",
     "description": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica - DIMES",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3659536,
     "lng": 16.2251758,
     "name": "Cubo 42C",
@@ -994,7 +994,7 @@
   {
     "building_id": "cubo-42d",
     "description": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3659194,
     "lng": 16.2251168,
     "name": "Cubo 42D",
@@ -1003,7 +1003,7 @@
   },
   {
     "building_id": "cubo-43b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3661942,
     "lng": 16.2255809,
     "name": "Cubo 43B",
@@ -1012,7 +1012,7 @@
   },
   {
     "building_id": "cubo-43c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3661589,
     "lng": 16.2251678,
     "name": "Cubo 43C",
@@ -1022,7 +1022,7 @@
   {
     "building_id": "cubo-44a",
     "description": "Dipartimento di Ingegneria dell’Ambiente",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3664762,
     "lng": 16.2261026,
     "name": "Cubo 44A",
@@ -1032,7 +1032,7 @@
   {
     "building_id": "cubo-44b",
     "description": "Dipartimento Ingegneria Civile",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3664388,
     "lng": 16.2255742,
     "name": "Cubo 44B",
@@ -1041,7 +1041,7 @@
   },
   {
     "building_id": "cubo-44c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3663943,
     "lng": 16.2251088,
     "name": "Cubo 44C",
@@ -1050,7 +1050,7 @@
   },
   {
     "building_id": "cubo-44d",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3663527,
     "lng": 16.2248178,
     "name": "Cubo 44D",
@@ -1060,7 +1060,7 @@
   {
     "building_id": "cubo-44z",
     "description": "Dipartimento di Ingegneria Informatica, Modellistica, Elettronica e Sistemistica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.366472,
     "lng": 16.2261535,
     "name": "Cubo 44Z",
@@ -1070,7 +1070,7 @@
   {
     "building_id": "cubo-45a",
     "description": "Dipartimento di Ingegneria dell'Ambiente",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3667001,
     "lng": 16.2260771,
     "name": "Cubo 45A",
@@ -1080,7 +1080,7 @@
   {
     "building_id": "cubo-45b",
     "description": "Dipartimento di Ingegneria Civile",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3666856,
     "lng": 16.2257834,
     "name": "Cubo 45B",
@@ -1089,7 +1089,7 @@
   },
   {
     "building_id": "cubo-45c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.366444,
     "lng": 16.2254159,
     "name": "Cubo 45C",
@@ -1098,7 +1098,7 @@
   },
   {
     "building_id": "cubo-45d",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3665777,
     "lng": 16.224787,
     "name": "Cubo 45D",
@@ -1107,7 +1107,7 @@
   },
   {
     "building_id": "cubo-46b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3668981,
     "lng": 16.2257592,
     "name": "Cubo 46B",
@@ -1117,7 +1117,7 @@
   {
     "building_id": "cubo-46c",
     "description": "Dipartimento di Ingegneria Meccanica, Energetica e Gestionale",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3668598,
     "lng": 16.2252878,
     "name": "Cubo 46C",
@@ -1127,7 +1127,7 @@
   {
     "building_id": "cubo-4a",
     "description": "Dipartimento di Biologia, Ecologia e Scienze della Terra",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3574429,
     "lng": 16.2274343,
     "name": "Cubo 4A",
@@ -1137,7 +1137,7 @@
   {
     "building_id": "cubo-4b",
     "description": "Dipartimento di Biologia, Ecologia e Scienze della Terra",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3574097,
     "lng": 16.2269153,
     "name": "Cubo 4B",
@@ -1146,7 +1146,7 @@
   },
   {
     "building_id": "cubo-4c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3573666,
     "lng": 16.2264435,
     "name": "Cubo 4C",
@@ -1156,7 +1156,7 @@
   {
     "building_id": "cubo-4d",
     "description": "Dipartimento di Biologia, Ecologia e Scienze della Terra",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3573526,
     "lng": 16.2263882,
     "name": "Cubo 4D",
@@ -1165,7 +1165,7 @@
   },
   {
     "building_id": "cubo-5b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3576502,
     "lng": 16.227099,
     "name": "Cubo 5B",
@@ -1174,7 +1174,7 @@
   },
   {
     "building_id": "cubo-5c",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3576067,
     "lng": 16.2266846,
     "name": "Cubo 5C",
@@ -1183,7 +1183,7 @@
   },
   {
     "building_id": "cubo-6b",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3578701,
     "lng": 16.2268361,
     "name": "Cubo 6B",
@@ -1193,7 +1193,7 @@
   {
     "building_id": "cubo-6c",
     "description": "Dipartimento di Biologia, Ecologia e Scienze della Terra",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3578254,
     "lng": 16.2263762,
     "name": "Cubo 6C",
@@ -1202,7 +1202,7 @@
   },
   {
     "building_id": "cubo-libro",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3616973,
     "lng": 16.2263104,
     "name": "Cubo LIBRO",
@@ -1211,7 +1211,7 @@
   },
   {
     "building_id": "deposito-orto-botanico",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3573914,
     "lng": 16.2294662,
     "name": "Deposito Orto Botanico",
@@ -1220,7 +1220,7 @@
   },
   {
     "building_id": "edificio-ampliamento-polifunzionale-dispes",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3555607,
     "lng": 16.230661,
     "name": "Edificio Ampliamento Polifunzionale - DISPeS",
@@ -1229,7 +1229,7 @@
   },
   {
     "building_id": "maisonnettes",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3560689,
     "lng": 16.2239796,
     "name": "Maisonnettes",
@@ -1239,7 +1239,7 @@
   {
     "building_id": "mensa-maisonnettes",
     "description": "Mensa Studenti",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3555628,
     "lng": 16.2249774,
     "name": "Mensa Maisonnettes",
@@ -1249,7 +1249,7 @@
   {
     "building_id": "mensa-maisonnettes-senior",
     "description": "Mensa Dipendenti edificio",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3553596,
     "lng": 16.224677,
     "name": "Mensa Maisonnettes Senior",
@@ -1258,7 +1258,7 @@
   },
   {
     "building_id": "mensa-martenson",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3621515,
     "lng": 16.2239622,
     "name": "Mensa Martenson",
@@ -1267,7 +1267,7 @@
   },
   {
     "building_id": "mensa-martenson-ingresso",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3621494,
     "lng": 16.2241754,
     "name": "Mensa Martenson ingresso",
@@ -1276,7 +1276,7 @@
   },
   {
     "building_id": "mensa-studenti-ingresso",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3556873,
     "lng": 16.225487,
     "name": "Mensa Studenti ingresso",
@@ -1286,7 +1286,7 @@
   {
     "building_id": "museo-di-paleontologia",
     "description": "P7 - Parcheggio Unical aperto al pubblico",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3597874,
     "lng": 16.2277023,
     "name": "Museo di Paleontologia",
@@ -1295,7 +1295,7 @@
   },
   {
     "building_id": "orto-botanico",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3571245,
     "lng": 16.2298911,
     "name": "Orto Botanico",
@@ -1304,7 +1304,7 @@
   },
   {
     "building_id": "orto-botanico-area",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3568228,
     "lng": 16.2288812,
     "name": "Orto Botanico - area",
@@ -1313,7 +1313,7 @@
   },
   {
     "building_id": "palestra-1",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3544512,
     "lng": 16.2248272,
     "name": "Palestra 1",
@@ -1322,7 +1322,7 @@
   },
   {
     "building_id": "palestra-2",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3539493,
     "lng": 16.223529,
     "name": "Palestra 2",
@@ -1331,7 +1331,7 @@
   },
   {
     "building_id": "palestra-cus",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.353869,
     "lng": 16.223676,
     "name": "Palestra CUS",
@@ -1341,7 +1341,7 @@
   {
     "building_id": "piazza-rettorato",
     "description": "P9 - Parcheggio Unical aperto al pubblico",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3622303,
     "lng": 16.2257445,
     "name": "Piazza Rettorato",
@@ -1350,7 +1350,7 @@
   },
   {
     "building_id": "polifunzionale",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.356964,
     "lng": 16.230682,
     "name": "Polifunzionale",
@@ -1360,7 +1360,7 @@
   {
     "building_id": "polifunzionale-dfssn",
     "description": "Dipartimento di Farmacia e Scienze della Salute e della Nutrizione",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3566828,
     "lng": 16.2316158,
     "name": "Polifunzionale - DFSSN",
@@ -1370,7 +1370,7 @@
   {
     "building_id": "polifunzionale-est",
     "description": "Parcheggio Unical aperto al pubblico",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3548577,
     "lng": 16.231699,
     "name": "Polifunzionale Est",
@@ -1380,7 +1380,7 @@
   {
     "building_id": "polifunzionale-ovest",
     "description": "Parcheggio Unical aperto al pubblico",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3558254,
     "lng": 16.2296963,
     "name": "Polifunzionale Ovest",
@@ -1389,7 +1389,7 @@
   },
   {
     "building_id": "quartiere-blocco-11-e-12",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3568238,
     "lng": 16.2227619,
     "name": "Quartiere Blocco 11 e 12",
@@ -1398,7 +1398,7 @@
   },
   {
     "building_id": "quartiere-monaci",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3616475,
     "lng": 16.2278661,
     "name": "Quartiere Monaci",
@@ -1407,7 +1407,7 @@
   },
   {
     "building_id": "quartiere-nervoso",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3489041,
     "lng": 16.2442973,
     "name": "Quartiere Nervoso",
@@ -1416,7 +1416,7 @@
   },
   {
     "building_id": "teatro-all-aperto",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3565,
     "lng": 16.230878,
     "name": "Teatro all'aperto",
@@ -1425,7 +1425,7 @@
   },
   {
     "building_id": "teatro-piccolo",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3578711,
     "lng": 16.2244919,
     "name": "Teatro Piccolo",
@@ -1434,7 +1434,7 @@
   },
   {
     "building_id": "uffici-centro-residenziale-e-area-didattica",
-    "last_verified_at": "2026-02-10T13:28:27.324220+00:00",
+    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
     "lat": 39.3571059,
     "lng": 16.2254535,
     "name": "Uffici Centro Residenziale e Area Didattica",

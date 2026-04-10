@@ -441,18 +441,60 @@
     "normalized": "aula-29b2"
   },
   {
+    "alias_id": "alias-place-aula-29b2-s-aleramo-cubo-29b-29-b-2-saleramo",
+    "entity_id": "aula-29b2-s-aleramo-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29 B 2 SALERAMO",
+    "normalized": "29-b-2-saleramo"
+  },
+  {
     "alias_id": "alias-place-aula-29b2-s-aleramo-cubo-29b-29b2-s-aleramo",
     "entity_id": "aula-29b2-s-aleramo-cubo-29b",
     "entity_type": "PLACE",
-    "label": "29B2-S. Aleramo",
+    "label": "29B2 S. Aleramo",
     "normalized": "29b2-s-aleramo"
+  },
+  {
+    "alias_id": "alias-place-aula-29b2-s-aleramo-cubo-29b-29b2saleramo",
+    "entity_id": "aula-29b2-s-aleramo-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29B2SALERAMO",
+    "normalized": "29b2saleramo"
+  },
+  {
+    "alias_id": "alias-place-aula-29b2-s-aleramo-cubo-29b-aula-29b2-s-aleramo",
+    "entity_id": "aula-29b2-s-aleramo-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "Aula 29B2 S. Aleramo",
+    "normalized": "aula-29b2-s-aleramo"
+  },
+  {
+    "alias_id": "alias-place-aula-29b3-c-mortati-cubo-29b-29-b-3-cmortati",
+    "entity_id": "aula-29b3-c-mortati-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29 B 3 CMORTATI",
+    "normalized": "29-b-3-cmortati"
   },
   {
     "alias_id": "alias-place-aula-29b3-c-mortati-cubo-29b-29b3-c-mortati",
     "entity_id": "aula-29b3-c-mortati-cubo-29b",
     "entity_type": "PLACE",
-    "label": "29B3-C. Mortati",
+    "label": "29B3 C. Mortati",
     "normalized": "29b3-c-mortati"
+  },
+  {
+    "alias_id": "alias-place-aula-29b3-c-mortati-cubo-29b-29b3cmortati",
+    "entity_id": "aula-29b3-c-mortati-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "29B3CMORTATI",
+    "normalized": "29b3cmortati"
+  },
+  {
+    "alias_id": "alias-place-aula-29b3-c-mortati-cubo-29b-aula-29b3-c-mortati",
+    "entity_id": "aula-29b3-c-mortati-cubo-29b",
+    "entity_type": "PLACE",
+    "label": "Aula 29B3 C. Mortati",
+    "normalized": "aula-29b3-c-mortati"
   },
   {
     "alias_id": "alias-place-aula-29b3-cubo-29b-29-b-3",
@@ -1419,6 +1461,13 @@
     "entity_type": "PLACE",
     "label": "A",
     "normalized": "a"
+  },
+  {
+    "alias_id": "alias-place-aula-a-cubo-31c-aula-a",
+    "entity_id": "aula-a-cubo-31c",
+    "entity_type": "PLACE",
+    "label": "Aula A",
+    "normalized": "aula-a"
   },
   {
     "alias_id": "alias-place-aula-a-ling-cubo-20b-a-ling",

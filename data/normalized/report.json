@@ -8,10 +8,10 @@
       "total": 517,
       "with_building_id": 517,
       "with_building_id_ratio": 1.0,
-      "with_capacity": 280,
-      "with_capacity_ratio": 0.5416,
-      "with_floor": 329,
-      "with_floor_ratio": 0.6364,
+      "with_capacity": 283,
+      "with_capacity_ratio": 0.5474,
+      "with_floor": 330,
+      "with_floor_ratio": 0.6383,
       "with_place_id": 517,
       "with_place_id_ratio": 1.0,
       "with_short_code": 138,
@@ -32,25 +32,25 @@
       "with_website_url_ratio": 1.0
     },
     "people": {
-      "total": 4156,
-      "with_department_id": 1721,
-      "with_department_id_ratio": 0.4141,
-      "with_email": 1469,
-      "with_email_ratio": 0.3535,
+      "total": 4739,
+      "with_department_id": 1830,
+      "with_department_id_ratio": 0.3862,
+      "with_email": 1512,
+      "with_email_ratio": 0.3191,
       "with_office_hours": 438,
-      "with_office_hours_ratio": 0.1054,
+      "with_office_hours_ratio": 0.0924,
       "with_office_place_id": 626,
-      "with_office_place_id_ratio": 0.1506
+      "with_office_place_id_ratio": 0.1321
     },
     "places": {
       "total": 880,
       "type_aula": 517,
       "type_aula_ratio": 0.5875,
-      "with_building_id": 865,
-      "with_building_id_ratio": 0.983
+      "with_building_id": 868,
+      "with_building_id_ratio": 0.9864
     }
   },
-  "generated_at": "2026-03-11T18:19:38.293199+00:00",
+  "generated_at": "2026-04-09T19:53:25.816010+00:00",
   "integrity": {
     "issues": []
   },
@@ -71,26 +71,59 @@
   },
   "scrape_diagnostics": {
     "sources": {
-      "unical-teachers": {
-        "attempts": 1,
+      "unical-aulas": {
+        "attempts": 0,
         "failure_budget": 10,
-        "final_failures": 1,
-        "requests": 1,
+        "final_failures": 0,
+        "requests": 0,
+        "retries": 0,
+        "source_id": "unical-aulas",
+        "status": "ok",
+        "updated_at": "2026-04-09T19:53:24.909078+00:00"
+      },
+      "unical-campus-map": {
+        "attempts": 0,
+        "failure_budget": 0,
+        "final_failures": 0,
+        "requests": 0,
+        "retries": 0,
+        "source_id": "unical-campus-map",
+        "status": "ok",
+        "updated_at": "2026-04-09T19:53:21.689560+00:00"
+      },
+      "unical-departments": {
+        "attempts": 0,
+        "failure_budget": 0,
+        "final_failures": 0,
+        "requests": 0,
+        "retries": 0,
+        "source_id": "unical-departments",
+        "status": "ok",
+        "updated_at": "2026-04-09T19:53:21.623710+00:00"
+      },
+      "unical-services": {
+        "attempts": 0,
+        "failure_budget": 0,
+        "final_failures": 0,
+        "requests": 0,
+        "retries": 0,
+        "source_id": "unical-services",
+        "status": "ok",
+        "updated_at": "2026-04-09T19:53:24.105285+00:00"
+      },
+      "unical-teachers": {
+        "attempts": 0,
+        "failure_budget": 10,
+        "final_failures": 0,
+        "requests": 0,
         "retries": 0,
         "source_id": "unical-teachers",
         "status": "ok",
-        "updated_at": "2026-02-12T08:39:07.839939+00:00"
+        "updated_at": "2026-04-09T19:53:24.311229+00:00"
       }
     },
-    "warning_count": 1,
-    "warnings": [
-      {
-        "failure_budget": 10,
-        "final_failures": 1,
-        "message": "unical-teachers: 1 final failures (budget 10)",
-        "source_id": "unical-teachers"
-      }
-    ]
+    "warning_count": 0,
+    "warnings": []
   },
   "summary": {
     "integrity_issues": 0,

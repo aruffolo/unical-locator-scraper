@@ -6,20 +6,20 @@
     "aulas": {
       "total": 517,
       "with_building_id": 517,
-      "with_capacity": 280,
-      "with_floor": 329
+      "with_capacity": 283,
+      "with_floor": 330
     }
   },
   "datasets": [
     {
       "name": "aliases.json",
-      "records": 1374,
-      "sha256": "eea2fef87e4809ab6e929ca84a4766ddbeb2d6d21ab639d2b45d8bbf348f7466"
+      "records": 1381,
+      "sha256": "f3051e50446fa52502c55accea399fafd29f32434b7d6fc814f930520a6fe150"
     },
     {
       "name": "aulas.json",
       "records": 517,
-      "sha256": "cdb73ae9fba30aaf17e96abfd2cf2a55c15101a7ade80907eca0cc52116fdabd"
+      "sha256": "1764899dbe345b66bbe53933ba6b605750b384d592e113239a0c68d4abb38e38"
     },
     {
       "name": "building_entrances.json",
@@ -29,12 +29,12 @@
     {
       "name": "buildings.json",
       "records": 151,
-      "sha256": "3fddc933673eed144143655dd32124de6c6b9537bdf11d2fd2f421ffaf3b8e55"
+      "sha256": "727d0ab34746a8f3d706e70edae98626b320a78298ac82101d08b4de662ac3c8"
     },
     {
       "name": "departments.json",
       "records": 14,
-      "sha256": "d8564414668fd8a267f82d44b75a865e397a41220b15727fe922c44ff06d324e"
+      "sha256": "eb0533e65f0cddf2f14ad56fda3ac3db8f0c0cc3c8c4d6492cec051fd3a36e35"
     },
     {
       "name": "faqs.json",
@@ -48,19 +48,19 @@
     },
     {
       "name": "people.json",
-      "records": 4156,
-      "sha256": "61804489ab6551c2eb19195479d16047f3c000a537a1310ae5b2a317e9b69db9"
+      "records": 4739,
+      "sha256": "428ef4a03ba99a9760c3dae74859a68e9d45a936db22cb8ee40d4e43f861c37f"
     },
     {
       "name": "places.json",
       "records": 880,
-      "sha256": "7812b93c7d6da89e80c64b9663b3427e018d66d45e72156d29209a73c41ed714"
+      "sha256": "1755495aa645adf400d52c5e7a8605cd60cd8e66c363b3b9f17e0c6c597dcd06"
     },
     {
       "name": "sources.json",
       "records": 5,
-      "sha256": "9685089b9153acaf31fe898a6a9a66a5616eb34f245ed6fff89cacc605fda1e3"
+      "sha256": "223dfa91cd1b931e5ba57a96bb7f107e0abd2dab768225d00dd22ae6caf61bd3"
     }
   ],
-  "revision": "9ca6e57fd4c18ebdf52892bb1be0dd3a0ce8d34c3bccb68258751ab3d37ab794"
+  "revision": "15c733aa676c329459798058adc040777d1f87e864329f7579ac843a859f4e05"
 }
