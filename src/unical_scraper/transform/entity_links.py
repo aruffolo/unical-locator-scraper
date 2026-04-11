@@ -65,6 +65,7 @@ def apply_service_location_contract(
             }
         )
         merged.pop("building_id", None)
+        _merge_optional_place_fields(merged, spec)
         places_by_id[place_id] = merged
 
     for spec in _object_list(contract.get("mensa_buildings")):
@@ -131,6 +132,23 @@ def _normalize_entity_link(spec: dict[str, Any]) -> dict[str, Any]:
         link["source_url"] = source_url
 
     return link
+
+
+def _merge_optional_place_fields(
+    place: dict[str, Any],
+    spec: dict[str, Any],
+) -> None:
+    for field in [
+        "description",
+        "email",
+        "phone",
+        "website_url",
+        "opening_hours",
+        "access_notes",
+    ]:
+        value = _optional_string(spec, field)
+        if value:
+            place[field] = value
 
 
 def _object_list(value: Any) -> list[dict[str, Any]]:

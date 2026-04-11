@@ -11,7 +11,10 @@
       "place_id": "quartiere-chiodo",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-      "type": "QUARTIERE"
+      "type": "QUARTIERE",
+      "description": "E' situato nei pressi delle Biblioteche Unical tra i quartieri Martensson A e B. A pochi passi dalla piazza centrale del quartiere Martensson dove sono presenti una mensa, un bar e uno spazio comune con attrezzature per lo studio e per il tempo libero.",
+      "website_url": "https://soscr.unical.it/",
+      "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti con camere doppie e singole, soggiorno, cucina e servizi. Posti: 144. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 3 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto."
     },
     {
       "lat": 39.3643997,
@@ -20,7 +23,12 @@
       "place_id": "quartiere-chiodo-2",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-      "type": "QUARTIERE"
+      "type": "QUARTIERE",
+      "description": "E' ubicato nei pressi dei dipartimenti di Ingegneria. Non molto distante dal quartiere Martensson dove sono presenti una mensa, un bar e uno spazio comune con attrezzature per lo studio e per il tempo libero, lavanderia, rete wifi.",
+      "website_url": "https://soscr.unical.it/",
+      "email": "paolo.viscardi@unical.it",
+      "phone": "346/3667516",
+      "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Sono disponibili anche dei monolocali. Posti: 201. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 5 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Paolo Viscardi."
     },
     {
       "lat": 39.3555355,
@@ -29,7 +37,12 @@
       "place_id": "quartiere-maisonnettes",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-      "type": "QUARTIERE"
+      "type": "QUARTIERE",
+      "description": "Rappresenta il simbolo della residenzialita dell'Universita della Calabria. Il complesso delle Maisonnettes e immerso nel paesaggio naturale della collina di Arcavacata e comprende tre sale mensa, un bar, un anfiteatro e spazi comuni per attivita culturali e socio ricreative, lavanderia, rete wifi.",
+      "website_url": "https://soscr.unical.it/",
+      "email": "mariarosa.spinaiaconis@unical.it",
+      "phone": "346/3668313",
+      "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Sono disponibili anche dei monolocali. Posti: 519. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 3 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Maria Rosa Spina Iaconis."
     },
     {
       "lat": 39.3621548,
@@ -38,7 +51,10 @@
       "place_id": "quartiere-martensson-a",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-      "type": "QUARTIERE"
+      "type": "QUARTIERE",
+      "description": "E' ubicato di fronte alla Biblioteca E. Tarantelli. Il quartiere si sviluppa intorno alla piazza centrale dove sono presenti una mensa, un bar e uno spazio comune con attrezzature per lo studio e per il tempo libero, lavanderia, rete wifi.",
+      "website_url": "https://soscr.unical.it/",
+      "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Posti: 366. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 3 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto."
     },
     {
       "lat": 39.3625761,
@@ -47,7 +63,12 @@
       "place_id": "quartiere-martensson-b",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-      "type": "QUARTIERE"
+      "type": "QUARTIERE",
+      "description": "Il Quartiere Martensson B e ubicato a circa 500 metri dalle Biblioteche Unical. Nei pressi del quartiere e presente la mensa e uno spazio comune riservato agli alloggiati con attrezzature per lo studio e per il tempo libero, lavanderia e rete wi-fi.",
+      "website_url": "https://soscr.unical.it/",
+      "email": "pierpaolo.meccico@unical.it",
+      "phone": "346/7067560",
+      "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Posti: 156. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 5 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Pierpaolo Meccico."
     },
     {
       "lat": 39.3639597,
@@ -56,7 +77,12 @@
       "place_id": "quartiere-mira",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-      "type": "QUARTIERE"
+      "type": "QUARTIERE",
+      "description": "Il Quartiere Mira e ubicato a circa 850 metri dal Ponte Pietro Bucci Unical. Nel quartiere e presente uno spazio comune riservato agli alloggiati per lo studio e per il tempo libero, lavanderia, campo sportivo polivalente.",
+      "website_url": "https://soscr.unical.it/",
+      "email": "marioluigi.amodio@unical.it",
+      "phone": "328/0245960",
+      "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze singole, soggiorno, cucina, servizi. Posti: 72. Servizi: Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 10 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Mario Luigi Amodio."
     },
     {
       "lat": 39.35917,
@@ -65,7 +91,12 @@
       "place_id": "quartiere-molicelle",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-      "type": "QUARTIERE"
+      "type": "QUARTIERE",
+      "description": "E' ubicato a circa 500 metri dell'Aula Magna. Nei pressi del quartiere e presente la mensa e uno spazio comune riservato agli alloggiati con attrezzature per lo studio e per il tempo libero, lavanderia e rete wi-fi.",
+      "website_url": "https://soscr.unical.it/",
+      "email": "roberto.pignanelli@unical.it",
+      "phone": "348/2839200",
+      "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Posti: 244. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 8 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Roberto Pignanelli."
     },
     {
       "lat": 39.3616475,
@@ -74,7 +105,12 @@
       "place_id": "quartiere-monaci",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-      "type": "QUARTIERE"
+      "type": "QUARTIERE",
+      "description": "Sorge lungo la strada che costeggia il ponte P. Bucci dell'Universita, all'altezza delle Biblioteche Unical. Il quartiere e dotato di spazi comuni per attivita sportive, culturali e socio ricreative, lavanderia, rete wifi.",
+      "website_url": "https://soscr.unical.it/",
+      "email": "roberto.bartucci@unical.it",
+      "phone": "338/2518197",
+      "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti tipo composti da due stanze singole, soggiorno, cucina, servizi. Posti: 202. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 3 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Roberto Bartucci."
     },
     {
       "lat": 39.3488999,
@@ -83,7 +119,12 @@
       "place_id": "quartiere-nervoso",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-      "type": "QUARTIERE"
+      "type": "QUARTIERE",
+      "description": "E' situato a circa un chilometro dallo svincolo autostradale di Cosenza Nord ed a circa 500 metri dalla stazione ferroviaria di Castiglione Cosentino. L'Universita, distante circa 2 chilometri, e facilmente raggiungibile con gli autobus di linea.",
+      "website_url": "https://soscr.unical.it/",
+      "email": "maciste.citro@unical.it",
+      "phone": "346/3922083",
+      "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Posti: 214. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 30 minuti. Mezzo piu usato: autobus di linea. Periodo di chiusura: agosto. Referente tecnico: Maciste Citro."
     },
     {
       "lat": 39.3533806,
@@ -92,7 +133,12 @@
       "place_id": "quartiere-san-gennaro",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
-      "type": "QUARTIERE"
+      "type": "QUARTIERE",
+      "description": "Sorge lungo la strada che costeggia il Polifunzionale Unical. All'interno del quartiere sono disponibili spazi comuni per lo sport, il tempo libero, l'aggregazione e la socializzazione degli studenti alloggiati.",
+      "website_url": "https://soscr.unical.it/",
+      "email": "bernardo.bonasso@unical.it",
+      "phone": "346/3667641",
+      "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da due stanze singole, soggiorno, cucina, servizi. Posti: 194. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 8 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Bernardo Bonasso."
     }
   ],
   "mensa_buildings": [

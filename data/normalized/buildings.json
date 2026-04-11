@@ -1240,7 +1240,7 @@
     "building_id": "mensa-maisonnettes",
     "category": "MENSA",
     "description": "Mensa Studenti",
-    "last_verified_at": "2026-04-11T10:59:03.728650+00:00",
+    "last_verified_at": "2026-04-11T12:15:05.118975+00:00",
     "lat": 39.3555628,
     "lng": 16.2249774,
     "name": "Mensa Quartiere Maisonnettes",
@@ -1250,7 +1250,7 @@
   {
     "building_id": "mensa-martenson",
     "category": "MENSA",
-    "last_verified_at": "2026-04-11T10:59:03.728650+00:00",
+    "last_verified_at": "2026-04-11T12:15:05.118975+00:00",
     "lat": 39.3621515,
     "lng": 16.2239622,
     "name": "Mensa Quartiere Martensson",
@@ -1260,7 +1260,7 @@
   {
     "building_id": "mensa-piazza-vermicelli",
     "category": "MENSA",
-    "last_verified_at": "2026-04-11T10:59:03.728650+00:00",
+    "last_verified_at": "2026-04-11T12:15:05.118975+00:00",
     "lat": 39.36761,
     "lng": 16.22529,
     "name": "Mensa Piazza Vermicelli",
@@ -1335,7 +1335,7 @@
   {
     "building_id": "poli-bistrot-polifunzionale",
     "category": "MENSA",
-    "last_verified_at": "2026-04-11T10:59:03.728650+00:00",
+    "last_verified_at": "2026-04-11T12:15:05.118975+00:00",
     "lat": 39.356964,
     "lng": 16.230682,
     "name": "Poli-Bistrot presso edificio Polifunzionale",

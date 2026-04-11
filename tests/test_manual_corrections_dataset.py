@@ -127,6 +127,12 @@ def test_grouped_service_location_wave_is_preserved() -> None:
 
     quartiere_monaci = places["quartiere-monaci"]
     assert quartiere_monaci.get("type") == "QUARTIERE"
+    assert quartiere_monaci.get("description") is not None
+    assert quartiere_monaci.get("email") == "roberto.bartucci@unical.it"
+    assert quartiere_monaci.get("phone") == "338/2518197"
+    assert quartiere_monaci.get("website_url") == "https://soscr.unical.it/"
+    assert "Posti: 202." in str(quartiere_monaci.get("access_notes"))
+    assert "Spazi comuni:" in str(quartiere_monaci.get("access_notes"))
     assert (
         "quartiere-monaci__has_child_building__quartiere-monaci" in entity_links
     )

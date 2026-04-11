@@ -38,6 +38,11 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "name": "Quartiere Maisonnettes",
                 "lat": 39.3555355,
                 "lng": 16.2229899,
+                "description": "Complesso residenziale del campus.",
+                "email": "mariarosa.spinaiaconis@unical.it",
+                "phone": "346/3668313",
+                "website_url": "https://soscr.unical.it/",
+                "access_notes": "Posti: 519. Servizi: Internet Wi-Fi.",
                 "source_id": "unical-services",
                 "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
             }
@@ -102,6 +107,11 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert "building_id" not in places_by_id["service-servizio-mensa"]
     assert places_by_id["quartiere-maisonnettes"]["type"] == "QUARTIERE"
     assert places_by_id["quartiere-maisonnettes"]["lat"] == 39.3555355
+    assert places_by_id["quartiere-maisonnettes"]["description"] == "Complesso residenziale del campus."
+    assert places_by_id["quartiere-maisonnettes"]["email"] == "mariarosa.spinaiaconis@unical.it"
+    assert places_by_id["quartiere-maisonnettes"]["phone"] == "346/3668313"
+    assert places_by_id["quartiere-maisonnettes"]["website_url"] == "https://soscr.unical.it/"
+    assert places_by_id["quartiere-maisonnettes"]["access_notes"] == "Posti: 519. Servizi: Internet Wi-Fi."
 
     assert buildings_by_id["mensa-maisonnettes"]["name"] == "Mensa Quartiere Maisonnettes"
     assert buildings_by_id["mensa-maisonnettes"]["category"] == "MENSA"
