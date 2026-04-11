@@ -89,6 +89,7 @@ def apply_service_location_contract(
         if source_url:
             merged["source_url"] = source_url
 
+        _merge_optional_building_fields(merged, spec)
         buildings_by_id[building_id] = merged
 
     for building_id in _string_list(contract.get("remove_building_ids")):
@@ -149,6 +150,16 @@ def _merge_optional_place_fields(
         value = _optional_string(spec, field)
         if value:
             place[field] = value
+
+
+def _merge_optional_building_fields(
+    building: dict[str, Any],
+    spec: dict[str, Any],
+) -> None:
+    for field in ["description"]:
+        value = _optional_string(spec, field)
+        if value:
+            building[field] = value
 
 
 def _object_list(value: Any) -> list[dict[str, Any]]:

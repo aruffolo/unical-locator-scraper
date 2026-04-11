@@ -117,9 +117,17 @@ def test_grouped_service_location_wave_is_preserved() -> None:
     martensson = buildings["mensa-martenson"]
     assert martensson.get("name") == "Mensa Quartiere Martensson"
     assert martensson.get("category") == "MENSA"
+    assert "Pranzo: ore 12:00 - 15:00." in str(martensson.get("description"))
+    assert "Cena: ore 19:00 - 21:30" in str(martensson.get("description"))
+    assert martensson.get("source_url") == (
+        "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
+    )
 
     piazza_vermicelli = buildings["mensa-piazza-vermicelli"]
     assert piazza_vermicelli.get("category") == "MENSA"
+    assert piazza_vermicelli.get("description") == (
+        "Aperta dal lunedi al venerdi. Pranzo: ore 12:00 - 15:00."
+    )
 
     assert "mensa-maisonnettes-senior" not in buildings
     assert "mensa-martenson-ingresso" not in buildings

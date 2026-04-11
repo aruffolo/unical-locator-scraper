@@ -52,6 +52,9 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "building_id": "mensa-maisonnettes",
                 "name": "Mensa Quartiere Maisonnettes",
                 "category": "MENSA",
+                "description": "Aperta a pranzo e cena. Pranzo: ore 12:00 - 15:00.",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/",
             },
             {
                 "building_id": "mensa-piazza-vermicelli",
@@ -115,6 +118,10 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
 
     assert buildings_by_id["mensa-maisonnettes"]["name"] == "Mensa Quartiere Maisonnettes"
     assert buildings_by_id["mensa-maisonnettes"]["category"] == "MENSA"
+    assert buildings_by_id["mensa-maisonnettes"]["description"] == (
+        "Aperta a pranzo e cena. Pranzo: ore 12:00 - 15:00."
+    )
+    assert buildings_by_id["mensa-maisonnettes"]["source_id"] == "unical-services"
     assert buildings_by_id["mensa-piazza-vermicelli"]["category"] == "MENSA"
     assert "mensa-maisonnettes-senior" not in buildings_by_id
 

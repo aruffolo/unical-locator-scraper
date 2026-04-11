@@ -145,12 +145,18 @@
     {
       "building_id": "mensa-maisonnettes",
       "category": "MENSA",
-      "name": "Mensa Quartiere Maisonnettes"
+      "name": "Mensa Quartiere Maisonnettes",
+      "description": "Aperta a pranzo e cena tutti i giorni tranne l'ultimo fine settimana del mese. Pranzo: ore 12:00 - 15:00. Cena: ore 19:00 - 21:30 (19:30 - 21:30 ora legale).",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
     },
     {
       "building_id": "mensa-martenson",
       "category": "MENSA",
-      "name": "Mensa Quartiere Martensson"
+      "name": "Mensa Quartiere Martensson",
+      "description": "Aperta dal lunedi al sabato (sabato solo pranzo). L'ultimo fine settimana del mese la mensa rimane aperta il sabato e la domenica. Pranzo: ore 12:00 - 15:00. Cena: ore 19:00 - 21:30 (19:30 - 21:30 ora legale).",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
     },
     {
       "building_id": "mensa-piazza-vermicelli",
@@ -158,6 +164,7 @@
       "lat": 39.36761,
       "lng": 16.22529,
       "name": "Mensa Piazza Vermicelli",
+      "description": "Aperta dal lunedi al venerdi. Pranzo: ore 12:00 - 15:00.",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
     },
@@ -167,6 +174,7 @@
       "lat": 39.356964,
       "lng": 16.230682,
       "name": "Poli-Bistrot presso edificio Polifunzionale",
+      "description": "Aperto dal lunedi al sabato fino alle ore 15.00.",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
     }

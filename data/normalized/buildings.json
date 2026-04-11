@@ -1239,28 +1239,30 @@
   {
     "building_id": "mensa-maisonnettes",
     "category": "MENSA",
-    "description": "Mensa Studenti",
-    "last_verified_at": "2026-04-11T12:15:05.118975+00:00",
+    "description": "Aperta a pranzo e cena tutti i giorni tranne l'ultimo fine settimana del mese. Pranzo: ore 12:00 - 15:00. Cena: ore 19:00 - 21:30 (19:30 - 21:30 ora legale).",
+    "last_verified_at": "2026-04-11T13:18:13.415909+00:00",
     "lat": 39.3555628,
     "lng": 16.2249774,
     "name": "Mensa Quartiere Maisonnettes",
-    "source_id": "unical-campus-map",
-    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
   },
   {
     "building_id": "mensa-martenson",
     "category": "MENSA",
-    "last_verified_at": "2026-04-11T12:15:05.118975+00:00",
+    "description": "Aperta dal lunedi al sabato (sabato solo pranzo). L'ultimo fine settimana del mese la mensa rimane aperta il sabato e la domenica. Pranzo: ore 12:00 - 15:00. Cena: ore 19:00 - 21:30 (19:30 - 21:30 ora legale).",
+    "last_verified_at": "2026-04-11T13:18:13.415909+00:00",
     "lat": 39.3621515,
     "lng": 16.2239622,
     "name": "Mensa Quartiere Martensson",
-    "source_id": "unical-campus-map",
-    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
   },
   {
     "building_id": "mensa-piazza-vermicelli",
     "category": "MENSA",
-    "last_verified_at": "2026-04-11T12:15:05.118975+00:00",
+    "description": "Aperta dal lunedi al venerdi. Pranzo: ore 12:00 - 15:00.",
+    "last_verified_at": "2026-04-11T13:18:13.415909+00:00",
     "lat": 39.36761,
     "lng": 16.22529,
     "name": "Mensa Piazza Vermicelli",
@@ -1335,7 +1337,8 @@
   {
     "building_id": "poli-bistrot-polifunzionale",
     "category": "MENSA",
-    "last_verified_at": "2026-04-11T12:15:05.118975+00:00",
+    "description": "Aperto dal lunedi al sabato fino alle ore 15.00.",
+    "last_verified_at": "2026-04-11T13:18:13.415909+00:00",
     "lat": 39.356964,
     "lng": 16.230682,
     "name": "Poli-Bistrot presso edificio Polifunzionale",
