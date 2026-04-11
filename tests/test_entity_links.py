@@ -24,6 +24,7 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
         {"building_id": "mensa-maisonnettes", "name": "Mensa Maisonnettes"},
         {"building_id": "mensa-martenson", "name": "Mensa Martenson"},
         {"building_id": "mensa-maisonnettes-senior", "name": "Mensa Maisonnettes Senior"},
+        {"building_id": "quartiere-monaci", "name": "Quartiere Monaci"},
         {"building_id": "maisonnettes", "name": "Maisonnettes"},
     ]
     contract = {
@@ -66,7 +67,10 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/",
             },
         ],
-        "remove_building_ids": ["mensa-maisonnettes-senior"],
+        "remove_building_ids": [
+            "mensa-maisonnettes-senior",
+            "quartiere-monaci",
+        ],
         "entity_links": [
             {
                 "parent_entity_type": "PLACE",
@@ -124,6 +128,7 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert buildings_by_id["mensa-maisonnettes"]["source_id"] == "unical-services"
     assert buildings_by_id["mensa-piazza-vermicelli"]["category"] == "MENSA"
     assert "mensa-maisonnettes-senior" not in buildings_by_id
+    assert "quartiere-monaci" not in buildings_by_id
 
     assert "service-quartieri__has_child_place__quartiere-maisonnettes" in links_by_id
     assert "quartiere-maisonnettes__has_child_building__maisonnettes" in links_by_id

@@ -105,6 +105,20 @@
     "normalized": "rettorato"
   },
   {
+    "alias_id": "alias-building-mensa-martenson-mensa-martenson",
+    "entity_id": "mensa-martenson",
+    "entity_type": "BUILDING",
+    "label": "Mensa Martenson",
+    "normalized": "mensa-martenson"
+  },
+  {
+    "alias_id": "alias-building-mensa-martenson-mensa-quartiere-martenson",
+    "entity_id": "mensa-martenson",
+    "entity_type": "BUILDING",
+    "label": "Mensa Quartiere Martenson",
+    "normalized": "mensa-quartiere-martenson"
+  },
+  {
     "alias_id": "alias-building-teatro-piccolo-piccolo-teatro-unical",
     "entity_id": "teatro-piccolo",
     "entity_type": "BUILDING",

@@ -11,28 +11,6 @@
     "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
   },
   {
-    "child_entity_id": "quartiere-monaci",
-    "child_entity_type": "BUILDING",
-    "link_id": "quartiere-monaci__has_child_building__quartiere-monaci",
-    "parent_entity_id": "quartiere-monaci",
-    "parent_entity_type": "PLACE",
-    "relation_type": "HAS_CHILD_BUILDING",
-    "sort_order": 10,
-    "source_id": "unical-campus-map",
-    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
-  },
-  {
-    "child_entity_id": "quartiere-nervoso",
-    "child_entity_type": "BUILDING",
-    "link_id": "quartiere-nervoso__has_child_building__quartiere-nervoso",
-    "parent_entity_id": "quartiere-nervoso",
-    "parent_entity_type": "PLACE",
-    "relation_type": "HAS_CHILD_BUILDING",
-    "sort_order": 10,
-    "source_id": "unical-campus-map",
-    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
-  },
-  {
     "child_entity_id": "quartiere-chiodo",
     "child_entity_type": "PLACE",
     "link_id": "service-quartieri__has_child_place__quartiere-chiodo",

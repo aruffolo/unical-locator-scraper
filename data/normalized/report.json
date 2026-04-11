@@ -18,8 +18,8 @@
       "with_short_code_ratio": 0.2669
     },
     "buildings": {
-      "total": 150,
-      "with_coordinates": 150,
+      "total": 147,
+      "with_coordinates": 147,
       "with_coordinates_ratio": 1.0
     },
     "departments": {
@@ -50,7 +50,7 @@
       "with_building_id_ratio": 0.973
     }
   },
-  "generated_at": "2026-04-11T13:18:22.967684+00:00",
+  "generated_at": "2026-04-11T21:09:28.128992+00:00",
   "integrity": {
     "issues": []
   },

@@ -9,12 +9,12 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = REPO_ROOT / "data" / "normalized"
 
 LOCKED_MIN_COUNTS = {
-    "aliases.json": 1381,
+    "aliases.json": 1383,
     "aulas.json": 517,
     "building_entrances.json": 0,
-    "buildings.json": 150,
+    "buildings.json": 147,
     "departments.json": 14,
-    "entity_links.json": 17,
+    "entity_links.json": 15,
     "faqs.json": 0,
     "glossary.json": 0,
     "people.json": 4156,
@@ -132,6 +132,9 @@ def test_grouped_service_location_wave_is_preserved() -> None:
     assert "mensa-maisonnettes-senior" not in buildings
     assert "mensa-martenson-ingresso" not in buildings
     assert "mensa-studenti-ingresso" not in buildings
+    assert "quartiere-blocco-11-e-12" not in buildings
+    assert "quartiere-monaci" not in buildings
+    assert "quartiere-nervoso" not in buildings
 
     quartiere_monaci = places["quartiere-monaci"]
     assert quartiere_monaci.get("type") == "QUARTIERE"
@@ -142,7 +145,10 @@ def test_grouped_service_location_wave_is_preserved() -> None:
     assert "Posti: 202." in str(quartiere_monaci.get("access_notes"))
     assert "Spazi comuni:" in str(quartiere_monaci.get("access_notes"))
     assert (
-        "quartiere-monaci__has_child_building__quartiere-monaci" in entity_links
+        "quartiere-monaci__has_child_building__quartiere-monaci" not in entity_links
+    )
+    assert (
+        "quartiere-nervoso__has_child_building__quartiere-nervoso" not in entity_links
     )
 
 

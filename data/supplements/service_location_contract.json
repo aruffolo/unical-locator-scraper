@@ -329,31 +329,14 @@
       "sort_order": 10,
       "source_id": "unical-campus-map",
       "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
-    },
-    {
-      "child_entity_id": "quartiere-monaci",
-      "child_entity_type": "BUILDING",
-      "parent_entity_id": "quartiere-monaci",
-      "parent_entity_type": "PLACE",
-      "relation_type": "HAS_CHILD_BUILDING",
-      "sort_order": 10,
-      "source_id": "unical-campus-map",
-      "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
-    },
-    {
-      "child_entity_id": "quartiere-nervoso",
-      "child_entity_type": "BUILDING",
-      "parent_entity_id": "quartiere-nervoso",
-      "parent_entity_type": "PLACE",
-      "relation_type": "HAS_CHILD_BUILDING",
-      "sort_order": 10,
-      "source_id": "unical-campus-map",
-      "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
     }
   ],
   "remove_building_ids": [
     "mensa-maisonnettes-senior",
     "mensa-martenson-ingresso",
-    "mensa-studenti-ingresso"
+    "mensa-studenti-ingresso",
+    "quartiere-blocco-11-e-12",
+    "quartiere-monaci",
+    "quartiere-nervoso"
   ]
 }
