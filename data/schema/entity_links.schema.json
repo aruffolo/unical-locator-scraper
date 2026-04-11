@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "entity_links.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "link_id",
+      "parent_entity_type",
+      "parent_entity_id",
+      "relation_type",
+      "child_entity_type",
+      "child_entity_id"
+    ],
+    "properties": {
+      "link_id": { "type": "string", "minLength": 1 },
+      "parent_entity_type": { "type": "string", "enum": ["BUILDING", "PLACE"] },
+      "parent_entity_id": { "type": "string", "minLength": 1 },
+      "relation_type": { "type": "string", "enum": ["HAS_CHILD_PLACE", "HAS_CHILD_BUILDING"] },
+      "child_entity_type": { "type": "string", "enum": ["BUILDING", "PLACE"] },
+      "child_entity_id": { "type": "string", "minLength": 1 },
+      "sort_order": { "type": "integer" },
+      "source_id": { "type": "string" },
+      "source_url": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}

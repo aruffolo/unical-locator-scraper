@@ -14,6 +14,7 @@ CONTRACT_DATASETS = (
     "building_entrances.json",
     "buildings.json",
     "departments.json",
+    "entity_links.json",
     "faqs.json",
     "glossary.json",
     "people.json",

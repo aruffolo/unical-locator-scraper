@@ -1,0 +1,305 @@
+{
+  "clear_overview_building_ids": [
+    "service-quartieri",
+    "service-servizio-mensa"
+  ],
+  "quartieri_places": [
+    {
+      "lat": 39.3622865,
+      "lng": 16.2224817,
+      "name": "Quartiere Chiodo",
+      "place_id": "quartiere-chiodo",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+      "type": "QUARTIERE"
+    },
+    {
+      "lat": 39.3643997,
+      "lng": 16.2224434,
+      "name": "Quartiere Chiodo 2",
+      "place_id": "quartiere-chiodo-2",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+      "type": "QUARTIERE"
+    },
+    {
+      "lat": 39.3555355,
+      "lng": 16.2229899,
+      "name": "Quartiere Maisonnettes",
+      "place_id": "quartiere-maisonnettes",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+      "type": "QUARTIERE"
+    },
+    {
+      "lat": 39.3621548,
+      "lng": 16.2231603,
+      "name": "Quartiere Martensson A",
+      "place_id": "quartiere-martensson-a",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+      "type": "QUARTIERE"
+    },
+    {
+      "lat": 39.3625761,
+      "lng": 16.2207163,
+      "name": "Quartiere Martensson B",
+      "place_id": "quartiere-martensson-b",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+      "type": "QUARTIERE"
+    },
+    {
+      "lat": 39.3639597,
+      "lng": 16.2234723,
+      "name": "Quartiere Mira",
+      "place_id": "quartiere-mira",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+      "type": "QUARTIERE"
+    },
+    {
+      "lat": 39.35917,
+      "lng": 16.2236524,
+      "name": "Quartiere Molicelle",
+      "place_id": "quartiere-molicelle",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+      "type": "QUARTIERE"
+    },
+    {
+      "lat": 39.3616475,
+      "lng": 16.2278661,
+      "name": "Quartiere Monaci",
+      "place_id": "quartiere-monaci",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+      "type": "QUARTIERE"
+    },
+    {
+      "lat": 39.3488999,
+      "lng": 16.2447265,
+      "name": "Quartiere Nervoso",
+      "place_id": "quartiere-nervoso",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+      "type": "QUARTIERE"
+    },
+    {
+      "lat": 39.3533806,
+      "lng": 16.2280956,
+      "name": "Quartiere San Gennaro",
+      "place_id": "quartiere-san-gennaro",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+      "type": "QUARTIERE"
+    }
+  ],
+  "mensa_buildings": [
+    {
+      "building_id": "mensa-maisonnettes",
+      "category": "MENSA",
+      "name": "Mensa Quartiere Maisonnettes"
+    },
+    {
+      "building_id": "mensa-martenson",
+      "category": "MENSA",
+      "name": "Mensa Quartiere Martensson"
+    },
+    {
+      "building_id": "mensa-piazza-vermicelli",
+      "category": "MENSA",
+      "lat": 39.36761,
+      "lng": 16.22529,
+      "name": "Mensa Piazza Vermicelli",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
+    },
+    {
+      "building_id": "poli-bistrot-polifunzionale",
+      "category": "MENSA",
+      "lat": 39.356964,
+      "lng": 16.230682,
+      "name": "Poli-Bistrot presso edificio Polifunzionale",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
+    }
+  ],
+  "entity_links": [
+    {
+      "child_entity_id": "quartiere-chiodo",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-quartieri",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 10,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/"
+    },
+    {
+      "child_entity_id": "quartiere-chiodo-2",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-quartieri",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 20,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/"
+    },
+    {
+      "child_entity_id": "quartiere-maisonnettes",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-quartieri",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 30,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/"
+    },
+    {
+      "child_entity_id": "quartiere-martensson-a",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-quartieri",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 40,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/"
+    },
+    {
+      "child_entity_id": "quartiere-martensson-b",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-quartieri",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 50,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/"
+    },
+    {
+      "child_entity_id": "quartiere-mira",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-quartieri",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 60,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/"
+    },
+    {
+      "child_entity_id": "quartiere-molicelle",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-quartieri",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 70,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/"
+    },
+    {
+      "child_entity_id": "quartiere-monaci",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-quartieri",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 80,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/"
+    },
+    {
+      "child_entity_id": "quartiere-nervoso",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-quartieri",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 90,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/"
+    },
+    {
+      "child_entity_id": "quartiere-san-gennaro",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-quartieri",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 100,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/"
+    },
+    {
+      "child_entity_id": "mensa-maisonnettes",
+      "child_entity_type": "BUILDING",
+      "parent_entity_id": "service-servizio-mensa",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_BUILDING",
+      "sort_order": 10,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
+    },
+    {
+      "child_entity_id": "mensa-martenson",
+      "child_entity_type": "BUILDING",
+      "parent_entity_id": "service-servizio-mensa",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_BUILDING",
+      "sort_order": 20,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
+    },
+    {
+      "child_entity_id": "mensa-piazza-vermicelli",
+      "child_entity_type": "BUILDING",
+      "parent_entity_id": "service-servizio-mensa",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_BUILDING",
+      "sort_order": 30,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
+    },
+    {
+      "child_entity_id": "poli-bistrot-polifunzionale",
+      "child_entity_type": "BUILDING",
+      "parent_entity_id": "service-servizio-mensa",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_BUILDING",
+      "sort_order": 40,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
+    },
+    {
+      "child_entity_id": "maisonnettes",
+      "child_entity_type": "BUILDING",
+      "parent_entity_id": "quartiere-maisonnettes",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_BUILDING",
+      "sort_order": 10,
+      "source_id": "unical-campus-map",
+      "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+    },
+    {
+      "child_entity_id": "quartiere-monaci",
+      "child_entity_type": "BUILDING",
+      "parent_entity_id": "quartiere-monaci",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_BUILDING",
+      "sort_order": 10,
+      "source_id": "unical-campus-map",
+      "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+    },
+    {
+      "child_entity_id": "quartiere-nervoso",
+      "child_entity_type": "BUILDING",
+      "parent_entity_id": "quartiere-nervoso",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_BUILDING",
+      "sort_order": 10,
+      "source_id": "unical-campus-map",
+      "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+    }
+  ],
+  "remove_building_ids": [
+    "mensa-maisonnettes-senior",
+    "mensa-martenson-ingresso",
+    "mensa-studenti-ingresso"
+  ]
+}

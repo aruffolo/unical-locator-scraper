@@ -514,6 +514,22 @@ def test_normalize_buildings_produces_buildings_schema_shape() -> None:
     assert building["last_verified_at"] == "2026-02-09T00:00:00+00:00"
 
 
+def test_normalize_buildings_assigns_mensa_category() -> None:
+    buildings = normalize_buildings(
+        raw_buildings=[
+            RawBuilding(
+                name="Mensa Maisonnettes",
+                source_url="https://www.unical.it/campus/visita-il-campus/mappa/",
+                lat=39.3555628,
+                lng=16.2249774,
+            )
+        ],
+        verified_at=datetime(2026, 4, 11, tzinfo=timezone.utc),
+    )
+
+    assert buildings[0]["category"] == "MENSA"
+
+
 def test_normalize_buildings_cleans_map_metadata_descriptions_without_dropping_entities() -> None:
     raw = [
         RawBuilding(

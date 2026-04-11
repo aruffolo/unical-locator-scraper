@@ -284,3 +284,44 @@ def test_integrity_detects_suspicious_near_duplicate_aulas_by_token_set(tmp_path
     issues = check_integrity(data_dir=tmp_path)
     near_dup_issues = [issue for issue in issues if issue.level == "warning"]
     assert any("suspicious near-duplicate aulas" in issue.message for issue in near_dup_issues)
+
+
+def test_integrity_detects_invalid_entity_link_references(tmp_path: Path) -> None:
+    buildings = [{"building_id": "mensa-maisonnettes", "name": "Mensa Quartiere Maisonnettes"}]
+    departments = []
+    people = []
+    places = [{"place_id": "service-quartieri", "type": "SERVICE", "name": "Quartieri"}]
+    aulas = []
+    aliases = []
+    entity_links = [
+        {
+            "link_id": "service-quartieri__has_child_place__quartiere-missing",
+            "parent_entity_type": "PLACE",
+            "parent_entity_id": "service-quartieri",
+            "relation_type": "HAS_CHILD_PLACE",
+            "child_entity_type": "PLACE",
+            "child_entity_id": "quartiere-missing",
+        },
+        {
+            "link_id": "missing-parent__has_child_building__mensa-maisonnettes",
+            "parent_entity_type": "PLACE",
+            "parent_entity_id": "missing-parent",
+            "relation_type": "HAS_CHILD_BUILDING",
+            "child_entity_type": "BUILDING",
+            "child_entity_id": "mensa-maisonnettes",
+        },
+    ]
+
+    (tmp_path / "buildings.json").write_text(json.dumps(buildings), encoding="utf-8")
+    (tmp_path / "departments.json").write_text(json.dumps(departments), encoding="utf-8")
+    (tmp_path / "places.json").write_text(json.dumps(places), encoding="utf-8")
+    (tmp_path / "people.json").write_text(json.dumps(people), encoding="utf-8")
+    (tmp_path / "aulas.json").write_text(json.dumps(aulas), encoding="utf-8")
+    (tmp_path / "aliases.json").write_text(json.dumps(aliases), encoding="utf-8")
+    (tmp_path / "entity_links.json").write_text(json.dumps(entity_links), encoding="utf-8")
+
+    issues = check_integrity(data_dir=tmp_path)
+    messages = [issue.message for issue in issues]
+
+    assert any("child_entity_id 'quartiere-missing' does not exist" in message for message in messages)
+    assert any("parent_entity_id 'missing-parent' does not exist" in message for message in messages)

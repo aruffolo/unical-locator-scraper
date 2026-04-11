@@ -781,6 +781,9 @@ def normalize_buildings(
         description = _normalize_building_description(raw.description)
         if description:
             building["description"] = description
+        category = _infer_building_category(name)
+        if category:
+            building["category"] = category
 
         unique_by_id.setdefault(building_id, building)
 
@@ -814,6 +817,13 @@ def _normalize_building_description(value: str | None) -> str | None:
         return None
 
     return cleaned
+
+
+def _infer_building_category(name: str) -> str | None:
+    lowered = name.casefold()
+    if "mensa" in lowered:
+        return "MENSA"
+    return None
 
 
 def normalize_aulas(

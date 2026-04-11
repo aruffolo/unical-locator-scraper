@@ -9,7 +9,7 @@
       "place_id": { "type": "string", "minLength": 1 },
       "type": {
         "type": "string",
-        "enum": ["AULA", "OFFICE", "SECRETARY", "SERVICE", "LAB", "LIBRARY", "DEPARTMENT_OFFICE", "OTHER"]
+        "enum": ["AULA", "OFFICE", "SECRETARY", "SERVICE", "LAB", "LIBRARY", "DEPARTMENT_OFFICE", "OTHER", "QUARTIERE"]
       },
       "name": { "type": "string", "minLength": 1 },
       "building_id": { "type": "string" },

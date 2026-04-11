@@ -14,6 +14,8 @@ _NON_LINKABLE_PLACE_IDS = {
     "service-orto-botanico",
     "service-rimuseum",
     "service-socialita-nel-campus",
+    "service-quartieri",
+    "service-servizio-mensa",
 }
 
 

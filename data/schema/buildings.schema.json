@@ -8,6 +8,7 @@
     "properties": {
       "building_id": { "type": "string", "minLength": 1 },
       "name": { "type": "string", "minLength": 1 },
+      "category": { "type": "string" },
       "description": { "type": "string" },
       "lat": { "type": "number" },
       "lng": { "type": "number" },
@@ -18,4 +19,3 @@
     "additionalProperties": false
   }
 }
-

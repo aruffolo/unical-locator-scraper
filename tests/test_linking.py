@@ -169,7 +169,7 @@ def test_link_places_to_buildings_links_reviewed_web_and_field_routes() -> None:
     assert linked[2]["building_id"] == "auditorium-teatro-grande"
     assert linked[3]["building_id"] == "aula-magna"
     assert linked[4]["building_id"] == "cubo-22b"
-    assert linked[5]["building_id"] == "uffici-centro-residenziale-e-area-didattica"
+    assert "building_id" not in linked[5]
 
 
 def test_link_places_to_buildings_links_musnob_sections_to_cubo_14b() -> None:
@@ -264,3 +264,31 @@ def test_link_places_to_buildings_applies_reviewed_non_linkable_policy() -> None
     assert "building_id" not in linked[4]
     assert "building_id" not in linked[5]
     assert "building_id" not in linked[6]
+
+
+def test_link_places_to_buildings_keeps_grouped_overviews_unlinked() -> None:
+    places = [
+        {
+            "place_id": "service-quartieri",
+            "type": "SERVICE",
+            "name": "Quartieri",
+            "description": "Centro Residenziale",
+        },
+        {
+            "place_id": "service-servizio-mensa",
+            "type": "SERVICE",
+            "name": "Servizio Mensa",
+            "description": "Centro Residenziale",
+        },
+    ]
+    buildings = [
+        {
+            "building_id": "uffici-centro-residenziale-e-area-didattica",
+            "name": "Uffici Centro Residenziale e Area Didattica",
+        }
+    ]
+
+    linked = link_places_to_buildings(places=places, buildings=buildings)
+
+    assert "building_id" not in linked[0]
+    assert "building_id" not in linked[1]

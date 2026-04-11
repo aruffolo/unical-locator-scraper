@@ -81,6 +81,11 @@ _LANDMARK_ALIAS_TARGETS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         "centro-radiotelevisivo",
         ("Aula U. Caldora",),
     ),
+    (
+        "BUILDING",
+        "mensa-martenson",
+        ("Mensa Martenson", "Mensa Quartiere Martenson"),
+    ),
 )
 
 

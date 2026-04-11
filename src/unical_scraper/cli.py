@@ -18,6 +18,10 @@ from .extract.departments import crawl_departments
 from .extract.services import crawl_services
 from .extract.teachers import crawl_teachers
 from .transform.aliases import build_search_aliases
+from .transform.entity_links import (
+    apply_service_location_contract,
+    load_service_location_contract,
+)
 from .transform.normalize import (
     normalize_teacher_office_places,
     normalize_aulas,
@@ -47,15 +51,19 @@ DEFAULT_CORRECTIONS_FILE = REPO_ROOT / "data" / "corrections" / "manual_correcti
 DEFAULT_DESTRUCTIVE_ALLOWLIST_FILE = (
     REPO_ROOT / "data" / "corrections" / "destructive_allowlist.yaml"
 )
+DEFAULT_SERVICE_LOCATION_CONTRACT_FILE = (
+    REPO_ROOT / "data" / "supplements" / "service_location_contract.json"
+)
 DEFAULT_TEACHERS_BASE_URL = "https://www.unical.it/storage/teachers/"
 DEFAULT_DEPARTMENTS_BASE_URL = "https://www.unical.it/organizzazione/strutture/dipartimenti/"
 DEFAULT_SERVICES_BASE_URL = "https://www.unical.it/campus/servizi/"
 DEFAULT_BUILDINGS_BASE_URL = "https://www.unical.it/campus/visita-il-campus/mappa/"
 DEFAULT_AULAS_BASE_URL = "https://www.unical.it/campus/visita-il-campus/mappa/"
-DEFAULT_CONTRACT_COMPATIBILITY_VERSION = 1
+DEFAULT_CONTRACT_COMPATIBILITY_VERSION = 2
 DEFAULT_CONTRACT_VERSION = "1.0.0"
 STATIC_DATASET_PLACEHOLDERS = {
     "building_entrances.json": [],
+    "entity_links.json": [],
     "glossary.json": [],
     "faqs.json": [],
     "people.json": [],
@@ -271,6 +279,7 @@ def _dataset_paths(data_dir: Path) -> dict[str, Path]:
         "buildings": data_dir / "buildings.json",
         "contract": data_dir / "dataset_contract.json",
         "departments": data_dir / "departments.json",
+        "entity_links": data_dir / "entity_links.json",
         "places": data_dir / "places.json",
         "people": data_dir / "people.json",
         "report": data_dir / "report.json",
@@ -1043,6 +1052,15 @@ def crawl_full_command(
         buildings_file=paths["buildings"],
     )
 
+    click.echo("[crawl full] step=link service-locations")
+    _invoke_command(
+        link_service_locations_command,
+        places_file=paths["places"],
+        buildings_file=paths["buildings"],
+        out_file=paths["entity_links"],
+        contract_file=DEFAULT_SERVICE_LOCATION_CONTRACT_FILE,
+    )
+
     click.echo("[crawl full] step=link aliases")
     _invoke_command(
         link_aliases_command,
@@ -1147,6 +1165,64 @@ def link_aliases_command(
     _apply_manual_corrections_for_paths([out_file])
 
     click.echo(f"Generated aliases: {len(aliases)}")
+    click.echo(f"Wrote: {out_file}")
+
+
+@link.command("service-locations")
+@click.option(
+    "--places-file",
+    default=str(DEFAULT_DATA_DIR / "places.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--buildings-file",
+    default=str(DEFAULT_DATA_DIR / "buildings.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--out-file",
+    default=str(DEFAULT_DATA_DIR / "entity_links.json"),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--contract-file",
+    default=str(DEFAULT_SERVICE_LOCATION_CONTRACT_FILE),
+    show_default=True,
+    type=click.Path(path_type=Path),
+)
+def link_service_locations_command(
+    places_file: Path,
+    buildings_file: Path,
+    out_file: Path,
+    contract_file: Path,
+) -> None:
+    """Apply deterministic grouped service-location modeling."""
+    places = _load_json_array(places_file)
+    buildings = _load_json_array(buildings_file)
+    contract = load_service_location_contract(contract_file)
+
+    updated_places, updated_buildings, entity_links = apply_service_location_contract(
+        places=places,
+        buildings=buildings,
+        contract=contract,
+    )
+
+    write_json(places_file, updated_places)
+    write_json(buildings_file, updated_buildings)
+    write_json(out_file, entity_links)
+    _apply_manual_corrections_for_paths([places_file, buildings_file])
+
+    click.echo(
+        "Applied service location contract: "
+        f"places={len(updated_places)} "
+        f"buildings={len(updated_buildings)} "
+        f"entity_links={len(entity_links)}"
+    )
+    click.echo(f"Wrote: {places_file}")
+    click.echo(f"Wrote: {buildings_file}")
     click.echo(f"Wrote: {out_file}")
 
 

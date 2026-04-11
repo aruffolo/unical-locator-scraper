@@ -26,6 +26,7 @@ def test_crawl_full_command_uses_fast_profile(monkeypatch, tmp_path: Path) -> No
     monkeypatch.setattr("unical_scraper.cli.crawl_teachers_command", capture_teachers)
     monkeypatch.setattr("unical_scraper.cli.crawl_aulas_command", record("aulas"))
     monkeypatch.setattr("unical_scraper.cli.link_places_buildings_command", record("link_places"))
+    monkeypatch.setattr("unical_scraper.cli.link_service_locations_command", record("link_service_locations"))
     monkeypatch.setattr("unical_scraper.cli.link_aliases_command", record("link_aliases"))
     monkeypatch.setattr("unical_scraper.cli.validate_command", record("validate"))
     monkeypatch.setattr("unical_scraper.cli.report_command", record("report"))
@@ -51,6 +52,7 @@ def test_crawl_full_command_uses_fast_profile(monkeypatch, tmp_path: Path) -> No
         "teachers",
         "aulas",
         "link_places",
+        "link_service_locations",
         "link_aliases",
         "contract",
         "validate",
@@ -68,6 +70,7 @@ def test_crawl_full_command_uses_fast_profile(monkeypatch, tmp_path: Path) -> No
     assert captured_teachers_kwargs["department_fallback"] is False
 
     assert (data_dir / "building_entrances.json").exists()
+    assert (data_dir / "entity_links.json").exists()
     assert (data_dir / "glossary.json").exists()
     assert (data_dir / "faqs.json").exists()
     assert (data_dir / "people.json").exists()
@@ -83,6 +86,7 @@ def test_crawl_full_command_refuses_canonical_dir_without_explicit_flag(monkeypa
     monkeypatch.setattr("unical_scraper.cli.crawl_teachers_command", fail)
     monkeypatch.setattr("unical_scraper.cli.crawl_aulas_command", fail)
     monkeypatch.setattr("unical_scraper.cli.link_places_buildings_command", fail)
+    monkeypatch.setattr("unical_scraper.cli.link_service_locations_command", fail)
     monkeypatch.setattr("unical_scraper.cli.link_aliases_command", fail)
     monkeypatch.setattr("unical_scraper.cli.validate_command", fail)
     monkeypatch.setattr("unical_scraper.cli.report_command", fail)
@@ -95,7 +99,10 @@ def test_crawl_full_command_refuses_canonical_dir_without_explicit_flag(monkeypa
     assert "refuses canonical writes by default" in result.output
 
 
-def test_crawl_full_command_allows_canonical_dir_with_explicit_flag(monkeypatch) -> None:
+def test_crawl_full_command_allows_canonical_dir_with_explicit_flag(
+    monkeypatch,
+    tmp_path: Path,
+) -> None:
     calls: list[str] = []
 
     def record(name: str):
@@ -109,14 +116,26 @@ def test_crawl_full_command_allows_canonical_dir_with_explicit_flag(monkeypatch)
     monkeypatch.setattr("unical_scraper.cli.crawl_teachers_command", record("teachers"))
     monkeypatch.setattr("unical_scraper.cli.crawl_aulas_command", record("aulas"))
     monkeypatch.setattr("unical_scraper.cli.link_places_buildings_command", record("link_places"))
+    monkeypatch.setattr("unical_scraper.cli.link_service_locations_command", record("link_service_locations"))
     monkeypatch.setattr("unical_scraper.cli.link_aliases_command", record("link_aliases"))
     monkeypatch.setattr("unical_scraper.cli.validate_command", record("validate"))
     monkeypatch.setattr("unical_scraper.cli.report_command", record("report"))
     monkeypatch.setattr("unical_scraper.cli.contract_command", record("contract"))
     monkeypatch.setattr("unical_scraper.cli._preserve_dataset_rows", lambda *args, **kwargs: None)
+    canonical_dir = tmp_path / "canonical"
+    monkeypatch.setattr("unical_scraper.cli.DEFAULT_DATA_DIR", canonical_dir)
 
     runner = CliRunner()
-    result = runner.invoke(cli, ["crawl", "full", "--allow-canonical-write"])
+    result = runner.invoke(
+        cli,
+        [
+            "crawl",
+            "full",
+            "--data-dir",
+            str(canonical_dir),
+            "--allow-canonical-write",
+        ],
+    )
 
     assert result.exit_code == 0
     assert calls[0] == "departments"
@@ -140,6 +159,7 @@ def test_crawl_full_command_supports_seed_from(monkeypatch, tmp_path: Path) -> N
     monkeypatch.setattr("unical_scraper.cli.crawl_teachers_command", record("teachers"))
     monkeypatch.setattr("unical_scraper.cli.crawl_aulas_command", record("aulas"))
     monkeypatch.setattr("unical_scraper.cli.link_places_buildings_command", record("link_places"))
+    monkeypatch.setattr("unical_scraper.cli.link_service_locations_command", record("link_service_locations"))
     monkeypatch.setattr("unical_scraper.cli.link_aliases_command", record("link_aliases"))
     monkeypatch.setattr("unical_scraper.cli.validate_command", record("validate"))
     monkeypatch.setattr("unical_scraper.cli.report_command", record("report"))
@@ -184,6 +204,7 @@ def test_crawl_full_command_uses_full_profile(monkeypatch, tmp_path: Path) -> No
     monkeypatch.setattr("unical_scraper.cli.crawl_teachers_command", capture_teachers)
     monkeypatch.setattr("unical_scraper.cli.crawl_aulas_command", capture_aulas)
     monkeypatch.setattr("unical_scraper.cli.link_places_buildings_command", noop)
+    monkeypatch.setattr("unical_scraper.cli.link_service_locations_command", noop)
     monkeypatch.setattr("unical_scraper.cli.link_aliases_command", noop)
     monkeypatch.setattr("unical_scraper.cli.validate_command", noop)
     monkeypatch.setattr("unical_scraper.cli.report_command", noop)

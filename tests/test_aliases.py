@@ -104,3 +104,20 @@ def test_build_search_aliases_merges_aulas_and_landmarks() -> None:
     assert "P2" in labels
     assert "PTU" in labels
     assert "Centro Congressi" in labels
+
+
+def test_build_search_aliases_preserves_martenson_spelling_alias() -> None:
+    aliases = build_search_aliases(
+        aulas=[],
+        places=[],
+        buildings=[
+            {
+                "building_id": "mensa-martenson",
+                "name": "Mensa Quartiere Martensson",
+            }
+        ],
+    )
+
+    by_label = {alias["label"]: alias["entity_id"] for alias in aliases}
+    assert by_label["Mensa Martenson"] == "mensa-martenson"
+    assert by_label["Mensa Quartiere Martenson"] == "mensa-martenson"

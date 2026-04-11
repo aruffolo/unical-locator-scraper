@@ -39,6 +39,7 @@ def check_integrity(data_dir: Path) -> list[IntegrityIssue]:
     people = _load_array(data_dir / "people.json")
     aulas = _load_array(data_dir / "aulas.json")
     aliases = _load_array(data_dir / "aliases.json")
+    entity_links = _load_array(data_dir / "entity_links.json")
 
     building_ids = {item.get("building_id") for item in buildings if item.get("building_id")}
     department_ids = {item.get("department_id") for item in departments if item.get("department_id")}
@@ -299,6 +300,60 @@ def check_integrity(data_dir: Path) -> list[IntegrityIssue]:
                     message=f"entity_id '{entity_id}' does not exist for entity_type '{entity_type}'",
                 )
             )
+
+    entity_link_targets = {
+        "BUILDING": building_ids,
+        "PLACE": place_ids,
+    }
+    seen_link_ids: set[str] = set()
+    for link in entity_links:
+        link_id = str(link.get("link_id") or "")
+        if link_id:
+            if link_id in seen_link_ids:
+                issues.append(
+                    IntegrityIssue(
+                        level="error",
+                        file="entity_links.json",
+                        record_id=link_id,
+                        message=f"duplicate link_id '{link_id}'",
+                    )
+                )
+            seen_link_ids.add(link_id)
+
+        parent_entity_type = link.get("parent_entity_type")
+        parent_entity_id = link.get("parent_entity_id")
+        child_entity_type = link.get("child_entity_type")
+        child_entity_id = link.get("child_entity_id")
+
+        if isinstance(parent_entity_type, str) and parent_entity_id:
+            parent_targets = entity_link_targets.get(parent_entity_type)
+            if parent_targets is not None and parent_entity_id not in parent_targets:
+                issues.append(
+                    IntegrityIssue(
+                        level="error",
+                        file="entity_links.json",
+                        record_id=link_id or None,
+                        message=(
+                            f"parent_entity_id '{parent_entity_id}' does not exist "
+                            f"for parent_entity_type '{parent_entity_type}'"
+                        ),
+                    )
+                )
+
+        if isinstance(child_entity_type, str) and child_entity_id:
+            child_targets = entity_link_targets.get(child_entity_type)
+            if child_targets is not None and child_entity_id not in child_targets:
+                issues.append(
+                    IntegrityIssue(
+                        level="error",
+                        file="entity_links.json",
+                        record_id=link_id or None,
+                        message=(
+                            f"child_entity_id '{child_entity_id}' does not exist "
+                            f"for child_entity_type '{child_entity_type}'"
+                        ),
+                    )
+                )
 
     return sorted(issues, key=lambda issue: (issue.level, issue.file, issue.record_id or "", issue.message))
 
