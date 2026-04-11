@@ -18,8 +18,8 @@
       "with_short_code_ratio": 0.2669
     },
     "buildings": {
-      "total": 151,
-      "with_coordinates": 151,
+      "total": 150,
+      "with_coordinates": 150,
       "with_coordinates_ratio": 1.0
     },
     "departments": {
@@ -43,14 +43,14 @@
       "with_office_place_id_ratio": 0.1321
     },
     "places": {
-      "total": 880,
+      "total": 890,
       "type_aula": 517,
-      "type_aula_ratio": 0.5875,
-      "with_building_id": 868,
-      "with_building_id_ratio": 0.9864
+      "type_aula_ratio": 0.5809,
+      "with_building_id": 866,
+      "with_building_id_ratio": 0.973
     }
   },
-  "generated_at": "2026-04-09T19:53:25.816010+00:00",
+  "generated_at": "2026-04-11T11:54:23.309978+00:00",
   "integrity": {
     "issues": []
   },
@@ -62,6 +62,7 @@
       "buildings.json": [],
       "dataset_contract.json": [],
       "departments.json": [],
+      "entity_links.json": [],
       "faqs.json": [],
       "glossary.json": [],
       "people.json": [],
@@ -70,64 +71,13 @@
     }
   },
   "scrape_diagnostics": {
-    "sources": {
-      "unical-aulas": {
-        "attempts": 0,
-        "failure_budget": 10,
-        "final_failures": 0,
-        "requests": 0,
-        "retries": 0,
-        "source_id": "unical-aulas",
-        "status": "ok",
-        "updated_at": "2026-04-09T19:53:24.909078+00:00"
-      },
-      "unical-campus-map": {
-        "attempts": 0,
-        "failure_budget": 0,
-        "final_failures": 0,
-        "requests": 0,
-        "retries": 0,
-        "source_id": "unical-campus-map",
-        "status": "ok",
-        "updated_at": "2026-04-09T19:53:21.689560+00:00"
-      },
-      "unical-departments": {
-        "attempts": 0,
-        "failure_budget": 0,
-        "final_failures": 0,
-        "requests": 0,
-        "retries": 0,
-        "source_id": "unical-departments",
-        "status": "ok",
-        "updated_at": "2026-04-09T19:53:21.623710+00:00"
-      },
-      "unical-services": {
-        "attempts": 0,
-        "failure_budget": 0,
-        "final_failures": 0,
-        "requests": 0,
-        "retries": 0,
-        "source_id": "unical-services",
-        "status": "ok",
-        "updated_at": "2026-04-09T19:53:24.105285+00:00"
-      },
-      "unical-teachers": {
-        "attempts": 0,
-        "failure_budget": 10,
-        "final_failures": 0,
-        "requests": 0,
-        "retries": 0,
-        "source_id": "unical-teachers",
-        "status": "ok",
-        "updated_at": "2026-04-09T19:53:24.311229+00:00"
-      }
-    },
+    "sources": {},
     "warning_count": 0,
     "warnings": []
   },
   "summary": {
     "integrity_issues": 0,
     "invalid_datasets": 0,
-    "total_datasets": 11
+    "total_datasets": 12
   }
 }

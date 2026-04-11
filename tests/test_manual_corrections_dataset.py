@@ -9,15 +9,16 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = REPO_ROOT / "data" / "normalized"
 
 LOCKED_MIN_COUNTS = {
-    "aliases.json": 1374,
+    "aliases.json": 1381,
     "aulas.json": 517,
     "building_entrances.json": 0,
-    "buildings.json": 151,
+    "buildings.json": 150,
     "departments.json": 14,
+    "entity_links.json": 17,
     "faqs.json": 0,
     "glossary.json": 0,
     "people.json": 4156,
-    "places.json": 880,
+    "places.json": 890,
     "sources.json": 5,
 }
 
@@ -46,13 +47,27 @@ def test_required_entities_are_present_in_canonical_datasets() -> None:
     buildings = _by_id(_load_dataset("buildings.json"), "building_id")
     places = _by_id(_load_dataset("places.json"), "place_id")
     people = _by_id(_load_dataset("people.json"), "person_id")
+    entity_links = _by_id(_load_dataset("entity_links.json"), "link_id")
 
     assert "cappella-universitaria" in buildings
     assert "cubo-20" in buildings
+    assert "mensa-piazza-vermicelli" in buildings
+    assert "poli-bistrot-polifunzionale" in buildings
     assert "office-ufficio-cubo-0-c-primo-piano" in places
     assert "service-centro-sportivo" in places
+    assert "service-quartieri" in places
+    assert "service-servizio-mensa" in places
+    assert "quartiere-chiodo" in places
+    assert "quartiere-san-gennaro" in places
     assert "office-ufficio-cubo-4c-piano-3" in places
     assert "francesco-scarcello" in people
+    assert (
+        "service-quartieri__has_child_place__quartiere-chiodo" in entity_links
+    )
+    assert (
+        "service-servizio-mensa__has_child_building__mensa-piazza-vermicelli"
+        in entity_links
+    )
 
 
 def test_known_manual_wave_fixes_are_preserved() -> None:
@@ -86,6 +101,37 @@ def test_known_manual_wave_fixes_are_preserved() -> None:
     assert "Office references:" not in str(scarcello.get("notes"))
 
 
+def test_grouped_service_location_wave_is_preserved() -> None:
+    buildings = _by_id(_load_dataset("buildings.json"), "building_id")
+    places = _by_id(_load_dataset("places.json"), "place_id")
+    entity_links = _by_id(_load_dataset("entity_links.json"), "link_id")
+
+    quartieri = places["service-quartieri"]
+    assert quartieri.get("building_id") is None
+    assert quartieri.get("website_url") == "https://my.unical.it/"
+
+    servizio_mensa = places["service-servizio-mensa"]
+    assert servizio_mensa.get("building_id") is None
+    assert servizio_mensa.get("opening_hours") == "Orari disponibili sulla pagina sorgente"
+
+    martensson = buildings["mensa-martenson"]
+    assert martensson.get("name") == "Mensa Quartiere Martensson"
+    assert martensson.get("category") == "MENSA"
+
+    piazza_vermicelli = buildings["mensa-piazza-vermicelli"]
+    assert piazza_vermicelli.get("category") == "MENSA"
+
+    assert "mensa-maisonnettes-senior" not in buildings
+    assert "mensa-martenson-ingresso" not in buildings
+    assert "mensa-studenti-ingresso" not in buildings
+
+    quartiere_monaci = places["quartiere-monaci"]
+    assert quartiere_monaci.get("type") == "QUARTIERE"
+    assert (
+        "quartiere-monaci__has_child_building__quartiere-monaci" in entity_links
+    )
+
+
 def test_dataset_contract_counts_match_files_and_locked_minimums() -> None:
     contract = _load_json(DATA_DIR / "dataset_contract.json")
     assert isinstance(contract, dict)
@@ -108,4 +154,3 @@ def test_dataset_contract_counts_match_files_and_locked_minimums() -> None:
         actual_count = len(dataset_rows)
         assert actual_count >= minimum_count
         assert contract_counts[dataset_name] == actual_count
-

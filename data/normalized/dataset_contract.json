@@ -1,5 +1,5 @@
 {
-  "compatibility_version": 1,
+  "compatibility_version": 2,
   "contract_id": "unical-normalized-datasets",
   "contract_version": "1.0.0",
   "coverage": {
@@ -28,13 +28,18 @@
     },
     {
       "name": "buildings.json",
-      "records": 151,
-      "sha256": "727d0ab34746a8f3d706e70edae98626b320a78298ac82101d08b4de662ac3c8"
+      "records": 150,
+      "sha256": "d54068e4d545b04f9bb8574eab5e6e44dc28e29f5f1eeda984c8f3babcbd002a"
     },
     {
       "name": "departments.json",
       "records": 14,
       "sha256": "eb0533e65f0cddf2f14ad56fda3ac3db8f0c0cc3c8c4d6492cec051fd3a36e35"
+    },
+    {
+      "name": "entity_links.json",
+      "records": 17,
+      "sha256": "a11bfa30d9ce2d8e34a950761d42e5ddba3fc9d17229074a00170fbc08fa7cb0"
     },
     {
       "name": "faqs.json",
@@ -53,8 +58,8 @@
     },
     {
       "name": "places.json",
-      "records": 880,
-      "sha256": "1755495aa645adf400d52c5e7a8605cd60cd8e66c363b3b9f17e0c6c597dcd06"
+      "records": 890,
+      "sha256": "1e8862d964f02a426a435984b6ac705b3a0986d4ef6fbf9ac1808075bff4c14c"
     },
     {
       "name": "sources.json",
@@ -62,5 +67,5 @@
       "sha256": "223dfa91cd1b931e5ba57a96bb7f107e0abd2dab768225d00dd22ae6caf61bd3"
     }
   ],
-  "revision": "15c733aa676c329459798058adc040777d1f87e864329f7579ac843a859f4e05"
+  "revision": "5b931ef5945b08fc7e8297626079a835f8f181d71d4b3e76cdeed4600202ea1e"
 }

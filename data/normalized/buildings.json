@@ -1238,50 +1238,34 @@
   },
   {
     "building_id": "mensa-maisonnettes",
+    "category": "MENSA",
     "description": "Mensa Studenti",
-    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
+    "last_verified_at": "2026-04-11T10:59:03.728650+00:00",
     "lat": 39.3555628,
     "lng": 16.2249774,
-    "name": "Mensa Maisonnettes",
-    "source_id": "unical-campus-map",
-    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
-  },
-  {
-    "building_id": "mensa-maisonnettes-senior",
-    "description": "Mensa Dipendenti edificio",
-    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
-    "lat": 39.3553596,
-    "lng": 16.224677,
-    "name": "Mensa Maisonnettes Senior",
+    "name": "Mensa Quartiere Maisonnettes",
     "source_id": "unical-campus-map",
     "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
   },
   {
     "building_id": "mensa-martenson",
-    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
+    "category": "MENSA",
+    "last_verified_at": "2026-04-11T10:59:03.728650+00:00",
     "lat": 39.3621515,
     "lng": 16.2239622,
-    "name": "Mensa Martenson",
+    "name": "Mensa Quartiere Martensson",
     "source_id": "unical-campus-map",
     "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
   },
   {
-    "building_id": "mensa-martenson-ingresso",
-    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
-    "lat": 39.3621494,
-    "lng": 16.2241754,
-    "name": "Mensa Martenson ingresso",
-    "source_id": "unical-campus-map",
-    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
-  },
-  {
-    "building_id": "mensa-studenti-ingresso",
-    "last_verified_at": "2026-04-09T19:53:21.690513+00:00",
-    "lat": 39.3556873,
-    "lng": 16.225487,
-    "name": "Mensa Studenti ingresso",
-    "source_id": "unical-campus-map",
-    "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+    "building_id": "mensa-piazza-vermicelli",
+    "category": "MENSA",
+    "last_verified_at": "2026-04-11T10:59:03.728650+00:00",
+    "lat": 39.36761,
+    "lng": 16.22529,
+    "name": "Mensa Piazza Vermicelli",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
   },
   {
     "building_id": "museo-di-paleontologia",
@@ -1347,6 +1331,16 @@
     "name": "Piazza Rettorato",
     "source_id": "unical-campus-map",
     "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "building_id": "poli-bistrot-polifunzionale",
+    "category": "MENSA",
+    "last_verified_at": "2026-04-11T10:59:03.728650+00:00",
+    "lat": 39.356964,
+    "lng": 16.230682,
+    "name": "Poli-Bistrot presso edificio Polifunzionale",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
   },
   {
     "building_id": "polifunzionale",
