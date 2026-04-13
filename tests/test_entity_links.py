@@ -102,8 +102,37 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "type": "OTHER",
                 "name": "MuSNOB",
                 "clear_fields": ["website_url"],
+                "opening_hours": "Lunedì-venerdì 09:00-13:00.",
+                "email": "infomusei@unical.it; musnob@unical.it",
+                "phone": "0984 493089",
+                "access_notes": "Informazioni, appuntamenti e visite tematiche. Disponibili schede didattiche per le scuole e visita su Facebook.",
                 "source_id": "unical-services",
                 "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/",
+            },
+            {
+                "place_id": "service-rimuseum",
+                "type": "OTHER",
+                "name": "RiMuseum",
+                "clear_fields": ["website_url"],
+                "opening_hours": "Lunedì-giovedì 09:00-13:00 / 14:00-17:00. Venerdì 09:00-13:00, pomeriggio apertura su prenotazione. Sabato e domenica apertura su prenotazione.",
+                "email": "infomusei@unical.it",
+                "phone": "0984 465353",
+                "access_notes": "Sede: Via Cavour, 1 - 87036 Rende (CS).",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/rimuseum/",
+            },
+            {
+                "place_id": "service-orto-botanico",
+                "type": "OTHER",
+                "name": "Orto Botanico",
+                "building_id": "orto-botanico",
+                "clear_fields": ["website_url"],
+                "opening_hours": "Lunedì-venerdì 09:00-13:00.",
+                "email": "infomusei@unical.it",
+                "phone": "0984 493089",
+                "access_notes": "Sede: Via Savinio - Edificio Polifunzionale, 87036 Arcavacata di Rende (CS).",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/orto-botanico/",
             },
             {
                 "place_id": "service-biblioteche",
@@ -296,6 +325,20 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert places_by_id["service-musnob"]["type"] == "OTHER"
     assert places_by_id["service-musnob"]["name"] == "MuSNOB"
     assert "website_url" not in places_by_id["service-musnob"]
+    assert places_by_id["service-musnob"]["opening_hours"] == "Lunedì-venerdì 09:00-13:00."
+    assert places_by_id["service-musnob"]["email"] == "infomusei@unical.it; musnob@unical.it"
+    assert places_by_id["service-musnob"]["phone"] == "0984 493089"
+    assert "visita su Facebook" in places_by_id["service-musnob"]["access_notes"]
+    assert places_by_id["service-rimuseum"]["opening_hours"] == (
+        "Lunedì-giovedì 09:00-13:00 / 14:00-17:00. "
+        "Venerdì 09:00-13:00, pomeriggio apertura su prenotazione. "
+        "Sabato e domenica apertura su prenotazione."
+    )
+    assert places_by_id["service-rimuseum"]["phone"] == "0984 465353"
+    assert places_by_id["service-rimuseum"]["email"] == "infomusei@unical.it"
+    assert places_by_id["service-orto-botanico"]["building_id"] == "orto-botanico"
+    assert places_by_id["service-orto-botanico"]["opening_hours"] == "Lunedì-venerdì 09:00-13:00."
+    assert places_by_id["service-orto-botanico"]["phone"] == "0984 493089"
     assert places_by_id["service-biblioteche"]["website_url"] == "https://sba.unical.it/"
     assert places_by_id["service-biblioteche"]["opening_hours"] == (
         "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso."

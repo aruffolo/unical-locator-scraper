@@ -205,6 +205,10 @@
       "clear_fields": [
         "website_url"
       ],
+      "opening_hours": "Lunedì-venerdì 09:00-13:00.",
+      "email": "infomusei@unical.it; musnob@unical.it",
+      "phone": "0984 493089",
+      "access_notes": "Informazioni, appuntamenti e visite tematiche. Disponibili schede didattiche per le scuole e visita su Facebook.",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/"
     },
@@ -215,6 +219,10 @@
       "clear_fields": [
         "website_url"
       ],
+      "opening_hours": "Lunedì-giovedì 09:00-13:00 / 14:00-17:00. Venerdì 09:00-13:00, pomeriggio apertura su prenotazione. Sabato e domenica apertura su prenotazione.",
+      "email": "infomusei@unical.it",
+      "phone": "0984 465353",
+      "access_notes": "Sede: Via Cavour, 1 - 87036 Rende (CS).",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/rimuseum/"
     },
@@ -232,9 +240,14 @@
       "place_id": "service-orto-botanico",
       "type": "OTHER",
       "name": "Orto Botanico",
+      "building_id": "orto-botanico",
       "clear_fields": [
         "website_url"
       ],
+      "opening_hours": "Lunedì-venerdì 09:00-13:00.",
+      "email": "infomusei@unical.it",
+      "phone": "0984 493089",
+      "access_notes": "Sede: Via Savinio - Edificio Polifunzionale, 87036 Arcavacata di Rende (CS).",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/orto-botanico/"
     },
@@ -245,6 +258,10 @@
       "clear_fields": [
         "website_url"
       ],
+      "opening_hours": "Lunedì-venerdì 09:00-13:00.",
+      "email": "infomusei@unical.it; anna.rao@unical.it",
+      "phone": "0984 493685",
+      "access_notes": "Sede: Via Pietro Bucci, cubo 14/B, 87036 Arcavacata di Rende (CS). Appuntamenti e visite tematiche disponibili.",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/paleontologia/"
     },
@@ -255,6 +272,9 @@
       "clear_fields": [
         "website_url"
       ],
+      "opening_hours": "Lunedì-venerdì 09:00-13:00.",
+      "email": "infomusei@unical.it; antonio.mazzei@unical.it",
+      "access_notes": "Sede: Via Pietro Bucci, cubo 14/B, 87036 Arcavacata di Rende (CS). Appuntamenti e visite tematiche disponibili.",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/zoologia/"
     },
@@ -265,6 +285,9 @@
       "clear_fields": [
         "website_url"
       ],
+      "email": "andrea.bloise@unical.it",
+      "phone": "0984 493588-3704",
+      "access_notes": "Sede: Via Pietro Bucci, cubo 14/B, 87036 Arcavacata di Rende (CS). Appuntamenti e visite tematiche disponibili.",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/mineralogia-e-petrografia/"
     },

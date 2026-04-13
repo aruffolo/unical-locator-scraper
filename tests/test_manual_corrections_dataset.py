@@ -301,19 +301,49 @@ def test_museale_foresteria_polo_wave_is_preserved() -> None:
     assert musnob.get("type") == "OTHER"
     assert musnob.get("name") == "MuSNOB"
     assert musnob.get("website_url") is None
+    assert musnob.get("opening_hours") == "Lunedì-venerdì 09:00-13:00."
+    assert musnob.get("phone") == "0984 493089"
+    assert musnob.get("email") == "infomusei@unical.it; musnob@unical.it"
+    assert "appuntamenti e visite tematiche" in str(musnob.get("access_notes")).lower()
 
     rimuseum = places["service-rimuseum"]
     assert rimuseum.get("type") == "OTHER"
     assert rimuseum.get("name") == "RiMuseum"
+    assert rimuseum.get("opening_hours") == (
+        "Lunedì-giovedì 09:00-13:00 / 14:00-17:00. "
+        "Venerdì 09:00-13:00, pomeriggio apertura su prenotazione. "
+        "Sabato e domenica apertura su prenotazione."
+    )
+    assert rimuseum.get("phone") == "0984 465353"
+    assert rimuseum.get("email") == "infomusei@unical.it"
+    assert "Via Cavour, 1" in str(rimuseum.get("access_notes"))
 
     miai = places["service-miai"]
     assert miai.get("type") == "OTHER"
     assert miai.get("name") == "MIAI"
 
-    assert places["service-orto-botanico"].get("type") == "OTHER"
-    assert places["service-paleontologia"].get("type") == "OTHER"
-    assert places["service-zoologia"].get("type") == "OTHER"
-    assert places["service-mineralogia-e-petrografia"].get("type") == "OTHER"
+    orto = places["service-orto-botanico"]
+    assert orto.get("type") == "OTHER"
+    assert orto.get("building_id") == "orto-botanico"
+    assert orto.get("opening_hours") == "Lunedì-venerdì 09:00-13:00."
+    assert orto.get("phone") == "0984 493089"
+    assert orto.get("email") == "infomusei@unical.it"
+
+    paleontologia = places["service-paleontologia"]
+    assert paleontologia.get("type") == "OTHER"
+    assert paleontologia.get("opening_hours") == "Lunedì-venerdì 09:00-13:00."
+    assert paleontologia.get("phone") == "0984 493685"
+    assert paleontologia.get("email") == "infomusei@unical.it; anna.rao@unical.it"
+
+    zoologia = places["service-zoologia"]
+    assert zoologia.get("type") == "OTHER"
+    assert zoologia.get("opening_hours") == "Lunedì-venerdì 09:00-13:00."
+    assert zoologia.get("email") == "infomusei@unical.it; antonio.mazzei@unical.it"
+
+    mineralogia = places["service-mineralogia-e-petrografia"]
+    assert mineralogia.get("type") == "OTHER"
+    assert mineralogia.get("phone") == "0984 493588-3704"
+    assert mineralogia.get("email") == "andrea.bloise@unical.it"
 
     foresteria = places["service-servizio-foresteria"]
     assert foresteria.get("building_id") is None
