@@ -22,6 +22,166 @@ LOCKED_MIN_COUNTS = {
     "sources.json": 5,
 }
 
+LOCKED_VIVERE_IL_CAMPUS_FAMILIES = {
+    "quartieri": {
+        "overview_ids": {"service-quartieri"},
+        "place_ids": {
+            "quartiere-chiodo",
+            "quartiere-chiodo-2",
+            "quartiere-maisonnettes",
+            "quartiere-martensson-a",
+            "quartiere-martensson-b",
+            "quartiere-mira",
+            "quartiere-molicelle",
+            "quartiere-monaci",
+            "quartiere-nervoso",
+            "quartiere-san-gennaro",
+        },
+        "link_ids": {
+            "service-quartieri__has_child_place__quartiere-chiodo",
+            "service-quartieri__has_child_place__quartiere-chiodo-2",
+            "service-quartieri__has_child_place__quartiere-maisonnettes",
+            "service-quartieri__has_child_place__quartiere-martensson-a",
+            "service-quartieri__has_child_place__quartiere-martensson-b",
+            "service-quartieri__has_child_place__quartiere-mira",
+            "service-quartieri__has_child_place__quartiere-molicelle",
+            "service-quartieri__has_child_place__quartiere-monaci",
+            "service-quartieri__has_child_place__quartiere-nervoso",
+            "service-quartieri__has_child_place__quartiere-san-gennaro",
+        },
+        "source_urls": {"https://www.unical.it/campus/vivere-il-campus/quartieri/"},
+    },
+    "mensa": {
+        "overview_ids": {"service-servizio-mensa"},
+        "building_ids": {
+            "mensa-maisonnettes",
+            "mensa-martenson",
+            "mensa-piazza-vermicelli",
+            "poli-bistrot-polifunzionale",
+        },
+        "link_ids": {
+            "service-servizio-mensa__has_child_building__mensa-maisonnettes",
+            "service-servizio-mensa__has_child_building__mensa-martenson",
+            "service-servizio-mensa__has_child_building__mensa-piazza-vermicelli",
+            "service-servizio-mensa__has_child_building__poli-bistrot-polifunzionale",
+        },
+        "source_urls": {"https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"},
+    },
+    "centro_congressi": {
+        "overview_ids": {"service-centro-congressi"},
+        "place_ids": {
+            "aula-magna-centro-congressi",
+            "aula-u-caldora-centro-congressi",
+            "sala-mostre-centro-congressi",
+            "university-club",
+            "sala-stampa-centro-congressi",
+            "sala-a-centro-congressi",
+        },
+        "link_ids": {
+            "service-centro-congressi__has_child_place__aula-magna-centro-congressi",
+            "service-centro-congressi__has_child_place__aula-u-caldora-centro-congressi",
+            "service-centro-congressi__has_child_place__sala-mostre-centro-congressi",
+            "service-centro-congressi__has_child_place__university-club",
+            "service-centro-congressi__has_child_place__sala-stampa-centro-congressi",
+            "service-centro-congressi__has_child_place__sala-a-centro-congressi",
+        },
+        "source_urls": {"https://www.unical.it/campus/vivere-il-campus/centro-congressi/"},
+    },
+    "teatri_e_cinema": {
+        "overview_ids": {"service-teatri-e-cinema"},
+        "place_ids": {"cinema-unical"},
+        "building_ids": {
+            "auditorium-teatro-grande",
+            "teatro-piccolo",
+            "teatro-all-aperto",
+            "anfiteatro-polifunzionale",
+        },
+        "link_ids": {
+            "service-teatri-e-cinema__has_child_building__auditorium-teatro-grande",
+            "service-teatri-e-cinema__has_child_building__teatro-piccolo",
+            "service-teatri-e-cinema__has_child_building__teatro-all-aperto",
+            "service-teatri-e-cinema__has_child_building__anfiteatro-polifunzionale",
+            "service-teatri-e-cinema__has_child_place__cinema-unical",
+            "cinema-unical__has_child_building__auditorium-teatro-grande",
+        },
+        "source_urls": {
+            "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/",
+            "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/cinema-e-anfiteatri/",
+            "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/tau/",
+            "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/ptu/",
+            "https://www.unical.it/campus/visita-il-campus/mappa/",
+        },
+    },
+    "biblioteche": {
+        "overview_ids": {"service-biblioteche"},
+        "place_ids": {
+            "biblioteca-bau",
+            "biblioteca-tarantelli",
+            "biblioteca-bats",
+        },
+        "link_ids": {
+            "service-biblioteche__has_child_place__biblioteca-bau",
+            "service-biblioteche__has_child_place__biblioteca-tarantelli",
+            "service-biblioteche__has_child_place__biblioteca-bats",
+        },
+        "source_urls": {"https://www.unical.it/campus/vivere-il-campus/biblioteche/"},
+    },
+    "sistema_museale": {
+        "overview_ids": {"service-sistema-museale"},
+        "place_ids": {
+            "service-musnob",
+            "service-rimuseum",
+            "service-miai",
+            "service-orto-botanico",
+            "service-paleontologia",
+            "service-zoologia",
+            "service-mineralogia-e-petrografia",
+        },
+        "link_ids": {
+            "service-sistema-museale__has_child_place__service-musnob",
+            "service-sistema-museale__has_child_place__service-rimuseum",
+            "service-sistema-museale__has_child_place__service-miai",
+            "service-musnob__has_child_place__service-orto-botanico",
+            "service-musnob__has_child_place__service-paleontologia",
+            "service-musnob__has_child_place__service-zoologia",
+            "service-musnob__has_child_place__service-mineralogia-e-petrografia",
+        },
+        "source_urls": {
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/",
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/",
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/orto-botanico/",
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/paleontologia/",
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/zoologia/",
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/mineralogia-e-petrografia/",
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/rimuseum/",
+            "https://www.unical.it/campus/vivere-il-campus/sistema-museale/miai/",
+        },
+    },
+    "foresteria": {
+        "overview_ids": {"service-servizio-foresteria"},
+        "place_ids": {"residenza-socrates"},
+        "link_ids": {"service-servizio-foresteria__has_child_place__residenza-socrates"},
+        "source_urls": {"https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/"},
+    },
+    "polo_infanzia": {
+        "place_ids": {"polo-infanzia"},
+        "link_ids": {"polo-infanzia__has_child_building__auditorium-teatro-grande"},
+        "source_urls": {"https://www.unical.it/campus/vivere-il-campus/polo-infanzia/"},
+    },
+    "centro_sanitario": {
+        "overview_ids": {"service-centro-sanitario"},
+        "source_urls": {"https://www.unical.it/campus/vivere-il-campus/centro-sanitario/"},
+    },
+    "centro_linguistico": {
+        "overview_ids": {"service-centro-linguistico-di-ateneo"},
+        "source_urls": {"https://www.unical.it/campus/vivere-il-campus/centro-linguistico-di-ateneo/"},
+    },
+    "centro_sportivo": {
+        "overview_ids": {"service-centro-sportivo"},
+        "source_urls": {"https://www.unical.it/campus/vivere-il-campus/centro-sportivo/"},
+    },
+}
+
 
 def _load_json(path: Path) -> Any:
     with path.open("r", encoding="utf-8") as handle:
@@ -432,6 +592,27 @@ def test_centro_linguistico_and_sportivo_enrichment_wave_is_preserved() -> None:
     assert sportivo.get("website_url") == "https://www.cuscosenza.it/"
     assert "tesseramento annuale" in str(sportivo.get("access_notes")).lower()
     assert "palacus" in str(sportivo.get("access_notes")).lower()
+
+
+def test_vivere_il_campus_source_family_contract_is_preserved() -> None:
+    buildings = _by_id(_load_dataset("buildings.json"), "building_id")
+    places = _by_id(_load_dataset("places.json"), "place_id")
+    entity_links = _by_id(_load_dataset("entity_links.json"), "link_id")
+
+    for family in LOCKED_VIVERE_IL_CAMPUS_FAMILIES.values():
+        for overview_id in family.get("overview_ids", set()):
+            assert overview_id in places
+
+        for place_id in family.get("place_ids", set()):
+            assert place_id in places
+            assert places[place_id].get("source_url") in family["source_urls"]
+
+        for building_id in family.get("building_ids", set()):
+            assert building_id in buildings
+            assert buildings[building_id].get("source_url") in family["source_urls"]
+
+        for link_id in family.get("link_ids", set()):
+            assert link_id in entity_links
 
 
 def test_dataset_contract_counts_match_files_and_locked_minimums() -> None:
