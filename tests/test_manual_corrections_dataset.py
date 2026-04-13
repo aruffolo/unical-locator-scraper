@@ -119,8 +119,8 @@ def test_known_manual_wave_fixes_are_preserved() -> None:
     assert "Office references:" not in str(office_0c.get("description"))
 
     service_cus = places["service-centro-sportivo"]
-    assert service_cus.get("website_url") == "https://my.unical.it/"
-    assert service_cus.get("access_notes") is None
+    assert service_cus.get("website_url") == "https://www.cuscosenza.it/"
+    assert "tesseramento annuale" in str(service_cus.get("access_notes")).lower()
 
     office_4c = places["office-ufficio-cubo-4c-piano-3"]
     assert isinstance(office_4c.get("meeting_url"), str)
@@ -410,6 +410,28 @@ def test_centro_sanitario_enrichment_wave_is_preserved() -> None:
         centro_sanitario.get("access_notes")
     )
     assert "service-emergenze-e-assistenza-sanitaria" not in places
+
+
+def test_centro_linguistico_and_sportivo_enrichment_wave_is_preserved() -> None:
+    places = _by_id(_load_dataset("places.json"), "place_id")
+
+    cla = places["service-centro-linguistico-di-ateneo"]
+    assert cla.get("type") == "SERVICE"
+    assert cla.get("building_id") == "cla-centro-linguistico-d-ateneo"
+    assert cla.get("website_url") == "https://cla.unical.it/"
+    assert cla.get("email") == "cla@unical.it; maria.sasso@unical.it"
+    assert cla.get("phone") == "0984 496224; 0984 496222; 0984 496225; 0984 496228"
+    assert "ricevimento cla-ola area scientifica" in str(
+        cla.get("opening_hours")
+    ).lower()
+    assert "via pietro bucci - cubo 25c" in str(cla.get("access_notes")).lower()
+
+    sportivo = places["service-centro-sportivo"]
+    assert sportivo.get("type") == "SERVICE"
+    assert sportivo.get("building_id") == "centro-universitario-sportivo"
+    assert sportivo.get("website_url") == "https://www.cuscosenza.it/"
+    assert "tesseramento annuale" in str(sportivo.get("access_notes")).lower()
+    assert "palacus" in str(sportivo.get("access_notes")).lower()
 
 
 def test_dataset_contract_counts_match_files_and_locked_minimums() -> None:

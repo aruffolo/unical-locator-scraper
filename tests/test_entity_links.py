@@ -59,6 +59,20 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             "name": "Musnob",
             "website_url": "https://my.unical.it/",
         },
+        {
+            "place_id": "service-centro-linguistico-di-ateneo",
+            "type": "SERVICE",
+            "name": "Centro Linguistico di Ateneo",
+            "building_id": "cla-centro-linguistico-d-ateneo",
+            "website_url": "https://my.unical.it/",
+        },
+        {
+            "place_id": "service-centro-sportivo",
+            "type": "SERVICE",
+            "name": "Centro Sportivo",
+            "building_id": "centro-universitario-sportivo",
+            "website_url": "https://my.unical.it/",
+        },
     ]
     buildings = [
         {"building_id": "mensa-maisonnettes", "name": "Mensa Maisonnettes"},
@@ -98,6 +112,28 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             }
         ],
         "place_overrides": [
+            {
+                "place_id": "service-centro-linguistico-di-ateneo",
+                "type": "SERVICE",
+                "name": "Centro Linguistico di Ateneo",
+                "description": "Servizi linguistici, laboratori e studio in autonomia.",
+                "opening_hours": "Ricevimento CLA-OLA Area Scientifica: mercoledì 15:00-16:00. Ricevimento CLA-OLA Area Umanistica: lunedì 11:00-12:00; mercoledì e venerdì 09:00-12:00.",
+                "email": "cla@unical.it; maria.sasso@unical.it",
+                "phone": "0984 496224; 0984 496222; 0984 496225; 0984 496228",
+                "website_url": "https://cla.unical.it/",
+                "access_notes": "Indirizzo: Via Pietro Bucci - Cubo 25C. Segreteria organizzativa: Cubo 25C secondo piano.",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-linguistico-di-ateneo/",
+            },
+            {
+                "place_id": "service-centro-sportivo",
+                "type": "SERVICE",
+                "name": "Centro Sportivo",
+                "website_url": "https://www.cuscosenza.it/",
+                "access_notes": "Tesseramento annuale e impianti sportivi.",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-sportivo/",
+            },
             {
                 "place_id": "service-centro-sanitario",
                 "type": "SERVICE",
@@ -331,6 +367,29 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert "opening_hours" not in places_by_id["service-centro-congressi"]
     assert "website_url" not in places_by_id["service-centro-congressi"]
     assert "building_id" not in places_by_id["service-biblioteche"]
+    assert places_by_id["service-centro-linguistico-di-ateneo"]["website_url"] == (
+        "https://cla.unical.it/"
+    )
+    assert places_by_id["service-centro-linguistico-di-ateneo"]["email"] == (
+        "cla@unical.it; maria.sasso@unical.it"
+    )
+    assert places_by_id["service-centro-linguistico-di-ateneo"]["phone"] == (
+        "0984 496224; 0984 496222; 0984 496225; 0984 496228"
+    )
+    assert places_by_id["service-centro-linguistico-di-ateneo"]["opening_hours"] == (
+        "Ricevimento CLA-OLA Area Scientifica: mercoledì 15:00-16:00. "
+        "Ricevimento CLA-OLA Area Umanistica: lunedì 11:00-12:00; "
+        "mercoledì e venerdì 09:00-12:00."
+    )
+    assert "Via Pietro Bucci - Cubo 25C." in places_by_id[
+        "service-centro-linguistico-di-ateneo"
+    ]["access_notes"]
+    assert places_by_id["service-centro-sportivo"]["website_url"] == (
+        "https://www.cuscosenza.it/"
+    )
+    assert "tesseramento annuale" in places_by_id["service-centro-sportivo"][
+        "access_notes"
+    ].lower()
     assert "website_url" not in places_by_id["service-centro-sanitario"]
     assert "service-emergenze-e-assistenza-sanitaria" not in places_by_id
     assert places_by_id["service-centro-sanitario"]["opening_hours"] == (

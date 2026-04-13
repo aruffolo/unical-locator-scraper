@@ -29,7 +29,7 @@
     {
       "name": "buildings.json",
       "records": 147,
-      "sha256": "d5d0e4381c71ecafc0aa5af016abab6869c26800b6a9604c135cb81feb911ef4"
+      "sha256": "4b2eb4003eff4742da8424072e2e65683accb5eeb900449270b6a6d4c52c934f"
     },
     {
       "name": "departments.json",
@@ -59,7 +59,7 @@
     {
       "name": "places.json",
       "records": 901,
-      "sha256": "2e4546556ff7b3cfcc09982c5934ac4a7f67df78f9484565cbf114c57737fcd1"
+      "sha256": "53686f689f117ebc69723a0407e0cbda53cac5b63124d41be969d8550d9d9d58"
     },
     {
       "name": "sources.json",
@@ -67,5 +67,5 @@
       "sha256": "223dfa91cd1b931e5ba57a96bb7f107e0abd2dab768225d00dd22ae6caf61bd3"
     }
   ],
-  "revision": "62bf3404cc0c0ea1cd962d016239512d8420f388b44d4e9a28913f5d6601c8b6"
+  "revision": "e3732be14faee4262e599835f015227218987be4a8a87b778ed0127ba27190a7"
 }

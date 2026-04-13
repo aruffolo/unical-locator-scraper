@@ -204,6 +204,28 @@
       "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-sanitario/"
     },
     {
+      "place_id": "service-centro-linguistico-di-ateneo",
+      "type": "SERVICE",
+      "name": "Centro Linguistico di Ateneo",
+      "description": "Il Centro Linguistico di Ateneo promuove servizi linguistici, laboratori, percorsi di studio in autonomia, tirocini e certificazioni per studenti, docenti, ricercatori, personale dell'Ateneo e territorio.",
+      "opening_hours": "Ricevimento CLA-OLA Area Scientifica: mercoledì 15:00-16:00. Ricevimento CLA-OLA Area Umanistica: lunedì 11:00-12:00; mercoledì e venerdì 09:00-12:00.",
+      "email": "cla@unical.it; maria.sasso@unical.it",
+      "phone": "0984 496224; 0984 496222; 0984 496225; 0984 496228",
+      "website_url": "https://cla.unical.it/",
+      "access_notes": "Indirizzo: Via Pietro Bucci - Cubo 25C. Segreteria organizzativa: Cubo 25C secondo piano. Servizi: Offerta Linguistica di Ateneo, Studio in Autonomia, tirocini, laboratori di lingua, traduzioni e proof reading, workshop linguistici. Piattaforme: OLA System http://claola.unical.it/cla-angular/login e Studio in Autonomia http://selfstudy.cla.unical.it/.",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-linguistico-di-ateneo/"
+    },
+    {
+      "place_id": "service-centro-sportivo",
+      "type": "SERVICE",
+      "name": "Centro Sportivo",
+      "website_url": "https://www.cuscosenza.it/",
+      "access_notes": "Accesso aperto a studenti, dipendenti ed esterni. Tesseramento annuale con copertura assicurativa, corsi propedeutici, utilizzo impianti su prenotazione e iscrizione alle attività sportive. Impianti principali: PalaCus, campi da tennis, campi di calcio a 5 e calcio/rugby, palestra arti marziali, palestra body building, impianti nei quartieri San Gennaro e Monaci. Attività: sport di squadra, individuali e arti marziali. Per programmi, orari, quote, prenotazioni e iscrizioni consulta il sito CUS Cosenza.",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-sportivo/"
+    },
+    {
       "place_id": "service-sistema-museale",
       "type": "SERVICE",
       "name": "Sistema Museale",
