@@ -29,7 +29,7 @@
     {
       "name": "buildings.json",
       "records": 147,
-      "sha256": "be9d017f65ca6a21ffce6d56c9cf4c92e9925c9d59bb50423e9659acfdcb4a79"
+      "sha256": "0d827f08faaf44bdc225aba5ec5058abb64c78ded16975beb9d31ab9c31df914"
     },
     {
       "name": "departments.json",
@@ -39,7 +39,7 @@
     {
       "name": "entity_links.json",
       "records": 30,
-      "sha256": "3a6b26ef1c94c5a279de1ce3c15e71bd921f11c6c05fe109e231bc418ddb49f9"
+      "sha256": "78f0f57143b001c9b09512541d2ffdb74c2671127ebb510342cb0aa200072e9f"
     },
     {
       "name": "faqs.json",
@@ -58,8 +58,8 @@
     },
     {
       "name": "places.json",
-      "records": 898,
-      "sha256": "de86825b5b58be439ddb597de7b771d2a755bca69972a12fd8e6cabbf4edac0b"
+      "records": 900,
+      "sha256": "70210876811ffd9d38c192493fc02f3eb2372f534bf614544d5fc62f471693ab"
     },
     {
       "name": "sources.json",
@@ -67,5 +67,5 @@
       "sha256": "223dfa91cd1b931e5ba57a96bb7f107e0abd2dab768225d00dd22ae6caf61bd3"
     }
   ],
-  "revision": "06c45b68944f70cc040ae928ecdd844884b8600cc5840140edd3235dd37c4569"
+  "revision": "7e6555398a9baabba4e98480c497ae2cdd8025fa165df8b17adb15eeed786381"
 }

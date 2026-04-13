@@ -65,6 +65,8 @@ def test_required_entities_are_present_in_canonical_datasets() -> None:
     assert "quartiere-chiodo" in places
     assert "quartiere-san-gennaro" in places
     assert "sala-mostre-centro-congressi" in places
+    assert "aula-magna-centro-congressi" in places
+    assert "aula-u-caldora-centro-congressi" in places
     assert "university-club" in places
     assert "cinema-unical" in places
     assert "biblioteca-bau" in places
@@ -167,12 +169,31 @@ def test_grouped_service_location_wave_is_preserved() -> None:
 
 
 def test_broader_grouped_hub_wave_is_preserved() -> None:
+    buildings = _by_id(_load_dataset("buildings.json"), "building_id")
     places = _by_id(_load_dataset("places.json"), "place_id")
     entity_links = _by_id(_load_dataset("entity_links.json"), "link_id")
 
     centro_congressi = places["service-centro-congressi"]
     assert centro_congressi.get("building_id") is None
-    assert centro_congressi.get("opening_hours") == "Orari disponibili sulla pagina sorgente"
+    assert centro_congressi.get("opening_hours") is None
+    assert centro_congressi.get("website_url") is None
+    assert "Marcella Giulia Lorenzi" in str(centro_congressi.get("access_notes"))
+
+    teatri = places["service-teatri-e-cinema"]
+    assert teatri.get("building_id") is None
+    assert teatri.get("opening_hours") is None
+    assert teatri.get("website_url") is None
+    assert teatri.get("email") == "dir.cams@unical.it"
+
+    aula_magna_congressi = places["aula-magna-centro-congressi"]
+    assert aula_magna_congressi.get("type") == "OTHER"
+    assert aula_magna_congressi.get("building_id") == "aula-magna"
+    assert "660 posti" in str(aula_magna_congressi.get("description"))
+
+    aula_caldora_congressi = places["aula-u-caldora-centro-congressi"]
+    assert aula_caldora_congressi.get("type") == "OTHER"
+    assert aula_caldora_congressi.get("building_id") == "centro-radiotelevisivo"
+    assert "250 persone" in str(aula_caldora_congressi.get("description"))
 
     sala_mostre = places["sala-mostre-centro-congressi"]
     assert sala_mostre.get("type") == "OTHER"
@@ -182,11 +203,26 @@ def test_broader_grouped_hub_wave_is_preserved() -> None:
     university_club = places["university-club"]
     assert university_club.get("type") == "OTHER"
     assert university_club.get("building_id") == "cubo-24b"
+    assert "80 posti a sedere" in str(university_club.get("description"))
+
+    sala_a = places["sala-a-centro-congressi"]
+    assert "50 posti" in str(sala_a.get("description"))
 
     cinema_unical = places["cinema-unical"]
     assert cinema_unical.get("type") == "OTHER"
     assert cinema_unical.get("building_id") == "auditorium-teatro-grande"
     assert cinema_unical.get("website_url") == "https://cosenzacinema.it/programmazione-sale-unical/"
+    assert cinema_unical.get("email") == "dir.cams@unical.it"
+    assert "dotato di 2 sale" in str(cinema_unical.get("description"))
+    assert "programmazione serale" in str(cinema_unical.get("access_notes"))
+
+    tau = buildings["auditorium-teatro-grande"]
+    assert "Teatro Auditorium Unical (TAU)" in str(tau.get("description"))
+    assert "550 posti" in str(tau.get("description"))
+
+    ptu = buildings["teatro-piccolo"]
+    assert "Piccolo Teatro Unical (PTU)" in str(ptu.get("description"))
+    assert "300 posti" in str(ptu.get("description"))
 
     biblioteca_bau = places["biblioteca-bau"]
     assert biblioteca_bau.get("type") == "LIBRARY"
@@ -224,9 +260,9 @@ def test_broader_grouped_hub_wave_is_preserved() -> None:
     )
     assert "Sistema Bibliotecario di Ateneo" in str(biblioteche.get("access_notes"))
 
-    assert "service-centro-congressi__has_child_place__aula-magna" in entity_links
+    assert "service-centro-congressi__has_child_place__aula-magna-centro-congressi" in entity_links
     assert (
-        "service-centro-congressi__has_child_place__aula-caldora-centro-radiotelevisivo"
+        "service-centro-congressi__has_child_place__aula-u-caldora-centro-congressi"
         in entity_links
     )
     assert "service-centro-congressi__has_child_place__university-club" in entity_links

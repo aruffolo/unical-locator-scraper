@@ -55,24 +55,24 @@
     "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/"
   },
   {
-    "child_entity_id": "aula-caldora-centro-radiotelevisivo",
+    "child_entity_id": "aula-magna-centro-congressi",
     "child_entity_type": "PLACE",
-    "link_id": "service-centro-congressi__has_child_place__aula-caldora-centro-radiotelevisivo",
-    "parent_entity_id": "service-centro-congressi",
-    "parent_entity_type": "PLACE",
-    "relation_type": "HAS_CHILD_PLACE",
-    "sort_order": 30,
-    "source_id": "unical-services",
-    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/"
-  },
-  {
-    "child_entity_id": "aula-magna",
-    "child_entity_type": "PLACE",
-    "link_id": "service-centro-congressi__has_child_place__aula-magna",
+    "link_id": "service-centro-congressi__has_child_place__aula-magna-centro-congressi",
     "parent_entity_id": "service-centro-congressi",
     "parent_entity_type": "PLACE",
     "relation_type": "HAS_CHILD_PLACE",
     "sort_order": 10,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/"
+  },
+  {
+    "child_entity_id": "aula-u-caldora-centro-congressi",
+    "child_entity_type": "PLACE",
+    "link_id": "service-centro-congressi__has_child_place__aula-u-caldora-centro-congressi",
+    "parent_entity_id": "service-centro-congressi",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 30,
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/"
   },

@@ -3974,6 +3974,18 @@
     "type": "AULA"
   },
   {
+    "building_id": "aula-magna",
+    "description": "Aula Magna \"Beniamino Andreatta\" del Centro Congressi, dotata di 660 posti, sistema di videoproiezione, PC, impianto audio, microfoni fissi e palmari, illuminazione, climatizzazione e due postazioni reception con connessione internet e rete telefonica.",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
+    "lat": 39.3583149,
+    "lng": 16.2258276,
+    "name": "Aula Magna",
+    "place_id": "aula-magna-centro-congressi",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/",
+    "type": "OTHER"
+  },
+  {
     "building_id": "cubo-15b",
     "floor": "Terzo piano",
     "last_verified_at": "2026-04-09T19:53:24.910260+00:00",
@@ -5317,6 +5329,18 @@
     "type": "AULA"
   },
   {
+    "building_id": "centro-radiotelevisivo",
+    "description": "Collocata presso il Centro Residenziale dell'Ateneo, è dotata di impianto audio/video e Wi-Fi, PC e sistema di proiezione multimediale. Consente di ospitare fino a 250 persone e dispone di apposito spazio per interviste o esposizioni. Non dispone di zona adatta a coffee break e lunch.",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
+    "lat": 39.3561912,
+    "lng": 16.2250283,
+    "name": "Aula U. Caldora",
+    "place_id": "aula-u-caldora-centro-congressi",
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/",
+    "type": "OTHER"
+  },
+  {
     "building_id": "cubo-18b",
     "floor": "Piano Terra",
     "last_verified_at": "2026-04-09T19:53:24.910260+00:00",
@@ -5382,7 +5406,7 @@
   {
     "access_notes": "Servizi: http://bats.unical.it/servizi/servizi.htm. La sala studio/multimediale per attività collaborative o individuali si prenota via Uniticket: https://ticket.unical.it/tickets/new/15/570/. Sistema Bibliotecario di Ateneo: https://sba.unical.it/",
     "description": "La Biblioteca di Area Tecnico-Scientifica è nata nel 1999 dalla riconversione dell'ex-Biblioteca Centrale e incorpora le raccolte bibliografiche dei dipartimenti scientifici e ingegneristici dell'Ateneo.",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "name": "BATS - Biblioteca di Area Tecnico-Scientifica",
     "opening_hours": "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso.",
     "place_id": "biblioteca-bats",
@@ -5394,7 +5418,7 @@
   {
     "access_notes": "Le collezioni BAU comprendono circa 250.000 unità bibliografiche fra libri e riviste cartacee, supporti audiovisivi, microriproduzioni e materiali archivistici, oltre a e-journals, e-books e archivi digitali di ambito umanistico. La biblioteca collabora con altre istituzioni di ricerca e ospita tirocini didattici. Servizi: https://bau.unical.it/. Sistema Bibliotecario di Ateneo: https://sba.unical.it/",
     "description": "La Biblioteca di Area Umanistica \"F. E. Fagiani\" (BAU) è stata istituita nel 1987 e fornisce documentazione e servizi bibliografici qualificati a docenti, ricercatori, dottorandi e studenti dei dipartimenti DICES e DISU, oltre che alla più ampia comunità accademica e al territorio di riferimento.",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "name": "BAU - Biblioteca di Area Umanistica \"F. E. Fagiani\"",
     "opening_hours": "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso.",
     "place_id": "biblioteca-bau",
@@ -5406,7 +5430,7 @@
   {
     "access_notes": "All'inaugurazione della nuova sede, il 7 febbraio 2001, è intervenuto il Presidente della Repubblica Carlo Azeglio Ciampi. Servizi: https://tar.unical.it/tar_servizi. Sistema Bibliotecario di Ateneo: https://sba.unical.it/",
     "description": "La Biblioteca Interdipartimentale di Scienze Economiche e Sociali è nata nel 1981 dall'unificazione delle biblioteche di Economia Politica, Organizzazione Aziendale ed Amministrazione Pubblica, Sociologia e Scienza Politica; dal 1986 è intitolata a Ezio Tarantelli.",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "name": "Biblioteca Interdipartimentale di Scienze Economiche e Sociali \"E. Tarantelli\"",
     "opening_hours": "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso.",
     "place_id": "biblioteca-tarantelli",
@@ -5416,11 +5440,15 @@
     "website_url": "http://tar.unical.it/"
   },
   {
+    "access_notes": "Le sale restano a disposizione dei corsi di studio universitari per le attività didattiche nelle ore diurne, mentre la programmazione serale è aperta a tutto il territorio. Riferimento organizzativo: Piazza Vermicelli, Edificio TAU, 3° piano.",
     "building_id": "auditorium-teatro-grande",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "description": "Il Cinema Unical, dotato di 2 sale, offre una programmazione cinematografica continua e accessibile alla comunità universitaria e al territorio. Si propone come polo culturale del campus insieme alle attività del Teatro Auditorium.",
+    "email": "dir.cams@unical.it",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3676094,
     "lng": 16.2254199,
     "name": "Cinema Unical",
+    "phone": "0984 49 4459 - 0984 49 4460",
     "place_id": "cinema-unical",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/cinema-e-anfiteatri/",
@@ -9807,7 +9835,7 @@
   {
     "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti con camere doppie e singole, soggiorno, cucina e servizi. Posti: 144. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 3 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto.",
     "description": "E' situato nei pressi delle Biblioteche Unical tra i quartieri Martensson A e B. A pochi passi dalla piazza centrale del quartiere Martensson dove sono presenti una mensa, un bar e uno spazio comune con attrezzature per lo studio e per il tempo libero.",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3622865,
     "lng": 16.2224817,
     "name": "Quartiere Chiodo",
@@ -9821,7 +9849,7 @@
     "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Sono disponibili anche dei monolocali. Posti: 201. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 5 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Paolo Viscardi.",
     "description": "E' ubicato nei pressi dei dipartimenti di Ingegneria. Non molto distante dal quartiere Martensson dove sono presenti una mensa, un bar e uno spazio comune con attrezzature per lo studio e per il tempo libero, lavanderia, rete wifi.",
     "email": "paolo.viscardi@unical.it",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3643997,
     "lng": 16.2224434,
     "name": "Quartiere Chiodo 2",
@@ -9836,7 +9864,7 @@
     "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Sono disponibili anche dei monolocali. Posti: 519. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 3 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Maria Rosa Spina Iaconis.",
     "description": "Rappresenta il simbolo della residenzialita dell'Universita della Calabria. Il complesso delle Maisonnettes e immerso nel paesaggio naturale della collina di Arcavacata e comprende tre sale mensa, un bar, un anfiteatro e spazi comuni per attivita culturali e socio ricreative, lavanderia, rete wifi.",
     "email": "mariarosa.spinaiaconis@unical.it",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3555355,
     "lng": 16.2229899,
     "name": "Quartiere Maisonnettes",
@@ -9850,7 +9878,7 @@
   {
     "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Posti: 366. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 3 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto.",
     "description": "E' ubicato di fronte alla Biblioteca E. Tarantelli. Il quartiere si sviluppa intorno alla piazza centrale dove sono presenti una mensa, un bar e uno spazio comune con attrezzature per lo studio e per il tempo libero, lavanderia, rete wifi.",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3621548,
     "lng": 16.2231603,
     "name": "Quartiere Martensson A",
@@ -9864,7 +9892,7 @@
     "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Posti: 156. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 5 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Pierpaolo Meccico.",
     "description": "Il Quartiere Martensson B e ubicato a circa 500 metri dalle Biblioteche Unical. Nei pressi del quartiere e presente la mensa e uno spazio comune riservato agli alloggiati con attrezzature per lo studio e per il tempo libero, lavanderia e rete wi-fi.",
     "email": "pierpaolo.meccico@unical.it",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3625761,
     "lng": 16.2207163,
     "name": "Quartiere Martensson B",
@@ -9879,7 +9907,7 @@
     "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze singole, soggiorno, cucina, servizi. Posti: 72. Servizi: Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 10 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Mario Luigi Amodio.",
     "description": "Il Quartiere Mira e ubicato a circa 850 metri dal Ponte Pietro Bucci Unical. Nel quartiere e presente uno spazio comune riservato agli alloggiati per lo studio e per il tempo libero, lavanderia, campo sportivo polivalente.",
     "email": "marioluigi.amodio@unical.it",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3639597,
     "lng": 16.2234723,
     "name": "Quartiere Mira",
@@ -9894,7 +9922,7 @@
     "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Posti: 244. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 8 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Roberto Pignanelli.",
     "description": "E' ubicato a circa 500 metri dell'Aula Magna. Nei pressi del quartiere e presente la mensa e uno spazio comune riservato agli alloggiati con attrezzature per lo studio e per il tempo libero, lavanderia e rete wi-fi.",
     "email": "roberto.pignanelli@unical.it",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.35917,
     "lng": 16.2236524,
     "name": "Quartiere Molicelle",
@@ -9909,7 +9937,7 @@
     "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti tipo composti da due stanze singole, soggiorno, cucina, servizi. Posti: 202. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 3 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Roberto Bartucci.",
     "description": "Sorge lungo la strada che costeggia il ponte P. Bucci dell'Universita, all'altezza delle Biblioteche Unical. Il quartiere e dotato di spazi comuni per attivita sportive, culturali e socio ricreative, lavanderia, rete wifi.",
     "email": "roberto.bartucci@unical.it",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3616475,
     "lng": 16.2278661,
     "name": "Quartiere Monaci",
@@ -9924,7 +9952,7 @@
     "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da stanze doppie e singole, soggiorno, cucina, servizi. Posti: 214. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 30 minuti. Mezzo piu usato: autobus di linea. Periodo di chiusura: agosto. Referente tecnico: Maciste Citro.",
     "description": "E' situato a circa un chilometro dallo svincolo autostradale di Cosenza Nord ed a circa 500 metri dalla stazione ferroviaria di Castiglione Cosentino. L'Universita, distante circa 2 chilometri, e facilmente raggiungibile con gli autobus di linea.",
     "email": "maciste.citro@unical.it",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3488999,
     "lng": 16.2447265,
     "name": "Quartiere Nervoso",
@@ -9939,7 +9967,7 @@
     "access_notes": "Destinatari: studenti. Come accedere al servizio: presentazione della domanda on line sul Portale dei servizi on line secondo le modalita previste annualmente dal Bando di concorso Diritto allo studio. Tipologie di alloggi: appartamenti composti da due stanze singole, soggiorno, cucina, servizi. Posti: 194. Servizi: Internet Wi-Fi, Distributori, Biancheria, Pulizia, Lavanderia a pagamento. Spazi comuni: Sale studio, Palestra, Sala TV, Sala giochi. Arredamento individuale: un letto, un comodino, una scrivania, una libreria, un armadio, una/due sedie. Tempo medio per raggiungere l'Universita: 8 minuti. Mezzo piu usato: a piedi. Periodo di chiusura: agosto. Referente tecnico: Bernardo Bonasso.",
     "description": "Sorge lungo la strada che costeggia il Polifunzionale Unical. All'interno del quartiere sono disponibili spazi comuni per lo sport, il tempo libero, l'aggregazione e la socializzazione degli studenti alloggiati.",
     "email": "bernardo.bonasso@unical.it",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3533806,
     "lng": 16.2280956,
     "name": "Quartiere San Gennaro",
@@ -9952,7 +9980,8 @@
   },
   {
     "building_id": "aula-magna",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "description": "Ubicata al piano superiore dell'Aula Magna, è idonea per seminari e corsi di formazione ed è dotata di 50 posti e attrezzature multimediali (PC, microfono, videoproiettore).",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3581044,
     "lng": 16.2256425,
     "name": "Sala A",
@@ -9964,7 +9993,7 @@
   {
     "building_id": "aula-magna",
     "description": "Adiacente l'Aula Magna, ove è possibile allestire mostre di pittura, scultura e altri eventi di carattere culturale ma anche organizzare coffee break, lunch ed altri intrattenimenti per convegnisti.",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3581044,
     "lng": 16.2256425,
     "name": "Sala Mostre",
@@ -9976,7 +10005,7 @@
   {
     "building_id": "aula-magna",
     "description": "Ubicata al piano superiore dell'Aula Magna, dispone di 80 posti ed è dotata di sistema di proiezione multimediale, PC, impianto audio.",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3581044,
     "lng": 16.2256425,
     "name": "Sala Stampa",
@@ -9988,7 +10017,7 @@
   {
     "access_notes": "Il Sistema Bibliotecario di Ateneo comprende BAU, Tarantelli e BATS. Modalità self-service ripristinata nelle sale di lettura. Non servono più prenotazioni per consultazione e prestito dei volumi a scaffale aperto né per la restituzione di libri e periodici. La sala studio/multimediale BATS si prenota via Uniticket: https://ticket.unical.it/tickets/new/15/570/. Per altre informazioni sui servizi delle biblioteche: https://sba.unical.it/",
     "description": "Il sistema bibliotecario più grande del Mezzogiorno, con 800 posti lettura e servizi digitali per lo studio e l'accesso al ricco patrimonio di libri e riviste, cartacee e digitali.",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "name": "Biblioteche",
     "opening_hours": "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso.",
     "place_id": "service-biblioteche",
@@ -9998,15 +10027,14 @@
     "website_url": "https://sba.unical.it/"
   },
   {
+    "access_notes": "Settore Centro Congressi e Sale Convegni. Coordinatrice: Dott.ssa Marcella Giulia Lorenzi. Aula Magna - Piano 1°. Email: centrocongressi@unical.it. Telefono: 0984 493644 - 0984 493707.",
     "description": "L'Ateneo offre alla comunità universitaria e al territorio un sistema di sale convegni attrezzate per lo svolgimento di congressi, conferenze, simposi, mostre, seminari, presentazioni, lectio magistralis, corsi di aggiornamento, convention , career day e giornate di recruitment .",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "name": "Centro Congressi",
-    "opening_hours": "Orari disponibili sulla pagina sorgente",
     "place_id": "service-centro-congressi",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/",
-    "type": "SERVICE",
-    "website_url": "https://my.unical.it/"
+    "type": "SERVICE"
   },
   {
     "building_id": "cla-centro-linguistico-d-ateneo",
@@ -10161,7 +10189,7 @@
   {
     "description": "Per informazioni sulle modalità di assegnazione delle residenze agli studenti consulta il bando di concorso e il Regolamento sui Servizi del Centro Residenziale .",
     "email": "paolo.viscardi@unical.it",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "name": "Quartieri",
     "place_id": "service-quartieri",
     "source_id": "unical-services",
@@ -10217,7 +10245,7 @@
   {
     "description": "La comunità accademica può usufruire del servizio di ristorazione che viene erogato attraverso le cinque mense presenti nel campus universitario, in gestione indiretta, a tariffe differenziate in base al reddito,",
     "email": "direzione.cr@unical.it",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "name": "Servizio Mensa",
     "opening_hours": "Orari disponibili sulla pagina sorgente",
     "place_id": "service-servizio-mensa",
@@ -10248,14 +10276,16 @@
     "website_url": "https://my.unical.it/"
   },
   {
-    "building_id": "auditorium-teatro-grande",
-    "last_verified_at": "2026-04-09T19:53:24.105963+00:00",
+    "access_notes": "Riferimento organizzativo: Piazza Vermicelli, Edificio TAU, 3° piano.",
+    "description": "Il Campus dell'Unical offre spazi dedicati a teatro, cinema e spettacoli dal vivo, tra cui TAU, PTU, Cinema Unical e gli anfiteatri del campus.",
+    "email": "dir.cams@unical.it",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "name": "Teatri E Cinema",
+    "phone": "0984 49 4459 - 0984 49 4460",
     "place_id": "service-teatri-e-cinema",
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/",
-    "type": "SERVICE",
-    "website_url": "https://my.unical.it/"
+    "type": "SERVICE"
   },
   {
     "building_id": "cubo-14b",
@@ -10270,8 +10300,8 @@
   },
   {
     "building_id": "cubo-24b",
-    "description": "Struttura denominata University Club situata in prossimità degli edifici del Rettorato, dotata di un sistema di proiezione multimediale, PC ed impianto audio.",
-    "last_verified_at": "2026-04-13T08:56:15.915889+00:00",
+    "description": "Struttura denominata University Club situata in prossimità degli edifici del Rettorato, dotata di sistema di proiezione multimediale, PC ed impianto audio. Dispone di 80 posti a sedere, di una zona coffee break e di uno spazio interno per servizi di ristorazione.",
+    "last_verified_at": "2026-04-13T10:44:56.290643+00:00",
     "lat": 39.3615353,
     "lng": 16.2261502,
     "name": "University Club",

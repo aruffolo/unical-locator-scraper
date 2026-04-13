@@ -147,6 +147,7 @@ def _apply_place_override(
         merged.pop("building_id", None)
 
     _merge_optional_place_fields(merged, spec)
+    _clear_optional_fields(merged, spec)
     places_by_id[place_id] = merged
 
 
@@ -225,6 +226,14 @@ def _merge_optional_place_fields(
         value = _optional_string(spec, field)
         if value:
             place[field] = value
+
+
+def _clear_optional_fields(
+    target: dict[str, Any],
+    spec: dict[str, Any],
+) -> None:
+    for field in _string_list(spec.get("clear_fields")):
+        target.pop(field, None)
 
 
 def _merge_optional_building_fields(

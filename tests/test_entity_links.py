@@ -24,6 +24,8 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             "type": "SERVICE",
             "name": "Centro Congressi",
             "building_id": "aula-magna",
+            "opening_hours": "placeholder",
+            "website_url": "https://my.unical.it/",
         },
         {
             "place_id": "service-biblioteche",
@@ -74,6 +76,14 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "access_notes": "Servizi del Sistema Bibliotecario di Ateneo.",
                 "source_id": "unical-services",
                 "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/",
+            },
+            {
+                "place_id": "service-centro-congressi",
+                "type": "SERVICE",
+                "name": "Centro Congressi",
+                "clear_fields": ["opening_hours", "website_url"],
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/",
             },
             {
                 "place_id": "sala-mostre-centro-congressi",
@@ -169,6 +179,8 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert "building_id" not in places_by_id["service-quartieri"]
     assert "building_id" not in places_by_id["service-servizio-mensa"]
     assert "building_id" not in places_by_id["service-centro-congressi"]
+    assert "opening_hours" not in places_by_id["service-centro-congressi"]
+    assert "website_url" not in places_by_id["service-centro-congressi"]
     assert "building_id" not in places_by_id["service-biblioteche"]
     assert places_by_id["service-biblioteche"]["website_url"] == "https://sba.unical.it/"
     assert places_by_id["service-biblioteche"]["opening_hours"] == (
