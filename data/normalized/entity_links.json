@@ -176,17 +176,6 @@
     "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/"
   },
   {
-    "child_entity_id": "polo-infanzia",
-    "child_entity_type": "PLACE",
-    "link_id": "service-polo-infanzia__has_child_place__polo-infanzia",
-    "parent_entity_id": "service-polo-infanzia",
-    "parent_entity_type": "PLACE",
-    "relation_type": "HAS_CHILD_PLACE",
-    "sort_order": 10,
-    "source_id": "unical-services",
-    "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/"
-  },
-  {
     "child_entity_id": "quartiere-chiodo",
     "child_entity_type": "PLACE",
     "link_id": "service-quartieri__has_child_place__quartiere-chiodo",

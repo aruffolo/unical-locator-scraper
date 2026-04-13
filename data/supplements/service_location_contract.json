@@ -5,7 +5,9 @@
     "service-centro-congressi",
     "service-biblioteche",
     "service-teatri-e-cinema",
-    "service-servizio-foresteria",
+    "service-servizio-foresteria"
+  ],
+  "remove_place_ids": [
     "service-polo-infanzia"
   ],
   "quartieri_places": [
@@ -459,24 +461,13 @@
       "place_id": "residenza-socrates",
       "type": "OTHER",
       "name": "Residenza Socrates",
+      "lat": 39.3639597,
+      "lng": 16.2234723,
       "description": "Per chi opera occasionalmente con l'Ateneo, la Residenza Socrates offre un servizio di tipo alberghiero. In occasione di ospitalità connesse ad attività convegnistica è possibile utilizzare, anche per brevissimi periodi, gli appartamenti ad uso foresteria.",
       "website_url": "https://www.ialbergo.it/booking/dispob.aspx?id=570",
       "access_notes": "Prenotazione alberghiera: https://www.ialbergo.it/booking/dispob.aspx?id=570. Per soggiorni lunghi resta attivo il servizio foresteria in appartamento tramite https://soscr.unical.it/.",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/"
-    },
-    {
-      "place_id": "service-polo-infanzia",
-      "type": "SERVICE",
-      "name": "Polo d'Infanzia",
-      "clear_building_id": true,
-      "clear_fields": [
-        "website_url"
-      ],
-      "description": "Il Polo d'Infanzia favorisce la conciliazione dei tempi di vita privata e di lavoro per le famiglie della comunità accademica.",
-      "access_notes": "Il Polo organizza laboratori e altre attività di supporto al progetto educativo, oltre al centro ricreativo estivo nel mese di luglio per bambini dai 3 ai 14 anni.",
-      "source_id": "unical-services",
-      "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/"
     },
     {
       "place_id": "polo-infanzia",
@@ -894,16 +885,6 @@
       "sort_order": 10,
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/"
-    },
-    {
-      "child_entity_id": "polo-infanzia",
-      "child_entity_type": "PLACE",
-      "parent_entity_id": "service-polo-infanzia",
-      "parent_entity_type": "PLACE",
-      "relation_type": "HAS_CHILD_PLACE",
-      "sort_order": 10,
-      "source_id": "unical-services",
-      "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/"
     },
     {
       "child_entity_id": "auditorium-teatro-grande",

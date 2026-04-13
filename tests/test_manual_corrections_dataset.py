@@ -14,11 +14,11 @@ LOCKED_MIN_COUNTS = {
     "building_entrances.json": 0,
     "buildings.json": 147,
     "departments.json": 14,
-    "entity_links.json": 40,
+    "entity_links.json": 39,
     "faqs.json": 0,
     "glossary.json": 0,
     "people.json": 4156,
-    "places.json": 903,
+    "places.json": 902,
     "sources.json": 5,
 }
 
@@ -64,7 +64,6 @@ def test_required_entities_are_present_in_canonical_datasets() -> None:
     assert "service-biblioteche" in places
     assert "service-sistema-museale" in places
     assert "service-servizio-foresteria" in places
-    assert "service-polo-infanzia" in places
     assert "quartiere-chiodo" in places
     assert "quartiere-san-gennaro" in places
     assert "sala-mostre-centro-congressi" in places
@@ -98,7 +97,7 @@ def test_required_entities_are_present_in_canonical_datasets() -> None:
     assert "service-biblioteche__has_child_place__biblioteca-bau" in entity_links
     assert "service-sistema-museale__has_child_place__service-musnob" in entity_links
     assert "service-servizio-foresteria__has_child_place__residenza-socrates" in entity_links
-    assert "service-polo-infanzia__has_child_place__polo-infanzia" in entity_links
+    assert "service-polo-infanzia__has_child_place__polo-infanzia" not in entity_links
 
 
 def test_known_manual_wave_fixes_are_preserved() -> None:
@@ -353,12 +352,11 @@ def test_museale_foresteria_polo_wave_is_preserved() -> None:
     socrates = places["residenza-socrates"]
     assert socrates.get("type") == "OTHER"
     assert socrates.get("website_url") == "https://www.ialbergo.it/booking/dispob.aspx?id=570"
+    assert socrates.get("lat") == 39.3639597
+    assert socrates.get("lng") == 16.2234723
     assert "servizio di tipo alberghiero" in str(socrates.get("description"))
 
-    polo_service = places["service-polo-infanzia"]
-    assert polo_service.get("building_id") is None
-    assert polo_service.get("website_url") is None
-    assert "centro ricreativo estivo" in str(polo_service.get("access_notes"))
+    assert "service-polo-infanzia" not in places
 
     polo_place = places["polo-infanzia"]
     assert polo_place.get("type") == "OTHER"
@@ -375,7 +373,7 @@ def test_museale_foresteria_polo_wave_is_preserved() -> None:
     assert "service-musnob__has_child_place__service-zoologia" in entity_links
     assert "service-musnob__has_child_place__service-mineralogia-e-petrografia" in entity_links
     assert "service-servizio-foresteria__has_child_place__residenza-socrates" in entity_links
-    assert "service-polo-infanzia__has_child_place__polo-infanzia" in entity_links
+    assert "service-polo-infanzia__has_child_place__polo-infanzia" not in entity_links
     assert "polo-infanzia__has_child_building__auditorium-teatro-grande" in entity_links
 
 

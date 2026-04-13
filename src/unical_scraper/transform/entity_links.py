@@ -79,6 +79,8 @@ def apply_service_location_contract(
 
     for building_id in _string_list(contract.get("remove_building_ids")):
         buildings_by_id.pop(building_id, None)
+    for place_id in _string_list(contract.get("remove_place_ids")):
+        places_by_id.pop(place_id, None)
 
     entity_links = [
         _normalize_entity_link(spec)

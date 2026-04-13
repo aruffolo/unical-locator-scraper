@@ -69,8 +69,8 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             "service-centro-congressi",
             "service-biblioteche",
             "service-servizio-foresteria",
-            "service-polo-infanzia",
         ],
+        "remove_place_ids": ["service-polo-infanzia"],
         "quartieri_places": [
             {
                 "place_id": "quartiere-maisonnettes",
@@ -178,19 +178,12 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "place_id": "residenza-socrates",
                 "type": "OTHER",
                 "name": "Residenza Socrates",
+                "lat": 39.3639597,
+                "lng": 16.2234723,
                 "website_url": "https://www.ialbergo.it/booking/dispob.aspx?id=570",
                 "access_notes": "Servizio alberghiero.",
                 "source_id": "unical-services",
                 "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/",
-            },
-            {
-                "place_id": "service-polo-infanzia",
-                "type": "SERVICE",
-                "name": "Polo d'Infanzia",
-                "clear_building_id": True,
-                "clear_fields": ["website_url"],
-                "source_id": "unical-services",
-                "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/",
             },
             {
                 "place_id": "polo-infanzia",
@@ -287,14 +280,6 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             },
             {
                 "parent_entity_type": "PLACE",
-                "parent_entity_id": "service-polo-infanzia",
-                "relation_type": "HAS_CHILD_PLACE",
-                "child_entity_type": "PLACE",
-                "child_entity_id": "polo-infanzia",
-                "sort_order": 60,
-            },
-            {
-                "parent_entity_type": "PLACE",
                 "parent_entity_id": "polo-infanzia",
                 "relation_type": "HAS_CHILD_BUILDING",
                 "child_entity_type": "BUILDING",
@@ -345,9 +330,10 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     )
     assert "building_id" not in places_by_id["service-servizio-foresteria"]
     assert places_by_id["service-servizio-foresteria"]["website_url"] == "https://soscr.unical.it/"
-    assert "building_id" not in places_by_id["service-polo-infanzia"]
-    assert "website_url" not in places_by_id["service-polo-infanzia"]
+    assert "service-polo-infanzia" not in places_by_id
     assert places_by_id["residenza-socrates"]["type"] == "OTHER"
+    assert places_by_id["residenza-socrates"]["lat"] == 39.3639597
+    assert places_by_id["residenza-socrates"]["lng"] == 16.2234723
     assert places_by_id["polo-infanzia"]["building_id"] == "auditorium-teatro-grande"
     assert places_by_id["polo-infanzia"]["lat"] == 39.3639597
     assert places_by_id["quartiere-maisonnettes"]["type"] == "QUARTIERE"
@@ -375,5 +361,5 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert "quartiere-maisonnettes__has_child_building__maisonnettes" in links_by_id
     assert "service-centro-congressi__has_child_place__sala-mostre-centro-congressi" in links_by_id
     assert "service-servizio-foresteria__has_child_place__residenza-socrates" in links_by_id
-    assert "service-polo-infanzia__has_child_place__polo-infanzia" in links_by_id
+    assert "service-polo-infanzia__has_child_place__polo-infanzia" not in links_by_id
     assert "polo-infanzia__has_child_building__auditorium-teatro-grande" in links_by_id

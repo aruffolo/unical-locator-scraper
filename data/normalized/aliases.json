@@ -9639,6 +9639,34 @@
     "normalized": "cinema-unical"
   },
   {
+    "alias_id": "alias-place-polo-infanzia-liaison-office-technest",
+    "entity_id": "polo-infanzia",
+    "entity_type": "PLACE",
+    "label": "Liaison Office - Technest",
+    "normalized": "liaison-office-technest"
+  },
+  {
+    "alias_id": "alias-place-polo-infanzia-polo-infanzia",
+    "entity_id": "polo-infanzia",
+    "entity_type": "PLACE",
+    "label": "Polo Infanzia",
+    "normalized": "polo-infanzia"
+  },
+  {
+    "alias_id": "alias-place-polo-infanzia-ufficio-postale",
+    "entity_id": "polo-infanzia",
+    "entity_type": "PLACE",
+    "label": "Ufficio postale",
+    "normalized": "ufficio-postale"
+  },
+  {
+    "alias_id": "alias-place-polo-infanzia-ufficio-postale-polo-infanzia",
+    "entity_id": "polo-infanzia",
+    "entity_type": "PLACE",
+    "label": "Ufficio postale Polo Infanzia",
+    "normalized": "ufficio-postale-polo-infanzia"
+  },
+  {
     "alias_id": "alias-place-residenza-socrates-accomodation-residenza-socrates",
     "entity_id": "residenza-socrates",
     "entity_type": "PLACE",
@@ -9714,34 +9742,6 @@
     "entity_type": "PLACE",
     "label": "Guardia Medica",
     "normalized": "guardia-medica"
-  },
-  {
-    "alias_id": "alias-place-service-polo-infanzia-liaison-office-technest",
-    "entity_id": "service-polo-infanzia",
-    "entity_type": "PLACE",
-    "label": "Liaison Office - Technest",
-    "normalized": "liaison-office-technest"
-  },
-  {
-    "alias_id": "alias-place-service-polo-infanzia-polo-infanzia",
-    "entity_id": "service-polo-infanzia",
-    "entity_type": "PLACE",
-    "label": "Polo Infanzia",
-    "normalized": "polo-infanzia"
-  },
-  {
-    "alias_id": "alias-place-service-polo-infanzia-ufficio-postale",
-    "entity_id": "service-polo-infanzia",
-    "entity_type": "PLACE",
-    "label": "Ufficio postale",
-    "normalized": "ufficio-postale"
-  },
-  {
-    "alias_id": "alias-place-service-polo-infanzia-ufficio-postale-polo-infanzia",
-    "entity_id": "service-polo-infanzia",
-    "entity_type": "PLACE",
-    "label": "Ufficio postale Polo Infanzia",
-    "normalized": "ufficio-postale-polo-infanzia"
   },
   {
     "alias_id": "alias-place-university-club-university-club",
