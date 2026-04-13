@@ -9639,6 +9639,20 @@
     "normalized": "cinema-unical"
   },
   {
+    "alias_id": "alias-place-residenza-socrates-accomodation-residenza-socrates",
+    "entity_id": "residenza-socrates",
+    "entity_type": "PLACE",
+    "label": "Accomodation - Residenza Socrates",
+    "normalized": "accomodation-residenza-socrates"
+  },
+  {
+    "alias_id": "alias-place-residenza-socrates-residenza-socrates",
+    "entity_id": "residenza-socrates",
+    "entity_type": "PLACE",
+    "label": "Residenza Socrates",
+    "normalized": "residenza-socrates"
+  },
+  {
     "alias_id": "alias-place-sala-a-centro-congressi-sala-a",
     "entity_id": "sala-a-centro-congressi",
     "entity_type": "PLACE",

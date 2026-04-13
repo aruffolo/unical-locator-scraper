@@ -9,16 +9,16 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = REPO_ROOT / "data" / "normalized"
 
 LOCKED_MIN_COUNTS = {
-    "aliases.json": 1383,
+    "aliases.json": 1393,
     "aulas.json": 517,
     "building_entrances.json": 0,
     "buildings.json": 147,
     "departments.json": 14,
-    "entity_links.json": 15,
+    "entity_links.json": 40,
     "faqs.json": 0,
     "glossary.json": 0,
     "people.json": 4156,
-    "places.json": 890,
+    "places.json": 903,
     "sources.json": 5,
 }
 
@@ -62,6 +62,9 @@ def test_required_entities_are_present_in_canonical_datasets() -> None:
     assert "service-centro-congressi" in places
     assert "service-teatri-e-cinema" in places
     assert "service-biblioteche" in places
+    assert "service-sistema-museale" in places
+    assert "service-servizio-foresteria" in places
+    assert "service-polo-infanzia" in places
     assert "quartiere-chiodo" in places
     assert "quartiere-san-gennaro" in places
     assert "sala-mostre-centro-congressi" in places
@@ -72,6 +75,15 @@ def test_required_entities_are_present_in_canonical_datasets() -> None:
     assert "biblioteca-bau" in places
     assert "biblioteca-tarantelli" in places
     assert "biblioteca-bats" in places
+    assert "service-musnob" in places
+    assert "service-rimuseum" in places
+    assert "service-miai" in places
+    assert "service-orto-botanico" in places
+    assert "service-paleontologia" in places
+    assert "service-zoologia" in places
+    assert "service-mineralogia-e-petrografia" in places
+    assert "residenza-socrates" in places
+    assert "polo-infanzia" in places
     assert "office-ufficio-cubo-4c-piano-3" in places
     assert "francesco-scarcello" in people
     assert (
@@ -84,6 +96,9 @@ def test_required_entities_are_present_in_canonical_datasets() -> None:
     assert "service-centro-congressi__has_child_place__sala-mostre-centro-congressi" in entity_links
     assert "service-teatri-e-cinema__has_child_place__cinema-unical" in entity_links
     assert "service-biblioteche__has_child_place__biblioteca-bau" in entity_links
+    assert "service-sistema-museale__has_child_place__service-musnob" in entity_links
+    assert "service-servizio-foresteria__has_child_place__residenza-socrates" in entity_links
+    assert "service-polo-infanzia__has_child_place__polo-infanzia" in entity_links
 
 
 def test_known_manual_wave_fixes_are_preserved() -> None:
@@ -270,6 +285,68 @@ def test_broader_grouped_hub_wave_is_preserved() -> None:
     assert "service-teatri-e-cinema__has_child_building__teatro-piccolo" in entity_links
     assert "cinema-unical__has_child_building__auditorium-teatro-grande" in entity_links
     assert "service-biblioteche__has_child_place__biblioteca-bats" in entity_links
+
+
+def test_museale_foresteria_polo_wave_is_preserved() -> None:
+    places = _by_id(_load_dataset("places.json"), "place_id")
+    entity_links = _by_id(_load_dataset("entity_links.json"), "link_id")
+
+    sistema_museale = places["service-sistema-museale"]
+    assert sistema_museale.get("type") == "SERVICE"
+    assert sistema_museale.get("building_id") is None
+    assert "SiMU" in str(sistema_museale.get("description"))
+    assert "visite, percorsi e laboratori" in str(sistema_museale.get("access_notes"))
+
+    musnob = places["service-musnob"]
+    assert musnob.get("type") == "OTHER"
+    assert musnob.get("name") == "MuSNOB"
+    assert musnob.get("website_url") is None
+
+    rimuseum = places["service-rimuseum"]
+    assert rimuseum.get("type") == "OTHER"
+    assert rimuseum.get("name") == "RiMuseum"
+
+    miai = places["service-miai"]
+    assert miai.get("type") == "OTHER"
+    assert miai.get("name") == "MIAI"
+
+    assert places["service-orto-botanico"].get("type") == "OTHER"
+    assert places["service-paleontologia"].get("type") == "OTHER"
+    assert places["service-zoologia"].get("type") == "OTHER"
+    assert places["service-mineralogia-e-petrografia"].get("type") == "OTHER"
+
+    foresteria = places["service-servizio-foresteria"]
+    assert foresteria.get("building_id") is None
+    assert foresteria.get("website_url") == "https://soscr.unical.it/"
+    assert "monolocale € 280,00" in str(foresteria.get("access_notes"))
+
+    socrates = places["residenza-socrates"]
+    assert socrates.get("type") == "OTHER"
+    assert socrates.get("website_url") == "https://www.ialbergo.it/booking/dispob.aspx?id=570"
+    assert "servizio di tipo alberghiero" in str(socrates.get("description"))
+
+    polo_service = places["service-polo-infanzia"]
+    assert polo_service.get("building_id") is None
+    assert polo_service.get("website_url") is None
+    assert "centro ricreativo estivo" in str(polo_service.get("access_notes"))
+
+    polo_place = places["polo-infanzia"]
+    assert polo_place.get("type") == "OTHER"
+    assert polo_place.get("building_id") == "auditorium-teatro-grande"
+    assert polo_place.get("lat") == 39.3639597
+    assert polo_place.get("lng") == 16.2234723
+    assert "Asilo nido, Scuola d'Infanzia e mensa interna" in str(polo_place.get("description"))
+
+    assert "service-sistema-museale__has_child_place__service-musnob" in entity_links
+    assert "service-sistema-museale__has_child_place__service-rimuseum" in entity_links
+    assert "service-sistema-museale__has_child_place__service-miai" in entity_links
+    assert "service-musnob__has_child_place__service-orto-botanico" in entity_links
+    assert "service-musnob__has_child_place__service-paleontologia" in entity_links
+    assert "service-musnob__has_child_place__service-zoologia" in entity_links
+    assert "service-musnob__has_child_place__service-mineralogia-e-petrografia" in entity_links
+    assert "service-servizio-foresteria__has_child_place__residenza-socrates" in entity_links
+    assert "service-polo-infanzia__has_child_place__polo-infanzia" in entity_links
+    assert "polo-infanzia__has_child_building__auditorium-teatro-grande" in entity_links
 
 
 def test_dataset_contract_counts_match_files_and_locked_minimums() -> None:

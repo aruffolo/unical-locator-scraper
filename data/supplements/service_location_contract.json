@@ -4,7 +4,9 @@
     "service-servizio-mensa",
     "service-centro-congressi",
     "service-biblioteche",
-    "service-teatri-e-cinema"
+    "service-teatri-e-cinema",
+    "service-servizio-foresteria",
+    "service-polo-infanzia"
   ],
   "quartieri_places": [
     {
@@ -184,6 +186,89 @@
   ],
   "place_overrides": [
     {
+      "place_id": "service-sistema-museale",
+      "type": "SERVICE",
+      "name": "Sistema Museale",
+      "clear_fields": [
+        "opening_hours",
+        "website_url"
+      ],
+      "description": "Il Sistema Museale Universitario (SiMU) presenta in modo innovativo collezioni, attività e ricerca dei musei dell'Ateneo, con percorsi dedicati a botanica, zoologia, paleontologia, rifiuti e archeologia informatica.",
+      "access_notes": "Il Sistema Museale è aperto al territorio con visite, percorsi e laboratori dedicati a gruppi, famiglie, scuole e singoli utenti. Consulta orari e programmi sulle pagine dei singoli musei.",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/"
+    },
+    {
+      "place_id": "service-musnob",
+      "type": "OTHER",
+      "name": "MuSNOB",
+      "clear_fields": [
+        "website_url"
+      ],
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/"
+    },
+    {
+      "place_id": "service-rimuseum",
+      "type": "OTHER",
+      "name": "RiMuseum",
+      "clear_fields": [
+        "website_url"
+      ],
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/rimuseum/"
+    },
+    {
+      "place_id": "service-miai",
+      "type": "OTHER",
+      "name": "MIAI",
+      "clear_fields": [
+        "website_url"
+      ],
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/miai/"
+    },
+    {
+      "place_id": "service-orto-botanico",
+      "type": "OTHER",
+      "name": "Orto Botanico",
+      "clear_fields": [
+        "website_url"
+      ],
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/orto-botanico/"
+    },
+    {
+      "place_id": "service-paleontologia",
+      "type": "OTHER",
+      "name": "Paleontologia",
+      "clear_fields": [
+        "website_url"
+      ],
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/paleontologia/"
+    },
+    {
+      "place_id": "service-zoologia",
+      "type": "OTHER",
+      "name": "Zoologia",
+      "clear_fields": [
+        "website_url"
+      ],
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/zoologia/"
+    },
+    {
+      "place_id": "service-mineralogia-e-petrografia",
+      "type": "OTHER",
+      "name": "Mineralogia e Petrografia",
+      "clear_fields": [
+        "website_url"
+      ],
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/mineralogia-e-petrografia/"
+    },
+    {
       "place_id": "service-centro-congressi",
       "type": "SERVICE",
       "name": "Centro Congressi",
@@ -334,6 +419,53 @@
       "access_notes": "Servizi: http://bats.unical.it/servizi/servizi.htm. La sala studio/multimediale per attività collaborative o individuali si prenota via Uniticket: https://ticket.unical.it/tickets/new/15/570/. Sistema Bibliotecario di Ateneo: https://sba.unical.it/",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/"
+    },
+    {
+      "place_id": "service-servizio-foresteria",
+      "type": "SERVICE",
+      "name": "Servizio Foresteria",
+      "clear_building_id": true,
+      "description": "Il servizio è rivolto al personale universitario di ruolo e, in caso di disponibilità, anche a chi abbia un rapporto di interesse con l'Università della Calabria.",
+      "email": "direzione.cr@unical.it",
+      "website_url": "https://soscr.unical.it/",
+      "access_notes": "Per soggiorni lunghi è disponibile il servizio foresteria in appartamento; per chi opera occasionalmente con l'Ateneo, Residenza Socrates offre un servizio di tipo alberghiero. La richiesta si presenta su https://soscr.unical.it/ o tramite Unical Life, sezione \"Istanze\" -> \"Servizio foresteria\". Tariffe mensili: monolocale € 280,00; bilocale € 300,00.",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/"
+    },
+    {
+      "place_id": "residenza-socrates",
+      "type": "OTHER",
+      "name": "Residenza Socrates",
+      "description": "Per chi opera occasionalmente con l'Ateneo, la Residenza Socrates offre un servizio di tipo alberghiero. In occasione di ospitalità connesse ad attività convegnistica è possibile utilizzare, anche per brevissimi periodi, gli appartamenti ad uso foresteria.",
+      "website_url": "https://www.ialbergo.it/booking/dispob.aspx?id=570",
+      "access_notes": "Prenotazione alberghiera: https://www.ialbergo.it/booking/dispob.aspx?id=570. Per soggiorni lunghi resta attivo il servizio foresteria in appartamento tramite https://soscr.unical.it/.",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/"
+    },
+    {
+      "place_id": "service-polo-infanzia",
+      "type": "SERVICE",
+      "name": "Polo d'Infanzia",
+      "clear_building_id": true,
+      "clear_fields": [
+        "website_url"
+      ],
+      "description": "Il Polo d'Infanzia favorisce la conciliazione dei tempi di vita privata e di lavoro per le famiglie della comunità accademica.",
+      "access_notes": "Il Polo organizza laboratori e altre attività di supporto al progetto educativo, oltre al centro ricreativo estivo nel mese di luglio per bambini dai 3 ai 14 anni.",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/"
+    },
+    {
+      "place_id": "polo-infanzia",
+      "type": "OTHER",
+      "name": "Polo d'Infanzia",
+      "building_id": "auditorium-teatro-grande",
+      "lat": 39.3639597,
+      "lng": 16.2234723,
+      "description": "Il Polo d'Infanzia si trova nel Campus, in Piazza Vermicelli, al piano terra di un edificio nei pressi dell'ufficio postale e del Teatro Auditorium. Gli spazi ospitano Asilo nido, Scuola d'Infanzia e mensa interna.",
+      "access_notes": "La struttura dispone di un giardino attrezzato di oltre 1300 mq e di una terrazza di 150 mq. Ospita laboratori e altre attività di supporto al progetto educativo per nido e scuola dell'infanzia.",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/"
     }
   ],
   "building_overrides": [
@@ -360,6 +492,76 @@
     }
   ],
   "entity_links": [
+    {
+      "child_entity_id": "service-musnob",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-sistema-museale",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 10,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/"
+    },
+    {
+      "child_entity_id": "service-rimuseum",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-sistema-museale",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 20,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/"
+    },
+    {
+      "child_entity_id": "service-miai",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-sistema-museale",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 30,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/"
+    },
+    {
+      "child_entity_id": "service-orto-botanico",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-musnob",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 10,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/"
+    },
+    {
+      "child_entity_id": "service-paleontologia",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-musnob",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 20,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/"
+    },
+    {
+      "child_entity_id": "service-zoologia",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-musnob",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 30,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/"
+    },
+    {
+      "child_entity_id": "service-mineralogia-e-petrografia",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-musnob",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 40,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/"
+    },
     {
       "child_entity_id": "quartiere-chiodo",
       "child_entity_type": "PLACE",
@@ -659,6 +861,36 @@
       "sort_order": 30,
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/"
+    },
+    {
+      "child_entity_id": "residenza-socrates",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-servizio-foresteria",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 10,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/"
+    },
+    {
+      "child_entity_id": "polo-infanzia",
+      "child_entity_type": "PLACE",
+      "parent_entity_id": "service-polo-infanzia",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_PLACE",
+      "sort_order": 10,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/"
+    },
+    {
+      "child_entity_id": "auditorium-teatro-grande",
+      "child_entity_type": "BUILDING",
+      "parent_entity_id": "polo-infanzia",
+      "parent_entity_type": "PLACE",
+      "relation_type": "HAS_CHILD_BUILDING",
+      "sort_order": 10,
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/"
     }
   ],
   "remove_building_ids": [

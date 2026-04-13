@@ -33,6 +33,25 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             "name": "Biblioteche",
             "building_id": "cubo-libro",
         },
+        {
+            "place_id": "service-servizio-foresteria",
+            "type": "SERVICE",
+            "name": "Servizio Foresteria",
+            "building_id": "uffici-centro-residenziale-e-area-didattica",
+        },
+        {
+            "place_id": "service-polo-infanzia",
+            "type": "SERVICE",
+            "name": "Polo d'Infanzia",
+            "building_id": "auditorium-teatro-grande",
+            "website_url": "https://my.unical.it/",
+        },
+        {
+            "place_id": "service-musnob",
+            "type": "SERVICE",
+            "name": "Musnob",
+            "website_url": "https://my.unical.it/",
+        },
     ]
     buildings = [
         {"building_id": "mensa-maisonnettes", "name": "Mensa Maisonnettes"},
@@ -41,6 +60,7 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
         {"building_id": "quartiere-monaci", "name": "Quartiere Monaci"},
         {"building_id": "maisonnettes", "name": "Maisonnettes"},
         {"building_id": "aula-magna", "name": "Aula Magna"},
+        {"building_id": "auditorium-teatro-grande", "name": "Auditorium Teatro Grande"},
     ]
     contract = {
         "clear_overview_building_ids": [
@@ -48,6 +68,8 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             "service-servizio-mensa",
             "service-centro-congressi",
             "service-biblioteche",
+            "service-servizio-foresteria",
+            "service-polo-infanzia",
         ],
         "quartieri_places": [
             {
@@ -66,6 +88,23 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             }
         ],
         "place_overrides": [
+            {
+                "place_id": "service-sistema-museale",
+                "type": "SERVICE",
+                "name": "Sistema Museale",
+                "description": "Racconta collezioni e ricerca dei musei dell'Ateneo.",
+                "access_notes": "Visite e laboratori per il territorio.",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/",
+            },
+            {
+                "place_id": "service-musnob",
+                "type": "OTHER",
+                "name": "MuSNOB",
+                "clear_fields": ["website_url"],
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/sistema-museale/musnob/",
+            },
             {
                 "place_id": "service-biblioteche",
                 "type": "SERVICE",
@@ -95,7 +134,46 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "description": "Spazio espositivo adiacente all'Aula Magna.",
                 "source_id": "unical-services",
                 "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/",
-            }
+            },
+            {
+                "place_id": "service-servizio-foresteria",
+                "type": "SERVICE",
+                "name": "Servizio Foresteria",
+                "clear_building_id": True,
+                "website_url": "https://soscr.unical.it/",
+                "access_notes": "Richiesta foresteria su soscr.",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/",
+            },
+            {
+                "place_id": "residenza-socrates",
+                "type": "OTHER",
+                "name": "Residenza Socrates",
+                "website_url": "https://www.ialbergo.it/booking/dispob.aspx?id=570",
+                "access_notes": "Servizio alberghiero.",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-foresteria/",
+            },
+            {
+                "place_id": "service-polo-infanzia",
+                "type": "SERVICE",
+                "name": "Polo d'Infanzia",
+                "clear_building_id": True,
+                "clear_fields": ["website_url"],
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/",
+            },
+            {
+                "place_id": "polo-infanzia",
+                "type": "OTHER",
+                "name": "Polo d'Infanzia",
+                "building_id": "auditorium-teatro-grande",
+                "lat": 39.3639597,
+                "lng": 16.2234723,
+                "description": "Nido, scuola d'infanzia e mensa interna.",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/",
+            },
         ],
         "mensa_buildings": [
             {
@@ -132,6 +210,14 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
         "entity_links": [
             {
                 "parent_entity_type": "PLACE",
+                "parent_entity_id": "service-sistema-museale",
+                "relation_type": "HAS_CHILD_PLACE",
+                "child_entity_type": "PLACE",
+                "child_entity_id": "service-musnob",
+                "sort_order": 5,
+            },
+            {
+                "parent_entity_type": "PLACE",
                 "parent_entity_id": "service-quartieri",
                 "relation_type": "HAS_CHILD_PLACE",
                 "child_entity_type": "PLACE",
@@ -162,6 +248,30 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "child_entity_id": "sala-mostre-centro-congressi",
                 "sort_order": 40,
             },
+            {
+                "parent_entity_type": "PLACE",
+                "parent_entity_id": "service-servizio-foresteria",
+                "relation_type": "HAS_CHILD_PLACE",
+                "child_entity_type": "PLACE",
+                "child_entity_id": "residenza-socrates",
+                "sort_order": 50,
+            },
+            {
+                "parent_entity_type": "PLACE",
+                "parent_entity_id": "service-polo-infanzia",
+                "relation_type": "HAS_CHILD_PLACE",
+                "child_entity_type": "PLACE",
+                "child_entity_id": "polo-infanzia",
+                "sort_order": 60,
+            },
+            {
+                "parent_entity_type": "PLACE",
+                "parent_entity_id": "polo-infanzia",
+                "relation_type": "HAS_CHILD_BUILDING",
+                "child_entity_type": "BUILDING",
+                "child_entity_id": "auditorium-teatro-grande",
+                "sort_order": 70,
+            },
         ],
     }
 
@@ -182,10 +292,21 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert "opening_hours" not in places_by_id["service-centro-congressi"]
     assert "website_url" not in places_by_id["service-centro-congressi"]
     assert "building_id" not in places_by_id["service-biblioteche"]
+    assert places_by_id["service-sistema-museale"]["type"] == "SERVICE"
+    assert places_by_id["service-musnob"]["type"] == "OTHER"
+    assert places_by_id["service-musnob"]["name"] == "MuSNOB"
+    assert "website_url" not in places_by_id["service-musnob"]
     assert places_by_id["service-biblioteche"]["website_url"] == "https://sba.unical.it/"
     assert places_by_id["service-biblioteche"]["opening_hours"] == (
         "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso."
     )
+    assert "building_id" not in places_by_id["service-servizio-foresteria"]
+    assert places_by_id["service-servizio-foresteria"]["website_url"] == "https://soscr.unical.it/"
+    assert "building_id" not in places_by_id["service-polo-infanzia"]
+    assert "website_url" not in places_by_id["service-polo-infanzia"]
+    assert places_by_id["residenza-socrates"]["type"] == "OTHER"
+    assert places_by_id["polo-infanzia"]["building_id"] == "auditorium-teatro-grande"
+    assert places_by_id["polo-infanzia"]["lat"] == 39.3639597
     assert places_by_id["quartiere-maisonnettes"]["type"] == "QUARTIERE"
     assert places_by_id["quartiere-maisonnettes"]["lat"] == 39.3555355
     assert places_by_id["quartiere-maisonnettes"]["description"] == "Complesso residenziale del campus."
@@ -207,5 +328,9 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert "quartiere-monaci" not in buildings_by_id
 
     assert "service-quartieri__has_child_place__quartiere-maisonnettes" in links_by_id
+    assert "service-sistema-museale__has_child_place__service-musnob" in links_by_id
     assert "quartiere-maisonnettes__has_child_building__maisonnettes" in links_by_id
     assert "service-centro-congressi__has_child_place__sala-mostre-centro-congressi" in links_by_id
+    assert "service-servizio-foresteria__has_child_place__residenza-socrates" in links_by_id
+    assert "service-polo-infanzia__has_child_place__polo-infanzia" in links_by_id
+    assert "polo-infanzia__has_child_building__auditorium-teatro-grande" in links_by_id
