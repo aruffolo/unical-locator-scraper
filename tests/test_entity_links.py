@@ -193,6 +193,8 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "lat": 39.3639597,
                 "lng": 16.2234723,
                 "description": "Nido, scuola d'infanzia e mensa interna.",
+                "email": "commissionepoloinfanzia@unical.it",
+                "access_notes": "Delegato: Dott. Mario Ferraro. Indirizzo: Piazza Vermicelli - 87036 Rende (CS).",
                 "source_id": "unical-services",
                 "source_url": "https://www.unical.it/campus/vivere-il-campus/polo-infanzia/",
             },
@@ -336,6 +338,9 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert places_by_id["residenza-socrates"]["lng"] == 16.2234723
     assert places_by_id["polo-infanzia"]["building_id"] == "auditorium-teatro-grande"
     assert places_by_id["polo-infanzia"]["lat"] == 39.3639597
+    assert places_by_id["polo-infanzia"]["email"] == "commissionepoloinfanzia@unical.it"
+    assert "Delegato: Dott. Mario Ferraro." in places_by_id["polo-infanzia"]["access_notes"]
+    assert "Piazza Vermicelli - 87036 Rende (CS)." in places_by_id["polo-infanzia"]["access_notes"]
     assert places_by_id["quartiere-maisonnettes"]["type"] == "QUARTIERE"
     assert places_by_id["quartiere-maisonnettes"]["lat"] == 39.3555355
     assert places_by_id["quartiere-maisonnettes"]["description"] == "Complesso residenziale del campus."

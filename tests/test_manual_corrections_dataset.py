@@ -363,7 +363,10 @@ def test_museale_foresteria_polo_wave_is_preserved() -> None:
     assert polo_place.get("building_id") == "auditorium-teatro-grande"
     assert polo_place.get("lat") == 39.3639597
     assert polo_place.get("lng") == 16.2234723
+    assert polo_place.get("email") == "commissionepoloinfanzia@unical.it"
     assert "Asilo nido, Scuola d'Infanzia e mensa interna" in str(polo_place.get("description"))
+    assert "Delegato: Dott. Mario Ferraro." in str(polo_place.get("access_notes"))
+    assert "Piazza Vermicelli - 87036 Rende (CS)." in str(polo_place.get("access_notes"))
 
     assert "service-sistema-museale__has_child_place__service-musnob" in entity_links
     assert "service-sistema-museale__has_child_place__service-rimuseum" in entity_links
