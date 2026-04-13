@@ -43,14 +43,14 @@
       "with_office_place_id_ratio": 0.1321
     },
     "places": {
-      "total": 902,
+      "total": 901,
       "type_aula": 517,
-      "type_aula_ratio": 0.5732,
-      "with_building_id": 870,
+      "type_aula_ratio": 0.5738,
+      "with_building_id": 869,
       "with_building_id_ratio": 0.9645
     }
   },
-  "generated_at": "2026-04-13T15:10:16.155297+00:00",
+  "generated_at": "2026-04-13T15:32:03.870923+00:00",
   "integrity": {
     "issues": []
   },

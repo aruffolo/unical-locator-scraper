@@ -50,7 +50,11 @@ _LANDMARK_ALIAS_TARGETS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     (
         "PLACE",
         "service-centro-sanitario",
-        ("Centro Sanitario 34B", "Guardia Medica"),
+        (
+            "Centro Sanitario 34B",
+            "Guardia Medica",
+            "Emergenze e assistenza sanitaria",
+        ),
     ),
     (
         "PLACE",

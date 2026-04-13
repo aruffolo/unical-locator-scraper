@@ -47,6 +47,13 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             "website_url": "https://my.unical.it/",
         },
         {
+            "place_id": "service-emergenze-e-assistenza-sanitaria",
+            "type": "SERVICE",
+            "name": "Emergenze e assistenza sanitaria",
+            "building_id": "centro-sanitario",
+            "website_url": "https://my.unical.it/",
+        },
+        {
             "place_id": "service-musnob",
             "type": "SERVICE",
             "name": "Musnob",
@@ -70,7 +77,10 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             "service-biblioteche",
             "service-servizio-foresteria",
         ],
-        "remove_place_ids": ["service-polo-infanzia"],
+        "remove_place_ids": [
+            "service-polo-infanzia",
+            "service-emergenze-e-assistenza-sanitaria",
+        ],
         "quartieri_places": [
             {
                 "place_id": "quartiere-maisonnettes",
@@ -322,6 +332,7 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert "website_url" not in places_by_id["service-centro-congressi"]
     assert "building_id" not in places_by_id["service-biblioteche"]
     assert "website_url" not in places_by_id["service-centro-sanitario"]
+    assert "service-emergenze-e-assistenza-sanitaria" not in places_by_id
     assert places_by_id["service-centro-sanitario"]["opening_hours"] == (
         "Laboratorio lunedì-venerdì 08:15-10:00."
     )

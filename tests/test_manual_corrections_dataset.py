@@ -18,7 +18,7 @@ LOCKED_MIN_COUNTS = {
     "faqs.json": 0,
     "glossary.json": 0,
     "people.json": 4156,
-    "places.json": 902,
+    "places.json": 901,
     "sources.json": 5,
 }
 
@@ -64,6 +64,7 @@ def test_required_entities_are_present_in_canonical_datasets() -> None:
     assert "service-biblioteche" in places
     assert "service-sistema-museale" in places
     assert "service-servizio-foresteria" in places
+    assert "service-emergenze-e-assistenza-sanitaria" not in places
     assert "quartiere-chiodo" in places
     assert "quartiere-san-gennaro" in places
     assert "sala-mostre-centro-congressi" in places
@@ -408,6 +409,7 @@ def test_centro_sanitario_enrichment_wave_is_preserved() -> None:
     assert "Prenotazioni esami tramite ESSE3." in str(
         centro_sanitario.get("access_notes")
     )
+    assert "service-emergenze-e-assistenza-sanitaria" not in places
 
 
 def test_dataset_contract_counts_match_files_and_locked_minimums() -> None:

@@ -13,8 +13,8 @@
   "datasets": [
     {
       "name": "aliases.json",
-      "records": 1393,
-      "sha256": "820334c212b4ed55d0a86babf0e109bbf4d370c81433bff674b219be526589a9"
+      "records": 1394,
+      "sha256": "3bf7583827edf80a3eb00f28a6ab6bc7e5ad6ee2e04bfcd316f8d3eeb7907064"
     },
     {
       "name": "aulas.json",
@@ -29,7 +29,7 @@
     {
       "name": "buildings.json",
       "records": 147,
-      "sha256": "ab1894d1ff5a793f06bb474c2d636370bd0e55cac221f94c0ce5913325e5b09d"
+      "sha256": "d5d0e4381c71ecafc0aa5af016abab6869c26800b6a9604c135cb81feb911ef4"
     },
     {
       "name": "departments.json",
@@ -58,8 +58,8 @@
     },
     {
       "name": "places.json",
-      "records": 902,
-      "sha256": "d7ec739485a383ab43578a31f9e52505c507599fb0ca7bcd5a588ea5fac08b58"
+      "records": 901,
+      "sha256": "2e4546556ff7b3cfcc09982c5934ac4a7f67df78f9484565cbf114c57737fcd1"
     },
     {
       "name": "sources.json",
@@ -67,5 +67,5 @@
       "sha256": "223dfa91cd1b931e5ba57a96bb7f107e0abd2dab768225d00dd22ae6caf61bd3"
     }
   ],
-  "revision": "b3fc018ce9f4af54223a26bdc49d913a71ae6ff49813547dfee8c6b38dbb4cfe"
+  "revision": "62bf3404cc0c0ea1cd962d016239512d8420f388b44d4e9a28913f5d6601c8b6"
 }

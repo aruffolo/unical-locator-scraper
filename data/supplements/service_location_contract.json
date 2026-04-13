@@ -8,7 +8,8 @@
     "service-servizio-foresteria"
   ],
   "remove_place_ids": [
-    "service-polo-infanzia"
+    "service-polo-infanzia",
+    "service-emergenze-e-assistenza-sanitaria"
   ],
   "quartieri_places": [
     {

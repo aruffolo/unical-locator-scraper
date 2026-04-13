@@ -9737,6 +9737,13 @@
     "normalized": "centro-sanitario-34b"
   },
   {
+    "alias_id": "alias-place-service-centro-sanitario-emergenze-e-assistenza-sanitaria",
+    "entity_id": "service-centro-sanitario",
+    "entity_type": "PLACE",
+    "label": "Emergenze e assistenza sanitaria",
+    "normalized": "emergenze-e-assistenza-sanitaria"
+  },
+  {
     "alias_id": "alias-place-service-centro-sanitario-guardia-medica",
     "entity_id": "service-centro-sanitario",
     "entity_type": "PLACE",
