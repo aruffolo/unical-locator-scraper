@@ -38,6 +38,16 @@ _LANDMARK_ALIAS_TARGETS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         ("CLA 25C - 17A", "CLA 25C", "CLA 17A", "Centro Linguistico d'Ateneo"),
     ),
     (
+        "PLACE",
+        "service-centro-linguistico-di-ateneo",
+        ("CLA", "Centro Linguistico", "Centro Linguistico di Ateneo"),
+    ),
+    (
+        "PLACE",
+        "service-centro-sportivo",
+        ("CUS", "Centro Universitario Sportivo", "CUS Cosenza"),
+    ),
+    (
         "BUILDING",
         "cubo-25b",
         ("Rettorato", "Direzione Generale"),

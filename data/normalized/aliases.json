@@ -9730,6 +9730,27 @@
     "normalized": "centro-congressi"
   },
   {
+    "alias_id": "alias-place-service-centro-linguistico-di-ateneo-centro-linguistico",
+    "entity_id": "service-centro-linguistico-di-ateneo",
+    "entity_type": "PLACE",
+    "label": "Centro Linguistico",
+    "normalized": "centro-linguistico"
+  },
+  {
+    "alias_id": "alias-place-service-centro-linguistico-di-ateneo-centro-linguistico-di-ateneo",
+    "entity_id": "service-centro-linguistico-di-ateneo",
+    "entity_type": "PLACE",
+    "label": "Centro Linguistico di Ateneo",
+    "normalized": "centro-linguistico-di-ateneo"
+  },
+  {
+    "alias_id": "alias-place-service-centro-linguistico-di-ateneo-cla",
+    "entity_id": "service-centro-linguistico-di-ateneo",
+    "entity_type": "PLACE",
+    "label": "CLA",
+    "normalized": "cla"
+  },
+  {
     "alias_id": "alias-place-service-centro-sanitario-centro-sanitario-34b",
     "entity_id": "service-centro-sanitario",
     "entity_type": "PLACE",
@@ -9749,6 +9770,27 @@
     "entity_type": "PLACE",
     "label": "Guardia Medica",
     "normalized": "guardia-medica"
+  },
+  {
+    "alias_id": "alias-place-service-centro-sportivo-centro-universitario-sportivo",
+    "entity_id": "service-centro-sportivo",
+    "entity_type": "PLACE",
+    "label": "Centro Universitario Sportivo",
+    "normalized": "centro-universitario-sportivo"
+  },
+  {
+    "alias_id": "alias-place-service-centro-sportivo-cus",
+    "entity_id": "service-centro-sportivo",
+    "entity_type": "PLACE",
+    "label": "CUS",
+    "normalized": "cus"
+  },
+  {
+    "alias_id": "alias-place-service-centro-sportivo-cus-cosenza",
+    "entity_id": "service-centro-sportivo",
+    "entity_type": "PLACE",
+    "label": "CUS Cosenza",
+    "normalized": "cus-cosenza"
   },
   {
     "alias_id": "alias-place-university-club-university-club",

@@ -71,6 +71,8 @@ def test_build_landmark_aliases_only_uses_existing_targets() -> None:
     places = [
         {"place_id": "service-centro-congressi"},
         {"place_id": "service-biblioteche"},
+        {"place_id": "service-centro-linguistico-di-ateneo"},
+        {"place_id": "service-centro-sportivo"},
         {"place_id": "cinema-unical"},
         {"place_id": "biblioteca-bau"},
     ]
@@ -82,6 +84,8 @@ def test_build_landmark_aliases_only_uses_existing_targets() -> None:
     assert by_label["Centro Congressi"] == ("PLACE", "service-centro-congressi")
     assert by_label["Aula Magna B. Andreatta"] == ("BUILDING", "aula-magna")
     assert by_label["Biblioteca"] == ("PLACE", "service-biblioteche")
+    assert by_label["CLA"] == ("PLACE", "service-centro-linguistico-di-ateneo")
+    assert by_label["CUS"] == ("PLACE", "service-centro-sportivo")
     assert by_label["Cinema Campus"] == ("PLACE", "cinema-unical")
     assert by_label["BAU"] == ("PLACE", "biblioteca-bau")
     assert by_label["Cappella"] == ("BUILDING", "cappella-universitaria")
