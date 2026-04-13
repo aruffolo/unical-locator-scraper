@@ -50,34 +50,9 @@
       "with_building_id_ratio": 0.9645
     }
   },
-  "generated_at": "2026-04-13T13:56:20.672588+00:00",
+  "generated_at": "2026-04-13T13:59:28.553890+00:00",
   "integrity": {
-    "issues": [
-      {
-        "file": "aliases.json",
-        "level": "error",
-        "message": "entity_id 'service-polo-infanzia' does not exist for entity_type 'PLACE'",
-        "record_id": "alias-place-service-polo-infanzia-liaison-office-technest"
-      },
-      {
-        "file": "aliases.json",
-        "level": "error",
-        "message": "entity_id 'service-polo-infanzia' does not exist for entity_type 'PLACE'",
-        "record_id": "alias-place-service-polo-infanzia-polo-infanzia"
-      },
-      {
-        "file": "aliases.json",
-        "level": "error",
-        "message": "entity_id 'service-polo-infanzia' does not exist for entity_type 'PLACE'",
-        "record_id": "alias-place-service-polo-infanzia-ufficio-postale"
-      },
-      {
-        "file": "aliases.json",
-        "level": "error",
-        "message": "entity_id 'service-polo-infanzia' does not exist for entity_type 'PLACE'",
-        "record_id": "alias-place-service-polo-infanzia-ufficio-postale-polo-infanzia"
-      }
-    ]
+    "issues": []
   },
   "schema_validation": {
     "datasets": {
@@ -101,7 +76,7 @@
     "warnings": []
   },
   "summary": {
-    "integrity_issues": 4,
+    "integrity_issues": 0,
     "invalid_datasets": 0,
     "total_datasets": 12
   }

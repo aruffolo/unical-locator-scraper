@@ -14,7 +14,7 @@
     {
       "name": "aliases.json",
       "records": 1393,
-      "sha256": "6a7c9af2e8173f30f8357608257bd54109bac885d633fce828599062faa65927"
+      "sha256": "820334c212b4ed55d0a86babf0e109bbf4d370c81433bff674b219be526589a9"
     },
     {
       "name": "aulas.json",
@@ -67,5 +67,5 @@
       "sha256": "223dfa91cd1b931e5ba57a96bb7f107e0abd2dab768225d00dd22ae6caf61bd3"
     }
   ],
-  "revision": "6febb9bfaee986eed806af72d030f82a42e9afc915a75e0e5fca01e61e7b5197"
+  "revision": "b914f8a5d156e4eacc589889a8f1fb31a81255f3881a2ffec8c32678af492e1a"
 }
