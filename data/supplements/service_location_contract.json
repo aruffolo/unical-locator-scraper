@@ -188,6 +188,21 @@
   ],
   "place_overrides": [
     {
+      "place_id": "service-centro-sanitario",
+      "type": "SERVICE",
+      "name": "Centro Sanitario",
+      "clear_fields": [
+        "website_url"
+      ],
+      "description": "Il Centro Sanitario rappresenta un presidio assistenziale di riferimento per la popolazione studentesca, il personale dell'Ateneo e il territorio, con attività di prevenzione, diagnostica, supporto clinico e formazione sanitaria.",
+      "opening_hours": "Laboratorio prelievi e ritiro referti: lunedì-venerdì 08:15-10:00. Consultorio familiare: lunedì-venerdì 09:00-13:00; martedì e giovedì 15:30-17:00. Continuità assistenziale / Guardia Medica: 24h/24h. Emergenza 118: 24h/24h.",
+      "email": "centrosanitario@unical.it; 118cosenza@tiscali.it; centraleoperativa118@pec.asp.cosenza.it",
+      "phone": "0984 496200; 0984 496215; 0984 496202; 0984 402518; 0984/37356",
+      "access_notes": "Indirizzo: Cubo 34B - Via Pietro Bucci, Arcavacata di Rende (CS). Ticket online / PagoPA per il pagamento delle prestazioni. Prenotazioni esami tramite ESSE3. Il Centro Sanitario integra attività di laboratorio, consultorio familiare, continuità assistenziale e servizi di emergenza in collaborazione con l'ASP di Cosenza.",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-sanitario/"
+    },
+    {
       "place_id": "service-sistema-museale",
       "type": "SERVICE",
       "name": "Sistema Museale",

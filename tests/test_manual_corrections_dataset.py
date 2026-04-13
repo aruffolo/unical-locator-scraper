@@ -380,6 +380,36 @@ def test_museale_foresteria_polo_wave_is_preserved() -> None:
     assert "polo-infanzia__has_child_building__auditorium-teatro-grande" in entity_links
 
 
+def test_centro_sanitario_enrichment_wave_is_preserved() -> None:
+    places = _by_id(_load_dataset("places.json"), "place_id")
+
+    centro_sanitario = places["service-centro-sanitario"]
+    assert centro_sanitario.get("type") == "SERVICE"
+    assert centro_sanitario.get("building_id") == "centro-sanitario"
+    assert centro_sanitario.get("website_url") is None
+    assert "presidio assistenziale di riferimento" in str(
+        centro_sanitario.get("description")
+    ).lower()
+    assert centro_sanitario.get("opening_hours") == (
+        "Laboratorio prelievi e ritiro referti: lunedì-venerdì 08:15-10:00. "
+        "Consultorio familiare: lunedì-venerdì 09:00-13:00; "
+        "martedì e giovedì 15:30-17:00. "
+        "Continuità assistenziale / Guardia Medica: 24h/24h. "
+        "Emergenza 118: 24h/24h."
+    )
+    assert centro_sanitario.get("email") == (
+        "centrosanitario@unical.it; 118cosenza@tiscali.it; "
+        "centraleoperativa118@pec.asp.cosenza.it"
+    )
+    assert centro_sanitario.get("phone") == (
+        "0984 496200; 0984 496215; 0984 496202; 0984 402518; 0984/37356"
+    )
+    assert "Cubo 34B - Via Pietro Bucci" in str(centro_sanitario.get("access_notes"))
+    assert "Prenotazioni esami tramite ESSE3." in str(
+        centro_sanitario.get("access_notes")
+    )
+
+
 def test_dataset_contract_counts_match_files_and_locked_minimums() -> None:
     contract = _load_json(DATA_DIR / "dataset_contract.json")
     assert isinstance(contract, dict)

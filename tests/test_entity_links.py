@@ -89,6 +89,19 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
         ],
         "place_overrides": [
             {
+                "place_id": "service-centro-sanitario",
+                "type": "SERVICE",
+                "name": "Centro Sanitario",
+                "clear_fields": ["website_url"],
+                "description": "Presidio sanitario del campus.",
+                "opening_hours": "Laboratorio lunedì-venerdì 08:15-10:00.",
+                "email": "centrosanitario@unical.it; 118cosenza@tiscali.it",
+                "phone": "0984 496200; 0984/37356",
+                "access_notes": "Indirizzo: Cubo 34B - Via Pietro Bucci, Arcavacata di Rende (CS). Prenotazioni esami tramite ESSE3.",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-sanitario/",
+            },
+            {
                 "place_id": "service-sistema-museale",
                 "type": "SERVICE",
                 "name": "Sistema Museale",
@@ -308,6 +321,15 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert "opening_hours" not in places_by_id["service-centro-congressi"]
     assert "website_url" not in places_by_id["service-centro-congressi"]
     assert "building_id" not in places_by_id["service-biblioteche"]
+    assert "website_url" not in places_by_id["service-centro-sanitario"]
+    assert places_by_id["service-centro-sanitario"]["opening_hours"] == (
+        "Laboratorio lunedì-venerdì 08:15-10:00."
+    )
+    assert places_by_id["service-centro-sanitario"]["email"] == (
+        "centrosanitario@unical.it; 118cosenza@tiscali.it"
+    )
+    assert places_by_id["service-centro-sanitario"]["phone"] == "0984 496200; 0984/37356"
+    assert "Cubo 34B - Via Pietro Bucci" in places_by_id["service-centro-sanitario"]["access_notes"]
     assert places_by_id["service-sistema-museale"]["type"] == "SERVICE"
     assert places_by_id["service-musnob"]["type"] == "OTHER"
     assert places_by_id["service-musnob"]["name"] == "MuSNOB"
