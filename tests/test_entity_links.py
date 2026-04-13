@@ -25,6 +25,12 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             "name": "Centro Congressi",
             "building_id": "aula-magna",
         },
+        {
+            "place_id": "service-biblioteche",
+            "type": "SERVICE",
+            "name": "Biblioteche",
+            "building_id": "cubo-libro",
+        },
     ]
     buildings = [
         {"building_id": "mensa-maisonnettes", "name": "Mensa Maisonnettes"},
@@ -39,6 +45,7 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             "service-quartieri",
             "service-servizio-mensa",
             "service-centro-congressi",
+            "service-biblioteche",
         ],
         "quartieri_places": [
             {
@@ -57,6 +64,17 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             }
         ],
         "place_overrides": [
+            {
+                "place_id": "service-biblioteche",
+                "type": "SERVICE",
+                "name": "Biblioteche",
+                "description": "Sistema bibliotecario di Ateneo.",
+                "website_url": "https://sba.unical.it/",
+                "opening_hours": "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso.",
+                "access_notes": "Servizi del Sistema Bibliotecario di Ateneo.",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/",
+            },
             {
                 "place_id": "sala-mostre-centro-congressi",
                 "type": "OTHER",
@@ -151,6 +169,11 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert "building_id" not in places_by_id["service-quartieri"]
     assert "building_id" not in places_by_id["service-servizio-mensa"]
     assert "building_id" not in places_by_id["service-centro-congressi"]
+    assert "building_id" not in places_by_id["service-biblioteche"]
+    assert places_by_id["service-biblioteche"]["website_url"] == "https://sba.unical.it/"
+    assert places_by_id["service-biblioteche"]["opening_hours"] == (
+        "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso."
+    )
     assert places_by_id["quartiere-maisonnettes"]["type"] == "QUARTIERE"
     assert places_by_id["quartiere-maisonnettes"]["lat"] == 39.3555355
     assert places_by_id["quartiere-maisonnettes"]["description"] == "Complesso residenziale del campus."

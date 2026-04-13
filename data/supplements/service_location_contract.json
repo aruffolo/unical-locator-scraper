@@ -2,7 +2,8 @@
   "clear_overview_building_ids": [
     "service-quartieri",
     "service-servizio-mensa",
-    "service-centro-congressi"
+    "service-centro-congressi",
+    "service-biblioteche"
   ],
   "quartieri_places": [
     {
@@ -236,11 +237,24 @@
       "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/cinema-e-anfiteatri/"
     },
     {
+      "place_id": "service-biblioteche",
+      "type": "SERVICE",
+      "name": "Biblioteche",
+      "description": "Il sistema bibliotecario più grande del Mezzogiorno, con 800 posti lettura e servizi digitali per lo studio e l'accesso al ricco patrimonio di libri e riviste, cartacee e digitali.",
+      "website_url": "https://sba.unical.it/",
+      "opening_hours": "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso.",
+      "access_notes": "Il Sistema Bibliotecario di Ateneo comprende BAU, Tarantelli e BATS. Modalità self-service ripristinata nelle sale di lettura. Non servono più prenotazioni per consultazione e prestito dei volumi a scaffale aperto né per la restituzione di libri e periodici. La sala studio/multimediale BATS si prenota via Uniticket: https://ticket.unical.it/tickets/new/15/570/. Per altre informazioni sui servizi delle biblioteche: https://sba.unical.it/",
+      "source_id": "unical-services",
+      "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/"
+    },
+    {
       "place_id": "biblioteca-bau",
       "type": "LIBRARY",
       "name": "BAU - Biblioteca di Area Umanistica \"F. E. Fagiani\"",
-      "description": "Biblioteca di Area Umanistica istituita nel 1987, dedicata al supporto di docenti, ricercatori, dottorandi e studenti dei dipartimenti DICES e DISU.",
-      "website_url": "https://bau.unical.it",
+      "description": "La Biblioteca di Area Umanistica \"F. E. Fagiani\" (BAU) è stata istituita nel 1987 e fornisce documentazione e servizi bibliografici qualificati a docenti, ricercatori, dottorandi e studenti dei dipartimenti DICES e DISU, oltre che alla più ampia comunità accademica e al territorio di riferimento.",
+      "website_url": "https://bau.unical.it/",
+      "opening_hours": "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso.",
+      "access_notes": "Le collezioni BAU comprendono circa 250.000 unità bibliografiche fra libri e riviste cartacee, supporti audiovisivi, microriproduzioni e materiali archivistici, oltre a e-journals, e-books e archivi digitali di ambito umanistico. La biblioteca collabora con altre istituzioni di ricerca e ospita tirocini didattici. Servizi: https://bau.unical.it/. Sistema Bibliotecario di Ateneo: https://sba.unical.it/",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/"
     },
@@ -248,7 +262,10 @@
       "place_id": "biblioteca-tarantelli",
       "type": "LIBRARY",
       "name": "Biblioteca Interdipartimentale di Scienze Economiche e Sociali \"E. Tarantelli\"",
-      "website_url": "http://tar.unical.it",
+      "description": "La Biblioteca Interdipartimentale di Scienze Economiche e Sociali è nata nel 1981 dall'unificazione delle biblioteche di Economia Politica, Organizzazione Aziendale ed Amministrazione Pubblica, Sociologia e Scienza Politica; dal 1986 è intitolata a Ezio Tarantelli.",
+      "website_url": "http://tar.unical.it/",
+      "opening_hours": "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso.",
+      "access_notes": "All'inaugurazione della nuova sede, il 7 febbraio 2001, è intervenuto il Presidente della Repubblica Carlo Azeglio Ciampi. Servizi: https://tar.unical.it/tar_servizi. Sistema Bibliotecario di Ateneo: https://sba.unical.it/",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/"
     },
@@ -256,7 +273,10 @@
       "place_id": "biblioteca-bats",
       "type": "LIBRARY",
       "name": "BATS - Biblioteca di Area Tecnico-Scientifica",
+      "description": "La Biblioteca di Area Tecnico-Scientifica è nata nel 1999 dalla riconversione dell'ex-Biblioteca Centrale e incorpora le raccolte bibliografiche dei dipartimenti scientifici e ingegneristici dell'Ateneo.",
       "website_url": "http://bats.unical.it/",
+      "opening_hours": "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso.",
+      "access_notes": "Servizi: http://bats.unical.it/servizi/servizi.htm. La sala studio/multimediale per attività collaborative o individuali si prenota via Uniticket: https://ticket.unical.it/tickets/new/15/570/. Sistema Bibliotecario di Ateneo: https://sba.unical.it/",
       "source_id": "unical-services",
       "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/"
     }

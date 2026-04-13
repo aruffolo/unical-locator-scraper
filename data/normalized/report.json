@@ -46,11 +46,11 @@
       "total": 898,
       "type_aula": 517,
       "type_aula_ratio": 0.5757,
-      "with_building_id": 870,
-      "with_building_id_ratio": 0.9688
+      "with_building_id": 869,
+      "with_building_id_ratio": 0.9677
     }
   },
-  "generated_at": "2026-04-13T07:28:43.720129+00:00",
+  "generated_at": "2026-04-13T08:56:16.431086+00:00",
   "integrity": {
     "issues": []
   },

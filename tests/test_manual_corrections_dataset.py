@@ -190,15 +190,39 @@ def test_broader_grouped_hub_wave_is_preserved() -> None:
 
     biblioteca_bau = places["biblioteca-bau"]
     assert biblioteca_bau.get("type") == "LIBRARY"
-    assert biblioteca_bau.get("website_url") == "https://bau.unical.it"
+    assert biblioteca_bau.get("website_url") == "https://bau.unical.it/"
+    assert "istituita nel 1987" in str(biblioteca_bau.get("description"))
+    assert biblioteca_bau.get("opening_hours") == (
+        "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso."
+    )
+    assert "https://sba.unical.it/" in str(biblioteca_bau.get("access_notes"))
 
     biblioteca_tarantelli = places["biblioteca-tarantelli"]
     assert biblioteca_tarantelli.get("type") == "LIBRARY"
-    assert biblioteca_tarantelli.get("website_url") == "http://tar.unical.it"
+    assert biblioteca_tarantelli.get("website_url") == "http://tar.unical.it/"
+    assert "nata nel 1981" in str(biblioteca_tarantelli.get("description"))
+    assert biblioteca_tarantelli.get("opening_hours") == (
+        "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso."
+    )
 
     biblioteca_bats = places["biblioteca-bats"]
     assert biblioteca_bats.get("type") == "LIBRARY"
     assert biblioteca_bats.get("website_url") == "http://bats.unical.it/"
+    assert "nata nel 1999" in str(biblioteca_bats.get("description"))
+    assert biblioteca_bats.get("opening_hours") == (
+        "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso."
+    )
+    assert "https://ticket.unical.it/tickets/new/15/570/" in str(
+        biblioteca_bats.get("access_notes")
+    )
+
+    biblioteche = places["service-biblioteche"]
+    assert biblioteche.get("building_id") is None
+    assert biblioteche.get("website_url") == "https://sba.unical.it/"
+    assert biblioteche.get("opening_hours") == (
+        "Da lunedì a giovedì 09:00-20:05. Venerdì 09:00-17:00. Sabato chiuso."
+    )
+    assert "Sistema Bibliotecario di Ateneo" in str(biblioteche.get("access_notes"))
 
     assert "service-centro-congressi__has_child_place__aula-magna" in entity_links
     assert (

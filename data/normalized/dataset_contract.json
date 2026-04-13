@@ -59,7 +59,7 @@
     {
       "name": "places.json",
       "records": 898,
-      "sha256": "9e4ed72fe01e2694bc33e5dcb67920ccd72d5f544f12e0beaea901a4e6666455"
+      "sha256": "de86825b5b58be439ddb597de7b771d2a755bca69972a12fd8e6cabbf4edac0b"
     },
     {
       "name": "sources.json",
@@ -67,5 +67,5 @@
       "sha256": "223dfa91cd1b931e5ba57a96bb7f107e0abd2dab768225d00dd22ae6caf61bd3"
     }
   ],
-  "revision": "8bff9176f6c1ad65801471fe9a7ae30e562f7729c8888b5ceb416d1772ee9f72"
+  "revision": "d8b01101bf355ee3bca00cad52eab95b819ca76a55b008c1457f16ae64fb8849"
 }
