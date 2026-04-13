@@ -19,6 +19,12 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
             "name": "Servizio Mensa",
             "building_id": "uffici-centro-residenziale-e-area-didattica",
         },
+        {
+            "place_id": "service-centro-congressi",
+            "type": "SERVICE",
+            "name": "Centro Congressi",
+            "building_id": "aula-magna",
+        },
     ]
     buildings = [
         {"building_id": "mensa-maisonnettes", "name": "Mensa Maisonnettes"},
@@ -26,11 +32,13 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
         {"building_id": "mensa-maisonnettes-senior", "name": "Mensa Maisonnettes Senior"},
         {"building_id": "quartiere-monaci", "name": "Quartiere Monaci"},
         {"building_id": "maisonnettes", "name": "Maisonnettes"},
+        {"building_id": "aula-magna", "name": "Aula Magna"},
     ]
     contract = {
         "clear_overview_building_ids": [
             "service-quartieri",
             "service-servizio-mensa",
+            "service-centro-congressi",
         ],
         "quartieri_places": [
             {
@@ -46,6 +54,19 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "access_notes": "Posti: 519. Servizi: Internet Wi-Fi.",
                 "source_id": "unical-services",
                 "source_url": "https://www.unical.it/campus/vivere-il-campus/quartieri/",
+            }
+        ],
+        "place_overrides": [
+            {
+                "place_id": "sala-mostre-centro-congressi",
+                "type": "OTHER",
+                "name": "Sala Mostre",
+                "building_id": "aula-magna",
+                "lat": 39.3581044,
+                "lng": 16.2256425,
+                "description": "Spazio espositivo adiacente all'Aula Magna.",
+                "source_id": "unical-services",
+                "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/",
             }
         ],
         "mensa_buildings": [
@@ -66,6 +87,15 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "source_id": "unical-services",
                 "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/",
             },
+        ],
+        "building_overrides": [
+            {
+                "building_id": "aula-magna",
+                "name": "Aula Magna",
+                "description": "Aula Magna B. Andreatta",
+                "source_id": "unical-campus-map",
+                "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/",
+            }
         ],
         "remove_building_ids": [
             "mensa-maisonnettes-senior",
@@ -96,6 +126,14 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
                 "child_entity_id": "maisonnettes",
                 "sort_order": 30,
             },
+            {
+                "parent_entity_type": "PLACE",
+                "parent_entity_id": "service-centro-congressi",
+                "relation_type": "HAS_CHILD_PLACE",
+                "child_entity_type": "PLACE",
+                "child_entity_id": "sala-mostre-centro-congressi",
+                "sort_order": 40,
+            },
         ],
     }
 
@@ -112,6 +150,7 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
 
     assert "building_id" not in places_by_id["service-quartieri"]
     assert "building_id" not in places_by_id["service-servizio-mensa"]
+    assert "building_id" not in places_by_id["service-centro-congressi"]
     assert places_by_id["quartiere-maisonnettes"]["type"] == "QUARTIERE"
     assert places_by_id["quartiere-maisonnettes"]["lat"] == 39.3555355
     assert places_by_id["quartiere-maisonnettes"]["description"] == "Complesso residenziale del campus."
@@ -119,6 +158,8 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
     assert places_by_id["quartiere-maisonnettes"]["phone"] == "346/3668313"
     assert places_by_id["quartiere-maisonnettes"]["website_url"] == "https://soscr.unical.it/"
     assert places_by_id["quartiere-maisonnettes"]["access_notes"] == "Posti: 519. Servizi: Internet Wi-Fi."
+    assert places_by_id["sala-mostre-centro-congressi"]["building_id"] == "aula-magna"
+    assert places_by_id["sala-mostre-centro-congressi"]["type"] == "OTHER"
 
     assert buildings_by_id["mensa-maisonnettes"]["name"] == "Mensa Quartiere Maisonnettes"
     assert buildings_by_id["mensa-maisonnettes"]["category"] == "MENSA"
@@ -132,3 +173,4 @@ def test_apply_service_location_contract_updates_overviews_and_children() -> Non
 
     assert "service-quartieri__has_child_place__quartiere-maisonnettes" in links_by_id
     assert "quartiere-maisonnettes__has_child_building__maisonnettes" in links_by_id
+    assert "service-centro-congressi__has_child_place__sala-mostre-centro-congressi" in links_by_id

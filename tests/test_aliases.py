@@ -66,20 +66,26 @@ def test_build_landmark_aliases_only_uses_existing_targets() -> None:
         {"building_id": "teatro-piccolo"},
         {"building_id": "aula-magna"},
         {"building_id": "cappella-universitaria"},
+        {"building_id": "auditorium-teatro-grande"},
     ]
     places = [
         {"place_id": "service-centro-congressi"},
         {"place_id": "service-biblioteche"},
+        {"place_id": "cinema-unical"},
+        {"place_id": "biblioteca-bau"},
     ]
 
     aliases = build_landmark_aliases(buildings=buildings, places=places)
     by_label = {alias["label"]: (alias["entity_type"], alias["entity_id"]) for alias in aliases}
 
     assert by_label["PTU"] == ("BUILDING", "teatro-piccolo")
-    assert by_label["Aula Magna B. Andreatta"] == ("PLACE", "service-centro-congressi")
+    assert by_label["Centro Congressi"] == ("PLACE", "service-centro-congressi")
+    assert by_label["Aula Magna B. Andreatta"] == ("BUILDING", "aula-magna")
     assert by_label["Biblioteca"] == ("PLACE", "service-biblioteche")
+    assert by_label["Cinema Campus"] == ("PLACE", "cinema-unical")
+    assert by_label["BAU"] == ("PLACE", "biblioteca-bau")
     assert by_label["Cappella"] == ("BUILDING", "cappella-universitaria")
-    assert "TAU" not in by_label
+    assert by_label["TAU"] == ("BUILDING", "auditorium-teatro-grande")
 
 
 def test_build_search_aliases_merges_aulas_and_landmarks() -> None:

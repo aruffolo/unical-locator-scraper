@@ -20,11 +20,7 @@ _LANDMARK_ALIAS_TARGETS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     (
         "PLACE",
         "service-centro-congressi",
-        (
-            "Centro Congressi",
-            "Centro Congressi Aula Magna B. Andreatta",
-            "Aula Magna B. Andreatta",
-        ),
+        ("Centro Congressi",),
     ),
     (
         "BUILDING",
@@ -52,19 +48,59 @@ _LANDMARK_ALIAS_TARGETS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         ("Cappella", "Cappella Universitaria", "Cappella 24B"),
     ),
     (
-        "BUILDING",
-        "cubo-24b",
-        ("University Club",),
-    ),
-    (
         "PLACE",
         "service-centro-sanitario",
         ("Centro Sanitario 34B", "Guardia Medica"),
     ),
     (
+        "PLACE",
+        "sala-mostre-centro-congressi",
+        ("Sala Mostre",),
+    ),
+    (
+        "PLACE",
+        "university-club",
+        ("University Club",),
+    ),
+    (
+        "PLACE",
+        "sala-stampa-centro-congressi",
+        ("Sala Stampa",),
+    ),
+    (
+        "PLACE",
+        "sala-a-centro-congressi",
+        ("Sala A",),
+    ),
+    (
+        "PLACE",
+        "cinema-unical",
+        ("Cinema Unical", "Cinema Campus"),
+    ),
+    (
+        "PLACE",
+        "aula-caldora-centro-radiotelevisivo",
+        ("Aula U. Caldora", "Aula Caldora"),
+    ),
+    (
         "BUILDING",
         "auditorium-teatro-grande",
-        ("TAU", "TAU Teatro Auditorium Unical Cinema Campus", "Cinema Campus"),
+        ("TAU", "TAU Teatro Auditorium Unical Cinema Campus"),
+    ),
+    (
+        "PLACE",
+        "biblioteca-bau",
+        ("BAU", 'BAU - Biblioteca di Area Umanistica "F. E. Fagiani"'),
+    ),
+    (
+        "PLACE",
+        "biblioteca-tarantelli",
+        ('Tarantelli', 'Biblioteca Interdipartimentale di Scienze Economiche e Sociali "E. Tarantelli"'),
+    ),
+    (
+        "PLACE",
+        "biblioteca-bats",
+        ("BATS", "BATS - Biblioteca di Area Tecnico-Scientifica"),
     ),
     (
         "PLACE",
@@ -77,9 +113,9 @@ _LANDMARK_ALIAS_TARGETS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         ),
     ),
     (
-        "BUILDING",
-        "centro-radiotelevisivo",
-        ("Aula U. Caldora",),
+        "PLACE",
+        "residenza-socrates",
+        ("Residenza Socrates", "Accomodation - Residenza Socrates"),
     ),
     (
         "BUILDING",

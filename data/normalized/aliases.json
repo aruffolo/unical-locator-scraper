@@ -1,12 +1,5 @@
 [
   {
-    "alias_id": "alias-building-auditorium-teatro-grande-cinema-campus",
-    "entity_id": "auditorium-teatro-grande",
-    "entity_type": "BUILDING",
-    "label": "Cinema Campus",
-    "normalized": "cinema-campus"
-  },
-  {
     "alias_id": "alias-building-auditorium-teatro-grande-tau",
     "entity_id": "auditorium-teatro-grande",
     "entity_type": "BUILDING",
@@ -49,13 +42,6 @@
     "normalized": "cappella-universitaria"
   },
   {
-    "alias_id": "alias-building-centro-radiotelevisivo-aula-u-caldora",
-    "entity_id": "centro-radiotelevisivo",
-    "entity_type": "BUILDING",
-    "label": "Aula U. Caldora",
-    "normalized": "aula-u-caldora"
-  },
-  {
     "alias_id": "alias-building-cla-centro-linguistico-d-ateneo-centro-linguistico-d-ateneo",
     "entity_id": "cla-centro-linguistico-d-ateneo",
     "entity_type": "BUILDING",
@@ -82,13 +68,6 @@
     "entity_type": "BUILDING",
     "label": "CLA 25C - 17A",
     "normalized": "cla-25c-17a"
-  },
-  {
-    "alias_id": "alias-building-cubo-24b-university-club",
-    "entity_id": "cubo-24b",
-    "entity_type": "BUILDING",
-    "label": "University Club",
-    "normalized": "university-club"
   },
   {
     "alias_id": "alias-building-cubo-25b-direzione-generale",
@@ -2203,6 +2182,13 @@
     "entity_type": "PLACE",
     "label": "Aula Caldora",
     "normalized": "aula-caldora"
+  },
+  {
+    "alias_id": "alias-place-aula-caldora-centro-radiotelevisivo-aula-u-caldora",
+    "entity_id": "aula-caldora-centro-radiotelevisivo",
+    "entity_type": "PLACE",
+    "label": "Aula U. Caldora",
+    "normalized": "aula-u-caldora"
   },
   {
     "alias_id": "alias-place-aula-caldora-centro-radiotelevisivo-caldora",
@@ -9597,6 +9583,83 @@
     "normalized": "zeus"
   },
   {
+    "alias_id": "alias-place-biblioteca-bats-bats",
+    "entity_id": "biblioteca-bats",
+    "entity_type": "PLACE",
+    "label": "BATS",
+    "normalized": "bats"
+  },
+  {
+    "alias_id": "alias-place-biblioteca-bats-bats-biblioteca-di-area-tecnico-scientifica",
+    "entity_id": "biblioteca-bats",
+    "entity_type": "PLACE",
+    "label": "BATS - Biblioteca di Area Tecnico-Scientifica",
+    "normalized": "bats-biblioteca-di-area-tecnico-scientifica"
+  },
+  {
+    "alias_id": "alias-place-biblioteca-bau-bau",
+    "entity_id": "biblioteca-bau",
+    "entity_type": "PLACE",
+    "label": "BAU",
+    "normalized": "bau"
+  },
+  {
+    "alias_id": "alias-place-biblioteca-bau-bau-biblioteca-di-area-umanistica-f-e-fagiani",
+    "entity_id": "biblioteca-bau",
+    "entity_type": "PLACE",
+    "label": "BAU - Biblioteca di Area Umanistica \"F. E. Fagiani\"",
+    "normalized": "bau-biblioteca-di-area-umanistica-f-e-fagiani"
+  },
+  {
+    "alias_id": "alias-place-biblioteca-tarantelli-biblioteca-interdipartimentale-di-scienze-economiche-e-sociali-e-tarantelli",
+    "entity_id": "biblioteca-tarantelli",
+    "entity_type": "PLACE",
+    "label": "Biblioteca Interdipartimentale di Scienze Economiche e Sociali \"E. Tarantelli\"",
+    "normalized": "biblioteca-interdipartimentale-di-scienze-economiche-e-sociali-e-tarantelli"
+  },
+  {
+    "alias_id": "alias-place-biblioteca-tarantelli-tarantelli",
+    "entity_id": "biblioteca-tarantelli",
+    "entity_type": "PLACE",
+    "label": "Tarantelli",
+    "normalized": "tarantelli"
+  },
+  {
+    "alias_id": "alias-place-cinema-unical-cinema-campus",
+    "entity_id": "cinema-unical",
+    "entity_type": "PLACE",
+    "label": "Cinema Campus",
+    "normalized": "cinema-campus"
+  },
+  {
+    "alias_id": "alias-place-cinema-unical-cinema-unical",
+    "entity_id": "cinema-unical",
+    "entity_type": "PLACE",
+    "label": "Cinema Unical",
+    "normalized": "cinema-unical"
+  },
+  {
+    "alias_id": "alias-place-sala-a-centro-congressi-sala-a",
+    "entity_id": "sala-a-centro-congressi",
+    "entity_type": "PLACE",
+    "label": "Sala A",
+    "normalized": "sala-a"
+  },
+  {
+    "alias_id": "alias-place-sala-mostre-centro-congressi-sala-mostre",
+    "entity_id": "sala-mostre-centro-congressi",
+    "entity_type": "PLACE",
+    "label": "Sala Mostre",
+    "normalized": "sala-mostre"
+  },
+  {
+    "alias_id": "alias-place-sala-stampa-centro-congressi-sala-stampa",
+    "entity_id": "sala-stampa-centro-congressi",
+    "entity_type": "PLACE",
+    "label": "Sala Stampa",
+    "normalized": "sala-stampa"
+  },
+  {
     "alias_id": "alias-place-service-biblioteche-biblioteca",
     "entity_id": "service-biblioteche",
     "entity_type": "PLACE",
@@ -9618,25 +9681,11 @@
     "normalized": "biblioteche"
   },
   {
-    "alias_id": "alias-place-service-centro-congressi-aula-magna-b-andreatta",
-    "entity_id": "service-centro-congressi",
-    "entity_type": "PLACE",
-    "label": "Aula Magna B. Andreatta",
-    "normalized": "aula-magna-b-andreatta"
-  },
-  {
     "alias_id": "alias-place-service-centro-congressi-centro-congressi",
     "entity_id": "service-centro-congressi",
     "entity_type": "PLACE",
     "label": "Centro Congressi",
     "normalized": "centro-congressi"
-  },
-  {
-    "alias_id": "alias-place-service-centro-congressi-centro-congressi-aula-magna-b-andreatta",
-    "entity_id": "service-centro-congressi",
-    "entity_type": "PLACE",
-    "label": "Centro Congressi Aula Magna B. Andreatta",
-    "normalized": "centro-congressi-aula-magna-b-andreatta"
   },
   {
     "alias_id": "alias-place-service-centro-sanitario-centro-sanitario-34b",
@@ -9679,5 +9728,12 @@
     "entity_type": "PLACE",
     "label": "Ufficio postale Polo Infanzia",
     "normalized": "ufficio-postale-polo-infanzia"
+  },
+  {
+    "alias_id": "alias-place-university-club-university-club",
+    "entity_id": "university-club",
+    "entity_type": "PLACE",
+    "label": "University Club",
+    "normalized": "university-club"
   }
 ]

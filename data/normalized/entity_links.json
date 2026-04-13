@@ -1,5 +1,16 @@
 [
   {
+    "child_entity_id": "auditorium-teatro-grande",
+    "child_entity_type": "BUILDING",
+    "link_id": "cinema-unical__has_child_building__auditorium-teatro-grande",
+    "parent_entity_id": "cinema-unical",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_BUILDING",
+    "sort_order": 10,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/cinema-e-anfiteatri/"
+  },
+  {
     "child_entity_id": "maisonnettes",
     "child_entity_type": "BUILDING",
     "link_id": "quartiere-maisonnettes__has_child_building__maisonnettes",
@@ -9,6 +20,105 @@
     "sort_order": 10,
     "source_id": "unical-campus-map",
     "source_url": "https://www.unical.it/campus/visita-il-campus/mappa/"
+  },
+  {
+    "child_entity_id": "biblioteca-bats",
+    "child_entity_type": "PLACE",
+    "link_id": "service-biblioteche__has_child_place__biblioteca-bats",
+    "parent_entity_id": "service-biblioteche",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 30,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/"
+  },
+  {
+    "child_entity_id": "biblioteca-bau",
+    "child_entity_type": "PLACE",
+    "link_id": "service-biblioteche__has_child_place__biblioteca-bau",
+    "parent_entity_id": "service-biblioteche",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 10,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/"
+  },
+  {
+    "child_entity_id": "biblioteca-tarantelli",
+    "child_entity_type": "PLACE",
+    "link_id": "service-biblioteche__has_child_place__biblioteca-tarantelli",
+    "parent_entity_id": "service-biblioteche",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 20,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/biblioteche/"
+  },
+  {
+    "child_entity_id": "aula-caldora-centro-radiotelevisivo",
+    "child_entity_type": "PLACE",
+    "link_id": "service-centro-congressi__has_child_place__aula-caldora-centro-radiotelevisivo",
+    "parent_entity_id": "service-centro-congressi",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 30,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/"
+  },
+  {
+    "child_entity_id": "aula-magna",
+    "child_entity_type": "PLACE",
+    "link_id": "service-centro-congressi__has_child_place__aula-magna",
+    "parent_entity_id": "service-centro-congressi",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 10,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/"
+  },
+  {
+    "child_entity_id": "sala-a-centro-congressi",
+    "child_entity_type": "PLACE",
+    "link_id": "service-centro-congressi__has_child_place__sala-a-centro-congressi",
+    "parent_entity_id": "service-centro-congressi",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 60,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/"
+  },
+  {
+    "child_entity_id": "sala-mostre-centro-congressi",
+    "child_entity_type": "PLACE",
+    "link_id": "service-centro-congressi__has_child_place__sala-mostre-centro-congressi",
+    "parent_entity_id": "service-centro-congressi",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 20,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/"
+  },
+  {
+    "child_entity_id": "sala-stampa-centro-congressi",
+    "child_entity_type": "PLACE",
+    "link_id": "service-centro-congressi__has_child_place__sala-stampa-centro-congressi",
+    "parent_entity_id": "service-centro-congressi",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 50,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/"
+  },
+  {
+    "child_entity_id": "university-club",
+    "child_entity_type": "PLACE",
+    "link_id": "service-centro-congressi__has_child_place__university-club",
+    "parent_entity_id": "service-centro-congressi",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 40,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/centro-congressi/"
   },
   {
     "child_entity_id": "quartiere-chiodo",
@@ -163,5 +273,60 @@
     "sort_order": 40,
     "source_id": "unical-services",
     "source_url": "https://www.unical.it/campus/vivere-il-campus/servizio-mensa/"
+  },
+  {
+    "child_entity_id": "anfiteatro-polifunzionale",
+    "child_entity_type": "BUILDING",
+    "link_id": "service-teatri-e-cinema__has_child_building__anfiteatro-polifunzionale",
+    "parent_entity_id": "service-teatri-e-cinema",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_BUILDING",
+    "sort_order": 50,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/"
+  },
+  {
+    "child_entity_id": "auditorium-teatro-grande",
+    "child_entity_type": "BUILDING",
+    "link_id": "service-teatri-e-cinema__has_child_building__auditorium-teatro-grande",
+    "parent_entity_id": "service-teatri-e-cinema",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_BUILDING",
+    "sort_order": 10,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/"
+  },
+  {
+    "child_entity_id": "teatro-all-aperto",
+    "child_entity_type": "BUILDING",
+    "link_id": "service-teatri-e-cinema__has_child_building__teatro-all-aperto",
+    "parent_entity_id": "service-teatri-e-cinema",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_BUILDING",
+    "sort_order": 40,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/"
+  },
+  {
+    "child_entity_id": "teatro-piccolo",
+    "child_entity_type": "BUILDING",
+    "link_id": "service-teatri-e-cinema__has_child_building__teatro-piccolo",
+    "parent_entity_id": "service-teatri-e-cinema",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_BUILDING",
+    "sort_order": 20,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/"
+  },
+  {
+    "child_entity_id": "cinema-unical",
+    "child_entity_type": "PLACE",
+    "link_id": "service-teatri-e-cinema__has_child_place__cinema-unical",
+    "parent_entity_id": "service-teatri-e-cinema",
+    "parent_entity_type": "PLACE",
+    "relation_type": "HAS_CHILD_PLACE",
+    "sort_order": 30,
+    "source_id": "unical-services",
+    "source_url": "https://www.unical.it/campus/vivere-il-campus/teatri-e-cinema/"
   }
 ]

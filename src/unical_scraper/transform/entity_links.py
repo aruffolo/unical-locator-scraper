@@ -26,7 +26,7 @@ def apply_service_location_contract(
     contract: dict[str, Any],
     verified_at: datetime | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
-    """Apply first-wave grouped service-location modeling."""
+    """Apply grouped service-location supplement modeling."""
     if verified_at is None:
         verified_at = datetime.now(timezone.utc)
 
@@ -49,48 +49,33 @@ def apply_service_location_contract(
         place.pop("building_id", None)
         place["last_verified_at"] = verified_iso
 
-    for spec in _object_list(contract.get("quartieri_places")):
-        place_id = _required_string(spec, "place_id")
-        merged = dict(places_by_id.get(place_id, {}))
-        merged.update(
-            {
-                "place_id": place_id,
-                "type": _required_string(spec, "type"),
-                "name": _required_string(spec, "name"),
-                "lat": _required_number(spec, "lat"),
-                "lng": _required_number(spec, "lng"),
-                "source_id": _required_string(spec, "source_id"),
-                "source_url": _required_string(spec, "source_url"),
-                "last_verified_at": verified_iso,
-            }
+    for spec in _legacy_quartieri_place_specs(contract):
+        _apply_place_override(
+            places_by_id=places_by_id,
+            spec=spec,
+            verified_iso=verified_iso,
         )
-        merged.pop("building_id", None)
-        _merge_optional_place_fields(merged, spec)
-        places_by_id[place_id] = merged
 
-    for spec in _object_list(contract.get("mensa_buildings")):
-        building_id = _required_string(spec, "building_id")
-        merged = dict(buildings_by_id.get(building_id, {}))
-        merged["building_id"] = building_id
-        merged["name"] = _required_string(spec, "name")
-        merged["category"] = _required_string(spec, "category")
-        merged["last_verified_at"] = verified_iso
+    for spec in _object_list(contract.get("place_overrides")):
+        _apply_place_override(
+            places_by_id=places_by_id,
+            spec=spec,
+            verified_iso=verified_iso,
+        )
 
-        lat = spec.get("lat")
-        lng = spec.get("lng")
-        if isinstance(lat, (int, float)) and isinstance(lng, (int, float)):
-            merged["lat"] = round(float(lat), 7)
-            merged["lng"] = round(float(lng), 7)
+    for spec in _legacy_mensa_building_specs(contract):
+        _apply_building_override(
+            buildings_by_id=buildings_by_id,
+            spec=spec,
+            verified_iso=verified_iso,
+        )
 
-        source_id = _optional_string(spec, "source_id")
-        source_url = _optional_string(spec, "source_url")
-        if source_id:
-            merged["source_id"] = source_id
-        if source_url:
-            merged["source_url"] = source_url
-
-        _merge_optional_building_fields(merged, spec)
-        buildings_by_id[building_id] = merged
+    for spec in _object_list(contract.get("building_overrides")):
+        _apply_building_override(
+            buildings_by_id=buildings_by_id,
+            spec=spec,
+            verified_iso=verified_iso,
+        )
 
     for building_id in _string_list(contract.get("remove_building_ids")):
         buildings_by_id.pop(building_id, None)
@@ -135,6 +120,94 @@ def _normalize_entity_link(spec: dict[str, Any]) -> dict[str, Any]:
     return link
 
 
+def _apply_place_override(
+    *,
+    places_by_id: dict[str, dict[str, Any]],
+    spec: dict[str, Any],
+    verified_iso: str,
+) -> None:
+    place_id = _required_string(spec, "place_id")
+    merged = dict(places_by_id.get(place_id, {}))
+    merged.update(
+        {
+            "place_id": place_id,
+            "type": _required_string(spec, "type"),
+            "name": _required_string(spec, "name"),
+            "last_verified_at": verified_iso,
+        }
+    )
+
+    _merge_optional_coordinates(merged, spec)
+    _merge_optional_source_fields(merged, spec)
+
+    building_id = _optional_string(spec, "building_id")
+    if building_id:
+        merged["building_id"] = building_id
+    elif spec.get("clear_building_id") is True:
+        merged.pop("building_id", None)
+
+    _merge_optional_place_fields(merged, spec)
+    places_by_id[place_id] = merged
+
+
+def _apply_building_override(
+    *,
+    buildings_by_id: dict[str, dict[str, Any]],
+    spec: dict[str, Any],
+    verified_iso: str,
+) -> None:
+    building_id = _required_string(spec, "building_id")
+    merged = dict(buildings_by_id.get(building_id, {}))
+    merged["building_id"] = building_id
+    merged["name"] = _required_string(spec, "name")
+    merged["last_verified_at"] = verified_iso
+
+    category = _optional_string(spec, "category")
+    if category:
+        merged["category"] = category
+
+    _merge_optional_coordinates(merged, spec)
+    _merge_optional_source_fields(merged, spec)
+    _merge_optional_building_fields(merged, spec)
+    buildings_by_id[building_id] = merged
+
+
+def _merge_optional_coordinates(
+    target: dict[str, Any],
+    spec: dict[str, Any],
+) -> None:
+    lat = spec.get("lat")
+    lng = spec.get("lng")
+    if isinstance(lat, (int, float)) and isinstance(lng, (int, float)):
+        target["lat"] = round(float(lat), 7)
+        target["lng"] = round(float(lng), 7)
+
+
+def _merge_optional_source_fields(
+    target: dict[str, Any],
+    spec: dict[str, Any],
+) -> None:
+    source_id = _optional_string(spec, "source_id")
+    source_url = _optional_string(spec, "source_url")
+    if source_id:
+        target["source_id"] = source_id
+    if source_url:
+        target["source_url"] = source_url
+
+
+def _legacy_quartieri_place_specs(contract: dict[str, Any]) -> list[dict[str, Any]]:
+    specs: list[dict[str, Any]] = []
+    for spec in _object_list(contract.get("quartieri_places")):
+        legacy = dict(spec)
+        legacy.setdefault("clear_building_id", True)
+        specs.append(legacy)
+    return specs
+
+
+def _legacy_mensa_building_specs(contract: dict[str, Any]) -> list[dict[str, Any]]:
+    return [dict(spec) for spec in _object_list(contract.get("mensa_buildings"))]
+
+
 def _merge_optional_place_fields(
     place: dict[str, Any],
     spec: dict[str, Any],
@@ -146,6 +219,8 @@ def _merge_optional_place_fields(
         "website_url",
         "opening_hours",
         "access_notes",
+        "floor",
+        "room",
     ]:
         value = _optional_string(spec, field)
         if value:

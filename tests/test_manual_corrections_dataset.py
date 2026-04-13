@@ -53,12 +53,23 @@ def test_required_entities_are_present_in_canonical_datasets() -> None:
     assert "cubo-20" in buildings
     assert "mensa-piazza-vermicelli" in buildings
     assert "poli-bistrot-polifunzionale" in buildings
+    assert "auditorium-teatro-grande" in buildings
+    assert "teatro-piccolo" in buildings
     assert "office-ufficio-cubo-0-c-primo-piano" in places
     assert "service-centro-sportivo" in places
     assert "service-quartieri" in places
     assert "service-servizio-mensa" in places
+    assert "service-centro-congressi" in places
+    assert "service-teatri-e-cinema" in places
+    assert "service-biblioteche" in places
     assert "quartiere-chiodo" in places
     assert "quartiere-san-gennaro" in places
+    assert "sala-mostre-centro-congressi" in places
+    assert "university-club" in places
+    assert "cinema-unical" in places
+    assert "biblioteca-bau" in places
+    assert "biblioteca-tarantelli" in places
+    assert "biblioteca-bats" in places
     assert "office-ufficio-cubo-4c-piano-3" in places
     assert "francesco-scarcello" in people
     assert (
@@ -68,6 +79,9 @@ def test_required_entities_are_present_in_canonical_datasets() -> None:
         "service-servizio-mensa__has_child_building__mensa-piazza-vermicelli"
         in entity_links
     )
+    assert "service-centro-congressi__has_child_place__sala-mostre-centro-congressi" in entity_links
+    assert "service-teatri-e-cinema__has_child_place__cinema-unical" in entity_links
+    assert "service-biblioteche__has_child_place__biblioteca-bau" in entity_links
 
 
 def test_known_manual_wave_fixes_are_preserved() -> None:
@@ -150,6 +164,52 @@ def test_grouped_service_location_wave_is_preserved() -> None:
     assert (
         "quartiere-nervoso__has_child_building__quartiere-nervoso" not in entity_links
     )
+
+
+def test_broader_grouped_hub_wave_is_preserved() -> None:
+    places = _by_id(_load_dataset("places.json"), "place_id")
+    entity_links = _by_id(_load_dataset("entity_links.json"), "link_id")
+
+    centro_congressi = places["service-centro-congressi"]
+    assert centro_congressi.get("building_id") is None
+    assert centro_congressi.get("opening_hours") == "Orari disponibili sulla pagina sorgente"
+
+    sala_mostre = places["sala-mostre-centro-congressi"]
+    assert sala_mostre.get("type") == "OTHER"
+    assert sala_mostre.get("building_id") == "aula-magna"
+    assert "Adiacente l'Aula Magna" in str(sala_mostre.get("description"))
+
+    university_club = places["university-club"]
+    assert university_club.get("type") == "OTHER"
+    assert university_club.get("building_id") == "cubo-24b"
+
+    cinema_unical = places["cinema-unical"]
+    assert cinema_unical.get("type") == "OTHER"
+    assert cinema_unical.get("building_id") == "auditorium-teatro-grande"
+    assert cinema_unical.get("website_url") == "https://cosenzacinema.it/programmazione-sale-unical/"
+
+    biblioteca_bau = places["biblioteca-bau"]
+    assert biblioteca_bau.get("type") == "LIBRARY"
+    assert biblioteca_bau.get("website_url") == "https://bau.unical.it"
+
+    biblioteca_tarantelli = places["biblioteca-tarantelli"]
+    assert biblioteca_tarantelli.get("type") == "LIBRARY"
+    assert biblioteca_tarantelli.get("website_url") == "http://tar.unical.it"
+
+    biblioteca_bats = places["biblioteca-bats"]
+    assert biblioteca_bats.get("type") == "LIBRARY"
+    assert biblioteca_bats.get("website_url") == "http://bats.unical.it/"
+
+    assert "service-centro-congressi__has_child_place__aula-magna" in entity_links
+    assert (
+        "service-centro-congressi__has_child_place__aula-caldora-centro-radiotelevisivo"
+        in entity_links
+    )
+    assert "service-centro-congressi__has_child_place__university-club" in entity_links
+    assert "service-teatri-e-cinema__has_child_building__auditorium-teatro-grande" in entity_links
+    assert "service-teatri-e-cinema__has_child_building__teatro-piccolo" in entity_links
+    assert "cinema-unical__has_child_building__auditorium-teatro-grande" in entity_links
+    assert "service-biblioteche__has_child_place__biblioteca-bats" in entity_links
 
 
 def test_dataset_contract_counts_match_files_and_locked_minimums() -> None:
