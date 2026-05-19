@@ -29,3 +29,8 @@ htmlcov/
 # Local agent instructions
 AGENTS.md
 ai-rules/
+ai-docs/agents-locked-block.md
+ai-scripts/
+hooks/
+scripts/committer
+tools.md
