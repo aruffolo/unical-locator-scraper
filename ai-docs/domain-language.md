@@ -2,7 +2,7 @@
 summary: "Canonical domain terms and avoided aliases."
 read_when:
   - Planning or implementing domain features.
-  - Naming datasets, schema fields, tests, or CLI concepts.
+  - Naming models, state, tests, or user-facing domain concepts.
   - Resolving ambiguous product language.
 ---
 # Domain Language

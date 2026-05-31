@@ -99,3 +99,7 @@ Safety guard:
   Result: floor coverage is partial (`329/517`), especially for CLA/polifunzionale generic labels.
 - Cross-source dedupe keeps one canonical record per identity key.
   Result: provenance may point to one source even when multiple sources reported the same aula.
+
+## Agent Discipline
+
+Validate the local agent template with `ai-scripts/validate-template`.

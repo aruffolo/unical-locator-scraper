@@ -13,7 +13,7 @@ Use this before adding more durable agent guidance.
 
 - Always-loaded context should stay small: `AGENTS.md` plus `ai-rules/rule-loading.md`.
 - Task rules should load only when the task needs them.
-- `ai-docs/` should hold durable facts and audits, not task instructions that belong in rules.
+- `ai-docs/` should be discoverable through `ai-scripts/docs-list`, not loaded wholesale.
 - Skills should hold longer workflows, examples, and decision trees.
 
 ## Official Codex Limit
@@ -25,7 +25,13 @@ Official references:
 - https://developers.openai.com/codex/guides/agents-md
 - https://developers.openai.com/codex/config-advanced
 
-Measure the current repo with the commands below. The route mechanism matters because loading all `ai-rules/` at once can exceed 32 KiB, while loading only relevant rules keeps normal work small.
+Current template size:
+
+- `AGENTS.md`: about 5.6 KiB.
+- Empty global `~/.codex/AGENTS.md` does not materially count.
+- No nested `AGENTS.md` files are present in this repo.
+
+Conclusion: the template is well under the official discovery cap. The route mechanism matters because loading all `ai-rules/` at once would exceed 32 KiB, while loading only relevant rules keeps normal work small.
 
 ## How To Test A Repo
 
@@ -43,14 +49,15 @@ Interpretation:
 
 - Root `AGENTS.md` should be far below 32 KiB.
 - Nested `AGENTS.md` files count only when Codex starts inside that subtree.
-- Generated folders such as `.venv`, `.pytest_cache`, `.cache`, or downloaded HTML caches can contain large generated files; do not start Codex inside them unless intentional.
+- Generated folders such as `.build`, `DerivedData`, `node_modules`, or dependency checkouts can contain large third-party `AGENTS.md` files; do not start Codex inside them unless intentional.
 
 Route-mechanism dry run:
 
 ```bash
-wc -c AGENTS.md ai-rules/rule-loading.md ai-rules/project-structure.md
-wc -c AGENTS.md ai-rules/rule-loading.md ai-rules/project-structure.md ai-docs/domain-language.md
-wc -c AGENTS.md ai-rules/rule-loading.md ai-rules/project-structure.md ai-docs/context-budget.md
+wc -c AGENTS.md ai-rules/rule-loading.md ai-rules/general.md
+wc -c AGENTS.md ai-rules/rule-loading.md ai-rules/general.md ai-rules/swift.md
+wc -c AGENTS.md ai-rules/rule-loading.md ai-rules/general.md ai-rules/swift.md ai-rules/architecture.md ai-rules/dependencies-testing.md
+wc -c AGENTS.md ai-rules/rule-loading.md ai-rules/general.md ai-rules/swift.md ai-rules/build-and-dev.md ai-rules/testing.md
 ```
 
 Worst-case anti-test:
@@ -66,7 +73,10 @@ Skill dry run:
 Skills are not part of the official `AGENTS.md` discovery cap. They are opt-in context paid only when the skill is invoked. Measure them as task context plus the selected skill, and include only extra files that the skill workflow would actually open.
 
 ```bash
-test -d skills && wc -c skills/*/SKILL.md
+wc -c skills/*/SKILL.md
+wc -c AGENTS.md ai-rules/rule-loading.md ai-rules/general.md ai-rules/swift.md skills/swift-testing-expert/SKILL.md
+wc -c AGENTS.md ai-rules/rule-loading.md ai-rules/general.md ai-rules/swift.md ai-rules/swiftui.md ai-rules/ui-styling.md skills/swiftui-view-refactor/SKILL.md
+wc -c AGENTS.md ai-rules/rule-loading.md ai-rules/general.md ai-rules/swift.md ai-rules/build-and-dev.md skills/xcode-build-orchestrator/SKILL.md
 ```
 
 For skills with referenced assets, scripts, templates, or examples, inspect references before counting everything:
@@ -87,7 +97,7 @@ Interpretation:
 
 - The guidance prevents repeated mistakes across repos.
 - It changes agent behavior, not just human background knowledge.
-- It can be routed by `rule-loading.md`, docs tooling, or skill trigger text.
+- It can be routed by `rule-loading.md`, `docs-list`, or skill trigger text.
 - It has one clear owner location.
 
 ## Too Much Signals
@@ -103,7 +113,7 @@ Interpretation:
 - `AGENTS.md`: only session-critical protocol.
 - `ai-rules/`: concise behavioral rules that should affect code decisions.
 - `ai-docs/`: durable project facts, vocabulary, contracts, and audits.
-- `scripts/`: executable checks or repeatable mechanical workflows.
+- `ai-scripts/`: executable checks or repeatable mechanical workflows.
 - `skills/`: opt-in multi-step workflows with examples.
 
 ## Audit Method
